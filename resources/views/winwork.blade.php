@@ -38,9 +38,9 @@
 					</div>
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="index.html">Home</a></li>
+							<li><a href="/">Home</a></li>
 							<li><a href="index.html" class="highlight">Publish Projects</a></li>	
-							<li><a href="#" class="highlight">Win Work</a></li>
+							<li><a href="/winwork" class="highlight">Win Work</a></li>
 							<li><a href="index.html">How It Works</a></li>
 							<li><a href="index.html">Pricing</a></li>
 							<li><a href="index.html">About Scope</a></li>
