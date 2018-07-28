@@ -570,12 +570,35 @@ body > div:nth-child(17) > div > div.col-sm-12{
     padding-right: 225px;
 }
 
+body > div.container.search_filter.wow.fadeInDown > div > form > div.col-sm-2 > button,body > div.container-fluid.search_results.wow.fadeInUp > div > div > div > div.col-sm-9 > div:nth-child(1) > div > div:nth-child(2) > ul > li.active > a
+body > div.container-fluid.search_results.wow.fadeInUp > div > div > div > div.col-sm-3 > div > form > p:nth-child(13) > input
+,body > div.container-fluid.search_results.wow.fadeInUp > div > div > div > div.col-sm-9 > div:nth-child(8) > div > div:nth-child(2) > ul > li.active > a{
+    background-color: rgb(40,80,128);
+}
+body > div.container-fluid.search_results.wow.fadeInUp > div > div > div > div.col-sm-3 > div > form > h3,
+body > div.container-fluid.search_results.wow.fadeInUp > div > div > div > div.col-sm-9 > div:nth-child(2) > figcaption > a > h3{
+    color: rgb(40,80,128);
+}
+
+body > div.container-fluid.search_results.wow.fadeInUp > div > div > div > div.col-sm-9 > div:nth-child(1) > div > div:nth-child(2) > ul > li.active{
+    background-color: none;
+}
 
 
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    background-color: rgb(40,80,128);
+}
 
 
+.btn-primary {
+   
+    background-color: rgb(40,80,128);
+   }
 
-
+.search_result_row h3 {
+    color: rgb(40,80,128);
+ 
+}
 @media(max-width: 767px){
     .navbar-brand{ padding: 20px 15px; }
     footer a i{ margin-right: 15px; }
