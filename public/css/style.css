@@ -1128,15 +1128,17 @@ input[type=range]::-ms-thumb {
 .tender-container .table-striped tbody tr:nth-of-type(odd) { background: #fff8f3;}
 .tender-container .table-striped tbody tr td:first-child{ color: #fe7235; }
 .tender-container .table-striped tbody table td:first-child{ color: #333; font-weight: bold; }
+.tender-container .table-striped tbody tr table tr:nth-of-type(odd){ background: inherit; }
+ body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(1) > div{
+    margin-bottom: -24px;
+}
+ .tender-details .media a h3, .owl-div a h3 {
+    color: rgb(40,80,128);
+} 
+
 .tender-container .table-striped tbody table tr{ border-bottom: 2px solid #fe7235; line-height: 2em; }
 .tender-container .table-striped tbody table tr:last-child{ border-bottom: none; }
 .tender-container .table-striped tbody tr table tr:nth-of-type(odd){ background: inherit; }
-
-
-body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(1) > div{
-    margin-bottom: -24px;
-}
-
-.tender-details .media a h3, .owl-div a h3 {
-    color: rgb(40,80,128);
+.publish-project-outer-page .tender-tile-single .tender-tiles {
+     background: #D8652B !important; 
 }

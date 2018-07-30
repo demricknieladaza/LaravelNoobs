@@ -40,21 +40,7 @@
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="/">Home</a></li>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            <li><a href="#motto" class="highlight">Publish Projects</a></li>    
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 3acd0af5a86953c4ea61f93d213bda60a2c5b531
-                            <li><a href="#" class="highlight">Publish Projects</a></li>    
-=======
                             <li><a href="/publish" class="highlight">Publish Projects</a></li>    
->>>>>>> c8bf34e7e125173b4d31213b9bd0a2354e4955a8
-<<<<<<< HEAD
->>>>>>> 3acd0af5a86953c4ea61f93d213bda60a2c5b531
-=======
->>>>>>> 3acd0af5a86953c4ea61f93d213bda60a2c5b531
                             <li><a href="/winwork" class="highlight">Win Work</a></li>
                             <li><a href="#how-it-works">How It Works</a></li>
                             <li><a href="#pricing">Pricing</a></li>
