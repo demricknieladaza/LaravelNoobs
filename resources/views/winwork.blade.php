@@ -39,7 +39,7 @@
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="/">Home</a></li>
-							<li><a href="/publish" class="highlight">Publish Projects</a></li>	
+							<li><a href="index.html" class="highlight">Publish Projects</a></li>	
 							<li><a href="/winwork" class="highlight">Win Work</a></li>
 							<li><a href="index.html">How It Works</a></li>
 							<li><a href="index.html">Pricing</a></li>
@@ -197,6 +197,15 @@
 							<form method="post">
 								<h3>Filter By</h3>
 								<p><b>Service</b></p>
+<<<<<<< HEAD
+								<p><input type="checkbox" class="filled-in" name="architect" value="architect" id="architect"> <label for="architect">Architect</label></p>
+								<p><input type="checkbox" class="filled-in" name="structural" value="structural" id="structural"> <label for="structural">Structural Engineer</label></p>
+								<p></p>
+								<p><b>Type of Use</b></p>
+								<p><input type="checkbox" class="filled-in" name="office" value="office" id="office"> <label for="office">Office</label></p>
+								<p><input type="checkbox" class="filled-in" name="residential" value="residential" id="residential"> <label for="residential">Residential</label></p>
+								<p><input type="checkbox" class="filled-in" name="retail" value="retail" id="retail"> <label for="retail">Retail</label></p>
+=======
 								<?php
 
 								$Service = array("Fire Engineer","Service Engineer","Principal Designer","Fascade Engineer","Building Control","Lighting Consulant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager", "Architecture", "Acoustic Engineer"
@@ -211,6 +220,7 @@
 								<!-- <p><input type="checkbox" class="filled-in" name="architect" value="architect" id="architect"> <label for="architect">Architect</label></p>
 								<p><input type="checkbox" class="filled-in" name="acoustic engineer" value="acoustic engineer" id="acoustic engineer"><label for="acoustic engineer">Acoustic Engineer</label></p>
 								<p><input type="checkbox" class="filled-in" name="structural" value="structural" id="structural"> <label for="structural">Structural Engineer</label></p> -->
+>>>>>>> c8bf34e7e125173b4d31213b9bd0a2354e4955a8
 								<p><b>Project Value</b></p>
 								<div class="row">
 									<div class="form-group">
@@ -221,6 +231,10 @@
 											<input type="text" name="to" placeholder="To Value" class="form-control">
 										</div>
 									</div>
+<<<<<<< HEAD
+								</div><br>
+								<p><b>Location</b></p>
+=======
 								</div>
 								<p></p>
 								<p><b>Type of Use</b></p>
@@ -238,9 +252,10 @@
 								<!-- <p><input type="checkbox" class="filled-in" name="office" value="office" id="office"> <label for="office">Office</label></p>
 								<p><input type="checkbox" class="filled-in" name="residential" value="residential" id="residential"> <label for="residential">Residential</label></p>
 								<p><input type="checkbox" class="filled-in" name="retail" value="retail" id="retail"> <label for="retail">Retail</label></p> -->
+>>>>>>> c8bf34e7e125173b4d31213b9bd0a2354e4955a8
 								<div class="form-group">
 									<select class="form-control project_location" name="location">
-										<option>Location</option>
+										<option>Enter your Location</option>
 										<option>Within 50km</option>
 										<option>Within 100km</option>
 										<option>Within 500km</option>
@@ -303,7 +318,7 @@
 								</div>						
 							</div>
 							<figcaption>
-								<a href="#"><h3>Canada Water Masterplan</h3></a>
+								<a href="/winwork/pds"><h3>Canada Water Masterplan</h3></a>
 								<p>
 									<a href="#" data-toggle="tooltip" title="Add to Favourites"><i class="fa fa-fw fa-star-o"></i></a>
 									<a href="#" data-toggle="tooltip" title="Send Via Email"><i class="fa fa-fw fa-envelope-o"></i></a>
@@ -673,7 +688,35 @@
 
 	<script type="text/javascript">
 		new WOW().init();
-	</script>		
+	</script>	
+	<script type="text/javascript">
+		function sortUnorderedList(ul, sortDescending) {
+    if (typeof ul == "string") ul = document.getElementById('names');
+
+    var lis = $("label");
+    var vals = [];
+
+    for (var i = 0, l = lis.length; i < l; i++)
+    vals.push(lis[i].innerHTML);
+    vals.sort();
+    if (sortDescending) vals.reverse();
+    for (var i = 0, l = lis.length; i < l; i++)
+    lis[i].innerHTML = vals[i];
+}
+
+
+ // CLICK METHOD
+    var desc = false;
+    $("#test").live('click', function() {
+        sortUnorderedList("list", desc);
+        desc = !desc;
+        return false;
+            });
+        
+        $("input:checked").click(function(){
+    alert("clicked" + $(this).val());
+    });
+	</script>	
 	<script>
 			$(document).ready(function(){
 				$('[data-toggle="tooltip"]').tooltip(); 
