@@ -35,6 +35,10 @@ h3.light-title{ font-size: 35px; font-weight: bolder; color: #fff; text-transfor
 	transition: all 0.4s ease;
 	-ms-transition: all 0.4s ease;
 }
+.publish-project-outer-page .tender-tile-single .tender-tiles {
+     background: #D8652B !important; 
+}
+
 .ms-skin-black-2 .ms-nav-next{ right: 30px; left: auto; background-position: -86px -103px;}
 .section-title{ padding: 30px 0;}
 .welcome-scope{margin-top: 0;}
