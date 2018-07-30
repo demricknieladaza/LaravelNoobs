@@ -1100,7 +1100,8 @@ input[type=range]::-ms-thumb {
   backface-visibility: hidden;
 }
 .tender-box .tender-btn:after {
-  content: 'Submit Bid ' ' Win Work';
+  content: 'Submit Bid ' '\A' '-' '\A' ' Win Work';
+  white-space: pre-wrap;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1114,12 +1115,13 @@ input[type=range]::-ms-thumb {
   transition-delay: .15s;
 }
 .tender-box:nth-child(1) .tender-btn:before {
-  content: 'Fire Engineer';
+  content: 'Fire Engineer' '\A' '9 days left';
+  white-space: pre-wrap;
   color: #333;
   font-size: 18px;
   padding-top: 100px;
   background: url(../icon-fire-demo.png);
-  background-size: cover;
+  background-size: 400px;
   background-repeat: no-repeat;
   background-position: center;
 }	
@@ -1129,3 +1131,12 @@ input[type=range]::-ms-thumb {
 .tender-container .table-striped tbody table tr{ border-bottom: 2px solid #fe7235; line-height: 2em; }
 .tender-container .table-striped tbody table tr:last-child{ border-bottom: none; }
 .tender-container .table-striped tbody tr table tr:nth-of-type(odd){ background: inherit; }
+
+
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(1) > div{
+    margin-bottom: -24px;
+}
+
+.tender-details .media a h3, .owl-div a h3 {
+    color: rgb(40,80,128);
+}

@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/winwork', function () {
     return view('winwork');
 });
+
+Route::get('/winwork/pds', function () {
+    return view('pds');
+});

@@ -215,9 +215,10 @@
 										</div>
 									</div>
 								</div><br>
+								<p><b>Location</b></p>
 								<div class="form-group">
 									<select class="form-control project_location" name="location">
-										<option>Location</option>
+										<option>Enter your Location</option>
 										<option>Within 50km</option>
 										<option>Within 100km</option>
 										<option>Within 500km</option>
@@ -280,7 +281,7 @@
 								</div>						
 							</div>
 							<figcaption>
-								<a href="#"><h3>Canada Water Masterplan</h3></a>
+								<a href="/winwork/pds"><h3>Canada Water Masterplan</h3></a>
 								<p>
 									<a href="#" data-toggle="tooltip" title="Add to Favourites"><i class="fa fa-fw fa-star-o"></i></a>
 									<a href="#" data-toggle="tooltip" title="Send Via Email"><i class="fa fa-fw fa-envelope-o"></i></a>

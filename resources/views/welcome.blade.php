@@ -40,7 +40,7 @@
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="/">Home</a></li>
-                            <li><a href="#motto" class="highlight">Publish Projects</a></li>    
+                            <li><a href="#" class="highlight">Publish Projects</a></li>    
                             <li><a href="/winwork" class="highlight">Win Work</a></li>
                             <li><a href="#how-it-works">How It Works</a></li>
                             <li><a href="#pricing">Pricing</a></li>
