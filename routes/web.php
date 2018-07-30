@@ -28,5 +28,8 @@ Route::get('/winwork/pds', function () {
 Route::get('/publish', function () {
     return view('publish');
 >>>>>>> c8bf34e7e125173b4d31213b9bd0a2354e4955a8
+<<<<<<< HEAD
+>>>>>>> 3acd0af5a86953c4ea61f93d213bda60a2c5b531
+=======
 >>>>>>> 3acd0af5a86953c4ea61f93d213bda60a2c5b531
 });
