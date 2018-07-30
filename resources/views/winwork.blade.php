@@ -199,6 +199,11 @@
 								<p><b>Service</b></p>
 								<p><input type="checkbox" class="filled-in" name="architect" value="architect" id="architect"> <label for="architect">Architect</label></p>
 								<p><input type="checkbox" class="filled-in" name="structural" value="structural" id="structural"> <label for="structural">Structural Engineer</label></p>
+								<p></p>
+								<p><b>Type of Use</b></p>
+								<p><input type="checkbox" class="filled-in" name="office" value="office" id="office"> <label for="office">Office</label></p>
+								<p><input type="checkbox" class="filled-in" name="residential" value="residential" id="residential"> <label for="residential">Residential</label></p>
+								<p><input type="checkbox" class="filled-in" name="retail" value="retail" id="retail"> <label for="retail">Retail</label></p>
 								<p><b>Project Value</b></p>
 								<div class="row">
 									<div class="form-group">
@@ -209,12 +214,7 @@
 											<input type="text" name="to" placeholder="To Value" class="form-control">
 										</div>
 									</div>
-								</div>
-								<p></p>
-								<p><b>Type of Use</b></p>
-								<p><input type="checkbox" class="filled-in" name="office" value="office" id="office"> <label for="office">Office</label></p>
-								<p><input type="checkbox" class="filled-in" name="residential" value="residential" id="residential"> <label for="residential">Residential</label></p>
-								<p><input type="checkbox" class="filled-in" name="retail" value="retail" id="retail"> <label for="retail">Retail</label></p>
+								</div><br>
 								<div class="form-group">
 									<select class="form-control project_location" name="location">
 										<option>Location</option>
@@ -510,7 +510,35 @@
 
 	<script type="text/javascript">
 		new WOW().init();
-	</script>		
+	</script>	
+	<script type="text/javascript">
+		function sortUnorderedList(ul, sortDescending) {
+    if (typeof ul == "string") ul = document.getElementById('names');
+
+    var lis = $("label");
+    var vals = [];
+
+    for (var i = 0, l = lis.length; i < l; i++)
+    vals.push(lis[i].innerHTML);
+    vals.sort();
+    if (sortDescending) vals.reverse();
+    for (var i = 0, l = lis.length; i < l; i++)
+    lis[i].innerHTML = vals[i];
+}
+
+
+ // CLICK METHOD
+    var desc = false;
+    $("#test").live('click', function() {
+        sortUnorderedList("list", desc);
+        desc = !desc;
+        return false;
+            });
+        
+        $("input:checked").click(function(){
+    alert("clicked" + $(this).val());
+    });
+	</script>	
 	<script>
 			$(document).ready(function(){
 				$('[data-toggle="tooltip"]').tooltip(); 
