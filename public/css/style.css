@@ -977,6 +977,7 @@ input[type=range]::-ms-thumb {
 .output{
     position: absolute;
     left: 0;
+    border: 1px dotted;
     top: 50%;
     color: #fe7235;
     font-weight: bold;
@@ -989,6 +990,7 @@ input[type=range]::-ms-thumb {
     box-shadow: 0 0 3px #999;
     position: absolute;
     right: -100px;
+    border: 1px dotted;
     top: 40%;
     padding: 10px 15px;
     color: #fe7235;
