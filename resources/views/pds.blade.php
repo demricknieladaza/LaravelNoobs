@@ -14,13 +14,13 @@
     <link rel="stylesheet" type="text/css" href="../css/bxslider.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="shortcut icon" href="../logo.jpg">
-    <script type="text/javascript" src="../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/masterslider.min.js"></script>
-    <script type="text/javascript" src="../js/wow.min.js"></script>
-    <script type="text/javascript" src="../js/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="../js/functions.js"></script>
-    <script type="text/javascript" src="../js//bxslider.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/masterslider.min.js"></script>
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript" src="js/bxslider.js"></script>
 </head>
 <body>
 
@@ -215,7 +215,6 @@
 			<div class="row">
 				<div class="col-sm-12 project-anchor">
 					<a href="#">Project Details</a>
-					<a href="#">Tender Queries</a>
 					<a href="#cprofile">Employer Details</a>
 				</div>
 			</div>
@@ -234,7 +233,7 @@
 						<h3>Project Information</h3>
 					</div>			
 					<div class="col-sm-12">
-						<table class="table  table-hover">
+						<table class="table table-striped table-hover">
 							<tr>
 								<td>Project Title</td>
 								<td>Canada Water Masterplan</td>
@@ -300,22 +299,6 @@
 								</td>
 							</tr>
 							<tr>
-								<td>Constraints</td>
-								<td>                               
-									<p>Adjacent Tube Tunnel</p>
-									<p>Existing Buildings</p>
-									<p>Weak Ground Conditions</p>
-								</td>
-							</tr>
-							<tr>
-								<td>Type of Development</td>
-								<td>New Built</td>
-							</tr>
-							<tr>
-								<td>Construction Value</td>
-								<td>£300,000,000</td>
-							</tr>
-							<tr>
 								<td>Types of Use</td>
 								<td>
 									<table width="100%">
@@ -351,6 +334,18 @@
 										</tr>
 									</table>
 								</td>
+							</tr>
+							<tr>
+								<td>Type of Development</td>
+								<td>New Built</td>
+							</tr>
+							<tr>
+								<td>Procurement Route</td>
+								<td>Design & Build</td>
+							</tr>
+							<tr>
+								<td>Construction Value</td>
+								<td>£300,000,000</td>
 							</tr>
 							<tr>
 								<td>Milestones</td>
@@ -391,11 +386,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td>Procurement Route</td>
-								<td>Design & Build</td>
-							</tr>
-							<tr>
-								<td>Project Team</td>
+								<td>Appointed Project Team</td>
 								<td>
 									<table width="100%">
 										<tr>
@@ -422,6 +413,14 @@
 								</td>
 							</tr>
 							<tr>
+								<td>Constraints</td>
+								<td>                               
+									<p>Adjacent Tube Tunnel</p>
+									<p>Existing Buildings</p>
+									<p>Weak Ground Conditions</p>
+								</td>
+							</tr>
+							<tr>
 								<td>Supporting Documents</td>
 								<td>
 									<p><a href="#">Site Plan <i class="fa fa-download"></i></a></p>
@@ -435,45 +434,11 @@
 			</div>
 			<div class="tender-container">
 				<div class="row">
-					<div class="col-sm-9 active-tenders">
-						<h3>Tender Queries</h3>
-						<div class="row">	
-							<div class="col-sm-12">				
-								<table class="table  table-hover">
-									<tr>
-										<td id="black">#</td>
-										<td>Query</td>
-										<td>Responses</td>
-
-									</tr>
-									<tr>
-										<td id="black">1</td>
-										<td>TextTextTextTextTextTextTextTextText</td>
-										<td>TextTextTextTextTextTextTextTextTextTextTextText</td>
-									</tr>
-									<tr>
-										<td id="black">2</td>
-										<td>TextTextTextTextTextTextTextTextText</td>
-										<td>TextTextTextTextTextTextTextTextTextTextTextText</td>
-									</tr>
-									<tr>
-										<td id="black">3</td>
-										<td>TextTextTextTextTextTextTextTextText</td>
-										<td>TextTextTextTextTextTextTextTextTextTextTextText</td>
-									</tr>
-								</table>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="tender-container">
-				<div class="row">
 					<div class="col-sm-12 active-tenders">
 						<h3>Employer Details</h3>
 						<div class="row">	
 							<div class="col-sm-9">				
-								<table class="table  table-hover">
+								<table class="table table-striped table-hover">
 									<tr>
 										<td>Employer</td>
 										<td>British Land</td>
@@ -525,7 +490,7 @@
 						</div>
 						<div class="media-body">
 							<h3>Canada Water Masterplan</h3>
-							<p>Fire Engineer and 9 others</p>
+							<p><small> - 9 days left</small></p>
 						</div>
 					</a>
 				</div>
@@ -536,7 +501,7 @@
 						</div>
 						<div class="media-body">
 							<h3>Canada Water Masterplan</h3>
-							<p>Fire Engineer and 9 others</p>
+							<p><small> - 9 days left</small></p>
 						</div>
 					</a>
 				</div>
@@ -547,7 +512,7 @@
 						</div>
 						<div class="media-body">
 							<h3>Canada Water Masterplan</h3>
-							<p>Fire Engineer and 9 others</p>
+							<p><small> - 9 days left</small></p>
 						</div>
 					</a>
 				</div>
@@ -558,7 +523,7 @@
 						</div>
 						<div class="media-body">
 							<h3>Canada Water Masterplan</h3>
-							<p>Fire Engineer and 9 others</p>
+							<p><small> - 9 days left</small></p>
 						</div>
 					</a>
 				</div>
@@ -569,7 +534,7 @@
 						</div>
 						<div class="media-body">
 							<h3>Canada Water Masterplan</h3>
-							<p>Fire Engineer and 9 others</p>
+							<p><small> - 9 days left</small></p>
 						</div>
 					</a>
 				</div>
@@ -593,7 +558,7 @@
 					</div>
 					<div class="thumb-title">
 						<h3>Canada Water Masterplan</h3>
-						<p class="text-muted">Fire Engineer and 9 others</p>
+						<p class="text-muted">9 days left</p>
 					</div>
 				</a>
 			</div>
@@ -604,7 +569,7 @@
 					</div>
 					<div class="thumb-title">
 						<h3>Canada Water Masterplan</h3>
-						<p class="text-muted">Fire Engineer and 9 others</p>
+						<p class="text-muted">9 days left</p>
 					</div>
 				</a>
 			</div>
@@ -615,7 +580,7 @@
 					</div>
 					<div class="thumb-title">
 						<h3>Canada Water Masterplan</h3>
-						<p class="text-muted">Fire Engineer and 9 others</p>
+						<p class="text-muted">9 days left</p>
 					</div>
 				</a>
 			</div>
@@ -626,7 +591,7 @@
 					</div>
 					<div class="thumb-title">
 						<h3>Canada Water Masterplan</h3>
-						<p class="text-muted">Fire Engineer and 9 others</p>
+						<p class="text-muted">9 days left</p>
 					</div>
 				</a>
 			</div>
@@ -637,7 +602,7 @@
 					</div>
 					<div class="thumb-title">
 						<h3>Canada Water Masterplan</h3>
-						<p class="text-muted">Fire Engineer and 9 others</p>
+						<p class="text-muted">9 days left</p>
 					</div>
 				</a>
 			</div>
@@ -648,7 +613,7 @@
 					</div>
 					<div class="thumb-title">
 						<h3>Canada Water Masterplan</h3>
-						<p class="text-muted">Fire Engineer and 9 others</p>
+						<p class="text-muted">9 days left</p>
 					</div>
 				</a>
 			</div>
@@ -659,14 +624,13 @@
 					</div>
 					<div class="thumb-title">
 						<h3>Canada Water Masterplan</h3>
-						<p class="text-muted">Fire Engineer and 9 others</p>
+						<p class="text-muted">9 days left</p>
 					</div>
 				</a>
 			</div>
 		</div>
 	</div>
 </div>
-
 
 <footer class="text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
 	<div class="col-sm-12">
