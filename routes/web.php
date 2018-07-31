@@ -18,3 +18,6 @@ Route::get('/', function () {
 Route::get('/winwork', function () {
     return view('winwork');
 });
+Route::get('/publish', function () {
+    return view('publish');
+});
