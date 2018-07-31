@@ -234,7 +234,7 @@
 						<h3>Project Information</h3>
 					</div>			
 					<div class="col-sm-12">
-						<table class="table  table-hover">
+						<table class="table table-striped table-hover">
 							<tr>
 								<td>Project Title</td>
 								<td>Canada Water Masterplan</td>
