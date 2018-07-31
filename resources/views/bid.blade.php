@@ -7,12 +7,16 @@
 	<link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../../css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	{{-- <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css"> --}}
+	<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/bootstrap.datepicker/0.1/css/datepicker.css">
 	<link rel="stylesheet" type="text/css" href="../../css/animate.min.css">
 	<link rel="stylesheet" type="text/css" href="../../css/style.css">
 	<link rel="shortcut icon" href="../../logo.jpg">
 	<script type="text/javascript" src="../../js/jquery.min.js"></script>
 	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../../js/wow.min.js"></script>
+	<script type="text/javascript" src="http://cdn.jsdelivr.net/bootstrap.datepicker/0.1/js/bootstrap-datepicker.js"></script>
 
 </head>
 <body>
@@ -223,7 +227,19 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Experience in Years">
+												{{-- <input type="text" name="" class="form-control" placeholder="Experience in Years"> --}}
+												<div class="input-group date" id="datepicker" data-date="02-2012" 
+												         data-date-format="mm-yyyy">
+
+													 <input class="form-control" type="text" readonly="readonly" name="date" >	  
+													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+												</div>
+												{{-- <div class='input-group input-append date' id='datetimepicker1'>
+												                    <input type='text' class="form-control" />
+												                    <span class="input-group-addon add-on">
+												                        <span class="fa fa-calendar"></span></span>
+												                    </span>
+												                </div> --}}
 											</div>
 										</div>
 									</div>
@@ -560,7 +576,7 @@
 	
 <footer class="text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
 	<div class="col-sm-12">
-		<p><img src="images/logo.png"></p>
+		<p><img src="../../logo.png"></p>
 		<p>
 			<a href="#"><i class="fa fa-facebook"></i></a>
 			<a href="#"><i class="fa fa-twitter"></i></a>
@@ -575,7 +591,13 @@
 
 <!-- end -->
 
-
+<script>
+	$("#datepicker").datepicker( {
+		    format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+		});
+</script>
 </body>
 </html>
 
