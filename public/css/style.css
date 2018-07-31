@@ -490,7 +490,7 @@ table table tr td{ vertical-align: top; }
 .policies-link:hover{ color: #fff !important; }
 .lounge-main h4{ font-size: 18px; font-weight: bold; margin: 0; }
 .tender-tile-single{ width: 33.33%; float: left; padding: 0 15px; }
-.tender-tiles{ background: #fe7235; padding: 30px 15px; text-align: center; cursor: pointer; box-shadow: 3px 3px 5px #999; }
+.tender-tiles{ background: #fe7235; padding: 30px 15px; text-align: center; cursor: pointer; }
 .tender-tiles a{ color: #fff; text-decoration: none; }
 .tiles-row{ margin-bottom: 20px; margin-top: 20px; }
 .tender-tiles h2{ font-size: 24px; margin: 0; }
@@ -1142,3 +1142,12 @@ input[type=range]::-ms-thumb {
 .publish-project-outer-page .tender-tile-single .tender-tiles {
      background: #D8652B !important; 
 }
+
+.tender-tiles:hover 
+{
+    color: rgba(0, 0, 10, 1);
+    /*box-shadow: 0 140px 150px rgba(145, 92, 182, .4);*/
+    box-shadow: 5px 8px 10px rgb(64,64,64);
+
+}
+                                
