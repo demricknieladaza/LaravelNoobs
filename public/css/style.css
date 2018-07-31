@@ -1107,7 +1107,8 @@ input[type=range]::-ms-thumb {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  text-align: left;
+  /*justify-content: center;*/
   background: #fe7235;
   color: #FFF;
   font-size: 24px;
@@ -1115,7 +1116,7 @@ input[type=range]::-ms-thumb {
   transition-delay: .15s;
 }
 .tender-box:nth-child(1) .tender-btn:before {
-  content: 'Fire Engineer' '\A' '9 days left';
+  content: '\A' 'Fire Engineer' '\A' '9 days left';
   white-space: pre-wrap;
   color: #333;
   font-size: 18px;
@@ -1141,4 +1142,40 @@ input[type=range]::-ms-thumb {
 .tender-container .table-striped tbody tr table tr:nth-of-type(odd){ background: inherit; }
 .publish-project-outer-page .tender-tile-single .tender-tiles {
      background: #D8652B !important; 
+}
+
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(3){
+    margin-top: 22px;
+}
+
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > div > div:nth-child(2) > table > tbody > tr:nth-child(7) > td:nth-child(2) > p:nth-child(1),
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > div > div:nth-child(2) > table > tbody > tr:nth-child(7) > td:nth-child(2) > p:nth-child(2),
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > div > div:nth-child(2) > table > tbody > tr:nth-child(7) > td:nth-child(2) > p:nth-child(3){
+        border-bottom: 2px solid #FE7235;
+    padding-bottom: 7px;
+}
+
+#black{
+    color: black;
+}
+
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > div > div:nth-child(2) > table > tbody > tr:nth-child(5) > td:nth-child(2) > table > tbody > tr:nth-child(1),
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > div > div:nth-child(2) > table > tbody > tr:nth-child(5) > td:nth-child(2) > table > tbody > tr:nth-child(2),
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > div > div:nth-child(2) > table > tbody > tr:nth-child(6) > td:nth-child(2) > table > tbody > tr:nth-child(1),
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > div > div:nth-child(2) > table > tbody > tr:nth-child(7) > td:nth-child(2) > table > tbody > tr:nth-child(1),
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > div > div:nth-child(2) > table > tbody > tr:nth-child(7) > td:nth-child(2) > table > tbody > tr:nth-child(2),
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > div > div:nth-child(2) > table > tbody > tr:nth-child(7) > td:nth-child(2) > table > tbody > tr:nth-child(3),
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > div > div:nth-child(2) > table > tbody > tr:nth-child(10) > td:nth-child(2) > table > tbody > tr:nth-child(1),
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > div > div:nth-child(2) > table > tbody > tr:nth-child(10) > td:nth-child(2) > table > tbody > tr:nth-child(2),
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > div > div:nth-child(2) > table > tbody > tr:nth-child(10) > td:nth-child(2) > table > tbody > tr:nth-child(3),
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > div > div:nth-child(2) > table > tbody > tr:nth-child(10) > td:nth-child(2) > table > tbody > tr:nth-child(4),
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > div > div:nth-child(2) > table > tbody > tr:nth-child(11) > td:nth-child(2) > table > tbody > tr:nth-child(1),
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > div > div:nth-child(2) > table > tbody > tr:nth-child(11) > td:nth-child(2) > table > tbody > tr:nth-child(2),
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > div > div:nth-child(2) > table > tbody > tr:nth-child(11) > td:nth-child(2) > table > tbody > tr:nth-child(3),
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > div > div:nth-child(2) > table > tbody > tr:nth-child(12) > td:nth-child(2) > table > tbody > tr:nth-child(1),
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > div > div:nth-child(2) > table > tbody > tr:nth-child(14) > td:nth-child(2) > table > tbody > tr:nth-child(1),
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > div > div:nth-child(2) > table > tbody > tr:nth-child(14) > td:nth-child(2) > table > tbody > tr:nth-child(2),
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > div > div:nth-child(2) > table > tbody > tr:nth-child(14) > td:nth-child(2) > table > tbody > tr:nth-child(3),
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > div > div:nth-child(2) > table > tbody > tr:nth-child(14) > td:nth-child(2) > table > tbody > tr:nth-child(4){
+        border-bottom: 2px solid #fe7235;
 }
