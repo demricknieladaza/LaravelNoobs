@@ -182,7 +182,7 @@
 					</div>
 					<div class="col-sm-3">
 						<div class="tender-box">
-							<a href="#"></a>
+							<a href="/winwork/pds/bid"></a>
 							<a href="#"></a>
 							<a href="#"></a>
 							<a href="#"></a>

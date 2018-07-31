@@ -1150,4 +1150,9 @@ input[type=range]::-ms-thumb {
     box-shadow: 5px 8px 10px rgb(64,64,64);
 
 }
-                                
+[type="checkbox"].filled-in:checked+label:after {
+   
+    border: 2px solid #fe7235;
+    background: #fe7235;
+
+}   

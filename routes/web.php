@@ -25,3 +25,6 @@ Route::get('/winwork/pds', function () {
 Route::get('/publish', function () {
     return view('publish');
 });
+Route::get('/winwork/pds/bid', function () {
+    return view('bid');
+});
