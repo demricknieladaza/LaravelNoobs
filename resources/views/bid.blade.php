@@ -230,7 +230,7 @@
 												<div class="input-group date" id="datepicker" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
-													 <input class="form-control" type="text" readonly="readonly" name="date" >	  
+													 <input class="form-control" type="text" placeholder="Select Year" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
 												
@@ -265,6 +265,46 @@
 													<option>Project Manager</option>
 													<option>Other</option>
 												</select>
+											</div>
+											<div class="form-group">
+												
+												<p id="demo" class="btn btn-primary" onclick="myFunction()"> Add Another Award</p>
+												<!-- <div class="">
+													<input type="submit" name="submit" value="Submit"  class="btn btn-primary">
+												</div>	 -->
+												
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+												Awards
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Enter Name of Awar">
+											</div>
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Enter Details">
+											</div>
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Awarded By">
+											</div>
+											<div class="form-group">
+												<div class="input-group date" id="datepicker1" data-date="02-2012" 
+												         data-date-format="mm-yyyy">
+
+													 <input class="form-control" type="text" placeholder="Select Year" readonly="readonly" name="date" >	  
+													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="input_fields_wrap">
+												    <button class="add_field_button">Add More Fields</button>
+												    <div><input type="text" name="mytext[]"></div>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -605,6 +645,33 @@
 		    viewMode: "months", 
 		    minViewMode: "months"
 		});
+</script>
+<script>
+	$("#datepicker1").datepicker( {
+		    format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+		});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_wrap"); //Fields wrapper
+    var add_button      = $(".add_field_button"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
 </script>
 </body>
 </html>
