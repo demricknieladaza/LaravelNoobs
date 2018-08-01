@@ -1173,7 +1173,14 @@ body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > di
 #black{
     color: black;
 }
-
+.dropdown-menu {
+    background:white;
+    margin-left: -225px;
+        width: 21%;
+}
+.table-condensed>tbody>tr>td{
+    padding-left: 10%;
+}
 body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > div > div:nth-child(2) > table > tbody > tr:nth-child(5) > td:nth-child(2) > table > tbody > tr:nth-child(1),
 body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > div > div:nth-child(2) > table > tbody > tr:nth-child(5) > td:nth-child(2) > table > tbody > tr:nth-child(2),
 body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > div > div:nth-child(2) > table > tbody > tr:nth-child(6) > td:nth-child(2) > table > tbody > tr:nth-child(1),
