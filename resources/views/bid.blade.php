@@ -215,6 +215,11 @@
 						</form>
 					</div>
 					<div id="section2" class="tab-pane fade tender-container">
+						<div class="form-group" style="text-align: right;">
+							<div class="input_fields_team">
+								<button class="btn" id="button1 ">Complete Page using Profile Information</button>
+							</div>
+						</div>
 						<h3 class="bid-form-title">Organization</h3>
 						<form method="post">
 							<div class="row">
@@ -393,7 +398,7 @@
 											</div>
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Type of Deployment
+													<option value="" disabled selected>Select Type of Development
 													<option>New Built</option>
 													<option>Refurbishment</option>
 													<option>Demolition</option>
@@ -405,9 +410,9 @@
 												</div>
 													
 											<div class="form-group">													
-											<div class="btn-sm btn-primary">
-						       	                 <input type="file" name="file"/ placeholder="upload images">
-						                    </div>
+												<div class="btn-sm btn-primary">
+							       	                 <input type="file" name="file"/ placeholder="upload images">
+							                    </div>
 						                    </div>
 						                    <div class="form-group">
 												<select name="Sel"  class="form-control" >
@@ -431,6 +436,32 @@
 													<option>Other</option>
 												</select>
 											</div>
+											<div class="form-group">
+												<select name="Sel"  class="form-control" >
+													<option value="" disabled selected>Select Company
+													<option>Architect</option>
+													<option>Sturctural Engineed</option>
+													<option>Service Engineer</option>
+													<option>Other</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<div class="form-group">
+													<input type="text" name="" class="form-control" placeholder="Enter new Company Name">
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="input_fields_team">
+												    <button class="btn btn-primary" id="add_field_team">Add Another Project Team Member</button>
+												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="input_fields_project">
+												    <button class="btn btn-primary" id="add_field_project">Add Another Project</button>
+												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												</div>
+											</div>
 										</div>
 									</div>
 									<div class="form-group">
@@ -440,7 +471,7 @@
 									
 									</div>
 								</div>
-							</div>
+							<!-- </div> -->
 						</form>
 					</div>
 					<div id="section3" class="tab-pane fade tender-container">
@@ -451,15 +482,73 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												Years of experience in the service required
+												Name
+											</div>
+										</div>
+										<div class="col-sm-3">
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="First Name">
+											</div>
+										</div>
+										<div class="col-sm-3">
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Surname">
+											</div>
+										</div>
+									</div>
+									<div class="row" style="padding-bottom: 10px;">
+										<div class="col-sm-6">
+											<div class="form-group">
+												Image
+											</div>
+										</div>
+										<div class="col-sm-6" >						
+											<div class="btn-sm btn-primary">
+								       	        <input type="file" name="file"/ placeholder="upload images">
+								            </div>
+								        </div>
+						            </div>
+						            <div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+												Accreditations
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Experience in Years">
+												<select name="" class="form-control">
+													<option value="" disabled selected>Select Accrediatation</option>
+													<option>MCIOB</option>
+													<option>AssocRICS</option>
+													<option>MRICS</option>
+													<option>FRICS</option>
+													<option>HonRICS</option>
+													<option>BREEAM AP</option>
+													<option>RIBA</option>
+													<option>Other</option>
+												</select>
 											</div>
 										</div>
 									</div>
+									<div class="row">
+										<div class="col-sm-6"></div>
+										<div class="col-sm-6">
+											<div class="input-group date" id="datepickers" data-date="02-2012" 
+												         data-date-format="mm-yyyy">
+											<input class="form-control" type="text" placeholder="Year Awarded" readonly="readonly" name="date" >	  
+											<span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+											</div>
+										</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6"></div>
+										<div class="col-sm-6">
+											<div class="input_fields_wrap">
+											<button class="btn btn-primary" id="add_field_button">Add Another Accreditation</button>
+											<div><input class="form-control" type="text" name="mytext[]"></div>
+											</div>
+										</div>
+									</div><br>
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
@@ -779,6 +868,13 @@
 		    minViewMode: "months"
 		});
 </script>
+<script>
+	$("#datepickers").datepicker( {
+		    format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+		});
+</script>
 <script type="text/javascript">
 	$(document).ready(function() {
     var max_fields      = 10; //maximum input boxes allowed
@@ -864,6 +960,46 @@
     var max_fields      = 10; //maximum input boxes allowed
     var wrapper         = $(".input_fields_type"); //Fields wrapper
     var add_button      = $("#add_field_type"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_team"); //Fields wrapper
+    var add_button      = $("#add_field_team"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_project"); //Fields wrapper
+    var add_button      = $("#add_field_project"); //Add button ID
     
     var x = 1; //initlal text box count
     $(add_button).click(function(e){ //on add input button click
