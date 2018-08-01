@@ -28,3 +28,6 @@ Route::get('/publish', function () {
 Route::get('/winwork/pds/bid', function () {
     return view('bid');
 });
+Route::get('/publish/dashboard', function () {
+    return view('dashboard');
+});

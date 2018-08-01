@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../css/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="../css/bxslider.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="shortcut icon" href="../logo.jpg">
+    <link rel="shortcut icon" href="../images/logo.jpg">
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/masterslider.min.js"></script>
@@ -34,7 +34,7 @@
 							<i class="icon-bar"></i>
 							<i class="icon-bar"></i>
 						</button>
-						<a href="#" class="navbar-brand"><img src="../logo.png" width="120"></a>
+						<a href="#" class="navbar-brand"><img src="../images/logo.png" width="120"></a>
 					</div>
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">
@@ -283,7 +283,7 @@
 							<div class="search_data">
 								<div class="row">
 									<div class="col-sm-3 project_image">
-										<img src="../construction.jpg" width="100%">
+										<img src="../images/construction.jpg" width="100%">
 									</div>
 									<div class="col-sm-9 project-excerpt">
 										<div class="row">
@@ -318,7 +318,7 @@
 							<div class="search_data">
 								<div class="row">
 									<div class="col-sm-3 project_image">
-										<img src="../construction.jpg" width="100%">
+										<img src="../images/construction.jpg" width="100%">
 									</div>
 									<div class="col-sm-9 project-excerpt">
 										<div class="row">
@@ -353,7 +353,7 @@
 							<div class="search_data">
 								<div class="row">
 									<div class="col-sm-3 project_image">
-										<img src="../construction.jpg" width="100%">
+										<img src="../images/construction.jpg" width="100%">
 									</div>
 									<div class="col-sm-9 project-excerpt">
 										<div class="row">
@@ -388,7 +388,7 @@
 							<div class="search_data">
 								<div class="row">
 									<div class="col-sm-3 project_image">
-										<img src="../construction.jpg" width="100%">
+										<img src="../images/construction.jpg" width="100%">
 									</div>
 									<div class="col-sm-9 project-excerpt">
 										<div class="row">
@@ -423,7 +423,7 @@
 							<div class="search_data">
 								<div class="row">
 									<div class="col-sm-3 project_image">
-										<img src="../construction.jpg" width="100%">
+										<img src="../images/construction.jpg" width="100%">
 									</div>
 									<div class="col-sm-9 project-excerpt">
 										<div class="row">
@@ -458,7 +458,7 @@
 							<div class="search_data">
 								<div class="row">
 									<div class="col-sm-3 project_image">
-										<img src="../construction.jpg" width="100%">
+										<img src="../images/construction.jpg" width="100%">
 									</div>
 									<div class="col-sm-9 project-excerpt">
 										<div class="row">
@@ -493,7 +493,7 @@
 							<div class="search_data">
 								<div class="row">
 									<div class="col-sm-3 project_image">
-										<img src="../construction.jpg" width="100%">
+										<img src="../images/construction.jpg" width="100%">
 									</div>
 									<div class="col-sm-9 project-excerpt">
 										<div class="row">
@@ -528,7 +528,7 @@
 							<div class="search_data">
 								<div class="row">
 									<div class="col-sm-3 project_image">
-										<img src="../construction.jpg" width="100%">
+										<img src="../images/construction.jpg" width="100%">
 									</div>
 									<div class="col-sm-9 project-excerpt">
 										<div class="row">
@@ -563,7 +563,7 @@
 							<div class="search_data">
 								<div class="row">
 									<div class="col-sm-3 project_image">
-										<img src="../construction.jpg" width="100%">
+										<img src="../images/construction.jpg" width="100%">
 									</div>
 									<div class="col-sm-9 project-excerpt">
 										<div class="row">
@@ -598,7 +598,7 @@
 							<div class="search_data">
 								<div class="row">
 									<div class="col-sm-3 project_image">
-										<img src="../construction.jpg" width="100%">
+										<img src="../images/construction.jpg" width="100%">
 									</div>
 									<div class="col-sm-9 project-excerpt">
 										<div class="row">
@@ -660,7 +660,7 @@
 
 	<footer class="text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
 		<div class="col-sm-12">
-			<p><img src="../logo.png"></p>
+			<p><img src="../images/logo.png"></p>
 			<p>
 				<a href="#"><i class="fa fa-facebook"></i></a>
 				<a href="#"><i class="fa fa-twitter"></i></a>
