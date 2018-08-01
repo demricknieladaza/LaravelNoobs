@@ -227,19 +227,13 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												{{-- <input type="text" name="" class="form-control" placeholder="Experience in Years"> --}}
 												<div class="input-group date" id="datepicker" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
 													 <input class="form-control" type="text" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
-												{{-- <div class='input-group input-append date' id='datetimepicker1'>
-												                    <input type='text' class="form-control" />
-												                    <span class="input-group-addon add-on">
-												                        <span class="fa fa-calendar"></span></span>
-												                    </span>
-												                </div> --}}
+												
 											</div>
 										</div>
 									</div>
@@ -251,11 +245,25 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<select name="" class="form-control">
-													<option>Service 1</option>
-													<option>Service 2</option>
-													<option>Service 3</option>
-													<option>Service 4</option>
+												<select name="Sel"  class="form-control" >
+													<option value="" disabled selected>Select Service
+													<option>Architect</option>
+													<option>Sturctural Engineed</option>
+													<option>Service Engineer</option>
+													<option>Fire Engineer</option>
+													<option>Acoustic Engineer</option>
+													<option>Principal Designer</option>
+													<option>Fascade Engineer</option>
+													<option>Building Control</option>
+													<option>Lighting Consultant</option>
+													<option>Security Consultant</option>
+													<option>Plannning Consultant</option>
+													<option>Sustainability Consultant</option>
+													<option>BIM Consultant</option>
+													<option>Quantity Survueyor</option>
+													<option>Project Manager</option>
+													<option>Project Manager</option>
+													<option>Other</option>
 												</select>
 											</div>
 										</div>
