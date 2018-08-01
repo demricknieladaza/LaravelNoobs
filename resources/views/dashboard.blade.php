@@ -487,7 +487,7 @@
 
 <footer class="text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
 	<div class="col-sm-12">
-		<p><img src="../../logo.png"></p>
+		<p><img src="../images/logo.png"></p>
 		<p>
 			<a href="#"><i class="fa fa-facebook"></i></a>
 			<a href="#"><i class="fa fa-twitter"></i></a>
