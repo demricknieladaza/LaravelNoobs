@@ -11,23 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','UsersController@welcome_controller');
 
-Route::get('/winwork', function () {
-    return view('winwork');
-});
+Route::get('/winwork', 'UsersController@winwork_controller');
 
-Route::get('/winwork/pds', function () {
-    return view('pds');
-});
-Route::get('/publish', function () {
-    return view('publish');
-});
-Route::get('/winwork/pds/bid', function () {
-    return view('bid');
-});
-Route::get('/publish/dashboard', function () {
-    return view('dashboard');
-});
+Route::get('/winwork/pds', 'UsersController@pds_controller');
+
+Route::get('/publish', 'UsersController@publish_controller');
+
+Route::get('/winwork/pds/bid', 'UsersController@bid_controller');
+
+Route::get('/publish/dashboard', 'UsersController@dashboard_controller');
