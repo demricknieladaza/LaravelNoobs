@@ -13,7 +13,6 @@
     <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="css/bxslider.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    
     <link rel="shortcut icon" href="images/logo.jpg">
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -22,6 +21,7 @@
     <script type="text/javascript" src="js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
     <script type="text/javascript" src="js/bxslider.js"></script>
+</head>
 
 <body>
 
@@ -39,15 +39,15 @@
 					</div>
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="/">Home</a></li>
-							<li><a href="/publish" class="highlight">Publish Projects</a></li>	
-							<li><a href="/winwork" class="highlight">Win Work</a></li>
-							<li><a href="index.html">How It Works</a></li>
-							<li><a href="index.html">Pricing</a></li>
-							<li><a href="index.html">About Scope</a></li>
-							<li><a href="index.html">FAQ</a></li>					
-							<li><a href="index.html">contact</a></li>
-							<li><a data-toggle="modal" href="#myModal" class="highlight">Login/register</a></li>
+							<li><a href="{{ url('/') }}">Home</a></li>
+                            <li><a href="{{ url('/publish') }}" class="highlight">Publish Projects</a></li>    
+                            <li><a href="{{ url('/winwork') }}" class="highlight">Win Work</a></li>
+                            <li><a href="#how-it-works">How It Works</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                            <li><a href="#about-scope">About Scope</a></li>
+                            <li><a href="#faqs">FAQ</a></li>                    
+                            <li><a href="#contact">contact</a></li>
+                            <li><a data-toggle="modal" href="#myModal" class="highlight">Login/register</a></li>
 						</ul>
 					</div>
 				</div>
@@ -196,7 +196,7 @@
 					<div class="hover-container-holder">
 						<div class="tender-tile-single">
 							<div class="tender-tiles new-project-tile">
-								<h2><a href="publish/dashboard">Publish<br> New<br> Project</a></h2>
+								<h2><a href="{{ url('publish/dashboard') }}">Publish<br> New<br> Project</a></h2>
 							</div>
 						</div>
 						<div class="tender-tile-single">

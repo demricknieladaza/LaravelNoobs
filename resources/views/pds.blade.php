@@ -38,15 +38,15 @@
 					</div>
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="/">Home</a></li>
-							<li><a href="/publish" class="highlight">Publish Projects</a></li>	
-							<li><a href="/winwork" class="highlight">Win Work</a></li>
-							<li><a href="index.html">How It Works</a></li>
-							<li><a href="index.html">Pricing</a></li>
-							<li><a href="index.html">About Scope</a></li>
-							<li><a href="index.html">FAQ</a></li>					
-							<li><a href="index.html">contact</a></li>
-							<li><a data-toggle="modal" href="#myModal" class="highlight">Login/register</a></li>
+							<li><a href="{{ url('/') }}">Home</a></li>
+                            <li><a href="{{ url('/publish') }}" class="highlight">Publish Projects</a></li>    
+                            <li><a href="{{ url('/winwork') }}" class="highlight">Win Work</a></li>
+                            <li><a href="#how-it-works">How It Works</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                            <li><a href="#about-scope">About Scope</a></li>
+                            <li><a href="#faqs">FAQ</a></li>                    
+                            <li><a href="#contact">contact</a></li>
+                            <li><a data-toggle="modal" href="#myModal" class="highlight">Login/register</a></li>
 						</ul>
 					</div>
 				</div>
@@ -180,9 +180,10 @@
 					<div class="col-sm-12 active-tenders">
 						<h3>Active Tenders</h3>
 					</div>
+					<a href="{{ url('/winwork/pds/bid') }}">
 					<div class="col-sm-3">
 						<div class="tender-box">
-							<a href="/winwork/pds/bid"></a>
+							<a href="#"></a>
 							<a href="#"></a>
 							<a href="#"></a>
 							<a href="#"></a>
@@ -190,6 +191,7 @@
 							</div>
 						</div>
 					</div>
+					</a>
 					<div class="col-sm-3">
 						<div class="tender-box">
 							<a href="#"></a>

@@ -39,9 +39,9 @@
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/publish" class="highlight">Publish Projects</a></li>    
-                            <li><a href="/winwork" class="highlight">Win Work</a></li>
+                            <li><a href="{{ url('/') }}">Home</a></li>
+                            <li><a href="{{ url('/publish') }}" class="highlight">Publish Projects</a></li>    
+                            <li><a href="{{ url('/winwork') }}" class="highlight">Win Work</a></li>
                             <li><a href="#how-it-works">How It Works</a></li>
                             <li><a href="#pricing">Pricing</a></li>
                             <li><a href="#about-scope">About Scope</a></li>
