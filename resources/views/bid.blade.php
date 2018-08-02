@@ -539,7 +539,8 @@
 											<span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 											</div>
 										</div>
-									</div><br>
+									</div>
+									<br>
 									<div class="row">
 										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
@@ -552,35 +553,461 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												Offered Services
+												
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
 												<select name="" class="form-control">
-													<option>Service 1</option>
-													<option>Service 2</option>
-													<option>Service 3</option>
-													<option>Service 4</option>
+													<option value="" disabled selected>Select Degree</option>
+													<option>BA</option>
+													<option>BSA</option>
+													<option>BAcy</option>
+													<option>BAcc</option>
+													<option>B.A.Sc.</option>
+													<option>BArch </option>
+													<option>BBA</option>
+													<option>BCE</option>
+													<option>BCom</option>
+													<option>BCA</option>
+													<option>BDes</option>
+													<option>B.Des.Corp</option>
+													<option>B.Des.Arch</option>
+													<option>BEng</option>
+													<option>BEC</option>
+													<option>BEE</option>
+													<option>BFA</option>
+													<option>B.Hlth.Sci.</option>
+													<option>BIT</option>
+													<option>BIGS</option>
+													<option>LLB</option>
+													<option>BLAS</option>
+													<option>BMath</option>
+													<option>BME</option>
+													<option>B.P.E.S.S</option>
+													<option>B.Res.Ec</option>
+													<option>BSc</option>
+													<option>BS.EOH</option>
+													<option>BSLS</option>
+													<option>BTech</option>
+													<option>BVA</option>
+													<option>MA</option>
+													<option>MBA</option>
+													<option>MCom</option>
+													<option>BCA</option>
+													<option>MEM</option>
+													<option>MEDM</option>
+													<option>MFA</option>
+													<option>MIS</option>
+													<option>LLM</option>
+													<option>MLA</option>
+													<option>MPS</option>
+													<option>MPA</option>
+													<option>MPH</option>
+													<option>MSc</option>
+													<option>MSF</option>
+													<option>MTech</option>
+													<option>DLP</option>
+													<option>Dr.mph.</option>
+													<option>PhD</option>
+													<option>PsyD</option>
+													<option>DrPH</option>
+													<option>DSc</option>
+													<option>Other</option>
 												</select>
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-sm-6">
-											<div class="form-group">
-												Track record of relevant projects
+											<div class="form-group">	
+
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Project Name">
+												<input type="text" name="" class="form-control" placeholder="Name of Degree">
 											</div>
+											<div class="input-group date" id="datepickers5" data-date="02-2012" 
+												         data-date-format="mm-yyyy">
+											<input class="form-control" type="text" placeholder="Year Awarded" readonly="readonly" name="date" >	  
+											<span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+											</div>
+											<br>
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Project Value">
+												<div class="input_fields_degree">
+												    <button class="btn btn-primary" id="add_field_degree">Add Another Project</button>
+												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												</div>
+											</div>
+											
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+												Seniority
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Enter Level of Seniority">
 											</div>
 										</div>
 									</div>
+									
+										<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+												Awards
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Enter Name Of Awards">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">
+											
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Awarded by">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">
+											
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Enter Details">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6"></div>
+										<div class="col-sm-6">
+											<div class="input-group date" id="datepickers6" data-date="02-2012" 
+											 data-date-format="mm-yyyy">
+											<input class="form-control" type="text" placeholder="Year Awarded" readonly="readonly" name="date" >	  
+											<span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+											</div>
+										</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6">
+											
+										</div>
+										<div class="col-sm-6">
+												<div class="input_fields_degree">
+												    <button class="btn btn-primary" id="add_field_degree">Add Another Award</button>
+												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												</div>
+											</div>
+									</div><br>
+										 <div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+											 Services
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<select name="" class="form-control">
+													<option value="" disabled selected>Select Industry</option>
+													<option>Construction</option>
+													<option>Others</option>
+													
+												</select>
+											</div>
+										</div>
+									</div>
+									 <div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+											
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<select name="Sel"  class="form-control" >
+													<option value="" disabled selected>Select Service
+													<option>Architect</option>
+													<option>Sturctural Engineed</option>
+													<option>Service Engineer</option>
+													<option>Fire Engineer</option>
+													<option>Acoustic Engineer</option>
+													<option>Principal Designer</option>
+													<option>Fascade Engineer</option>
+													<option>Building Control</option>
+													<option>Lighting Consultant</option>
+													<option>Security Consultant</option>
+													<option>Plannning Consultant</option>
+													<option>Sustainability Consultant</option>
+													<option>BIM Consultant</option>
+													<option>Quantity Surveyor</option>
+													<option>Project Manager</option>
+													<option>Other</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">
+											
+										</div>
+										<div class="col-sm-6">
+												<div class="input_fields_serve1">
+												    <button class="btn btn-primary" id="add_field_serve1">Add Another Service</button>
+												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												</div>
+											</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6">
+											
+										</div>
+										<div class="col-sm-6">
+												<div class="input_fields_indus">
+												    <button class="btn btn-primary" id="add_field_indus1">Add Another Industry</button>
+												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												</div>
+											</div>
+									</div><br>
+										<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+												Project Exprerience
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Enter Project Title">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">
+											
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Value">
+											</div>
+										</div>
+
+									</div>
+									<div class="row">
+										<div class="col-sm-6">
+											
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<select name="Sel"  class="form-control" >
+													<option value="" disabled selected>Select Type of Use
+													<option>Residential</option>
+													<option>Commercial </option>
+													<option>Retail</option>
+													<option>Leisure</option>
+													<option>Sports and Venues</option>
+													<option>Hotel</option>
+													<option>Industrial</option>
+													<option>Education</option>
+													<option>Healthcare</option>
+													<option>Defence</option>
+													<option>Aviation</option>
+													<option>Highways</option>
+													<option>Bridges</option>
+													<option>Rail</option>
+													<option>Water</option>
+													<option>Oil,Gas and Chemical</option>
+													<option>Other</option>
+												</select>
+												
+											</div>
+										</div>
+									</div>
+										<div class="row">
+										<div class="col-sm-6">
+											
+										</div>
+										<div class="col-sm-6">
+												<div class="input_fields_add">
+												    <button class="btn btn-primary" id="add_field_add">Add Another type of use</button>
+												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												</div>
+											</div>
+									</div><br>
+							        		<div class="row">
+										<div class="col-sm-6">
+											
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<select name="Sel"  class="form-control" >
+													<option value="" disabled selected>Select Service
+													<option>Architect</option>
+													<option>Sturctural Engineed</option>
+													<option>Service Engineer</option>
+													<option>Fire Engineer</option>
+													<option>Acoustic Engineer</option>
+													<option>Principal Designer</option>
+													<option>Fascade Engineer</option>
+													<option>Building Control</option>
+													<option>Lighting Consultant</option>
+													<option>Security Consultant</option>
+													<option>Plannning Consultant</option>
+													<option>Sustainability Consultant</option>
+													<option>BIM Consultant</option>
+													<option>Quantity Surveyor</option>
+													<option>Project Manager</option>
+													<option>Other</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">
+											
+										</div>
+											<div class="col-sm-6">
+												<div class="input-group date" id="datepicker7" data-date="02-2012" 
+												         data-date-format="mm-yyyy">
+
+													 <input class="form-control" type="text" placeholder="Provided this Service from" readonly="readonly" name="date" >	  
+													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+												</div>
+											</div>
+
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6">
+											
+										</div>
+											<div class="col-sm-6">
+												<div class="input-group date" id="datepicker8" data-date="02-2012" 
+												         data-date-format="mm-yyyy">
+
+													 <input class="form-control" type="text" placeholder="Provided this Service until" readonly="readonly" name="date" >	  
+													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+												</div>
+											</div>
+
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6">
+											
+										</div>
+										<div class="col-sm-6">
+												<div class="input_fields_serve2">
+												    <button class="btn btn-primary" id="add_field_serve2">Add Another service</button>
+												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												</div>
+											</div>
+									</div><br>
+										<div class="row">
+										<div class="col-sm-6">
+											
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<select name="Sel"  class="form-control" >
+													<option value="" disabled selected>Select Types of Development
+													<option>New Built</option>
+													<option>Refurbishment</option>
+													<option>Demolition</option>
+													
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">
+											
+										</div>
+										<div class="col-sm-6">
+												<div class="input_fields_type1">
+												    <button class="btn btn-primary" id="add_field_type1">Add Another service</button>
+												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												</div>
+											</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6"></div>
+
+										<div class="col-sm-6">
+												<input type="text" name="" class="form-control" placeholder="Enter Description of the Project">
+											</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6"></div>
+										<div class="col-sm-6">													
+												<div class="btn-sm btn-primary">
+							       	                 <input type="file" name="file"/ placeholder="upload images">
+							                    </div>
+						                    </div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6">
+											
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<select name="Sel"  class="form-control" >
+													<option value="" disabled selected>Select Project Team Member
+													<option>Architect</option>
+													<option>Sturctural Engineed</option>
+													<option>Service Engineer</option>
+													<option>Fire Engineer</option>
+													<option>Acoustic Engineer</option>
+													<option>Principal Designer</option>
+													<option>Fascade Engineer</option>
+													<option>Building Control</option>
+													<option>Lighting Consultant</option>
+													<option>Security Consultant</option>
+													<option>Plannning Consultant</option>
+													<option>Sustainability Consultant</option>
+													<option>BIM Consultant</option>
+													<option>Quantity Surveyor</option>
+													<option>Project Manager</option>
+													<option>Other</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6"></div>
+
+										<div class="col-sm-6">
+												<input type="text" name="" class="form-control" placeholder="Enter new Company Name">
+											</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6">
+											
+										</div>
+										<div class="col-sm-6">
+												<div class="input_fields_member">
+												    <button class="btn btn-primary" id="add_field_member">Add Another Project Team Member</button>
+												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												</div>
+											</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6">
+											
+										</div>
+										<div class="col-sm-6">
+												<div class="input_fields_project1">
+												    <button class="btn btn-primary" id="add_field_project1">Add Another Project</button>
+												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												</div>
+											</div>
+									</div><br>
 									<div class="form-group">
 										<input type="submit" name="submit" value="Submit" class="btn btn-primary">
 										<input type="submit" name="Save" value="Save" class="btn btn-success">
@@ -752,6 +1179,7 @@
 											</div>
 										</div>
 									</div>
+
 									<div class="form-group">
 										<input type="submit" name="submit" value="Submit" class="btn btn-primary">
 										<input type="submit" name="Save" value="Save" class="btn btn-success">
@@ -855,6 +1283,13 @@
 		});
 </script>
 <script>
+	$("#datepicker7").datepicker( {
+		    format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+		});
+</script>
+<script>
 	$("#datepicker2").datepicker( {
 		    format: "mm-yyyy",
 		    viewMode: "months", 
@@ -869,7 +1304,28 @@
 		});
 </script>
 <script>
+	$("#datepicker8").datepicker( {
+		    format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+		});
+</script>
+<script>
 	$("#datepickers").datepicker( {
+		    format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+		});
+</script>
+<script>
+	$("#datepickers6").datepicker( {
+		    format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+		});
+</script>
+<script>
+	$("#datepickers5").datepicker( {
 		    format: "mm-yyyy",
 		    viewMode: "months", 
 		    minViewMode: "months"
@@ -898,8 +1354,128 @@
 <script type="text/javascript">
 	$(document).ready(function() {
     var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_type1"); //Fields wrapper
+    var add_button      = $("#add_field_type1"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_serve2"); //Fields wrapper
+    var add_button      = $("#add_field_serve2"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
     var wrapper         = $(".input_fields_service"); //Fields wrapper
     var add_button      = $("#add_field_service"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_indus"); //Fields wrapper
+    var add_button      = $("#add_field_indus"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_member"); //Fields wrapper
+    var add_button      = $("#add_field_member"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_project1"); //Fields wrapper
+    var add_button      = $("#add_field_project1"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_serve1"); //Fields wrapper
+    var add_button      = $("#add_field_serve1"); //Add button ID
     
     var x = 1; //initlal text box count
     $(add_button).click(function(e){ //on add input button click
@@ -1000,6 +1576,46 @@
     var max_fields      = 10; //maximum input boxes allowed
     var wrapper         = $(".input_fields_project"); //Fields wrapper
     var add_button      = $("#add_field_project"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_degree"); //Fields wrapper
+    var add_button      = $("#add_field_degree"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_add"); //Fields wrapper
+    var add_button      = $("#add_field_add"); //Add button ID
     
     var x = 1; //initlal text box count
     $(add_button).click(function(e){ //on add input button click
