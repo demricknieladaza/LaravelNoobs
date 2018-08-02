@@ -180,37 +180,50 @@
 					<div class="col-sm-12 active-tenders">
 						<h3>Active Tenders</h3>
 					</div>
-					<a href="{{ url('/winwork/pds/bid') }}">
 					<div class="col-sm-3">
-						<div class="tender-box">
-							<a href="#"></a>
-							<a href="#"></a>
-							<a href="#"></a>
-							<a href="#"></a>
-							<div class="tender-btn">
-							</div>
-						</div>
-					</div>
-					</a>
-					<div class="col-sm-3">
-						<div class="tender-box">
-							<a href="#"></a>
-							<a href="#"></a>
-							<a href="#"></a>
-							<a href="#"></a>
-							<div class="tender-btn">
-							</div>
-						</div>
+						<a href="{{ url('/winwork/pds/bid') }}">
+						  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+						    <div class="flipper">
+						      <div class="front">
+						      	<h1 style="color: #000; font-size: 20px;">Fire Engineer</h1>
+						      	<p> 9 days left</p>	
+						      </div>
+						      <div class="back">
+						      	<h1>SUBMIT BID<br>-<br>WIN WORK</h1>
+						      </div>
+						    </div>
+						  </div>
+						</a>
 					</div>
 					<div class="col-sm-3">
-						<div class="tender-box">
-							<a href="#"></a>
-							<a href="#"></a>
-							<a href="#"></a>
-							<a href="#"></a>
-							<div class="tender-btn">
-							</div>
-						</div>
+						<a href="#">
+						  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+							<div class="flipper">
+						      <div class="front">
+						      	<h1 style="color: #000; font-size: 20px;">Fire Engineer</h1>
+						      	<p> 9 days left</p>	
+						      </div>
+						      <div class="back">
+						      	<h1>SUBMIT BID<br>-<br>WIN WORK</h1>
+						      </div>
+						    </div>
+						  </div>
+						</a>
+					</div>
+					<div class="col-sm-3">
+						<a href="#">
+						  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+							<div class="flipper">
+						      <div class="front">
+						      	<h1 style="color: #000; font-size: 20px;">Fire Engineer</h1>
+						      	<p> 9 days left</p>	
+						      </div>
+						      <div class="back">
+						      	<h1>SUBMIT BID<br>-<br>WIN WORK</h1>
+						      </div>
+						    </div>
+						  </div>
+						</a>
 					</div>
 				</div>				
 			</div>
@@ -220,15 +233,6 @@
 					<a href="#">Tender Queries</a>
 					<a href="#cprofile">Employer Details</a>
 				</div>
-			</div>
-			<div class="tender-container">				
-				<div class="row">
-					<div class="col-sm-12 active-tenders">
-						<h3>Project Vision and Brief</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					</div>
-				</div>				
 			</div>
 			<div class="tender-container">
 				<div class="row">
@@ -434,6 +438,15 @@
 						</table>						
 					</div>
 				</div>
+			</div>
+			<div class="tender-container">				
+				<div class="row">
+					<div class="col-sm-12 active-tenders">
+						<h3>Project Vision and Brief</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+				</div>				
 			</div>
 			<div class="tender-container">
 				<div class="row">

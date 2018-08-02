@@ -1268,3 +1268,60 @@ input.search-query{padding-right:14px;padding-right:4px \9;padding-left:14px;pad
 body > div:nth-child(17) > div > div.col-sm-12{
     padding-bottom: 12px;
 }
+
+.flip-container {perspective: 1000px; transform-style: preserve-3d;}
+.flip-container:hover .back {transform: rotateY(0deg);}
+.flip-container:hover .front {transform: rotateY(180deg);}
+.flip-container, .front, .back {
+  width: 100%;
+  height: 150px;
+  margin: 0 25px 25px 0;
+  float:left;
+}
+
+.flipper {transition: 0.6s; transform-style: preserve-3d;   position: relative;}
+
+/* hide back of pane during swap */
+.front, .back {
+    backface-visibility: hidden;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.front {z-index: 2; transform: rotateY(0deg);}
+.back {
+    transform: rotateY(-180deg);
+  background: #FE7235;
+  color: #000;
+  text-align:center;
+  line-height:1.4em;
+}
+
+.vertical.flip-container {position: relative;}
+.vertical .back {   transform: rotateX(180deg);}
+.vertical.flip-container:hover .back  {transform: rotateX(0deg);}
+.vertical.flip-container:hover .front {transform: rotateX(180deg);}
+.front {
+    background: #fff; 
+    color:#000; text-align:center; 
+    background: url(../images/icon-fire-demo.png) center;
+    background-size: 400px;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    padding-top: 50px;
+    }
+h1{ padding-top:25px; color:#fff;}
+
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(1) > div > div:nth-child(2) > a > div > div > div.back > h1,
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(1) > div > div:nth-child(3) > a > div > div > div.back > h1,
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(1) > div > div:nth-child(4) > a > div > div > div.back > h1{
+      padding-top: 18px;
+    text-align: left;
+    font-size: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #fff;  
+}
