@@ -488,7 +488,7 @@
 						<h3>Employer Details</h3>
 						<div class="row">	
 							<div class="col-sm-9">				
-								<table class="table  table-hover">
+								<table class="table table-striped table-hover">
 									<tr>
 										<td>Employer</td>
 										<td>British Land</td>
