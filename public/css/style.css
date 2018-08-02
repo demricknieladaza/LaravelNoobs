@@ -18,7 +18,7 @@ h3.light-title{ font-size: 35px; font-weight: bolder; color: #fff; text-transfor
 	z-index: 110;
 	width: 45px;
 	height: 45px;
-	background: url(../black-skin-2.png) black;
+	background: url(../images/black-skin-2.png) black;
 	-webkit-background-clip: padding-box;
 	-moz-background-clip: padding-box;
 	background-clip: padding-box;
@@ -106,7 +106,7 @@ h3.light-title{ font-size: 35px; font-weight: bolder; color: #fff; text-transfor
     transition-delay: 0.1s;
 }
 .image-holder:hover p img{ opacity: 1; }
-.about-text{ background: url(../about_bg.jpg) no-repeat; background-size: cover; padding: 160px 0; }
+.about-text{ background: url(../images/about_bg.jpg) no-repeat; background-size: cover; padding: 160px 0; }
 .about-text p{
 	font-family: open sans;
     color: #000;
@@ -165,10 +165,10 @@ textarea.form-control{ height: auto !important; }
 .welcome span{ background: #fff; padding: 0 20px; position: relative; z-index: 9; }
 .testimonial-header{ font-size: 22px; }
 .info-for-clients{ margin-top: 30px; }
-.parallax1{ background: url(../found.jpg); }
-.parallax2{ background: url(../smart.jpg); }
-.parallax3{ background: url(../open.jpg); }
-.parallax4{ background: url(../exp.jpg); }
+.parallax1{ background: url(../images/found.jpg); }
+.parallax2{ background: url(../images/smart.jpg); }
+.parallax3{ background: url(../images/open.jpg); }
+.parallax4{ background: url(../images/exp.jpg); }
 
 .parallax{ 
   background-attachment: fixed;
@@ -270,7 +270,7 @@ body{ width: 100%; overflow: hidden; overflow-y: scroll; background: #f7f7f7; }
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(../tri21.png) no-repeat center center;
+    background: url(../images/tri21.png) no-repeat center center;
     background-size: 100% 100%;
     content: '';
     -webkit-transition: opacity 0.45s, -webkit-transform 0.45s;
@@ -286,7 +286,7 @@ body{ width: 100%; overflow: hidden; overflow-y: scroll; background: #f7f7f7; }
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(../tri22.png) no-repeat center center;
+    background: url(../images/tri22.png) no-repeat center center;
     background-size: 100% 100%;
     content: '';
     -webkit-transition: opacity 0.45s, -webkit-transform 0.45s;
@@ -523,7 +523,7 @@ table table tr td{ vertical-align: top; }
 .lounge-main .btn-default:hover, .lounge-main .btn-default:focus{ background: #fff; } 
 
 .lounge-wrapper{ position: relative; min-height: 600px; }
-.lounge-menu{ position: absolute; height: 150%; width: 16.66%; top: 0; left: 0; z-index: 1; }
+.lounge-menu{ position: absolute; height: 100%; width: 16.66%; top: 0; left: 0; z-index: 1; }
 .table-left{ padding-right: 0; }
 .table-right{ padding-left: 0; }
 .org-head{ margin: 10px 0 15px 0 !important; }
@@ -827,7 +827,7 @@ body > div.container-fluid.search_results.wow.fadeInUp > div > div > div > div.c
     width: 40px;
     height: 40px;
     cursor: pointer;
-    background: url(../a17.png) no-repeat;
+    background: url(../images/a17.png) no-repeat;
     overflow: hidden;
 }
 .jssora05l { background-position: -10px -40px; }
@@ -917,7 +917,7 @@ body > div.container-fluid.search_results.wow.fadeInUp > div > div > div > div.c
 
 /* vertical range slider */
 .khalifa{
-    background: url(../khalifa-model.png) no-repeat;
+    background: url(../images/khalifa-model.png) no-repeat;
     background-size: contain;
     background-position: center;
     height: 300px;
@@ -1121,7 +1121,7 @@ input[type=range]::-ms-thumb {
   color: #333;
   font-size: 18px;
   padding-top: 100px;
-  background: url(../icon-fire-demo.png);
+  background: url(../images/icon-fire-demo.png);
   background-size: 400px;
   background-repeat: no-repeat;
   background-position: center;
@@ -1263,4 +1263,8 @@ input.search-query{padding-right:14px;padding-right:4px \9;padding-left:14px;pad
     border-radius: 12px;
     background: #E7753F;
     color: white;
+}
+
+body > div:nth-child(17) > div > div.col-sm-12{
+    padding-bottom: 12px;
 }

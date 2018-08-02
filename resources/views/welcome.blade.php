@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="css/bxslider.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="shortcut icon" href="../logo.jpg">
+    <link rel="shortcut icon" href="../images/logo.jpg">
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/masterslider.min.js"></script>
@@ -35,7 +35,7 @@
                             <i class="icon-bar"></i>
                             <i class="icon-bar"></i>
                         </button>
-                        <a href="#" class="navbar-brand"><img src="../logo.png" width="120"></a>
+                        <a href="#" class="navbar-brand"><img src="../images/logo.png" width="120"></a>
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
@@ -161,29 +161,29 @@
         <div class="row">
             <div class="master-slider ms-skin-black-2 round-skin" id="mainSlider">
                 <div class="ms-slide slide-1" data-delay="4" style="z-index: 10">
-                    <img src="../blank.gif" data-src="../slider-plain.jpg" />
-                    <img src="../blank.gif" data-src="../scope-white.png" width="800" class="ms-layer" style="bottom:200px; left:200px;" data-effect="bottom(100,500,true)" data-type="image" data-delay="0" data-duration="3500" data-ease="easeOutQuad" class="slider-logo" />  
+                    <img src="../images/blank.gif" data-src="../images/slider-plain.jpg" />
+                    <img src="../images/blank.gif" data-src="../images/scope-white.png" width="800" class="ms-layer" style="bottom:200px; left:200px;" data-effect="bottom(100,500,true)" data-type="image" data-delay="0" data-duration="3500" data-ease="easeOutQuad" class="slider-logo" />  
                 </div>
                 <div class="ms-slide slide-2" data-delay="4" style="z-index: 11">
-                    <img src="../blank.gif" data-src="../Build Relationships.jpg" />
+                    <img src="../images/blank.gif" data-src="../images/Build Relationships.jpg" />
                     <h1 class="ms-layer bold-title"  style="left:47px; top:230px"
                     data-effect="skewleft(18,200,c)" data-duration="2500" data-delay="0" data-ease="easeOutExpo">Build Relationships</h1>
                     <h3 class="slide-4 ms-layer light-title"  style="left:47px; top:270px" data-effect="right(150)" data-duration="2500" data-delay="0" data-ease="easeOutExpo">Find the right partner to realise your dreams</h3>
                 </div>
                 <div class="ms-slide slide-2" data-delay="4" style="z-index: 11">
-                    <img src="../blank.gif" data-src="../slider1.jpg" />
+                    <img src="../images/blank.gif" data-src="../images/slider1.jpg" />
                     <h1 class="ms-layer bold-title"  style="left:47px; top:230px"
                     data-effect="skewleft(18,200,c)" data-duration="2500" data-delay="0" data-ease="easeOutExpo">Compare Apples with Apples</h1>
                     <h3 class="slide-4 ms-layer light-title"  style="left:47px; top:270px" data-effect="right(150)" data-duration="2500" data-delay="0" data-ease="easeOutExpo">Easy Like-for-Like Comparison of Tender Proposals</h3>
                 </div>
                 <div class="ms-slide slide-3" data-delay="4" style="z-index: 12">
-                    <img src="../blank.gif" data-src="../slider2.jpg" />     
+                    <img src="../images/blank.gif" data-src="../images/slider2.jpg" />     
                     <h1 class="ms-layer bold-title"  style="left:47px; top:230px"
                     data-effect="skewleft(18,200,c)" data-duration="2500" data-delay="0" data-ease="easeOutExpo">Competitive Proposals</h1>
                     <h3 class="slide-4 ms-layer light-title"  style="left:47px; top:270px" data-effect="right(150)" data-duration="2500" data-delay="0" data-ease="easeOutExpo">Get more for your money by increasing competition</h3>
                 </div>
                 <div class="ms-slide slide-4" data-delay="4" style="z-index: 12">
-                    <img src="../blank.gif" data-src="../slider5.jpg" />     
+                    <img src="../images/blank.gif" data-src="../images/slider5.jpg" />     
                     <h1 class="ms-layer bold-title"  style="left:47px; top:230px"
                     data-effect="skewleft(18,200,c)" data-duration="2500" data-delay="0" data-ease="easeOutExpo">Take the Shortcut</h4>
                     <h3 class="slide-4 ms-layer light-title"  style="left:47px; top:270px" data-effect="right(150)" data-duration="2500" data-delay="0" data-ease="easeOutExpo">Just a few simple steps to achieve your goals</h3>
@@ -205,10 +205,10 @@
             <div class="col-sm-6 text-center first-on-scope">
                 <div class="row">
                     <div class="image-holder">
-                        <a href="#"><img src="../publish.jpg" width="100%"></a>
+                        <a href="#"><img src="../images/publish.jpg" width="100%"></a>
                         <div class="caption">
                             <h1><b>Publish</b> Projects</h1>
-                            <p><img src="../pp-icon.png"></p>
+                            <p><img src="../images/pp-icon.png"></p>
                         </div>
                     </div>              
                 </div>
@@ -216,10 +216,10 @@
             <div class="col-sm-6 text-center">
                 <div class="row">
                     <div class="image-holder">
-                        <a href="#"><img src="../win.jpg" width="100%"></a>
+                        <a href="#"><img src="../images/win.jpg" width="100%"></a>
                         <div class="caption">
                             <h1><b>Win</b> Work</h1>
-                            <p><img src="../ww-icon.png"></p>
+                            <p><img src="../images/ww-icon.png"></p>
                         </div>
                     </div>
                 </div>
@@ -1492,7 +1492,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h1>SC<span>OP</span>E - Open Procurement</h1>
-                    <p>Harnessing the Best Talents by giving an Entire Industry<br>the Opportunity to Win Work<br>on <span>Public (OJEU) and</span> Private Projects.</p>
+                    <p>Harnessing the Best Talents by giving an Entire Industry<br>the Opportunity to Win Work<br>on Public (OJEU) and Private Projects.</p>
                 </div>
                 <div class="col-sm-6 text-right">
                     <h1>SCOP<span>E</span> - Experience</h1>
@@ -1808,7 +1808,7 @@
 
     <footer class="text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
         <div class="col-sm-12">
-            <p><img src="../scope-white.png" width="80%"></p>
+            <p><img src="../images/scope-white.png" width="80%"></p>
             <p>
                 <a href="#"><i class="fa fa-facebook"></i></a>
                 <a href="#"><i class="fa fa-twitter"></i></a>

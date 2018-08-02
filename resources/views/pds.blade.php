@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../css/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="../css/bxslider.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="shortcut icon" href="../logo.jpg">
+    <link rel="shortcut icon" href="../images/logo.jpg">
     <script type="text/javascript" src="../js/jquery.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/masterslider.min.js"></script>
@@ -34,7 +34,7 @@
 							<i class="icon-bar"></i>
 							<i class="icon-bar"></i>
 						</button>
-						<a href="#" class="navbar-brand"><img src="../logo.png" width="120"></a>
+						<a href="#" class="navbar-brand"><img src="../images/logo.png" width="120"></a>
 					</div>
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">
@@ -159,16 +159,16 @@
 	<div class="container-fluid below-header project-img-collection text-center">
 		<h1>Canada Water Masterplan</h1>
 		<div class="project-image popup-gallery">
-			<a href="../demo1.jpg"><img src="../demo1.jpg"/></a>
+			<a href="../images/demo1.jpg"><img src="../images/demo1.jpg"/></a>
 		</div>
 		<div class="project-image popup-gallery">
-			<a href="../demo2.jpg"><img src="../demo2.jpg"/></a>
+			<a href="../images/demo2.jpg"><img src="../images/demo2.jpg"/></a>
 		</div>
 		<div class="project-image popup-gallery">
-			<a href="../demo3.jpg"><img src="../demo3.jpg"/></a>
+			<a href="../images/demo3.jpg"><img src="../images/demo3.jpg"/></a>
 		</div>
 		<div class="project-image popup-gallery">
-			<a href="../demo4.jpg"../demo1.jpg><img src="../demo4.jpg"/></a>
+			<a href="../images/demo4.jpg"../images/demo1.jpg><img src="../images/demo4.jpg"/></a>
 		</div>
 	</div>	
 
@@ -497,7 +497,7 @@
 								</table>
 							</div>
 							<div class="col-sm-3 company-quick-details">
-								<p><img src="../logo-british.jpg"></p>
+								<p><img src="../images/logo-british.jpg"></p>
 								<p>Active Projects <span class="badge">4</span></p>
 								<p>Active Tenders <span class="badge">9</span></p>
 								<p>Status 
@@ -521,7 +521,7 @@
 				<div class="media">
 					<a href="#">
 						<div class="media-left">
-							<img src="../construction.jpg" width="80">
+							<img src="../images/construction.jpg" width="80">
 						</div>
 						<div class="media-body">
 							<h3>Canada Water Masterplan</h3>
@@ -532,7 +532,7 @@
 				<div class="media">
 					<a href="#">
 						<div class="media-left">
-							<img src="../construction.jpg" width="80">
+							<img src="../images/construction.jpg" width="80">
 						</div>
 						<div class="media-body">
 							<h3>Canada Water Masterplan</h3>
@@ -543,7 +543,7 @@
 				<div class="media">
 					<a href="#">
 						<div class="media-left">
-							<img src="../construction.jpg" width="80">
+							<img src="../images/construction.jpg" width="80">
 						</div>
 						<div class="media-body">
 							<h3>Canada Water Masterplan</h3>
@@ -554,7 +554,7 @@
 				<div class="media">
 					<a href="#">
 						<div class="media-left">
-							<img src="../construction.jpg" width="80">
+							<img src="../images/construction.jpg" width="80">
 						</div>
 						<div class="media-body">
 							<h3>Canada Water Masterplan</h3>
@@ -565,7 +565,7 @@
 				<div class="media">
 					<a href="#">
 						<div class="media-left">
-							<img src="../construction.jpg" width="80">
+							<img src="../images/construction.jpg" width="80">
 						</div>
 						<div class="media-body">
 							<h3>Canada Water Masterplan</h3>
@@ -589,7 +589,7 @@
 			<div class="owl-div">
 				<a href="#">
 					<div class="thumb-img thumbnail">
-						<img src="../construction.jpg">
+						<img src="../images/construction.jpg">
 					</div>
 					<div class="thumb-title">
 						<h3>Canada Water Masterplan</h3>
@@ -600,7 +600,7 @@
 			<div class="owl-div">
 				<a href="#">
 					<div class="thumb-img thumbnail">
-						<img src="../construction.jpg">
+						<img src="../images/construction.jpg">
 					</div>
 					<div class="thumb-title">
 						<h3>Canada Water Masterplan</h3>
@@ -611,7 +611,7 @@
 			<div class="owl-div">
 				<a href="#">
 					<div class="thumb-img thumbnail">
-						<img src="../construction.jpg">
+						<img src="../images/construction.jpg">
 					</div>
 					<div class="thumb-title">
 						<h3>Canada Water Masterplan</h3>
@@ -622,7 +622,7 @@
 			<div class="owl-div">
 				<a href="#">
 					<div class="thumb-img thumbnail">
-						<img src="../construction.jpg">
+						<img src="../images/construction.jpg">
 					</div>
 					<div class="thumb-title">
 						<h3>Canada Water Masterplan</h3>
@@ -633,7 +633,7 @@
 			<div class="owl-div">
 				<a href="#">
 					<div class="thumb-img thumbnail">
-						<img src="../construction.jpg">
+						<img src="../images/construction.jpg">
 					</div>
 					<div class="thumb-title">
 						<h3>Canada Water Masterplan</h3>
@@ -644,7 +644,7 @@
 			<div class="owl-div">
 				<a href="#">
 					<div class="thumb-img thumbnail">
-						<img src="../construction.jpg">
+						<img src="../images/construction.jpg">
 					</div>
 					<div class="thumb-title">
 						<h3>Canada Water Masterplan</h3>
@@ -655,7 +655,7 @@
 			<div class="owl-div">
 				<a href="#">
 					<div class="thumb-img thumbnail">
-						<img src="../construction.jpg">
+						<img src="../images/construction.jpg">
 					</div>
 					<div class="thumb-title">
 						<h3>Canada Water Masterplan</h3>
@@ -670,7 +670,7 @@
 
 <footer class="text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
 	<div class="col-sm-12">
-		<p><img src="../logo.png"></p>
+		<p><img src="../images/logo.png"></p>
 		<p>
 			<a href="#"><i class="fa fa-facebook"></i></a>
 			<a href="#"><i class="fa fa-twitter"></i></a>
@@ -689,7 +689,7 @@
 	$('.popup-gallery').magnificPopup({
 		delegate: 'a',
 		type: 'image',
-		tLoading: 'Loading image #%curr%...',
+		tLoading: 'Loading image #%curr%../images.',
 		mainClass: 'mfp-img-mobile',
 		gallery: {
 			enabled: true,
