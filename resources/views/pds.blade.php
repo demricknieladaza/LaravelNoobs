@@ -454,7 +454,7 @@
 						<h3>Tender Queries</h3>
 						<div class="row">	
 							<div class="col-sm-12">				
-								<table class="table  table-hover">
+								<table class="table table-striped table-hover">
 									<tr>
 										<td id="black">#</td>
 										<td>Query</td>
