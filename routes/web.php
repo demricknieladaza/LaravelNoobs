@@ -21,12 +21,12 @@ Route::get('/publish', 'UsersController@publish_controller');
 
 Route::get('/winwork/pds/bid', 'UsersController@bid_controller');
 
-Route::get('/publish/dashboard', 'UsersController@dashboard_controller');
+Route::get('/dashboard', 'UsersController@dashboard_controller');
 
-Route::get('/publish/dashboard/emp_dashboard', 'UsersController@emp_dashboard_controller');
+Route::get('/dashboard/emp_dashboard', 'UsersController@emp_dashboard_controller');
 
-Route::get('/publish/dashboard/tend_dashboard', 'UsersController@tend_dashboard_controller');
+Route::get('/dashboard/tend_dashboard', 'UsersController@tend_dashboard_controller');
 
-Route::get('/publish/dashboard/benchmark_dashboard', 'UsersController@benchmark_dashboard_controller');
+Route::get('/dashboard/benchmark_dashboard', 'UsersController@benchmark_dashboard_controller');
 
-Route::get('/publish/dashboard/policies', 'UsersController@policies_controller');
+Route::get('/dashboard/policies', 'UsersController@policies_controller');

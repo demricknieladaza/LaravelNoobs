@@ -166,11 +166,11 @@
 				<div class="clearfix"></div>
 				<ul class="nav lounge-nav">
 					<li>
-						<a href="#" class="menu-title policies-link">Dashboards</a>
+						<a href="{{ url('/dashboard') }}" class="menu-title policies-link">Dashboards</a>
 						<ul>
-							<li><a href="{{ url('/publish/dashboard/emp_dashboard') }}"><i class="fa fa-circle-o"></i> Employer Dashboard</a></li>
-							<li><a href="{{ url('/publish/dashboard/tend_dashboard') }}"><i class="fa fa-circle-o"></i> Tenderer Dashboard</a></li>
-							<li><a href="{{ url('/publish/dashboard/benchmark_dashboard') }}"><i class="fa fa-circle-o"></i> Benchmarking</a></li>
+							<li><a href="{{ url('dashboard/emp_dashboard') }}"><i class="fa fa-circle-o"></i> Employer Dashboard</a></li>
+							<li><a href="{{ url('dashboard/tend_dashboard') }}"><i class="fa fa-circle-o"></i> Tenderer Dashboard</a></li>
+							<li><a href="{{ url('dashboard/benchmark_dashboard') }}"><i class="fa fa-circle-o"></i> Benchmarking</a></li>
 						</ul>
 					</li>
 					<li>
@@ -183,7 +183,7 @@
 						</ul>
 					</li>
 					<li>
-						<a href="{{ url('/publish/dashboard/policies') }}" class="menu-title policies-link">Policies </a>			          
+						<a href="{{ url('dashboard/policies') }}" class="menu-title policies-link">Policies </a>			          
 					</li>										
 				</ul>
 			</div>
