@@ -30,7 +30,7 @@
 							<i class="icon-bar"></i>
 							<i class="icon-bar"></i>
 						</button>
-						<a href="#" class="navbar-brand"><img src="../images/logo.png" width="120"></a>
+						<a href="{{ url('/') }}" class="navbar-brand"><img src="../../images/logo.png" width="120"></a>
 					</div>
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">
@@ -168,18 +168,11 @@
 					<li>
 						<a href="#" class="menu-title policies-link">Dashboards</a>
 						<ul>
-							<li><a href="#" class="active"><i class="fa fa-circle-o"></i> Employer Dashboard</a></li>
-							<li><a href="#"><i class="fa fa-circle-o"></i> Tenderer Dashboard</a></li>
-							<li><a href="#"><i class="fa fa-circle-o"></i> Benchmarking</a></li>
+							<li><a href="{{ url('/publish/dashboard/emp_dashboard') }}"><i class="fa fa-circle-o"></i> Employer Dashboard</a></li>
+							<li><a href="{{ url('/publish/dashboard/tend_dashboard') }}"><i class="fa fa-circle-o"></i> Tenderer Dashboard</a></li>
+							<li><a href="{{ url('/publish/dashboard/benchmark_dashboard') }}"><i class="fa fa-circle-o"></i> Benchmarking</a></li>
 						</ul>
 					</li>
-					<!-- <li>
-						<a href="#" class="menu-title tools-menu">Tools</a>
-						<ul>
-							
-							<li><a href="#"><i class="fa fa-circle-o"></i> Scopes of Services</a></li>
-						</ul>
-					</li> -->
 					<li>
 						<a href="#" class="menu-title policies-link">My Profile</a>
 						<ul>
@@ -190,7 +183,7 @@
 						</ul>
 					</li>
 					<li>
-						<a href="#" class="menu-title policies-link">Policies </a>			          
+						<a href="{{ url('/publish/dashboard/policies') }}" class="menu-title policies-link">Policies </a>			          
 					</li>										
 				</ul>
 			</div>

@@ -1326,3 +1326,14 @@ body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(1) > di
     color: #fff;  
     text-align: center;
 }
+
+
+.navbar {
+    margin-bottom: -2px;
+}
+
+.lounge-main .panel {
+    background: none;
+    border-bottom: none;
+    /* border-bottom: 1px solid #222; */
+}

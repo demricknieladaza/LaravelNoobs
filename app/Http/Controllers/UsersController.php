@@ -35,4 +35,24 @@ class UsersController extends Controller
     {
     	return view('dashboard');
     }
+
+    public function emp_dashboard_controller()
+    {
+        return view('emp_dashboard');
+    }
+
+    public function tend_dashboard_controller()
+    {
+        return view('tend_dashboard');
+    }  
+
+    public function benchmark_dashboard_controller()
+    {
+        return view('benchmark_dashboard');
+    }  
+
+    public function policies_controller()
+    {
+        return view('policies');
+    }
 }
