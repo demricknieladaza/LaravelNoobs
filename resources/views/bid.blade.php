@@ -253,8 +253,8 @@
 												</div>
 											</div>
 											<div class="form-group">
-												<div class="input_fields_wrap">
-												    <button class="btn btn-primary" id="add_field_button">Add Another Award</button>
+												<div class="input_fields_piste">
+												    <button class="btn btn-primary" id="add_field_piste">Add Another Award</button>
 												    <div><input class="form-control" type="text" name="mytext[]"></div>
 												</div>
 											</div>
@@ -493,8 +493,8 @@
 									<div class="row">
 										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
-											<div class="input_fields_wrap">
-											<button class="btn btn-primary" id="add_field_button">Add Another Accreditation</button>
+											<div class="input_fields_yawa">
+											<button class="btn btn-primary" id="add_field_yawa">Add Another Accreditation</button>
 											<div><input class="form-control" type="text" name="mytext[]"></div>
 											</div>
 										</div>
@@ -652,8 +652,8 @@
 											
 										</div>
 										<div class="col-sm-6">
-												<div class="input_fields_degree">
-												    <button class="btn btn-primary" id="add_field_degree">Add Another Award</button>
+												<div class="input_fields_addon">
+												    <button class="btn btn-primary" id="add_field_addon">Add Another Award</button>
 												    <div><input class="form-control" type="text" name="mytext[]"></div>
 												</div>
 											</div>
@@ -721,8 +721,8 @@
 											
 										</div>
 										<div class="col-sm-6">
-												<div class="input_fields_indus">
-												    <button class="btn btn-primary" id="add_field_indus1">Add Another Industry</button>
+												<div class="input_fields_indus21">
+												    <button class="btn btn-primary" id="add_field_indus21">Add Another Industry</button>
 												    <div><input class="form-control" type="text" name="mytext[]"></div>
 												</div>
 											</div>
@@ -973,47 +973,66 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												Years of experience in the service required
+												Commentary on Constraints and potential Issues
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Experience in Years">
+												<input type="text" name="" class="form-control" placeholder="Enter text her">
 											</div>
 										</div>
 									</div>
 									<div class="row">
+										<div class=" col-sm-6"></div>
+										<div class="col-sm-6">													
+												<div class="btn-sm btn-primary">
+							       	                 <input type="file" name="file"/ placeholder="upload images">
+							                    </div>
+						                    </div>
+									</div><br>
+                                    <div class="row">
+										<div class="col-sm-6">
+											
+										</div>
+										<div class="col-sm-6">
+												<div class="input_fields_com">
+												    <button class="btn btn-primary" id="add_field_com">Add Another Comment</button>
+												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												</div>
+											</div>
+									</div><br>
+									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												Offered Services
+												Solution
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<select name="" class="form-control">
-													<option>Service 1</option>
-													<option>Service 2</option>
-													<option>Service 3</option>
-													<option>Service 4</option>
-												</select>
+												<input type="text" name="" class="form-control" placeholder="Enter text Here">
 											</div>
 										</div>
 									</div>
 									<div class="row">
+										<div class=" col-sm-6"></div>
+										<div class="col-sm-6">													
+												<div class="btn-sm btn-primary">
+							       	                 <input type="file" name="file"/ placeholder="upload images">
+							                    </div>
+						                    </div>
+									</div><br>
+									 <div class="row">
 										<div class="col-sm-6">
-											<div class="form-group">
-												Track record of relevant projects
-											</div>
+											
 										</div>
 										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Project Name">
+												<div class="input_fields_sul">
+												    <button class="btn btn-primary" id="add_field_sul">Add Another Solution</button>
+												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												</div>
 											</div>
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Project Value">
-											</div>
-										</div>
-									</div>
+									</div><br>
+									
 									<div class="form-group">
 										<input type="submit" name="submit" value="Submit" class="btn btn-primary">
 										<input type="submit" name="Save" value="Save" class="btn btn-success">
@@ -1087,48 +1106,123 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												Years of experience in the service required
+												Insurance
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Experience in Years">
+												<input type="text" name="" class="form-control" placeholder="Enter Insurance Name">
 											</div>
 										</div>
 									</div>
 									<div class="row">
+										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												Offered Services
+												<input type="text" name="" class="form-control" placeholder="Insurance Level">
 											</div>
 										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<select name="" class="form-control">
-													<option>Service 1</option>
-													<option>Service 2</option>
-													<option>Service 3</option>
-													<option>Service 4</option>
-												</select>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												Track record of relevant projects
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Project Name">
-											</div>
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Project Value">
-											</div>
-										</div>
-									</div>
 
+									</div>
+									<div class="row">
+										<div class="col-sm-6"></div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Premium Cost Uplift to achieve required Insurance Level">
+											</div>
+										</div>
+
+									</div>
+										<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+												Execution
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Either Deed or Under Hands as selected by the employer">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">
+											
+										</div>
+										<div class="col-sm-6">
+								               <input type="checkbox" name="" value="" class="filled-in" id="check12" >     <label for="check12">Agreed</label>
+							              </div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">	
+												Form of Appointment
+										</div>
+											<div class="col-sm-6">
+												<button class="btn"><i class="fa fa-download"></i> Download</button>
+												<button type="button" class="btn btn-danger">View</button>
+										</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6">
+											
+										</div>
+										<div class="col-sm-6">
+												<input type="text" name="" class="form-control" placeholder="Enter Clause Here">
+										</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6">
+											
+										</div>
+										<div class="col-sm-6">
+												<input type="text" name="" class="form-control" placeholder="Enter new suggested work here">
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">
+											
+										</div>
+										<div class="col-sm-6">
+												<input type="text" name="" class="form-control" placeholder="Enter Comments here">
+										</div>
+									</div><br>
+									 <div class="row">
+										<div class="col-sm-6">
+											
+										</div>
+										<div class="col-sm-6">
+												<div class="input_fields_comm">
+												    <button class="btn btn-primary" id="add_field_comm">Add Another Comment</button>
+												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												</div>
+											</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6">
+											
+										</div>
+										<div class="col-sm-6">
+												<input type="text" name="" class="form-control" placeholder="Enter new suggested work here">
+										</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6">
+											Documents for Signature
+										</div>
+										<div class="col-sm-6">
+												<input type="text" name="" class="form-control" placeholder="Document Title">
+									</div>
+								</div><br>
+									<div class="row">
+										<div class="col-sm-6">	
+												
+										</div>
+											<div class="col-sm-6">
+												<button class="btn"><i class="fa fa-download"></i> Download</button>
+												<button type="button" class="btn btn-info">Upload</button>
+										</div>
+									</div>
+									
 									<div class="form-group">
 										<input type="submit" name="submit" value="Submit" class="btn btn-primary">
 										<input type="submit" name="Save" value="Save" class="btn btn-success">
@@ -1145,46 +1239,124 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												Years of experience in the service required
+												Created by
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Experience in Years">
+												<input type="text" name="" class="form-control" placeholder="First Name">
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												Offered Services
+												
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<select name="" class="form-control">
-													<option>Service 1</option>
-													<option>Service 2</option>
-													<option>Service 3</option>
-													<option>Service 4</option>
-												</select>
+												<input type="text" name="" class="form-control" placeholder="Surname">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6"></div>
+											<div class="col-sm-6">
+											<div class="form-group">
+												<div class="input-group date" id="datepicker4" data-date="02-2012" 
+												         data-date-format="mm-yyyy">
+
+													 <input class="form-control" type="text" placeholder="Select Year" readonly="readonly" name="date" >	  
+													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+												</div>
+												
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												Track record of relevant projects
+												Checked by
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Project Name">
-											</div>
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Project Value">
+												<input type="text" name="" class="form-control" placeholder="First Name">
 											</div>
 										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+												
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Surname">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6"></div>
+											<div class="col-sm-6">
+											<div class="form-group">
+												<div class="input-group date" id="datepicker10" data-date="02-2012" 
+												         data-date-format="mm-yyyy">
+
+													 <input class="form-control" type="text" placeholder="Select Year" readonly="readonly" name="date" >	  
+													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+												</div>
+												
+											</div>
+										</div>
+									</div>
+										<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+												Approved by
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="First Name">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+												
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Surname">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6"></div>
+											<div class="col-sm-6">
+											<div class="form-group">
+												<div class="input-group date" id="datepicker11" data-date="02-2012" 
+												         data-date-format="mm-yyyy">
+
+													 <input class="form-control" type="text" placeholder="Select Year" readonly="readonly" name="date" >	  
+													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+												</div>
+												
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">
+											Statements
+										</div>
+										<div class="col-sm-6">
+								               <input type="checkbox" name="" value="" class="filled-in" id="check13" >     <label for="check13">I Agree to XXX</label>
+							              </div>
 									</div>
 									<div class="form-group">
 										<input type="submit" name="submit" value="Submit" class="btn btn-primary">

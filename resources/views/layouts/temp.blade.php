@@ -66,367 +66,508 @@
 		SCOPE Limited, registration number 12345678, 32 Hainton Close, London, E1 2QZ, United Kingdom
 	</div>
 	<script>
-		$("#datepicker").datepicker( {
-			    format: "mm-yyyy",
-			    viewMode: "months", 
-			    minViewMode: "months"
-			});
-	</script>
-	<script>
-		$("#datepicker3").datepicker( {
-			    format: "mm-yyyy",
-			    viewMode: "months", 
-			    minViewMode: "months"
-			});
-	</script>
-	<script>
-		$("#datepicker7").datepicker( {
-			    format: "mm-yyyy",
-			    viewMode: "months", 
-			    minViewMode: "months"
-			});
-	</script>
-	<script>
-		$("#datepicker2").datepicker( {
-			    format: "mm-yyyy",
-			    viewMode: "months", 
-			    minViewMode: "months"
-			});
-	</script>
-	<script>
-		$("#datepicker1").datepicker( {
-			    format: "mm-yyyy",
-			    viewMode: "months", 
-			    minViewMode: "months"
-			});
-	</script>
-	<script>
-		$("#datepicker8").datepicker( {
-			    format: "mm-yyyy",
-			    viewMode: "months", 
-			    minViewMode: "months"
-			});
-	</script>
-	<script>
-		$("#datepickers").datepicker( {
-			    format: "mm-yyyy",
-			    viewMode: "months", 
-			    minViewMode: "months"
-			});
-	</script>
-	<script>
-		$("#datepickers6").datepicker( {
-			    format: "mm-yyyy",
-			    viewMode: "months", 
-			    minViewMode: "months"
-			});
-	</script>
-	<script>
-		$("#datepickers5").datepicker( {
-			    format: "mm-yyyy",
-			    viewMode: "months", 
-			    minViewMode: "months"
-			});
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-	    var max_fields      = 10; //maximum input boxes allowed
-	    var wrapper         = $(".input_fields_wrap"); //Fields wrapper
-	    var add_button      = $("#add_field_button"); //Add button ID
-	    
-	    var x = 1; //initlal text box count
-	    $(add_button).click(function(e){ //on add input button click
-	        e.preventDefault();
-	        if(x < max_fields){ //max input box allowed
-	            x++; //text box increment
-	            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-	        }
-	    });
-	    
-	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-	        e.preventDefault(); $(this).parent('div').remove(); x--;
-	    })
-	});
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-	    var max_fields      = 10; //maximum input boxes allowed
-	    var wrapper         = $(".input_fields_type1"); //Fields wrapper
-	    var add_button      = $("#add_field_type1"); //Add button ID
-	    
-	    var x = 1; //initlal text box count
-	    $(add_button).click(function(e){ //on add input button click
-	        e.preventDefault();
-	        if(x < max_fields){ //max input box allowed
-	            x++; //text box increment
-	            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-	        }
-	    });
-	    
-	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-	        e.preventDefault(); $(this).parent('div').remove(); x--;
-	    })
-	});
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-	    var max_fields      = 10; //maximum input boxes allowed
-	    var wrapper         = $(".input_fields_serve2"); //Fields wrapper
-	    var add_button      = $("#add_field_serve2"); //Add button ID
-	    
-	    var x = 1; //initlal text box count
-	    $(add_button).click(function(e){ //on add input button click
-	        e.preventDefault();
-	        if(x < max_fields){ //max input box allowed
-	            x++; //text box increment
-	            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-	        }
-	    });
-	    
-	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-	        e.preventDefault(); $(this).parent('div').remove(); x--;
-	    })
-	});
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-	    var max_fields      = 10; //maximum input boxes allowed
-	    var wrapper         = $(".input_fields_service"); //Fields wrapper
-	    var add_button      = $("#add_field_service"); //Add button ID
-	    
-	    var x = 1; //initlal text box count
-	    $(add_button).click(function(e){ //on add input button click
-	        e.preventDefault();
-	        if(x < max_fields){ //max input box allowed
-	            x++; //text box increment
-	            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-	        }
-	    });
-	    
-	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-	        e.preventDefault(); $(this).parent('div').remove(); x--;
-	    })
-	});
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-	    var max_fields      = 10; //maximum input boxes allowed
-	    var wrapper         = $(".input_fields_indus"); //Fields wrapper
-	    var add_button      = $("#add_field_indus"); //Add button ID
-	    
-	    var x = 1; //initlal text box count
-	    $(add_button).click(function(e){ //on add input button click
-	        e.preventDefault();
-	        if(x < max_fields){ //max input box allowed
-	            x++; //text box increment
-	            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-	        }
-	    });
-	    
-	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-	        e.preventDefault(); $(this).parent('div').remove(); x--;
-	    })
-	});
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-	    var max_fields      = 10; //maximum input boxes allowed
-	    var wrapper         = $(".input_fields_member"); //Fields wrapper
-	    var add_button      = $("#add_field_member"); //Add button ID
-	    
-	    var x = 1; //initlal text box count
-	    $(add_button).click(function(e){ //on add input button click
-	        e.preventDefault();
-	        if(x < max_fields){ //max input box allowed
-	            x++; //text box increment
-	            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-	        }
-	    });
-	    
-	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-	        e.preventDefault(); $(this).parent('div').remove(); x--;
-	    })
-	});
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-	    var max_fields      = 10; //maximum input boxes allowed
-	    var wrapper         = $(".input_fields_project1"); //Fields wrapper
-	    var add_button      = $("#add_field_project1"); //Add button ID
-	    
-	    var x = 1; //initlal text box count
-	    $(add_button).click(function(e){ //on add input button click
-	        e.preventDefault();
-	        if(x < max_fields){ //max input box allowed
-	            x++; //text box increment
-	            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-	        }
-	    });
-	    
-	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-	        e.preventDefault(); $(this).parent('div').remove(); x--;
-	    })
-	});
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-	    var max_fields      = 10; //maximum input boxes allowed
-	    var wrapper         = $(".input_fields_serve1"); //Fields wrapper
-	    var add_button      = $("#add_field_serve1"); //Add button ID
-	    
-	    var x = 1; //initlal text box count
-	    $(add_button).click(function(e){ //on add input button click
-	        e.preventDefault();
-	        if(x < max_fields){ //max input box allowed
-	            x++; //text box increment
-	            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-	        }
-	    });
-	    
-	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-	        e.preventDefault(); $(this).parent('div').remove(); x--;
-	    })
-	});
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-	    var max_fields      = 10; //maximum input boxes allowed
-	    var wrapper         = $(".input_fields_types"); //Fields wrapper
-	    var add_button      = $("#add_field_types"); //Add button ID
-	    
-	    var x = 1; //initlal text box count
-	    $(add_button).click(function(e){ //on add input button click
-	        e.preventDefault();
-	        if(x < max_fields){ //max input box allowed
-	            x++; //text box increment
-	            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-	        }
-	    });
-	    
-	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-	        e.preventDefault(); $(this).parent('div').remove(); x--;
-	    })
-	});
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-	    var max_fields      = 10; //maximum input boxes allowed
-	    var wrapper         = $(".input_fields_serve"); //Fields wrapper
-	    var add_button      = $("#add_field_serve"); //Add button ID
-	    
-	    var x = 1; //initlal text box count
-	    $(add_button).click(function(e){ //on add input button click
-	        e.preventDefault();
-	        if(x < max_fields){ //max input box allowed
-	            x++; //text box increment
-	            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-	        }
-	    });
-	    
-	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-	        e.preventDefault(); $(this).parent('div').remove(); x--;
-	    })
-	});
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-	    var max_fields      = 10; //maximum input boxes allowed
-	    var wrapper         = $(".input_fields_type"); //Fields wrapper
-	    var add_button      = $("#add_field_type"); //Add button ID
-	    
-	    var x = 1; //initlal text box count
-	    $(add_button).click(function(e){ //on add input button click
-	        e.preventDefault();
-	        if(x < max_fields){ //max input box allowed
-	            x++; //text box increment
-	            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-	        }
-	    });
-	    
-	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-	        e.preventDefault(); $(this).parent('div').remove(); x--;
-	    })
-	});
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-	    var max_fields      = 10; //maximum input boxes allowed
-	    var wrapper         = $(".input_fields_team"); //Fields wrapper
-	    var add_button      = $("#add_field_team"); //Add button ID
-	    
-	    var x = 1; //initlal text box count
-	    $(add_button).click(function(e){ //on add input button click
-	        e.preventDefault();
-	        if(x < max_fields){ //max input box allowed
-	            x++; //text box increment
-	            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-	        }
-	    });
-	    
-	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-	        e.preventDefault(); $(this).parent('div').remove(); x--;
-	    })
-	});
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-	    var max_fields      = 10; //maximum input boxes allowed
-	    var wrapper         = $(".input_fields_project"); //Fields wrapper
-	    var add_button      = $("#add_field_project"); //Add button ID
-	    
-	    var x = 1; //initlal text box count
-	    $(add_button).click(function(e){ //on add input button click
-	        e.preventDefault();
-	        if(x < max_fields){ //max input box allowed
-	            x++; //text box increment
-	            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-	        }
-	    });
-	    
-	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-	        e.preventDefault(); $(this).parent('div').remove(); x--;
-	    })
-	});
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-	    var max_fields      = 10; //maximum input boxes allowed
-	    var wrapper         = $(".input_fields_degree"); //Fields wrapper
-	    var add_button      = $("#add_field_degree"); //Add button ID
-	    
-	    var x = 1; //initlal text box count
-	    $(add_button).click(function(e){ //on add input button click
-	        e.preventDefault();
-	        if(x < max_fields){ //max input box allowed
-	            x++; //text box increment
-	            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-	        }
-	    });
-	    
-	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-	        e.preventDefault(); $(this).parent('div').remove(); x--;
-	    })
-	});
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-	    var max_fields      = 10; //maximum input boxes allowed
-	    var wrapper         = $(".input_fields_add"); //Fields wrapper
-	    var add_button      = $("#add_field_add"); //Add button ID
-	    
-	    var x = 1; //initlal text box count
-	    $(add_button).click(function(e){ //on add input button click
-	        e.preventDefault();
-	        if(x < max_fields){ //max input box allowed
-	            x++; //text box increment
-	            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-	        }
-	    });
-	    
-	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-	        e.preventDefault(); $(this).parent('div').remove(); x--;
-	    })
-	});
-	</script>
+	$("#datepicker").datepicker( {
+		    format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+		});
+</script>
+<script>
+	$("#datepicker11").datepicker( {
+		    format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+		});
+</script>
+<script>
+	$("#datepicker10").datepicker( {
+		    format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+		});
+</script>
+<script>
+	$("#datepicker4").datepicker( {
+		    format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+		});
+</script>
+<script>
+	$("#datepicker3").datepicker( {
+		    format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+		});
+</script>
+<script>
+	$("#datepicker7").datepicker( {
+		    format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+		});
+</script>
+<script>
+	$("#datepicker2").datepicker( {
+		    format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+		});
+</script>
+<script>
+	$("#datepicker1").datepicker( {
+		    format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+		});
+</script>
+<script>
+	$("#datepicker8").datepicker( {
+		    format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+		});
+</script>
+<script>
+	$("#datepickers").datepicker( {
+		    format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+		});
+</script>
+<script>
+	$("#datepickers6").datepicker( {
+		    format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+		});
+</script>
+<script>
+	$("#datepickers5").datepicker( {
+		    format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+		});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_wrap"); //Fields wrapper
+    var add_button      = $("#add_field_button"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_type1"); //Fields wrapper
+    var add_button      = $("#add_field_type1"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_sul"); //Fields wrapper
+    var add_button      = $("#add_field_sul"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_com"); //Fields wrapper
+    var add_button      = $("#add_field_com"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_serve2"); //Fields wrapper
+    var add_button      = $("#add_field_serve2"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_service"); //Fields wrapper
+    var add_button      = $("#add_field_service"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_indus"); //Fields wrapper
+    var add_button      = $("#add_field_indus"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_member"); //Fields wrapper
+    var add_button      = $("#add_field_member"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_project1"); //Fields wrapper
+    var add_button      = $("#add_field_project1"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_serve1"); //Fields wrapper
+    var add_button      = $("#add_field_serve1"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_types"); //Fields wrapper
+    var add_button      = $("#add_field_types"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_serve"); //Fields wrapper
+    var add_button      = $("#add_field_serve"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_type"); //Fields wrapper
+    var add_button      = $("#add_field_type"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_team"); //Fields wrapper
+    var add_button      = $("#add_field_team"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_project"); //Fields wrapper
+    var add_button      = $("#add_field_project"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_degree"); //Fields wrapper
+    var add_button      = $("#add_field_degree"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_add"); //Fields wrapper
+    var add_button      = $("#add_field_add"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_comm"); //Fields wrapper
+    var add_button      = $("#add_field_comm"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_yawa"); //Fields wrapper
+    var add_button      = $("#add_field_yawa"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_indus21"); //Fields wrapper
+    var add_button      = $("#add_field_indus21"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_addon"); //Fields wrapper
+    var add_button      = $("#add_field_addon"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
 	</body>
 	</html>
