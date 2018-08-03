@@ -307,7 +307,7 @@
 								</div>						
 							</div>
 							<figcaption>
-								<a href="/winwork/pds"><h3>Canada Water Masterplan</h3></a>
+								<a href="{{ url('/winwork/pds') }}"><h3>Canada Water Masterplan</h3></a>
 								<p>
 									<a href="#" data-toggle="tooltip" title="Add to Favourites"><i class="fa fa-fw fa-star-o"></i></a>
 									<a href="#" data-toggle="tooltip" title="Send Via Email"><i class="fa fa-fw fa-envelope-o"></i></a>
