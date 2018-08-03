@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="css/bxslider.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="shortcut icon" href="images/logo.jpg">
+    <link rel="shortcut icon" href="../images/logo.jpg">
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/masterslider.min.js"></script>
@@ -35,7 +35,7 @@
 							<i class="icon-bar"></i>
 							<i class="icon-bar"></i>
 						</button>
-						<a href="#" class="navbar-brand"><img src="../images/logo.png" width="120"></a>
+						<a href="{{ url('/') }}" class="navbar-brand"><img src="../images/logo.png" width="120"></a>
 					</div>
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">

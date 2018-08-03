@@ -12,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/bootstrap.datepicker/0.1/css/datepicker.css">
 	<link rel="stylesheet" type="text/css" href="../../css/animate.min.css">
 	<link rel="stylesheet" type="text/css" href="../../css/style.css">
-	<link rel="shortcut icon" href="../../logo.jpg">
+	<link rel="shortcut icon" href="../images/logo.jpg">
 	<script type="text/javascript" src="../../js/jquery.min.js"></script>
 	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../../js/wow.min.js"></script>
