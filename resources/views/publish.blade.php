@@ -196,7 +196,7 @@
 					<div class="hover-container-holder">
 						<div class="tender-tile-single">
 							<div class="tender-tiles new-project-tile">
-								<h2><a href="#">Publish<br> New<br> Project</a></h2>
+								<h2><a href="{{ url('/publish/project_dashboard') }}">Publish<br> New<br> Project</a></h2>
 							</div>
 						</div>
 						<div class="tender-tile-single">

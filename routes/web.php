@@ -30,3 +30,7 @@ Route::get('/dashboard/tend_dashboard', 'UsersController@tend_dashboard_controll
 Route::get('/dashboard/benchmark_dashboard', 'UsersController@benchmark_dashboard_controller');
 
 Route::get('/dashboard/policies', 'UsersController@policies_controller');
+
+Route::get('/publish/project_dashboard', 'UsersController@project_dashboard_controller');
+
+Route::get('/publish/project_dashboard/datasheet', 'UsersController@datasheet_controller');

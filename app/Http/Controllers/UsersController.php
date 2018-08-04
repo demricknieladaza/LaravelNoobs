@@ -55,4 +55,12 @@ class UsersController extends Controller
     {
         return view('policies');
     }
+      public function project_dashboard_controller()
+    {
+        return view('project_dashboard');
+    }
+    public function datasheet_controller()
+    {
+        return view('datasheet');
+    }
 }
