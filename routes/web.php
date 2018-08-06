@@ -34,3 +34,5 @@ Route::get('/dashboard/policies', 'UsersController@policies_controller');
 Route::get('/publish/project_dashboard', 'UsersController@project_dashboard_controller');
 
 Route::get('/publish/project_dashboard/datasheet', 'UsersController@datasheet_controller');
+
+Route::resource('register','UserAccountsController');

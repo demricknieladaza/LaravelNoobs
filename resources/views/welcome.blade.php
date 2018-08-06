@@ -104,11 +104,26 @@
                             </form>
                         </div>
                         <div id="signup" class="tab-pane fade">
-                            <form method="post" class="form-horizontal" autocomplete="off">
+                            @if(count($errors) > 0)
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach($errors->all() as $error)
+                                        <li>{{$error}}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            @if(\Session::has('success'))
+                            <div class="alert alert-success">
+                                <p>{{ \Session::get('success') }}</p>
+                            </div>
+                            @endif
+                            <form method="post" action="{{url('/register')}}" class="form-horizontal" autocomplete="off">
+                                {{csrf_field()}}
                                 <div class="form-group has-feedback">
                                     <label class="col-sm-3 control-label">Full Name</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" name="name" required="" data-msg-required="Please enter your full  name">
+                                        <input type="text" class="form-control" name="fullname" required="" data-msg-required="Please enter your full  name">
                                     </div>
                                 </div>
                                 <div class="form-group has-feedback">
@@ -135,12 +150,12 @@
                                         <input type="password" class="form-control" name="password" required="" data-msg-required="Please enter your password">
                                     </div>
                                 </div>
-                                <div class="form-group has-feedback">
+                                {{-- <div class="form-group has-feedback">
                                     <label class="col-sm-3 control-label">Confirm Password</label>
                                     <div class="col-sm-8">
                                         <input type="password" class="form-control" name="cpassword" required="" data-msg-required="Please enter your password again">
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label"></label>
                                     <div class="col-sm-8">
@@ -1664,8 +1679,10 @@
             </div>
         </div>
     </div>
-
-    <footer class="text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
+</div>
+</div>
+</h1></div></div></div></div>
+<footer class="text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
         <div class="col-sm-12">
             <p><img src="../images/scope-white.png" width="80%"></p>
             <p>
@@ -1679,6 +1696,8 @@
     <div class="container-fluid text-center copyright">
         SCOPE Limited, registration number 12345678, 32 Hainton Close, London, E1 2QZ, United Kingdom
     </div>
+
+</body>
 
     <!-- end -->
 
