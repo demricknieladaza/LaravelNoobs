@@ -113,7 +113,7 @@
 				<div class="tender-container">
 					<ul class="nav bid-form-nav">
 						<li class="active"><a data-toggle="tab" href="#section1">Pre-Qualification Questionnaire</a></li>
-						<li><a data-toggle="tab" href="#section2">Organization</a></li>
+						<li><a data-toggle="tab" href="#section2">Organisation</a></li>
 						<li><a data-toggle="tab" href="#section3">Individuals</a></li>
 						<li><a data-toggle="tab" href="#section4">Approach</a></li>
 						<li><a data-toggle="tab" href="#section5">Scope</a></li>
@@ -169,7 +169,7 @@
 								<button class="btn" id="button1 ">Complete Page using Profile Information</button>
 							</div>
 						</div>
-						<h3 class="bid-form-title">Organization</h3>
+						<h3 class="bid-form-title">Organisation</h3>
 						<form method="post">
 							<div class="row">
 								<div class="col-sm-12">
