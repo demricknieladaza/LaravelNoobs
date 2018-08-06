@@ -1365,7 +1365,7 @@ body > div:nth-child(17) > div > div.col-sm-12{
     padding-top: 20px;
 }
 
-.accordion {
+.accord {
     background-color: #fff;
     color: #444;
     cursor: pointer;
@@ -1378,11 +1378,11 @@ body > div:nth-child(17) > div > div.col-sm-12{
     transition: 0.4s;
 }
 
-.active, .accordion:hover {
+.act, .accord:hover {
     background-color: #FFB548;
 }
 
-.accordion:after {
+.accord:after {
     content: '\002B';
     color: #777;
     font-weight: bold;
@@ -1390,9 +1390,9 @@ body > div:nth-child(17) > div > div.col-sm-12{
     margin-left: 5px;
 }
 
-.active:after {
+/*.active:after {
     content: "\2212";
-}
+}*/
 
 .panel {
     padding: 0 18px;
