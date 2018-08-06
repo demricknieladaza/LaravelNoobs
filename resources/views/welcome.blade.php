@@ -1465,10 +1465,10 @@
             </div>
             <div class="row">
                 <div class="col-sm-6">
-                    <p>“While offering our customers great functionality it was also very important for us to make this website aesthetically attractive. Because let’s be honest, procurement isn’t everyone’s favourite hobby. That's why we really wanted to give the user an amazing visual experience alongside smart and intuitive navigation." <br> - <b>Thomas Schindler - Director</b></p>
+                    <p>While offering our customers great functionality it was also very important for us to make this website aesthetically attractive. Because let’s be honest, procurement isn’t everyone’s favourite hobby. That's why we really wanted to give the user an amazing visual experience alongside smart and intuitive navigation.<br> <br> - <b>Thomas Schindler - Director</b></p>
                 </div>
                 <div class="col-sm-6">
-                    <p>“Scope is going to completely change the face of procurement practices in construction. The potential it holds in terms of benchmarking data and tenderer competitiveness is just incredible. Bringing procurement into the digital age has been long overdue." <br> - <b>Andreas Reger - Director</b></p>
+                    <p>Scope is going to completely change the face of procurement practices in construction. The potential it holds in terms of benchmarking data and tenderer competitiveness is just incredible. Bringing procurement into the digital age has been long overdue.<br> <br> - <b>Andreas Reger - Director</b></p>
                 </div>
             </div>
         </div>
@@ -1482,7 +1482,7 @@
                 </div>
                 <div class="col-sm-6 text-right">
                     <h1>S<span>C</span>OPE - Competitive</h1>
-                    <p>100% Free Access for Tenderers<br>to Drive Strong Competition<br>and Equal Opportunities forEvery Business.</p>
+                    <p>100% Free Access for Tenderers<br>to Drive Strong Competition<br>and Equal Opportunities for Every Business.</p>
                 </div>
             </div>
         </div>
@@ -1492,11 +1492,11 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h1>SC<span>OP</span>E - Open Procurement</h1>
-                    <p>Harnessing the Best Talents by giving an Entire Industry<br>the Opportunity to Win Work<br>on Public (OJEU) and Private Projects.</p>
+                    <p>Harnessing the Best Talents <br> by giving an Entire Industry the Opportunity<br>to Win Work on Public (OJEU) and Private Projects.</p>
                 </div>
                 <div class="col-sm-6 text-right">
                     <h1>SCOP<span>E</span> - Experience</h1>
-                    <p>An Eye for Detail and Great Design<br>to offer the user <br> an Aesthetically Amazing Experience<br>and make Procurement Sexy.</p>
+                    <p>An Eye for Detail and Great Design <br>to offer the user <br> an Aesthetically Amazing Experience and make Procurement Sexy.</p>
                 </div>
             </div>
         </div>
@@ -1516,196 +1516,87 @@
                 <div class="row">
                     <h1 class="faq-head">For Employers</h1>
                 </div>
-                <div class="panel-group" id="accordion">
+                <button class="accordion">What can SCOPE do for me? </button>
                     <div class="panel">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">What can SCOPE do for me? <span class="pull-right caret"></span></a>
-                            </h4>
-                        </div>
-                        <div id="collapse1" class="panel-collapse collapse">
-                            <div class="panel-body">SCOPE can do a variety of great things for you. The core of SCOPE is to publish your projects and related tenders on a publicly accessible platform. That means that companies from your region as well as nationwide and international can submit proposals to your tenders. This way your company achieves great competitiveness and comparability.<br><br>
-                            SCOPE also helps you to find out what a specific service in a defined location for a certain type of use usually costs. You can get this information using our brilliant Benchmarking Tool. That way you will be able to create more accurate cash flow forecasts, benchmark received tender proposals or support viability assessments for your development.<br><br>The third big thing is our Scope of Services Tool. This tool will support you in creating watertight Scopes. Following the award of the successful tenderer the tool will also allow you to track any changes to the Scope that are being negotiated and agreed between you and the tenderer. <b>Please note that this tool is currently at Beta stage, which means that it’s full functionality will be available in a few months.</b>
-                            </div>
-                        </div>
-                    </div>
+                        <p>SCOPE can do a variety of great things for you. The core of SCOPE is to publish your projects and related tenders on a publicly accessible platform. That means that companies from your region as well as nationwide and international can submit proposals to your tenders. This way your company achieves great competitiveness and comparability.<br><br>
+                        SCOPE also helps you to find out what a specific service in a defined location for a certain type of use usually costs. You can get this information using our brilliant Benchmarking Tool. That way you will be able to create more accurate cash flow forecasts, benchmark received tender proposals or support viability assessments for your development.<br><br>The third big thing is our Scope of Services Tool. This tool will support you in creating watertight Scopes. Following the award of the successful tenderer the tool will also allow you to track any changes to the Scope that are being negotiated and agreed between you and the tenderer. <b>Please note that this tool is currently at Beta stage, which means that it’s full functionality will be available in a few months.</b></p>
+                    </div> 
+                    <button class="accordion">How much does it cost? </button>
                     <div class="panel">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">How much does it cost? <span class="pull-right caret"></span></a>
-                            </h4>
-                        </div>
-                        <div id="collapse2" class="panel-collapse collapse">
-                            <div class="panel-body">This depends on the plan you have selected. A single tender credit without subscription is £150. If you subscribe to a monthly or annual plan the price per tender credit gets lower the more tender credits your plan includes. You can also choose between a BASIC, PRO or PRO+ membership. You can see all the additional benefits if you scroll up to the Pricing section.<br><b>Tip: If you select the annual plan you get double the discount compared to the monthly plan!</br></b></div>
-                        </div>
-                    </div>
+                        <p>This depends on the plan you have selected. A single tender credit without subscription is £150. If you subscribe to a monthly or annual plan the price per tender credit gets lower the more tender credits your plan includes. You can also choose between a BASIC, PRO or PRO+ membership. You can see all the additional benefits if you scroll up to the Pricing section.<br><b>Tip: If you select the annual plan you get double the discount compared to the monthly plan!</br></b></p>
+                    </div> 
+                    <button class="accordion">What are tender credits? </button>
                     <div class="panel">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">What are tender credits? <span class="pull-right caret"></span></a>
-                            </h4>
-                        </div>
-                        <div id="collapse3" class="panel-collapse collapse">
-                            <div class="panel-body">To tender a service you need tender credits. One tender credit equals one tender process.</div>
-                        </div>
+                        <p>To tender a service you need tender credits. One tender credit equals one tender process.</p>
                     </div>
+                    <button class="accordion">How long are tender credit valid? </button>
                     <div class="panel">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">How long are tender credit valid? <span class="pull-right caret"></span></a>
-                            </h4>
-                        </div>
-                        <div id="collapse4" class="panel-collapse collapse">
-                            <div class="panel-body">From the date of purchase each tender credit is valid for 30 days.</div>
-                        </div>
+                        <p>From the date of purchase each tender credit is valid for 30 days.</p>
                     </div>
+                    <button class="accordion">What if I run out of tender credits? </button>
                     <div class="panel">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">What if I run out of tender credits? <span class="pull-right caret"></span></a>
-                            </h4>
-                        </div>
-                        <div id="collapse5" class="panel-collapse collapse">
-                            <div class="panel-body">You upgrade your monthly or annual plan to include more tender credits anytime you want. Alternatively, you can purchase single tender credits.<br>
-                            <b>Tip: Keep in mind that upgrading your plan will also increase your discount, while buying a single tender credit will not include a discount.</b></div>
-                        </div>
+                        <p>You upgrade your monthly or annual plan to include more tender credits anytime you want. Alternatively, you can purchase single tender credits.<br>
+                            <b>Tip: Keep in mind that upgrading your plan will also increase your discount, while buying a single tender credit will not include a discount.</b></p>
                     </div>
+                    <button class="accordion">Can I use SCOPE without a recurring subscription? </button>
                     <div class="panel">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">Can I use SCOPE without a recurring subscription? <span class="pull-right caret"></span></a>
-                            </h4>
-                        </div>
-                        <div id="collapse6" class="panel-collapse collapse">
-                            <div class="panel-body">Yes. You can simply purchase single tender credits as and when you need them.</div>
-                        </div>
+                        <p>Yes. You can simply purchase single tender credits as and when you need them.</p>
                     </div>
+                    <button class="accordion">How can I cancel my subscription? </button>
                     <div class="panel">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">How can I cancel my subscription? <span class="pull-right caret"></span></a>
-                            </h4>
-                        </div>
-                        <div id="collapse7" class="panel-collapse collapse">
-                            <div class="panel-body">It’s simple. All you have to do is go to your SCOPE Business Lounge. Under the heading My Profile click on Membership. Here you will be able to cancel your subscription at any time with at least two weeks’ notice prior to your next payment.</div>
-                        </div>
+                        <p>It’s simple. All you have to do is go to your SCOPE Business Lounge. Under the heading My Profile click on Membership. Here you will be able to cancel your subscription at any time with at least two weeks’ notice prior to your next payment.</p>
                     </div>
+                    <button class="accordion">Where do I find my closed projects? </button>
                     <div class="panel">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">Where do I find my closed projects? <span class="pull-right caret"></span></a>
-                            </h4>
-                        </div>
-                        <div id="collapse8" class="panel-collapse collapse">
-                            <div class="panel-body">You will find all your closed and active projects in your SCOPE Business Lounge in the Employer Dashboard.</div>
-                        </div>
+                        <p>You will find all your closed and active projects in your SCOPE Business Lounge in the Employer Dashboard.</p>
                     </div>
+                    <button class="accordion">Can I also use my account to submit tender proposals? </button>
                     <div class="panel">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">Can I also use my account to submit tender proposals? <span class="pull-right caret"></span></a>
-                            </h4>
-                        </div>
-                        <div id="collapse9" class="panel-collapse collapse">
-                            <div class="panel-body">Yes. With your account you can act as both Employer and Tenderer.</div>
-                        </div>
+                        <p>Yes. With your account you can act as both Employer and Tenderer.</p>
                     </div>
+                    <button class="accordion">How do I make contact with the tenderers? </button>
                     <div class="panel">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse10">How do I make contact with the tenderers? <span class="pull-right caret"></span></a>
-                            </h4>
-                        </div>
-                        <div id="collapse10" class="panel-collapse collapse">
-                            <div class="panel-body">Once you have selected a successful tenderer you can complete the tender process. You will then be given the successful tenderers full contact details.</div>
-                        </div>
+                        <p>Once you have selected a successful tenderer you can complete the tender process. You will then be given the successful tenderers full contact details.</p>
                     </div>
-                </div> 
             </div>
             <div class="col-sm-6">
                 <div class="row">
                     <h1 class="faq-head">For Tenderers</h1>
                 </div>
-                <div class="panel-group" id="accordion1">
+                    <button class="accordion">What can SCOPE do for me? </button>
                     <div class="panel">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion1" href="#collapse11">What can SCOPE do for me? <span class="pull-right caret"></span></a>
-                            </h4>
-                        </div>
-                        <div id="collapse11" class="panel-collapse collapse">
-                            <div class="panel-body">SCOPE can do a variety of great things for you. The core of SCOPE is to publish your projects and related tenders on a publicly accessible platform. That means that you can search and submit proposals for jobs in your region as well as nationwide and international. The world is your oyster! <br>
+                        <p>SCOPE can do a variety of great things for you. The core of SCOPE is to publish your projects and related tenders on a publicly accessible platform. That means that you can search and submit proposals for jobs in your region as well as nationwide and international. The world is your oyster! <br>
 
-                            SCOPE also helps you to find out what a specific service in a defined location for a certain type of use usually costs. You can get this information using our brilliant Benchmarking Tool. That way you will be able to submit more competitive tender proposals. <br>
+                        SCOPE also helps you to find out what a specific service in a defined location for a certain type of use usually costs. You can get this information using our brilliant Benchmarking Tool. That way you will be able to submit more competitive tender proposals. <br>
 
-                            The third big thing is our Scope of Services Tool. This tool will support you with adequate pricing suggestions for the tasks you’re asked to undertake. Once you have been successfully awarded the job the tool will also allow you to track any changes to the Scope that are being negotiated and agreed between you and the employer. <b>Please note that this tool is currently at Beta stage, which means that it’s full functionality will be available in a few months.</b>
-                            </div>
-                        </div>
+                        The third big thing is our Scope of Services Tool. This tool will support you with adequate pricing suggestions for the tasks you’re asked to undertake. Once you have been successfully awarded the job the tool will also allow you to track any changes to the Scope that are being negotiated and agreed between you and the employer. <b>Please note that this tool is currently at Beta stage, which means that it’s full functionality will be available in a few months.</b></p>
                     </div>
+                    <button class="accordion">How much does it cost? </button>
                     <div class="panel">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion1" href="#collapse12">How much does it cost? <span class="pull-right caret"></span></a>
-                            </h4>
-                        </div>
-                        <div id="collapse12" class="panel-collapse collapse">
-                            <div class="panel-body">Submitting tender proposals is 100% free.
+                        <p>Submitting tender proposals is 100% free.
                             If you want to use our Benchmarking Tool and Scope of Services Tool simply subscribe to our PRO or PRO+ membership selecting either a monthly or annual plan.<br>
-                            <b>Tipp: If you select the annual plan you get double the discount compared to the monthly plan!</b>
-                            </div>
-                        </div>
+                            <b>Tipp: If you select the annual plan you get double the discount compared to the monthly plan!</b></p>
                     </div>
+                    <button class="accordion">How many tender proposals can I submit? </button>
                     <div class="panel">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion1" href="#collapse13">How many tender proposals can I submit? <span class="pull-right caret"></span></a>
-                            </h4>
-                        </div>
-                        <div id="collapse13" class="panel-collapse collapse">
-                            <div class="panel-body">As many as you want! There is absolutely no limit as to how many proposals you can submit per day, per project or per discipline. Grab as many opportunities as you can!</div>
-                        </div>
+                        <p>As many as you want! There is absolutely no limit as to how many proposals you can submit per day, per project or per discipline. Grab as many opportunities as you can!</p>
                     </div>
+                    <button class="accordion">Can I ask the employer for additional information? </button>
                     <div class="panel">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion1" href="#collapse14">Can I ask the employer for additional information? <span class="pull-right caret"></span></a>
-                            </h4>
-                        </div>
-                        <div id="collapse14" class="panel-collapse collapse">
-                            <div class="panel-body">Yes. A Request for Information (RfI) tool is integrated in every tender process. Please be aware that your query and the Employers response will be publicly visible for everyone to ensure that all tenders have access to the same information.</div>
-                        </div>
+                        <p>Yes. A Request for Information (RfI) tool is integrated in every tender process. Please be aware that your query and the Employers response will be publicly visible for everyone to ensure that all tenders have access to the same information.</p>
                     </div>
+                    <button class="accordion">How do I know if my tender proposal has been successful? </button>
                     <div class="panel">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion1" href="#collapse15">How do I know if my tender proposal has been successful? <span class="pull-right caret"></span></a>
-                            </h4>
-                        </div>
-                        <div id="collapse15" class="panel-collapse collapse">
-                            <div class="panel-body">After the submission deadline the Employer will have three weeks to respond to all tenderers and give feedback on why you have been successful or unsuccessful.</div>
-                        </div>
+                        <p>After the submission deadline the Employer will have three weeks to respond to all tenderers and give feedback on why you have been successful or unsuccessful.</p>
                     </div>
+                    <button class="accordion">Where do I find my closed tenders? </button>
                     <div class="panel">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion1" href="#collapse16">Where do I find my closed tenders? <span class="pull-right caret"></span></a>
-                            </h4>
-                        </div>
-                        <div id="collapse16" class="panel-collapse collapse">
-                            <div class="panel-body">You will find all your closed and active tender proposals in your SCOPE Business Lounge in the Tenderer Dashboard.</div>
-                        </div>
+                        <p>You will find all your closed and active tender proposals in your SCOPE Business Lounge in the Tenderer Dashboard.</p>
                     </div>
+                    <button class="accordion">Can I also use my account as an Employer to tender services? </button>
                     <div class="panel">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion1" href="#collapse17">Can I also use my account as an Employer to tender services? <span class="pull-right caret"></span></a>
-                            </h4>
-                        </div>
-                        <div id="collapse17" class="panel-collapse collapse">
-                            <div class="panel-body">Yes. With your account you can act as both Tenderer and Employer.</div>
-                        </div>
+                        <p>Yes. With your account you can act as both Tenderer and Employer.</p>
                     </div>
-                </div> 
             </div>
         </div>
     </div>
@@ -1715,58 +1606,26 @@
                 <div class="row">
                     <h1 class="faq-head">General</h1>
                 </div>
-                <div class="panel-group" id="accordion3">
+                    <button class="accordion">How does the Benchmarking tool work? </button>
                     <div class="panel">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion3" href="#collapse18">How does the Benchmarking tool work? <span class="pull-right caret"></span></a>
-                            </h4>
-                        </div>
-                        <div id="collapse18" class="panel-collapse collapse">
-                            <div class="panel-body">SCOPE helps you to find out what a specific service in a defined location for a certain type of use usually costs. As an employer you will be able to create more accurate cash flow forecasts, benchmark received tender proposals or support viability assessments for your development. As a tenderer you will be able to submit more competitive tender proposals.</div>
-                        </div>
+                        <p>SCOPE helps you to find out what a specific service in a defined location for a certain type of use usually costs. As an employer you will be able to create more accurate cash flow forecasts, benchmark received tender proposals or support viability assessments for your development. As a tenderer you will be able to submit more competitive tender proposals.</p>
                     </div>
+                    <button class="accordion">How does the Scope of Services tool work? </button>
                     <div class="panel">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion3" href="#collapse19">How does the Scope of Services tool work? <span class="pull-right caret"></span></a>
-                            </h4>
-                        </div>
-                        <div id="collapse19" class="panel-collapse collapse">
-                            <div class="panel-body">As an employer this tool will support you in creating watertight Scopes. If you are a tenderer this tool will support you with adequate pricing suggestions for the tasks you’re asked to undertake. Once the successful tenderer has been awarded the tool will allow both parties to track any changes to the Scope that are being negotiated and agreed. <b>Please note that this tool is currently at Beta stage, which means that it’s full functionality will be available in a few months.</b></div>
-                        </div>
+                        <p>As an employer this tool will support you in creating watertight Scopes. If you are a tenderer this tool will support you with adequate pricing suggestions for the tasks you’re asked to undertake. Once the successful tenderer has been awarded the tool will allow both parties to track any changes to the Scope that are being negotiated and agreed. <b>Please note that this tool is currently at Beta stage, which means that it’s full functionality will be available in a few months.</b></p>
                     </div>
+                    <button class="accordion">What about data protection? </button>
                     <div class="panel">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion3" href="#collapse20">What about data protection? <span class="pull-right caret"></span></a>
-                            </h4>
-                        </div>
-                        <div id="collapse20" class="panel-collapse collapse">
-                            <div class="panel-body"> *No answer yet*  </div>
-                        </div>
+                        <p> *No answer yet*  </p>
                     </div>
+                    <button class="accordion">Is it possible to tender construction works? </button>
                     <div class="panel">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion3" href="#collapse21">Is it possible to tender construction works? <span class="pull-right caret"></span></a>
-                            </h4>
-                        </div>
-                        <div id="collapse21" class="panel-collapse collapse">
-                            <div class="panel-body">Not yet. Our team is currently working on implementing this feature.</div>
-                        </div>
+                        <p>Not yet. Our team is currently working on implementing this feature.</p>
                     </div>
+                    <button class="accordion">Can Scope be used for both public (OJEU) and private projects? </button>
                     <div class="panel">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion3" href="#collapse22">Can Scope be used for both public (OJEU) and private projects? <span class="pull-right caret"></span></a>
-                            </h4>
-                        </div>
-                        <div id="collapse22" class="panel-collapse collapse">
-                            <div class="panel-body"> *No answer yet*  </div>
-                        </div>
+                        <p> *No answer yet* </p>
                     </div>
-                </div> 
             </div>
 
     <div class="container-fluid section-title text-center contacts-head" id="contact">
@@ -1810,9 +1669,9 @@
         <div class="col-sm-12">
             <p><img src="../images/scope-white.png" width="80%"></p>
             <p>
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a style="margin-right: 3%;" href="#"><i class="fa fa-facebook"></i></a>
+                <a style="margin-right: 3%;" href="#"><i class="fa fa-twitter"></i></a>
+                <a style="margin-right: 3%;" href="#"><i class="fa fa-linkedin"></i></a>
                 <a href="#"><i class="fa fa-google-plus"></i></a>
             </p>
         </div>
@@ -1852,6 +1711,22 @@
             controls: false,
         });
     </script>   
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight){
+              panel.style.maxHeight = null;
+            } else {
+              panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+          });
+        }
+    </script>
     <script src="js/pricerange.js"></script>
 </body>
 </html>

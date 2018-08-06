@@ -166,11 +166,11 @@
 				<div class="clearfix"></div>
 				<ul class="nav lounge-nav">
 					<li>
-						<a href="{{ url('publish/dashboard') }}" class="menu-title policies-link">Dashboards</a>
+						<a href="{{ url('dashboard') }}" class="menu-title policies-link">Dashboards</a>
 						<ul>
-							<li><a href="{{ url('/publish/dashboard/emp_dashboard') }}"><i class="fa fa-circle-o"></i> Employer Dashboard</a></li>
-							<li><a href="{{ url('/publish/dashboard/tend_dashboard') }}"><i class="fa fa-circle-o"></i> Tenderer Dashboard</a></li>
-							<li><a href="{{ url('/publish/dashboard/benchmark_dashboard') }}"><i class="fa fa-circle-o"></i> Benchmarking</a></li>
+							<li><a href="{{ url('/dashboard/emp_dashboard') }}"><i class="fa fa-circle-o"></i> Employer Dashboard</a></li>
+							<li><a href="{{ url('/dashboard/tend_dashboard') }}"><i class="fa fa-circle-o"></i> Tenderer Dashboard</a></li>
+							<li><a href="{{ url('/dashboard/benchmark_dashboard') }}"><i class="fa fa-circle-o"></i> Benchmarking</a></li>
 						</ul>
 					</li>
 					<li>
@@ -196,287 +196,44 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-6">
-						<div class="shadow-wrapper lounge-demo">
+						<div class="lounge-demo">
 							<div class="form-group">
-								<a href="#collapse1">Bid New Project <span class="btn btn-warning remaining-tenders">Remaining Tender Credits 2</span></a>
+								<h1 style="color: #000; text-align: center; font-size: 20px;">There are<br><span style="color: #D8652B; font-size: 50px;">26</span><br>Opportunity Nearby
+								</h1>
 							</div>
-							<div class="form-group">
-								<h4>Active Tenders  <span class="badge">2</span></h4>
-								<div class="row">
-									<div class="hover-container-holder">
-										<div class="tender-tile-single">
-											<div class="tender-tiles">
-												<h2><a href="#">Canada Water Masterplan</a></h2>		
-											</div>
-										</div>
-										<div class="tender-tile-single">
-											<div class="tender-tiles">
-												<h2><a href="#">Canada Water Masterplan</a></h2>
-											</div>
-										</div>
-										<div class="tender-tile-single">
-											<div class="tender-tiles">
-												<h2><a href="#">Canada Water Masterplan</a></h2>
-											</div>
-										</div>
-										<div class="row table-tender-details">
-											<div class="col-sm-6 table-left">
-												<table class="table table-hover table-striped">
-													<thead>
-														<tr>
-															<th>Active Tenders</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>Fire Engineer</td>
-														</tr>
-														<tr>
-															<td>Structural Engineer</td>
-														</tr>
-														<tr>
-															<td>Service Engineer</td>
-														</tr>
-														<tr>
-															<td>Architect</td>
-														</tr>
-														<tr>
-															<td>Facede Engineer</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-											<div class="col-sm-6 table-right">
-												<table class="table table-hover table-striped">
-													<thead>
-														<tr>
-															<th>Drafted Tenders</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>Acoustic Engineer</td>
-														</tr>			
-													</tbody>
-												</table>
-											</div>
-										</div>
-									</div>
-								</div>
+							<div class="form-group" style="background: #D8652B; padding: 10px; ">
+								<h1 style="color: #fff; text-align: center; font-size: 20px; padding: 0;">Win Work
+								</h1>
 							</div>
-							<div class="form-group">
-								<h4>Drafted Tenders  <span class="badge">2</span></h4>
-								<div class="row">
-									<div class="hover-container-holder">
-										<div class="tender-tile-single">
-											<div class="tender-tiles">
-												<h2><a href="#">Canada Water Masterplan</a></h2>		
-											</div>
-										</div>
-										<div class="tender-tile-single">
-											<div class="tender-tiles">
-												<h2><a href="#">Canada Water Masterplan</a></h2>
-											</div>
-										</div>
-										<div class="tender-tile-single">
-											<div class="tender-tiles">
-												<h2><a href="#">Canada Water Masterplan</a></h2>
-											</div>
-										</div>
-										<div class="row table-tender-details">
-											<div class="col-sm-6 table-left">
-												<table class="table table-hover table-striped">
-													<thead>
-														<tr>
-															<th>Active Tenders</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>Fire Engineer</td>
-														</tr>
-														<tr>
-															<td>Structural Engineer</td>
-														</tr>
-														<tr>
-															<td>Service Engineer</td>
-														</tr>
-														<tr>
-															<td>Architect</td>
-														</tr>
-														<tr>
-															<td>Facede Engineer</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-											<div class="col-sm-6 table-right">
-												<table class="table table-hover table-striped">
-													<thead>
-														<tr>
-															<th>Drafted Tenders</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>Acoustic Engineer</td>
-														</tr>			
-													</tbody>
-												</table>
-											</div>
-										</div>
-									</div>
-								</div>
+							<div class="col-sm-6 tab1" style="background: #D8652B; padding: 2px;">
+								<h1 style="color: #fff; text-align: center; font-size: 20px; padding: 0;">Win Work
+								</h1>
+								<table class="table table-hover">
+									<tr>
+										<td>Meetings</td>
+										<td>
+											<table width="100%">
+												<tr>
+													<td>Design Team Meeting</td>
+													<td>Tuesday, 14:00 – 15:30, Weekly</td>
+												</tr>
+												<tr>
+													<td>Project Progress Meeting</td>
+													<td>Tuesday, 15:30 – 16:30, Fortnightly</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
 							</div>
-							<div class="form-group">
-								<h4>Closed Tenders  <span class="badge">2</span></h4>
-								<div class="row">
-									<div class="hover-container-holder">
-										<div class="tender-tile-single">
-											<div class="tender-tiles">
-												<h2><a href="#">Canada Water Masterplan</a></h2>		
-											</div>
-										</div>
-										<div class="tender-tile-single">
-											<div class="tender-tiles">
-												<h2><a href="#">Canada Water Masterplan</a></h2>
-											</div>
-										</div>
-										<div class="tender-tile-single">
-											<div class="tender-tiles">
-												<h2><a href="#">Canada Water Masterplan</a></h2>
-											</div>
-										</div>
-										<div class="row table-tender-details">
-											<div class="col-sm-6 table-left">
-												<table class="table table-hover table-striped">
-													<thead>
-														<tr>
-															<th>Active Tenders</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>Fire Engineer</td>
-														</tr>
-														<tr>
-															<td>Structural Engineer</td>
-														</tr>
-														<tr>
-															<td>Service Engineer</td>
-														</tr>
-														<tr>
-															<td>Architect</td>
-														</tr>
-														<tr>
-															<td>Facede Engineer</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-											<div class="col-sm-6 table-right">
-												<table class="table table-hover table-striped">
-													<thead>
-														<tr>
-															<th>Drafted Tenders</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>Acoustic Engineer</td>
-														</tr>			
-													</tbody>
-												</table>
-											</div>
-										</div>
-									</div>
-								</div>
+							<div class="col-sm-6 tab2" style="background: #D8652B; padding: 2px;">
+								<h1 style="color: #fff; text-align: center; font-size: 20px; padding: 0;">Win Work
+								</h1>
 							</div>
 						</div>	
 					</div>
 					<div class="col-sm-6 lounge-action">
-						<div class="shadow-wrapper">
-							<div class="panel-group" id="accordion1">
-								<div class="panel">
-									<div class="panel-heading">
-										<h4 class="panel-title">
-											<a data-toggle="collapse" data-parent="#accordion2" href="#collapse5">Actions Required <span class="badge">2</span> <span class="pull-right caret"></span></a>
-										</h4>
-									</div>
-									<div id="collapse5" class="panel-collapse collapse in">
-										<div class="panel-body">
-											<table class="table table-striped table-hover">
-												<thead>
-													<tr>
-														<th>Project</th>
-														<th>Issue</th>
-														<th>Date Raised</th>
-														<th>Date Required</th>
-														<th>Action</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Canada Water Masterplan</td>
-														<td>Request for information</td>
-														<td>01 January 2018</td>
-														<td>07 January 2018</td>
-														<td><a href="#" class="btn btn-warning">
-															Deal with it now
-														</a></td>
-													</tr>
-													<tr>
-														<td>Hounslow Place</td>
-														<td>Tenderer Feedback</td>
-														<td>01 January 2018</td>
-														<td>03 January 2018</td>
-														<td><a href="#" class="btn btn-warning">
-															Deal with it now
-														</a></td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-								<div class="panel">
-									<div class="panel-heading">
-										<h4 class="panel-title">
-											<a data-toggle="collapse" data-parent="#accordion2" href="#collapse6">Graph 1<span class="pull-right caret"></span></a>
-										</h4>
-									</div>
-									<div id="collapse6" class="panel-collapse collapse">
-										<div class="panel-body">
-											<p>Should be replaced by some graphs</p>
-										</div>
-									</div>
-								</div>
-								<div class="panel">
-									<div class="panel-heading">
-										<h4 class="panel-title">
-											<a data-toggle="collapse" data-parent="#accordion2" href="#collapse7">Graph 2 <span class="pull-right caret"></span></a>
-										</h4>
-									</div>
-									<div id="collapse7" class="panel-collapse collapse">
-										<div class="panel-body">
-											<p>Should be replaced by some graphs</p>
-										</div>
-									</div>
-								</div>
-								<div class="panel">
-									<div class="panel-heading">
-										<h4 class="panel-title">
-											<a data-toggle="collapse" data-parent="#accordion2" href="#collapse8">Graph 3 <span class="pull-right caret"></span></a>
-										</h4>
-									</div>
-									<div id="collapse8" class="panel-collapse collapse">
-										<div class="panel-body">
-											<p>Should be replaced by some graphs</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>	
+							
 					</div>
 				</div>			
 			</div>

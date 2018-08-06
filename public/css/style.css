@@ -127,7 +127,7 @@ h3.light-title{ font-size: 35px; font-weight: bolder; color: #fff; text-transfor
 .contacts .btn-warning{ background: #e56320; width: 150px; }
 footer{ background: #222; background-size: cover; padding: 22% 0 32%; position: relative; z-index: 1;}
 footer img{ margin-bottom: 50px; }
-footer a i{ background: #1874c1; padding: 10px; color: #fff; font-size: 20px; margin-right: 30px; transition: 0.4s;}
+footer a i{ background: #1874c1; padding: 10px; color: #fff; font-size: 20px; /*margin-right: 30px; */transition: 0.4s;}
 footer a .fa-facebook{ padding: 10px 15px; }
 footer a .fa-twitter{ padding: 10px 12px; }
 footer a .fa-linkedin{ padding: 10px 12px; }
@@ -1313,7 +1313,8 @@ body > div:nth-child(17) > div > div.col-sm-12{
     background-position: center bottom;
     padding-top: 50px;
     }
-h1{ padding-top:25px; color:#fff;}
+
+h1{  color:#fff;}
 
 body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(1) > div > div:nth-child(2) > a > div > div > div.back > h1,
 body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(1) > div > div:nth-child(3) > a > div > div > div.back > h1,
@@ -1336,4 +1337,68 @@ body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(1) > di
     background: none;
     border-bottom: none;
     /* border-bottom: 1px solid #222; */
+}
+
+.tab1{
+    width: 49%;
+}
+
+.tab2{
+    width: 49%;
+    float: right;
+}
+
+body > div:nth-child(17) > div > div.col-sm-12{
+    padding-top: 20px;
+    padding-bottom: 35px;
+}
+
+.section-title {
+     padding: 0 0; 
+}
+
+#motto > div.row.section-title.text-center, #about-scope > div, #faqs > div{
+    margin-bottom: 15px;
+}
+
+#motto > div.row.section-title.text-center > h1, #how-it-works > h1, #about-scope > h1, #faqs > h1{
+    padding-top: 20px;
+}
+
+.accordion {
+    background-color: #fff;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #FFB548;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    font-size: 16px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
 }
