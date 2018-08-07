@@ -145,7 +145,7 @@
 										<div class="modal-content">
 											<div class="modal-head">
 												<div class="icon-box">
-													<i class="material-icons">&#xE5CD;</i>
+													<i class="material-icons">done</i>
 												</div>				
 												<h4 class="modal-title">Are  you  sure  you  want  to  submit  this  tender  query? </h4>	
 								                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

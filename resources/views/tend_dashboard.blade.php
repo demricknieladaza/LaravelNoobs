@@ -205,30 +205,149 @@
 								<h1 style="color: #fff; text-align: center; font-size: 20px; padding: 0;">Win Work
 								</h1>
 							</div>
-							<div class="col-sm-6 tab1" style="background: #D8652B; padding: 2px;">
-								<h1 style="color: #fff; text-align: center; font-size: 20px; padding: 0;">Win Work
+							<div class="col-sm-6 tab1">
+								<h1 style="background: #D8652B; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px; margin-left: -12px; margin-right: -12px;
+								    margin-top: 0px;">Request for Proposal
 								</h1>
-								<table class="table table-hover">
-									<tr>
-										<td>Meetings</td>
-										<td>
-											<table width="100%">
-												<tr>
-													<td>Design Team Meeting</td>
-													<td>Tuesday, 14:00 – 15:30, Weekly</td>
-												</tr>
-												<tr>
-													<td>Project Progress Meeting</td>
-													<td>Tuesday, 15:30 – 16:30, Fortnightly</td>
-												</tr>
-											</table>
-										</td>
+								<table >
+									<tr class="col-sm-3">
+										<div class="ex3">
+											<p style="font-weight: bold; font-size: 20px; border-top: 2px black solid;padding-top: 10px; ">Project Infinity Tree</span></p>
+											<p>Closes in <span style="color: #D8652B;">0</span> hours <span style="color: #D8652B;">6</span> minutes<br></p>
+											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #D8652B;">14/08/2018</span></p>
+
+
+											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</span></p>
+											<p>Closes in <span style="color: #D8652B;">23</span> hours <span style="color: #D8652B;">14</span> minutes<br></p>
+											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #D8652B;">14/08/2018</span></p>
+
+
+											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</span></p>
+											<p>Closes in <span style="color: #D8652B;">0</span> hours <span style="color: #D8652B;">6</span> minutes<br></p>
+											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #D8652B;">14/08/2018</span></p>
+										</div>
 									</tr>
 								</table>
 							</div>
-							<div class="col-sm-6 tab2" style="background: #D8652B; padding: 2px;">
-								<h1 style="color: #fff; text-align: center; font-size: 20px; padding: 0;">Win Work
+							<div class="col-sm-6 tab2">
+								<h1 style="background: #D8652B; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px; margin-left: -12px; margin-right: -18px;
+								    margin-top: 0px;">Saved Opportunities
 								</h1>
+								<table >
+									<tr class="col-sm-3">
+										<div class="ex3">
+											<p style="font-weight: bold; font-size: 20px; border-top: 2px black solid;padding-top: 10px; ">Project Infinity Tree</span></p>
+											<p>Closes in <span style="color: #D8652B;">0</span> hours <span style="color: #D8652B;">6</span> minutes<br></p>
+											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #D8652B;">14/08/2018</span></p>
+
+
+											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</span></p>
+											<p>Closes in <span style="color: #D8652B;">23</span> hours <span style="color: #D8652B;">14</span> minutes<br></p>
+											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #D8652B;">14/08/2018</span></p>
+
+
+											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</span></p>
+											<p>Closes in <span style="color: #D8652B;">0</span> hours <span style="color: #D8652B;">6</span> minutes<br></p>
+											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #D8652B;">14/08/2018</span></p>
+										</div>
+									</tr>
+								</table>
+							</div>
+							<div class="col-sm-6 tab1">
+								<h1 style="background: #D8652B; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px; margin-left: -12px; margin-right: -12px;
+								    margin-top: 0px;">Active
+								</h1>
+								<table >
+									<tr class="col-sm-3">
+										<div class="ex3">
+											<p style="font-weight: bold; font-size: 20px; border-top: 2px black solid;padding-top: 10px; ">Project Infinity Tree</span></p>
+											<p>Closes in <span style="color: #D8652B;">0</span> hours <span style="color: #D8652B;">6</span> minutes<br></p>
+											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #D8652B;">14/08/2018</span></p>
+
+
+											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</span></p>
+											<p>Closes in <span style="color: #D8652B;">23</span> hours <span style="color: #D8652B;">14</span> minutes<br></p>
+											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #D8652B;">14/08/2018</span></p>
+
+
+											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</span></p>
+											<p>Closes in <span style="color: #D8652B;">0</span> hours <span style="color: #D8652B;">6</span> minutes<br></p>
+											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #D8652B;">14/08/2018</span></p>
+										</div>
+									</tr>
+								</table>
+							</div>
+							<div class="col-sm-6 tab2">
+								<h1 style="background: #D8652B; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px; margin-left: -12px; margin-right: -18px;
+								    margin-top: 0px;">Drafted
+								</h1>
+								<table >
+									<tr class="col-sm-3">
+										<div class="ex3">
+											<p style="font-weight: bold; font-size: 20px; border-top: 2px black solid;padding-top: 10px; ">Project Infinity Tree</span></p>
+											<p>Closes in <span style="color: #D8652B;">0</span> hours <span style="color: #D8652B;">6</span> minutes<br></p>
+											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #D8652B;">14/08/2018</span></p>
+
+
+											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</span></p>
+											<p>Closes in <span style="color: #D8652B;">23</span> hours <span style="color: #D8652B;">14</span> minutes<br></p>
+											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #D8652B;">14/08/2018</span></p>
+
+
+											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</span></p>
+											<p>Closes in <span style="color: #D8652B;">0</span> hours <span style="color: #D8652B;">6</span> minutes<br></p>
+											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #D8652B;">14/08/2018</span></p>
+										</div>
+									</tr>
+								</table>
+							</div>
+							<div class="col-sm-6 tab1">
+								<h1 style="background: #D8652B; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px; margin-left: -12px; margin-right: -12px;
+								    margin-top: 0px;">Successful
+								</h1>
+								<table >
+									<tr class="col-sm-3">
+										<div class="ex3">
+											<p style="font-weight: bold; font-size: 20px; border-top: 2px black solid;padding-top: 10px; ">Project Infinity Tree</span></p>
+											<p>Closes in <span style="color: #D8652B;">0</span> hours <span style="color: #D8652B;">6</span> minutes<br></p>
+											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #D8652B;">14/08/2018</span></p>
+
+
+											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</span></p>
+											<p>Closes in <span style="color: #D8652B;">0</span> hours <span style="color: #D8652B;">6</span> minutes<br></p>
+											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #D8652B;">14/08/2018</span></p>
+
+
+											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</span></p>
+											<p>Closes in <span style="color: #D8652B;">0</span> hours <span style="color: #D8652B;">6</span> minutes<br></p>
+											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #D8652B;">14/08/2018</span></p>
+										</div>
+									</tr>
+								</table>
+							</div>
+							<div class="col-sm-6 tab2">
+								<h1 style="background: #D8652B; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px; margin-left: -12px; margin-right: -18px;
+								    margin-top: 0px;">Unsuccessful
+								</h1>
+								<table >
+									<tr class="col-sm-3">
+										<div class="ex3">
+											<p style="font-weight: bold; font-size: 20px; border-top: 2px black solid;padding-top: 10px; ">Project Infinity Tree</span></p>
+											<p>Closes in <span style="color: #D8652B;">0</span> hours <span style="color: #D8652B;">6</span> minutes<br></p>
+											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #D8652B;">14/08/2018</span></p>
+
+
+											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</span></p>
+											<p>Closes in <span style="color: #D8652B;">0</span> hours <span style="color: #D8652B;">6</span> minutes<br></p>
+											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #D8652B;">14/08/2018</span></p>
+
+
+											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</span></p>
+											<p>Closes in <span style="color: #D8652B;">0</span> hours <span style="color: #D8652B;">6</span> minutes<br></p>
+											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #D8652B;">14/08/2018</span></p>
+										</div>
+									</tr>
+								</table>
 							</div>
 						</div>	
 					</div>

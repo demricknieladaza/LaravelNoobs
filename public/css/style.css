@@ -1526,3 +1526,16 @@ textarea{
     display: inline-block;
     margin: 100px auto;
 }*/
+
+div.ex3 {
+    /*background-color: lightblue;*/
+    width: 242px;
+    height: 240px;
+    overflow: auto;
+    margin-left: -10px;
+
+}
+
+.lounge-main tbody {
+    border-top: 0;
+}
