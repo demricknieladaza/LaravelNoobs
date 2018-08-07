@@ -1345,11 +1345,11 @@ body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(1) > di
 }
 
 .tab1{
-    width: 49%;
+    /*width: 49%;*/
 }
 
 .tab2{
-    width: 49%;
+    /*width: 49%;*/
     float: right;
 }
 
