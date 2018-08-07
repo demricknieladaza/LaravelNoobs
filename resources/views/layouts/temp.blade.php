@@ -17,6 +17,7 @@
 	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../../js/wow.min.js"></script>
 	<script type="text/javascript" src="http://cdn.jsdelivr.net/bootstrap.datepicker/0.1/js/bootstrap-datepicker.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 </head>
 <body>
@@ -55,9 +56,9 @@
 		<div class="col-sm-12">
 			<p><img src="../../images/logo.png"></p>
 			<p>
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-linkedin"></i></a>
+				<a style="margin-right: 3%;" href="#"><i class="fa fa-facebook"></i></a>
+                <a style="margin-right: 3%;" href="#"><i class="fa fa-twitter"></i></a>
+                <a style="margin-right: 3%;" href="#"><i class="fa fa-linkedin"></i></a>
 				<a href="#"><i class="fa fa-google-plus"></i></a>
 			</p>
 		</div>
