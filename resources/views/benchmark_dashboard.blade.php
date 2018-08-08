@@ -196,11 +196,24 @@
 				</div>
 				<div class="benchmark-head">					
 					<select name="service" class="my-select-form" id="selectservice">
-						<option value="0">Service Type</option>
-						<option>Service 1</option>
-						<option>Service 2</option>
-						<option>Service 3</option>
-						<option>Service 4</option>
+				                             <option value="" disabled selected>Select Service
+													<option>Architect</option>
+													<option>Sturctural Engineed</option>
+													<option>Service Engineer</option>
+													<option>Fire Engineer</option>
+													<option>Acoustic Engineer</option>
+													<option>Principal Designer</option>
+													<option>Fascade Engineer</option>
+													<option>Building Control</option>
+													<option>Lighting Consultant</option>
+													<option>Security Consultant</option>
+													<option>Plannning Consultant</option>
+													<option>Sustainability Consultant</option>
+													<option>BIM Consultant</option>
+													<option>Quantity Survueyor</option>
+													<option>Project Manager</option>
+													<option>Project Manager</option>
+													<option>Other</option>
 					</select>
 					<select name="service" class="my-select-form" id="selectlocation">
 						<option value="0">Location</option>
@@ -215,11 +228,23 @@
 						<input type="text" name="cvalueto" class="my-select-form drop-cvalue" placeholder="To">
 					</div>
 					<select name="service" class="my-select-form" id="selecttype">
-						<option>Type of Use</option>
-						<option>Type of Use 1</option>
-						<option>Type of Use 2</option>
-						<option>Type of Use 3</option>
-						<option value="0">Type of Use 4</option>
+						<option value="" disabled selected>Select Type of Use
+													<option>Residential</option>
+													<option>Commercial </option>
+													<option>Retail</option>
+													<option>Leisure</option>
+													<option>Sports and Venues</option>
+													<option>Hotel</option>
+													<option>Industrial</option>
+													<option>Education</option>
+													<option>Healthcare</option>
+													<option>Defence</option>
+													<option>Aviation</option>
+													<option>Highways</option>
+													<option>Bridges</option>
+													<option>Rail</option>
+													<option>Water</option>
+													<option>Oil,Gas and Chemical</option>
 					</select>
 					<button class="btn btn-warning apply-dash-filter">Apply</button>
 				</div>
