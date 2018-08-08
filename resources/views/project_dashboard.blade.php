@@ -1511,17 +1511,24 @@
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												Insurance
-											</div>
+										<div class="col-sm-6">										
+												Insurance		
 										</div>
 										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Insurance Name">
-											</div>
+												<select name="Sel"  class="form-control" >
+													<option value="" disabled selected>Select
+													<option>Professional</option>
+													<option>Indemnity</option>
+													<option>Public Liability</option>
+													<option>Public Liability</option>
+													<option>Products Liability</option>
+													<option>Employers</option>
+													<option>Liability</option>
+													<option>Other</option>
+												</select>
+											
 										</div>
-									</div>
+									</div><br>
 									<div class="row">
 										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
@@ -1535,101 +1542,140 @@
 										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Premium Cost Uplift to achieve required Insurance Level">
+												<input type="text" name="" class="form-control" placeholder="Enter Bond Description">
 											</div>
 										</div>
 
 									</div>
+									<div class="row">
+										<div class="col-sm-6"></div>
+										<div class="col-sm-6">
+											<div class="input_fields_insurance">
+											<button class="btn btn-primary" id="add_field_insurance">Add Another Insurance</button>
+											<div><input class="form-control" type="text" name="mytext[]"></div>
+											</div>
+										</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6">										
+												Bonds		
+										</div>
+										<div class="col-sm-6">
+												<select name="Sel"  class="form-control" >
+													<option value="" disabled selected>Select
+													<option>Performance</option>
+													<option>Bond</option>
+													<option>Parent Company</option>
+													<option>Guarantee</option>
+													<option>Tender/Bid Bond</option>
+													<option>On Demand Bond</option>
+													<option>Condtional/on</option>
+													<option>Default Bond</option>
+													<option>Other</option>
+												</select>
+											
+										</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6"></div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Enter Bond Description">
+											</div>
+										</div>
+									</div>
 										<div class="row">
+										<div class="col-sm-6"></div>
+										<div class="col-sm-6">
+											<div class="input_fields_bond">
+											<button class="btn btn-primary" id="add_field_bond">Add Another Bond</button>
+											<div><input class="form-control" type="text" name="mytext[]"></div>
+											</div>
+										</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6">										
+												Collateral Warranties/Third parties		
+										</div>
+										<div class="col-sm-6">
+												<select name="Sel"  class="form-control" >
+													<option value="" disabled selected>Select
+													<option>Collateral</option>
+													<option>Warranties</option>
+													<option>Third Party Rights</option>
+													<option>Both</option>
+													
+												</select>
+											
+										</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6">Limit Of Liability</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												Execution
+												<input type="text" name="" class="form-control" placeholder="Insert Limit of Liability">
 											</div>
 										</div>
+									</div>
+										<div class="row">
+										<div class="col-sm-6">										
+												Execution	
+										</div>
+										<div class="col-sm-6">
+												<select name="Sel"  class="form-control" >
+													<option value="" disabled selected>Select
+													<option>Deed</option>
+													<option>Under Hand</option>	
+												</select>
+											
+										</div>
+									</div><br>
+											<div class="row">
+										<div class="col-sm-6">										
+												Net Contribution clause	
+										</div>
+										<div class="col-sm-6">
+												<select name="Sel"  class="form-control" >
+													<option value="" disabled selected>Select
+													<option>Yes</option>
+													<option>No</option>	
+												</select>
+											
+										</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6">										
+												Form of Appointment	
+										</div>
+										<div class="col-sm-6">
+												<input type="file" name="submit" value="Submit" class="btn btn-primary">
+											
+										</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6">Documents for Signature</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Either Deed or Under Hands as selected by the employer">
+												<input type="text" name="" class="form-control" placeholder="Enter Document Title">
 											</div>
 										</div>
 									</div>
 									<div class="row">
+										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
+												<input type="file" name="submit" value="Submit" class="btn btn-primary">
 											
-										</div>
-										<div class="col-sm-6">
-								               <input type="checkbox" name="" value="" class="filled-in" id="check12" >     <label for="check12">Agreed</label>
-							              </div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">	
-												Form of Appointment
-										</div>
-											<div class="col-sm-6">
-												<button class="btn"><i class="fa fa-download"></i> Download</button>
-												<button type="button" class="btn btn-danger">View</button>
 										</div>
 									</div><br>
 									<div class="row">
+										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-												<input type="text" name="" class="form-control" placeholder="Enter Clause Here">
-										</div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-												<input type="text" name="" class="form-control" placeholder="Enter new suggested work here">
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-												<input type="text" name="" class="form-control" placeholder="Enter Comments here">
-										</div>
-									</div><br>
-									 <div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-												<div class="input_fields_comm">
-												    <button class="btn btn-primary" id="add_field_comm">Add Another Comment</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
-												</div>
+											<div class="input_fields_signature">
+											<button class="btn btn-primary" id="add_field_signature">Add Another Accreditation</button>
+											<div><input class="form-control" type="text" name="mytext[]"></div>
 											</div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-												<input type="text" name="" class="form-control" placeholder="Enter new suggested work here">
 										</div>
 									</div><br>
-									<div class="row">
-										<div class="col-sm-6">
-											Documents for Signature
-										</div>
-										<div class="col-sm-6">
-												<input type="text" name="" class="form-control" placeholder="Document Title">
-									</div>
-								</div><br>
-									<div class="row">
-										<div class="col-sm-6">	
-												
-										</div>
-											<div class="col-sm-6">
-												<button class="btn"><i class="fa fa-download"></i> Download</button>
-												<button type="button" class="btn btn-info">Upload</button>
-										</div>
-									</div>
-									
 									<div class="form-group">
 										<input type="submit" name="submit" value="Submit" class="btn btn-primary">
 										<input type="submit" name="Save" value="Save" class="btn btn-success">
@@ -1795,21 +1841,66 @@
 
 <!-- end -->
 
-<script>
-	$('.popup-gallery').magnificPopup({
-		delegate: 'a',
-		type: 'image',
-		tLoading: 'Loading image #%curr%../images.',
-		mainClass: 'mfp-img-mobile',
-		gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-		},
-		image: {
-			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',			
-		}
-	});
+
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_insurance"); //Fields wrapper
+    var add_button      = $("#add_field_insurance"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_signature"); //Fields wrapper
+    var add_button      = $("#add_field_signature"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_bond"); //Fields wrapper
+    var add_button      = $("#add_field_bond"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
 </script>
 </body>
 </html>
