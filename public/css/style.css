@@ -506,8 +506,8 @@ table table tr td{ vertical-align: top; }
 
 
 .longe-main thead{ background: none; color: #222; font-weight: bold; }
-.benchmark-dashboard h3{ font-size: 20px; color: #c45911; padding-left: 5px; margin: 30px 0; }
-.benchmark-dashboard h3 span{ border-bottom: 2px solid #c45911; }
+.benchmark-dashboard h3{ font-size: 20px; color: #191919; padding-left: 5px; margin: 30px 0; }
+/*.benchmark-dashboard h3 span{ border-bottom: 2px solid #c45911; }*/
 .lounge-main .table-striped>tbody>tr:nth-of-type(odd){ background: #fbe4d5; }
 .lounge-main tbody td{ border: 1px solid #f4b083; }
 .lounge-main tbody{ border-top: 3px solid #f4b083; }
