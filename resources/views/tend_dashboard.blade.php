@@ -17,13 +17,145 @@
 	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../../js/wow.min.js"></script>
 	<script type="text/javascript" src="http://cdn.jsdelivr.net/bootstrap.datepicker/0.1/js/bootstrap-datepicker.js"></script>
-	<script src="path/to/Chart.min.js"></script>
- 
-	<script>
-	    var barChart = new Chart({...})
-	</script>
+	<link id="themecss" rel="stylesheet" type="text/css" href="//www.shieldui.com/shared/components/latest/css/light/all.min.css" />
+    <script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+	<script type="text/javascript">
+    jQuery(function ($) {
+        var data1 = [12, 3, 4, 2, 12, 3, 4, 17, 22, 34, 54, 67];
+        var data2 = [3, 9, 12, 14, 22, 32, 45, 12, 67, 45, 55, 7];
+        var data3 = [23, 19, 11, 134, 242, 352, 435, 22, 637, 445, 555, 57];
+            
+        $(function () {            
+            // $("#chart1").shieldChart({
+            //     exportOptions: {
+            //         image: false,
+            //         print: false
+            //     },
+            //     axisY: {
+            //         title: {
+            //             text: "Break-Down for selected quarter"
+            //         }
+            //     },               
+            //     dataSeries: [{
+            //         seriesType: "line",                    
+            //         data: data1
+            //     }]
+            // });
+
+            $("#chart2").shieldChart({
+                exportOptions: {
+                    image: false,
+                    print: false
+                },
+                axisY: {
+                    title: {
+                        text: "Break-Down for selected quarter"
+                    }
+                },               
+                dataSeries: [{
+                    seriesType: "line",                    
+                    data: data1	
+                }, {
+                    seriesType: "line",
+                    data: data2
+                }, {
+                    seriesType: "line",
+                    data: data3
+                }]
+            });
+
+       
+        });
+      
+    });
+</script>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        var data4 = [12, 3, 4, 2, 12, 3, 4, 17, 22, 34, 54, 67];
+        var data5 = [3, 9, 12, 14, 22, 32, 45, 12, 67, 45, 55, 7];
+        var data3 = [23, 19, 11, 134, 242, 352, 435, 22, 637, 445, 555, 57];
+            
+        // $("#chart1").shieldChart({
+        //     exportOptions: {
+        //         image: false,
+        //         print: false
+        //     },
+        //     axisY: {
+        //         title: {
+        //             text: "Break-Down for selected quarter"
+        //         }
+        //     },
+        //     dataSeries: [{
+        //         seriesType: "bar",
+        //         data: data1
+        //     }]
+        // });
+
+        $("#chart1").shieldChart({
+            exportOptions: {
+                image: false,
+                print: false
+            },
+            axisY: {
+                title: {
+                    text: "Break-Down for selected quarter"
+                }
+            },
+            dataSeries: [{
+                seriesType: "bar",
+                data: data4
+            }, {
+                seriesType: "bar",
+                data: data5
+            }, {
+                seriesType: "bar",
+                data: data3
+            }]
+        });
+    });
+</script>
+<script type="text/javascript">
+  window.onload = function () {
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+      title:{
+        text: "Understanding Legend"
+      },
+
+      
+      
+     data: [
+     {
+      type: "line",
+      showInLegend: true,
+      legendText: "Numbers",
+      dataPoints: [
+      {label: "Jan", y: 230 },
+      {label: "Feb", y: 245},
+      {label: "Mar", y: 345},
+      {label: "Apr", y: 367 },
+      {label: "May", y: 453 },
+      {label: "Jun", y: 256 },
+      {label: "Jul", y: 478},
+      {label: "Aug", y: 543 },      
+      {label: "Sep", y: 456 },
+      {label: "Oct", y: 456 },
+      {label: "Nov", y: 456 },
+      {label: "Dec", y: 456 }
+      ]
+    }
+    ]
+  });
+
+    chart.render();
+  }
+  </script>
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        
 </head>
-<body>
+<body class="theme-light">
 
 	<header>
 		<nav class="navbar">
@@ -160,6 +292,7 @@
 	<div class="container-fluid below-header">
 	</div>
 
+	
 	<div class="container-fluid lounge-wrapper">
 		<div class="row">
 			<div class="col-sm-2 lounge-menu">
@@ -212,8 +345,9 @@
 								</div>
 							</div>
 							<div class="col-sm-6 tab1">
-								<h1 style="background: #D8652B; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px;">Request for Proposal
-								</h1>
+								<div class="tender-tiles new-project-tile" style="background: #D8652B; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px;">
+									<h3><a href="{{ url('/winwork/pds') }}">Request for Proposal</a></h3>
+								</div>
 								<table >
 									<tr class="col-sm-3">
 										<div class="ex3">
@@ -235,9 +369,9 @@
 								</table>
 							</div>
 							<div class="col-sm-6 tab2 pull-right">
-								<h1 style="background: #D8652B; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px;">
-									Saved Opportunities
-								</h1>
+								<div class="tender-tiles new-project-tile" style="background: #D8652B; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px;">
+									<h3><a href="{{ url('/winwork/pds') }}">Saved Opportunities</a> </h3>
+								</div>
 								<table >
 									<tr class="col-sm-3">
 										<div class="ex3">
@@ -259,8 +393,9 @@
 								</table>
 							</div>
 							<div class="col-sm-6 tab1">
-								<h1 style="background: #D8652B; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px;">Active
-								</h1>
+								<div class="tender-tiles new-project-tile" style="background: #D8652B; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px;    margin-top: 15px; padding-bottom: 14px;">
+									<h3><a href="{{ url('/winwork/pds/bid') }}">Active</a> </h3>
+								</div>
 								<table >
 									<tr class="col-sm-3">
 										<div class="ex3">
@@ -282,8 +417,9 @@
 								</table>
 							</div>
 							<div class="col-sm-6 tab2">
-								<h1 style="background: #D8652B; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px;">Drafted
-								</h1>
+								<div class="tender-tiles new-project-tile" style="background: #D8652B; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px;    margin-top: 15px; padding-bottom: 14px;">
+									<h3><a href="{{ url('/winwork/pds/bid') }}">Drafted</a> </h3>
+								</div>
 								<table >
 									<tr class="col-sm-3 pull-right">
 										<div class="ex3">
@@ -305,8 +441,9 @@
 								</table>
 							</div>
 							<div class="col-sm-6 tab1">
-								<h1 style="background: #D8652B; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px;">Successful
-								</h1>
+								<div class="tender-tiles new-project-tile" style="background: #D8652B; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px;    margin-top: 15px; padding-bottom: 14px;">
+									<h3><a href="{{ url('/winwork/pds/bid') }}">Successful</a> </h3>
+								</div>
 								<table >
 									<tr class="col-sm-3">
 										<div class="ex3">
@@ -328,8 +465,9 @@
 								</table>
 							</div>
 							<div class="col-sm-6 tab2">
-								<h1 style="background: #D8652B; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px;">Unsuccessful
-								</h1>
+								<div class="tender-tiles new-project-tile" style="background: #D8652B; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px;     margin-top: 15px; padding-bottom: 14px;">
+									<h3><a href="{{ url('/winwork/pds/bid') }}">Unsuccessful</a> </h3>
+								</div>
 								<table >
 									<tr class="col-sm-3">
 										<div class="ex3">
@@ -354,13 +492,43 @@
 					</div>
 					<div class="col-sm-6 lounge-action">
 						<div class="lounge-demo">
-							<canvas id="speedChart" width="600" height="400"></canvas>
+							<div style="width: 1000px;" class="container">
+							    <div class="row">
+							        <div class="col-md-6">
+							            <div class="panel panel-default">
+							                <div id="chart2" class="panel-body">
+							                </div>
+							            </div>
+							        </div>
+							    </div>
+							</div>
+							<div style="width: 1000px;" class="container">
+							    <div class="row">
+							        <div class="col-md-6">
+							            <div class="panel panel-default">
+							                <div id="chart1" class="panel-body">
+							                </div>
+							            </div>
+							        </div>
+							    </div>   
+							</div>
+							<div style="width: 1000px;" class="container">
+							    <div class="row">
+							        <div class="col-md-6">
+							            <div class="panel panel-default">
+							                <div id="chartContainer" style="height: 300px; width: 100%;">
+							                </div>
+							            </div>
+							        </div>
+							    </div>   
+							</div>
 						</div>
 					</div>
 				</div>			
 			</div>
 		</div>
 	</div>
+	
 
 	
 	<footer class="text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
