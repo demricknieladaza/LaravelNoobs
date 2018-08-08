@@ -262,9 +262,9 @@
 		<div class="col-sm-12">
 			<p><img src="../../images/logo.png"></p>
 			<p>
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-linkedin"></i></a>
+				<a style="margin-right: 3%;" href="#"><i class="fa fa-facebook"></i></a>
+                <a style="margin-right: 3%;" href="#"><i class="fa fa-twitter"></i></a>
+                <a style="margin-right: 3%;" href="#"><i class="fa fa-linkedin"></i></a>
 				<a href="#"><i class="fa fa-google-plus"></i></a>
 			</p>
 		</div>

@@ -450,7 +450,7 @@
 			</div>
 			<div class="tender-container">
 				<div class="row">
-					<div class="col-sm-9 active-tenders">
+					<div class="col-sm-12 active-tenders">
 						<h3>Tender Queries</h3>
 						<div class="row">	
 							<div class="col-sm-12">				
@@ -687,9 +687,9 @@
 	<div class="col-sm-12">
 		<p><img src="../images/logo.png"></p>
 		<p>
-			<a href="#"><i class="fa fa-facebook"></i></a>
-			<a href="#"><i class="fa fa-twitter"></i></a>
-			<a href="#"><i class="fa fa-linkedin"></i></a>
+			<a style="margin-right: 3%;" href="#"><i class="fa fa-facebook"></i></a>
+                <a style="margin-right: 3%;" href="#"><i class="fa fa-twitter"></i></a>
+                <a style="margin-right: 3%;" href="#"><i class="fa fa-linkedin"></i></a>
 			<a href="#"><i class="fa fa-google-plus"></i></a>
 		</p>
 	</div>

@@ -573,11 +573,11 @@ body > div:nth-child(17) > div > div.col-sm-12{
 body > div.container.search_filter.wow.fadeInDown > div > form > div.col-sm-2 > button,body > div.container-fluid.search_results.wow.fadeInUp > div > div > div > div.col-sm-9 > div:nth-child(1) > div > div:nth-child(2) > ul > li.active > a
 body > div.container-fluid.search_results.wow.fadeInUp > div > div > div > div.col-sm-3 > div > form > p:nth-child(13) > input
 ,body > div.container-fluid.search_results.wow.fadeInUp > div > div > div > div.col-sm-9 > div:nth-child(8) > div > div:nth-child(2) > ul > li.active > a{
-    background-color: rgb(40,80,128);
+    background-color: #D8652B;
 }
 body > div.container-fluid.search_results.wow.fadeInUp > div > div > div > div.col-sm-3 > div > form > h3,
 body > div.container-fluid.search_results.wow.fadeInUp > div > div > div > div.col-sm-9 > div:nth-child(2) > figcaption > a > h3{
-    color: rgb(40,80,128);
+    color: #D8652B;
 }
 
 body > div.container-fluid.search_results.wow.fadeInUp > div > div > div > div.col-sm-9 > div:nth-child(1) > div > div:nth-child(2) > ul > li.active{
@@ -586,17 +586,17 @@ body > div.container-fluid.search_results.wow.fadeInUp > div > div > div > div.c
 
 
 .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
-    background-color: rgb(40,80,128);
+    background-color: #D8652B;
 }
 
 
 .btn-primary {
    
-    background-color: rgb(40,80,128);
+    background-color: #D8652B;
    }
 
 .search_result_row h3 {
-    color: rgb(40,80,128);
+    color: #D8652B;
  
 }
 @media(max-width: 767px){
@@ -1178,6 +1178,11 @@ body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > di
     margin-left: -225px;
         width: 21%;
 }
+.dropdown1 {
+   
+    margin-left:0;
+    
+}
 .table-condensed>tbody>tr>td{
     padding-left: 10%;
 }
@@ -1340,11 +1345,11 @@ body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(1) > di
 }
 
 .tab1{
-    width: 49%;
+    /*width: 49%;*/
 }
 
 .tab2{
-    width: 49%;
+    /*width: 49%;*/
     float: right;
 }
 
@@ -1394,7 +1399,7 @@ body > div:nth-child(17) > div > div.col-sm-12{
     content: "\2212";
 }*/
 
-.panel {
+.panel1 {
     padding: 0 18px;
     background-color: white;
     max-height: 0;
@@ -1402,3 +1407,157 @@ body > div:nth-child(17) > div > div.col-sm-12{
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
+
+#but{
+    background-color: #FE7235;
+    padding: 15px;
+    color: #fff;
+    font-size: 20px;
+    margin-left: 3px;
+    padding-left: 100px;
+    padding-right: 98px;
+    box-shadow: 5px 10px rgb(216,216,216);
+}
+
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+#Modal > div{
+    padding-top: 170px;
+}
+
+textarea{
+    resize:none;
+    width: 100%;
+    height: 35%;
+}
+
+.inq{
+    background: #D8652B;
+}
+
+
+#Modal > div > div > div.modal-footer > div.text-center{
+    background-color: #D8652B;
+    padding: 20px;
+}
+
+#mode > div{
+    padding-top: 60px;
+}
+.modal-confirm {        
+    color: #636363;
+
+}
+
+.modal-confirm .modal-content {
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+}
+.modal-confirm .modal-head {
+    border-bottom: none;   
+    position: relative;
+}
+.modal-confirm h4 {
+    text-align: center;
+    font-size: 26px;
+    margin: 30px 0 -10px;
+}
+.modal-confirm .close {
+    position: absolute;
+    top: -5px;
+    right: -2px;
+}
+.modal-confirm .modal-body {
+    color: #999;
+}
+.modal-confirm .modal-footer {
+    border: none;
+    text-align: center;     
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 10px 15px 25px;
+}
+.modal-confirm .modal-footer a {
+    color: #999;
+}       
+.modal-confirm .icon-box {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+    z-index: 9;
+    text-align: center;
+    border: 3px solid #f15e5e;
+}
+.modal-confirm .icon-box i {
+    color: #f15e5e;
+    font-size: 46px;
+    display: inline-block;
+    margin-top: 13px;
+}
+.modal-confirm .icon-box1 {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+    z-index: 9;
+    text-align: center;
+    border: 3px solid green;
+}
+.modal-confirm .icon-box1 i {
+    color: green;
+    font-size: 46px;
+    display: inline-block;
+    margin-top: 13px;
+}
+.modal-confirm .btn {
+    color: #fff;
+    border-radius: 4px;
+    background: #60c7c1;
+    text-decoration: none;
+    transition: all 0.4s;
+    line-height: normal;
+    min-width: 120px;
+    border: none;
+    min-height: 40px;
+    border-radius: 3px;
+    margin: 0 5px;
+    outline: none !important;
+}
+.modal-confirm .btn-info {
+    background: #c1c1c1;
+}
+.modal-confirm .btn-info:hover, .modal-confirm .btn-info:focus {
+    background: #a8a8a8;
+}
+.modal-confirm .btn-danger {
+    background: #f15e5e;
+}
+.modal-confirm .btn-danger:hover, .modal-confirm .btn-danger:focus {
+    background: #ee3535;
+}
+/*.trigger-btn {
+    display: inline-block;
+    margin: 100px auto;
+}*/
+
+div.ex3 {
+    /*background-color: lightblue;*/
+    width: 242px;
+    height: 240px;
+    overflow: auto;
+    margin-left: -10px;
+
+}
+
+.lounge-main tbody {
+    border-top: 0;
+}
+
