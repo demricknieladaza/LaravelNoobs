@@ -22,6 +22,20 @@
     <script type="text/javascript" src="../js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="../js/functions.js"></script>
     <script type="text/javascript" src="../js//bxslider.js"></script>
+    	<link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../../css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	{{-- <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css"> --}}
+	<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/bootstrap.datepicker/0.1/css/datepicker.css">
+	<link rel="stylesheet" type="text/css" href="../../css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="../../css/style.css">
+	<link rel="shortcut icon" href="../../logo.jpg">
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../js/wow.min.js"></script>
+	<script type="text/javascript" src="http://cdn.jsdelivr.net/bootstrap.datepicker/0.1/js/bootstrap-datepicker.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
 
@@ -172,7 +186,7 @@
 						<li><a data-toggle="tab" href="#section3">Tenders</a></li>
 						<li><a data-toggle="tab" href="#section4">Create New Tender</a></li>
 						<li><a data-toggle="tab" href="#section6">Appointment</a></li>
-						
+						<li><a data-toggle="tab" href="#section5">Quality Assurance</a></li>
 					</ul>
 				</div>
 			</div>
@@ -1456,47 +1470,132 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												Years of experience in the service required
+												Created by
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Experience in Years">
+												<input type="text" name="" class="form-control" placeholder="First Name">
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												Offered Services
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Last Name">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6"></div>
+											<div class="col-sm-6">
+											<div class="form-group">
+												<div class="input-group date" id="datepicker17" data-date="02-2012" 
+												         data-date-format="mm-yyyy">
+
+													 <input class="form-control" type="text" placeholder="Select Year" readonly="readonly" name="date" >	  
+													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+												Created by
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="First Name">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Last Name">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6"></div>
+											<div class="col-sm-6">
+											<div class="form-group">
+												<div class="input-group date" id="datepicker18" data-date="02-2012" 
+												         data-date-format="mm-yyyy">
+
+													 <input class="form-control" type="text" placeholder="Select Year" readonly="readonly" name="date" >	  
+													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+												Approved by
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="First Name">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Last Name">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6"></div>
+											<div class="col-sm-6">
+											<div class="form-group">
+												<div class="input-group date" id="datepicker19" data-date="02-2012" 
+												         data-date-format="mm-yyyy">
+
+													 <input class="form-control" type="text" placeholder="Select Year" readonly="readonly" name="date" >	  
+													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">Statementt</div>
+										<div class="col-sm-6">
+											<div class="form-group">
 												<select name="" class="form-control">
-													<option>Service 1</option>
-													<option>Service 2</option>
-													<option>Service 3</option>
-													<option>Service 4</option>
+													<option value="" disabled selected>Select </option>
+													<option>I afree to XXX</option>
+												
 												</select>
 											</div>
 										</div>
 									</div>
 									<div class="row">
+										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
-											<div class="form-group">
-												Track record of relevant projects
+											<div class="input_fields_state">
+											<button class="btn btn-primary" id="add_field_state">Add Another Insurance</button>
+											<div><input class="form-control" type="text" name="mytext[]"></div>
 											</div>
 										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Project Name">
-											</div>
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Project Value">
-											</div>
-										</div>
-									</div>
+									</div><br>
 									<div class="form-group">
 										<input type="submit" name="submit" value="Submit" class="btn btn-primary">
 										<input type="submit" name="Save" value="Save" class="btn btn-success">
@@ -1761,11 +1860,10 @@
 													 <input class="form-control" type="text" placeholder="Select Year" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
-												
 											</div>
 										</div>
 									</div>
-										<div class="row">
+								<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
 												Approved by
@@ -1793,7 +1891,7 @@
 										<div class="col-sm-6"></div>
 											<div class="col-sm-6">
 											<div class="form-group">
-												<div class="input-group date" id="datepicker11" data-date="02-2012" 
+												<div class="input-group date" id="datepicker1" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
 													 <input class="form-control" type="text" placeholder="Select Year" readonly="readonly" name="date" >	  
@@ -1885,6 +1983,26 @@
 <script type="text/javascript">
 	$(document).ready(function() {
     var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_state"); //Fields wrapper
+    var add_button      = $("#add_field_state"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
     var wrapper         = $(".input_fields_bond"); //Fields wrapper
     var add_button      = $("#add_field_bond"); //Add button ID
     
@@ -1901,6 +2019,28 @@
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
 });
+</script>
+
+<script>
+	$("#datepicker17").datepicker( {
+		    format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+		});
+</script>
+<script>
+	$("#datepicker18").datepicker( {
+		    format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+		});
+</script>
+<script>
+	$("#datepicker19").datepicker( {
+		    format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+		});
 </script>
 </body>
 </html>

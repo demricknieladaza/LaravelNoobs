@@ -35,4 +35,6 @@ Route::get('/publish/project_dashboard', 'UsersController@project_dashboard_cont
 
 Route::get('/publish/project_dashboard/datasheet', 'UsersController@datasheet_controller');
 
+Route::get('login', 'UserLogin@checklogin');
+
 Route::resource('register','UserAccountsController');
