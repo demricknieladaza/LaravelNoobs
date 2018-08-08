@@ -1178,6 +1178,11 @@ body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > di
     margin-left: -225px;
         width: 21%;
 }
+.dropdown1 {
+   
+    margin-left:0;
+    
+}
 .table-condensed>tbody>tr>td{
     padding-left: 10%;
 }
@@ -1445,8 +1450,9 @@ textarea{
 }
 .modal-confirm {        
     color: #636363;
-    width: 400px;
+
 }
+
 .modal-confirm .modal-content {
     padding: 20px;
     border-radius: 5px;
@@ -1492,6 +1498,21 @@ textarea{
 }
 .modal-confirm .icon-box i {
     color: #f15e5e;
+    font-size: 46px;
+    display: inline-block;
+    margin-top: 13px;
+}
+.modal-confirm .icon-box1 {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+    z-index: 9;
+    text-align: center;
+    border: 3px solid green;
+}
+.modal-confirm .icon-box1 i {
+    color: green;
     font-size: 46px;
     display: inline-block;
     margin-top: 13px;

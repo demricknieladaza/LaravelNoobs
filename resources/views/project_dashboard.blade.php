@@ -1,4 +1,59 @@
-@extends('layouts.temp')
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SCOPE</title>    
+    <link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/masterslider.css">
+    <link rel="stylesheet" type="text/css" href="../css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="../css/bxslider.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="shortcut icon" href="../images/logo.jpg">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/masterslider.min.js"></script>
+    <script type="text/javascript" src="../js/wow.min.js"></script>
+    <script type="text/javascript" src="../js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="../js/functions.js"></script>
+    <script type="text/javascript" src="../js//bxslider.js"></script>
+</head>
+<body>
+
+	<header>
+		<nav class="navbar">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<i class="icon-bar"></i>
+							<i class="icon-bar"></i>
+							<i class="icon-bar"></i>
+						</button>
+						<a href="{{ url('/') }}" class="navbar-brand"><img src="../images/logo.png" width="120"></a>
+					</div>
+					<div class="collapse navbar-collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="{{ url('/') }}">Home</a></li>
+                            <li><a href="{{ url('/publish') }}" class="highlight">Publish Projects</a></li>    
+                            <li><a href="{{ url('/winwork') }}" class="highlight">Win Work</a></li>
+                            <li><a href="#how-it-works">How It Works</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                            <li><a href="#about-scope">About Scope</a></li>
+                            <li><a href="#faqs">FAQ</a></li>                    
+                            <li><a href="#contact">contact</a></li>
+                            <li><a data-toggle="modal" href="#myModal" class="highlight">Login/register</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
 
 	<div id="myModal" class="modal fade" role="dialog" tabindex='-1'>
 		<div class="modal-dialog">
@@ -104,6 +159,7 @@
 	</div> 
 
 	<div class="container below-header">
+				
 	</div> 
 
 	<div class="container">
@@ -111,10 +167,11 @@
 			<div class="col-sm-4">
 				<div class="tender-container">
 					<ul class="nav bid-form-nav">
-						
-						<li><a  href="{{ url('/publish/project_dashboard/datasheet') }}">Project</a></li>
-						<li><a data-toggle="tab" href="#section5">Tenders</a></li>
-						<li><a data-toggle="tab" href="#section6">Create New Tender</a></li>
+						<li class="active"><a data-toggle="tab" href="#section1">Pre-Qualification Questionnaire</a></li>
+						<li><a   href="{{ url('/publish/project_dashboard/datasheet') }}">Project</a></li>
+						<li><a data-toggle="tab" href="#section3">Tenders</a></li>
+						<li><a data-toggle="tab" href="#section4">Create New Tender</a></li>
+						<li><a data-toggle="tab" href="#section6">Appointment</a></li>
 						
 					</ul>
 				</div>
@@ -963,73 +1020,426 @@
 						</form>
 					</div>
 					<div id="section4" class="tab-pane fade tender-container">
-						<h3 class="bid-form-title">Approach</h3>
+						<h6 class="bid-form-title">Edit Tender</h6>
 						<form method="post">
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="row">
+										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
-											<div class="form-group">
-												Commentary on Constraints and potential Issues
-											</div>
+												  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">View Bids </button>
+											<div class="modal fade" id="myModal2" role="dialog">
+												    <div class="modal-dialog">
+										     <div class="modal-content">
+												     <div class="modal-header">
+												          <button type="button" class="close" data-dismiss="modal">&times;</button>
+												          <h4 class="modal-title">View Bids</h4>
+												      </div>
+								             <div class="modal-body">  
+												  <table class="table table-bordered">
+												    <thead>
+												      <tr>
+												         <th>#</th>
+												        <th>Tenderer</th>
+												        <th>Qualitative Score</th>
+												        <th>Quantitative Score</th>
+												        <th>Risk Score</th>
+												      </tr>
+												    </thead>
+												    <tbody>
+												      <tr>
+												       <td>1</td>
+												        <td>Company 1</td>
+												        <td>5</td>
+												        <td>9</td>
+												        <td>2</td>
+												      </tr>	      
+												    </tbody>
+												    <tbody>
+												      <tr>
+												       <td>2</td>
+												        <td>Company 2</td>
+												        <td>2</td>
+												        <td>4</td>
+												        <td>5</td>
+												      </tr>      
+												    </tbody>
+												        <tbody>
+												      <tr>
+												       <td>3</td>
+												        <td>Company 3</td>
+												        <td>7</td>
+												        <td>8</td>
+												        <td>7</td>
+												      </tr>
+												      
+												    </tbody>
+												  </table>
+																						        </div>
+										        <div class="modal-footer">
+										          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										        </div>
+										      </div>
+										      
+										    </div>
 										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter text her">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class=" col-sm-6"></div>
-										<div class="col-sm-6">													
-												<div class="btn-sm btn-primary">
-							       	                 <input type="file" name="file"/ placeholder="upload images">
-							                    </div>
-						                    </div>
+								</div>
+								</div><br>
+									 <div class="row">
+										<div class="col-sm-6"></div>
+										<div class="form-group">
+
+
+												         
+												  <table class="table table-bordered">
+												    <thead>
+												      <tr>
+												         <th>Query</th>
+												        <th>Received</th>
+												        <th>Time left to respond</th>
+												        <th>Respone</th>
+												        
+												      </tr>
+												    </thead>
+												    <tbody>
+												      <tr>
+												       <td>Question text Question text</td>
+												        <td>01/01/18, 15:32</td>
+												        <td>26 hours 14 minutes</td>
+												        <td><div class="col-sm-6">
+
+													  <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal1">Respone</button>
+
+													  <div class="modal fade" id="myModal1" role="dialog">
+													    <div class="modal-dialog">
+													    
+													      <div class="modal-content">
+													        <div class="modal-header">
+													          <button type="button" class="close" data-dismiss="modal">&times;</button>
+													          <h4 class="modal-title">Response</h4>
+													        </div>
+													        <div class="modal-body">
+													          <textarea class="form-control" id="exampleTextarea" rows="3" cols="3" placeholder="Enter response here"></textarea>
+													        </div>
+													        <div class="modal-footer">
+													        	   <button type="button" class="btn btn-warning" data-dismiss="modal">Publish Response</button>
+													          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+													        </div>
+													      </div>
+													      
+													    </div>
+													  </div>
+													  
+													</div>
+													</td>
+												      </tr> 
+												    </tbody>
+												  </table>
+												       
+												  
+												</div>
+									</div><br>
+                                   
+											 <div class="row">
+										<div class="col-sm-6"></div>
+										<div class="form-group">
+
+
+												         
+												  <table class="table table-bordered">
+												    <thead>
+												      <tr>
+												         <th>Query</th>
+												        <th>Received</th>
+												        <th>Time left to respond</th>
+												        <th>Respone</th>
+												        
+												      </tr>
+												    </thead>
+												    <tbody>
+												      <tr>
+												       <td>Question text Question text</td>
+												        <td>01/01/18, 15:32</td>
+												        <td>26 hours 14 minutes</td>
+												        <td><div class="col-sm-6">
+
+													  <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal7">Respone</button>
+
+													  <div class="modal fade" id="myModal7" role="dialog">
+													    <div class="modal-dialog">
+													    
+													      <div class="modal-content">
+													        <div class="modal-header">
+													          <button type="button" class="close" data-dismiss="modal">&times;</button>
+													          <h4 class="modal-title">Response</h4>
+													        </div>
+													        <div class="modal-body">
+													          <textarea class="form-control" id="exampleTextarea" rows="3" cols="3" placeholder="Enter response here"></textarea>
+													        </div>
+													        <div class="modal-footer">
+													        	   <button type="button" class="btn btn-warning" data-dismiss="modal">Publish Response</button>
+													          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+													        </div>
+													      </div>
+													      
+													    </div>
+													  </div>
+													  
+													</div>
+													</td>
+												      </tr> 
+												    </tbody>
+												  </table>
+												       
+												  
+												</div>
 									</div><br>
                                     <div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-												<div class="input_fields_com">
-												    <button class="btn btn-primary" id="add_field_com">Add Another Comment</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
+										<div class="col-sm-6"></div>
+										<div class="form-group">
+
+
+												         
+												  <table class="table table-bordered">
+												    <thead>
+												      <tr>
+												         <th>Query</th>
+												        <th>Received</th>
+												        <th>Time left to respond</th>
+												        <th>Respone</th>
+												        
+												      </tr>
+												    </thead>
+												    <tbody>
+												      <tr>
+												       <td>Question text Question text</td>
+												        <td>01/01/18, 15:32</td>
+												        <td>26 hours 14 minutes</td>
+												        <td><div class="col-sm-6">
+
+													  <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal8">Respone</button>
+
+													  <div class="modal fade" id="myModal8" role="dialog">
+													    <div class="modal-dialog">
+													    
+													      <div class="modal-content">
+													        <div class="modal-header">
+													          <button type="button" class="close" data-dismiss="modal">&times;</button>
+													          <h4 class="modal-title">Response</h4>
+													        </div>
+													        <div class="modal-body">
+													          <textarea class="form-control" id="exampleTextarea" rows="3" cols="3" placeholder="Enter response here"></textarea>
+													        </div>
+													        <div class="modal-footer">
+													        	   <button type="button" class="btn btn-warning" data-dismiss="modal">Publish Response</button>
+													          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+													        </div>
+													      </div>
+													      
+													    </div>
+													  </div>
+													  
+													</div>
+													</td>
+												      </tr> 
+												    </tbody>
+												  </table>
+												       
+												  
 												</div>
-											</div>
 									</div><br>
-									<div class="row">
+                                   	<div class="row">
+										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
-											<div class="form-group">
-												Solution
-											</div>
+												  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal5">View Queries</button>
+
+												  <!-- Modal -->
+												  <div class="modal fade" id="myModal5" role="dialog">
+												    <div class="modal-dialog">
+												    
+												      <!-- Modal content-->
+												      <div class="modal-content">
+												        <div class="modal-header">
+												          <button type="button" class="close" data-dismiss="modal">&times;</button>
+												          <h4 class="modal-title">View Queries</h4>
+												        </div>
+												        <div class="modal-body">
+
+												         
+												  <table class="table table-bordered">
+												    <thead>
+												      <tr>
+												         <th>#</th>
+												        <th>Query</th>
+												        <th>Response</th>
+												      </tr>
+												    </thead>
+												    <tbody>
+												      <tr>
+												       <td>1</td>
+												        <td>Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text</td>
+												        <td>Response text Response text Response text Response text Response text Response text Response text Response text Response text Response text</td>
+												        
+												      </tr>
+												      
+												    </tbody>
+
+												    <tbody>
+												      <tr>
+												       <td>2</td>
+												        <td>Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text</td>
+												        <td>Response text Response text Response text Response text Response text Response text Response text Response text Response text Response text</td>
+												      </tr>
+												      
+												    </tbody>
+												       <tbody>
+												      <tr>
+												       <td>3</td>
+												        <td>Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text</td>
+												        <td>Response text Response text Response text Response text Response text Response text Response text Response text Response text Response text</td>
+												      </tr>
+												      
+												    </tbody>
+												  </table>
+																						        </div>
+										        <div class="modal-footer">
+										          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										        </div>
+										      </div>
+										      
+										    </div>
 										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter text Here">
+								</div>
+								</div><br>
+								<div class="row">
+									<div id="mode" class="modal fade">
+									<div class="modal-dialog modal-confirm">
+										<div class="modal-content">
+											<div class="modal-head">
+												<div class="icon-box">
+													<i class="material-icons">&#xE5CD;</i>
+												</div>				
+												<h4 class="modal-title title1">Do you really want to award Company 1 as the Fire Engineer on the Canada Water Masterplan project? </h4>	
+								                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+											</div>
+											
+											<div class="modal-footer">
+												<button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+												<button type="button" class="btn btn-success">Yes</button>
 											</div>
 										</div>
 									</div>
+								</div>
+									<div class="col-sm-6"></div>
+									<div class="col-sm-6">
+										
+										<div class="dropdown">
+											  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Tenderer
+											  <span class="caret"></span></button>
+											  <ul class="dropdown-menu dropdown1">
+											    <li><a href="#mode" class="trigger-btn" data-toggle="modal">Company 1</a></li>
+											    <li><a href="#">Company 2</a></li>
+											    <li><a href="#">Company 3</a></li>
+											  </ul>
+											</div>
+									</div>
+								</div><br>
 									<div class="row">
-										<div class=" col-sm-6"></div>
-										<div class="col-sm-6">													
-												<div class="btn-sm btn-primary">
-							       	                 <input type="file" name="file"/ placeholder="upload images">
-							                    </div>
-						                    </div>
-									</div><br>
-									 <div class="row">
+										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
-											
+												  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal5">View Feedback given</button>
+
+												  <!-- Modal -->
+												  <div class="modal fade" id="myModal5" role="dialog">
+												    <div class="modal-dialog">
+												    
+												      <!-- Modal content-->
+												      <div class="modal-content">
+												        <div class="modal-header">
+												          <button type="button" class="close" data-dismiss="modal">&times;</button>
+												          <h4 class="modal-title">View Queries</h4>
+												        </div>
+												        <div class="modal-body">
+
+												         
+												  <table class="table table-bordered">
+												    <thead>
+												      <tr>
+												         <th>#</th>
+												        <th>Query</th>
+												        <th>Response</th>
+												      </tr>
+												    </thead>
+												    <tbody>
+												      <tr>
+												       <td>1</td>
+												        <td>Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text</td>
+												        <td>Response text Response text Response text Response text Response text Response text Response text Response text Response text Response text</td>
+												        
+												      </tr>
+												      
+												    </tbody>
+
+												    <tbody>
+												      <tr>
+												       <td>2</td>
+												        <td>Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text</td>
+												        <td>Response text Response text Response text Response text Response text Response text Response text Response text Response text Response text</td>
+												      </tr>
+												      
+												    </tbody>
+												       <tbody>
+												      <tr>
+												       <td>3</td>
+												        <td>Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text</td>
+												        <td>Response text Response text Response text Response text Response text Response text Response text Response text Response text Response text</td>
+												      </tr>
+												      
+												    </tbody>
+												  </table>
+																						        </div>
+										        <div class="modal-footer">
+										          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										        </div>
+										      </div>
+										      
+										    </div>
+										</div>
+												</div>
+												</div><br>
+													<div class="row">
+															<div id="mode1" class="modal fade">
+													<div class="modal-dialog modal-confirm">
+														<div class="modal-content">
+															<div class="modal-head">
+																<div class="icon-box1">
+																	<i class="material-icons">done</i>
+																</div>				
+																<h4 class="modal-title">Complete Tender Process</h4>	
+												                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+															</div>
+															
+															<div class="modal-footer">
+																
+																<button type="button" class="btn btn-success">Back</button>
+															</div>
+														</div>
+													</div>
+												</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												Negotiate Scope and Appointment
+											</div>
 										</div>
 										<div class="col-sm-6">
-												<div class="input_fields_sul">
-												    <button class="btn btn-primary" id="add_field_sul">Add Another Solution</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
-												</div>
+											<div class="form-group">
+												<a href="#mode1" class="btn btn-success" data-toggle="modal">Please click on</a>
 											</div>
-									</div><br>
-									
+										</div>
+									</div>
 									<div class="form-group">
 										<input type="submit" name="submit" value="Submit" class="btn btn-primary">
 										<input type="submit" name="Save" value="Save" class="btn btn-success">
@@ -1368,7 +1778,39 @@
 		</div>
 	</div>
 
+<footer class="text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
+	<div class="col-sm-12">
+		<p><img src="../images/logo.png"></p>
+		<p>
+			<a href="#"><i class="fa fa-facebook"></i></a>
+			<a href="#"><i class="fa fa-twitter"></i></a>
+			<a href="#"><i class="fa fa-linkedin"></i></a>
+			<a href="#"><i class="fa fa-google-plus"></i></a>
+		</p>
+	</div>
+</footer>
+<div class="container-fluid text-center copyright">
+	SCOPE Limited, registration number 12345678, 32 Hainton Close, London, E1 2QZ, United Kingdom
+</div>
+
 <!-- end -->
 
-
+<script>
+	$('.popup-gallery').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		tLoading: 'Loading image #%curr%../images.',
+		mainClass: 'mfp-img-mobile',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+		},
+		image: {
+			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',			
+		}
+	});
+</script>
+</body>
+</html>
 
