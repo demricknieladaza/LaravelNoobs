@@ -42,15 +42,16 @@ class UserAccountsController extends Controller
             'phone' => 'required',
             'password' => 'required'
         ]);
+        $pass = bcrypt($request->get('password'));
         $uacc = new UserAccountsModel([
             'fullname' => $request->get('fullname'),
             'company' => $request->get('company'),
             'email' => $request->get('email'),
             'phone' => $request->get('phone'),
-            'password' => $request->get('password')
+            'password' => $pass
         ]);
         $uacc->save();
-        return redirect('/')->with('success', 'Success!');
+        return response()->json(['success'=>'Registered successfully!']);
     }
 
     /**
