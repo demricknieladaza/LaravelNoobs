@@ -208,7 +208,7 @@
 								<div class="panel">
 									<div class="panel-heading">
 										<h4 class="panel-title">
-											<a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Actions Required <span class="badge">2</span> <span class="pull-right caret"></span></a>
+											<a data-toggle="collapse" data-parent="#accordion1" href="#collapse5">Actions Required <span class="badge">2</span> <span class="pull-right caret"></span></a>
 										</h4>
 									</div>
 									<div id="collapse5" class="panel-collapse collapse in">
@@ -256,10 +256,10 @@
 								<div class="panel">
 									<div class="panel-heading">
 										<h4 class="panel-title">
-											<a data-toggle="collapse" data-parent="#accordion2" href="#collapse5">Actions Required <span class="badge">2</span> <span class="pull-right caret"></span></a>
+											<a data-toggle="collapse" data-parent="#accordion2" href="#collapse6">Actions Required <span class="badge">2</span> <span class="pull-right caret"></span></a>
 										</h4>
 									</div>
-									<div id="collapse5" class="panel-collapse collapse in">
+									<div id="collapse6" class="panel-collapse collapse in">
 										<div class="panel-body">
 											<table class="table table-striped table-hover">
 												<thead>

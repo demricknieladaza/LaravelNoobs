@@ -1399,7 +1399,7 @@ body > div:nth-child(17) > div > div.col-sm-12{
     content: "\2212";
 }*/
 
-.panel {
+.panel1 {
     padding: 0 18px;
     background-color: white;
     max-height: 0;
@@ -1560,3 +1560,4 @@ div.ex3 {
 .lounge-main tbody {
     border-top: 0;
 }
+

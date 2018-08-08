@@ -17,6 +17,11 @@
 	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../../js/wow.min.js"></script>
 	<script type="text/javascript" src="http://cdn.jsdelivr.net/bootstrap.datepicker/0.1/js/bootstrap-datepicker.js"></script>
+	<script src="path/to/Chart.min.js"></script>
+ 
+	<script>
+	    var barChart = new Chart({...})
+	</script>
 </head>
 <body>
 
@@ -201,9 +206,10 @@
 								<h1 style="color: #000; text-align: center; font-size: 20px;">There are<br><span style="color: #D8652B; font-size: 50px;">26</span><br>Opportunity Nearby
 								</h1>
 							</div>
-							<div class="form-group" style="background: #D8652B; padding: 10px; ">
-								<a href="{{ url('/winwork') }}" style="color: #fff; text-align: center; font-size: 20px; padding: 200px;">Win Work
-								</a>
+							<div class="form-group" style="background: #D8652B; ">
+								<div class="tender-tiles new-project-tile">
+								<h2><a href="{{ url('/winwork') }}">Win Work</a></h2>
+								</div>
 							</div>
 							<div class="col-sm-6 tab1">
 								<h1 style="background: #D8652B; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px;">Request for Proposal
@@ -347,7 +353,9 @@
 						</div>	
 					</div>
 					<div class="col-sm-6 lounge-action">
-							
+						<div class="lounge-demo">
+							<canvas id="speedChart" width="600" height="400"></canvas>
+						</div>
 					</div>
 				</div>			
 			</div>
