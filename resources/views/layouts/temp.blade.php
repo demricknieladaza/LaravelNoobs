@@ -18,6 +18,9 @@
 	<script type="text/javascript" src="../../js/wow.min.js"></script>
 	<script type="text/javascript" src="http://cdn.jsdelivr.net/bootstrap.datepicker/0.1/js/bootstrap-datepicker.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link id="themecss" rel="stylesheet" type="text/css" href="//www.shieldui.com/shared/components/latest/css/light/all.min.css" />
+    <script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
 
 </head>
 <body>
@@ -571,62 +574,53 @@
 });
 </script>
 <script type="text/javascript">
-    var speedCanvas = document.getElementById("speedChart");
-
-    Chart.defaults.global.defaultFontFamily = "Lato";
-    Chart.defaults.global.defaultFontSize = 18;
-
-    var dataFirst = {
-        label: "Car A - Speed (mph)",
-        data: [0, 59, 75, 20, 20, 55, 40],
-        lineTension: 0.3,
-        fill: false,
-        borderColor: 'red',
-        backgroundColor: 'transparent',
-        pointBorderColor: 'red',
-        pointBackgroundColor: 'lightgreen',
-        pointRadius: 5,
-        pointHoverRadius: 15,
-        pointHitRadius: 30,
-        pointBorderWidth: 2,
-        pointStyle: 'rect'
-      };
-
-    var dataSecond = {
-        label: "Car B - Speed (mph)",
-        data: [20, 15, 60, 60, 65, 30, 70],
-        lineTension: 0.3,
-        fill: false,
-        borderColor: 'purple',
-        backgroundColor: 'transparent',
-        pointBorderColor: 'purple',
-        pointBackgroundColor: 'lightgreen',
-        pointRadius: 5,
-        pointHoverRadius: 15,
-        pointHitRadius: 30,
-        pointBorderWidth: 2
-      };
-
-    var speedData = {
-      labels: ["0s", "10s", "20s", "30s", "40s", "50s", "60s"],
-      datasets: [dataFirst, dataSecond]
-    };
-
-    var chartOptions = {
-      legend: {
-        display: true,
-        position: 'top',
-        labels: {
-          boxWidth: 80,
-          fontColor: 'black'
-        }
-      }
-    };
-
-    var lineChart = new Chart(speedCanvas, {
-      type: 'line',
-      data: speedData,
-      options: chartOptions
+    $(function () {
+        $("#chart").shieldChart({
+            theme: "light",
+            exportOptions: {
+                image: false,
+                print: false
+            },
+            axisX: {
+                categoricalValues: ['2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012']
+            },
+            axisY: {
+                axisTickText: {
+                    format: "{text:c}"
+                },
+                title: {
+                    text: "Price (EUR per kWh)"
+                }
+            },
+            tooltipSettings: {
+                chartBound: true
+            },
+            seriesSettings: {
+                line: {
+                    enablePointSelection: true,
+                    pointMark: {
+                        activeSettings: {
+                            pointSelectedState: {
+                                drawWidth: 4,
+                                drawRadius: 4
+                            }
+                        }
+                    }
+                }
+            },
+            primaryHeader: {
+                text: "Electricity prices"
+            },
+            dataSeries: [{
+                seriesType: 'line',
+                collectionAlias: 'Households',
+                data: [0.164, 0.173, 0.184, 0.167, 0.177, 0.189, 0.180, 0.183, 0.188, 0.160, 0.176, 0.178]
+            }, {
+                seriesType: 'line',
+                collectionAlias: 'Industry',
+                data: [0.103, 0.105, 0.112, 0.111, 0.102, 0.099, 0.110, 0.113, 0.117, 0.119, 0.123, 0.117]
+            }]
+        });
     });
 </script>
 	</body>

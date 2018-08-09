@@ -176,29 +176,29 @@
     <div id="home" class="container-fluid">
         <div class="row">
             <div class="master-slider ms-skin-black-2 round-skin" id="mainSlider">
-                <div class="ms-slide slide-1" data-delay="4" style="z-index: 10">
+                <div class="ms-slide slide-1" data-delay="3" style="z-index: 10">
                     <img src="../images/blank.gif" data-src="../images/slider-plain.jpg" />
                     <img src="../images/blank.gif" data-src="../images/scope-white.png" width="800" class="ms-layer" style="bottom:200px; left:200px;" data-effect="bottom(100,500,true)" data-type="image" data-delay="0" data-duration="3500" data-ease="easeOutQuad" class="slider-logo" />  
                 </div>
-                <div class="ms-slide slide-2" data-delay="4" style="z-index: 11">
+                <div class="ms-slide slide-2" data-delay="3" style="z-index: 11">
                     <img src="../images/blank.gif" data-src="../images/Build Relationships.jpg" />
                     <h1 class="ms-layer bold-title"  style="left:47px; top:230px"
                     data-effect="skewleft(18,200,c)" data-duration="2500" data-delay="0" data-ease="easeOutExpo">Build Relationships</h1>
                     <h3 class="slide-4 ms-layer light-title"  style="left:47px; top:270px" data-effect="right(150)" data-duration="2500" data-delay="0" data-ease="easeOutExpo">Find the right partner to realise your dreams</h3>
                 </div>
-                <div class="ms-slide slide-2" data-delay="4" style="z-index: 11">
+                <div class="ms-slide slide-2" data-delay="3" style="z-index: 11">
                     <img src="../images/blank.gif" data-src="../images/slider1.jpg" />
                     <h1 class="ms-layer bold-title"  style="left:47px; top:230px"
                     data-effect="skewleft(18,200,c)" data-duration="2500" data-delay="0" data-ease="easeOutExpo">Compare Apples with Apples</h1>
                     <h3 class="slide-4 ms-layer light-title"  style="left:47px; top:270px" data-effect="right(150)" data-duration="2500" data-delay="0" data-ease="easeOutExpo">Easy Like-for-Like Comparison of Tender Proposals</h3>
                 </div>
-                <div class="ms-slide slide-3" data-delay="4" style="z-index: 12">
+                <div class="ms-slide slide-3" data-delay="3" style="z-index: 12">
                     <img src="../images/blank.gif" data-src="../images/slider2.jpg" />     
                     <h1 class="ms-layer bold-title"  style="left:47px; top:230px"
                     data-effect="skewleft(18,200,c)" data-duration="2500" data-delay="0" data-ease="easeOutExpo">Competitive Proposals</h1>
                     <h3 class="slide-4 ms-layer light-title"  style="left:47px; top:270px" data-effect="right(150)" data-duration="2500" data-delay="0" data-ease="easeOutExpo">Get more for your money by increasing competition</h3>
                 </div>
-                <div class="ms-slide slide-4" data-delay="4" style="z-index: 12">
+                <div class="ms-slide slide-4" data-delay="3" style="z-index: 12">
                     <img src="../images/blank.gif" data-src="../images/slider5.jpg" />     
                     <h1 class="ms-layer bold-title"  style="left:47px; top:230px"
                     data-effect="skewleft(18,200,c)" data-duration="2500" data-delay="0" data-ease="easeOutExpo">Take the Shortcut</h4>
