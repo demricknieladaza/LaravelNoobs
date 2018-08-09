@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="_token" content="{{ csrf_token() }}" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/masterslider.css">
     <link rel="stylesheet" type="text/css" href="css/animate.min.css">
@@ -21,7 +22,6 @@
     <script type="text/javascript" src="js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
     <script type="text/javascript" src="js/bxslider.js"></script>
-
 </head>
 <body>
 
@@ -47,7 +47,11 @@
                             <li><a href="#about-scope">About Scope</a></li>
                             <li><a href="#faqs">FAQ</a></li>                    
                             <li><a href="#contact">contact</a></li>
-                            <li><a data-toggle="modal" href="#myModal" class="highlight">Login/register</a></li>
+                            @if(isset(Auth::user()->email))
+                                <li><a href="#" class="highlight">Logout</a></li>
+                            @else
+                                <li><a data-toggle="modal" href="#myModal" class="highlight">Login/register</a></li>
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -69,13 +73,15 @@
                     </ul>
                     <div class="tab-content">
                         <div id="login" class="tab-pane fade in active">
-                            <form method="post" class="form-horizontal" autocomplete="off">
+                            <div class="alert alertss alert-success" style="display:none"></div>
+                            <form method="post" class="form-horizontal" id="logForm" autocomplete="off">
+                                {{ csrf_field() }}
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Email</label>
                                     <div class="col-sm-8 ">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                            <input type="email" class="form-control" placeholder="Email address" name="" autocomplete="off" required="">
+                                            <input type="email" id="lemail" class="form-control" placeholder="Email address" name="" autocomplete="off" required="">
                                         </div>
                                     </div>
                                 </div>
@@ -85,14 +91,14 @@
                                     <div class="col-sm-8 ">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                            <input type="password" class="form-control" placeholder="Password" name="" required="">
+                                            <input type="password" id="lpassword" class="form-control" placeholder="Password" name="" required="">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label"></label>
                                     <div class="col-sm-8 ">
-                                        <input type="submit" class="btn btn-primary col-sm-12" value="LOGIN">
+                                        <button type="submit" class="btn btn-primary col-sm-12" id="ajaxSubmits">LOGIN</button>
                                     </div>
                                 </div>
 
@@ -118,48 +124,43 @@
                                 <p>{{ \Session::get('success') }}</p>
                             </div>
                             @endif
-                            <form method="post" action="{{url('/register')}}" class="form-horizontal" autocomplete="off">
-                                {{csrf_field()}}
+                            <div class="alert alerts alert-success" style="display:none"></div>
+                            <form method="post" class="form-horizontal" id="regForm" autocomplete="off">
+                                {{ csrf_field() }}
                                 <div class="form-group has-feedback">
                                     <label class="col-sm-3 control-label">Full Name</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" name="fullname" required="" data-msg-required="Please enter your full  name">
+                                        <input type="text" class="form-control" id="fullname" name="fullname" required="" data-msg-required="Please enter your full  name">
                                     </div>
                                 </div>
                                 <div class="form-group has-feedback">
                                     <label class="col-sm-3 control-label">Company</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" name="company" required="" data-msg-required="Please enter your company name">
+                                        <input type="text" class="form-control" id="company" name="company" required="" data-msg-required="Please enter your company name">
                                     </div>
                                 </div>
                                 <div class="form-group has-feedback">
                                     <label class="col-sm-3 control-label">Email</label>
                                     <div class="col-sm-8">
-                                        <input type="email" class="form-control" name="email" required="" data-msg-required="Please enter your email">
+                                        <input type="email" class="form-control" id="email" name="email" required="" data-msg-required="Please enter your email">
                                     </div>
                                 </div>
                                 <div class="form-group has-feedback">
                                     <label class="col-sm-3 control-label">Phone</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" name="phone" required="" data-msg-required="Please enter your phone number">
+                                        <input type="text" class="form-control" id="phone" name="phone" required="" data-msg-required="Please enter your phone number">
                                     </div>
                                 </div>
                                 <div class="form-group has-feedback">
                                     <label class="col-sm-3 control-label">Password</label>
                                     <div class="col-sm-8">
-                                        <input type="password" class="form-control" name="password" required="" data-msg-required="Please enter your password">
+                                        <input type="password" class="form-control" id="password" name="password" required="" data-msg-required="Please enter your password">
                                     </div>
                                 </div>
-                                {{-- <div class="form-group has-feedback">
-                                    <label class="col-sm-3 control-label">Confirm Password</label>
-                                    <div class="col-sm-8">
-                                        <input type="password" class="form-control" name="cpassword" required="" data-msg-required="Please enter your password again">
-                                    </div>
-                                </div> --}}
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label"></label>
                                     <div class="col-sm-8">
-                                        <input type="submit" class="btn btn-primary col-sm-12" value="REGISTER">
+                                        <button type="submit" class="btn btn-primary col-sm-12" id="ajaxSubmit">REGISTER</button>
                                     </div>
                                 </div>
                             </form>
@@ -1681,7 +1682,6 @@
     </div>
 </div>
 </div>
-</h1></div></div></div></div>
 <footer class="text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
         <div class="col-sm-12">
             <p><img src="../images/scope-white.png" width="80%"></p>
@@ -1696,8 +1696,6 @@
     <div class="container-fluid text-center copyright">
         SCOPE Limited, registration number 12345678, 32 Hainton Close, London, E1 2QZ, United Kingdom
     </div>
-
-</body>
 
     <!-- end -->
 
@@ -1746,6 +1744,70 @@
           });
         }
     </script>
+    <script>
+        $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                }
+            });
+        $(document).ready(function(){
+        
+        var $contactForm = $('#regForm');
+
+        $contactForm.on('submit', function(e){
+            e.preventDefault();
+            
+             jQuery.ajax({
+                url: "{{ url('register') }}",
+                method: 'post',
+                data: {
+                   fullname: jQuery('#fullname').val(),
+                   company: jQuery('#company').val(),
+                   email: jQuery('#email').val(),
+                   phone: jQuery('#phone').val(),
+                   password: jQuery('#password').val(),
+                },
+                success: function(result){
+                   jQuery('.alerts').show();
+                   jQuery('.alerts').html(result.success);
+                   $("#regForm")[0].reset();
+                }});
+        });
+
+        var $contactForms = $('#logForm');
+
+        $contactForms.on('submit', function(e){
+            e.preventDefault();
+             jQuery.ajax({
+                url: "{{ url('login') }}",
+                method: 'get',
+                data: {
+                   email: jQuery('#lemail').val(),
+                   password: jQuery('#lpassword').val()
+                },
+                success: function(result){
+                   jQuery('.alertss').show();
+                   jQuery('.alertss').html(result.success);
+                   // location.reload();
+                   // $("#regForm")[0].reset();
+                }});
+        });
+        // 
+        //     jQuery('#ajaxSubmit').click(function(e){
+        //         console.log('oy');
+        //         if($("form")[0].checkValidity()) {
+
+                    
+                    
+        //         };
+        //     });
+        });
+        
+    </script>
+    <script>
+        
+    </script>
+    
     <script src="js/pricerange.js"></script>
 </body>
 </html>
