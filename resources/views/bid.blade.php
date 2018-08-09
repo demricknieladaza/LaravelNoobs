@@ -1,4 +1,4 @@
-@extends('layouts.temp')
+@extends('layouts.master')
 
 	<div id="myModal" class="modal fade" role="dialog" tabindex='-1'>
 		<div class="modal-dialog">

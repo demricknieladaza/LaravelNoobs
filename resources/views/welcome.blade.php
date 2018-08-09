@@ -1,177 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SCOPE</title>    
-    <link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta name="_token" content="{{ csrf_token() }}" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/masterslider.css">
-    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="css/bxslider.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="shortcut icon" href="../images/logo.jpg">
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/masterslider.min.js"></script>
-    <script type="text/javascript" src="js/wow.min.js"></script>
-    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="js/functions.js"></script>
-    <script type="text/javascript" src="js/bxslider.js"></script>
-</head>
-<body>
+@extends('layouts.master')
 
-    <header>
-        <nav class="navbar">
-            <div class="container">
-                <div class="row">
-                    <div class="navbar-header">
-                        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <i class="icon-bar"></i>
-                            <i class="icon-bar"></i>
-                            <i class="icon-bar"></i>
-                        </button>
-                        <a href="{{ url('/') }}" class="navbar-brand"><img src="../images/logo.png" width="120"></a>
-                    </div>
-                    <div class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="{{ url('/') }}">Home</a></li>
-                            <li><a href="{{ url('/publish') }}" class="highlight">Publish Projects</a></li>    
-                            <li><a href="{{ url('/winwork') }}" class="highlight">Win Work</a></li>
-                            <li><a href="#how-it-works">How It Works</a></li>
-                            <li><a href="#pricing">Pricing</a></li>
-                            <li><a href="#about-scope">About Scope</a></li>
-                            <li><a href="#faqs">FAQ</a></li>                    
-                            <li><a href="#contact">contact</a></li>
-                            @if(isset(Auth::user()->email))
-                                <li><a href="#" class="highlight">Logout</a></li>
-                            @else
-                                <li><a data-toggle="modal" href="#myModal" class="highlight">Login/register</a></li>
-                            @endif
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
 
-    <div id="myModal" class="modal fade" role="dialog" tabindex='-1'>
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Login / Register</h4>
-                </div>
-                <div class="modal-body">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#login">Login</a></li>
-                        <li><a data-toggle="tab" href="#signup">Register</a></li>
-                    </ul>
-                    <div class="tab-content">
-                        <div id="login" class="tab-pane fade in active">
-                            <div class="alert alertss alert-success" style="display:none"></div>
-                            <form method="post" class="form-horizontal" id="logForm" autocomplete="off">
-                                {{ csrf_field() }}
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">Email</label>
-                                    <div class="col-sm-8 ">
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                            <input type="email" id="lemail" class="form-control" placeholder="Email address" name="" autocomplete="off" required="">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">Password</label>
-                                    <div class="col-sm-8 ">
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                            <input type="password" id="lpassword" class="form-control" placeholder="Password" name="" required="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label"></label>
-                                    <div class="col-sm-8 ">
-                                        <button type="submit" class="btn btn-primary col-sm-12" id="ajaxSubmits">LOGIN</button>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">                            
-                                    <div class="col-sm-8 col-sm-offset-3 text-right">   
-                                        <a href="#" class="forgot"><i class="fa fa-lock"></i> Forgot password</a>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div id="signup" class="tab-pane fade">
-                            @if(count($errors) > 0)
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach($errors->all() as $error)
-                                        <li>{{$error}}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-                            @if(\Session::has('success'))
-                            <div class="alert alert-success">
-                                <p>{{ \Session::get('success') }}</p>
-                            </div>
-                            @endif
-                            <div class="alert alerts alert-success" style="display:none"></div>
-                            <form method="post" class="form-horizontal" id="regForm" autocomplete="off">
-                                {{ csrf_field() }}
-                                <div class="form-group has-feedback">
-                                    <label class="col-sm-3 control-label">Full Name</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="fullname" name="fullname" required="" data-msg-required="Please enter your full  name">
-                                    </div>
-                                </div>
-                                <div class="form-group has-feedback">
-                                    <label class="col-sm-3 control-label">Company</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="company" name="company" required="" data-msg-required="Please enter your company name">
-                                    </div>
-                                </div>
-                                <div class="form-group has-feedback">
-                                    <label class="col-sm-3 control-label">Email</label>
-                                    <div class="col-sm-8">
-                                        <input type="email" class="form-control" id="email" name="email" required="" data-msg-required="Please enter your email">
-                                    </div>
-                                </div>
-                                <div class="form-group has-feedback">
-                                    <label class="col-sm-3 control-label">Phone</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="phone" name="phone" required="" data-msg-required="Please enter your phone number">
-                                    </div>
-                                </div>
-                                <div class="form-group has-feedback">
-                                    <label class="col-sm-3 control-label">Password</label>
-                                    <div class="col-sm-8">
-                                        <input type="password" class="form-control" id="password" name="password" required="" data-msg-required="Please enter your password">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label"></label>
-                                    <div class="col-sm-8">
-                                        <button type="submit" class="btn btn-primary col-sm-12" id="ajaxSubmit">REGISTER</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">                  
-                </div>
-            </div>
-        </div>
-    </div>  
 
     <div id="home" class="container-fluid">
         <div class="row">
@@ -413,21 +242,7 @@
 
     <div class="clearfix"></div>
 
-    <!-- <div class="container-fluid section-title text-center wow fadeInDown" data-wow-duration="1s" data-wow-delay="200ms">
-        <h1 class="welcome testimonial-header">“One Announcement, Multiple Options”</h1>
-        <div class="welcome-border"></div>
-    </div>
-
-    <div class="container-fluid white-bg" style="padding-bottom: 60px;">
-        <div class="container">
-            <div class="row">
-                <div class="slider">
-                    <div class="text-center"><p>Scope helped us to find more work and to speed up the process”</p><p> –D. Duck. Duckcenter</p></div>
-                    <div class="text-center"><p>“Scope helped us to get a perfect match with our employer”</p> <p>-T. Dog. Dogcompany</p></div>
-                </div>
-            </div>
-        </div>
-    </div> -->
+   
 
     <div class="container-fluid section-title text-center" id="pricing">
         <h1 class="welcome">pricing</h1>
@@ -1622,6 +1437,9 @@
                 <div class="row">
                     <h1 class="faq-head">General</h1>
                 </div>
+                <div style="padding-left: 25%;
+                            padding-right: 25%;
+                            padding-bottom: 20px;">
                     <button class="accord">How does the Benchmarking tool work? </button>
                     <div class="panel1">
                         <p>SCOPE helps you to find out what a specific service in a defined location for a certain type of use usually costs. As an employer you will be able to create more accurate cash flow forecasts, benchmark received tender proposals or support viability assessments for your development. As a tenderer you will be able to submit more competitive tender proposals.</p>
@@ -1642,7 +1460,10 @@
                     <div class="panel1">
                         <p> *No answer yet* </p>
                     </div>
+                </div>
             </div>
+        </div>
+    </div>
 
     <div class="container-fluid section-title text-center contacts-head" id="contact">
         <h1 class="welcome">contact us</h1>
@@ -1682,132 +1503,3 @@
     </div>
 </div>
 </div>
-<footer class="text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
-        <div class="col-sm-12">
-            <p><img src="../images/scope-white.png" width="80%"></p>
-            <p>
-                <a style="margin-right: 3%;" href="#"><i class="fa fa-facebook"></i></a>
-                <a style="margin-right: 3%;" href="#"><i class="fa fa-twitter"></i></a>
-                <a style="margin-right: 3%;" href="#"><i class="fa fa-linkedin"></i></a>
-                <a href="#"><i class="fa fa-google-plus"></i></a>
-            </p>
-        </div>
-    </footer>
-    <div class="container-fluid text-center copyright">
-        SCOPE Limited, registration number 12345678, 32 Hainton Close, London, E1 2QZ, United Kingdom
-    </div>
-
-    <!-- end -->
-
-    <script type="text/javascript">
-        new WOW().init();
-
-        var slider = new MasterSlider();
-        slider.setup('mainSlider', {
-            width: 1170,
-            height: 580,
-            autoplay: true,
-            space: 1,
-            loop: true,
-            dir: "v",
-            fullwidth: true,
-            centerControls: false,
-            speed: 60,
-            preload: 0,
-            view: 'scale',
-            swipe: true
-        });
-        slider.control('arrows');
-        slider.control('timebar', {color: "rgb(226, 100, 36)"});
-
-        $('.slider').bxSlider({
-            auto: true,
-            pager: true,
-            slideWidth: 1440,
-            captions: false,
-            controls: false,
-        });
-    </script>   
-    <script>
-        var acc = document.getElementsByClassName("accord");
-        var i;
-
-        for (i = 0; i < acc.length; i++) {
-          acc[i].addEventListener("click", function() {
-            this.classList.toggle("act");
-            var panel1 = this.nextElementSibling;
-            if (panel1.style.maxHeight){
-              panel1.style.maxHeight = null;
-            } else {
-              panel1.style.maxHeight = panel1.scrollHeight + "px";
-            } 
-          });
-        }
-    </script>
-    <script>
-        $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-                }
-            });
-        $(document).ready(function(){
-        
-        var $contactForm = $('#regForm');
-
-        $contactForm.on('submit', function(e){
-            e.preventDefault();
-            
-             jQuery.ajax({
-                url: "{{ url('register') }}",
-                method: 'post',
-                data: {
-                   fullname: jQuery('#fullname').val(),
-                   company: jQuery('#company').val(),
-                   email: jQuery('#email').val(),
-                   phone: jQuery('#phone').val(),
-                   password: jQuery('#password').val(),
-                },
-                success: function(result){
-                   jQuery('.alerts').show();
-                   jQuery('.alerts').html(result.success);
-                   $("#regForm")[0].reset();
-                }});
-        });
-
-        var $contactForms = $('#logForm');
-
-        $contactForms.on('submit', function(e){
-            e.preventDefault();
-             jQuery.ajax({
-                url: "{{ url('login') }}",
-                method: 'get',
-                data: {
-                   email: jQuery('#lemail').val(),
-                   password: jQuery('#lpassword').val()
-                },
-                success: function(result){
-                   jQuery('.alertss').show();
-                   jQuery('.alertss').html(result.success);
-                   // location.reload();
-                   // $("#regForm")[0].reset();
-                }});
-        });
-        // 
-        //     jQuery('#ajaxSubmit').click(function(e){
-        //         console.log('oy');
-        //         if($("form")[0].checkValidity()) {
-
-                    
-                    
-        //         };
-        //     });
-        });
-        
-    </script>
-    <script>
-        
-    </script>
-    
-    <script src="js/pricerange.js"></script>
-</body>
-</html>

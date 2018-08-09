@@ -1562,3 +1562,7 @@ div.ex3 {
     border-top: 0;
 }
 
+body > div:nth-child(15) > div > div > div.row{
+    padding-left: 25%;
+    padding-right: 25%;
+}
