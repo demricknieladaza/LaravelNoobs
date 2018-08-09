@@ -1178,6 +1178,25 @@
 										</div>
 
 									</div>
+									<div class="row">
+										<div class="col-sm-6"></div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<input type="file" name="" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6"></div>
+										<div class="col-sm-6">
+												<select name="Sel"  class="form-control" >
+													<option value="" disabled selected>Select
+													<option>Bonds</option>
+													<option>Collateral Warranties/Third Parties</option>
+													<option>Limit of Liability</option>
+												</select>
+										</div>
+									</div><br>
 										<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
