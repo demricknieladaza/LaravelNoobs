@@ -46,3 +46,5 @@ Route::get('/dashboard/tend_dashboard/success_page', 'UsersController@success_pa
 Route::get('/dashboard/tend_dashboard/unsuccess_page', 'UsersController@unsuccess_page_controller');
 
 Route::get('/publish/canada_hover', 'UsersController@canada_hover_controller');
+
+Route::get('/log_reg', 'UsersController@log_reg_controller');

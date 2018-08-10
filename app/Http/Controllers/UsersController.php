@@ -79,4 +79,8 @@ class UsersController extends Controller
     {
         return view('canada_hover');
     }
+    public function log_reg_controller()
+    {
+        return view('log_reg');
+    }
 }

@@ -50,7 +50,7 @@
             <div class="col-sm-6 text-center first-on-scope">
                 <div class="row">
                     <div class="image-holder">
-                        <a href="#"><img src="../images/publish.jpg" width="100%"></a>
+                        <a href="{{ url('/log_reg') }}"><img src="../images/publish.jpg" width="100%"></a>
                         <div class="caption">
                             <h1><b>Publish</b> Projects</h1>
                             <p><img src="../images/pp-icon.png"></p>
