@@ -55,7 +55,7 @@
 									</div>
 									<div id="collapse5" class="panel-collapse collapse in">
 										<div class="panel-body">
-											<table class="table table-striped table-hover">
+											<table style="table-layout: fixed;" class="table table-striped table-hover">
 												<thead>
 													<tr>
 														<th>Project</th>
@@ -71,8 +71,8 @@
 														<td>Request for information</td>
 														<td>01 January 2018</td>
 														<td>07 January 2018</td>
-														<td><a href="{{ url('/dashboard') }}" class="btn btn-warning">
-															Deal with it now
+														<td><a style="    white-space: normal;" href="{{ url('/dashboard') }}" class="btn btn-warning">
+															Deal now
 														</a></td>
 													</tr>
 													<tr>
@@ -80,8 +80,8 @@
 														<td>Tenderer Feedback</td>
 														<td>01 January 2018</td>
 														<td>03 January 2018</td>
-														<td><a href="#" class="btn btn-warning">
-															Deal with it now
+														<td><a style="    white-space: normal;" href="#" class="btn btn-warning">
+															Deal now
 														</a></td>
 													</tr>
 												</tbody>
