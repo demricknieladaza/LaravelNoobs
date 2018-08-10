@@ -55,7 +55,8 @@
 											</thead>
 											<tbody>
 												<tr>
-													<td>Fire Engineer</td>
+													<td><a style="color: black;" href="{{ url('/publish/canada_hover') }}">
+													Fire Engineer</a></td>
 												</tr>
 												<tr>
 													<td>Structural Engineer</td>

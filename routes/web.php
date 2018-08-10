@@ -38,3 +38,11 @@ Route::get('/publish/project_dashboard/datasheet', 'UsersController@datasheet_co
 Route::get('login', 'UserLogin@checklogin');
 
 Route::resource('register','UserAccountsController');
+
+Route::get('/dashboard/tend_dashboard/active_page', 'UsersController@active_page_controller');
+
+Route::get('/dashboard/tend_dashboard/success_page', 'UsersController@success_page_controller');
+
+Route::get('/dashboard/tend_dashboard/unsuccess_page', 'UsersController@unsuccess_page_controller');
+
+Route::get('/publish/canada_hover', 'UsersController@canada_hover_controller');

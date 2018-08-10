@@ -63,4 +63,20 @@ class UsersController extends Controller
     {
         return view('datasheet');
     }
+    public function active_page_controller()
+    {
+        return view('active_page');
+    }
+    public function success_page_controller()
+    {
+        return view('success_page');
+    }
+    public function unsuccess_page_controller()
+    {
+        return view('unsuccess_page');
+    }
+    public function canada_hover_controller()
+    {
+        return view('canada_hover');
+    }
 }

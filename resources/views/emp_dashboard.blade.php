@@ -71,7 +71,7 @@
 														<td>Request for information</td>
 														<td>01 January 2018</td>
 														<td>07 January 2018</td>
-														<td><a href="#" class="btn btn-warning">
+														<td><a href="{{ url('/dashboard') }}" class="btn btn-warning">
 															Deal with it now
 														</a></td>
 													</tr>
@@ -121,17 +121,17 @@
 									<div class="hover-container-holder">
 										<div class="tender-tile-single">
 											<div class="tender-tiles">
-												<h2><a href="#">Canada Water Masterplan</a></h2>		
+												<h2><a href="{{ url('/dashboard') }}">Canada Water Masterplan</a></h2>		
 											</div>
 										</div>
 										<div class="tender-tile-single">
 											<div class="tender-tiles">
-												<h2><a href="#">Canada Water Masterplan</a></h2>
+												<h2><a href="{{ url('/dashboard') }}">Canada Water Masterplan</a></h2>
 											</div>
 										</div>
 										<div class="tender-tile-single">
 											<div class="tender-tiles">
-												<h2><a href="#">Canada Water Masterplan</a></h2>
+												<h2><a href="{{ url('/dashboard') }}">Canada Water Masterplan</a></h2>
 											</div>
 										</div>
 										<div class="row table-tender-details">
@@ -185,17 +185,17 @@
 									<div class="hover-container-holder">
 										<div class="tender-tile-single">
 											<div class="tender-tiles">
-												<h2><a href="#">Canada Water Masterplan</a></h2>		
+												<h2><a href="{{ url('/dashboard') }}">Canada Water Masterplan</a></h2>		
 											</div>
 										</div>
 										<div class="tender-tile-single">
 											<div class="tender-tiles">
-												<h2><a href="#">Canada Water Masterplan</a></h2>
+												<h2><a href="{{ url('/dashboard') }}">Canada Water Masterplan</a></h2>
 											</div>
 										</div>
 										<div class="tender-tile-single">
 											<div class="tender-tiles">
-												<h2><a href="#">Canada Water Masterplan</a></h2>
+												<h2><a href="{{ url('/dashboard') }}">Canada Water Masterplan</a></h2>
 											</div>
 										</div>
 										<div class="row table-tender-details">

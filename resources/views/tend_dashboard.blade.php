@@ -105,7 +105,7 @@
 							</div>
 							<div class="col-sm-6 tab1">
 								<div class="tender-tiles new-project-tile" style="background: #D8652B; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px;    margin-top: 15px; padding-bottom: 14px;">
-									<h3><a href="{{ url('/winwork/pds/bid') }}">Active</a> </h3>
+									<h3><a href="{{ url('/dashboard/tend_dashboard/active_page') }}">Active</a> </h3>
 								</div>
 								<table >
 									<tr class="col-sm-3">
@@ -153,7 +153,7 @@
 							</div>
 							<div class="col-sm-6 tab1">
 								<div class="tender-tiles new-project-tile" style="background: #D8652B; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px;    margin-top: 15px; padding-bottom: 14px;">
-									<h3><a href="{{ url('/winwork/pds/bid') }}">Successful</a> </h3>
+									<h3><a href="{{ url('/dashboard/tend_dashboard/success_page') }}">Successful</a> </h3>
 								</div>
 								<table >
 									<tr class="col-sm-3">
@@ -177,7 +177,7 @@
 							</div>
 							<div class="col-sm-6 tab2">
 								<div class="tender-tiles new-project-tile" style="background: #D8652B; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px;     margin-top: 15px; padding-bottom: 14px;">
-									<h3><a href="{{ url('/winwork/pds/bid') }}">Unsuccessful</a> </h3>
+									<h3><a href="{{ url('/dashboard/tend_dashboard/unsuccess_page') }}">Unsuccessful</a> </h3>
 								</div>
 								<table >
 									<tr class="col-sm-3">
