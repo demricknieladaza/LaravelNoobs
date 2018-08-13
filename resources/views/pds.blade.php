@@ -440,7 +440,7 @@
 <div class="container">
 	<div class="owl-container">
 		<div class="active-tenders">
-			<h3>Other Projects From This Employer</h3>
+			<h3><a href="{{ url('/winwork') }}">Other Projects From This Employer</a></h3>
 		</div>
 		<span class="prev"><i class="fa fa-angle-left"></i></span>
 		<span class="next"><i class="fa fa-angle-right"></i></span>

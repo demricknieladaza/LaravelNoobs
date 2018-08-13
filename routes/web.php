@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/','UsersController@welcome_controller');
+Route::get('/','UsersController@welcome_controller')->name('Landing');
 
-Route::get('/winwork', 'UsersController@winwork_controller');
+Route::get('/winwork', 'UsersController@winwork_controller')->name('winwork');
 
 Route::get('/winwork/pds', 'UsersController@pds_controller');
 
@@ -36,6 +36,8 @@ Route::get('/publish/project_dashboard', 'UsersController@project_dashboard_cont
 Route::get('/publish/project_dashboard/datasheet', 'UsersController@datasheet_controller');
 
 Route::get('login', 'UserLogin@checklogin');
+
+Route::get('logout', 'UserLogin@logout');
 
 Route::resource('register','UserAccountsController');
 

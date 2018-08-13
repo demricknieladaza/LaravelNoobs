@@ -1,5 +1,30 @@
 @extends('layouts.master') 	
+<style type="text/css">
+	div.textcont {
+	  /*margin: 0 auto;*/
+	  /*width: 75%;*/
+	}
 
+	.hidcont {
+	  overflow: hidden;
+	  line-height: 1em;
+	  height: 14em;
+	}
+
+	.showContent {
+	  line-height: 1em;
+	  height: auto;
+	}
+
+	.showContent {
+	  height: auto;
+	}
+
+	.show-more {
+	  padding: 10px 0;
+	  text-align: center;
+	}
+</style>
 	<div class="container search_filter wow fadeInDown" data-wow-duration="1s" data-wow-delay="200ms">
 		<div class="row top-row">
 			<form method="post">
@@ -40,7 +65,9 @@
 						<div class="more-search-filter">
 							<form method="post">
 								<h3>Filter By</h3>
+								<div class="textcont">
 								<p><b>Service</b></p>
+								<div class="cont hidcont">
 								<?php
 
 								$Service = array("Fire Engineer","Service Engineer","Principal Designer","Fascade Engineer","Building Control","Lighting Consulant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager", "Architecture", "Acoustic Engineer"
@@ -51,9 +78,14 @@
 								}
 
 								?>
-								
-
+								</div>
+								<div class="show-more">
+								    <a href="#">Show more</a>
+								 </div>
+								</div>
+								<div class="textcont">
 								<p><b>Type of Use</b></p>
+								<div class="cont hidcont">
 								<?php
 
 								$Service = array("Leisure","Sports and Venue","Hotel","Industrial","Education","Healthcare","Defence","Aviation","Highways","Bridges","Rail","Water","Power","Oil,Gas and Chemical"
@@ -65,6 +97,12 @@
 
 								?>
 								<p><input type="checkbox" class="filled-in" name="other" value="other" id="other"> <label for="other">Other</label></p>
+								</div>
+								<div class="show-more">
+								    <a href="#">Show more</a>
+								 </div>
+								 </div>
+								
 								<!-- <p><input type="checkbox" class="filled-in" name="architect" value="architect" id="architect"> <label for="architect">Architect</label></p>
 								<p><input type="checkbox" class="filled-in" name="acoustic engineer" value="acoustic engineer" id="acoustic engineer"><label for="acoustic engineer">Acoustic Engineer</label></p>
 								<p><input type="checkbox" class="filled-in" name="structural" value="structural" id="structural"> <label for="structural">Structural Engineer</label></p> -->
@@ -502,5 +540,23 @@
 	</div>
 
 
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+		$(".show-more a").on("click", function() {
+		  var $this = $(this);
+		  var $content = $this.parent().prev("div.cont");
+		  var linkText = $this.text().toUpperCase();
+
+		  if (linkText === "SHOW MORE") {
+		    linkText = "Show less";
+		    $content.switchClass("hidcont", "showContent", 400);
+		  } else {
+		    linkText = "Show more";
+		    $content.switchClass("showContent", "hidcont", 400);
+		  };
+
+		  $this.text(linkText);
+		});
+	</script>
 	<!-- end -->

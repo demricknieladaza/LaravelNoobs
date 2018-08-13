@@ -59,7 +59,7 @@
                             <div class="tab-content">
                                 <div id="login" class="tab-pane fade in active">
                                     <div class="alert alertss alert-success" style="display:none"></div>
-                                    <form method="post" class="form-horizontal" id="logForm" autocomplete="off">
+                                    <form method="post" class="form-horizontal" id="logForm" autocomplete="off" style="margin-top: 25px;">
                                         {{ csrf_field() }}
                                         <div class="form-group">
                                             <label class="col-sm-3 control-label">Email</label>
@@ -110,7 +110,7 @@
                                     </div>
                                     @endif
                                     <div class="alert alerts alert-success" style="display:none"></div>
-                                    <form method="post" class="form-horizontal" id="regForm" autocomplete="off">
+                                    <form method="post" class="form-horizontal" id="regForm" autocomplete="off" style="margin-top: 25px;">
                                         {{ csrf_field() }}
                                         <div class="form-group has-feedback">
                                             <label class="col-sm-3 control-label">Full Name</label>
@@ -171,5 +171,72 @@
     <div class="container-fluid text-center copyright">
         SCOPE Limited, registration number 12345678, 32 Hainton Close, London, E1 2QZ, United Kingdom
     </div>
+    <script>
+        $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                }
+            });
+        $(document).ready(function(){
+        
+        var $contactForm = $('#regForm');
+
+        $contactForm.on('submit', function(e){
+            e.preventDefault();
+            
+             jQuery.ajax({
+                url: "{{ url('register') }}",
+                method: 'post',
+                data: {
+                   fullname: jQuery('#fullname').val(),
+                   company: jQuery('#company').val(),
+                   email: jQuery('#email').val(),
+                   phone: jQuery('#phone').val(),
+                   password: jQuery('#password').val(),
+                },
+                success: function(result){
+                   jQuery('.alerts').show();
+                   jQuery('.alerts').html(result.success);
+                   $("#regForm")[0].reset();
+                }});
+        });
+
+        var $contactForms = $('#logForm');
+
+        $contactForms.on('submit', function(e){
+            e.preventDefault();
+             jQuery.ajax({
+                url: "{{ url('login') }}",
+                method: 'get',
+                data: {
+                   email: jQuery('#lemail').val(),
+                   password: jQuery('#lpassword').val()
+                },
+                success: function(result){
+                   // jQuery('.alertss').show();
+                   // jQuery('.alertss').html(result.success);
+                   if(result.success=='naa'){
+                        window.location.replace("/");
+                   }
+                   else
+                   {
+                    jQuery('.alertss').show();
+                    jQuery('.alertss').html(result.success);
+                   }
+                   // $("#regForm")[0].reset();
+                }});
+        });
+        // 
+        //     jQuery('#ajaxSubmit').click(function(e){
+        //         console.log('oy');
+        //         if($("form")[0].checkValidity()) {
+
+                    
+                    
+        //         };
+        //     });
+        });
+        
+    </script>
 </body>
 </html>

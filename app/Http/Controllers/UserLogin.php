@@ -20,14 +20,16 @@ class UserLogin extends Controller
     	$user = DB::table('user_accounts_models')->where('email', $request->get('email'))->first();
     	if($user){
     		if (Hash::check($request->get('password'), $user->password)) {
+                $request->session()->put('fullname',$user->fullname);
+                // return redirect('/');
     		    return response()->json(['success'=> "naa"]);
     		}
     		else{
-    			return response()->json(['success'=> "sayop pass"]);
+    			return response()->json(['success'=> "Incorrect password"]);
     		}
     	}
     	else{
-    		return response()->json(['success'=> "wala"]);
+    		return response()->json(['success'=> "Invalid Login info"]);
     	}
     	
     	// $user_data = new UserAccountsModel([
@@ -44,4 +46,10 @@ class UserLogin extends Controller
     	// 	return response()->json(['success'=>'Wrong Login Details']);
     	// }
     }
+
+     public function logout(Request $request)
+     {
+        $request->session()->forget('fullname');
+        return redirect('/');
+     }
 }

@@ -11,14 +11,28 @@ class UsersController extends Controller
     	return view('welcome');
     }
 
-     public function publish_controller()
+     public function publish_controller(Request $request)
     {
-    	return view('publish');
+    	if($request->session()->has('fullname'))
+        {
+           return view('publish');
+        }
+        else
+        {
+           return redirect('log_reg');
+        }
     }
 
-    public function winwork_controller()
+    public function winwork_controller(Request $request)
     {
-    	return view('winwork');
+        if($request->session()->has('fullname'))
+        {
+    	   return view('winwork');
+        }
+        else
+        {
+           return redirect('log_reg');
+        }
     }
 
     public function pds_controller()
@@ -31,9 +45,16 @@ class UsersController extends Controller
     	return view('bid');
     }
 
-    public function dashboard_controller()
+    public function dashboard_controller(Request $request)
     {
-    	return view('dashboard');
+        if($request->session()->has('fullname'))
+        {
+           return view('dashboard');
+        }
+        else
+        {
+           return redirect('log_reg');
+        }
     }
 
     public function emp_dashboard_controller()
