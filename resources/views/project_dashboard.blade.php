@@ -347,10 +347,9 @@
 												Image
 											</div>
 										</div>
-										<div class="col-sm-6" >						
-											<div class="btn-sm btn-primary">
-								       	        <input type="file" name="file"/ placeholder="upload images">
-								            </div>
+										<div class="col-sm-6" >
+											<img id="uploadPreview5" style="width: 100px; height: 100px;" />
+											<input id="uploadImage5" type="file" name="myPhoto" onchange="PreviewImage5();" />
 								        </div>
 						            </div>
 						            <div class="row">
@@ -790,11 +789,10 @@
 									</div><br>
 									<div class="row">
 										<div class="col-sm-6"></div>
-										<div class="col-sm-6">													
-												<div class="btn-sm btn-primary">
-							       	                 <input type="file" name="file"/ placeholder="upload images">
-							                    </div>
-						                    </div>
+										<div class="col-sm-6">
+											<img id="uploadPreview6" style="width: 100px; height: 100px;" />
+											<input id="uploadImage6" type="file" name="myPhoto" onchange="PreviewImage6();" />
+						                </div>
 									</div><br>
 									<div class="row">
 										<div class="col-sm-6">

@@ -38,14 +38,14 @@
 </head>
 <body>
             <header style="background: none;">
-                <div class="bg">
+                <div style="background-color: #909090;" class="bg">
                     <a href="{{ url('/') }}" class="navbar-brand"><img src="{{asset('images/logo.png')}}" width="120" style="margin-left: 100px;"></a>
                 </div>
             </header>
             <div class="container-fluid below-header">
             </div>
            
-                <div class="modal-dialog" style="padding-top: 40px; padding-bottom: 40px;">
+                <div class="modal-dialog" style="padding-top: 130px; padding-bottom: 40px; height: 100vh;">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
