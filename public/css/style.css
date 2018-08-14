@@ -1450,7 +1450,17 @@ textarea{
 }
 .modal-confirm {        
     color: #636363;
+    width: 110px;
 
+}
+.butcent{
+    text-align:center !important; 
+}
+.butsize{
+    width:110px;
+}
+.color{
+    background-color:gray;
 }
 
 .modal-confirm .modal-content {

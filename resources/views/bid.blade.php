@@ -202,9 +202,9 @@
 							<div class="form-group">
 								<input type="checkbox" name="" value="" class="filled-in" id="check10"> <label for="check10">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
 							</div>						
-							<div class="form-group">
-								<input type="submit" name="submit" value="Submit" class="btn btn-primary">
-								<input type="submit" name="Save" value="Save" class="btn btn-success">
+							<div class="form-group butcent">
+								<input type="submit" name="submit" value="Submit" class="btn btn-primary butsize">
+								<input type="submit" name="Save" value="Save" class="btn btn-success butsize color">
 							</div>
 						</form>
 					</div>
@@ -221,7 +221,7 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												Years of experience in the service required
+												Providing  the  required  Service  since
 											</div>
 										</div>
 										<div class="col-sm-6">
@@ -281,19 +281,19 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Name of Awar">
+												<input type="text" name="" class="form-control" placeholder="Enter Name of Award">
 											</div>
 											<div class="form-group">
 												<input type="text" name="" class="form-control" placeholder="Enter Details">
 											</div>
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Awarded By">
+												<input type="text" name="" class="form-control" placeholder="Awarded  by  Body">
 											</div>
 											<div class="form-group">
 												<div class="input-group date" id="datepicker1" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
-													 <input class="form-control" type="text" placeholder="Select Year" readonly="readonly" name="date" >	  
+													 <input class="form-control" type="text" placeholder="Year  Awarded  " readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
 											</div>
@@ -308,7 +308,7 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												Track record of relevant projects
+												Track  Record  of  relevant  Projects
 											</div>
 										</div>
 										<div class="col-sm-6">
@@ -316,8 +316,21 @@
 												<input type="text" name="" class="form-control" placeholder="Enter Profile Title">
 											</div>
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Value">
+												<input type="text" name="" class="form-control" placeholder="Construction  Value ">
 											</div>
+
+										<div class="form-group">
+								               <input type="checkbox" name="" value="" class="filled-in" id="check12" >     <label for="check12">Value  Confidential </label>
+							              </div>
+							              <div class="form-group">
+												<textarea placeholder="Enter  Description  of  the  Project"></textarea>
+											</div>
+											<div class="form-group">													
+												<div class="btn-sm btn-primary">
+							       	                 <input type="file" name="file"/ placeholder="upload images">
+							                    </div>
+						                    </div>
+							
 											<div class="form-group">
 													<select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select Type of Use
@@ -372,7 +385,7 @@
 												<div class="input-group date" id="datepicker2" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
-													 <input class="form-control" type="text" placeholder="Provides this Service from" readonly="readonly" name="date" >	  
+													 <input class="form-control" type="text" placeholder="Provided this Service from" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
 										</div>
@@ -380,7 +393,7 @@
 												<div class="input-group date" id="datepicker3" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
-													 <input class="form-control" type="text" placeholder="Provides this Service until" readonly="readonly" name="date" >	  
+													 <input class="form-control" type="text" placeholder="Provided this Service until" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
 											</div>
@@ -458,9 +471,9 @@
 											</div>
 										</div>
 									</div>
-									<div class="form-group">
-										<input type="submit" name="submit" value="Submit" class="btn btn-primary">
-										<input type="submit" name="Save" value="Save" class="btn btn-success">
+									<div class="form-group butcent">
+										<input type="submit" name="submit" value="Submit" class="btn btn-primary butsize ">
+										<input type="submit" name="Save" value="Save" class="btn btn-success butsize  color">
 									</div>
 									
 									</div>
@@ -511,14 +524,88 @@
 											<div class="form-group">
 												<select name="" class="form-control">
 													<option value="" disabled selected>Select Accrediatation</option>
-													<option>MCIOB</option>
-													<option>AssocRICS</option>
-													<option>MRICS</option>
-													<option>FRICS</option>
-													<option>HonRICS</option>
-													<option>BREEAM AP</option>
-													<option>RIBA</option>
-													<option>Other</option>
+													<option>ACABE</option>
+													<option>ACIBSE</option>
+													<option>ADPPA</option>
+													<option>AIFireE</option>
+													<option>AIIRSM</option>
+													<option>AIOSH</option>
+													<option>AMCIHT</option>
+													<option>AMICE</option>
+													<option>AMIHE</option>
+													<option>AMIMechE</option>
+													<option>AMIStructE</option>
+													<option>APM ChPP</option>
+													<option>APM  PFQ</option>
+													<option>APM  PPQ</option>
+													<option>APM  PQ </option>
+													<option>APM  RPP</option>
+													<option>AppIHE  </option>
+													<option>AssocRICS  </option>
+													<option>BREEAM  AP </option>
+													<option>CEng  </option>
+													<option>CEnv  </option>
+													<option>CFIOSH  </option>
+													<option>CIBSE  Licentiate </option>
+													<option>CMIOSH  </option>
+													<option>CSci  </option>
+													<option>EI</option>
+													<option>EngTech</option>
+													<option>FCABE  </option>
+													<option>FCIBSE  </option>
+													<option>FCIHT  </option>
+													<option>FCIWEM  </option>
+													<option>FICE  </option>
+													<option>FIET  </option>
+													<option>FIFireE  </option>
+													<option>FIHE  </option>
+													<option>FIIRSM  </option>
+													<option>FIStructE  </option>
+													<option>FREng  </option>
+													<option>FRICS  </option>
+													<option>FSoPHE  </option>
+													<option>GIFireE  </option>
+													<option>GMICE  </option>
+													<option>Grad  CABE</option>
+													<option>Grad  IOSH</option>
+													<option>GradCIHT  </option>
+													<option>GradCIWEM  </option>
+													<option>HonFIET  </option>
+													<option>HonFREng  </option>
+													<option>HonRICS  </option>
+													<option>IEMA</option>
+													<option>IEng </option>
+													<option>IMechE</option>
+													<option>IPMA  Level  A</option>
+													<option>IPMA  Level  B </option>
+													<option>LCC  </option>
+													<option>LCEA  </option>
+													<option>LEED  AP </option>
+													<option>MAPM  </option>
+													<option>MCABE  </option>
+													<option>MCIArb  </option>
+													<option>MCIHT    </option>
+													<option>MCIOB    </option>
+													<option>MCIWEM    </option>
+													<option>MICE    </option>
+													<option>MIET    </option>
+													<option>MIFireE    </option>
+													<option>MIHE    </option>
+													<option>MIIRSM    </option>
+													<option>MIStructE    </option>
+													<option>MRICS    </option>
+													<option>MSoPHE    </option>
+													<option>OCDEA    </option>
+													<option>RIBA    </option>
+													<option>SFIIRSM    </option>
+													<option>SIIRSM    </option>
+													<option>SKA  Assessor   </option>
+													<option>TechCIWEM    </option>
+													<option>TIFireE  </option>
+													<option>TIStructE  </option>
+													<option>TMIET  </option>
+													<option>WELL  AP  </option>
+													<option>Other </option>
 												</select>
 											</div>
 										</div>
@@ -546,7 +633,7 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												
+												Degrees
 											</div>
 										</div>
 										<div class="col-sm-6">
@@ -611,6 +698,7 @@
 											</div>
 										</div>
 									</div>
+
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">	
@@ -618,37 +706,17 @@
 											</div>
 										</div>
 										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Name of Degree">
-											</div>
 											<div class="input-group date" id="datepickers5" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 											<input class="form-control" type="text" placeholder="Year Awarded" readonly="readonly" name="date" >	  
 											<span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 											</div>
 											<br>
-											<div class="form-group">
-												<div class="input_fields_degree">
-												    <button class="btn btn-primary" id="add_field_degree">Add Another Project</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
-												</div>
-											</div>
+											
 											
 										</div>
 									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												Seniority
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Level of Seniority">
-											</div>
-										</div>
-									</div>
-									
+								
 										<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
@@ -657,7 +725,7 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Name Of Awards">
+												<input type="text" name="" class="form-control" placeholder="Enter Name Of Award ">
 											</div>
 										</div>
 									</div>
@@ -667,20 +735,11 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Awarded by">
+												<input type="text" name="" class="form-control" placeholder="Awarded  by  Body  ">
 											</div>
 										</div>
 									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Details">
-											</div>
-										</div>
-									</div>
+									
 									<div class="row">
 										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
@@ -691,38 +750,12 @@
 											</div>
 										</div>
 									</div><br>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-												<div class="input_fields_addon">
-												    <button class="btn btn-primary" id="add_field_addon">Add Another Award</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
-												</div>
-											</div>
-									</div><br>
-										 <div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-											 Services
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<select name="" class="form-control">
-													<option value="" disabled selected>Select Industry</option>
-													<option>Construction</option>
-													<option>Others</option>
-													
-												</select>
-											</div>
-										</div>
-									</div>
+									
+							
 									 <div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-											
+											 Services
 											</div>
 										</div>
 										<div class="col-sm-6">
@@ -764,12 +797,7 @@
 										<div class="col-sm-6">
 											
 										</div>
-										<div class="col-sm-6">
-												<div class="input_fields_indus21">
-												    <button class="btn btn-primary" id="add_field_indus21">Add Another Industry</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
-												</div>
-											</div>
+										
 									</div><br>
 										<div class="row">
 										<div class="col-sm-6">
@@ -936,6 +964,7 @@
 												<input type="text" name="" class="form-control" placeholder="Enter Description of the Project">
 											</div>
 									</div><br>
+
 									<div class="row">
 										<div class="col-sm-6"></div>
 											<div class="col-sm-6">					<img id="uploadPreview1" style="width: 100px; height: 100px;" />
@@ -999,9 +1028,9 @@
 												</div>
 											</div>
 									</div><br>
-									<div class="form-group">
-										<input type="submit" name="submit" value="Submit" class="btn btn-primary">
-										<input type="submit" name="Save" value="Save" class="btn btn-success">
+									<div class="form-group butcent">
+										<input type="submit" name="submit" value="Submit" class="btn btn-primary butsize ">
+										<input type="submit" name="Save" value="Save" class="btn btn-success butsize color ">
 									</div>
 								</div>
 							</div>
@@ -1020,7 +1049,7 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter text her">
+												<input type="text" name="" class="form-control" placeholder="Enter text here">
 											</div>
 										</div>
 									</div>
@@ -1045,7 +1074,7 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												Solution
+												Solutions
 											</div>
 										</div>
 										<div class="col-sm-6">
@@ -1073,9 +1102,9 @@
 											</div>
 									</div><br>
 									
-									<div class="form-group">
-										<input type="submit" name="submit" value="Submit" class="btn btn-primary">
-										<input type="submit" name="Save" value="Save" class="btn btn-success">
+									<div class="form-group butcent">
+										<input type="submit" name="submit" value="Submit" class="btn btn-primary  butsize">
+										<input type="submit" name="Save" value="Save" class="btn btn-success  butsize color">
 									</div>
 								</div>
 							</div>
@@ -1130,9 +1159,9 @@
 											</div>
 										</div>
 									</div>
-									<div class="form-group">
-										<input type="submit" name="submit" value="Submit" class="btn btn-primary">
-										<input type="submit" name="Save" value="Save" class="btn btn-success">
+									<div class="form-group butcent">
+										<input type="submit" name="submit" value="Submit" class="btn btn-primary butsize ">
+										<input type="submit" name="Save" value="Save" class="btn btn-success butsize color">
 									</div>
 								</div>
 							</div>
@@ -1185,11 +1214,15 @@
 									<div class="row">
 										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
+												<input type="text" name="" class="form-control" placeholder="As  per  selections  by  the  employer)">
+										</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6">Bonds</div>
+										<div class="col-sm-6">
 												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select
-													<option>Bonds</option>
-													<option>Collateral Warranties/Third Parties</option>
-													<option>Limit of Liability</option>
+													<option value="" disabled selected>Select Insurance</option>
+													
 												</select>
 										</div>
 									</div><br>
@@ -1206,14 +1239,91 @@
 										</div>
 									</div>
 									<div class="row">
+										<div class="col-sm-6"></div>
+										
+										<div class="col-sm-6">
+								              <select name="Sel"  class="form-control" >
+													<option value="" disabled selected>Select</option>
+													<option>Agreed  To  be  negotiated</option>
+													<option>Rejected  </option>
+													
+												</select>
+							             
+										</div>
+									</div><br>
+	
+								    <div class="row">
+										<div class="col-sm-6"></div>
+										
+										<div class="col-sm-6">
+								             <textarea placeholder="Comments"></textarea>
+							             
+										</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6">Collateral  Warranties  /  Third  Parties  </div>
+										<div class="col-sm-6">
+												<input type="text" name="" class="form-control" placeholder="Either Deed or Under Hands as selected by the employer">
+										</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6"></div>
+										
+										<div class="col-sm-6">
+								              <select name="Sel"  class="form-control" >
+													<option value="" disabled selected>Select</option>
+													<option>Agreed  To  be  negotiated</option>
+													<option>Rejected  </option>
+													
+												</select>
+							             
+										</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6"></div>
+										
+										<div class="col-sm-6">
+								             <textarea placeholder="Comments"></textarea>
+							             
+										</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6">Limit  of  Liability  </div>
+										<div class="col-sm-6">
+												<input type="text" name="" class="form-control" placeholder="Either Deed or Under Hands as selected by the employer">
+										</div>
+                                        <div class="row">
+										<div class="col-sm-6"></div>
+										
+										<div class="col-sm-6">
+								              <select name="Sel"  class="form-control" >
+													<option value="" disabled selected>Select</option>
+													<option>Agreed  To  be  negotiated</option>
+													<option>Rejected  </option>
+													
+												</select>
+							             
+										</div>
+									</div><br>
+                                     <div class="row">
+										<div class="col-sm-6"></div>
+										
+										<div class="col-sm-6">
+								             <textarea placeholder="Comments"></textarea>
+							             
+										</div>
+									</div><br>
+									</div>
+									<div class="row">
 										<div class="col-sm-6">
 											
 										</div>
 										<div class="col-sm-6">
-								               <input type="checkbox" name="" value="" class="filled-in" id="check12" >     <label for="check12">Agreed</label>
+								               <input type="checkbox" name="" value="" class="filled-in" id="check14" >   <label for="check14">I Agree</label>
 							              </div>
 									</div>
 									<div class="row">
+                                    
 										<div class="col-sm-6">	
 												Form of Appointment
 										</div>
@@ -1237,13 +1347,13 @@
 										<div class="col-sm-6">
 												<input type="text" name="" class="form-control" placeholder="Enter new suggested work here">
 										</div>
-									</div>
+									</div><br>
 									<div class="row">
 										<div class="col-sm-6">
 											
 										</div>
 										<div class="col-sm-6">
-												<input type="text" name="" class="form-control" placeholder="Enter Comments here">
+												<textarea placeholder="Comments"></textarea>
 										</div>
 									</div><br>
 									 <div class="row">
@@ -1281,11 +1391,11 @@
 												<button class="btn"><i class="fa fa-download"></i> Download</button>
 												<button type="button" class="btn btn-info">Upload</button>
 										</div>
-									</div>
+									</div><br>
 									
-									<div class="form-group">
-										<input type="submit" name="submit" value="Submit" class="btn btn-primary">
-										<input type="submit" name="Save" value="Save" class="btn btn-success">
+									<div class="form-group butcent">
+										<input type="submit" name="submit" value="Submit" class="btn btn-primary butsize ">
+										<input type="submit" name="Save" value="Save" class="btn btn-success butsize color">
 									</div>
 								</div>
 							</div>
@@ -1418,9 +1528,9 @@
 								               <input type="checkbox" name="" value="" class="filled-in" id="check13" >     <label for="check13">I Agree to XXX</label>
 							              </div>
 									</div>
-									<div class="form-group">
-										<input type="submit" name="submit" value="Submit" class="btn btn-primary">
-										<input type="submit" name="Save" value="Save" class="btn btn-success">
+									<div class="form-group butcent">
+										<input type="submit" name="submit" value="Submit" class="btn btn-primary butsize ">
+										<input type="submit" name="Save" value="Save" class="btn btn-success butsize color">
 									</div>
 								</div>
 							</div>
