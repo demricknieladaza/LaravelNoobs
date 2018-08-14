@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('content')
+
 
 
     <div id="home" class="container-fluid">
@@ -257,8 +259,8 @@
                     <div class="discount0"></div>
                     <div class="plan-discount discount5">   
                         <h3>Discount</h3> 
-                        <p>3.0% Annual Abonnement</p>
-                        <p>1.5% Monthly Abonnement</p>
+                        <p>Annual Plan <span style="margin-left: 55px;">3.0%</span></p>
+                        <p>Monthly Plan<span style="margin-left: 55px;">1.5%</span></p>
                     </div>
                     <div class="plan-discount discount10">  
                         <h3>Discount</h3> 
@@ -289,16 +291,16 @@
                             <thead>
                                 <tr>
                                     <td class="empty-cell"></td>
-                                    <th class="blue-cell">Monthly Abonnement</th>
-                                    <th class="orange-cell">Annual Abonnement</th>
-                                    <th class="grey-cell top-regular-price">Regular Price</th>
+                                    <th class="blue-cell">BASIC</th>
+                                    <th class="orange-cell">PRO</th>
+                                    <th class="grey-cell top-regular-price">PRO+</th>
                                 </tr>
                                 <tr>
                                     <td class="empty-cell"></td>
                                     <td class="blue-cell">
                                         <table class="table table-condensed">
                                             <tr>
-                                                <td>&pound;/month</td>
+                                                <td>(&pound;/mo)</td>
                                                 <td>&pound;/year</td>
                                             </tr>
                                         </table>
@@ -1503,3 +1505,5 @@
     </div>
 </div>
 </div>
+
+@endsection

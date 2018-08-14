@@ -1,4 +1,8 @@
-@extends('layouts.master') 	
+@extends('layouts.master') 
+
+@section('content')
+
+
 <style type="text/css">
 	div.textcont {
 	  /*margin: 0 auto;*/
@@ -560,3 +564,5 @@
 		});
 	</script>
 	<!-- end -->
+
+@endsection

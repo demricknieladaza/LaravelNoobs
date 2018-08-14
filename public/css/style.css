@@ -1416,7 +1416,7 @@ body > div:nth-child(17) > div > div.col-sm-12{
     margin-left: 3px;
     padding-left: 100px;
     padding-right: 98px;
-    box-shadow: 5px 10px rgb(216,216,216);
+    box-shadow: 0 0 3px #999;
 }
 
 .raise:hover,

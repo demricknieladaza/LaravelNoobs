@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('content')
+
 	<div class="container search_filter wow fadeInDown" data-wow-duration="1s" data-wow-delay="200ms">
 		<div class="row top-row">
 			<form method="post">
@@ -190,4 +192,4 @@
 		</div>	
 	</div>
 
-	
+@endsection

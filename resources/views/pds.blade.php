@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('content')
+
 	<div class="container-fluid below-header project-img-collection text-center">
 		<h1>Canada Water Masterplan</h1>
 		<div class="project-image popup-gallery">
@@ -532,6 +534,4 @@
 <!-- end -->
 
 
-</body>
-</html>
-
+@endsection

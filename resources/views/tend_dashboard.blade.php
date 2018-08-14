@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('content')
+
 	<div class="container-fluid below-header">
 	</div>
 
@@ -245,6 +247,6 @@
 	
 	<!-- end -->
 
-
+@endsection
 
 
