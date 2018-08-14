@@ -310,6 +310,30 @@
 
     </script>
 
+     <script type="text/javascript">
+        function PreviewImage7() {
+            var oFReader = new FileReader();
+            oFReader.readAsDataURL(document.getElementById("uploadImage7").files[0]);
+
+            oFReader.onload = function (oFREvent) {
+                document.getElementById("uploadPreview7").src = oFREvent.target.result;
+            };
+        };
+
+    </script>
+
+    <script type="text/javascript">
+        function PreviewImage8() {
+            var oFReader = new FileReader();
+            oFReader.readAsDataURL(document.getElementById("uploadImage8").files[0]);
+
+            oFReader.onload = function (oFREvent) {
+                document.getElementById("uploadPreview8").src = oFREvent.target.result;
+            };
+        };
+
+    </script>
+
 
     <!-- Tender -->
     <script>

@@ -268,7 +268,7 @@
 											<div class="form-group">
 												<div class="input_fields_service">
 												    <button class="btn btn-primary" id="add_field_service">Add Another Service</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												    <div></div>
 												</div>
 											</div>
 										</div>
@@ -300,7 +300,7 @@
 											<div class="form-group">
 												<div class="input_fields_piste">
 												    <button class="btn btn-primary" id="add_field_piste">Add Another Award</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												    <div></div>
 												</div>
 											</div>
 										</div>
@@ -326,9 +326,8 @@
 												<textarea placeholder="Enter  Description  of  the  Project"></textarea>
 											</div>
 											<div class="form-group">													
-												<div class="btn-sm btn-primary">
-							       	                 <input type="file" name="file"/ placeholder="upload images">
-							                    </div>
+												<img id="uploadPreview7" style="width: 100px; height: 100px;" />
+											<input id="uploadImage7" type="file" name="myPhoto" onchange="PreviewImage7();" />
 						                    </div>
 							
 											<div class="form-group">
@@ -356,7 +355,7 @@
 											<div class="form-group">
 												<div class="input_fields_types">
 												    <button class="btn btn-primary" id="add_field_types">Add another types of use</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												    <div></div>
 												</div>
 											</div>
 											<div class="form-group">
@@ -400,7 +399,7 @@
 											<div class="form-group">
 												<div class="input_fields_serve">
 												    <button class="btn btn-primary" id="add_field_serve">Add another service</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												    <div></div>
 												</div>
 											</div>
 											<div class="form-group">
@@ -413,13 +412,11 @@
 											</div>
 											<div class="input_fields_type">
 												    <button class="btn btn-primary" id="add_field_type">Add another Type</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
-												</div>
+												    <div></div>
+											</div><br>
 													
-											<div class="form-group">													
-												<div class="btn-sm btn-primary">
-							       	                 <input type="file" name="file"/ placeholder="upload images">
-							                    </div>
+											<div class="form-group">									 <img id="uploadPreview8" style="width: 100px; height: 100px;" />
+											     <input id="uploadImage8" type="file" name="myPhoto" onchange="PreviewImage8();" />
 						                    </div>
 						                    <div class="form-group">
 												<select name="Sel"  class="form-control" >
@@ -460,13 +457,13 @@
 											<div class="form-group">
 												<div class="input_fields_team">
 												    <button class="btn btn-primary" id="add_field_team">Add Another Project Team Member</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												    <div></div>
 												</div>
 											</div>
 											<div class="form-group">
 												<div class="input_fields_project">
 												    <button class="btn btn-primary" id="add_field_project">Add Another Project</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												    <div></div>
 												</div>
 											</div>
 										</div>
@@ -626,7 +623,7 @@
 										<div class="col-sm-6">
 											<div class="input_fields_yawa">
 											<button class="btn btn-primary" id="add_field_yawa">Add Another Accreditation</button>
-											<div><input class="form-control" type="text" name="mytext[]"></div>
+											<div></div>
 											</div>
 										</div>
 									</div><br>
@@ -789,15 +786,14 @@
 										<div class="col-sm-6">
 												<div class="input_fields_serve1">
 												    <button class="btn btn-primary" id="add_field_serve1">Add Another Service</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												    <div></div>
 												</div>
 											</div>
-									</div><br>
+									</div>
 									<div class="row">
 										<div class="col-sm-6">
 											
 										</div>
-										
 									</div><br>
 										<div class="row">
 										<div class="col-sm-6">
@@ -859,7 +855,7 @@
 										<div class="col-sm-6">
 												<div class="input_fields_add">
 												    <button class="btn btn-primary" id="add_field_add">Add Another type of use</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												    <div></div>
 												</div>
 											</div>
 									</div><br>
@@ -926,7 +922,7 @@
 										<div class="col-sm-6">
 												<div class="input_fields_serve2">
 												    <button class="btn btn-primary" id="add_field_serve2">Add Another service</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												    <div></div>
 												</div>
 											</div>
 									</div><br>
@@ -953,7 +949,7 @@
 										<div class="col-sm-6">
 												<div class="input_fields_type1">
 												    <button class="btn btn-primary" id="add_field_type1">Add Another service</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												    <div></div>
 												</div>
 											</div>
 									</div><br>
@@ -1013,7 +1009,7 @@
 										<div class="col-sm-6">
 												<div class="input_fields_member">
 												    <button class="btn btn-primary" id="add_field_member">Add Another Project Team Member</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												    <div></div>
 												</div>
 											</div>
 									</div><br>
@@ -1024,7 +1020,7 @@
 										<div class="col-sm-6">
 												<div class="input_fields_project1">
 												    <button class="btn btn-primary" id="add_field_project1">Add Another Project</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												    <div></div>
 												</div>
 											</div>
 									</div><br>
@@ -1067,7 +1063,7 @@
 										<div class="col-sm-6">
 												<div class="input_fields_com">
 												    <button class="btn btn-primary" id="add_field_com">Add Another Comment</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												    <div></div>
 												</div>
 											</div>
 									</div><br>
@@ -1097,7 +1093,7 @@
 										<div class="col-sm-6">
 												<div class="input_fields_sul">
 												    <button class="btn btn-primary" id="add_field_sul">Add Another Solution</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												    <div></div>
 												</div>
 											</div>
 									</div><br>
@@ -1363,7 +1359,7 @@
 										<div class="col-sm-6">
 												<div class="input_fields_comm">
 												    <button class="btn btn-primary" id="add_field_comm">Add Another Comment</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
+												    <div></div>
 												</div>
 											</div>
 									</div><br>
