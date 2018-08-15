@@ -31,7 +31,7 @@ Route::get('/dashboard/benchmark_dashboard', 'UsersController@benchmark_dashboar
 
 Route::get('/dashboard/policies', 'UsersController@policies_controller');
 
-Route::get('/publish/project_dashboard', 'UsersController@project_dashboard_controller');
+Route::get('/publish/project_dashboard', 'UsersController@project_dashboard_controller')->name('Project Dashboard');
 
 Route::get('/publish/project_dashboard/datasheet', 'UsersController@datasheet_controller');
 

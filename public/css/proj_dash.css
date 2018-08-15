@@ -1,0 +1,120 @@
+.centerh {
+	text-align: center;
+}
+.navs { 
+    list-style-type: none;
+    text-align: center; 
+    padding: 0;
+    margin: 0;
+}
+
+.navs li {
+    display: inline-block;
+    font-size: 30px;
+    padding: 5px 5px;
+    margin: 0;
+    color: white;
+    padding-bottom: 0 !important; 
+}
+
+.projbot {
+	width: 200px;
+	height: 60px;
+	background-color: #fd9669;
+	font-weight: bold;
+}
+
+.projbot:active, 
+.projbot:focus, 
+.projbot:target,
+.projbot:active:focus {
+	background-color: #fe7235;
+	color: white;
+	box-shadow: 1px 1px 1px #888888;
+	border: none;
+	outline: none;
+}
+
+.projbot:hover {
+	color: white;
+	border: 1px solid #fe7235;
+}
+
+.projcont {
+	border: 1px solid #f1f1f1;
+}
+
+.projhead {
+	padding: 0;
+	padding-top: 10px;
+}
+
+.inputproj {
+	text-decoration: underline;
+	border: none;
+	background-color: inherit;
+	width: 100%;
+}
+
+.project-tile {
+	width: 150px;
+	height: 150px;
+	margin: 5px 5px;
+}
+
+.tend-tile {
+	float: left;
+}
+
+.projh {
+	position: relative;
+	float: left;
+	font-size: 17px !important;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.poscont {
+	position: fixed;
+}
+
+.tendnew{
+	background-color: transparent !important;
+	border: none !important;
+}
+
+.abut {
+	width: 250px;
+	font-size: 24px;
+	background-color: #fd9264;
+	color: white !important;
+}
+
+.tabmargin {
+	margin-top: -50px;
+}
+
+.thead {
+	background-color: #fe7235;
+}
+
+.thead > td, th {
+	text-align: center;
+	color: white;
+}
+
+.td {
+	text-align: center;
+	vertical-align: middle !important;
+	white-space: nowrap;
+}
+
+.btcol {
+	background-color: #fe7235;
+	color: white !important;
+}
+
+table {
+    
+}

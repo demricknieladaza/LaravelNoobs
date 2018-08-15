@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/owl.carousel.css')}} ">
     <link rel="stylesheet" type="text/css" href="{{asset('css/bxslider.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/proj_dash.css')}}">
     <link rel="shortcut icon" href="{{asset('images/logo.jpg')}}">
     @if(Route::currentRouteName() != 'winwork')
         <script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
@@ -1305,7 +1306,66 @@
     <script>
         
     </script>
-    
+    <script type="text/javascript">
+        $(document).ready(function() {
+        var max_fields      = 10; //maximum input boxes allowed
+        var wrapper         = $(".cnt_insurance"); //Fields wrapper
+        var add_button      = $("#cnt_insurance"); //Add button ID
+        
+        var x = 1; //initlal text box count
+        $(add_button).click(function(e){ //on add input button click
+            e.preventDefault();
+            if(x < max_fields){ //max input box allowed
+                x++; //text box increment
+                $(wrapper).append('<div class="form-group" style="display:flex;"><input type="text" class="form-control" style="width:90%;" name="addInsurance[]"/><a href="#" class="remove_field">x</a></div>'); //add input box
+            }
+        });
+        
+        $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+            e.preventDefault(); $(this).parent('div').remove(); x--;
+        })
+    });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+        var max_fields      = 10; //maximum input boxes allowed
+        var wrapper         = $(".cnt_bond"); //Fields wrapper
+        var add_button      = $("#cnt_bond"); //Add button ID
+        
+        var x = 1; //initlal text box count
+        $(add_button).click(function(e){ //on add input button click
+            e.preventDefault();
+            if(x < max_fields){ //max input box allowed
+                x++; //text box increment
+                $(wrapper).append('<div class="form-group" style="display:flex;"><input type="text" class="form-control" style="width:90%;" name="addBonds[]"/><a href="#" class="remove_field">x</a></div>'); //add input box
+            }
+        });
+        
+        $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+            e.preventDefault(); $(this).parent('div').remove(); x--;
+        })
+    });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+        var max_fields      = 10; //maximum input boxes allowed
+        var wrapper         = $(".cnt_statement"); //Fields wrapper
+        var add_button      = $("#cnt_statement"); //Add button ID
+        
+        var x = 1; //initlal text box count
+        $(add_button).click(function(e){ //on add input button click
+            e.preventDefault();
+            if(x < max_fields){ //max input box allowed
+                x++; //text box increment
+                $(wrapper).append('<div class="form-group" style="display:flex;"><input type="text" class="form-control" style="width:90%;" name="addstatement[]"/><a href="#" class="remove_field">x</a></div>'); //add input box
+            }
+        });
+        
+        $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+            e.preventDefault(); $(this).parent('div').remove(); x--;
+        })
+    });
+    </script>
     <script src="{{asset('js/pricerange.js')}}"></script>    
 
 </body>

@@ -1,1758 +1,830 @@
 @extends('layouts.master')
 
 @section('content')
-
-	<div class="container below-header">
-				
-	</div> 
-
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-4">
-				<div class="tender-container">
-					<ul class="nav bid-form-nav">
-						<li class="active"><a data-toggle="tab" href="#section1">Pre-Qualification Questionnaire</a></li>
-						<li><a   href="{{ url('/publish/project_dashboard/datasheet') }}">Project</a></li>
-						<li><a data-toggle="tab" href="#section3">Tenders</a></li>
-						<li><a data-toggle="tab" href="#section4">Create New Tender</a></li>
-						<li><a data-toggle="tab" href="#section6">Appointment</a></li>
-						<li><a data-toggle="tab" href="#section5">Quality Assurance</a></li>
-					</ul>
-				</div>
+<div class="container below-header">
+	<h1 class="project-title bid-page-title centerh">Project Dashboard</small></h1>
+</div>
+<div class="container" style="width: 95%;">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="tender-container tendnew">
+				<ul class="nav navs bid-form-nav">
+					<li class="active"><a class="abut" data-toggle="tab" href="#section1">Project</a></li>
+					<li><a class="abut" data-toggle="tab" href="#section2">Scope</a></li>
+					<li><a class="abut" data-toggle="tab" href="#section3">Tenders</a></li>
+					<li><a class="abut" data-toggle="tab" href="#section4">Create New Tender</a></li>
+				</ul><br>
 			</div>
-			<div class="col-sm-8 questionnaire-section">
-				<div class="tab-content">
-					<div id="section1" class="tab-pane fade in active tender-container">
-						<h3 class="bid-form-title">Pre-Qualification Questionnaire</h3>
-						<form method="post">
-							<div class="form-group">
-								<input type="checkbox" name="" value="" class="filled-in" id="check1"> <label for="check1">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
-							</div>
-							<div class="form-group">
-								<input type="checkbox" name="" value="" class="filled-in" id="check2"> <label for="check2">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
-							</div>
-							<div class="form-group">
-								<input type="checkbox" name="" value="" class="filled-in" id="check3"> <label for="check3">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
-							</div>
-							<div class="form-group">
-								<input type="checkbox" name="" value="" class="filled-in" id="check4"> <label for="check4">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
-							</div>
-							<div class="form-group">
-								<input type="checkbox" name="" value="" class="filled-in" id="check5"> <label for="check5">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
-							</div>
-							<div class="form-group">
-								<input type="checkbox" name="" value="" class="filled-in" id="check6"> <label for="check6">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
-							</div>
-							<div class="form-group">
-								<input type="checkbox" name="" value="" class="filled-in" id="check7"> <label for="check7">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
-							</div>
-							<div class="form-group">
-								<input type="checkbox" name="" value="" class="filled-in" id="check8"> <label for="check8">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
-							</div>
-							<div class="form-group">
-								<input type="checkbox" name="" value="" class="filled-in" id="check9"> <label for="check9">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
-							</div>
-							<div class="form-group">
-								<input type="checkbox" name="" value="" class="filled-in" id="check10"> <label for="check10">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
-							</div>						
-							<div class="form-group">
-								<input type="submit" name="submit" value="Submit" class="btn btn-primary">
-								<input type="submit" name="Save" value="Save" class="btn btn-success">
-							</div>
-						</form>
-					</div>
-					<div id="section2" class="tab-pane fade tender-container">
-						<div class="form-group" style="text-align: right;">
-							<div class="input_fields_team">
-								<button class="btn" id="button1 ">Complete Page using Profile Information</button>
-							</div>
+		</div>
+		<div class="col-sm-12 questionnaire-section">
+			<div class="tab-content tabmargin" >
+				<div id="section1" class="tab-pane fade in active tender-container" style="padding-top: 0;">
+					<div class="row">
+		    	<div class="below-header project-img-collection text-center projhead">
+		    		<h1>Canada Water Masterplan</h1>
+		    		<div class="project-image popup-gallery">
+		    			<a href="../images/demo1.jpg"><img src="../images/demo1.jpg"/></a>
+		    		</div>
+		    		<div class="project-image popup-gallery">
+		    			<a href="../images/demo2.jpg"><img src="../images/demo2.jpg"/></a>
+		    		</div>
+		    		<div class="project-image popup-gallery">
+		    			<a href="../images/demo3.jpg"><img src="../images/demo3.jpg"/></a>
+		    		</div>
+		    		<div class="project-image popup-gallery">
+		    			<a href="../images/demo4.jpg"../images/demo1.jpg><img src="../images/demo4.jpg"/></a>
+		    		</div>
+		    	</div>
+		    </div>
+		    <div class="row">
+		    	<div class="">
+		    		<div class="row">
+		    			<div class="col-sm-12 project-anchor">
+		    				<a href="#">Project Details</a>
+		    				<a href="#">Tender Queries</a>
+		    				<a href="#cprofile">Employer Details</a>
+		    			</div>
+		    		</div>
+		    		<div class="tender-container">
+		    			<div class="row">
+		    				<div class="col-sm-12 active-tenders" id="cprofile">
+		    					<h3>Project Information</h3>
+		    				</div>			
+		    				<div class="col-sm-12">
+		    					<table class="table table-striped table-hover">
+		    						<tr>
+		    							<td>Project Title</td>
+		    							<td><input class="inputproj" type="text" name="projectTitle" value="Canada Water Masterplan"></td>
+		    						</tr>
+		    						<tr>
+		    							<td>Project ID</td>
+		    							<td>1234567890</td>
+		    						</tr>
+		    						<tr>
+		    							<td>Location</td>
+		    							<td><input class="inputproj" type="text" name="location" value="Canada Water, London, SE16, United Kingdom"></td>
+		    						</tr>
+		    						<tr>
+		    							<td colspan="2">
+		    								<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9935.319359803168!2d-0.04969!3d51.49799!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3ae4946b67b18de7!2sCanada+Water!5e0!3m2!1sen!2snp!4v1525743556788" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+		    							</td>
+		    						</tr>
+		    						<tr>
+		    							<td>Transport Links</td>
+		    							<td>
+		    								<table width="100%">
+		    									<tr>
+		    										<td>
+		    											<p><b>Main Roads</b></p>
+		    										</td>
+		    										<td>
+		    											<p><input class="inputproj" type="text" name="mainRoads" value="Surrey Quays Road"></p>
+		    										</td>
+		    									</tr>
+		    									<tr>
+		    										<td>
+		    											<p><b>Tube Stations</b></p>
+		    										</td>
+		    										<td>
+		    											<p><input class="inputproj" type="text" value="Canada Water 0.5km"></p>
+		    											<p><input class="inputproj" type="text" value="Surrey Quays 1.5km"></p>
+		    										</td>
+		    									</tr>
+		    									<tr>
+		    										<td>
+		    											<p><b>Bus Lines</b> </p>
+		    										</td>
+		    										<td>
+		    											<p><input class="inputproj" type="text" name="bus_lines" value="701, 702, 851, 930"></p>
+		    										</td>
+		    									</tr>
+		    								</table>
+		    							</td>
+		    						</tr>
+		    						<tr>
+		    							<td>Area Specific Information</td>
+		    							<td>
+		    								<table width="100%">
+		    									<tr>
+		    										<td>Adjacent Uses</td>
+		    										<td><input class="inputproj" type="text" name="adjacent_use" value="Residential (High-End), Regeneration Space, Retail"></td>
+		    									</tr>
+		    									<tr>
+		    										<td>History</td>
+		    										<td><input class="inputproj" type="text" name="history" value="Former Docks and Warehouses"></td>
+		    									</tr>
+		    								</table>
+		    							</td>
+		    						</tr>
+		    						<tr>
+		    							<td>Constraints</td>
+		    							<td>                               
+		    								<p><input class="inputproj" type="text" value="Adjacent Tube Tunnel"></p>
+		    								<p><input class="inputproj" type="text" value="Existing Buildings"></p>
+		    								<p><input class="inputproj" type="text" value="Weak Ground Conditions"></p>
+		    							</td>
+		    						</tr>
+		    						<tr>
+		    							<td>Type of Development</td>
+		    							<td><input name="dev_type" class="inputproj" type="text" value="New Built"></td>
+		    						</tr>
+		    						<tr>
+		    							<td>Construction Value</td>
+		    							<td><span>£</span><input name="const_value" class="inputproj"type="text" value="300,000,000"></td>
+		    						</tr>
+		    						<tr>
+		    							<td>Types of Use</td>
+		    							<td>
+		    								<table width="100%">
+		    									<tr>
+		    										<td>Residential</td>
+		    										<td><input class="inputproj"type="text" value="30,000m2"></td>
+		    										<td><input class="inputproj"type="text" value="200 units"></td>
+		    										<td><input class="inputproj"type="text" value="High-End"></td>
+		    									</tr>
+		    									<tr>
+		    										<td>Residential</td>
+		    										<td><input class="inputproj"type="text" value="10,000m2"></td>
+		    										<td><input class="inputproj"type="text" value="70 units"></td>
+		    										<td><input class="inputproj"type="text" value="Affordable"></td>
+		    									</tr>
+		    									<tr>
+		    										<td>Office</td>
+		    										<td><input class="inputproj"type="text" value="15,000m2"></td>
+		    										<td></td>
+		    										<td></td>
+		    									</tr>
+		    									<tr>
+		    										<td>Retail</td>
+		    										<td><input class="inputproj"type="text" value="15,000m2"></td>
+		    										<td><input class="inputproj"type="text" value="5 units"></td>
+		    										<td></td>
+		    									</tr>
+		    									<tr>
+		    										<td>Total</td>
+		    										<td><input class="inputproj"type="text" value="57,000m2"></td>
+		    										<td></td>
+		    										<td></td>
+		    									</tr>
+		    								</table>
+		    							</td>
+		    						</tr>
+		    						<tr>
+		    							<td>Milestones</td>
+		    							<td>
+		    								<table width="100%">
+		    									<tr>
+		    										<td>RIBA Stage 1 Completion</td>
+		    										<td><input class="inputproj"type="text" value="01/03/2019"></td>
+		    									</tr>
+		    									<tr>
+		    										<td>RIBA Stage 2 Completion</td>
+		    										<td><input class="inputproj"type="text" value="01/07/2019"></td>
+		    									</tr>
+		    									<tr>
+		    										<td>RIBA Stage 3 Completion</td>
+		    										<td><input class="inputproj"type="text" value="01/10/2019"></td>
+		    									</tr>
+		    									<tr>
+		    										<td>RIBA Stage 4 Completion</td>
+		    										<td><input class="inputproj"type="text" value="01/12/2019"></td>
+		    									</tr>
+		    								</table>
+		    							</td>								
+		    						</tr>
+		    						<tr>
+		    							<td>Meetings</td>
+		    							<td>
+		    								<table width="100%">
+		    									<tr>
+		    										<td>Design Team Meeting</td>
+		    										<td><input class="inputproj"type="text" value="Tuesday, 14:00 – 15:30, Weekly"></td>
+		    									</tr>
+		    									<tr>
+		    										<td>Project Progress Meeting</td>
+		    										<td><input class="inputproj"type="text" value="Tuesday, 15:30 – 16:30, Fortnightly"></td>
+		    									</tr>
+		    								</table>
+		    							</td>
+		    						</tr>
+		    						<tr>
+		    							<td>Procurement Route</td>
+		    							<td><input class="inputproj"type="text" value="Design & Build"></td>
+		    						</tr>
+		    						<tr>
+		    							<td>Project Team</td>
+		    							<td>
+		    								<table width="100%">
+		    									<tr>
+		    										<td>Architect</td>
+		    										<td><input class="inputproj"type="text" value="Allies and Morrison"></td>
+		    									</tr>
+		    									<tr>
+		    										<td>Structural Engineer</td>
+		    										<td><input class="inputproj"type="text" value="AKT II"></td>
+		    									</tr>
+		    									<tr>
+		    										<td>Services Engineer</td>
+		    										<td><input class="inputproj"type="text" value="Sweco"></td>
+		    									</tr>
+		    									<tr>
+		    										<td>Fire Engineer </td>
+		    										<td><a href="#">Active Tender</a></td>
+		    									</tr>
+		    									<tr>
+		    										<td>Acoustic Engineer</td>
+		    										<td><a href="#">Active Tender</a></td>
+		    									</tr>
+		    								</table>
+		    							</td>
+		    						</tr>
+		    						<tr>
+		    							<td>Supporting Documents</td>
+		    							<td>
+		    								<p><a href="#">Site Plan <i class="fa fa-download"></i></a></p>
+		    								<p><a href="#">Programme <i class="fa fa-download"></i></a></p>        
+		    								<p><a href="#">H&S Policy <i class="fa fa-download"></i></a></p>
+		    							</td>
+		    						</tr>
+		    					</table>						
+		    				</div>
+		    			</div>
+		    		</div>
+		    	</div>
+		    </div>
+				</div>
+				<div id="section2" class="tab-pane fade tender-container">
+					<div class="row">
+						<div class="container">
+							<h1 class="project-title bid-page-title">Design Responsibility Matrix</h1>
 						</div>
-						<h3 class="bid-form-title">Organization</h3>
-						<form method="post">
-							<div class="row">
-								<div class="col-sm-12">
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												Years of experience in the service required
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<div class="input-group date" id="datepicker" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
-
-													 <input class="form-control" type="text" placeholder="Select Year" readonly="readonly" name="date" >	  
-													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												Offered Services
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Service
-													<option>Architect</option>
-													<option>Sturctural Engineed</option>
-													<option>Service Engineer</option>
-													<option>Fire Engineer</option>
-													<option>Acoustic Engineer</option>
-													<option>Principal Designer</option>
-													<option>Fascade Engineer</option>
-													<option>Building Control</option>
-													<option>Lighting Consultant</option>
-													<option>Security Consultant</option>
-													<option>Plannning Consultant</option>
-													<option>Sustainability Consultant</option>
-													<option>BIM Consultant</option>
-													<option>Quantity Survueyor</option>
-													<option>Project Manager</option>
-													<option>Project Manager</option>
-													<option>Other</option>
-												</select>
-											</div>
-											<div class="form-group">
-												<div class="input_fields_service">
-												    <button class="btn btn-primary" id="add_field_service">Add Another Service</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												Awards
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Name of Awar">
-											</div>
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Details">
-											</div>
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Awarded By">
-											</div>
-											<div class="form-group">
-												<div class="input-group date" id="datepicker1" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
-
-													 <input class="form-control" type="text" placeholder="Select Year" readonly="readonly" name="date" >	  
-													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-												</div>
-											</div>
-											<div class="form-group">
-												<div class="input_fields_piste">
-												    <button class="btn btn-primary" id="add_field_piste">Add Another Award</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												Track record of relevant projects
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Profile Title">
-											</div>
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Value">
-											</div>
-											<div class="form-group">
-													<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Type of Use
-													<option>Residential</option>
-													<option>Commercial </option>
-													<option>Retail</option>
-													<option>Leisure</option>
-													<option>Sports and Venues</option>
-													<option>Hotel</option>
-													<option>Industrial</option>
-													<option>Education</option>
-													<option>Healthcare</option>
-													<option>Defence</option>
-													<option>Aviation</option>
-													<option>Highways</option>
-													<option>Bridges</option>
-													<option>Rail</option>
-													<option>Water</option>
-													<option>Oil,Gas and Chemical</option>
-													<option>Other</option>
-												</select>
-											</div>
-											<div class="form-group">
-												<div class="input_fields_types">
-												    <button class="btn btn-primary" id="add_field_types">Add another types of use</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
-												</div>
-											</div>
-											<div class="form-group">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Service
-													<option>Architect</option>
-													<option>Sturctural Engineed</option>
-													<option>Service Engineer</option>
-													<option>Fire Engineer</option>
-													<option>Acoustic Engineer</option>
-													<option>Principal Designer</option>
-													<option>Fascade Engineer</option>
-													<option>Building Control</option>
-													<option>Lighting Consultant</option>
-													<option>Security Consultant</option>
-													<option>Plannning Consultant</option>
-													<option>Sustainability Consultant</option>
-													<option>BIM Consultant</option>
-													<option>Quantity Survueyor</option>
-													<option>Project Manager</option>
-													<option>Project Manager</option>
-													<option>Other</option>
-												</select>
-											</div>
-											<div class="form-group">
-												<div class="input-group date" id="datepicker2" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
-
-													 <input class="form-control" type="text" placeholder="Provides this Service from" readonly="readonly" name="date" >	  
-													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-												</div>
-										</div>
-										<div class="form-group">
-												<div class="input-group date" id="datepicker3" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
-
-													 <input class="form-control" type="text" placeholder="Provides this Service until" readonly="readonly" name="date" >	  
-													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-												</div>
-											</div>
-											<div class="form-group">
-												<div class="input_fields_serve">
-												    <button class="btn btn-primary" id="add_field_serve">Add another service</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
-												</div>
-											</div>
-											<div class="form-group">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Type of Development
-													<option>New Built</option>
-													<option>Refurbishment</option>
-													<option>Demolition</option>
-												</select>
-											</div>
-											<div class="input_fields_type">
-												    <button class="btn btn-primary" id="add_field_type">Add another Type</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
-												</div>
-													
-											<div class="form-group">													
-												<div class="btn-sm btn-primary">
-							       	                 <input type="file" name="file"/ placeholder="upload images">
-							                    </div>
-						                    </div>
-						                    <div class="form-group">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Project Team Member
-													<option>Architect</option>
-													<option>Sturctural Engineed</option>
-													<option>Service Engineer</option>
-													<option>Fire Engineer</option>
-													<option>Acoustic Engineer</option>
-													<option>Principal Designer</option>
-													<option>Fascade Engineer</option>
-													<option>Building Control</option>
-													<option>Lighting Consultant</option>
-													<option>Security Consultant</option>
-													<option>Plannning Consultant</option>
-													<option>Sustainability Consultant</option>
-													<option>BIM Consultant</option>
-													<option>Quantity Survueyor</option>
-													<option>Project Manager</option>
-													<option>Project Manager</option>
-													<option>Other</option>
-												</select>
-											</div>
-											<div class="form-group">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Company
-													<option>Architect</option>
-													<option>Sturctural Engineed</option>
-													<option>Service Engineer</option>
-													<option>Other</option>
-												</select>
-											</div>
-											<div class="form-group">
-												<div class="form-group">
-													<input type="text" name="" class="form-control" placeholder="Enter new Company Name">
-												</div>
-											</div>
-											<div class="form-group">
-												<div class="input_fields_team">
-												    <button class="btn btn-primary" id="add_field_team">Add Another Project Team Member</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
-												</div>
-											</div>
-											<div class="form-group">
-												<div class="input_fields_project">
-												    <button class="btn btn-primary" id="add_field_project">Add Another Project</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<input type="submit" name="submit" value="Submit" class="btn btn-primary">
-										<input type="submit" name="Save" value="Save" class="btn btn-success">
-									</div>
-									
-									</div>
-								</div>
-							<!-- </div> -->
-						</form>
 					</div>
-					<div id="section3" class="tab-pane fade tender-container">
-						<h3 class="bid-form-title">Individuals</h3>
-						<form method="post">
-							<div class="row">
-								<div class="col-sm-12">
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												Name
-											</div>
-										</div>
-										<div class="col-sm-3">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="First Name">
-											</div>
-										</div>
-										<div class="col-sm-3">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Surname">
-											</div>
-										</div>
-									</div>
-									<div class="row" style="padding-bottom: 10px;">
-										<div class="col-sm-6">
-											<div class="form-group">
-												Image
-											</div>
-										</div>
-										<div class="col-sm-6" >
-											<img id="uploadPreview5" style="width: 100px; height: 100px;" />
-											<input id="uploadImage5" type="file" name="myPhoto" onchange="PreviewImage5();" />
-								        </div>
-						            </div>
-						            <div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												Accreditations
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<select name="" class="form-control">
-													<option value="" disabled selected>Select Accrediatation</option>
-													<option>MCIOB</option>
-													<option>AssocRICS</option>
-													<option>MRICS</option>
-													<option>FRICS</option>
-													<option>HonRICS</option>
-													<option>BREEAM AP</option>
-													<option>RIBA</option>
-													<option>Other</option>
-												</select>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
-											<div class="input-group date" id="datepickers" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
-											<input class="form-control" type="text" placeholder="Year Awarded" readonly="readonly" name="date" >	  
-											<span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-											</div>
-										</div>
-									</div>
-									<br>
-									<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
-											<div class="input_fields_yawa">
-											<button class="btn btn-primary" id="add_field_yawa">Add Another Accreditation</button>
-											<div><input class="form-control" type="text" name="mytext[]"></div>
-											</div>
-										</div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<select name="" class="form-control">
-													<option value="" disabled selected>Select Degree</option>
-													<option>BA</option>
-													<option>BSA</option>
-													<option>BAcy</option>
-													<option>BAcc</option>
-													<option>B.A.Sc.</option>
-													<option>BArch </option>
-													<option>BBA</option>
-													<option>BCE</option>
-													<option>BCom</option>
-													<option>BCA</option>
-													<option>BDes</option>
-													<option>B.Des.Corp</option>
-													<option>B.Des.Arch</option>
-													<option>BEng</option>
-													<option>BEC</option>
-													<option>BEE</option>
-													<option>BFA</option>
-													<option>B.Hlth.Sci.</option>
-													<option>BIT</option>
-													<option>BIGS</option>
-													<option>LLB</option>
-													<option>BLAS</option>
-													<option>BMath</option>
-													<option>BME</option>
-													<option>B.P.E.S.S</option>
-													<option>B.Res.Ec</option>
-													<option>BSc</option>
-													<option>BS.EOH</option>
-													<option>BSLS</option>
-													<option>BTech</option>
-													<option>BVA</option>
-													<option>MA</option>
-													<option>MBA</option>
-													<option>MCom</option>
-													<option>BCA</option>
-													<option>MEM</option>
-													<option>MEDM</option>
-													<option>MFA</option>
-													<option>MIS</option>
-													<option>LLM</option>
-													<option>MLA</option>
-													<option>MPS</option>
-													<option>MPA</option>
-													<option>MPH</option>
-													<option>MSc</option>
-													<option>MSF</option>
-													<option>MTech</option>
-													<option>DLP</option>
-													<option>Dr.mph.</option>
-													<option>PhD</option>
-													<option>PsyD</option>
-													<option>DrPH</option>
-													<option>DSc</option>
-													<option>Other</option>
-												</select>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">	
-
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Name of Degree">
-											</div>
-											<div class="input-group date" id="datepickers5" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
-											<input class="form-control" type="text" placeholder="Year Awarded" readonly="readonly" name="date" >	  
-											<span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-											</div>
-											<br>
-											<div class="form-group">
-												<div class="input_fields_degree">
-												    <button class="btn btn-primary" id="add_field_degree">Add Another Project</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
-												</div>
-											</div>
-											
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												Seniority
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Level of Seniority">
-											</div>
-										</div>
-									</div>
-									
-										<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												Awards
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Name Of Awards">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Awarded by">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Details">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
-											<div class="input-group date" id="datepickers6" data-date="02-2012" 
-											 data-date-format="mm-yyyy">
-											<input class="form-control" type="text" placeholder="Year Awarded" readonly="readonly" name="date" >	  
-											<span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-											</div>
-										</div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-												<div class="input_fields_addon">
-												    <button class="btn btn-primary" id="add_field_addon">Add Another Award</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
-												</div>
-											</div>
-									</div><br>
-										 <div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-											 Services
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<select name="" class="form-control">
-													<option value="" disabled selected>Select Industry</option>
-													<option>Construction</option>
-													<option>Others</option>
-													
-												</select>
-											</div>
-										</div>
-									</div>
-									 <div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-											
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Service
-													<option>Architect</option>
-													<option>Sturctural Engineed</option>
-													<option>Service Engineer</option>
-													<option>Fire Engineer</option>
-													<option>Acoustic Engineer</option>
-													<option>Principal Designer</option>
-													<option>Fascade Engineer</option>
-													<option>Building Control</option>
-													<option>Lighting Consultant</option>
-													<option>Security Consultant</option>
-													<option>Plannning Consultant</option>
-													<option>Sustainability Consultant</option>
-													<option>BIM Consultant</option>
-													<option>Quantity Surveyor</option>
-													<option>Project Manager</option>
-													<option>Other</option>
-												</select>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-												<div class="input_fields_serve1">
-												    <button class="btn btn-primary" id="add_field_serve1">Add Another Service</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
-												</div>
-											</div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-												<div class="input_fields_indus21">
-												    <button class="btn btn-primary" id="add_field_indus21">Add Another Industry</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
-												</div>
-											</div>
-									</div><br>
-										<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												Project Exprerience
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Project Title">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Value">
-											</div>
-										</div>
-
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Type of Use
-													<option>Residential</option>
-													<option>Commercial </option>
-													<option>Retail</option>
-													<option>Leisure</option>
-													<option>Sports and Venues</option>
-													<option>Hotel</option>
-													<option>Industrial</option>
-													<option>Education</option>
-													<option>Healthcare</option>
-													<option>Defence</option>
-													<option>Aviation</option>
-													<option>Highways</option>
-													<option>Bridges</option>
-													<option>Rail</option>
-													<option>Water</option>
-													<option>Oil,Gas and Chemical</option>
-													<option>Other</option>
-												</select>
-												
-											</div>
-										</div>
-									</div>
-										<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-												<div class="input_fields_add">
-												    <button class="btn btn-primary" id="add_field_add">Add Another type of use</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
-												</div>
-											</div>
-									</div><br>
-							        		<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Service
-													<option>Architect</option>
-													<option>Sturctural Engineed</option>
-													<option>Service Engineer</option>
-													<option>Fire Engineer</option>
-													<option>Acoustic Engineer</option>
-													<option>Principal Designer</option>
-													<option>Fascade Engineer</option>
-													<option>Building Control</option>
-													<option>Lighting Consultant</option>
-													<option>Security Consultant</option>
-													<option>Plannning Consultant</option>
-													<option>Sustainability Consultant</option>
-													<option>BIM Consultant</option>
-													<option>Quantity Surveyor</option>
-													<option>Project Manager</option>
-													<option>Other</option>
-												</select>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-											<div class="col-sm-6">
-												<div class="input-group date" id="datepicker7" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
-
-													 <input class="form-control" type="text" placeholder="Provided this Service from" readonly="readonly" name="date" >	  
-													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-												</div>
-											</div>
-
-									</div><br>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-											<div class="col-sm-6">
-												<div class="input-group date" id="datepicker8" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
-
-													 <input class="form-control" type="text" placeholder="Provided this Service until" readonly="readonly" name="date" >	  
-													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-												</div>
-											</div>
-
-									</div><br>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-												<div class="input_fields_serve2">
-												    <button class="btn btn-primary" id="add_field_serve2">Add Another service</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
-												</div>
-											</div>
-									</div><br>
-										<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Types of Development
-													<option>New Built</option>
-													<option>Refurbishment</option>
-													<option>Demolition</option>
-													
-												</select>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-												<div class="input_fields_type1">
-												    <button class="btn btn-primary" id="add_field_type1">Add Another service</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
-												</div>
-											</div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-6"></div>
-
-										<div class="col-sm-6">
-												<input type="text" name="" class="form-control" placeholder="Enter Description of the Project">
-											</div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
-											<img id="uploadPreview6" style="width: 100px; height: 100px;" />
-											<input id="uploadImage6" type="file" name="myPhoto" onchange="PreviewImage6();" />
-						                </div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Project Team Member
-													<option>Architect</option>
-													<option>Sturctural Engineed</option>
-													<option>Service Engineer</option>
-													<option>Fire Engineer</option>
-													<option>Acoustic Engineer</option>
-													<option>Principal Designer</option>
-													<option>Fascade Engineer</option>
-													<option>Building Control</option>
-													<option>Lighting Consultant</option>
-													<option>Security Consultant</option>
-													<option>Plannning Consultant</option>
-													<option>Sustainability Consultant</option>
-													<option>BIM Consultant</option>
-													<option>Quantity Surveyor</option>
-													<option>Project Manager</option>
-													<option>Other</option>
-												</select>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6"></div>
-
-										<div class="col-sm-6">
-												<input type="text" name="" class="form-control" placeholder="Enter new Company Name">
-											</div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-												<div class="input_fields_member">
-												    <button class="btn btn-primary" id="add_field_member">Add Another Project Team Member</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
-												</div>
-											</div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-												<div class="input_fields_project1">
-												    <button class="btn btn-primary" id="add_field_project1">Add Another Project</button>
-												    <div><input class="form-control" type="text" name="mytext[]"></div>
-												</div>
-											</div>
-									</div><br>
-									<div class="form-group">
-										<input type="submit" name="submit" value="Submit" class="btn btn-primary">
-										<input type="submit" name="Save" value="Save" class="btn btn-success">
-									</div>
-								</div>
-							</div>
-						</form>
+				</div>
+				<div id="section3" class="tab-pane fade tender-container">
+					<div class="row" style="margin: 25px;">
+	    			<table class="table table-bordered">
+    			    <thead class="thead">
+  			        <tr>
+  			        	<th>Services</th>
+			            <th>Status</th>
+			            <th>Start</th>
+			            <th>End</th>
+			            <th>Time Remaining</th>
+			            <th>Number of Bids received</th>
+			            <th>Number of Queries received (outstanding)</th>
+			            <th></th>
+			            <th></th>
+  			        </tr>
+    			    </thead>
+    			    <tbody>
+  			        <tr>
+			            <td class="td">Fire Engineer <a><p>Edit Tender</p></a></td>
+			            <td class="td">Active</td>
+			            <td class="td">1/1/2018</td>
+			            <td class="td">1/9/2018</td>
+			            <td class="td">5 days</td>
+			            <td class="td"><strong>3</strong><a data-toggle="modal" data-target="#viewBid"><p>View Bids</p></a></td>
+			            <td class="td"><strong>7</strong><a data-toggle="modal" data-target="#viewQueries"><p>View Queries</p></a></td>
+			            <td class="td"><button class="">Complete Tender Process</button></td>
+			            <td class="td"></td>
+  			        </tr>
+  			        <tr>
+			            <td class="td">Service Engineer <a><p>Edit Tender</p></a></td>
+			            <td class="td">Drafted</td>
+			            <td class="td">1/1/2018</td>
+			            <td class="td">1/9/2018</td>
+			            <td class="td">5 days</td>
+			            <td class="td"></td>
+			            <td class="td"></td>
+			            <td class="td"></td>
+			            <td class="td"></td>
+  			        </tr>
+  			        <tr>
+			            <td class="td">Structural Engineer <a><p>Edit Tender</p></a></td>
+			            <td class="td">Closed</td>
+			            <td class="td">1/1/2018</td>
+			            <td class="td">1/9/2018</td>
+			            <td class="td">5 days</td>
+			            <td class="td"><strong>3</strong><a data-toggle="modal" data-target="#viewBid"><p>View Bids</p></a></td>
+			            <td class="td"><strong>7</strong><a data-toggle="modal" data-target="#viewQueries"><p>View Queries</p></a></td>
+			            <td class="td"><button class="">Negotiate Scope and Appointment</button></td>
+			            <td class="td"><button class="">Download Evaluation Report</button></td>
+  			        </tr>
+    			    </tbody>
+	    			</table>
+	    			<button class="btn">Print Report</button>
 					</div>
-					<div id="section4" class="tab-pane fade tender-container">
-						<h6 class="bid-form-title">Edit Tender</h6>
-						<form method="post">
-							<div class="row">
-								<div class="col-sm-12">
-									<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
-												  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">View Bids </button>
-											<div class="modal fade" id="myModal2" role="dialog">
-												    <div class="modal-dialog">
-										     <div class="modal-content">
-												     <div class="modal-header">
-												          <button type="button" class="close" data-dismiss="modal">&times;</button>
-												          <h4 class="modal-title">View Bids</h4>
-												      </div>
-								             <div class="modal-body">  
-												  <table class="table table-bordered">
-												    <thead>
-												      <tr>
-												         <th>#</th>
-												        <th>Tenderer</th>
-												        <th>Qualitative Score</th>
-												        <th>Quantitative Score</th>
-												        <th>Risk Score</th>
-												      </tr>
-												    </thead>
-												    <tbody>
-												      <tr>
-												       <td>1</td>
-												        <td>Company 1</td>
-												        <td>5</td>
-												        <td>9</td>
-												        <td>2</td>
-												      </tr>	      
-												    </tbody>
-												    <tbody>
-												      <tr>
-												       <td>2</td>
-												        <td>Company 2</td>
-												        <td>2</td>
-												        <td>4</td>
-												        <td>5</td>
-												      </tr>      
-												    </tbody>
-												        <tbody>
-												      <tr>
-												       <td>3</td>
-												        <td>Company 3</td>
-												        <td>7</td>
-												        <td>8</td>
-												        <td>7</td>
-												      </tr>
-												      
-												    </tbody>
-												  </table>
-																						        </div>
-										        <div class="modal-footer">
-										          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-										        </div>
-										      </div>
-										      
-										    </div>
-										</div>
-								</div>
-								</div><br>
-									 <div class="row">
-										<div class="col-sm-6"></div>
-										<div class="form-group">
+					<div class="row" style="margin: 25px;">
+	    			<table class="table table-bordered">
+    			    <thead class="thead">
+    			    	<tr><h4>Cashflow of selected tenderers</h4></tr>
+  			        <tr>
+			            <th>Services</th>
+			            <th>Jan-18</th>
+			            <th>Feb-18</th>
+			            <th>Mar-18</th>
+			            <th>Apr-18</th>
+			            <th>May-18</th>
+			            <th>Jun-18</th>
+			            <th>Jul-18</th>
+			            <th>Aug-18</th>
+			            <th>Sep-18</th>
+			            <th>Oct-18</th>
+			            <th>Nov-18</th>
+			            <th>Dec-18</th>
+  			        </tr>
+    			    </thead>
+    			    <tbody>
+  			        <tr>
+			            <td class="td">Fire Engineer</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+  			        </tr>
+  			        <tr>
+			            <td class="td">Architect</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+  			        </tr>
+  			        <tr>
+			            <td class="td"><strong>Total</strong></td>
+			            <td class="td"><strong>£ 2,000.00</strong></td>
+			            <td class="td"><strong>£ 2,000.00</strong></td>
+			            <td class="td"><strong>£ 2,000.00</strong></td>
+			            <td class="td"><strong>£ 2,000.00</strong></td>
+			            <td class="td"><strong>£ 2,000.00</strong></td>
+			            <td class="td"><strong>£ 2,000.00</strong></td>
+			            <td class="td"><strong>£ 2,000.00</strong></td>
+			            <td class="td"><strong>£ 2,000.00</strong></td>
+			            <td class="td"><strong>£ 2,000.00</strong></td>
+			            <td class="td"><strong>£ 2,000.00</strong></td>
+			            <td class="td"><strong>£ 2,000.00</strong></td>
+			            <td class="td"><strong>£ 2,000.00</strong></td>
+  			        </tr>
+    			    </tbody>
+	    			</table>
+	    			<button class="btn">Export to MS Excel</button>
+					</div>
+				</div>	
+				<div id="section4" class="tab-pane fade tender-container">
+					<div class="row" style="margin: 25px;">
+		    	<div class="">
+		    		<div class="row">
+		    			<div class="col-sm-4">
+		    				<div class="tender-container">
+		    					<ul class="nav bid-form-nav">
+		    						<li class="active"><a data-toggle="tab" href="#section11">Scope</a></li>
+		    						<li><a data-toggle="tab" href="#section21">Appointment</a></li>
+		    						<li><a data-toggle="tab" href="#section31">Evaluation Settings</a></li>
+		    						<li><a data-toggle="tab" href="#section41">Quality Assurance</a></li>
+		    					</ul><br>
+		    				</div>
+		    			</div>
+		    			<div class="col-sm-8 questionnaire-section">
+		    				<div class="tab-content">
+		    					<div id="section11" class="tab-pane fade in active tender-container">
+		    						<h3 class="bid-form-title">Scope</h3>
+		    					</div>
+		    					<div id="section21" class="tab-pane fade tender-container">
+		    						<h3 class="bid-form-title">Appointment</h3>
+		    						<form method="post">
+		    							<div class="row">
+		    								<div class="col-sm-12">
+		    									<div class="row">
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+		    												Insurances
+		    											</div>
+		    										</div>
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+															<select name="insurances[]"  class="form-control" >
+																<option value="" disabled selected>Select Insurance</option>
+																<?php
+																$Service = array(
+																	"Professional","Indemnity","Public  Liability","Products  Liability","Employers  Liability" 
+																);
+																sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
+																foreach ($Service as $key ) {
+																    echo "<option value='".$key."'>".$key."</option>";
+																}
 
-
-												         
-												  <table class="table table-bordered">
-												    <thead>
-												      <tr>
-												         <th>Query</th>
-												        <th>Received</th>
-												        <th>Time left to respond</th>
-												        <th>Respone</th>
-												        
-												      </tr>
-												    </thead>
-												    <tbody>
-												      <tr>
-												       <td>Question text Question text</td>
-												        <td>01/01/18, 15:32</td>
-												        <td>26 hours 14 minutes</td>
-												        <td><div class="col-sm-6">
-
-													  <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal1">Respone</button>
-
-													  <div class="modal fade" id="myModal1" role="dialog">
-													    <div class="modal-dialog">
-													    
-													      <div class="modal-content">
-													        <div class="modal-header">
-													          <button type="button" class="close" data-dismiss="modal">&times;</button>
-													          <h4 class="modal-title">Response</h4>
-													        </div>
-													        <div class="modal-body">
-													          <textarea class="form-control" id="exampleTextarea" rows="3" cols="3" placeholder="Enter response here"></textarea>
-													        </div>
-													        <div class="modal-footer">
-													        	   <button type="button" class="btn btn-warning" data-dismiss="modal">Publish Response</button>
-													          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-													        </div>
-													      </div>
-													      
-													    </div>
-													  </div>
-													  
-													</div>
-													</td>
-												      </tr> 
-												    </tbody>
-												  </table>
-												       
-												  
-												</div>
-									</div><br>
-                                   
-											 <div class="row">
-										<div class="col-sm-6"></div>
-										<div class="form-group">
-
-
-												         
-												  <table class="table table-bordered">
-												    <thead>
-												      <tr>
-												         <th>Query</th>
-												        <th>Received</th>
-												        <th>Time left to respond</th>
-												        <th>Respone</th>
-												        
-												      </tr>
-												    </thead>
-												    <tbody>
-												      <tr>
-												       <td>Question text Question text</td>
-												        <td>01/01/18, 15:32</td>
-												        <td>26 hours 14 minutes</td>
-												        <td><div class="col-sm-6">
-
-													  <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal7">Respone</button>
-
-													  <div class="modal fade" id="myModal7" role="dialog">
-													    <div class="modal-dialog">
-													    
-													      <div class="modal-content">
-													        <div class="modal-header">
-													          <button type="button" class="close" data-dismiss="modal">&times;</button>
-													          <h4 class="modal-title">Response</h4>
-													        </div>
-													        <div class="modal-body">
-													          <textarea class="form-control" id="exampleTextarea" rows="3" cols="3" placeholder="Enter response here"></textarea>
-													        </div>
-													        <div class="modal-footer">
-													        	   <button type="button" class="btn btn-warning" data-dismiss="modal">Publish Response</button>
-													          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-													        </div>
-													      </div>
-													      
-													    </div>
-													  </div>
-													  
-													</div>
-													</td>
-												      </tr> 
-												    </tbody>
-												  </table>
-												       
-												  
-												</div>
-									</div><br>
-                                    <div class="row">
-										<div class="col-sm-6"></div>
-										<div class="form-group">
-
-
-												         
-												  <table class="table table-bordered">
-												    <thead>
-												      <tr>
-												         <th>Query</th>
-												        <th>Received</th>
-												        <th>Time left to respond</th>
-												        <th>Respone</th>
-												        
-												      </tr>
-												    </thead>
-												    <tbody>
-												      <tr>
-												       <td>Question text Question text</td>
-												        <td>01/01/18, 15:32</td>
-												        <td>26 hours 14 minutes</td>
-												        <td><div class="col-sm-6">
-
-													  <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal8">Respone</button>
-
-													  <div class="modal fade" id="myModal8" role="dialog">
-													    <div class="modal-dialog">
-													    
-													      <div class="modal-content">
-													        <div class="modal-header">
-													          <button type="button" class="close" data-dismiss="modal">&times;</button>
-													          <h4 class="modal-title">Response</h4>
-													        </div>
-													        <div class="modal-body">
-													          <textarea class="form-control" id="exampleTextarea" rows="3" cols="3" placeholder="Enter response here"></textarea>
-													        </div>
-													        <div class="modal-footer">
-													        	   <button type="button" class="btn btn-warning" data-dismiss="modal">Publish Response</button>
-													          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-													        </div>
-													      </div>
-													      
-													    </div>
-													  </div>
-													  
-													</div>
-													</td>
-												      </tr> 
-												    </tbody>
-												  </table>
-												       
-												  
-												</div>
-									</div><br>
-                                   	<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
-												  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal5">View Queries</button>
-
-												  <!-- Modal -->
-												  <div class="modal fade" id="myModal5" role="dialog">
-												    <div class="modal-dialog">
-												    
-												      <!-- Modal content-->
-												      <div class="modal-content">
-												        <div class="modal-header">
-												          <button type="button" class="close" data-dismiss="modal">&times;</button>
-												          <h4 class="modal-title">View Queries</h4>
-												        </div>
-												        <div class="modal-body">
-
-												         
-												  <table class="table table-bordered">
-												    <thead>
-												      <tr>
-												         <th>#</th>
-												        <th>Query</th>
-												        <th>Response</th>
-												      </tr>
-												    </thead>
-												    <tbody>
-												      <tr>
-												       <td>1</td>
-												        <td>Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text</td>
-												        <td>Response text Response text Response text Response text Response text Response text Response text Response text Response text Response text</td>
-												        
-												      </tr>
-												      
-												    </tbody>
-
-												    <tbody>
-												      <tr>
-												       <td>2</td>
-												        <td>Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text</td>
-												        <td>Response text Response text Response text Response text Response text Response text Response text Response text Response text Response text</td>
-												      </tr>
-												      
-												    </tbody>
-												       <tbody>
-												      <tr>
-												       <td>3</td>
-												        <td>Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text</td>
-												        <td>Response text Response text Response text Response text Response text Response text Response text Response text Response text Response text</td>
-												      </tr>
-												      
-												    </tbody>
-												  </table>
-																						        </div>
-										        <div class="modal-footer">
-										          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-										        </div>
-										      </div>
-										      
-										    </div>
-										</div>
-								</div>
-								</div><br>
-								<div class="row">
-									<div id="mode" class="modal fade">
-									<div class="modal-dialog modal-confirm">
-										<div class="modal-content">
-											<div class="modal-head">
-												<div class="icon-box">
-													<i class="material-icons">&#xE5CD;</i>
-												</div>				
-												<h4 class="modal-title title1">Do you really want to award Company 1 as the Fire Engineer on the Canada Water Masterplan project? </h4>	
-								                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-											</div>
-											
-											<div class="modal-footer">
-												<button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
-												<button type="button" class="btn btn-success">Yes</button>
-											</div>
-										</div>
-									</div>
-								</div>
-									<div class="col-sm-6"></div>
-									<div class="col-sm-6">
-										
-										<div class="dropdown">
-											  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Tenderer
-											  <span class="caret"></span></button>
-											  <ul class="dropdown-menu dropdown1">
-											    <li><a href="#mode" class="trigger-btn" data-toggle="modal">Company 1</a></li>
-											    <li><a href="#">Company 2</a></li>
-											    <li><a href="#">Company 3</a></li>
-											  </ul>
-											</div>
-									</div>
-								</div><br>
-									<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
-												  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal5">View Feedback given</button>
-
-												  <!-- Modal -->
-												  <div class="modal fade" id="myModal5" role="dialog">
-												    <div class="modal-dialog">
-												    
-												      <!-- Modal content-->
-												      <div class="modal-content">
-												        <div class="modal-header">
-												          <button type="button" class="close" data-dismiss="modal">&times;</button>
-												          <h4 class="modal-title">View Queries</h4>
-												        </div>
-												        <div class="modal-body">
-
-												         
-												  <table class="table table-bordered">
-												    <thead>
-												      <tr>
-												         <th>#</th>
-												        <th>Query</th>
-												        <th>Response</th>
-												      </tr>
-												    </thead>
-												    <tbody>
-												      <tr>
-												       <td>1</td>
-												        <td>Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text</td>
-												        <td>Response text Response text Response text Response text Response text Response text Response text Response text Response text Response text</td>
-												        
-												      </tr>
-												      
-												    </tbody>
-
-												    <tbody>
-												      <tr>
-												       <td>2</td>
-												        <td>Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text</td>
-												        <td>Response text Response text Response text Response text Response text Response text Response text Response text Response text Response text</td>
-												      </tr>
-												      
-												    </tbody>
-												       <tbody>
-												      <tr>
-												       <td>3</td>
-												        <td>Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text Question text</td>
-												        <td>Response text Response text Response text Response text Response text Response text Response text Response text Response text Response text</td>
-												      </tr>
-												      
-												    </tbody>
-												  </table>
-																						        </div>
-										        <div class="modal-footer">
-										          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-										        </div>
-										      </div>
-										      
-										    </div>
-										</div>
-												</div>
-												</div><br>
-													<div class="row">
-															<div id="mode1" class="modal fade">
-													<div class="modal-dialog modal-confirm">
-														<div class="modal-content">
-															<div class="modal-head">
-																<div class="icon-box1">
-																	<i class="material-icons">done</i>
-																</div>				
-																<h4 class="modal-title">Complete Tender Process</h4>	
-												                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+																?>
+																<option value="other">Other</option>
+															</select>
 															</div>
-															
-															<div class="modal-footer">
-																
-																<button type="button" class="btn btn-success">Back</button>
+															<div class="form-group">
+																<input type="number" placeholder="Insurance Level" name="insurance_level" class="form-control">
 															</div>
+															<div class="form-group">
+																<div class="cnt_insurance">
+																    <button class="btn btn-primary" id="cnt_insurance" >Add Another Insurance</button>
+																</div>
+															</div>
+		    										</div>
+		    									</div>
+		    									<div class="row">
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+		    												Bonds
+		    											</div>
+		    										</div>
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+															<select name="bonds[]"  class="form-control" >
+																<option value="" disabled selected>Select</option>
+																<?php
+																$Service = array(
+																	"Performance Bond", "Parent Company Guarantee","Tender/Bid Bond", "On Demand Bond", "Conditional/On  Default Bond"
+																);
+																sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
+																foreach ($Service as $key ) {
+																    echo "<option value='".$key."'>".$key."</option>";
+																}
+
+																?>
+																<option value="other">Other</option>
+															</select>
+															</div>
+															<div class="form-group">
+																<div class="cnt_bond">
+																    <button class="btn btn-primary" id="cnt_bond" >Add Another Bond</button>
+																    <div></div>
+																</div>
+															</div>
+		    										</div>
+		    									</div>
+		    									<div class="row">
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+		    												Collateral Warranties / Third Parties 
+		    											</div>
+		    										</div>
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+															<select name="bonds[]"  class="form-control" >
+																<option value="" disabled selected>Select</option>
+																<?php
+																$Service = array(
+																	"Collateral Warranties", "Third Party Rights", "Both"
+																);
+																sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
+																foreach ($Service as $key ) {
+																    echo "<option value='".$key."'>".$key."</option>";
+																}
+
+																?>
+															</select>
+															</div>
+															<div class="form-group">
+																<div class="cnt_bond">
+															    <button class="btn btn-primary" id="cnt_bond" >Add Another Bond</button>
+															    <div></div>
+																</div>
+															</div>
+		    										</div>
+		    									</div>
+		    									<div class="row">
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+		    												Limit of Liability 
+		    											</div>
+		    										</div>
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+															<input type="text" placeholder="Insert Limit of Liability " name="limit_of_liability" class="form-control">
+															</div>
+		    										</div>
+		    									</div>
+		    									<div class="row">
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+		    												Execution 
+		    											</div>
+		    										</div>
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+															<select name="execution[]"  class="form-control" >
+																<option value="" disabled selected>Select</option>
+																<?php
+																$Service = array(
+																	"Deed", "Under Hand"
+																);
+																sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
+																foreach ($Service as $key ) {
+																    echo "<option value='".$key."'>".$key."</option>";
+																}
+
+																?>
+															</select>
+															</div>
+		    										</div>
+		    									</div>
+		    									<div class="row">
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+		    												Net Contribution Clause 
+		    											</div>
+		    										</div>
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+															<select name="execution[]"  class="form-control" >
+																<option value="" disabled selected>Select</option>
+																<?php
+																$Service = array(
+																	"Yes", "No"
+																);
+																sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
+																foreach ($Service as $key ) {
+																    echo "<option value='".$key."'>".$key."</option>";
+																}
+
+																?>
+															</select>
+															</div>
+		    										</div>
+		    									</div>
+		    									<div class="row">
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+		    												Form of Appointment 
+		    											</div>
+		    										</div>
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+															<input type="file" class="form-control" name="net_contribution_clause">
+															</div>
+		    										</div>
+		    									</div>
+		    									<div class="row">
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+		    												Documents for Signature 
+		    											</div>
+		    										</div>
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+															<input type="text" placeholder="Enter Document Title" class="form-control" name="net_contribution_clause">
+															</div>
+															<div class="form-group">
+															<input type="file" class="form-control" name="documents_for_signature">
+															</div>
+		    										</div>
+		    									</div>
+		    								</div>
+		    							</div>
+		    						</form>
+		    					</div>
+		    					<div id="section31" class="tab-pane fade tender-container">
+		    						<h3 class="bid-form-title">Evaluation Settings</h3>
+		    					</div>
+		    					<div id="section41" class="tab-pane fade tender-container">
+		    						<h3 class="bid-form-title">Quality Assurance</h3>
+		    						<form method="post">
+		    							<div class="row">
+		    								<div class="col-sm-12">
+		    									<div class="row">
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+		    												Created by 
+		    											</div>
+		    										</div>
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+															<input type="text" class="form-control" name="proj_fname" placeholder="First Name">
+															</div>
+															<div class="form-group">
+															<input type="text" class="form-control" name="proj_lname"
+															placeholder="Last Name">
+															</div>
+															<div class="input-group date form-group" id="datepicker2" data-date="02-2012" data-date-format="mm-yyyy">
+																 <input class="form-control" type="text" readonly="readonly" name="date" >	  
+																 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+															</div>
+		    										</div>
+		    									</div>
+		    								</div>
+		    							</div>
+		    							<div class="row">
+		    								<div class="col-sm-12">
+		    									<div class="row">
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+		    												Checked by 
+		    											</div>
+		    										</div>
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+															<input type="text" class="form-control" name="proj_cfname" placeholder="First Name">
+															</div>
+															<div class="form-group">
+															<input type="text" class="form-control" name="proj_clname"
+															placeholder="Last Name">
+															</div>
+															<div class="input-group date form-group" id="datepicker2" data-date="02-2012" data-date-format="mm-yyyy">
+																 <input class="form-control" type="text" readonly="readonly" name="date" >	  
+																 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+															</div>
+		    										</div>
+		    									</div>
+		    								</div>
+		    							</div>
+		    							<div class="row">
+		    								<div class="col-sm-12">
+		    									<div class="row">
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+		    												Approved by 
+		    											</div>
+		    										</div>
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+															<input type="text" class="form-control" name="proj_afname" placeholder="First Name">
+															</div>
+															<div class="form-group">
+															<input type="text" class="form-control" name="proj_alname"
+															placeholder="Last Name">
+															</div>
+															<div class="input-group date form-group" id="datepicker2" data-date="02-2012" data-date-format="mm-yyyy">
+																 <input class="form-control" type="text" readonly="readonly" name="date" >	  
+																 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+															</div>
+		    										</div>
+		    									</div>
+		    								</div>
+		    							</div>
+		    							<div class="row">
+    										<div class="col-sm-6">
+    											<div class="form-group">
+    												Statements 
+    											</div>
+    										</div>
+    										<div class="col-sm-6">
+    											<div class="form-group">
+													<select name="statements[]"  class="form-control" >
+														<option value="" disabled selected>Select</option>
+														<?php
+														$Service = array(
+															"I agree to XXX"
+														);
+														sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
+														foreach ($Service as $key ) {
+														    echo "<option value='".$key."'>".$key."</option>";
+														}
+
+														?>
+													</select>
+													</div>
+													<div class="form-group">
+														<div class="cnt_statement">
+													    <button class="btn btn-primary" id="cnt_statement" >Add another statement</button>
+													    <div></div>
 														</div>
 													</div>
-												</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												Negotiate Scope and Appointment
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<a href="#mode1" class="btn btn-success" data-toggle="modal">Please click on</a>
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<input type="submit" name="submit" value="Submit" class="btn btn-primary">
-										<input type="submit" name="Save" value="Save" class="btn btn-success">
-									</div>
-								</div>
-							</div>
-						</form>
-					</div>
-					<div id="section5" class="tab-pane fade tender-container">
-						<h3 class="bid-form-title">Scope</h3>
-						<form method="post">
-							<div class="row">
-								<div class="col-sm-12">
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												Created by
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="First Name">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Last Name">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6"></div>
-											<div class="col-sm-6">
-											<div class="form-group">
-												<div class="input-group date" id="datepicker17" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
-
-													 <input class="form-control" type="text" placeholder="Select Year" readonly="readonly" name="date" >	  
-													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												Created by
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="First Name">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Last Name">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6"></div>
-											<div class="col-sm-6">
-											<div class="form-group">
-												<div class="input-group date" id="datepicker18" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
-
-													 <input class="form-control" type="text" placeholder="Select Year" readonly="readonly" name="date" >	  
-													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												Approved by
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="First Name">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Last Name">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6"></div>
-											<div class="col-sm-6">
-											<div class="form-group">
-												<div class="input-group date" id="datepicker19" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
-
-													 <input class="form-control" type="text" placeholder="Select Year" readonly="readonly" name="date" >	  
-													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">Statementt</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<select name="" class="form-control">
-													<option value="" disabled selected>Select </option>
-													<option>I afree to XXX</option>
-												
-												</select>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
-											<div class="input_fields_state">
-											<button class="btn btn-primary" id="add_field_state">Add Another Insurance</button>
-											<div><input class="form-control" type="text" name="mytext[]"></div>
-											</div>
-										</div>
-									</div><br>
-									<div class="form-group">
-										<input type="submit" name="submit" value="Submit" class="btn btn-primary">
-										<input type="submit" name="Save" value="Save" class="btn btn-success">
-									</div>
-								</div>
-							</div>
-						</form>
-					</div>
-					<div id="section6" class="tab-pane fade tender-container">
-						<h3 class="bid-form-title">Appointment</h3>
-						<form method="post">
-							<div class="row">
-								<div class="col-sm-12">
-									<div class="row">
-										<div class="col-sm-6">										
-												Insurance		
-										</div>
-										<div class="col-sm-6">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select
-													<option>Professional</option>
-													<option>Indemnity</option>
-													<option>Public Liability</option>
-													<option>Public Liability</option>
-													<option>Products Liability</option>
-													<option>Employers</option>
-													<option>Liability</option>
-													<option>Other</option>
-												</select>
-											
-										</div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Insurance Level">
-											</div>
-										</div>
-
-									</div>
-									<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Bond Description">
-											</div>
-										</div>
-
-									</div>
-									<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
-											<div class="input_fields_insurance">
-											<button class="btn btn-primary" id="add_field_insurance">Add Another Insurance</button>
-											<div><input class="form-control" type="text" name="mytext[]"></div>
-											</div>
-										</div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-6">										
-												Bonds		
-										</div>
-										<div class="col-sm-6">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select
-													<option>Performance</option>
-													<option>Bond</option>
-													<option>Parent Company</option>
-													<option>Guarantee</option>
-													<option>Tender/Bid Bond</option>
-													<option>On Demand Bond</option>
-													<option>Condtional/on</option>
-													<option>Default Bond</option>
-													<option>Other</option>
-												</select>
-											
-										</div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Bond Description">
-											</div>
-										</div>
-									</div>
-										<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
-											<div class="input_fields_bond">
-											<button class="btn btn-primary" id="add_field_bond">Add Another Bond</button>
-											<div><input class="form-control" type="text" name="mytext[]"></div>
-											</div>
-										</div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-6">										
-												Collateral Warranties/Third parties		
-										</div>
-										<div class="col-sm-6">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select
-													<option>Collateral</option>
-													<option>Warranties</option>
-													<option>Third Party Rights</option>
-													<option>Both</option>
-													
-												</select>
-											
-										</div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-6">Limit Of Liability</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Insert Limit of Liability">
-											</div>
-										</div>
-									</div>
-										<div class="row">
-										<div class="col-sm-6">										
-												Execution	
-										</div>
-										<div class="col-sm-6">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select
-													<option>Deed</option>
-													<option>Under Hand</option>	
-												</select>
-											
-										</div>
-									</div><br>
-											<div class="row">
-										<div class="col-sm-6">										
-												Net Contribution clause	
-										</div>
-										<div class="col-sm-6">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select
-													<option>Yes</option>
-													<option>No</option>	
-												</select>
-											
-										</div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-6">										
-												Form of Appointment	
-										</div>
-										<div class="col-sm-6">
-												<input type="file" name="submit" value="Submit" class="btn btn-primary">
-											
-										</div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-6">Documents for Signature</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Document Title">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
-												<input type="file" name="submit" value="Submit" class="btn btn-primary">
-											
-										</div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
-											<div class="input_fields_signature">
-											<button class="btn btn-primary" id="add_field_signature">Add Another Accreditation</button>
-											<div><input class="form-control" type="text" name="mytext[]"></div>
-											</div>
-										</div>
-									</div><br>
-									<div class="form-group">
-										<input type="submit" name="submit" value="Submit" class="btn btn-primary">
-										<input type="submit" name="Save" value="Save" class="btn btn-success">
-									</div>
-								</div>
-							</div>
-						</form>
-					</div>
-					<div id="section7" class="tab-pane fade tender-container">
-						<h3 class="bid-form-title">Quality Assurance</h3>
-						<form method="post">
-							<div class="row">
-								<div class="col-sm-12">
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												Created by
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="First Name">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Surname">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6"></div>
-											<div class="col-sm-6">
-											<div class="form-group">
-												<div class="input-group date" id="datepicker4" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
-
-													 <input class="form-control" type="text" placeholder="Select Year" readonly="readonly" name="date" >	  
-													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												Checked by
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="First Name">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Surname">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6"></div>
-											<div class="col-sm-6">
-											<div class="form-group">
-												<div class="input-group date" id="datepicker10" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
-
-													 <input class="form-control" type="text" placeholder="Select Year" readonly="readonly" name="date" >	  
-													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-												</div>
-											</div>
-										</div>
-									</div>
-								<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												Approved by
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="First Name">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Surname">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6"></div>
-											<div class="col-sm-6">
-											<div class="form-group">
-												<div class="input-group date" id="datepicker1" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
-
-													 <input class="form-control" type="text" placeholder="Select Year" readonly="readonly" name="date" >	  
-													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											Statements
-										</div>
-										<div class="col-sm-6">
-								               <input type="checkbox" name="" value="" class="filled-in" id="check13" >     <label for="check13">I Agree to XXX</label>
-							              </div>
-									</div>
-									<div class="form-group">
-										<input type="submit" name="submit" value="Submit" class="btn btn-primary">
-										<input type="submit" name="Save" value="Save" class="btn btn-success">
-									</div>
-								</div>
-							</div>
-						</form>
-					</div>
+    										</div>
+    									</div>
+		    						</form>
+		    					</div>
+		    				</div>
+		    			</div>
+		    		</div>
+		    	</div>
+		    </div>
 				</div>
-			</div>			
+			</div>
 		</div>
 	</div>
+</div>
 
+<div class="modal fade" id="viewBid" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #fe7235;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">View Bids</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered">
+        	<thead class="thead">
+        		<tr>
+        			<th width="40%">Tenderer</th>
+        			<th width="15%">Qualitative Score</th>
+        			<th width="15%">Quantitative Score</th>
+        			<th width="15%">Risk Score</th>
+        			<th width="15%"></th>
+        		</tr>
+        	</thead>
+        	<tbody>
+        		<tr>
+        			<td>Company 1</td>
+        			<td>5</td>
+        			<td>9</td>
+        			<td>2</td>
+        			<td><a>View Bid</a></td>
+        		</tr>
+        		<tr>
+        			<td>Company 2</td>
+        			<td>2</td>
+        			<td>4</td>
+        			<td>5</td>
+        			<td><a>View Bid</a></td>
+        		</tr>
+        		<tr>
+        			<td>Company 3</td>
+        			<td>7</td>
+        			<td>8</td>
+        			<td>7</td>
+        			<td><a>View Bid</a></td>
+        		</tr>
+        	</tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-<!-- end -->
-
+<div class="modal fade" id="viewQueries" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #fe7235;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">View Queries</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered">
+        	<thead class="thead">
+        		<tr>
+        			<th width="50%">Query</th>
+        			<th width="25%">Receive</th>
+        			<th width="25%">Time left to respond</th>
+        		</tr>
+        	</thead>
+        	<tbody>
+        		<tr>
+        			<td>
+        				<ul>
+        					<li>Question 1</li>
+        					<li>Question 2</li>
+        					<li>Question 3</li>
+        				</ul>
+        			</td>
+        			<td>01/01/18, 15:32</td>
+        			<td>26 hours 14 minutes</td>
+        		</tr>
+        		<tr>
+        			<td colspan="3">
+        				<textarea></textarea>
+        				<button class="pull-right btn btcol">Publish Response</button>
+        			</td>
+        		</tr>
+        		<tr>
+        			<td>
+        				<ul>
+        					<li>Question 1</li>
+        					<li>Question 2</li>
+        					<li>Question 3</li>
+        				</ul>
+        			</td>
+        			<td>01/01/18, 15:55</td>
+        			<td>26 hours 14 minutes</td>
+        		</tr>
+        		<tr>
+        			<td colspan="3">
+        				<textarea></textarea>
+        				<button class="pull-right btn btcol">Publish Response</button>
+        			</td>
+        		</tr>       			
+        	</tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 @endsection
-
-
