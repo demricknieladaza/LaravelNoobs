@@ -1584,6 +1584,99 @@ body > div:nth-child(15) > div > div > div.row{
 }
 
 
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #00B0F0;
+    padding: 8px;
+    width:50px;
+}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #00B0F0;
+    color: white;
+}
+
+#Riba {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#Riba td, #Riba th {
+    border: 1px solid #7030A0 ;
+    
+}
+
+#Riba tr:hover {background-color: #ddd;}
+
+#Riba th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #7030A0;
+    color: white;
+}
+#Content {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#Content td, #Content th {
+    border: 1px solid #7BD4A5;
+   
+}
+
+#Content tr:hover {background-color: #ddd;}
+
+#Content th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #7BD4A5;
+    color: white;
+}
+
+#Stages {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#Stages td, #Stages th {
+    border: 1px solid #FBDC7D;
+    
+}
+
+
+
+#Stages th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #FBDC7D;
+    color: white;
+}
+.mama{
+    background-color:white;
+    width:10px;
+    height:30px;
+    padding:20px;
+    line-height: 1px;
+}
+
+
+
 body > header > nav > div > div > div.collapse.navbar-collapse > ul > div > ul > li:nth-child(4) > a{
     margin-left: 585px;
 }

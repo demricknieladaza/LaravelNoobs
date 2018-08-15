@@ -1113,58 +1113,514 @@
 						<form method="post">
 							<div class="row">
 								<div class="col-sm-12">
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												Years of experience in the service required
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Experience in Years">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												Offered Services
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<select name="" class="form-control">
-													<option>Service 1</option>
-													<option>Service 2</option>
-													<option>Service 3</option>
-													<option>Service 4</option>
-												</select>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												Track record of relevant projects
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Project Name">
-											</div>
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Project Value">
-											</div>
-										</div>
-									</div>
-									<div class="form-group butcent">
-										<input type="submit" name="submit" value="Submit" class="btn btn-primary butsize ">
-										<input type="submit" name="Save" value="Save" class="btn btn-success butsize color">
-									</div>
+									<table id="customers">
+											  <tr>
+											    <th>Deliverable</th>
+											    <th>Details / Contents</th>
+											    <th>RACI</th>
+											    <th>0</th>
+											    <th>1</th>
+
+											  </tr>
+											  <tr>
+											    <td>Strategic Brief</td>
+											    <td>Strategic requirements, project budget, project team options</td>
+											    <td>R</td>
+											    <td>X</td>
+											    <td></td>
+											  </tr>
+											  <tr>
+											    <td>Project Programme (Lead)</td>
+											    <td></td>
+											    <td>C</td>
+											    <td></td>
+											    <td>X</td>
+											  </tr>
+											  <tr>
+											    <td>CFeasibility Study</td>
+											    <td></td>
+											    <td>R/A</td>
+											    <td></td>
+											    <td>X</td>
+											  </tr>
+											  <tr>
+											    <td>Design Responsibility Matrix</td>
+											    <td></td>
+											    <td>C</td>
+											    <td></td>
+											    <td>X</td>
+											  </tr>
+											  <tr>
+											   <td>Site Information Report</td>
+											    <td></td>
+											    <td>R</td>
+											    <td></td>
+											    <td>X</td>
+											  </tr>
+											  <tr>
+											    <td>Information Exchange Strategy</td>
+											    <td></td>
+											    <td>R</td>
+											    <td></td>
+											    <td>X</td>
+											  </tr>
+											  <tr>
+											    <td>Project Brief/td>
+											    <td>Project Objectives, Quality Objectives, Project Outcomes, Sustainability Aspirations, Project Budget and other parameters or constraints</td>
+											    <td>R</td>
+											    <td></td>
+											    <td>X</td>
+											  </tr>
+											  <tr>
+											    <td>Risk Assessment (Lead)</td>
+											    <td></td>
+											    <td>R</td>
+											    <td></td>
+											    <td>X</td>
+											  </tr>
+											  <tr>
+											    <td>Handover Strategy (Lead)</td>
+											    <td></td>
+											    <td>R</td>
+											    <td></td>
+											    <td>X</td>
+											  </tr>
+											  <tr>
+											    <td>Project Execution Plan</td>
+											    <td></td>
+											    <td>R</td>
+											    <td></td>
+											    <td>X</td>
+											  </tr>
+											  <tr>
+											    <td>Design Proposals from Design Team members</td>
+											    <td></td>
+											    <td>C</td>
+											    <td></td>
+											    <td></td>
+											  </tr>
+											</table>
 								</div>
-							</div>
+							</div><br>
+							<div class="row">
+								<div class="col-sm-12">
+									<table id="Riba">
+											  <tr>
+											    <th> Meetings</th>
+											    <th>Purpose</th>
+											    <th>Attendees</th>
+											    <th>Assumed Duration (hours)</th>
+											    <th>Reoccurence / Number of Meetings</th>
+											    <th>Arrange</th>
+											    <th>Attend</th>
+											    <th>1</th>
+											    <th>2</th>
+											    <th>3</th>
+											    <th>4</th>
+											    <th>5</th>
+											    <th>6</th>
+											    <th>7</th>
+											  </tr>
+											  <tr>
+											    <td>Pre-Application Meetings</td>
+											    <td></td>
+											    <td></td>
+											    <td>1.5</td>
+											    <td>Bi-Weekly / Weekly / Fortnightly / Monthly</td>
+											    <td>X</td>
+											    <td>X</td>
+											    <td>X</td>
+											    <td></td>
+											    <td></td>
+											    <td>X</td>
+											    <td></td>
+											    <td></td>
+											    <td></td>
+											    
+											  </tr>
+											  <tr>
+											    <td>Site Visits</td>
+											    <td> Inspection generally of the progress and quality of the Relevant Design as built;
+·approval of such elements of the works as may be specified to be to the reasonable satisfaction of the Designer;·obtaining information necessary for the issue of any notice, certificate or instruction by the administrator of the Building Contract.</td>
+											    <td></td>
+											    <td>2</td>
+											    <td>Bi-Weekly / Weekly / Fortnightly / Monthly</td>
+											    <td></td>
+											    <td>X</td>
+											    <td></td>
+											    <td></td>
+											    <td></td>
+											    <td></td>
+											    <td></td>
+											    <td>X</td>
+											    <td></td>
+											  </tr>
+											  <tr>
+											    <td>Site / Project Meetings (RIBA Stage 4/5)</td>
+											    <td></td>
+											    <td>Client + their retained consultant team</td>
+											    <td>1</td>
+											    <td></td>
+											    <td></td>
+											    <td>X</td>
+											    <td>X</td>
+											    <td></td>
+											    <td></td>
+											    <td></td>
+											    <td></td>
+											    <td>X</td>
+											    <td></td>
+											  </tr>
+											  <tr>
+											   <td>SC / PC Site Inspection</td>
+											    <td>inspect the quality of the construction of the architectural works</td>
+											    <td></td>
+											    <td>8</td>
+											    <td>4</td>
+											    <td></td>
+											    <td>X</td>
+											    <td></td>
+											    <td></td>
+											    <td></td>
+											    <td></td>
+											    <td></td>
+											    <td>X</td>
+											    <td></td>
+											  </tr>
+											  <tr>
+										</table>
+								</div>
+							</div><br>
+							<div class="row">
+								<div class="col-sm-12">
+									<table id="Content">
+											  <tr>
+											    <th> Design Considerations</th>
+											    <th>Applies to</th>
+											  </tr>
+											 
+											  <tr>
+											   <td>Cost, programme, quality, health & safety during construction and operation, functionality, buildability, operation and maintenance.</td>
+											    <td>production or review of any document or when advising the Employer</td>
+											  </tr>
+											   <tr>
+											   <td>All information provided by other members of the Project Team.</td>
+											    <td>production or review of any document or when advising the Employer</td>
+											  </tr>
+											   <tr>
+											   <td>Good Practice in the Selection of Construction Materials 2011 (British Council of Offices Publication.</td>
+											    <td>production or review of any document or when advising the Employer</td>
+											  </tr>
+											   <tr>
+											   <td>Statutory standards</td>
+											    <td>production or review of any document or when advising the Employer</td>
+											  </tr>
+											   <tr>
+											   <td>Co-ordination with structural and building services</td>
+											    <td>All drawings from RIBA Stage 3 onwards</td>
+											  </tr>
+										</table>
+								</div>
+							</div><br>
+								<div class="row">
+								<div class="col-sm-12">
+									<table id="Stages">
+											  <tr>
+											    <th>Advise on</th>
+											    <th>0</th>
+											    <th>1</th>
+											    <th>2</th>
+											    <th>3</th>
+											    <th>4</th>
+											    <th>5</th>
+											    <th>6</th>
+											    <th>7</th>
+											  </tr>
+											  
+										      <tr>
+											  <td>Any products or materials, specified within the guidelines named in Item ???, that are relevant to the project and have been found to be deleterious or hazardous to health and safety.</td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  </tr>
+											     <tr>
+											  <td>Assembly of Project Team. (Lead)</td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  </tr>
+											   <tr>
+											  <td>Need for and the scope of services by consultants, specialists, sub-contractors or suppliers. (Lead)</td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  </tr>
+
+											   <tr>
+											  <td>Form and content of design outputs, their interfaces and a verification procedure. (Lead)</td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  </tr>
+
+											   <tr>
+											  <td>Resolution of defects.</td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  </tr>
+											  <tr>
+											  <td>Form and content of design outputs, their interfaces and a verification procedure. (Lead)</td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  </tr>
+
+											   <tr>
+											  <td>Relevant experience from previous projects.</td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  </tr>
+											  <tr>
+											    <th>Monitor</th>
+											    <th></th>
+											    <th></th>
+											    <th></th>
+											    <th></th>
+											    <th></th>
+											    <th></th>
+											    <th></th>
+											    <th></th>
+											  </tr>
+
+											  <tr>
+											  <td>Work of the Designers Designers regarding…. [WHAT?]</td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  </tr>
+
+											  <tr>
+											  <td>Performance of Design Team.</td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+												</div></td>
+											  </tr>										    
+											 
+											 <tr>
+											  <td>Compliance with statutory and contract requirements.</td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  </tr>
+											  <tr>
+											    <th>Collaborate / Consult with</th>
+											    <th></th>
+											    <th></th>
+											    <th></th>
+											    <th></th>
+											    <th></th>
+											    <th></th>
+											    <th></th>
+											    <th></th>
+											  </tr>
+											  <tr>
+											  <td>Relevant Third Parties as required.</td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  </tr>
+											  <tr>
+											  <td>Planning authority to discuss the project</td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  </tr>	
+											  <tr>
+											  <td>Statutory authorities on developing design.</td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  </tr>	
+                                               <tr>
+											  <td>Project Manager & Employer on significant design issues. (Lead).</td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  </tr>	
+											  <tr>
+											    <th>Co-ordinate</th>
+											    <th></th>
+											    <th></th>
+											    <th></th>
+											    <th></th>
+											    <th></th>
+											    <th></th>
+											    <th></th>
+											    <th></th>
+											  </tr>
+											  <tr>
+											  <td>Collation of all planning submission documents.</td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  </tr>
+
+											  <tr>
+											  <td>Reviewing design information provided by contractors or specialists to establish whether that information can be co-ordinated and integrated with other project information.</td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  </tr>
+											   <tr>
+											    <th>Other</th>
+											    <th></th>
+											    <th></th>
+											    <th></th>
+											    <th></th>
+											    <th></th>
+											    <th></th>
+											    <th></th>
+											    <th></th>
+											  </tr>
+                                              
+                                              <tr>
+											  <td>Submit the [detailed / outline] planning application.</td>
+                                              <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  </tr>
+
+											   <tr>
+											  <td>Assisting building user during initial occupation period.</td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  </tr>
+
+											  <tr>
+											  <td>Review all instructions and information about the Project, provided by the Employer.</td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  </tr>
+
+											  <tr>
+											  <td>preparing and making submissions under building acts and/or regulations or other statutory requirements.</td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  </tr>
+
+
+										</table>
+								</div>
+							</div><br>
 						</form>
 					</div>
+
 					<div id="section6" class="tab-pane fade tender-container">
 						<h3 class="bid-form-title">Appointment</h3>
 						<form method="post">
@@ -1538,7 +1994,14 @@
 			</div>			
 		</div>
 	</div>
+<script>
 
+
+function mUp(obj) {
+    obj.style.backgroundColor="none";
+    obj.innerHTML="x";
+}
+</script>
 <!-- end -->
 
 @endsection
