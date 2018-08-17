@@ -45,7 +45,7 @@
             <div class="welcome-border"></div>
         </div>
         <div class="row text-center" style="margin-bottom: 30px;">
-            <a href="{{ url('/dashboard') }}" class="my-btn"><b>scope</b> business lounge</a>
+            <a href="{{ url('/dashboard/emp_dashboard') }}" class="my-btn"><b>scope</b> business lounge</a>
         </div>
 
         <div class="row">
@@ -1349,7 +1349,7 @@
                 <div class="row">
                     <h1 class="faq-head">For Employers</h1>
                 </div>
-                <button class="accord">What can SCOPE do for me? </button>
+                    <button class="accord">What can SCOPE do for me? </button>
                     <div class="panel1">
                         <p>SCOPE can do a variety of great things for you. The core of SCOPE is to publish your projects and related tenders on a publicly accessible platform. That means that companies from your region as well as nationwide and international can submit proposals to your tenders. This way your company achieves great competitiveness and comparability.<br><br>
                         SCOPE also helps you to find out what a specific service in a defined location for a certain type of use usually costs. You can get this information using our brilliant Benchmarking Tool. That way you will be able to create more accurate cash flow forecasts, benchmark received tender proposals or support viability assessments for your development.<br><br>The third big thing is our Scope of Services Tool. This tool will support you in creating watertight Scopes. Following the award of the successful tenderer the tool will also allow you to track any changes to the Scope that are being negotiated and agreed between you and the tenderer. <b>Please note that this tool is currently at Beta stage, which means that it’s full functionality will be available in a few months.</b></p>

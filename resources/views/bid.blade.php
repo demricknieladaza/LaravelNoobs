@@ -247,7 +247,7 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Service
+													<option value="" disabled selected>Select Service</option>
 													<option>Architect</option>
 													<option>Sturctural Engineed</option>
 													<option>Service Engineer</option>
@@ -334,7 +334,7 @@
 							
 											<div class="form-group">
 													<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Type of Use
+													<option value="" disabled selected>Select Type of Use</option>
 													<option>Residential</option>
 													<option>Commercial </option>
 													<option>Retail</option>
@@ -362,7 +362,7 @@
 											</div>
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Service
+													<option value="" disabled selected>Select Service</option>
 													<option>Architect</option>
 													<option>Sturctural Engineed</option>
 													<option>Service Engineer</option>
@@ -406,7 +406,7 @@
 											</div>
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Type of Development
+													<option value="" disabled selected>Select Type of Development</option>
 													<option>New Built</option>
 													<option>Refurbishment</option>
 													<option>Demolition</option>
@@ -422,7 +422,7 @@
 						                    </div>
 						                    <div class="form-group">
 												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Project Team Member
+													<option value="" disabled selected>Select Project Team Member</option>
 													<option>Architect</option>
 													<option>Sturctural Engineed</option>
 													<option>Service Engineer</option>
@@ -444,7 +444,7 @@
 											</div>
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Company
+													<option value="" disabled selected>Select Company</option>
 													<option>Architect</option>
 													<option>Sturctural Engineed</option>
 													<option>Service Engineer</option>
@@ -760,7 +760,7 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Service
+													<option value="" disabled selected>Select Service</option>
 													<option>Architect</option>
 													<option>Sturctural Engineed</option>
 													<option>Service Engineer</option>
@@ -827,7 +827,7 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Type of Use
+													<option value="" disabled selected>Select Type of Use</option>
 													<option>Residential</option>
 													<option>Commercial </option>
 													<option>Retail</option>
@@ -868,7 +868,7 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Service
+													<option value="" disabled selected>Select Service</option>
 													<option>Architect</option>
 													<option>Sturctural Engineed</option>
 													<option>Service Engineer</option>
@@ -935,7 +935,7 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Types of Development
+													<option value="" disabled selected>Select Types of Development</option>
 													<option>New Built</option>
 													<option>Refurbishment</option>
 													<option>Demolition</option>
@@ -976,7 +976,7 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Project Team Member
+													<option value="" disabled selected>Select Project Team Member</option>
 													<option>Architect</option>
 													<option>Sturctural Engineed</option>
 													<option>Service Engineer</option>
