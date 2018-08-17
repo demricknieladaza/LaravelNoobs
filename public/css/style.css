@@ -1680,3 +1680,17 @@ body > div:nth-child(15) > div > div > div.row{
 body > header > nav > div > div > div.collapse.navbar-collapse > ul > div > ul > li:nth-child(4) > a{
     margin-left: 585px;
 }
+
+#size{
+    font-size: 25px;
+    color: #FE7235;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+.box{
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #FE7235;
+    padding: 5px;
+}
