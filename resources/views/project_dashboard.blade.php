@@ -18,7 +18,9 @@
 		</div>
 		<div class="col-sm-12 questionnaire-section">
 			<div class="tab-content tabmargin" >
-				<div id="section1" class="tab-pane fade in active tender-container" style="padding-top: 0;">
+				<div id="section1" class="tab-pane fade in active tender-container" style="padding-top: 0; margin-left: auto;
+    margin-right: auto;
+    width: 1040px;">
 					<div class="row">
 		    	<div class="below-header project-img-collection text-center projhead">
 		    		<h1>Canada Water Masterplan</h1>
@@ -53,8 +55,10 @@
 		    				<div class="col-sm-12">
 		    					<table class="table table-striped table-hover">
 		    						<tr>
-		    							<td>Project Title</td>
-		    							<td><input class="inputproj" type="text" name="projectTitle" value="Canada Water Masterplan"></td>
+		    							<td>Project Title
+  											<div><a onclick=edits('project')>edit</a></div>
+										</td>
+		    							<td><input class="inputproj" id="project" type="text" name="projectTitle" value="Canada Water Masterplan"></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Project ID</td>
@@ -827,4 +831,9 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+	function edits(name) {
+    document.getElementById(name).addClass('active');
+};
+</script>
 @endsection
