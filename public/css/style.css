@@ -1374,7 +1374,9 @@ body > div:nth-child(17) > div > div.col-sm-12{
     background-color: #fff;
     color: #444;
     cursor: pointer;
-    padding: 18px;
+    /*padding: 18px;*/
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 100%;
     border: none;
     text-align: left;
