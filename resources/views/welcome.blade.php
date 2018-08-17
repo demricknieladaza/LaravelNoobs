@@ -45,7 +45,7 @@
             <div class="welcome-border"></div>
         </div>
         <div class="row text-center" style="margin-bottom: 30px;">
-            <a href="{{ url('/dashboard') }}" class="my-btn"><b>scope</b> business lounge</a>
+            <a href="{{ url('/dashboard/emp_dashboard') }}" class="my-btn"><b>scope</b> business lounge</a>
         </div>
 
         <div class="row">
