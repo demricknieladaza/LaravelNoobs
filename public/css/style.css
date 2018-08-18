@@ -1589,14 +1589,17 @@ body > div:nth-child(15) > div > div > div.row{
     border-collapse: collapse;
     width: 100%;
 }
+#customers td {
+   max-width:110px; 
+   max-height:40px;
+}
 
 #customers td, #customers th {
     border: 1px solid #00B0F0;
-    padding: 8px;
-    width:50px;
+    padding: 8px;  
 }
 
-#customers tr:hover {background-color: #ddd;}
+
 
 #customers th {
     padding-top: 12px;
@@ -1608,21 +1611,26 @@ body > div:nth-child(15) > div > div > div.row{
 
 #Riba {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
+    font-size:13px;
+   border-collapse: collapse;
+    border-spacing: 0;
     width: 100%;
+}
+#Riba td {
+   max-width:110px; 
+   max-height:40px;
 }
 
 #Riba td, #Riba th {
     border: 1px solid #7030A0 ;
+
     
 }
-
-#Riba tr:hover {background-color: #ddd;}
 
 #Riba th {
     padding-top: 12px;
     padding-bottom: 12px;
-    text-align: left;
+    text-align: center;
     background-color: #7030A0;
     color: white;
 }
@@ -1631,13 +1639,16 @@ body > div:nth-child(15) > div > div > div.row{
     border-collapse: collapse;
     width: 100%;
 }
-
+#Content td {
+   max-width:130px; 
+   max-height:40px;
+}
 #Content td, #Content th {
     border: 1px solid #7BD4A5;
    
 }
 
-#Content tr:hover {background-color: #ddd;}
+
 
 #Content th {
     padding-top: 12px;
