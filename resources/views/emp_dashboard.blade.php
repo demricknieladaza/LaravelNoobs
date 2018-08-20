@@ -16,7 +16,7 @@
 				<div class="clearfix"></div>
 				<ul class="nav lounge-nav">
 					<li>
-						<a href="{{ url('publish/dashboard') }}" class="menu-title policies-link">Dashboards</a>
+						<a href="{{ url('dashboard') }}" class="menu-title policies-link">Dashboards</a>
 						<ul>
 							<li><a href="{{ url('/dashboard/emp_dashboard') }}"><i class="fa fa-circle-o"></i> Employer Dashboard</a></li>
 							<li><a href="{{ url('/dashboard/tend_dashboard') }}"><i class="fa fa-circle-o"></i> Tenderer Dashboard</a></li>
@@ -123,17 +123,17 @@
 									<div class="hover-container-holder">
 										<div class="tender-tile-single">
 											<div class="tender-tiles">
-												<h2><a href="{{ url('/dashboard') }}">Canada Water Masterplan</a></h2>		
+												<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>		
 											</div>
 										</div>
 										<div class="tender-tile-single">
 											<div class="tender-tiles">
-												<h2><a href="{{ url('/dashboard') }}">Canada Water Masterplan</a></h2>
+												<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>
 											</div>
 										</div>
 										<div class="tender-tile-single">
 											<div class="tender-tiles">
-												<h2><a href="{{ url('/dashboard') }}">Canada Water Masterplan</a></h2>
+												<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>
 											</div>
 										</div>
 										<div class="row table-tender-details">
@@ -187,17 +187,17 @@
 									<div class="hover-container-holder">
 										<div class="tender-tile-single">
 											<div class="tender-tiles">
-												<h2><a href="{{ url('/dashboard') }}">Canada Water Masterplan</a></h2>		
+												<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>		
 											</div>
 										</div>
 										<div class="tender-tile-single">
 											<div class="tender-tiles">
-												<h2><a href="{{ url('/dashboard') }}">Canada Water Masterplan</a></h2>
+												<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>
 											</div>
 										</div>
 										<div class="tender-tile-single">
 											<div class="tender-tiles">
-												<h2><a href="{{ url('/dashboard') }}">Canada Water Masterplan</a></h2>
+												<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>
 											</div>
 										</div>
 										<div class="row table-tender-details">
