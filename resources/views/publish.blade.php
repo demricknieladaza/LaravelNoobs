@@ -8,7 +8,7 @@
 				<div class="col-sm-10">
 					<div class="row">
 						<div class="col-sm-8">
-							<input type="text" name="search" class="form-control project_search" placeholder="Search Keyword">
+							<input type="text" name="search" class="form-control project_search" placeholder="Search for a Project">
 							<i class="fa fa-search"></i>					
 						</div>						
 						<div class="col-sm-4">
