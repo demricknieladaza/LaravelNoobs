@@ -16,9 +16,9 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/proj_dash.css')}}">
     <link rel="shortcut icon" href="{{asset('images/logo.jpg')}}">
-    @if(Route::currentRouteName() != 'winwork')
+    {{-- @if(Route::currentRouteName() != 'winwork') --}}
         <script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
-    @endif
+    {{-- @endif --}}
     <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/masterslider.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/wow.min.js')}}"></script>
@@ -54,39 +54,27 @@
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            @if(Route::currentRouteName()=='Landing')
-                                <li><a href="{{ url('/') }}">Home</a></li>
-                                <li><a href="{{ url('/publish') }}" class="highlight">Publish Projects</a></li>    
-                                <li><a href="{{ url('/winwork') }}" class="highlight">Win Work</a></li>
-                            @if(Route::currentRouteName()=='Landing')
+                            <li><a href="{{ url('/') }}">Home</a></li>
+                            <li><a href="{{ url('/publish') }}" class="highlight">Publish Projects</a></li>    
+                            <li><a href="{{ url('/winwork') }}" class="highlight">Win Work</a></li>
+                            @if(Route::currentRouteName()=='Landing' )
                                 <li><a href="#how-it-works">How It Works</a></li>
                                 <li><a href="#pricing">Pricing</a></li>
                                 <li><a href="#about-scope">About Scope</a></li>
                                 <li><a href="#faqs">FAQ</a></li>                 
                                 <li><a href="#contact">contact</a></li>
-                            @endif
                             @else
-                                <div>
-                                    <ul class="nav navbar-nav navbar-left">
-                                    <li><a href="{{ url('/') }}">Home</a></li>
-                                    <li><a href="{{ url('/publish') }}" class="highlight">Publish Projects</a></li>    
-                                    <li><a href="{{ url('/winwork') }}" class="highlight">Win Work</a></li>
-                                @if(Route::currentRouteName()=='Landing')
-                                    <li><a href="#how-it-works">How It Works</a></li>
-                                    <li><a href="#pricing">Pricing</a></li>
-                                    <li><a href="#about-scope">About Scope</a></li>
-                                    <li><a href="#faqs">FAQ</a></li>                 
-                                    <li><a href="#contact">contact</a></li>
-                                    </ul>
-                                </div>
-                                @endif
+                                <li><a href="{{ url('/') }}">How It Works</a></li>
+                                <li><a href="{{ url('/') }}">Pricing</a></li>
+                                <li><a href="{{ url('/') }}">About Scope</a></li>
+                                <li><a href="{{ url('/') }}">FAQ</a></li>       
+                                <li><a href="{{ url('/') }}">contact</a></li>
                             @endif
-                                    @if(Session::has('fullname'))
-                                        <li><a href="logout" class="highlight">Logout</a></li>
-                                    @else
-                                        <li><a data-toggle="modal" href="#myModal" class="highlight">Login/register</a></li>
-                                    @endif
-                            
+                            @if(Session::has('fullname'))
+                                <li><a href="{{ url('logout') }}" class="highlight">Logout</a></li>
+                            @else
+                                <li><a data-toggle="modal" href="#myModal" class="highlight">Login/register</a></li>
+                            @endif
                         </ul>
                     </div>
                 </div>

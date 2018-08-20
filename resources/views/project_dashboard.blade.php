@@ -254,6 +254,85 @@
 		    				</div>
 		    			</div>
 		    		</div>
+		    		<div class="tender-container">
+						<div class="row">
+							<div class="col-sm-12 active-tenders">
+								<h3>Tender Queries</h3>
+								<div class="row">	
+									<div class="col-sm-12">				
+										<table class="table table-striped table-hover">
+											<tr>
+												<td id="black">#</td>
+												<td>Query</td>
+												<td>Responses</td>
+
+											</tr>
+											<tr>
+												<td id="black">1</td>
+												<td>TextTextTextTextTextTextTextTextText</td>
+												<td>TextTextTextTextTextTextTextTextTextTextTextText</td>
+											</tr>
+											<tr>
+												<td id="black">2</td>
+												<td>TextTextTextTextTextTextTextTextText</td>
+												<td>TextTextTextTextTextTextTextTextTextTextTextText</td>
+											</tr>
+											<tr>
+												<td id="black">3</td>
+												<td>TextTextTextTextTextTextTextTextText</td>
+												<td>TextTextTextTextTextTextTextTextTextTextTextText</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tender-container">
+						<div class="row">
+							<div class="col-sm-12 active-tenders">
+								<h3>Employer Details</h3>
+								<div class="row">	
+									<div class="col-sm-9">				
+										<table class="table table-striped table-hover">
+											<tr>
+												<td>Employer</td>
+												<td>British Land</td>
+											</tr>
+											<tr>
+												<td>Registered Office Address</td>
+												<td>100 Sample Road, London, W1 23Y, United Kingdom</td>
+											</tr>
+											<tr>
+												<td>Industry</td>
+												<td>Developer</td>
+											</tr>
+											<tr>
+												<td>Year Established</td>
+												<td>1955</td>
+											</tr>
+											<tr>
+												<td>Number of Employees</td>
+												<td>10-50</td>
+											</tr>
+										</table>
+									</div>
+									<div class="col-sm-3 company-quick-details">
+										<p><img src="../images/logo-british.jpg"></p>
+										<p>Active Projects <span class="badge">4</span></p>
+										<p>Active Tenders <span class="badge">9</span></p>
+										<p>Status 
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 		    	</div>
 		    </div>
 				</div>

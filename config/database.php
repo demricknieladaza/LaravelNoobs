@@ -41,11 +41,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', '192.168.2.101'),
+            'host' => env('DB_HOST', '107.180.48.248'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'scope_db'),
-            'username' => env('DB_USERNAME', 'admin'),
-            'password' => env('DB_PASSWORD', ''),
+            'database' => env('DB_DATABASE', 'costweb'),
+            'username' => env('DB_USERNAME', 'demdem'),
+            'password' => env('DB_PASSWORD', 'admin123'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',

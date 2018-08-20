@@ -111,7 +111,7 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-4" style="position: fixed; width:400px;">
 				<div class="tender-container">
 					<ul class="nav bid-form-nav">
 						<li class="active"><a data-toggle="tab" href="#section1">Pre-Qualification Questionnaire</a></li>
@@ -169,7 +169,7 @@
 					  </div>
 				</div>
 			</div>
-			<div class="col-sm-8 questionnaire-section">
+			<div class="col-sm-8 questionnaire-section" style="margin-left: 400px;">
 				<div class="tab-content">
 					<div id="section1" class="tab-pane fade in active tender-container">
 						<h3 class="bid-form-title">Pre-Qualification Questionnaire</h3>

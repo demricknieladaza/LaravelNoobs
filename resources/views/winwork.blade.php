@@ -129,12 +129,18 @@
 								<p><input type="checkbox" class="filled-in" name="residential" value="residential" id="residential"> <label for="residential">Residential</label></p>
 								<p><input type="checkbox" class="filled-in" name="retail" value="retail" id="retail"> <label for="retail">Retail</label></p> -->
 								<div class="form-group">
+									<input type="text" name="location" class="form-control" placeholder="Enter your location">
+								</div>
+								<div class="form-group">
 									<select class="form-control project_location" name="location">
-										<option>Enter your Location</option>
-										<option>Within 50km</option>
-										<option>Within 100km</option>
-										<option>Within 500km</option>
-										<option>Worldwide</option>
+										<option value="0">0</option>
+										<?php 
+										for ($i=1;$i <= 100; $i++) {
+											echo "<option value='".$i."'>".$i." miles</option>";
+										}
+
+										?>
+										<option value="any">Any</option>
 									</select>
 								</div>	
 								<p><input type="submit" name="submit" value="Apply Filter" class="btn btn-lg btn-primary"></p>

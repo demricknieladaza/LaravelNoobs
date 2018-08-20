@@ -114,3 +114,8 @@
 	background-color: #fe7235;
 	color: white !important;
 }
+
+
+[type="checkbox"].filled-in:not(:checked)+label:after {
+	border: 1px solid #fe7235 !important;
+}
