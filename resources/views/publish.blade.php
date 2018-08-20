@@ -28,7 +28,7 @@
 					</div>
 				</div>
 				<div class="col-sm-2">
-					<button style="background-color: #D8652B;border-color:#D8652B;" class="btn btn-lg btn-primary">Search</button>
+					<button style="background-color: #FE7235;border-color:#FE7235;" class="btn btn-lg btn-primary">Search</button>
 				</div>
 			</form>
 		</div>

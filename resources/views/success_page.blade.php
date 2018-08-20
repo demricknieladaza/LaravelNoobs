@@ -17,7 +17,10 @@
 						<li><a data-toggle="tab" href="#section4">Approach</a></li>
 						<li><a data-toggle="tab" href="#section5">Scope</a></li>
 						<li><a data-toggle="tab" href="#section6">Appointment</a></li>
-						<li><a data-toggle="tab" href="#section7">Quality Assurance</a></li>
+						<li><a data-toggle="tab" href="#section7">Quality Assurance</a></li><br>
+
+						<li><a class="btn btn-primary" href="#">Feeback received</a></li>
+
 					</ul><br>
 				</div>
 				
