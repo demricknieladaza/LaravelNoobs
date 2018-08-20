@@ -119,3 +119,26 @@
 [type="checkbox"].filled-in:not(:checked)+label:after {
 	border: 1px solid #fe7235 !important;
 }
+
+.table {
+	table-layout: fixed;
+}
+
+.table > tbody > tr > td {
+	white-space: unset;
+}
+
+.autoExpand {
+    display: block;
+    box-sizing: padding-box;
+    overflow: hidden;
+    resize: none;
+    font-size: 14px;
+    border: 0;
+    min-height: 60px;
+}
+
+.tabsl > td {
+	padding: 0;
+}
+

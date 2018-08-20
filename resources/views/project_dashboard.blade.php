@@ -18,9 +18,7 @@
 		</div>
 		<div class="col-sm-12 questionnaire-section">
 			<div class="tab-content tabmargin" >
-				<div id="section1" class="tab-pane fade in active tender-container" style="padding-top: 0; margin-left: auto;
-    margin-right: auto;
-    width: 1040px;">
+				<div id="section1" class="tab-pane fade in active tender-container" style="padding-top:0;margin-left:auto;margin-right:auto;width:1040px;">
 					<div class="row">
 		    	<div class="below-header project-img-collection text-center projhead">
 		    		<h1>Canada Water Masterplan</h1>
@@ -336,14 +334,14 @@
 		    	</div>
 		    </div>
 				</div>
-				<div id="section2" class="tab-pane fade tender-container">
+				<div id="section2" class="tab-pane fade tender-container" style="padding-top:0;margin-left:auto;margin-right:auto;width:1040px;">
 					<div class="row">
 						<div class="container">
 							<h1 class="project-title bid-page-title">Design Responsibility Matrix</h1>
 						</div>
 					</div>
 				</div>
-				<div id="section3" class="tab-pane fade tender-container">
+				<div id="section3" class="tab-pane fade tender-container" style="padding-top:0;margin-left:auto;margin-right:auto;width:1040px;">
 					<div class="row" style="margin: 25px;">
 	    			<table class="table table-bordered">
     			    <thead class="thead">
@@ -468,11 +466,11 @@
 	    			<button class="btn">Export to MS Excel</button>
 					</div>
 				</div>	
-				<div id="section4" class="tab-pane fade tender-container">
+				<div id="section4" class="tab-pane fade tender-container" style="padding-top:0;margin-left:auto;margin-right:auto;width:1040px;">
 					<div class="row" style="margin: 25px;">
 		    	<div class="">
 		    		<div class="row">
-		    			<div class="col-sm-4">
+		    			<div class="col-sm-3">
 		    				<div class="tender-container">
 		    					<ul class="nav bid-form-nav">
 		    						<li class="active"><a data-toggle="tab" href="#section11">Scope</a></li>
@@ -482,10 +480,75 @@
 		    					</ul><br>
 		    				</div>
 		    			</div>
-		    			<div class="col-sm-8 questionnaire-section">
+		    			<div class="col-sm-9 questionnaire-section">
 		    				<div class="tab-content">
 		    					<div id="section11" class="tab-pane fade in active tender-container">
 		    						<h3 class="bid-form-title">Scope</h3>
+		    						<div class="row" style="margin: 0;">
+		    						<table class="table table-bordered tabsl" style="table-layout: unset;">
+		    							<thead class="thead" style="color: white;
+																							    font-weight: 700;
+																							    border-top: 1px solid #00B0F0;
+																							    border-right: none;
+																							    border-bottom: none;
+																							    border-left: 1px solid #00B0F0;
+																							    background: #00B0F0;
+																							    white-space: normal;">
+		    								<tr>
+		    									<td>Deliverable</td>
+		    									<td>Details / Contents</td>
+		    									<td>RACI</td>
+		    									<td>0</td>
+		    									<td>1</td>
+		    									<td>2</td>
+		    									<td>3</td>
+		    									<td>4</td>
+		    									<td>5</td>
+		    									<td>6</td>
+		    									<td>7</td>
+		    								</tr>
+		    							</thead>
+		    							<tbody class="tbod">
+		    								<tr>
+		    									<td><p>Strategic Brief</p></td>
+		    									<td style="padding: 0;">
+		    										<textarea class='autoExpand'></textarea>
+		    									</td>
+		    									<td style="padding: 0;">
+		    										<textarea class='autoExpand' maxlength="1"></textarea>
+		    									</td>
+		    									<td>
+		    										<div class="custom-control custom-checkbox">
+		    										  <input type="checkbox" class="custom-control-input" id="defaultChecked2" >
+		    										  <label class="custom-control-label" for="defaultChecked2"></label>
+		    										</div>
+		    									</td>
+		    									<td></td>
+		    									<td></td>
+		    									<td></td>
+		    									<td></td>
+		    									<td></td>
+		    									<td></td>
+		    									<td></td>
+		    								</tr>
+		    								<tr>
+		    									<td><p>Project Programme (Lead)<p></td>
+		    									<td style="padding: 0;">
+		    										<textarea class='autoExpand'></textarea>
+		    									</td>
+		    									<td></td>
+		    									<td></td>
+		    									<td></td>
+		    									<td></td>
+		    									<td></td>
+		    									<td></td>
+		    									<td></td>
+		    									<td></td>
+		    									<td></td>
+		    								</tr>
+		    							</tbody>
+		    						</table>
+		    						</div>
 		    					</div>
 		    					<div id="section21" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Appointment</h3>
@@ -914,5 +977,20 @@
 	function edits(name) {
     document.getElementById(name).addClass('active');
 };
+</script>
+<script type="text/javascript">
+	$(document)
+	    .one('focus.autoExpand', 'textarea.autoExpand', function(){
+	        var savedValue = this.value;
+	        this.value = '';
+	        this.baseScrollHeight = this.scrollHeight;
+	        this.value = savedValue;
+	    })
+	    .on('input.autoExpand', 'textarea.autoExpand', function(){
+	        var minRows = this.getAttribute('data-min-rows')|0, rows;
+	        this.rows = minRows;
+	        rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 16);
+	        this.rows = minRows + rows;
+	    });
 </script>
 @endsection
