@@ -48,7 +48,7 @@
 					<select name="service" class="my-select-form" id="selectservice">
 				                             <option value="" disabled selected>Select Service
 													<option>Architect</option>
-													<option>Sturctural Engineed</option>
+													<option>Sturctural Engineer</option>
 													<option>Service Engineer</option>
 													<option>Fire Engineer</option>
 													<option>Acoustic Engineer</option>
