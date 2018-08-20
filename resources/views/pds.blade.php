@@ -31,11 +31,12 @@
 						  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 						    <div class="flipper">
 						      <div class="front">
+						      	<i class="fa fa-fire-extinguisher fa-4x" style="color: #FE7235;"></i>
 						      	<h1 style="color: #000; font-size: 20px;">Fire Engineer</h1>
 						      	<p> 9 days left</p>	
 						      </div>
 						      <div class="back">
-						      	<h1>SUBMIT BID<br>-<br>WIN WORK</h1>
+						      	<h1>Submit Bid<br>-<br>Win Work</h1>
 						      </div>
 						    </div>
 						  </div>
@@ -46,11 +47,12 @@
 						  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 							<div class="flipper">
 						      <div class="front">
+						      	<i class="fa fa-fire-extinguisher fa-4x" style="color: #FE7235;"></i>
 						      	<h1 style="color: #000; font-size: 20px;">Fire Engineer</h1>
 						      	<p> 9 days left</p>	
 						      </div>
 						      <div class="back">
-						      	<h1>SUBMIT BID<br>-<br>WIN WORK</h1>
+						      	<h1>Submit Bid<br>-<br>Win Work</h1>
 						      </div>
 						    </div>
 						  </div>
@@ -61,11 +63,12 @@
 						  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 							<div class="flipper">
 						      <div class="front">
+						      	<i class="fa fa-fire-extinguisher fa-4x" style="color: #FE7235;"></i>
 						      	<h1 style="color: #000; font-size: 20px;">Fire Engineer</h1>
 						      	<p> 9 days left</p>	
 						      </div>
 						      <div class="back">
-						      	<h1>SUBMIT BID<br>-<br>WIN WORK</h1>
+						      	<h1>Submit Bid<br>-<br>Win Work</h1>
 						      </div>
 						    </div>
 						  </div>

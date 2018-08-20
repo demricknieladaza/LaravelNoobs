@@ -495,7 +495,7 @@ table table tr td{ vertical-align: top; }
 .tiles-row{ margin-bottom: 20px; margin-top: 20px; }
 .tender-tiles h2{ font-size: 24px; margin: 0; }
 .hover-container-holder{ position: relative; margin-top: 20px; margin-bottom: 20px; min-height: 140px; }
-.table-tender-details{ position: absolute; width: 98%; top: 110%; left: 20px; background: #fff; visibility: hidden; transition: 0.2s; z-index: 2; }
+.table-tender-details{ position: absolute; width: 50%; top: 110%; left: 20px; background: #fff; visibility: hidden; transition: 0.2s; z-index: 2; }
 .tender-tiles:hover .table-tender-details{ visibility: visible; transform: translateY(-5%); }
 .create-new-project-anchor{ color: #222; text-decoration: none; font-weight: bold; }
 /* benchmark dashboard*/
@@ -546,7 +546,7 @@ table table tr td{ vertical-align: top; }
 .publish-project-outer-page .tender-tile-single{ width: 20%; }
 .publish-project-outer-page .tender-tile-single h2{ line-height: 1.6em; }
 .publish-project-outer-page .tender-tile-single .tender-tiles{ padding: 30px; background: #285080;}
-.publish-project-outer-page .table-tender-details{ top: 135%; left: 30px;}
+.publish-project-outer-page .table-tender-details{ top: 135%; left: 200px;}
 .publish-project-outer-page table{ text-align: left; }
 .publish-project-outer-page .tender-tile-single .new-project-tile{ background: #7f7f7f; }
 .publish-project-outer-page .table-striped tbody tr:hover{ background: #b4b4b4; }
@@ -1141,7 +1141,11 @@ input[type=range]::-ms-thumb {
 .tender-container .table-striped tbody table tr:last-child{ border-bottom: none; }
 .tender-container .table-striped tbody tr table tr:nth-of-type(odd){ background: inherit; }
 .publish-project-outer-page .tender-tile-single .tender-tiles {
-     background: #D8652B !important; 
+     background: #D8652B; 
+}
+
+body > div.container.publish-project-outer-page > div > div > div > div > div:nth-child(1) > div{
+    background-color: #3E506B;
 }
 
 <<<<<<< HEAD
@@ -1312,10 +1316,10 @@ body > div:nth-child(17) > div > div.col-sm-12{
 .front {
     background: #fff; 
     color:#000; text-align:center; 
-    background: url(../images/icon-fire-demo.png) center;
+    /*background: url(../images/icon-fire-demo.png);*/
     background-size: 400px;
     background-repeat: no-repeat;
-    background-position: center bottom;
+    background-position: center ;
     padding-top: 50px;
     }
 
@@ -1706,4 +1710,14 @@ body > header > nav > div > div > div.collapse.navbar-collapse > ul > div > ul >
     width: 100%;
     border: 1px solid #FE7235;
     padding: 5px;
+}
+
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(1) > div > div:nth-child(2) > a > div > div > div.front,
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(1) > div > div:nth-child(3) > a > div > div > div.front,
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(1) > div > div:nth-child(4) > a > div > div > div.front{
+    padding-top: 10px;
+}
+
+.publish-project-outer-page .tender-tile-single:hover{
+    box-shadow: 0 0 15px rgba(33,33,33,.2); 
 }

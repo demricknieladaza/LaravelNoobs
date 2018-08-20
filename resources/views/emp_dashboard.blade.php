@@ -52,7 +52,7 @@
 								<div class="panel">
 									<div class="panel-heading">
 										<h4 class="panel-title">
-											<a data-toggle="collapse" data-parent="#accordion1" href="#collapse5">Actions Required <span class="badge">2</span> <span class="pull-right caret"></span></a>
+											<a >Actions Required <span class="badge">2</span> <span class="pull-right"></span></a>
 										</h4>
 									</div>
 									<div id="collapse5" class="panel-collapse collapse in">
@@ -73,7 +73,7 @@
 														<td>Request for information</td>
 														<td>01 January 2018</td>
 														<td>07 January 2018</td>
-														<td><a style="    white-space: normal;" href="{{ url('/dashboard') }}" class="btn btn-warning">
+														<td><a style="    white-space: normal;" href="{{ url('/publish/project_dashboard') }}" class="btn btn-warning">
 															Deal now
 														</a></td>
 													</tr>
