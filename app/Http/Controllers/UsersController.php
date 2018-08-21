@@ -57,9 +57,17 @@ class UsersController extends Controller
         }
     }
 
-    public function emp_dashboard_controller()
+    public function emp_dashboard_controller(Request $request)
     {
-        return view('emp_dashboard');
+        
+        if($request->session()->has('fullname'))
+        {
+           return view('emp_dashboard');
+        }
+        else
+        {
+           return redirect('log_reg');
+        }
     }
 
     public function tend_dashboard_controller()
