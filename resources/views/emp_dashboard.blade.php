@@ -98,11 +98,34 @@
 						<div class="shadow-wrapper">
 							<div class="panel-group" id="accordion1">
 								<div class="panel">
-									
 									<div id="collapse6" class="panel-collapse collapse in">
-										<div class="panel-body" style="height: 265px;">
-										<h6 style="font-size: 75px; margin-top:80px; "> New Section</h6>
+										<div class="panel-body " style="height: 265px;">
+										<div class="col-sm-9">
+											<div class="angkol">
+												<a href=""><h2>Increase<br>  Discount</h2></a>
+											</div>
+											<div class="ante">
+												<a href=""><h2>Go<br>PRO+</h2></a>
+											</div>
+											    <div class="ate">
+												<a href=""><h2>Top<br>Up</h2></a>
+											</div>
+											 <div class="">
+												<input class="kuya" type="text" name="project" placeholder="Project Title">
+											</div>
+											 <div class="">
+												<button class="button">Publish New Project</button>
+											</div>
 										</div>
+										<div class="col-sm-3">
+											 <div class="">
+											 	<label>You have</label>
+												<button class="button5">129</button>
+												<label class="manghud">Tender Credits</label>
+											</div>
+										</div>
+										</div>
+									</div>
 									</div>
 								</div>
 							</div>
