@@ -37,50 +37,78 @@
 	<script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="{{asset('css/owl.carousel.css')}}">
 	<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-	
+	<style>
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.8);
+            width: 98%;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            height: 20px;
+        }  
+        .dropdown:hover .dropdown-content {display: block;}
+    </style>
 </head>
 <body>
 	<header>
-        <nav class="navbar">
-            <div class="container">
-                <div class="row">
-                    <div class="navbar-header">
-                        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <i class="icon-bar"></i>
-                            <i class="icon-bar"></i>
-                            <i class="icon-bar"></i>
-                        </button>
-                        <a href="{{ url('/') }}" class="navbar-brand"><img src="{{asset('images/logo.png')}}" width="120"></a>
-                    </div>
-                    <div class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="{{ url('/') }}">Home</a></li>
-                            <li><a href="{{ url('/publish') }}" class="highlight">Publish Projects</a></li>    
-                            <li><a href="{{ url('/winwork') }}" class="highlight">Win Work</a></li>
-                            @if(Route::currentRouteName()=='Landing' )
-                                <li><a href="#how-it-works">How It Works</a></li>
-                                <li><a href="#pricing">Pricing</a></li>
-                                <li><a href="#about-scope">About Scope</a></li>
-                                <li><a href="#faqs">FAQ</a></li>                 
-                                <li><a href="#contact">contact</a></li>
-                            @else
-                                <li><a href="{{ url('/') }}">How It Works</a></li>
-                                <li><a href="{{ url('/') }}">Pricing</a></li>
-                                <li><a href="{{ url('/') }}">About Scope</a></li>
-                                <li><a href="{{ url('/') }}">FAQ</a></li>       
-                                <li><a href="{{ url('/') }}">contact</a></li>
-                            @endif
-                            @if(Session::has('fullname'))
-                                <li><a href="{{ url('logout') }}" class="highlight">Logout</a></li>
-                            @else
-                                <li><a data-toggle="modal" href="#myModal" class="highlight">Login/register</a></li>
-                            @endif
-                        </ul>
-                    </div>
+    <nav class="navbar">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <i class="icon-bar"></i>
+                        <i class="icon-bar"></i>
+                        <i class="icon-bar"></i>
+                    </button>
+                    <a href="{{ url('/') }}" class="navbar-brand"><img src="{{asset('images/logo.png')}}" width="120"></a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li><a href="{{ url('/publish') }}" class="highlight">Publish Projects</a></li>    
+                        <li><a href="{{ url('/winwork') }}" class="highlight">Win Work</a></li>
+                        @if(Route::currentRouteName()=='Landing' )
+                            <li><a href="#how-it-works">How It Works</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                            <li><a href="#about-scope">About Scope</a></li>
+                            <li><a href="#faqs">FAQ</a></li>                 
+                            <li><a href="#contact">contact</a></li>
+                        @else
+                            <li><a href="{{ url('/') }}">How It Works</a></li>
+                            <li><a href="{{ url('/') }}">Pricing</a></li>
+                            <li><a href="{{ url('/') }}">About Scope</a></li>
+                            <li><a href="{{ url('/') }}">FAQ</a></li>       
+                            <li><a href="{{ url('/') }}">contact</a></li>
+                        @endif
+                        @if(Session::has('fullname'))
+                            <li class="dropdown"><a href="" class="highlight">SCOPE Business Lounge</a>
+                                <div class="dropdown-content">
+                                  <a href="{{ url('/dashboard/emp_dashboard') }}">Employer Dashboard</a>
+                                  <a href="{{ url('/dashboard/tend_dashboard') }}">Tenderer Dashboard</a>
+                                  <a href="{{ url('/dashboard/benchmark_dashboard') }}">Benchmarking</a>
+                                  <a href="#">Organisation</a>
+                                  <a href="#">Individuals</a>
+                                  <a href="{{ url('/dashboard/users') }}">Users</a>
+                                  <a href="{{ url('/dashboard/membership') }}">Membership</a>
+                                  <a href="{{ url('logout') }}">Logout</a>
+                                </div>
+                            </li>
+                        @else
+                            <li><a data-toggle="modal" href="#myModal" class="highlight">Login/register</a></li>
+                        @endif
+                    </ul>
                 </div>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+  </header>
 	<div id="myModal" class="modal fade" role="dialog" tabindex='-1'>
         <div class="modal-dialog">
             <div class="modal-content">
