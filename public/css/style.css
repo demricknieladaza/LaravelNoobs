@@ -1477,6 +1477,7 @@ textarea{
 }
 .butsize{
     width:110px;
+    color:white;
 }
 .color{
     background-color:gray;
@@ -1559,6 +1560,16 @@ textarea{
     border-radius: 3px;
     margin: 0 5px;
     outline: none !important;
+}
+.toyok{
+    appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 100s;
+    transition: opacity .2s;
 }
 .modal-confirm .btn-info {
     background: #c1c1c1;
@@ -1909,4 +1920,34 @@ body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.
 body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(6) > div.ex3 > a,
 body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(2) > div:nth-child(1) > div > div.col-sm-6.tab2.pull-right > div.ex3 > a:hover{
     text-decoration: none;
+}
+
+.switch{
+    background-color: #FE7235;
+}
+
+.buttones{
+    padding: 5px 5px;
+    font-size: 13px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #FE7235;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px #999;
+}
+
+.buttones:hover {background-color: #fe5935}
+
+.buttones:active {
+  background-color: #FE7235;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.general{
+    margin-left: 100px;
+    margin-right: 100px;
 }

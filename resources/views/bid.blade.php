@@ -104,6 +104,48 @@
 			</div>
 		</div>
 	</div> 
+	<div class="modal fade" id="Modal" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header inq">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">Inquiries</h4>
+	        </div>
+	        <div class="modal-body">
+	          <textarea placeholder="Enter your query here" rows="4" cols="50"></textarea>
+	        </div>
+	        <div class="modal-footer">
+	          	<div class="text-center">
+					<!-- Button HTML (to Trigger Modal) -->
+					<a style="color: #fff;" href="#mode" class="trigger-btn" data-toggle="modal">Submit Tender Query</a>
+				</div>
+	          	<div id="mode" class="modal fade">
+					<div class="modal-dialog modal-confirm">
+						<div class="modal-content">
+							<div class="modal-head">
+								<div class="icon-box">
+									<i class="material-icons">done</i>
+								</div>				
+								<h4 class="modal-title">Are  you  sure  you  want  to  submit  this  tender  query? </h4>	
+				                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							</div>
+							<div class="modal-body">
+								<p>Your  query  will  be  sent  to  the  Employer  and  published  on  the  project  page,  visible  for  everyone,  once  you  have  received  a  response. This process cannot be undone.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-info" data-dismiss="modal">Go Back</button>
+								<button type="button" class="btn btn-success">Submit</button>
+							</div>
+						</div>
+					</div>
+				</div>
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
 
 	<div class="container below-header">
 		<h1 class="project-title bid-page-title">Canada Water Masterplan - <small>Structural Engineer</small></h1>			
@@ -125,48 +167,7 @@
 				</div>
 				<div class="form-group">
 					<button type="button" class="btn btn-info btn-lg raise" id="but" data-toggle="modal" data-target="#Modal">Ask the Employer</button>
-					<div class="modal fade" id="Modal" role="dialog">
-					    <div class="modal-dialog">
-					    
-					      <!-- Modal content-->
-					      <div class="modal-content">
-					        <div class="modal-header inq">
-					          <button type="button" class="close" data-dismiss="modal">&times;</button>
-					          <h4 class="modal-title">Inquiries</h4>
-					        </div>
-					        <div class="modal-body">
-					          <textarea placeholder="Enter your query here" rows="4" cols="50"></textarea>
-					        </div>
-					        <div class="modal-footer">
-					          	<div class="text-center">
-									<!-- Button HTML (to Trigger Modal) -->
-									<a style="color: #fff;" href="#mode" class="trigger-btn" data-toggle="modal">Submit Tender Query</a>
-								</div>
-					          	<div id="mode" class="modal fade">
-									<div class="modal-dialog modal-confirm">
-										<div class="modal-content">
-											<div class="modal-head">
-												<div class="icon-box">
-													<i class="material-icons">done</i>
-												</div>				
-												<h4 class="modal-title">Are  you  sure  you  want  to  submit  this  tender  query? </h4>	
-								                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-											</div>
-											<div class="modal-body">
-												<p>Your  query  will  be  sent  to  the  Employer  and  published  on  the  project  page,  visible  for  everyone,  once  you  have  received  a  response. This process cannot be undone.</p>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-info" data-dismiss="modal">Go Back</button>
-												<button type="button" class="btn btn-success">Submit</button>
-											</div>
-										</div>
-									</div>
-								</div>
-					        </div>
-					      </div>
-					      
-					    </div>
-					  </div>
+					
 				</div>
 			</div>
 			<div class="col-sm-8 questionnaire-section" style="margin-left: 400px;">
@@ -205,8 +206,8 @@
 								<input type="checkbox" name="" value="" class="filled-in" id="check10"> <label for="check10">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
 							</div>						
 							<div class="form-group butcent">
-								<input type="submit" name="submit" value="Submit" class="btn btn-primary butsize">
-								<input type="submit" name="Save" value="Save" class="btn btn-success butsize color">
+								<input type="submit" name="Next" value="Next" class="btn btn-primary butsize">
+								
 							</div>
 						</form>
 					</div>
@@ -223,7 +224,7 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												Providing  the  required  Service  since
+												Providing the required service since
 											</div>
 										</div>
 										<div class="col-sm-6">
@@ -241,13 +242,13 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												Offered Services
+												Offered services
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Service</option>
+													<option value="" disabled selected>Select service</option>
 													<option>Architect</option>
 													<option>Sturctural Engineed</option>
 													<option>Service Engineer</option>
@@ -269,7 +270,7 @@
 											</div>
 											<div class="form-group">
 												<div class="input_fields_service">
-												    <button class="btn btn-primary" id="add_field_service">Add Another Service</button>
+												    <button class="btn btn-primary" id="add_field_service">Add another service</button>
 												    <div></div>
 												</div>
 											</div>
@@ -283,25 +284,25 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Name of Award">
+												<input type="text" name="" class="form-control" placeholder="Enter name of award">
 											</div>
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Details">
+												<input type="text" name="" class="form-control" placeholder="Enter details">
 											</div>
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Awarded  by  Body">
+												<input type="text" name="" class="form-control" placeholder="Awarded by body">
 											</div>
 											<div class="form-group">
 												<div class="input-group date" id="datepicker1" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
-													 <input class="form-control" type="text" placeholder="Year  Awarded  " readonly="readonly" name="date" >	  
+													 <input class="form-control" type="text" placeholder="Year awarded  " readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
 											</div>
 											<div class="form-group">
 												<div class="input_fields_piste">
-												    <button class="btn btn-primary" id="add_field_piste">Add Another Award</button>
+												    <button class="btn btn-primary" id="add_field_piste">Add another award</button>
 												    <div></div>
 												</div>
 											</div>
@@ -310,22 +311,23 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												Track  Record  of  relevant  Projects
+												Track Record of relevant Projects
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Profile Title">
+												<input type="text" name="" class="form-control" placeholder="Enter profile title">
 											</div>
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Construction  Value ">
+												<input type="text" name="" class="form-control" placeholder="Construction value ">
 											</div>
 
 										<div class="form-group">
-								               <input type="checkbox" name="" value="" class="filled-in" id="check12" >     <label for="check12">Value  Confidential </label>
+								               <input type="checkbox" name="" value="" class="filled-in" id="check12" >     <label for="check12">Value Confidential </label>
 							              </div>
 							              <div class="form-group">
-												<textarea placeholder="Enter  Description  of  the  Project"></textarea>
+												<textarea cols="4" rows="5" id="textarea" maxlength="2000" placeholder="Enter description of the project  "></textarea>
+  												<span id="rchars">2000</span> 
 											</div>
 											<div class="form-group">													
 												<img id="uploadPreview7" style="width: 100px; height: 100px;" />
@@ -413,7 +415,7 @@
 												</select>
 											</div>
 											<div class="input_fields_type">
-												    <button class="btn btn-primary" id="add_field_type">Add another Type</button>
+												    <button class="btn btn-primary" id="add_field_type">Add another type</button>
 												    <div></div>
 											</div><br>
 													
@@ -453,26 +455,26 @@
 											</div>
 											<div class="form-group">
 												<div class="form-group">
-													<input type="text" name="" class="form-control" placeholder="Enter new Company Name">
+													<input type="text" name="" class="form-control" placeholder="Enter new company name">
 												</div>
 											</div>
 											<div class="form-group">
 												<div class="input_fields_team">
-												    <button class="btn btn-primary" id="add_field_team">Add Another Project Team Member</button>
+												    <button class="btn btn-primary" id="add_field_team">Add another project team member</button>
 												    <div></div>
 												</div>
 											</div>
 											<div class="form-group">
 												<div class="input_fields_project">
-												    <button class="btn btn-primary" id="add_field_project">Add Another Project</button>
+												    <button class="btn btn-primary" id="add_field_project">Add another project</button>
 												    <div></div>
 												</div>
 											</div>
 										</div>
 									</div>
 									<div class="form-group butcent">
-										<input type="submit" name="submit" value="Submit" class="btn btn-primary butsize ">
-										<input type="submit" name="Save" value="Save" class="btn btn-success butsize  color">
+										<input type="submit" name="Next" value="Next" class="btn btn-primary butsize ">
+										
 									</div>
 									
 									</div>
@@ -493,7 +495,7 @@
 										</div>
 										<div class="col-sm-3">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="First Name">
+												<input type="text" name="" class="form-control" placeholder="First name">
 											</div>
 										</div>
 										<div class="col-sm-3">
@@ -535,16 +537,16 @@
 													<option>AMIMechE</option>
 													<option>AMIStructE</option>
 													<option>APM ChPP</option>
-													<option>APM  PFQ</option>
-													<option>APM  PPQ</option>
-													<option>APM  PQ </option>
-													<option>APM  RPP</option>
-													<option>AppIHE  </option>
-													<option>AssocRICS  </option>
-													<option>BREEAM  AP </option>
-													<option>CEng  </option>
-													<option>CEnv  </option>
-													<option>CFIOSH  </option>
+													<option>APM PFQ</option>
+													<option>APM PPQ</option>
+													<option>APM PQ </option>
+													<option>APM RPP</option>
+													<option>AppIHE </option>
+													<option>AssocRICS</option>
+													<option>BREEAM  AP</option>
+													<option>CEng </option>
+													<option>CEnv</option>
+													<option>CFIOSH</option>
 													<option>CIBSE  Licentiate </option>
 													<option>CMIOSH  </option>
 													<option>CSci  </option>
@@ -624,7 +626,7 @@
 										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
 											<div class="input_fields_yawa">
-											<button class="btn btn-primary" id="add_field_yawa">Add Another Accreditation</button>
+											<button class="btn btn-primary" id="add_field_yawa">Add another accreditation</button>
 											<div></div>
 											</div>
 										</div>
@@ -724,7 +726,7 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Name Of Award ">
+												<input type="text" name="" class="form-control" placeholder="Enter name of award ">
 											</div>
 										</div>
 									</div>
@@ -734,7 +736,7 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Awarded  by  Body  ">
+												<input type="text" name="" class="form-control" placeholder="Awarded by body  ">
 											</div>
 										</div>
 									</div>
@@ -787,7 +789,7 @@
 										</div>
 										<div class="col-sm-6">
 												<div class="input_fields_serve1">
-												    <button class="btn btn-primary" id="add_field_serve1">Add Another Service</button>
+												    <button class="btn btn-primary" id="add_field_serve1">Add another service</button>
 												    <div></div>
 												</div>
 											</div>
@@ -800,7 +802,7 @@
 										<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												Project Exprerience
+												Project exprerience
 											</div>
 										</div>
 										<div class="col-sm-6">
@@ -856,7 +858,7 @@
 										</div>
 										<div class="col-sm-6">
 												<div class="input_fields_add">
-												    <button class="btn btn-primary" id="add_field_add">Add Another type of use</button>
+												    <button class="btn btn-primary" id="add_field_add">Add another type of use</button>
 												    <div></div>
 												</div>
 											</div>
@@ -923,7 +925,7 @@
 										</div>
 										<div class="col-sm-6">
 												<div class="input_fields_serve2">
-												    <button class="btn btn-primary" id="add_field_serve2">Add Another service</button>
+												    <button class="btn btn-primary" id="add_field_serve2">Add another service</button>
 												    <div></div>
 												</div>
 											</div>
@@ -950,7 +952,7 @@
 										</div>
 										<div class="col-sm-6">
 												<div class="input_fields_type1">
-												    <button class="btn btn-primary" id="add_field_type1">Add Another service</button>
+												    <button class="btn btn-primary" id="add_field_type1">Add another service</button>
 												    <div></div>
 												</div>
 											</div>
@@ -1001,7 +1003,7 @@
 										<div class="col-sm-6"></div>
 
 										<div class="col-sm-6">
-												<input type="text" name="" class="form-control" placeholder="Enter new Company Name">
+												<input type="text" name="" class="form-control" placeholder="Enter new company name">
 											</div>
 									</div><br>
 									<div class="row">
@@ -1010,7 +1012,7 @@
 										</div>
 										<div class="col-sm-6">
 												<div class="input_fields_member">
-												    <button class="btn btn-primary" id="add_field_member">Add Another Project Team Member</button>
+												    <button class="btn btn-primary" id="add_field_member">Add another project team member</button>
 												    <div></div>
 												</div>
 											</div>
@@ -1021,14 +1023,14 @@
 										</div>
 										<div class="col-sm-6">
 												<div class="input_fields_project1">
-												    <button class="btn btn-primary" id="add_field_project1">Add Another Project</button>
+												    <button class="btn btn-primary" id="add_field_project1">Add another project</button>
 												    <div></div>
 												</div>
 											</div>
 									</div><br>
 									<div class="form-group butcent">
-										<input type="submit" name="submit" value="Submit" class="btn btn-primary butsize ">
-										<input type="submit" name="Save" value="Save" class="btn btn-success butsize color ">
+										<input type="submit" name="Next" value="Next" class="btn btn-primary butsize ">
+										
 									</div>
 								</div>
 							</div>
@@ -1042,12 +1044,13 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												Commentary on Constraints and potential Issues
+												Comments on Constraints/Issues
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<textarea placeholder="Enter Text Here"></textarea>
+												<textarea cols="4" rows="5" id="textareaap" maxlength="2000" placeholder="Enter here  "></textarea>
+  												<span id="rchars1">2000</span> 
 											</div>
 										</div>
 									</div>
@@ -1064,7 +1067,7 @@
 										</div>
 										<div class="col-sm-6">
 												<div class="input_fields_com">
-												    <button class="btn btn-primary" id="add_field_com">Add Another Comment</button>
+												    <button class="btn btn-primary" id="add_field_com">Add another comment</button>
 												    <div></div>
 												</div>
 											</div>
@@ -1077,7 +1080,7 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<textarea placeholder="Enter Text Here"></textarea>
+												<textarea placeholder="Enter text here"></textarea>
 											</div>
 										</div>
 									</div>
@@ -1094,15 +1097,15 @@
 										</div>
 										<div class="col-sm-6">
 												<div class="input_fields_sul">
-												    <button class="btn btn-primary" id="add_field_sul">Add Another Solution</button>
+												    <button class="btn btn-primary" id="add_field_sul">Add another solution</button>
 												    <div></div>
 												</div>
 											</div>
 									</div><br>
 									
 									<div class="form-group butcent">
-										<input type="submit" name="submit" value="Submit" class="btn btn-primary  butsize">
-										<input type="submit" name="Save" value="Save" class="btn btn-success  butsize color">
+										<input type="submit" name="Next" value="Next" class="btn btn-primary  butsize">
+										
 									</div>
 								</div>
 							</div>
@@ -1273,7 +1276,7 @@
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											  </tr>
 											</table><br>
-											 <button type="button" class="btn btn-info">Add Another Lines</button>
+											 <button type="button" class="btn btn-info">Add another Lines</button>
 								</div>
 							</div><br>
 							<div class="row">
@@ -1363,7 +1366,7 @@
 											  </tr>
 											  <tr>
 										</table><br>
-										<button type="button" class="btn btn-primary">Add Another Lines</button>
+										<button type="button" class="btn btn-primary">Add another Lines</button>
 								</div>
 							</div><br>
 							<div class="row">
@@ -1396,7 +1399,7 @@
 											     <td contenteditable='true'></td>
 											  </tr>
 										</table><br>
-										<button type="button" class="btn btn-info">Add Another Lines</button>
+										<button type="button" class="btn btn-info">Add another Lines</button>
 								</div>
 							</div><br>
 								<div class="row">
@@ -1693,7 +1696,7 @@
 
 
 										</table><br>
-										<button type="button" class="btn btn-success">Add Another Lines</button>
+										<button type="button" class="btn btn-success">Add another Lines</button>
 								</div>
 							</div><br>
 						</form>
@@ -1712,7 +1715,7 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Insurance Name">
+												<input type="text" name="" class="form-control" placeholder="Enter insurance name">
 											</div>
 										</div>
 									</div>
@@ -1720,7 +1723,7 @@
 										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Insurance Level">
+												<input type="text" name="" class="form-control" placeholder="Insurance level">
 											</div>
 										</div>
 
@@ -1746,7 +1749,7 @@
 									<div class="row">
 										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
-												<input type="text" name="" class="form-control" placeholder="As  per  selections  by  the  employer)">
+												<input type="text" name="" class="form-control" placeholder="As per selections by the employer)">
 										</div>
 									</div><br>
 									<div class="row">
@@ -1766,7 +1769,7 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Either Deed or Under Hands as selected by the employer">
+												<input type="text" name="" class="form-control" placeholder="Either deed or under hands as selected by the employer">
 											</div>
 										</div>
 									</div>
@@ -1795,7 +1798,7 @@
 									<div class="row">
 										<div class="col-sm-6">Collateral  Warranties  /  Third  Parties  </div>
 										<div class="col-sm-6">
-												<input type="text" name="" class="form-control" placeholder="Either Deed or Under Hands as selected by the employer">
+												<input type="text" name="" class="form-control" placeholder="Either deed or under hands as selected by the employer">
 										</div>
 									</div><br>
 									<div class="row">
@@ -1822,7 +1825,7 @@
 									<div class="row">
 										<div class="col-sm-6">Limit  of  Liability  </div>
 										<div class="col-sm-6">
-												<input type="text" name="" class="form-control" placeholder="Either Deed or Under Hands as selected by the employer">
+												<input type="text" name="" class="form-control" placeholder="Either deed or under hands as selected by the employer">
 										</div>
                                         <div class="row">
 										<div class="col-sm-6"></div>
@@ -1869,7 +1872,7 @@
 											
 										</div>
 										<div class="col-sm-6">
-												<input type="text" name="" class="form-control" placeholder="Enter Clause Here">
+												<input type="text" name="" class="form-control" placeholder="Enter clause here">
 										</div>
 									</div><br>
 									<div class="row">
@@ -1894,7 +1897,7 @@
 										</div>
 										<div class="col-sm-6">
 												<div class="input_fields_comm">
-												    <button class="btn btn-primary" id="add_field_comm">Add Another Comment</button>
+												    <button class="btn btn-primary" id="add_field_comm">Add another comment</button>
 												    <div></div>
 												</div>
 											</div>
@@ -1926,8 +1929,8 @@
 									</div><br>
 									
 									<div class="form-group butcent">
-										<input type="submit" name="submit" value="Submit" class="btn btn-primary butsize ">
-										<input type="submit" name="Save" value="Save" class="btn btn-success butsize color">
+										<input type="submit" name="Next" value="Next" class="btn btn-primary butsize ">
+										
 									</div>
 								</div>
 							</div>
@@ -2062,7 +2065,7 @@
 									</div>
 									<div class="form-group butcent">
 										<input type="submit" name="submit" value="Submit" class="btn btn-primary butsize ">
-										<input type="submit" name="Save" value="Save" class="btn btn-success butsize color">
+										<input type="submit" name="Save" value="Save" class="btn  butsize color">
 									</div>
 								</div>
 							</div>
@@ -2073,12 +2076,26 @@
 		</div>
 	</div>
 <script>
-
-
 function mUp(obj) {
     obj.style.backgroundColor="none";
     obj.innerHTML="x";
 }
+</script>
+<script type="text/javascript">
+	var maxLength = 2000;
+$('textarea').keyup(function() {
+  var textlen = maxLength - $(this).val().length;
+  $('#rchars').text(textlen);
+});
+
+</script>
+<script type="text/javascript">
+	var maxLength1 = 2000;
+	$('#textareaap').keyup(function() {
+   var textlen1 = maxLength1 - $(this).val().length;
+    $('#rchars1').text(textlen1);
+	});
+
 </script>
 <!-- end -->
 
