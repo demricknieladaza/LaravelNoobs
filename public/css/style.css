@@ -1892,6 +1892,8 @@ body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.
 body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(5) > div.ex3 > a,
 body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(3) > div.ex3 > a,
 body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(7) > div.ex3 > a,
-body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(8) > div.ex3 > a:hover{
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(8) > div.ex3 > a,
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(6) > div.ex3 > a,
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(2) > div:nth-child(1) > div > div.col-sm-6.tab2.pull-right > div.ex3 > a:hover{
     text-decoration: none;
 }
