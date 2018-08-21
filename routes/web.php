@@ -50,3 +50,9 @@ Route::get('/dashboard/tend_dashboard/unsuccess_page', 'UsersController@unsucces
 Route::get('/publish/canada_hover', 'UsersController@canada_hover_controller');
 
 Route::get('/log_reg', 'UsersController@log_reg_controller');
+
+Route::get('/dashboard/membership', 'UsersController@membership_controller');
+
+Route::get('/dashboard/users', 'UsersController@users_controller');
+
+Route::get('/dashboard/company', 'UsersController@company_controller');

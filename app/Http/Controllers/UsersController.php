@@ -104,4 +104,16 @@ class UsersController extends Controller
     {
         return view('log_reg');
     }
+    public function membership_controller()
+    {
+        return view('membership');
+    }
+    public function users_controller()
+    {
+        return view('users');
+    }
+    public function company_controller()
+    {
+        return view('company');
+    }
 }
