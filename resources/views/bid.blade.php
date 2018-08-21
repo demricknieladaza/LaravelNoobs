@@ -1156,7 +1156,7 @@
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											  </tr>
 											  <tr>
-											    <td>CFeasibility Study</td>
+											    <td>Feasibility Study</td>
 											    <td contenteditable='true'></td>
 											     <td contenteditable='true'></td>
 											   <td><div class="mama" onmouseup="mUp(this)"></div></td>
