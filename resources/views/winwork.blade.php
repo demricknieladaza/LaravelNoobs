@@ -26,7 +26,7 @@
 
 	.show-more {
 	  padding: 10px 0;
-	  text-align: center;
+	  text-align: left;
 	}
 </style>
 	<div class="container search_filter wow fadeInDown" data-wow-duration="1s" data-wow-delay="200ms">

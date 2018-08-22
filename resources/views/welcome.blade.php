@@ -1298,10 +1298,10 @@
             </div>
             <div class="row">
                 <div class="col-sm-6">
-                    <p>While offering our customers great functionality it was also very important for us to make this website aesthetically attractive. Because let’s be honest, procurement isn’t everyone’s favourite hobby. That's why we really wanted to give the user an amazing visual experience alongside smart and intuitive navigation.<br> <br> - <b>Thomas Schindler - Director</b></p>
+                    <p>While offering our customers great functionality it was also very important for us to make this website aesthetically attractive. Because let’s be honest, procurement isn’t everyone’s favourite hobby. That's why we really wanted to give the user an amazing visual experience alongside smart and intuitive navigation.<br> <br><b>Thomas Schindler - Director</b></p>
                 </div>
                 <div class="col-sm-6">
-                    <p>Scope is going to completely change the face of procurement practices in construction. The potential it holds in terms of benchmarking data and tenderer competitiveness is just incredible. Bringing procurement into the digital age has been long overdue.<br> <br> - <b>Andreas Reger - Director</b></p>
+                    <p>Scope is going to completely change the face of procurement practices in construction. The potential it holds in terms of benchmarking data and tenderer competitiveness is just incredible. Bringing procurement into the digital age has been long overdue.<br> <br> <b>Andreas Reger - Director</b></p>
                 </div>
             </div>
         </div>
@@ -1325,11 +1325,11 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h1>SC<span>OP</span>E - Open Procurement</h1>
-                    <p>Harnessing the Best Talents <br> by giving an Entire Industry the Opportunity<br>to Win Work on Public (OJEU) and Private Projects.</p>
+                    <p>Harnessing the Best Talents <br> by giving an Entire Industry the Opportunity<br>to Win Work on Private Projects.</p>
                 </div>
                 <div class="col-sm-6 text-right">
                     <h1>SCOP<span>E</span> - Experience</h1>
-                    <p>An Eye for Detail and Great Design <br>to offer the user <br> an Aesthetically Amazing Experience and make Procurement Sexy.</p>
+                    <p>An Eye for Detail and Great Design <br>to offer the user <br> an Aesthetically Amazing Experience.</p>
                 </div>
             </div>
         </div>

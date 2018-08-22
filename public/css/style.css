@@ -1438,7 +1438,7 @@ body > div:nth-child(17) > div > div.col-sm-12{
 textarea{
     resize:none;
     width: 100%;
-    height: 35%;
+    height: 250px;
 }
 
 .inq{
@@ -1449,14 +1449,27 @@ textarea{
 #Modal > div > div > div.modal-footer > div.text-center{
     background-color: #FE7235;
     padding: 20px;
+    padding-top: 5px;
+    width: 31%;
+    margin-left: auto;
+    padding-bottom: 5px;
 }
 
-#mode > div{
-    padding-top: 60px;
+#Modal > div > div > div.modal-footer > div.text-center > a:hover{
+    text-decoration: none;
 }
+
+/*#mode > div{
+    padding-top: 60px;
+}*/
+
+#mode{
+    padding-top: 20px;
+}
+
 .modal-confirm {        
     color: #636363;
-    width: 110px;
+    width: 100%;
 
 }
 .butcent{
