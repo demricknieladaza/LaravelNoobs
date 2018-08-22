@@ -1,4 +1,3 @@
-
 <div class="col-sm-2 lounge-menu">
 	<div class="row">
 		<div class="lounge-title">
