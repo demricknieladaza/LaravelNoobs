@@ -66,7 +66,7 @@
 					</div>
 					<div class="col-sm-6 lounge-action">
 						<div class="shadow-wrapper">
-							<div class="panel-group" id="accordion1">
+							<div class="panel-group pip" id="accordi">
 								<div class="panel">
 									<div id="collapse6" class="panel-collapse collapse in">
 										<div class="panel-body " style="height: 265px;">
