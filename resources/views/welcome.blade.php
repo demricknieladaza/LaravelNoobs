@@ -1436,7 +1436,7 @@
     <div class="container-fluid white-bg">
         <div class="container">
             <div class="col-sm-12">
-                <div class="row">
+                <div class="row general">
                     <h1 class="faq-head">General</h1>
                 </div>
                 <div style="padding-left: 25%;
@@ -1460,7 +1460,7 @@
                     </div>
                     <button class="accord">Can Scope be used for both public (OJEU) and private projects? </button>
                     <div class="panel1">
-                        <p> *No answer yet* </p>
+                        <p>We are working on it! However, currently SCOPE cannot be used for public projects.</p>
                     </div>
                 </div>
             </div>

@@ -54,16 +54,20 @@
 		    					<table class="table table-striped table-hover">
 		    						<tr>
 		    							<td>Project Title
-  											<div><a onclick=edits('project')>edit</a></div>
+  											<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
 										</td>
 		    							<td><input class="inputproj" id="project" type="text" name="projectTitle" value="Canada Water Masterplan"></td>
 		    						</tr>
 		    						<tr>
-		    							<td>Project ID</td>
-		    							<td>1234567890</td>
+		    							<td>Project ID
+			    							<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    							</td>
+		    							<td><input class="inputproj" id="project" type="text" name="projectTitle" value="123456789"></td>
 		    						</tr>
 		    						<tr>
-		    							<td>Location</td>
+		    							<td>Location
+		    								<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    							</td>
 		    							<td><input class="inputproj" type="text" name="location" value="Canada Water, London, SE16, United Kingdom"></td>
 		    						</tr>
 		    						<tr>
@@ -72,7 +76,9 @@
 		    							</td>
 		    						</tr>
 		    						<tr>
-		    							<td>Transport Links</td>
+		    							<td>Transport Links
+		    								<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    							</td>
 		    							<td>
 		    								<table width="100%">
 		    									<tr>
@@ -104,7 +110,9 @@
 		    							</td>
 		    						</tr>
 		    						<tr>
-		    							<td>Area Specific Information</td>
+		    							<td>Area Specific Information
+		    								<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    							</td>
 		    							<td>
 		    								<table width="100%">
 		    									<tr>
@@ -119,7 +127,9 @@
 		    							</td>
 		    						</tr>
 		    						<tr>
-		    							<td>Constraints</td>
+		    							<td>Constraints
+		    								<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    							</td>
 		    							<td>                               
 		    								<p><input class="inputproj" type="text" value="Adjacent Tube Tunnel"></p>
 		    								<p><input class="inputproj" type="text" value="Existing Buildings"></p>
@@ -127,15 +137,21 @@
 		    							</td>
 		    						</tr>
 		    						<tr>
-		    							<td>Type of Development</td>
+		    							<td>Type of Development
+		    								<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    							</td>
 		    							<td><input name="dev_type" class="inputproj" type="text" value="New Built"></td>
 		    						</tr>
 		    						<tr>
-		    							<td>Construction Value</td>
+		    							<td>Construction Value
+		    								<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    							</td>
 		    							<td><span>£</span><input name="const_value" class="inputproj"type="text" value="300,000,000"></td>
 		    						</tr>
 		    						<tr>
-		    							<td>Types of Use</td>
+		    							<td>Types of Use
+		    								<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    							</td>
 		    							<td>
 		    								<table width="100%">
 		    									<tr>
@@ -172,7 +188,9 @@
 		    							</td>
 		    						</tr>
 		    						<tr>
-		    							<td>Milestones</td>
+		    							<td>Milestones
+		    								<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    							</td>
 		    							<td>
 		    								<table width="100%">
 		    									<tr>
@@ -195,7 +213,9 @@
 		    							</td>								
 		    						</tr>
 		    						<tr>
-		    							<td>Meetings</td>
+		    							<td>Meetings
+		    								<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    							</td>
 		    							<td>
 		    								<table width="100%">
 		    									<tr>
@@ -210,11 +230,15 @@
 		    							</td>
 		    						</tr>
 		    						<tr>
-		    							<td>Procurement Route</td>
+		    							<td>Procurement Route
+		    								<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    							</td>
 		    							<td><input class="inputproj"type="text" value="Design & Build"></td>
 		    						</tr>
 		    						<tr>
-		    							<td>Project Team</td>
+		    							<td>Project Team
+		    								<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    							</td>
 		    							<td>
 		    								<table width="100%">
 		    									<tr>
@@ -241,7 +265,9 @@
 		    							</td>
 		    						</tr>
 		    						<tr>
-		    							<td>Supporting Documents</td>
+		    							<td>Supporting Documents
+		    								<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    							</td>
 		    							<td>
 		    								<p><a href="#">Site Plan <i class="fa fa-download"></i></a></p>
 		    								<p><a href="#">Programme <i class="fa fa-download"></i></a></p>        
@@ -260,25 +286,35 @@
 									<div class="col-sm-12">				
 										<table class="table table-striped table-hover">
 											<tr>
-												<td id="black">#</td>
+												<td id="black"><span style="    margin-left: 10px;
+												    ">#</span></td>
 												<td>Query</td>
 												<td>Responses</td>
 
 											</tr>
 											<tr>
-												<td id="black">1</td>
-												<td>TextTextTextTextTextTextTextTextText</td>
-												<td>TextTextTextTextTextTextTextTextTextTextTextText</td>
+												<td id="black"><span style="    margin-left: 10px;
+												    font-size: 20px;">1</span>
+													<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+												</td>
+												<td><input class="inputproj"type="text" value="TextTextTextTextTextTextTextTextText"></td>
+												<td><input class="inputproj"type="text" value="TextTextTextTextTextTextTextTextTextTextTextText"></td>
 											</tr>
 											<tr>
-												<td id="black">2</td>
-												<td>TextTextTextTextTextTextTextTextText</td>
-												<td>TextTextTextTextTextTextTextTextTextTextTextText</td>
+												<td id="black"><span style="    margin-left: 10px;
+												    font-size: 20px;">2</span>
+													<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+												</td>
+												<td><input class="inputproj"type="text" value="TextTextTextTextTextTextTextTextText"></td>
+												<td><input class="inputproj"type="text" value="TextTextTextTextTextTextTextTextTextTextTextText"></td>
 											</tr>
 											<tr>
-												<td id="black">3</td>
-												<td>TextTextTextTextTextTextTextTextText</td>
-												<td>TextTextTextTextTextTextTextTextTextTextTextText</td>
+												<td id="black"><span style="    margin-left: 10px;
+												    font-size: 20px;">3</span>
+													<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+												</td>
+												<td><input class="inputproj"type="text" value="TextTextTextTextTextTextTextTextText"></td>
+												<td><input class="inputproj"type="text" value="TextTextTextTextTextTextTextTextTextTextTextText"></td>
 											</tr>
 										</table>
 									</div>
@@ -294,24 +330,34 @@
 									<div class="col-sm-9">				
 										<table class="table table-striped table-hover">
 											<tr>
-												<td>Employer</td>
-												<td>British Land</td>
+												<td>Employer
+													<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+												</td>
+												<td><input class="inputproj"type="text" value="British Land"></td>
 											</tr>
 											<tr>
-												<td>Registered Office Address</td>
-												<td>100 Sample Road, London, W1 23Y, United Kingdom</td>
+												<td>Registered Office Address
+													<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+												</td>
+												<td><input class="inputproj"type="text" value="100 Sample Road, London, W1 23Y, United Kingdom"></td>
 											</tr>
 											<tr>
-												<td>Industry</td>
-												<td>Developer</td>
+												<td>Industry
+													<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+												</td>
+												<td><input class="inputproj"type="text" value="Developer"></td>
 											</tr>
 											<tr>
-												<td>Year Established</td>
-												<td>1955</td>
+												<td>Year Established
+													<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+												</td>
+												<td><input class="inputproj"type="text" value="1955"></td>
 											</tr>
 											<tr>
-												<td>Number of Employees</td>
-												<td>10-50</td>
+												<td>Number of Employees
+													<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+												</td>
+												<td><input class="inputproj"type="text" value="10-50"></td>
 											</tr>
 										</table>
 									</div>
@@ -351,45 +397,42 @@
 			            <th>Start</th>
 			            <th>End</th>
 			            <th>Time Remaining</th>
-			            <th>Number of Bids received</th>
-			            <th>Number of Queries received (outstanding)</th>
-			            <th></th>
-			            <th></th>
+			            <th>Bids received</th>
+			            <th>Queries received (outstanding)</th>
+			            <th>Actions</th>
   			        </tr>
     			    </thead>
     			    <tbody>
   			        <tr>
-			            <td class="td">Fire Engineer <a><p>Edit Tender</p></a></td>
+			            <td style="text-align: left;" class="td">Fire Engineer <a><p>Edit Tender</p></a></td>
 			            <td class="td">Active</td>
 			            <td class="td">1/1/2018</td>
 			            <td class="td">1/9/2018</td>
 			            <td class="td">5 days</td>
-			            <td class="td"><strong>3</strong><a data-toggle="modal" data-target="#viewBid"><p>View Bids</p></a></td>
-			            <td class="td"><strong>7</strong><a data-toggle="modal" data-target="#viewQueries"><p>View Queries</p></a></td>
+			            <td class="td"><strong style="font-size: 25px;">3</strong><a data-toggle="modal" data-target="#viewBid"><p>View Bids</p></a></td>
+			            <td class="td"><strong style="font-size: 25px;">7</strong><a data-toggle="modal" data-target="#viewQueries"><p>View Answer/ Queries</p></a></td>
 			            <td class="td"><button class="">Complete Tender Process</button></td>
-			            <td class="td"></td>
   			        </tr>
   			        <tr>
-			            <td class="td">Service Engineer <a><p>Edit Tender</p></a></td>
+			            <td style="text-align: left;" class="td">Service Engineer <a><p>Edit Tender</p></a></td>
 			            <td class="td">Drafted</td>
-			            <td class="td">1/1/2018</td>
-			            <td class="td">1/9/2018</td>
-			            <td class="td">5 days</td>
-			            <td class="td"></td>
-			            <td class="td"></td>
-			            <td class="td"></td>
-			            <td class="td"></td>
+			            <td class="td">TBC</td>
+			            <td class="td">TBC</td>
+			            <td class="td">TBC</td>
+			            <td class="td">TBC</td>
+			            <td class="td">TBC</td>
+			            <td class="td"><button class="">Download Evaluation Report</button></td>
   			        </tr>
   			        <tr>
-			            <td class="td">Structural Engineer <a><p>Edit Tender</p></a></td>
+			            <td style="text-align: left;" class="td">Structural Engineer <a><p>Edit Tender</p></a></td>
 			            <td class="td">Closed</td>
 			            <td class="td">1/1/2018</td>
 			            <td class="td">1/9/2018</td>
 			            <td class="td">5 days</td>
-			            <td class="td"><strong>3</strong><a data-toggle="modal" data-target="#viewBid"><p>View Bids</p></a></td>
-			            <td class="td"><strong>7</strong><a data-toggle="modal" data-target="#viewQueries"><p>View Queries</p></a></td>
+			            <td class="td"><strong style="font-size: 25px;">3</strong><a data-toggle="modal" data-target="#viewBid"><p>View Bids</p></a></td>
+			            <td class="td"><strong style="font-size: 25px;">7</strong><a data-toggle="modal" data-target="#viewQueries"><p>View Answer/Queries</p></a></td>
 			            <td class="td"><button class="">Negotiate Scope and Appointment</button></td>
-			            <td class="td"><button class="">Download Evaluation Report</button></td>
+			            
   			        </tr>
     			    </tbody>
 	    			</table>
@@ -397,6 +440,7 @@
 					</div>
 					<div class="row" style="margin: 25px;">
 	    			<table class="table table-bordered">
+	    			<table class="table table-striped table-hover">
     			    <thead class="thead">
     			    	<tr><h4>Cashflow of selected tenderers</h4></tr>
   			        <tr>
@@ -462,6 +506,7 @@
 			            <td class="td"><strong>£ 2,000.00</strong></td>
   			        </tr>
     			    </tbody>
+    				</table>
 	    			</table>
 	    			<button class="btn">Export to MS Excel</button>
 					</div>
@@ -641,12 +686,12 @@
 																?>
 															</select>
 															</div>
-															<div class="form-group">
+															<!-- <div class="form-group">
 																<div class="cnt_bond">
 															    <button class="btn btn-primary" id="cnt_bond" >Add Another Bond</button>
 															    <div></div>
 																</div>
-															</div>
+															</div> -->
 		    										</div>
 		    									</div>
 		    									<div class="row">
@@ -657,7 +702,7 @@
 		    										</div>
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
-															<input type="text" placeholder="Insert Limit of Liability " name="limit_of_liability" class="form-control">
+															<input type="number" placeholder="Insert Limit of Liability " name="limit_of_liability" class="form-control">
 															</div>
 		    										</div>
 		    									</div>
@@ -781,15 +826,15 @@
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
 															<input type="text" class="form-control" name="proj_cfname" placeholder="First Name">
-															</div>
-															<div class="form-group">
-															<input type="text" class="form-control" name="proj_clname"
-															placeholder="Last Name">
-															</div>
-															<div class="input-group date form-group" id="datepicker2" data-date="02-2012" data-date-format="mm-yyyy">
-																 <input class="form-control" type="text" readonly="readonly" name="date" >	  
-																 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-															</div>
+														</div>
+														<div class="form-group">
+														<input type="text" class="form-control" name="proj_clname"
+														placeholder="Last Name">
+														</div>
+														<div class="input-group date form-group" id="datepicker2" data-date="02-2012" data-date-format="mm-yyyy">
+															 <input class="form-control" type="text" readonly="readonly" name="date" >	  
+															 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+														</div>
 		    										</div>
 		    									</div>
 		    								</div>
