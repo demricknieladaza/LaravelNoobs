@@ -223,7 +223,7 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												Providing  the  required  Service  since
+												Providing the required service since
 											</div>
 										</div>
 										<div class="col-sm-6">
@@ -241,13 +241,13 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												Offered Services
+												Offered services
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Service</option>
+													<option value="" disabled selected>Select service</option>
 													<option>Architect</option>
 													<option>Sturctural Engineed</option>
 													<option>Service Engineer</option>
@@ -269,7 +269,7 @@
 											</div>
 											<div class="form-group">
 												<div class="input_fields_service">
-												    <button class="btn btn-primary" id="add_field_service">Add another Service</button>
+												    <button class="btn btn-primary" id="add_field_service">Add another service</button>
 												    <div></div>
 												</div>
 											</div>
@@ -283,25 +283,25 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Name of Award">
+												<input type="text" name="" class="form-control" placeholder="Enter name of award">
 											</div>
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Details">
+												<input type="text" name="" class="form-control" placeholder="Enter details">
 											</div>
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Awarded by Body">
+												<input type="text" name="" class="form-control" placeholder="Awarded by body">
 											</div>
 											<div class="form-group">
 												<div class="input-group date" id="datepicker1" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
-													 <input class="form-control" type="text" placeholder="Year Awarded  " readonly="readonly" name="date" >	  
+													 <input class="form-control" type="text" placeholder="Year awarded  " readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
 											</div>
 											<div class="form-group">
 												<div class="input_fields_piste">
-												    <button class="btn btn-primary" id="add_field_piste">Add another Award</button>
+												    <button class="btn btn-primary" id="add_field_piste">Add another award</button>
 												    <div></div>
 												</div>
 											</div>
@@ -315,17 +315,17 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Profile Title">
+												<input type="text" name="" class="form-control" placeholder="Enter profile title">
 											</div>
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Construction Value ">
+												<input type="text" name="" class="form-control" placeholder="Construction value ">
 											</div>
 
 										<div class="form-group">
 								               <input type="checkbox" name="" value="" class="filled-in" id="check12" >     <label for="check12">Value Confidential </label>
 							              </div>
 							              <div class="form-group">
-												<textarea cols="4" rows="5" id="textarea" maxlength="2000" placeholder="Enter Description of the Project  "></textarea>
+												<textarea cols="4" rows="5" id="textarea" maxlength="2000" placeholder="Enter description of the project  "></textarea>
   												<span id="rchars">2000</span> 
 											</div>
 											<div class="form-group">													
@@ -414,7 +414,7 @@
 												</select>
 											</div>
 											<div class="input_fields_type">
-												    <button class="btn btn-primary" id="add_field_type">Add another Type</button>
+												    <button class="btn btn-primary" id="add_field_type">Add another type</button>
 												    <div></div>
 											</div><br>
 													
@@ -454,18 +454,18 @@
 											</div>
 											<div class="form-group">
 												<div class="form-group">
-													<input type="text" name="" class="form-control" placeholder="Enter new Company Name">
+													<input type="text" name="" class="form-control" placeholder="Enter new company name">
 												</div>
 											</div>
 											<div class="form-group">
 												<div class="input_fields_team">
-												    <button class="btn btn-primary" id="add_field_team">Add another Project Team Member</button>
+												    <button class="btn btn-primary" id="add_field_team">Add another project team member</button>
 												    <div></div>
 												</div>
 											</div>
 											<div class="form-group">
 												<div class="input_fields_project">
-												    <button class="btn btn-primary" id="add_field_project">Add another Project</button>
+												    <button class="btn btn-primary" id="add_field_project">Add another project</button>
 												    <div></div>
 												</div>
 											</div>
@@ -494,7 +494,7 @@
 										</div>
 										<div class="col-sm-3">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="First Name">
+												<input type="text" name="" class="form-control" placeholder="First name">
 											</div>
 										</div>
 										<div class="col-sm-3">
@@ -536,16 +536,16 @@
 													<option>AMIMechE</option>
 													<option>AMIStructE</option>
 													<option>APM ChPP</option>
-													<option>APM  PFQ</option>
-													<option>APM  PPQ</option>
-													<option>APM  PQ </option>
-													<option>APM  RPP</option>
-													<option>AppIHE  </option>
-													<option>AssocRICS  </option>
-													<option>BREEAM  AP </option>
-													<option>CEng  </option>
-													<option>CEnv  </option>
-													<option>CFIOSH  </option>
+													<option>APM PFQ</option>
+													<option>APM PPQ</option>
+													<option>APM PQ </option>
+													<option>APM RPP</option>
+													<option>AppIHE </option>
+													<option>AssocRICS</option>
+													<option>BREEAM  AP</option>
+													<option>CEng </option>
+													<option>CEnv</option>
+													<option>CFIOSH</option>
 													<option>CIBSE  Licentiate </option>
 													<option>CMIOSH  </option>
 													<option>CSci  </option>
@@ -625,7 +625,7 @@
 										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
 											<div class="input_fields_yawa">
-											<button class="btn btn-primary" id="add_field_yawa">Add another Accreditation</button>
+											<button class="btn btn-primary" id="add_field_yawa">Add another accreditation</button>
 											<div></div>
 											</div>
 										</div>
@@ -725,7 +725,7 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Name of Award ">
+												<input type="text" name="" class="form-control" placeholder="Enter name of award ">
 											</div>
 										</div>
 									</div>
@@ -788,7 +788,7 @@
 										</div>
 										<div class="col-sm-6">
 												<div class="input_fields_serve1">
-												    <button class="btn btn-primary" id="add_field_serve1">Add another Service</button>
+												    <button class="btn btn-primary" id="add_field_serve1">Add another service</button>
 												    <div></div>
 												</div>
 											</div>
@@ -801,7 +801,7 @@
 										<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												Project Exprerience
+												Project exprerience
 											</div>
 										</div>
 										<div class="col-sm-6">
@@ -1002,7 +1002,7 @@
 										<div class="col-sm-6"></div>
 
 										<div class="col-sm-6">
-												<input type="text" name="" class="form-control" placeholder="Enter new Company Name">
+												<input type="text" name="" class="form-control" placeholder="Enter new company name">
 											</div>
 									</div><br>
 									<div class="row">
@@ -1011,7 +1011,7 @@
 										</div>
 										<div class="col-sm-6">
 												<div class="input_fields_member">
-												    <button class="btn btn-primary" id="add_field_member">Add another Project Team Member</button>
+												    <button class="btn btn-primary" id="add_field_member">Add another project team member</button>
 												    <div></div>
 												</div>
 											</div>
@@ -1022,7 +1022,7 @@
 										</div>
 										<div class="col-sm-6">
 												<div class="input_fields_project1">
-												    <button class="btn btn-primary" id="add_field_project1">Add another Project</button>
+												    <button class="btn btn-primary" id="add_field_project1">Add another project</button>
 												    <div></div>
 												</div>
 											</div>
@@ -1066,7 +1066,7 @@
 										</div>
 										<div class="col-sm-6">
 												<div class="input_fields_com">
-												    <button class="btn btn-primary" id="add_field_com">Add another Comment</button>
+												    <button class="btn btn-primary" id="add_field_com">Add another comment</button>
 												    <div></div>
 												</div>
 											</div>
@@ -1079,7 +1079,7 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<textarea placeholder="Enter Text Here"></textarea>
+												<textarea placeholder="Enter text here"></textarea>
 											</div>
 										</div>
 									</div>
@@ -1096,7 +1096,7 @@
 										</div>
 										<div class="col-sm-6">
 												<div class="input_fields_sul">
-												    <button class="btn btn-primary" id="add_field_sul">Add another Solution</button>
+												    <button class="btn btn-primary" id="add_field_sul">Add another solution</button>
 												    <div></div>
 												</div>
 											</div>
@@ -1714,7 +1714,7 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Insurance Name">
+												<input type="text" name="" class="form-control" placeholder="Enter insurance name">
 											</div>
 										</div>
 									</div>
@@ -1722,7 +1722,7 @@
 										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Insurance Level">
+												<input type="text" name="" class="form-control" placeholder="Insurance level">
 											</div>
 										</div>
 
@@ -1748,7 +1748,7 @@
 									<div class="row">
 										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
-												<input type="text" name="" class="form-control" placeholder="As  per  selections  by  the  employer)">
+												<input type="text" name="" class="form-control" placeholder="As per selections by the employer)">
 										</div>
 									</div><br>
 									<div class="row">
@@ -1768,7 +1768,7 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Either Deed or Under Hands as selected by the employer">
+												<input type="text" name="" class="form-control" placeholder="Either deed or under hands as selected by the employer">
 											</div>
 										</div>
 									</div>
@@ -1797,7 +1797,7 @@
 									<div class="row">
 										<div class="col-sm-6">Collateral  Warranties  /  Third  Parties  </div>
 										<div class="col-sm-6">
-												<input type="text" name="" class="form-control" placeholder="Either Deed or Under Hands as selected by the employer">
+												<input type="text" name="" class="form-control" placeholder="Either deed or under hands as selected by the employer">
 										</div>
 									</div><br>
 									<div class="row">
@@ -1824,7 +1824,7 @@
 									<div class="row">
 										<div class="col-sm-6">Limit  of  Liability  </div>
 										<div class="col-sm-6">
-												<input type="text" name="" class="form-control" placeholder="Either Deed or Under Hands as selected by the employer">
+												<input type="text" name="" class="form-control" placeholder="Either deed or under hands as selected by the employer">
 										</div>
                                         <div class="row">
 										<div class="col-sm-6"></div>
@@ -1871,7 +1871,7 @@
 											
 										</div>
 										<div class="col-sm-6">
-												<input type="text" name="" class="form-control" placeholder="Enter Clause Here">
+												<input type="text" name="" class="form-control" placeholder="Enter clause here">
 										</div>
 									</div><br>
 									<div class="row">
@@ -1896,7 +1896,7 @@
 										</div>
 										<div class="col-sm-6">
 												<div class="input_fields_comm">
-												    <button class="btn btn-primary" id="add_field_comm">Add another Comment</button>
+												    <button class="btn btn-primary" id="add_field_comm">Add another comment</button>
 												    <div></div>
 												</div>
 											</div>
