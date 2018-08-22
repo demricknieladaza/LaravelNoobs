@@ -1464,6 +1464,7 @@ textarea{
 }
 .butsize{
     width:110px;
+    color:white;
 }
 .color{
     background-color:gray;
@@ -1546,6 +1547,16 @@ textarea{
     border-radius: 3px;
     margin: 0 5px;
     outline: none !important;
+}
+.toyok{
+    appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 100s;
+    transition: opacity .2s;
 }
 .modal-confirm .btn-info {
     background: #c1c1c1;
