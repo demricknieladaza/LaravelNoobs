@@ -25,7 +25,7 @@
 			</ul>
 		</li>
 		<li>
-			<a href="#" class="menu-title policies-link">Policies </a>			          
+			<a href="{{ url('/dashboard/policies') }}" class="menu-title policies-link">Policies </a>			          
 		</li>									
 	</ul>
 </div>

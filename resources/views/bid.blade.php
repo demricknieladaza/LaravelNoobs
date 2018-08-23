@@ -319,7 +319,7 @@
 												<input type="text" name="" class="form-control" placeholder="Enter profile title">
 											</div>
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Construction value ">
+												<input type="number" name="" class="form-control" placeholder="Construction value ">
 											</div>
 
 										<div class="form-group">
@@ -463,13 +463,19 @@
 												    <button class="btn btn-primary" id="add_field_team">Add another project team member</button>
 												    <div></div>
 												</div>
-											</div>
+											</div><br>
 											<div class="form-group">
 												<div class="input_fields_project">
 												    <button class="btn btn-primary" id="add_field_project">Add another project</button>
 												    <div></div>
 												</div>
-											</div>
+											</div><br>
+											<div class="form-group">
+												<div class="input_fields_project">
+												    <button class="btn btn-primary" id="add_field_project">Add another XXX</button>
+												    <div></div>
+												</div>
+											</div><br>
 										</div>
 									</div>
 									<div class="form-group butcent">
@@ -524,7 +530,7 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<select name="" class="form-control">
-													<option value="" disabled selected>Select Accrediatation</option>
+													<option value="" disabled selected>Select accrediatation</option>
 													<option>ACABE</option>
 													<option>ACIBSE</option>
 													<option>ADPPA</option>
@@ -640,7 +646,7 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<select name="" class="form-control">
-													<option value="" disabled selected>Select Degree</option>
+													<option value="" disabled selected>Select degree</option>
 													<option>BA</option>
 													<option>BSA</option>
 													<option>BAcy</option>
@@ -709,7 +715,7 @@
 										<div class="col-sm-6">
 											<div class="input-group date" id="datepickers5" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
-											<input class="form-control" type="text" placeholder="Year Awarded" readonly="readonly" name="date" >	  
+											<input class="form-control" type="text" placeholder="Year awarded" readonly="readonly" name="date" >	  
 											<span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 											</div>
 											<br>
@@ -746,7 +752,7 @@
 										<div class="col-sm-6">
 											<div class="input-group date" id="datepickers6" data-date="02-2012" 
 											 data-date-format="mm-yyyy">
-											<input class="form-control" type="text" placeholder="Year Awarded" readonly="readonly" name="date" >	  
+											<input class="form-control" type="text" placeholder="Year awarded" readonly="readonly" name="date" >	  
 											<span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 											</div>
 										</div>
@@ -762,7 +768,7 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Service</option>
+													<option value="" disabled selected>Select service</option>
 													<option>Architect</option>
 													<option>Sturctural Engineed</option>
 													<option>Service Engineer</option>
@@ -807,7 +813,7 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter Project Title">
+												<input type="text" name="" class="form-control" placeholder="Enter project title">
 											</div>
 										</div>
 									</div>
@@ -829,7 +835,7 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Type of Use</option>
+													<option value="" disabled selected>Select type of Use</option>
 													<option>Residential</option>
 													<option>Commercial </option>
 													<option>Retail</option>
@@ -870,7 +876,7 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Service</option>
+													<option value="" disabled selected>Select service</option>
 													<option>Architect</option>
 													<option>Sturctural Engineed</option>
 													<option>Service Engineer</option>
@@ -899,7 +905,7 @@
 												<div class="input-group date" id="datepicker7" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
-													 <input class="form-control" type="text" placeholder="Provided this Service from" readonly="readonly" name="date" >	  
+													 <input class="form-control" type="text" placeholder="Provided this service from" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
 											</div>
@@ -913,7 +919,7 @@
 												<div class="input-group date" id="datepicker8" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
-													 <input class="form-control" type="text" placeholder="Provided this Service until" readonly="readonly" name="date" >	  
+													 <input class="form-control" type="text" placeholder="Provided this service until" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
 											</div>
@@ -937,7 +943,7 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Types of Development</option>
+													<option value="" disabled selected>Select types of development</option>
 													<option>New Built</option>
 													<option>Refurbishment</option>
 													<option>Demolition</option>
@@ -961,7 +967,7 @@
 										<div class="col-sm-6"></div>
 
 										<div class="col-sm-6">
-												<input type="text" name="" class="form-control" placeholder="Enter Description of the Project">
+												<input type="text" name="" class="form-control" placeholder="Enter description of the project">
 											</div>
 									</div><br>
 
@@ -978,7 +984,7 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Project Team Member</option>
+													<option value="" disabled selected>Select project team member</option>
 													<option>Architect</option>
 													<option>Sturctural Engineed</option>
 													<option>Service Engineer</option>
@@ -1715,7 +1721,7 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter insurance name">
+												<p contenteditable="true">Professional Indemnity Insurance</p>
 											</div>
 										</div>
 									</div>
@@ -1749,11 +1755,11 @@
 									<div class="row">
 										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
-												<input type="text" name="" class="form-control" placeholder="As per selections by the employer)">
+												<input type="text" name="" class="form-control" placeholder="As per selections by the employer">
 										</div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-6">Bonds</div>
+										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
 												<select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select Insurance</option>
@@ -1764,12 +1770,12 @@
 										<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												Execution
+												Bonds
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Either deed or under hands as selected by the employer">
+												<p contenteditable="true">Parent Company Guarantee</p>
 											</div>
 										</div>
 									</div>
@@ -1827,7 +1833,8 @@
 										<div class="col-sm-6">
 												<input type="text" name="" class="form-control" placeholder="Either deed or under hands as selected by the employer">
 										</div>
-                                        <div class="row">
+                                       </div><br>
+                                       <div class="row">
 										<div class="col-sm-6"></div>
 										
 										<div class="col-sm-6">
@@ -1848,15 +1855,37 @@
 							             
 										</div>
 									</div><br>
-									</div>
-									<div class="row">
+										<div class="row">
+										<div class="col-sm-6">Execution</div>
 										<div class="col-sm-6">
-											
+												<input type="text" name="" class="form-control" placeholder="Either deed or under hands as selected by the employer">
 										</div>
+                                      </div><br>
+									<div class="row">
+										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
 								               <input type="checkbox" name="" value="" class="filled-in" id="check14" >   <label for="check14">I Agree</label>
-							              </div>
-									</div>
+							             </div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6">Net  Contribution  Clause </div>
+										<div class="col-sm-6">
+												<input type="text" name="" class="form-control" placeholder="">
+										</div>
+                                       </div><br>
+                                       <div class="row">
+										<div class="col-sm-6"></div>
+										
+										<div class="col-sm-6">
+								              <select name="Sel"  class="form-control" >
+													<option value="" disabled selected>Select</option>
+													<option>Agreed  To  be  negotiated</option>
+													<option>Rejected  </option>
+													
+												</select>
+							             
+										</div>
+									</div><br>
 									<div class="row">
                                     
 										<div class="col-sm-6">	
@@ -1949,7 +1978,7 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="First Name">
+												<input type="text" name="" class="form-control" placeholder="First name">
 											</div>
 										</div>
 									</div>
@@ -1972,7 +2001,7 @@
 												<div class="input-group date" id="datepicker4" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
-													 <input class="form-control" type="text" placeholder="Select Year" readonly="readonly" name="date" >	  
+													 <input class="form-control" type="text" placeholder="Select year" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
 												
@@ -1987,7 +2016,7 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="First Name">
+												<input type="text" name="" class="form-control" placeholder="First name">
 											</div>
 										</div>
 									</div>
@@ -2010,7 +2039,7 @@
 												<div class="input-group date" id="datepicker10" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
-													 <input class="form-control" type="text" placeholder="Select Year" readonly="readonly" name="date" >	  
+													 <input class="form-control" type="text" placeholder="Select year" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
 												
@@ -2025,7 +2054,7 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="First Name">
+												<input type="text" name="" class="form-control" placeholder="First name">
 											</div>
 										</div>
 									</div>
@@ -2048,7 +2077,7 @@
 												<div class="input-group date" id="datepicker11" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
-													 <input class="form-control" type="text" placeholder="Select Year" readonly="readonly" name="date" >	  
+													 <input class="form-control" type="text" placeholder="Select year" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
 												
