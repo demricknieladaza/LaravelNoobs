@@ -153,3 +153,45 @@ input[type=number]::-webkit-outer-spin-button {
 .sliderloading {
   background: transparent url('http://thinkfuture.com/wp-content/uploads/2013/10/loading_spinner.gif') center no-repeat;
 }
+
+.rmarg {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+ul.user {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.user li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: white;
+  padding: 12px;
+  text-decoration: none;
+  width: 100%;
+  font-size: 18px;
+  color: black;
+  display: block;
+  position: relative;
+}
+
+
+ul.user li a:hover {
+  background-color: #fe7235;
+  color: white;
+  font-size:bold;
+}
+
+ul.user li a:focus {
+  background-color: #fe7235;
+  color: white;
+}
+
+.dropdown-menu {
+	border: none;
+	background: none;
+	padding: 0;
+}

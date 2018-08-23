@@ -1,7 +1,12 @@
 @extends('layouts.master')
 
 @section('content')
-
+    <style type="text/css">
+        @font-face {
+            font-family: bahnschrift;
+            src: url('{{ public_path('css\fonts\bahnschrift._semibold.tff') }}');
+        }
+    </style>
 
 
     <div id="home" class="container-fluid">
