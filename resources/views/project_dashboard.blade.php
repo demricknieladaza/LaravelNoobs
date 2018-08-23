@@ -608,20 +608,16 @@
 		    										</div>
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
-															<select name="insurances[]"  class="form-control" >
-																<option value="" disabled selected>Select Insurance</option>
-																<?php
-																$Service = array(
-																	"Professional","Indemnity","Public  Liability","Products  Liability","Employers  Liability" 
-																);
-																sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
-																foreach ($Service as $key ) {
-																    echo "<option value='".$key."'>".$key."</option>";
-																}
-
-																?>
-																<option value="other">Other</option>
-															</select>
+															<select name="insurance" class="form-control" onchange='Insurance(this.value);'> 
+																    <option value="" disabled selected>Select Insurance</option>  
+																    <option value="professional">Professional</option>
+																    <option value="indemnity">Indemnity</option>
+																    <option value="public liability">Public Liability</option>
+																    <option value="products liability">Products Liability</option>
+																    <option value="employers liability">Employers Liability</option>
+																    <option value="others">Others</option>
+																  </select>
+																  <input type="text" name="bonds" id="insurance" style='display:none;'/>
 															</div>
 															<div class="form-group">
 																<input type="number" placeholder="Insurance Level" name="insurance_level" class="form-control">
@@ -641,20 +637,16 @@
 		    										</div>
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
-															<select name="bonds[]"  class="form-control" >
-																<option value="" disabled selected>Select</option>
-																<?php
-																$Service = array(
-																	"Performance Bond", "Parent Company Guarantee","Tender/Bid Bond", "On Demand Bond", "Conditional/On  Default Bond"
-																);
-																sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
-																foreach ($Service as $key ) {
-																    echo "<option value='".$key."'>".$key."</option>";
-																}
-
-																?>
-																<option value="other">Other</option>
-															</select>
+															<select name="bonds" class="form-control" onchange='Bonds(this.value);'> 
+														    <option value="" disabled selected>Select Bonds </option>  
+														    <option value="performance bond">Performance Bond</option>
+														    <option value="parent company guarantee">Parent Company Guarantee</option>
+														    <option value="tender/bid bond">Tender/Bid Bond</option>
+														    <option value="on demand bond">On Demand Bond</option>
+														    <option value="conditional/on  default bond">Conditional/On  Default Bond</option>
+														    <option value="others">Others</option>
+														  </select>
+														  <input type="text" name="bonds" id="bonds" style='display:none;'/>
 															</div>
 															<div class="form-group">
 																<div class="cnt_bond">
@@ -1037,5 +1029,23 @@
 	        rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 16);
 	        this.rows = minRows + rows;
 	    });
+</script>
+<script type="text/javascript">
+	function Insurance(val){
+ var element=document.getElementById('insurance');
+ if(val=='Select Insurance'||val=='others')
+   element.style.display='block';
+ else  
+   element.style.display='none';
+	}
+</script>
+<script type="text/javascript">
+function Bonds(val){
+var element=document.getElementById('bonds');
+ if(val=='Select Bonds'||val=='others')
+   element.style.display='block';
+ else  
+   element.style.display='none';
+	}
 </script>
 @endsection

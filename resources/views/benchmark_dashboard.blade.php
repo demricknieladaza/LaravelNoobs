@@ -43,7 +43,7 @@
 						<option>Location 3</option>
 						<option>Location 4</option>
 					</select>
-					<a href="#" class="btn btn-default apply-dash-filter" id="cvalues-btn">Construction Values</a>
+					<a href="#" class="btn btn-default apply-dash-filter" id="cvalues-btn">Construction Value &nbsp<i class="fa fa-caret-down"></i></a>
 					<div class="dropdown-filter">
 						<input type="text" name="cvaluefrom" class="my-select-form drop-cvalue" placeholder="From">
 						<input type="text" name="cvalueto" class="my-select-form drop-cvalue" placeholder="To">

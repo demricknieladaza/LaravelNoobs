@@ -85,7 +85,7 @@
 								</div>
 								<div class="show-more">
 								    <a href="#">Show more</a>
-								 </div>
+								 </div><br>
 								</div>
 								<div class="textcont">
 								<p><b>Type of Use</b></p>
@@ -131,11 +131,10 @@
 								<div class="form-group">
 									<input type="text" name="location" class="form-control" placeholder="Enter your location">
 								</div>								
-								<div class="slidecontainer">
-								  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-								  <p>Value: <span id="demo"></span></p>
-								</div>
 								<div class="form-group">
+								  <input type="number" min="0" max="100" step="5">
+								</div>
+								<div class="formm-group">
 									<p><input type="submit" name="submit" value="Apply Filter" class="btn btn-lg btn-primary"></p>
 								</div>	
 							</form>
@@ -562,15 +561,7 @@
 		  $this.text(linkText);
 		});
 	</script>
-<script>
-var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
-output.innerHTML = slider.value;
-
-slider.oninput = function() {
-  output.innerHTML = this.value;
-}
-</script>
+	
 	<!-- end -->
 
 @endsection
