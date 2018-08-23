@@ -771,6 +771,9 @@
 															<div class="form-group">
 															<input type="file" class="form-control" name="documents_for_signature">
 															</div>
+															<div class="form-group">
+																<button type="button" class="btn btn-danger">Add another document </button>
+															</div>
 		    										</div>
 		    									</div>
 		    								</div>
