@@ -1,4 +1,4 @@
-header .nav li a{ color: #fff; font-size: 13px; font-weight: bold; padding: 40px 12px; text-transform: uppercase; letter-spacing: 1px; margin-right: 5px; }
+header .nav li a{ color: #fff; font-size: 13px; font-weight: bold; padding: 40px 12px; text-transform: uppercase; letter-spacing: 0; margin-right: 5px; }
 header{ background: #222; padding: 0; background: rgba(34, 34, 34, 0.5); position: fixed; width: 100%; z-index: 999999; top: 0; }
 .navbar{ margin-bottom: 0; }
 header .nav li a:hover, header .nav li a:focus{ color: #fe7235; background: none; } 
