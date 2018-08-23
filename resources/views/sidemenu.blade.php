@@ -7,7 +7,7 @@
 	<div class="clearfix"></div>
 	<ul class="nav lounge-nav">
 		<li>
-			<a href="{{ url('dashboard') }}" class="menu-title policies-link">Dashboards</a>
+			<a href="#" class="menu-title ">Dashboards</a>
 			<ul>
 				<li><a href="{{ url('/dashboard/emp_dashboard') }}"><i class="fa fa-circle-o"></i> Employer Dashboard</a></li>
 				<li><a href="{{ url('/dashboard/tend_dashboard') }}"><i class="fa fa-circle-o"></i> Tenderer Dashboard</a></li>
@@ -16,7 +16,7 @@
 		</li>
 		
 		<li>
-			<a href="#" class="menu-title policies-link">My Profile</a>
+			<a href="#" class="menu-title ">My Profile</a>
 			<ul>
 				<li><a href="#"><i class="fa fa-circle-o"></i> Organisation</a></li>
 				<li><a href="#"><i class="fa fa-circle-o"></i> Individuals</a></li>
