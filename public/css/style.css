@@ -2008,3 +2008,24 @@ body > div.container-fluid.price-section > div:nth-child(1) > div > div.col-sm-8
     padding: 0px;
 }
 
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(5) > div > table > thead > tr > th:nth-child(1),
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(5) > div > table > thead > tr > th:nth-child(2),
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(5) > div > table > thead > tr > th:nth-child(3),
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(5) > div > table > thead > tr > th:nth-child(4),
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(5) > div > table > thead > tr > th:nth-child(5),
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(5) > div > table > thead > tr > th:nth-child(6),
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(5) > div > table > thead > tr > th:nth-child(7),
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(5) > div > table > thead > tr > th:nth-child(8),
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(5) > div > table > thead > tr > th:nth-child(9),
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(5) > div > table > thead > tr > th:nth-child(10),
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(5) > div > table > thead > tr > th:nth-child(11),
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(5) > div > table > thead > tr > th:nth-child(12),
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(5) > div > table > thead > tr > th:nth-child(13),
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(3) > div > table > thead > tr > th:nth-child(1),
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(3) > div > table > thead > tr > th:nth-child(2),
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(3) > div > table > thead > tr > th:nth-child(3),
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(3) > div > table > thead > tr > th:nth-child(4),
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(3) > div > table > thead > tr > th:nth-child(5),
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(3) > div > table > thead > tr > th:nth-child(6){
+    color: black;
+}

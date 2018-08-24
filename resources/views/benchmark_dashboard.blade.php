@@ -156,7 +156,7 @@
 					<h3><span>Dataset</span></h3>
 					<div class="col-sm-12">						
 						<table class="table table-striped table-hover">
-							<thead>
+							<thead style="color:black;">
 								<tr>
 									<th></th>
 									<th></th>
