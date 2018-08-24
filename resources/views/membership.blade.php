@@ -36,8 +36,13 @@
                       <div class="panel panel-default" style="border-color: transparent; ">
                           <div class="panel-heading" style="background: transparent;color: transparent;">
                               <div class="row">
-                                  <h3 class="text-center">Payment Details</h3>
-                                  <img class="img-responsive cc-img" src="http://www.prepbootstrap.com/Content/images/shared/misc/creditcardicons.png">
+                                  <h3 class="text-center" style="color:black; margin-bottom: 5px;">Payment Details</h3>
+                                  <div class="text-center">
+                                    <img src="https://my.fastcomet.com/images/icons/payments/payment-AmericanExpress.png">
+                                    <img src="https://my.fastcomet.com/images/icons/payments/payment-Visa.png">
+                                    <img src="https://my.fastcomet.com/images/icons/payments/payment-MasterCard.png">
+                                    <img src="https://my.fastcomet.com/images/icons/payments/payment-discover.png">
+                                  </div>
                               </div>
                           </div>
                           <div class="panel-body">

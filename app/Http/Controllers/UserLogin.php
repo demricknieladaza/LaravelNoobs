@@ -21,6 +21,7 @@ class UserLogin extends Controller
     	if($user){
     		if (Hash::check($request->get('password'), $user->password)) {
                 $request->session()->put('fullname',$user->fullname);
+                $request->session()->put('id',$user->id);
                 // return redirect('/');
     		    return response()->json(['success'=> "naa"]);
     		}

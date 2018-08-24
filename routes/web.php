@@ -41,6 +41,8 @@ Route::get('logout', 'UserLogin@logout');
 
 Route::resource('register','UserAccountsController');
 
+Route::resource('addCountrys','Useradd@addCountry');
+
 Route::get('/dashboard/tend_dashboard/active_page', 'UsersController@active_page_controller');
 
 Route::get('/dashboard/tend_dashboard/success_page', 'UsersController@success_page_controller');
