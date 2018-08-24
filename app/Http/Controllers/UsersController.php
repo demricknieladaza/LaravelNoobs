@@ -120,8 +120,20 @@ class UsersController extends Controller
     {
         return view('users');
     }
-    public function company_controller()
+    public function comp_orga_controller()
     {
-        return view('company');
+        return view('comp_orga');
+    }
+    public function comp_indi_controller()
+    {
+        return view('comp_indi');
+    }
+     public function organisation_controller()
+    {
+        return view('organisation');
+    }
+     public function individuals_controller()
+    {
+        return view('individuals');
     }
 }

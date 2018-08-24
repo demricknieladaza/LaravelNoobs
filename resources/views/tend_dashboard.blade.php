@@ -739,19 +739,17 @@
 							<div style="width: 1000px;" class="container">
 							    <div class="row">
 							        <div class="col-md-6">
+							        	<div class="form-inline" id="performanceDropDown" style="padding-bottom: 20px">
+							        		<select id="dps" class="form-control" style="vertical-align: middle; display: inline-block; width:auto;">
+							        		  <option value="100">6 months</option>
+							        		  <option value="1000">1 year</option>
+							        		  <option value="5000">2 years</option>
+							        		  <option value="50000" selected="selected">5 years</option>
+							        		</select>
+							        		<button class="btn btn-success canvasjsEvent" id="renderChart" data-gaevent="{&quot;category&quot;:&quot;Misc&quot;, &quot;action&quot;: &quot;PerformanceTest&quot;, &quot;label&quot; : &quot;Render&quot;, &quot;value&quot;:1}">Render Chart</button>
+							        	</div>
 							            <div class="panel panel-default">
-							                <div id="chart2" class="panel-body">
-							                </div>
-							            </div>
-							        </div>
-							    </div>
-							</div>
-							<div style="width: 1000px;" class="container">
-							    <div class="row">
-							        <div class="col-md-6">
-							            <div class="panel panel-default">
-							                <div id="chart1" class="panel-body">
-							                </div>
+							                <div id="chartContainers" style="height: 300px; width: 110%;"></div>
 							            </div>
 							        </div>
 							    </div>   
@@ -760,8 +758,7 @@
 							    <div class="row">
 							        <div class="col-md-6">
 							            <div class="panel panel-default">
-							                <div id="chartContainer" style="height: 300px; width: 100%;">
-							                </div>
+							            	<div id="chartContainer" style="height: 300px; width: 110%;">
 							            </div>
 							        </div>
 							    </div>   

@@ -1133,6 +1133,8 @@ input[type=range]::-ms-thumb {
  body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(1) > div{
     margin-bottom: -24px;
 }
+
+.tender-container .gids tbody tr td:first-child{ color: #000; }
  .tender-details .media a h3, .owl-div a h3 {
     color: rgb(40,80,128);
 } 
@@ -1590,7 +1592,7 @@ textarea{
 
 div.ex3 {
     /*background-color: lightblue;*/
-    width: 242px;
+    width: 260px;
     height: 360px;
     overflow: auto;
     margin-left: -10px;
@@ -2028,4 +2030,10 @@ body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.
 body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(3) > div > table > thead > tr > th:nth-child(5),
 body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(3) > div > table > thead > tr > th:nth-child(6){
     color: black;
+}
+
+.chart-container {
+  width:  80%;
+  height: 480px;
+  margin: 0 auto;
 }

@@ -782,7 +782,7 @@
 		    					</div>
 		    					<div id="section31" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Evaluation Settings</h3>
-		    						<table class="table table-striped table-hover" id="customers">
+		    						<table class="table table-striped table-hover gids" id="customers">
 									  <tr>
 									    <th>Factors</th>
 									    <th>Importance</th>
