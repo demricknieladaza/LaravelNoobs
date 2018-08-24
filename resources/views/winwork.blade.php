@@ -132,7 +132,7 @@
 									<input type="text" name="location" class="form-control" placeholder="Enter your location">
 								</div>								
 								<div class="form-group">
-								  <input type="number" min="0" max="100" step="5">
+								  
 								</div>
 								<div class="formm-group">
 									<p><input type="submit" name="submit" value="Apply Filter" class="btn btn-lg btn-primary"></p>
