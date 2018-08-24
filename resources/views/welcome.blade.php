@@ -303,10 +303,10 @@
                                 <tr>
                                     <td class="empty-cell"></td>
                                     <td class="blue-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>(&pound;/mo)</td>
-                                                <td>&pound;/year</td>
+                                        <table class="table table-condensed " >
+                                            <tr >
+                                                <td colspan="2">Monthly Plan &nbsp Annual Plan<br>&nbsp&nbsp&nbsp&nbsp(&pound;/mo) &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp(&pound;/year)</td>
+                                              
                                             </tr>
                                         </table>
                                     </td>

@@ -1717,6 +1717,10 @@ body > div:nth-child(15) > div > div > div.row{
 }
 
 .angkol{
+    border: 1px solid;
+    /* padding: 10px; */
+    box-shadow: 3px 5px;
+    color: grey;
     border:0px solid;
     background:#fe7235;
     width:110px;
@@ -1729,6 +1733,10 @@ body > div:nth-child(15) > div > div > div.row{
      padding-left:15px; 
 }
 .ante{
+    border: 1px solid;
+    /* padding: 10px; */
+    box-shadow: 3px 5px;
+    color: grey;
     border:0px solid;
     background:#fe7235;
     width:110px;
@@ -1743,6 +1751,10 @@ body > div:nth-child(15) > div > div > div.row{
      padding-left:32px; 
 }
 .ate{
+    border: 1px solid;
+    /* padding: 10px; */
+    box-shadow: 3px 5px;
+    color: grey;
     border:0px solid;
     background:#fe7235;
     width:110px;
@@ -1762,8 +1774,9 @@ body > div:nth-child(15) > div > div > div.row{
     margin-top: 32px;
   padding: 11px 
 }
-.button{
-   
+.nanay{
+    border: 1px solid;
+    box-shadow: 3px 5px grey;
     width: 369px;
     margin-left: 4px;
     padding: 9px;
@@ -1774,7 +1787,10 @@ body > div:nth-child(15) > div > div > div.row{
     font-family: arial
 }
 .button5{
-        background-color: #fe7235;
+    border: 1px solid;
+    /* padding: 10px; */
+    box-shadow: 2px 2px grey;
+    background-color: #fe7235;
     border: none;
     color: white;
     padding: 50px;
@@ -1988,3 +2004,7 @@ body > div.container-fluid.lounge-wrapper > div.row > div.col-sm-10.col-sm-offse
     background-color: #C65911;
     color: white;
 }
+body > div.container-fluid.price-section > div:nth-child(1) > div > div.col-sm-8.col-sm-offset-1 > div.priceplan.plan5 > table > thead > tr:nth-child(2) > td.blue-cell > table > tbody > tr > td{
+    padding: 0px;
+}
+

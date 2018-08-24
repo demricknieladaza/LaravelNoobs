@@ -84,7 +84,7 @@
 												<input class="kuya" type="text" name="project" placeholder="Project Title">
 											</div>
 											 <div class="">
-												<button class="button">Publish New Project</button>
+												<button class="button nanay">Publish New Project</button>
 											</div>
 										</div>
 										<div class="col-sm-3">
