@@ -158,6 +158,21 @@
 						<table class="table table-striped table-hover">
 							<thead>
 								<tr>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th style="text-align: right;">RIBA</th>
+									<th style="text-align: left;">Stages</th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+								</tr>
+								<tr>
 									<th>Project ID</th>
 									<th>Location</th>
 									<th>Construction Value</th>

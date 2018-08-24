@@ -511,12 +511,12 @@
 	    			<button class="btn">Export to MS Excel</button>
 					</div>
 				</div>	
-				<div id="section4" class="tab-pane fade tender-container" style="padding-top:0;margin-left:auto;margin-right:auto;width:1040px;">
+				<div id="section4" class="tab-pane fade tender-container" style="padding-top:0;margin-left:auto;margin-right:auto;width:1390px;">
 					<div class="row" style="margin: 25px;">
 		    	<div class="">
 		    		<div class="row">
 		    			<div class="col-sm-3">
-		    				<div class="tender-container">
+		    				<div class="tender-container" id="mama">
 		    					<ul class="nav bid-form-nav">
 		    						<li class="active"><a data-toggle="tab" href="#section11">Scope</a></li>
 		    						<li><a data-toggle="tab" href="#section21">Appointment</a></li>
@@ -782,7 +782,7 @@
 		    					</div>
 		    					<div id="section31" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Evaluation Settings</h3>
-		    						<table id="customers">
+		    						<table class="table table-striped table-hover" id="customers">
 									  <tr>
 									    <th>Factors</th>
 									    <th>Importance</th>
@@ -792,7 +792,7 @@
 									    <th>Importance</th>
 									  </tr>
 									  <tr>
-									  	<td>Qualitative</td>
+									  	<td class="qua" style="color: black;">Qualitative</td>
 									  	<td>30%</td>
 									  	<td>Oraganisation</td>
 									    <td>30%</td>
@@ -800,156 +800,228 @@
 									    <td></td>
 									  </tr>
 									  <tr>
-									  	<td></td>
-									  	<td></td>
-									  	<td></td>
-									    <td></td>
+									  	<td rowspan="19"></td>
+									  	<td rowspan="19"></td>
+									  	<td rowspan="5"></td>
+									    <td rowspan="5"></td>
 									    <td>Variety of Services</td>
 									    <td></td>
 									  </tr>
 									  <tr>
-									  	<td></td>
-									  	<td></td>
-									  	<td></td>
-									    <td></td>
+									  	{{-- <td></td>
+									  	<td></td> --}}
+									  	{{-- <td></td>
+									    <td></td> --}}
 									    <td>Awards</td>
 									    <td></td>
 									  </tr>
 									  <tr>
-									  	<td></td>
-									  	<td></td>
-									  	<td></td>
-									    <td></td>
+									  	{{-- <td></td>
+									  	<td></td> --}}
+									  	{{-- <td></td>
+									    <td></td> --}}
 									    <td>Accreditations</td>
 									    <td></td>
 									  </tr>
 									  <tr>
-									  	<td></td>
-									  	<td></td>
-									  	<td></td>
-									    <td></td>
+									  	{{-- <td></td>
+									  	<td></td> --}}
+									  	{{-- <td></td>
+									    <td></td> --}}
 									    <td>Relationship to<br>Employer</td>
 									    <td></td>
 									  </tr>
 									  <tr>
-									  	<td></td>
-									  	<td></td>
-									  	<td></td>
-									    <td></td>
+									  	{{-- <td></td>
+									  	<td></td> --}}
+									  	{{-- <td></td>
+									    <td></td> --}}
 									    <td><b>Total</b></td>
 									    <td><b>100%</b></td>
 									  </tr>
 									  <tr>
-									  	<td></td>
-									  	<td></td>
+									  	{{-- <td></td>
+									  	<td></td> --}}
 									  	<td>Individuals</td>
 									    <td>70%</td>
-									    <td></td>
+									    <td>Project Experience</td>
 									    <td></td>
 									  </tr>
 									  <tr>
-									  	<td></td>
-									  	<td></td>
-									  	<td></td>
+									  	{{-- <td></td>
+									  	<td></td> --}}
+									  	<td rowspan="12"></td>
+									    <td rowspan="12"></td>
+									    <td>Years of relevant<br>Experience</td>
 									    <td></td>
+									  </tr>
+									  <tr>
+									  	{{-- <td></td>
+									  	<td></td> --}}
+									  	{{-- <td></td>
+									    <td></td> --}}
+									    <td>Industry Experience</td>
+									    <td></td>
+									  </tr>
+									  <tr>
+									  	{{-- <td></td>
+									  	<td></td> --}}
+									  	{{-- <td></td>
+									    <td></td> --}}
 									    <td>Awards</td>
 									    <td></td>
 									  </tr>
 									  <tr>
-									  	<td></td>
-									  	<td></td>
-									  	<td></td>
-									    <td></td>
-									    <td>Awards</td>
-									    <td></td>
-									  </tr>
-									  <tr>
-									  	<td></td>
-									  	<td></td>
-									  	<td></td>
-									    <td></td>
-									    <td>Awards</td>
+									  	{{-- <td></td>
+									  	<td></td> --}}
+									  	{{-- <td></td>
+									    <td></td> --}}
+									    <td>Accreditations</td>
 									    <td></td>
 									  </tr>
 									  <tr>
-									  	<td></td>
-									  	<td></td>
-									  	<td></td>
-									    <td></td>
-									    <td>Awards</td>
-									    <td></td>
-									  </tr>
-									  <tr>
-									  	<td></td>
-									  	<td></td>
-									  	<td></td>
-									    <td></td>
-									    <td>Awards</td>
+									  {{-- 	<td></td>
+									  	<td></td> --}}
+									  	{{-- <td></td>
+									    <td></td> --}}
+									    <td>Relationship to<br>Employer</td>
 									    <td></td>
 									  </tr>
 									  <tr>
-									  	<td></td>
-									  	<td></td>
-									  	<td></td>
-									    <td></td>
-									    <td>Awards</td>
-									    <td></td>
-									  </tr>
-									  <tr>
-									  	<td></td>
-									  	<td></td>
-									  	<td></td>
-									    <td></td>
-									    <td>Awards</td>
+									  	{{-- <td></td>
+									  	<td></td> --}}
+									  	{{-- <td></td>
+									    <td></td> --}}
+									    <td>Communication Skills</td>
 									    <td></td>
 									  </tr>
 									  <tr>
-									  	<td></td>
-									  	<td></td>
-									  	<td></td>
-									    <td></td>
-									    <td>Awards</td>
-									    <td></td>
-									  </tr>
-									  <tr>
-									  	<td></td>
-									  	<td></td>
-									  	<td></td>
-									    <td></td>
-									    <td>Awards</td>
+									  	{{-- <td></td>
+									  	<td></td> --}}
+									  	{{-- <td></td>
+									    <td></td> --}}
+									    <td>People Management</td>
 									    <td></td>
 									  </tr>
 									  <tr>
-									  	<td></td>
-									  	<td></td>
-									  	<td></td>
-									    <td></td>
-									    <td>Awards</td>
-									    <td></td>
-									  </tr>
-									  <tr>
-									  	<td></td>
-									  	<td></td>
-									  	<td></td>
-									    <td></td>
-									    <td>Awards</td>
+									  	{{-- <td></td>
+									  	<td></td> --}}
+									  	{{-- <td></td>
+									    <td></td> --}}
+									    <td>Time Management</td>
 									    <td></td>
 									  </tr>
 									  <tr>
-									  	<td></td>
-									  	<td></td>
-									  	<td></td>
-									    <td></td>
-									    <td>Awards</td>
+									  	{{-- <td></td>
+									  	<td></td> --}}
+									  	{{-- <td></td>
+									    <td></td> --}}
+									    <td>Pro-Active</td>
 									    <td></td>
 									  </tr>
 									  <tr>
-									  	<td></td>
-									  	<td></td>
+									  	{{-- <td></td>
+									  	<td></td> --}}
+									  	{{-- <td></td>
+									    <td></td> --}}
+									    <td>Social Behaviour</td>
+									    <td></td>
+									  </tr>
+									  <tr>
+									  	{{-- <td></td>
+									  	<td></td> --}}
+									  	{{-- <td></td>
+									    <td></td> --}}
+									    <td>Technical 'Hard' Skills</td>
+									    <td></td>
+									  </tr>
+									  <tr>
+									  	{{-- <td></td>
+									  	<td></td> --}}
+									  	{{-- <td></td>
+									    <td></td> --}}
+									    <td><b>Total</b></td>
+									    <td><b>100%</b></td>
+									  </tr>
+									  <tr>
+									  	{{-- <td></td>
+									  	<td></td> --}}
+									  	<td><b>Total</b></td>
+									    <td><b>100%</b></td>
+									    <td rowspan="9"></td>
+									    <td rowspan="9"></td>
+									  </tr>
+									  <tr>
+									  	<td>Quantitave</td>
+									  	<td>40%</td>
 									  	<td></td>
 									    <td></td>
-									    <td>Awards</td>
+									    {{-- <td></td>
+									    <td></td> --}}
+									  </tr>
+									  <tr>
+									  	<td>Risk</td>
+									  	<td>30%</td>
+									  	<td></td>
 									    <td></td>
+									    {{-- <td></td>
+									    <td></td> --}}
+									  </tr>
+									  <tr>
+									  	<td rowspan="6"></td>
+									  	<td rowspan="6"></td>
+									  	<td>Insurances</td>
+									    <td></td>
+									    {{-- <td></td>
+									    <td></td> --}}
+									  </tr>
+									  <tr>
+									  	{{-- <td></td>
+									  	<td></td> --}}
+									  	<td>Bonds</td>
+									    <td></td>
+									    {{-- <td></td>
+									    <td></td> --}}
+									  </tr>
+									  <tr>
+									  	{{-- <td></td>
+									  	<td></td> --}}
+									  	<td>3rd Parties</td>
+									    <td></td>
+									    {{-- <td></td>
+									    <td></td> --}}
+									  </tr>
+									  <tr>
+									  	{{-- <td></td>
+									  	<td></td> --}}
+									  	<td>Limit of <br>Liability</td>
+									    <td></td>
+									    {{-- <td></td>
+									    <td></td> --}}
+									  </tr>
+									  <tr>
+									  	{{-- <td></td>
+									  	<td></td> --}}
+									  	<td>Net<br>Contribution<br>Clause</td>
+									    <td></td>
+									    {{-- <td></td>
+									    <td></td> --}}
+									  </tr>
+									  <tr>
+									  	{{-- <td></td>
+									  	<td></td> --}}
+									  	<td rowspan="1"><b>Total</b></td>
+									    <td rowspan="1"><b>100%</b></td>
+									    {{-- <td></td>
+									    <td></td> --}}
+									  </tr>
+									  <tr>
+									  	<td><b>Total</b></td>
+									  	<td><b>100%</b></td>
+									  	{{-- <td></td>
+									    <td></td> --}}
+									    {{-- <td></td>
+									    <td></td> --}}
 									  </tr>
 									</table>
 		    					</div>
