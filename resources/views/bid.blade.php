@@ -250,7 +250,7 @@
 												<select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select service</option>
 													<option>Architect</option>
-													<option>Sturctural Engineed</option>
+													<option>Structural Engineer</option>
 													<option>Service Engineer</option>
 													<option>Fire Engineer</option>
 													<option>Acoustic Engineer</option>
@@ -259,11 +259,10 @@
 													<option>Building Control</option>
 													<option>Lighting Consultant</option>
 													<option>Security Consultant</option>
-													<option>Plannning Consultant</option>
+													<option>Planning Consultant</option>
 													<option>Sustainability Consultant</option>
 													<option>BIM Consultant</option>
-													<option>Quantity Survueyor</option>
-													<option>Project Manager</option>
+													<option>Quantity Surveyor</option>
 													<option>Project Manager</option>
 													<option>Other</option>
 												</select>
@@ -366,7 +365,7 @@
 												<select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select Service</option>
 													<option>Architect</option>
-													<option>Sturctural Engineed</option>
+													<option>Structural Engineer</option>
 													<option>Service Engineer</option>
 													<option>Fire Engineer</option>
 													<option>Acoustic Engineer</option>
@@ -375,11 +374,10 @@
 													<option>Building Control</option>
 													<option>Lighting Consultant</option>
 													<option>Security Consultant</option>
-													<option>Plannning Consultant</option>
+													<option>Planning Consultant</option>
 													<option>Sustainability Consultant</option>
 													<option>BIM Consultant</option>
-													<option>Quantity Survueyor</option>
-													<option>Project Manager</option>
+													<option>Quantity Surveyor</option>
 													<option>Project Manager</option>
 													<option>Other</option>
 												</select>
@@ -426,7 +424,7 @@
 												<select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select Project Team Member</option>
 													<option>Architect</option>
-													<option>Sturctural Engineed</option>
+													<option>Structural Engineer</option>
 													<option>Service Engineer</option>
 													<option>Fire Engineer</option>
 													<option>Acoustic Engineer</option>
@@ -435,20 +433,18 @@
 													<option>Building Control</option>
 													<option>Lighting Consultant</option>
 													<option>Security Consultant</option>
-													<option>Plannning Consultant</option>
+													<option>Planning Consultant</option>
 													<option>Sustainability Consultant</option>
 													<option>BIM Consultant</option>
-													<option>Quantity Survueyor</option>
+													<option>Quantity Surveyor</option>
 													<option>Project Manager</option>
-													<option>Project Manager</option>
-													<option>Other</option>
 												</select>
 											</div>
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select Company</option>
 													<option>Architect</option>
-													<option>Sturctural Engineed</option>
+													<option>Structural Engineer</option>
 													<option>Service Engineer</option>
 													<option>Other</option>
 												</select>
@@ -770,7 +766,7 @@
 												<select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select service</option>
 													<option>Architect</option>
-													<option>Sturctural Engineed</option>
+													<option>Structural Engineer</option>
 													<option>Service Engineer</option>
 													<option>Fire Engineer</option>
 													<option>Acoustic Engineer</option>
@@ -878,7 +874,7 @@
 												<select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select service</option>
 													<option>Architect</option>
-													<option>Sturctural Engineed</option>
+													<option>Structural Engineer</option>
 													<option>Service Engineer</option>
 													<option>Fire Engineer</option>
 													<option>Acoustic Engineer</option>
@@ -986,7 +982,7 @@
 												<select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select project team member</option>
 													<option>Architect</option>
-													<option>Sturctural Engineed</option>
+													<option>Structural Engineer</option>
 													<option>Service Engineer</option>
 													<option>Fire Engineer</option>
 													<option>Acoustic Engineer</option>
