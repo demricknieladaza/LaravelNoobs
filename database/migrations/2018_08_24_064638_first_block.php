@@ -15,7 +15,7 @@ class FirstBlock extends Migration
     {
         Schema::create('first_block', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('uid');
+            $table->srting('uid');
             $table->string('data_name');
             $table->string('status');
             $table->timestamps();
