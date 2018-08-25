@@ -245,7 +245,12 @@
         });
     </script>
     
-
+    <style type="text/css">
+        @font-face {
+            font-family: bahnschrift;
+            src: url('http://devscope.taskstogo.com/css/fonts/bahnschrift.ttf') }}');
+        }
+    </style>
 	<style>
         .dropdown-content {
             display: none;
