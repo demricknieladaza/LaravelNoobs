@@ -57,4 +57,10 @@ Route::get('/dashboard/membership', 'UsersController@membership_controller');
 
 Route::get('/dashboard/users', 'UsersController@users_controller');
 
-Route::get('/dashboard/company', 'UsersController@company_controller');
+Route::get('/dashboard/comp_orga', 'UsersController@comp_orga_controller');
+
+Route::get('/dashboard/comp_indi', 'UsersController@comp_indi_controller');
+
+Route::get('/dashboard/organisation', 'UsersController@organisation_controller');
+
+Route::get('/dashboard/individuals', 'UsersController@individuals_controller');

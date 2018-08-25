@@ -36,7 +36,216 @@
 	<!-- <script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/jquery-1.11.1.min.js"></script> -->
 	<script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="{{asset('css/owl.carousel.css')}}">
-	<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+    <script>
+    window.onload = function () {
+
+    var chart = new CanvasJS.Chart("chartContainer",
+        {
+          title:{
+            text: "Unsuccessful Tenders (Reasons)"
+          
+          },   
+          data: [{        
+            type: "column",
+            name: "Quantitative",
+            showInLegend: true,
+            dataPoints: [
+            { x: 10, y: 171 },
+            { x: 20, y: 155},
+            { x: 30, y: 150 },
+            { x: 40, y: 165 },
+            { x: 50, y: 195 },
+            { x: 60, y: 168 },
+            { x: 70, y: 128 },
+            { x: 80, y: 134 },
+            { x: 90, y: 114}
+            ]
+          },
+          {        
+            type: "column",
+            name: "Qualitative",
+            showInLegend: true,
+            dataPoints: [
+            { x: 10, y: 71 },
+            { x: 20, y: 55},
+            { x: 30, y: 50 },
+            { x: 40, y: 65 },
+            { x: 50, y: 95 },
+            { x: 60, y: 68 },
+            { x: 70, y: 28 },
+            { x: 80, y: 34 },
+            { x: 90, y: 14}
+            ]
+          },
+          {        
+            type: "column",
+            name: "Risk",
+            showInLegend: true,
+            dataPoints: [
+            { x: 10, y: 71 },
+            { x: 20, y: 55},
+            { x: 30, y: 50 },
+            { x: 40, y: 65 },
+            { x: 50, y: 95 },
+            { x: 60, y: 68 },
+            { x: 70, y: 28 },
+            { x: 80, y: 34 },
+            { x: 90, y: 14}
+            ]
+          }        
+          ]
+        });
+
+        chart.render();
+
+    var charter = new CanvasJS.Chart("chartContainers", {
+        animationEnabled: true,
+        title:{
+            text: "Tenderer Overview"
+        },
+        axisX: {
+            valueFormatString: "DD MMM,YY"
+        },
+        axisY: {
+            title: "",
+            includeZero: false,
+            suffix: " "
+        },
+        legend:{
+            cursor: "pointer",
+            fontSize: 16,
+            itemclick: toggleDataSeries
+        },
+        toolTip:{
+            shared: true
+        },
+        data: [{
+            name: "Successful",
+            type: "spline",
+            yValueFormatString: "#0.## ",
+            showInLegend: true,
+            dataPoints: [
+                { x: new Date(2017,1,24), y: 31 },
+                { x: new Date(2017,2,25), y: 31 },
+                { x: new Date(2017,3,26), y: 29 },
+                { x: new Date(2017,4,27), y: 29 },
+                { x: new Date(2017,5,28), y: 31 },
+                { x: new Date(2017,6,29), y: 30 },
+                { x: new Date(2017,7,30), y: 21 },
+                { x: new Date(2017,8,21), y: 20 },
+                { x: new Date(2017,9,22), y: 26 },
+                { x: new Date(2017,10,23), y: 20 },
+                { x: new Date(2017,11,25), y: 22 },
+                { x: new Date(2017,12,28), y: 24 }
+            ]
+        },
+        {
+            name: "Unuccessful",
+            type: "spline",
+            yValueFormatString: "#0.## ",
+            showInLegend: true,
+            dataPoints: [
+                { x: new Date(2017,1,24), y: 40 },
+                { x: new Date(2017,2,25), y: 30 },
+                { x: new Date(2017,3,26), y: 21 },
+                { x: new Date(2017,4,27), y: 24 },
+                { x: new Date(2017,5,28), y: 32 },
+                { x: new Date(2017,6,29), y: 38 },
+                { x: new Date(2017,7,30), y: 29 },
+                { x: new Date(2017,8,21), y: 22 },
+                { x: new Date(2017,9,22), y: 18 },
+                { x: new Date(2017,10,23), y: 10 },
+                { x: new Date(2017,11,25), y: 35 },
+                { x: new Date(2017,12,28), y: 31 }
+            ]
+        },
+        {
+            name: "Total",
+            type: "spline",
+            yValueFormatString: "#0.## ",
+            showInLegend: true,
+            dataPoints: [
+                { x: new Date(2017,1,24), y: 31 },
+                { x: new Date(2017,2,25), y: 22 },
+                { x: new Date(2017,3,26), y: 26 },
+                { x: new Date(2017,4,27), y: 15 },
+                { x: new Date(2017,5,28), y: 11 },
+                { x: new Date(2017,6,29), y: 20 },
+                { x: new Date(2017,7,30), y: 11 },
+                { x: new Date(2017,8,21), y: 10 },
+                { x: new Date(2017,9,22), y: 16 },
+                { x: new Date(2017,10,23), y: 18 },
+                { x: new Date(2017,11,25), y: 20 },
+                { x: new Date(2017,12,28), y: 22 }
+            ]
+        }]
+    });
+    charter.render();
+
+    function toggleDataSeries(e){
+        if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+            e.dataSeries.visible = false;
+        }
+        else{
+            e.dataSeries.visible = true;
+        }
+        chart.render();
+        }
+    }
+    </script>
+
+    <script type="text/javascript">
+        var densityCanvas = document.getElementById("densityChart");
+
+        Chart.defaults.global.defaultFontFamily = "Lato";
+        Chart.defaults.global.defaultFontSize = 18;
+
+        var densityData = {
+          label: 'Density of Planet (kg/m3)',
+          data: [5427, 5243, 5514, 3933, 1326, 687, 1271, 1638],
+          backgroundColor: 'rgba(0, 99, 132, 0.6)',
+          borderWidth: 0,
+          yAxisID: "y-axis-density"
+        };
+
+        var gravityData = {
+          label: 'Gravity of Planet (m/s2)',
+          data: [3.7, 8.9, 9.8, 3.7, 23.1, 9.0, 8.7, 11.0],
+          backgroundColor: 'rgba(99, 132, 0, 0.6)',
+          borderWidth: 0,
+          yAxisID: "y-axis-gravity"
+        };
+
+        var planetData = {
+          labels: ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"],
+          datasets: [densityData, gravityData]
+        };
+
+        var chartOptions = {
+          scales: {
+            xAxes: [{
+              barPercentage: 1,
+              categoryPercentage: 0.6
+            }],
+            yAxes: [{
+              id: "y-axis-density"
+            }, {
+              id: "y-axis-gravity"
+            }]
+          }
+        };
+
+        var barChart = new Chart(densityCanvas, {
+          type: 'bar',
+          data: planetData,
+          options: chartOptions
+        });
+    </script>
+    
+
 	<style>
         .dropdown-content {
             display: none;
@@ -579,71 +788,7 @@
     });
 </script>
 
-<script type="text/javascript">
-    jQuery(function ($) {
-        var data4 = [12, 3, 4, 2, 12, 3, 4, 17, 22, 34, 54, 67];
-        var data5 = [3, 9, 12, 14, 22, 32, 45, 12, 67, 45, 55, 7];
-        var data3 = [23, 19, 11, 134, 242, 352, 435, 22, 637, 445, 555, 57];
 
-        $("#chart1").shieldChart({
-            exportOptions: {
-                image: false,
-                print: false
-            },
-            axisY: {
-                title: {
-                    text: "Break-Down for selected quarter"
-                }
-            },
-            dataSeries: [{
-                seriesType: "bar",
-                data: data4
-            }, {
-                seriesType: "bar",
-                data: data5
-            }, {
-                seriesType: "bar",
-                data: data3
-            }]
-        });
-    });
-</script>
-<script type="text/javascript">
-  window.onload = function () {
-    var chart = new CanvasJS.Chart("chartContainer",
-    {
-      title:{
-        text: "Understanding Legend"
-      },
-
-      
-      
-     data: [
-     {
-      type: "line",
-      showInLegend: true,
-      legendText: "Numbers",
-      dataPoints: [
-      {label: "Jan", y: 230 },
-      {label: "Feb", y: 245},
-      {label: "Mar", y: 345},
-      {label: "Apr", y: 367 },
-      {label: "May", y: 453 },
-      {label: "Jun", y: 256 },
-      {label: "Jul", y: 478},
-      {label: "Aug", y: 543 },      
-      {label: "Sep", y: 456 },
-      {label: "Oct", y: 456 },
-      {label: "Nov", y: 456 },
-      {label: "Dec", y: 456 }
-      ]
-    }
-    ]
-  });
-
-    chart.render();
-  }
-  </script>
 
 
     <!-- Dashboard -->
