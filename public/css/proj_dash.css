@@ -195,3 +195,44 @@ ul.user li a:focus {
 	background: none;
 	padding: 0;
 }
+
+.pricing-title {
+	text-align: center;
+	padding-right: 5px;
+	border: 1px solid ;
+	color: white;
+}
+
+.pricing-body-title h4 {
+    font-size: small;
+    word-break: break-word;
+    text-align: center;
+}
+
+.pricing-body .col-sm-6 {
+	padding-left: 0;padding-right: 0;
+}
+
+.pcard {
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;
+	padding: 10px;
+	height: 400px;
+}
+
+.card-head {
+	text-align: center;
+}
+
+.card-body {
+	margin-top: 15px;
+}
+
+.card-body p {
+	text-align: center;
+}
+
+.pbtn {
+	background: #E2EFDA;
+	border: 1px solid #00b050;
+	color: #00b050;
+}

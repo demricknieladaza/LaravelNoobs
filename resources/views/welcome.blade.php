@@ -257,852 +257,243 @@
     </div>
     <div class="container-fluid price-section">
         <div class="container">
-            <div class="row">
+            <div class="row" style="margin-top:45px;">
                 <div class="col-sm-3 khalifa">
                     <input type="range" orient="vertical" name="range" id="range" min="0" max="25" step="5" value="5"/> 
                     <output for="range" class="output"></output>
                     <div class="discount0"></div>
                     <div class="plan-discount discount5">   
                         <h3>Discount</h3> 
-                        <p>Annual Plan <span style="margin-left: 55px;">3.0%</span></p>
-                        <p>Monthly Plan<span style="margin-left: 55px;">1.5%</span></p>
+                        <p>Annual Plan 3.0% </p>
+                        <p>Monthly Plan 1.5% </p>
                     </div>
                     <div class="plan-discount discount10">  
                         <h3>Discount</h3> 
-                        <p>10% Annual Abonnement</p>
-                        <p>10% Monthly Abonnement</p>
+                        <p>Annual Plan 6.0% </p>
+                        <p>Monthly Plan 3.0% </p>
                     </div>
                     <div class="plan-discount discount15">  
                         <h3>Discount</h3> 
-                        <p>15% Annual Abonnement</p>
-                        <p>15% Monthly Abonnement</p>
+                        <p>Annual Plan 9.0% </p>
+                        <p>Monthly Plan 4.5% </p>
                     </div>
                     <div class="plan-discount discount20">  
                         <h3>Discount</h3> 
-                        <p>20% Annual Abonnement</p>
-                        <p>20% Monthly Abonnement</p>
+                        <p>Annual Plan 12.0% </p>
+                        <p>Monthly Plan 6.0% </p>
                     </div>
                     <div class="plan-discount discount25">  
                         <h3>Discount</h3> 
-                        <p>25% Annual Abonnement</p>
-                        <p>25% Monthly Abonnement</p>
+                        <p>Annual Plan 15.0% </p>
+                        <p>Monthly Plan 7.5% </p>
                     </div>
                 </div>
-                <div class="col-sm-8 col-sm-offset-1">
-                    <div class="priceplan plan0">       
+                <div class="col-sm-8 col-sm-offset-1" style="margin-top: 5px;margin-bottom: 20px;">
+                    <div class="col-sm-4 basic" style="text-align: center;">
+                        <div class="pricing-title" style="background: #285080;">
+                            <h4></h4>
+                            <h4>BASIC</h4>
+                        </div>
+                        <div class="pricing-body">
+                            <div class="col-sm-6">
+                                <div class="pricing-body-title" >
+                                    <h4>Monthly Plan (£/mo)</h4>
+                                </div>
+                                <div class="BMprice">
+                                    <p>750.00</p>
+                                </div>
+                                <div class="BMdisc" style="color: #00b050;font-weight: 700;">
+                                    <p>---</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 ">
+                                <div class="pricing-body-title">
+                                    <h4>Annual Plan (£/mo)</h4>
+                                </div>
+                                <div class="BAprice" >
+                                    <p>750.00</p>
+                                </div>
+                                <div class="BAdisc" style="color: #00b050;font-weight: 700;">
+                                    <p>---</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12" style="color: #00b050;font-weight: 700;">
+                                <div class="services">
+                                    <p>Internal Benchmarking  1</p>
+                                </div>
+                                <div class="services">
+                                    <p>Tenderer Management 1</p>
+                                </div>
+                                <div class="services">
+                                    <p>Full Tenderer Functionalities 1</p>
+                                </div>
+                                <div class="services">
+                                    <p>Tenderer Dashboard 1</p>
+                                </div>
+                                <div class="services">
+                                    <p>Employer Dashboard 1</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <button class="btn pbtn">Get Started</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <button class="btn pbtn">Get Started</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="priceplan plan5">
-                        <img src="{{asset('images/pricing3.jpg')}}" style="height:613px;">
+                    <div class="col-sm-4 PRO" style="text-align: center;margin-top: -39px;">
+                        <h4 style="color: #FE7235;"> POPULAR </h4>
+                        <div class="pricing-title" style="background: #FE7235">
+                            <h4>PRO</h4>
+                        </div>
+                        <div class="pricing-body">
+                            <div class="col-sm-6">
+                                <div class="pricing-body-title">
+                                    <h4>Monthly Plan (£/mo)</h4>
+                                </div>
+                                <div class="PMprice">
+                                    <p>985.00</p>
+                                </div>
+                                <div class="PMdisc" style="color: #00b050;font-weight: 700;">
+                                    <p>1.5% Discount</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 ">
+                                <div class="pricing-body-title">
+                                    <h4>Annual Plan (£/mo)</h4>
+                                </div>
+                                <div class="PAprice" >
+                                    <p>970.00</p>
+                                </div>
+                                <div class="PAdisc" style="color: #00b050;font-weight: 700;">
+                                    <p>3.0% Discount</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12" style="color: #00b050;font-weight: 700;">
+                                <div class="services">
+                                    <p>Internal Benchmarking  1</p>
+                                </div>
+                                <div class="services">
+                                    <p>Tenderer Management 1</p>
+                                </div>
+                                <div class="services">
+                                    <p>Full Tenderer Functionalities 1</p>
+                                </div>
+                                <div class="services">
+                                    <p>Tenderer Dashboard 1</p>
+                                </div>
+                                <div class="services">
+                                    <p>Employer Dashboard 1</p>
+                                </div>
+                                <div class="services">
+                                    <p>Benchmarking Pro 1</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <button class="btn pbtn">Get Started</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <button class="btn pbtn">Get Started</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="priceplan plan10">
-                        <table class="table table-condensed table-bordered">
-                            <thead>
-                                <tr>
-                                    <td class="empty-cell"></td>
-                                    <th class="blue-cell">Monthly Abonnement</th>
-                                    <th class="orange-cell">Annual Abonnement</th>
-                                    <th class="grey-cell top-regular-price">Regular Price</th>
-                                </tr>
-                                <tr>
-                                    <td class="empty-cell"></td>
-                                    <td class="blue-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>&pound;/month</td>
-                                                <td>&pound;/year</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="orange-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>&pound;/month</td>
-                                                <td>&pound;/year</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="grey-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>&pound;/month</td>
-                                                <td>&pound;/year</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><b>10 Tenders *</b></td>
-                                    <td class="blue-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>738.75</td>
-                                                <td>8,865.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="orange-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>727.50</td>
-                                                <td>8,730.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="grey-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>750.00</td>
-                                                <td>9,000.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-green"><b>Discount</b></td>
-                                    <td class="text-green text-center">1.5%</td>
-                                    <td class="text-green text-center">3%</td>
-                                    <td class="grey-cell text-center">No Discount</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-green"><b>Internal Benchmarking Tool</b></td>
-                                    <td colspan="2" class="text-green text-center">Included</td>
-                                    <td class="grey-cell text-center">---</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-green"><b>Simple Tenderer Management</b></td>
-                                    <td colspan="2" class="text-green text-center">Included</td>
-                                    <td class="grey-cell text-center">---</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-green">Full Tender Functionalities</td>
-                                    <td colspan="2" class="text-green text-center">Included</td>
-                                    <td class="grey-cell text-center">---</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-green"><b>Tenderer Dashboard</b></td>
-                                    <td colspan="2" class="text-green text-center">Included</td>
-                                    <td class="grey-cell text-center">---</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-green"><b>Employer Dashboard</b></td>
-                                    <td colspan="2" class="text-green text-center">Included</td>
-                                    <td class="grey-cell text-center">---</td>
-                                </tr>
-                                <tr>
-                                    <td><b>Add Industry Benchmarking Tool</b></td>
-                                    <td class="blue-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>221.63</td>
-                                                <td>2,659.50</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="orange-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>218.25</td>
-                                                <td>2,619.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="grey-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>225.00</td>
-                                                <td>2,700.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><b>Add Scope of Services Tool</b></td>
-                                    <td class="blue-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>221.63</td>
-                                                <td>2,659.50</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="orange-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>218.25</td>
-                                                <td>2,619.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="grey-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>225.00</td>
-                                                <td>2,700.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><b>Total</b></td>
-                                    <td class="blue-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>1,182.00</td>
-                                                <td>14,184.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="orange-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>1,164.00</td>
-                                                <td>13,968.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="grey-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>1,200.00</td>
-                                                <td>14,400.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <td class="empty-cell"></td>
-                                <td class="green-cell text-center">Get Started !</td>
-                                <td class="green-cell text-center">Get Started !</td>
-                                <td class="empty-cell"></td>
-                            </tfoot>
-                        </table>
+                    <div class="col-sm-4 PROp" style="text-align: center;">
+                        <div class="pricing-title" style="background: #000;">
+                            <h4></h4>
+                            <h4>PRO+</h4>
+                        </div>
+                        <div class="pricing-body">
+                            <div class="col-sm-6">
+                                <div class="pricing-body-title">
+                                    <h4>Monthly Plan (£/mo)</h4>
+                                </div>
+                                <div class="PpMprice">
+                                    <p>738.75</p>
+                                </div>
+                                <div class="PpMdisc" style="color: #00b050;font-weight: 700;">
+                                    <p>1.5% Discount</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 ">
+                                <div class="pricing-body-title">
+                                    <h4>Annual Plan (£/mo)</h4>
+                                </div>
+                                <div class="PpAprice" >
+                                    <p>727.50</p>
+                                </div>
+                                <div class="PpAdisc" style="color: #00b050;font-weight: 700;">
+                                    <p>3.0% Discount</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12" style="color: #00b050;font-weight: 700;">
+                                <div class="services">
+                                    <p>Internal Benchmarking  1</p>
+                                </div>
+                                <div class="services">
+                                    <p>Tenderer Management 1</p>
+                                </div>
+                                <div class="services">
+                                    <p>Full Tenderer Functionalities 1</p>
+                                </div>
+                                <div class="services">
+                                    <p>Tenderer Dashboard 1</p>
+                                </div>
+                                <div class="services">
+                                    <p>Employer Dashboard 1</p>
+                                </div>
+                                <div class="services">
+                                    <p>Benchmarking Pro 1</p>
+                                </div>
+                                <div class="services">
+                                    <p>Scope of Services Tool 1</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <button class="btn pbtn">Get Started</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <button class="btn pbtn">Get Started</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="priceplan plan15">
-                        <table class="table table-condensed table-bordered">
-                            <thead>
-                                <tr>
-                                    <td class="empty-cell"></td>
-                                    <th class="blue-cell">Monthly Abonnement</th>
-                                    <th class="orange-cell">Annual Abonnement</th>
-                                    <th class="grey-cell top-regular-price">Regular Price</th>
-                                </tr>
-                                <tr>
-                                    <td class="empty-cell"></td>
-                                    <td class="blue-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>&pound;/month</td>
-                                                <td>&pound;/year</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="orange-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>&pound;/month</td>
-                                                <td>&pound;/year</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="grey-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>&pound;/month</td>
-                                                <td>&pound;/year</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><b>15 Tenders *</b></td>
-                                    <td class="blue-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>738.75</td>
-                                                <td>8,865.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="orange-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>727.50</td>
-                                                <td>8,730.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="grey-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>750.00</td>
-                                                <td>9,000.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-green"><b>Discount</b></td>
-                                    <td class="text-green text-center">1.5%</td>
-                                    <td class="text-green text-center">3%</td>
-                                    <td class="grey-cell text-center">No Discount</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-green"><b>Internal Benchmarking Tool</b></td>
-                                    <td colspan="2" class="text-green text-center">Included</td>
-                                    <td class="grey-cell text-center">---</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-green"><b>Simple Tenderer Management</b></td>
-                                    <td colspan="2" class="text-green text-center">Included</td>
-                                    <td class="grey-cell text-center">---</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-green">Full Tender Functionalities</td>
-                                    <td colspan="2" class="text-green text-center">Included</td>
-                                    <td class="grey-cell text-center">---</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-green"><b>Tenderer Dashboard</b></td>
-                                    <td colspan="2" class="text-green text-center">Included</td>
-                                    <td class="grey-cell text-center">---</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-green"><b>Employer Dashboard</b></td>
-                                    <td colspan="2" class="text-green text-center">Included</td>
-                                    <td class="grey-cell text-center">---</td>
-                                </tr>
-                                <tr>
-                                    <td><b>Add Industry Benchmarking Tool</b></td>
-                                    <td class="blue-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>221.63</td>
-                                                <td>2,659.50</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="orange-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>218.25</td>
-                                                <td>2,619.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="grey-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>225.00</td>
-                                                <td>2,700.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><b>Add Scope of Services Tool</b></td>
-                                    <td class="blue-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>221.63</td>
-                                                <td>2,659.50</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="orange-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>218.25</td>
-                                                <td>2,619.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="grey-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>225.00</td>
-                                                <td>2,700.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><b>Total</b></td>
-                                    <td class="blue-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>1,182.00</td>
-                                                <td>14,184.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="orange-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>1,164.00</td>
-                                                <td>13,968.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="grey-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>1,200.00</td>
-                                                <td>14,400.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <td class="empty-cell"></td>
-                                <td class="green-cell text-center">Get Started !</td>
-                                <td class="green-cell text-center">Get Started !</td>
-                                <td class="empty-cell"></td>
-                            </tfoot>
-                        </table>
+                    
+                   
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="pcard">
+                        <div class="card-head">
+                            <h3>SCOPE's most powerful tool</h3>
+                            <h3 style="margin-top:0;">BENCHMARKING</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Over are the times of searching through hundreds of historic files, consulting colleagues and requesting peer reviews. All just to find out whether the proposal you have just received is too expensive.</p>
+                            <br>
+                            <p>SCOPE's Benchmarking tool allows you to filter through every single tender proposal you have ever received and offers you a strong basis for taking decisions and negotiating prices.</p>
+                            <br>
+                            <p>And it gets even better. By signing up to our Pro+ plan you don't only have access to your own tender data but a database fed by every single SCOPE user. An entire industry's benchmarking data at your finger tips!</p>
+                        </div>
                     </div>
-                    <div class="priceplan plan20">
-                        <table class="table table-condensed table-bordered">
-                            <thead>
-                                <tr>
-                                    <td class="empty-cell"></td>
-                                    <th class="blue-cell">Monthly Abonnement</th>
-                                    <th class="orange-cell">Annual Abonnement</th>
-                                    <th class="grey-cell top-regular-price">Regular Price</th>
-                                </tr>
-                                <tr>
-                                    <td class="empty-cell"></td>
-                                    <td class="blue-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>&pound;/month</td>
-                                                <td>&pound;/year</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="orange-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>&pound;/month</td>
-                                                <td>&pound;/year</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="grey-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>&pound;/month</td>
-                                                <td>&pound;/year</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><b>20 Tenders *</b></td>
-                                    <td class="blue-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>738.75</td>
-                                                <td>8,865.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="orange-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>727.50</td>
-                                                <td>8,730.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="grey-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>750.00</td>
-                                                <td>9,000.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-green"><b>Discount</b></td>
-                                    <td class="text-green text-center">1.5%</td>
-                                    <td class="text-green text-center">3%</td>
-                                    <td class="grey-cell text-center">No Discount</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-green"><b>Internal Benchmarking Tool</b></td>
-                                    <td colspan="2" class="text-green text-center">Included</td>
-                                    <td class="grey-cell text-center">---</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-green"><b>Simple Tenderer Management</b></td>
-                                    <td colspan="2" class="text-green text-center">Included</td>
-                                    <td class="grey-cell text-center">---</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-green">Full Tender Functionalities</td>
-                                    <td colspan="2" class="text-green text-center">Included</td>
-                                    <td class="grey-cell text-center">---</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-green"><b>Tenderer Dashboard</b></td>
-                                    <td colspan="2" class="text-green text-center">Included</td>
-                                    <td class="grey-cell text-center">---</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-green"><b>Employer Dashboard</b></td>
-                                    <td colspan="2" class="text-green text-center">Included</td>
-                                    <td class="grey-cell text-center">---</td>
-                                </tr>
-                                <tr>
-                                    <td><b>Add Industry Benchmarking Tool</b></td>
-                                    <td class="blue-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>221.63</td>
-                                                <td>2,659.50</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="orange-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>218.25</td>
-                                                <td>2,619.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="grey-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>225.00</td>
-                                                <td>2,700.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><b>Add Scope of Services Tool</b></td>
-                                    <td class="blue-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>221.63</td>
-                                                <td>2,659.50</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="orange-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>218.25</td>
-                                                <td>2,619.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="grey-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>225.00</td>
-                                                <td>2,700.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><b>Total</b></td>
-                                    <td class="blue-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>1,182.00</td>
-                                                <td>14,184.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="orange-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>1,164.00</td>
-                                                <td>13,968.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="grey-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>1,200.00</td>
-                                                <td>14,400.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <td class="empty-cell"></td>
-                                <td class="green-cell text-center">Get Started !</td>
-                                <td class="green-cell text-center">Get Started !</td>
-                                <td class="empty-cell"></td>
-                            </tfoot>
-                        </table>
-                    </div>
-                    <div class="priceplan plan25">
-                        <table class="table table-condensed table-bordered">
-                            <thead>
-                                <tr>
-                                    <td class="empty-cell"></td>
-                                    <th class="blue-cell">Monthly Abonnement</th>
-                                    <th class="orange-cell">Annual Abonnement</th>
-                                    <th class="grey-cell top-regular-price">Regular Price</th>
-                                </tr>
-                                <tr>
-                                    <td class="empty-cell"></td>
-                                    <td class="blue-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>&pound;/month</td>
-                                                <td>&pound;/year</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="orange-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>&pound;/month</td>
-                                                <td>&pound;/year</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="grey-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>&pound;/month</td>
-                                                <td>&pound;/year</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><b>25 Tenders *</b></td>
-                                    <td class="blue-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>738.75</td>
-                                                <td>8,865.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="orange-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>727.50</td>
-                                                <td>8,730.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="grey-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>750.00</td>
-                                                <td>9,000.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-green"><b>Discount</b></td>
-                                    <td class="text-green text-center">1.5%</td>
-                                    <td class="text-green text-center">3%</td>
-                                    <td class="grey-cell text-center">No Discount</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-green"><b>Internal Benchmarking Tool</b></td>
-                                    <td colspan="2" class="text-green text-center">Included</td>
-                                    <td class="grey-cell text-center">---</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-green"><b>Simple Tenderer Management</b></td>
-                                    <td colspan="2" class="text-green text-center">Included</td>
-                                    <td class="grey-cell text-center">---</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-green">Full Tender Functionalities</td>
-                                    <td colspan="2" class="text-green text-center">Included</td>
-                                    <td class="grey-cell text-center">---</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-green"><b>Tenderer Dashboard</b></td>
-                                    <td colspan="2" class="text-green text-center">Included</td>
-                                    <td class="grey-cell text-center">---</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-green"><b>Employer Dashboard</b></td>
-                                    <td colspan="2" class="text-green text-center">Included</td>
-                                    <td class="grey-cell text-center">---</td>
-                                </tr>
-                                <tr>
-                                    <td><b>Add Industry Benchmarking Tool</b></td>
-                                    <td class="blue-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>221.63</td>
-                                                <td>2,659.50</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="orange-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>218.25</td>
-                                                <td>2,619.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="grey-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>225.00</td>
-                                                <td>2,700.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><b>Add Scope of Services Tool</b></td>
-                                    <td class="blue-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>221.63</td>
-                                                <td>2,659.50</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="orange-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>218.25</td>
-                                                <td>2,619.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="grey-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>225.00</td>
-                                                <td>2,700.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><b>Total</b></td>
-                                    <td class="blue-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>1,182.00</td>
-                                                <td>14,184.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="orange-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>1,164.00</td>
-                                                <td>13,968.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="grey-cell">
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <td>1,200.00</td>
-                                                <td>14,400.00</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <td class="empty-cell"></td>
-                                <td class="green-cell text-center">Get Started !</td>
-                                <td class="green-cell text-center">Get Started !</td>
-                                <td class="empty-cell"></td>
-                            </tfoot>
-                        </table>
+                </div>
+                <div class="col-sm-6">
+                    <div class="pcard">
+                        <div class="card-head">
+                            <h3>Create watertight scopes with our</h3>
+                            <h3 style="margin-top:0;">SCOPES OF SERVICES TOOL</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Creating a good scope can be a challenging task. This starts with the right approach to structuring scopes and ends with relevant content to achieve your goals</p><br>
+                            <p>Our Scopes of Services tool leads you through a structured process of producing scopes without endless duplicates and unneccessary wording to prevent ambiguity.</p><br>
+                            <p>This tool has a great future. SCOPE keeps learning from the scopes you and your peers produce and will soon be able to do this job for you. Our end goal is to be able to automatically produce scopes of services tailored to the specifics of your project.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container add-space">
-            <div class="col-sm-8 col-sm-offset-2">
-                <table class="table">
-                    <tr>
-                        <td class="orange-cell" width="25%">
-                            <p>Running low on Tenders?</p>
-                            <p>But don't want to upgrade your abonnement?</p>
-                            <p>Just top up and keep saving. Nice one!</p>
-                        </td>
-                        <td width="50%">
-                            <table class="table">
-                                <tr>
-                                    <td class="empty-cell"></td>
-                                    <td>Pay as you Tender</td>
-                                </tr>
-                                <tr>
-                                    <td class="empty-cell"></td>
-                                    <td>1 Tender</td>
-                                </tr>
-                                <tr>
-                                    <td class="empty-cell"></td>
-                                    <td>&pound; 150</td>
-                                </tr>
-                                <tr>
-                                    <td class="red-text">Discount</td>
-                                    <td class="red-text">No Discount</td>
-                                </tr>
-                                <tr>
-                                    <td class="green-text"><b>Internal Benchmarking Tool</b></td>
-                                    <td class="green-text">Included**</td>
-                                </tr>
-                                <tr>
-                                    <td class="green-text"><b>Simple Tenderer Management</b></td>
-                                    <td class="green-text">Included</td>
-                                </tr>
-                                <tr>
-                                    <td class="green-text"><b>Full Tenderer Functionalities</b></td>
-                                    <td class="green-text">Included</td>
-                                </tr>
-                                <tr>
-                                    <td class="green-text"><b>Tenderer Dashboard</b></td>
-                                    <td class="green-text">Included</td>
-                                </tr>
-                                <tr>
-                                    <td class="green-text"><b>Employer Dashboard</b></td>
-                                    <td class="green-text">Included</td>
-                                </tr>
-                                <tr>
-                                    <td class="empty-cell"></td>
-                                    <td class="green-cell text-center">Get Started!</td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td class="blue-cell" width="25%">
-                            <p>Using Scope for the first time?</p>
-                            <p>Try it for free.</p>
-                            <p>Winning!</p>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
+    </div>
+        
     </div>
 
     <div id="about-scope" class="container-fluid text-center section-title wow fadeInDown" data-wow-duration="1s" data-wow-delay="200ms">
@@ -1327,5 +718,85 @@
     </div>
 </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function() {
+      $(document).on('change', '#range', function() {
+        var tenders = $(this).val();
+        if(tenders == '5'){
+            $('.BMprice p').text('750.00');
+            $('.BAprice p').text('750.00');
 
+            $('.PMprice p').text('985.00');
+            $('.PAprice p').text('970.00');
+            $('.PMdisc p').text('1.5% Discount');
+            $('.PAdisc p').text('3.0% Discount');
+
+            $('.PpMprice p').text('985.00');
+            $('.PpAprice p').text('970.00');
+            $('.PpMdisc p').text('1.5% Discount');
+            $('.PpAdisc p').text('3.0% Discount');
+        }
+        else if(tenders == '10')
+        {
+            $('.BMprice p').text('1500.00');
+            $('.BAprice p').text('1500.00');
+
+            $('.PMprice p').text('1,940.00');
+            $('.PAprice p').text('1,880.00');
+            $('.PMdisc p').text('3.0% Discount');
+            $('.PAdisc p').text('6.0% Discount');
+
+            $('.PpMprice p').text('985.00');
+            $('.PpAprice p').text('970.00');
+            $('.PpMdisc p').text('3.0% Discount');
+            $('.PpAdisc p').text('6.0% Discount');
+        }
+        else if(tenders == '15')
+        {
+            $('.BMprice p').text('2,250.00');
+            $('.BAprice p').text('2,250.00');
+
+            $('.PMprice p').text('2,865.00');
+            $('.PAprice p').text('2,730.00');
+            $('.PMdisc p').text('4.5% Discount');
+            $('.PAdisc p').text('9.0% Discount');
+
+            $('.PpMprice p').text('985.00');
+            $('.PpAprice p').text('970.00');
+            $('.PpMdisc p').text('4.5% Discount');
+            $('.PpAdisc p').text('9.0% Discount');
+        }
+        else if(tenders == '20')
+        {
+            $('.BMprice p').text('3,000.00');
+            $('.BAprice p').text('3,000.00');
+
+            $('.PMprice p').text('3,760.00');
+            $('.PAprice p').text('3,520.00');
+            $('.PMdisc p').text('6.0% Discount');
+            $('.PAdisc p').text('12.0% Discount');
+
+            $('.PpMprice p').text('985.00');
+            $('.PpAprice p').text('970.00');
+            $('.PpMdisc p').text('6.0% Discount');
+            $('.PpAdisc p').text('12.0% Discount');
+        }
+        else if(tenders == '25')
+        {
+            $('.BMprice p').text('3,750.00');
+            $('.BAprice p').text('3,750.00');
+
+            $('.PMprice p').text('4,625.00');
+            $('.PAprice p').text('4,250.00');
+            $('.PMdisc p').text('7.5% Discount');
+            $('.PAdisc p').text('15.0% Discount');
+
+            $('.PpMprice p').text('985.00');
+            $('.PpAprice p').text('970.00');
+            $('.PpMdisc p').text('7.5% Discount');
+            $('.PpAdisc p').text('15.0% Discount');
+        }
+      });
+    });
+</script>
 @endsection

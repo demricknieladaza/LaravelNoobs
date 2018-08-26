@@ -19,7 +19,7 @@
 					<select name="service" class="my-select-form" id="selectservice">
 				                             <option value="" disabled selected>Select Service
 													<option>Architect</option>
-													<option>Sturctural Engineer</option>
+													<option>Structural Engineer</option>
 													<option>Service Engineer</option>
 													<option>Fire Engineer</option>
 													<option>Acoustic Engineer</option>
@@ -28,11 +28,10 @@
 													<option>Building Control</option>
 													<option>Lighting Consultant</option>
 													<option>Security Consultant</option>
-													<option>Plannning Consultant</option>
+													<option>Planning Consultant</option>
 													<option>Sustainability Consultant</option>
 													<option>BIM Consultant</option>
-													<option>Quantity Survueyor</option>
-													<option>Project Manager</option>
+													<option>Quantity Surveyor</option>
 													<option>Project Manager</option>
 													<option>Other</option>
 					</select>
