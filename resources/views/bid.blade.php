@@ -250,7 +250,7 @@
 												<select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select service</option>
 													<option>Architect</option>
-													<option>Sturctural Engineed</option>
+													<option>Structural Engineer</option>
 													<option>Service Engineer</option>
 													<option>Fire Engineer</option>
 													<option>Acoustic Engineer</option>
@@ -259,11 +259,10 @@
 													<option>Building Control</option>
 													<option>Lighting Consultant</option>
 													<option>Security Consultant</option>
-													<option>Plannning Consultant</option>
+													<option>Planning Consultant</option>
 													<option>Sustainability Consultant</option>
 													<option>BIM Consultant</option>
-													<option>Quantity Survueyor</option>
-													<option>Project Manager</option>
+													<option>Quantity Surveyor</option>
 													<option>Project Manager</option>
 													<option>Other</option>
 												</select>
@@ -366,7 +365,7 @@
 												<select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select Service</option>
 													<option>Architect</option>
-													<option>Sturctural Engineed</option>
+													<option>Structural Engineer</option>
 													<option>Service Engineer</option>
 													<option>Fire Engineer</option>
 													<option>Acoustic Engineer</option>
@@ -375,11 +374,10 @@
 													<option>Building Control</option>
 													<option>Lighting Consultant</option>
 													<option>Security Consultant</option>
-													<option>Plannning Consultant</option>
+													<option>Planning Consultant</option>
 													<option>Sustainability Consultant</option>
 													<option>BIM Consultant</option>
-													<option>Quantity Survueyor</option>
-													<option>Project Manager</option>
+													<option>Quantity Surveyor</option>
 													<option>Project Manager</option>
 													<option>Other</option>
 												</select>
@@ -426,7 +424,7 @@
 												<select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select Project Team Member</option>
 													<option>Architect</option>
-													<option>Sturctural Engineed</option>
+													<option>Structural Engineer</option>
 													<option>Service Engineer</option>
 													<option>Fire Engineer</option>
 													<option>Acoustic Engineer</option>
@@ -435,20 +433,18 @@
 													<option>Building Control</option>
 													<option>Lighting Consultant</option>
 													<option>Security Consultant</option>
-													<option>Plannning Consultant</option>
+													<option>Planning Consultant</option>
 													<option>Sustainability Consultant</option>
 													<option>BIM Consultant</option>
-													<option>Quantity Survueyor</option>
+													<option>Quantity Surveyor</option>
 													<option>Project Manager</option>
-													<option>Project Manager</option>
-													<option>Other</option>
 												</select>
 											</div>
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select Company</option>
 													<option>Architect</option>
-													<option>Sturctural Engineed</option>
+													<option>Structural Engineer</option>
 													<option>Service Engineer</option>
 													<option>Other</option>
 												</select>
@@ -493,23 +489,6 @@
 						<form method="post">
 							<div class="row">
 								<div class="col-sm-12">
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												Name
-											</div>
-										</div>
-										<div class="col-sm-3">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="First name">
-											</div>
-										</div>
-										<div class="col-sm-3">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Surname">
-											</div>
-										</div>
-									</div>
 									<div class="row" style="padding-bottom: 10px;">
 										<div class="col-sm-6">
 											<div class="form-group">
@@ -618,26 +597,6 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
-											<div class="input-group date" id="datepickers" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
-											<input class="form-control" type="text" placeholder="Year Awarded" readonly="readonly" name="date" >	  
-											<span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-											</div>
-										</div>
-									</div>
-									<br>
-									<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
-											<div class="input_fields_yawa">
-											<button class="btn btn-primary" id="add_field_yawa">Add another accreditation</button>
-											<div></div>
-											</div>
-										</div>
-									</div><br>
-									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
 												Degrees
@@ -707,10 +666,20 @@
 									</div>
 
 									<div class="row">
+										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
-											<div class="form-group">	
-
+											<div class="input-group date" id="datepickers" data-date="02-2012" 
+												         data-date-format="mm-yyyy">
+											<input class="form-control" type="text" placeholder="Year Awarded" readonly="readonly" name="date" >	  
+											<span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 											</div>
+										</div>
+									</div>
+									<br>
+									
+									<div class="row">
+										<div class="col-sm-6">
+											Awards
 										</div>
 										<div class="col-sm-6">
 											<div class="input-group date" id="datepickers5" data-date="02-2012" 
@@ -724,53 +693,30 @@
 										</div>
 									</div>
 								
-										<div class="row">
+									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												Awards
+												Professional Pathway
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter name of award ">
+												<input type="text" name="" class="form-control" placeholder="Previous Employer">
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Awarded by body  ">
-											</div>
-										</div>
-									</div>
-									
-									<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
-											<div class="input-group date" id="datepickers6" data-date="02-2012" 
-											 data-date-format="mm-yyyy">
-											<input class="form-control" type="text" placeholder="Year awarded" readonly="readonly" name="date" >	  
-											<span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-											</div>
-										</div>
-									</div><br>
-									
-							
-									 <div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-											 Services
+											 
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select service</option>
+													<option value="" disabled selected>Select Service</option>
 													<option>Architect</option>
-													<option>Sturctural Engineed</option>
+													<option>Structural Engineer</option>
 													<option>Service Engineer</option>
 													<option>Fire Engineer</option>
 													<option>Acoustic Engineer</option>
@@ -789,114 +735,8 @@
 											</div>
 										</div>
 									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-												<div class="input_fields_serve1">
-												    <button class="btn btn-primary" id="add_field_serve1">Add another service</button>
-												    <div></div>
-												</div>
-											</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-									</div><br>
-										<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												Project exprerience
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter project title">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Value">
-											</div>
-										</div>
-
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select type of Use</option>
-													<option>Residential</option>
-													<option>Commercial </option>
-													<option>Retail</option>
-													<option>Leisure</option>
-													<option>Sports and Venues</option>
-													<option>Hotel</option>
-													<option>Industrial</option>
-													<option>Education</option>
-													<option>Healthcare</option>
-													<option>Defence</option>
-													<option>Aviation</option>
-													<option>Highways</option>
-													<option>Bridges</option>
-													<option>Rail</option>
-													<option>Water</option>
-													<option>Oil,Gas and Chemical</option>
-													<option>Other</option>
-												</select>
-												
-											</div>
-										</div>
-									</div>
-										<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-												<div class="input_fields_add">
-												    <button class="btn btn-primary" id="add_field_add">Add another type of use</button>
-												    <div></div>
-												</div>
-											</div>
-									</div><br>
-							        		<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select service</option>
-													<option>Architect</option>
-													<option>Sturctural Engineed</option>
-													<option>Service Engineer</option>
-													<option>Fire Engineer</option>
-													<option>Acoustic Engineer</option>
-													<option>Principal Designer</option>
-													<option>Fascade Engineer</option>
-													<option>Building Control</option>
-													<option>Lighting Consultant</option>
-													<option>Security Consultant</option>
-													<option>Plannning Consultant</option>
-													<option>Sustainability Consultant</option>
-													<option>BIM Consultant</option>
-													<option>Quantity Surveyor</option>
-													<option>Project Manager</option>
-													<option>Other</option>
-												</select>
-											</div>
-										</div>
-									</div>
+									
+									
 									<div class="row">
 										<div class="col-sm-6">
 											
@@ -932,93 +772,6 @@
 										<div class="col-sm-6">
 												<div class="input_fields_serve2">
 												    <button class="btn btn-primary" id="add_field_serve2">Add another service</button>
-												    <div></div>
-												</div>
-											</div>
-									</div><br>
-										<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select types of development</option>
-													<option>New Built</option>
-													<option>Refurbishment</option>
-													<option>Demolition</option>
-													
-												</select>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-												<div class="input_fields_type1">
-												    <button class="btn btn-primary" id="add_field_type1">Add another service</button>
-												    <div></div>
-												</div>
-											</div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-6"></div>
-
-										<div class="col-sm-6">
-												<input type="text" name="" class="form-control" placeholder="Enter description of the project">
-											</div>
-									</div><br>
-
-									<div class="row">
-										<div class="col-sm-6"></div>
-											<div class="col-sm-6">					<img id="uploadPreview1" style="width: 100px; height: 100px;" />
-												<input id="uploadImage1" type="file" name="myPhoto" onchange="PreviewImage1();" />
-							                </div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select project team member</option>
-													<option>Architect</option>
-													<option>Sturctural Engineed</option>
-													<option>Service Engineer</option>
-													<option>Fire Engineer</option>
-													<option>Acoustic Engineer</option>
-													<option>Principal Designer</option>
-													<option>Fascade Engineer</option>
-													<option>Building Control</option>
-													<option>Lighting Consultant</option>
-													<option>Security Consultant</option>
-													<option>Plannning Consultant</option>
-													<option>Sustainability Consultant</option>
-													<option>BIM Consultant</option>
-													<option>Quantity Surveyor</option>
-													<option>Project Manager</option>
-													<option>Other</option>
-												</select>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6"></div>
-
-										<div class="col-sm-6">
-												<input type="text" name="" class="form-control" placeholder="Enter new company name">
-											</div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-6">
-											
-										</div>
-										<div class="col-sm-6">
-												<div class="input_fields_member">
-												    <button class="btn btn-primary" id="add_field_member">Add another project team member</button>
 												    <div></div>
 												</div>
 											</div>

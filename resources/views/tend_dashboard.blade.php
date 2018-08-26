@@ -758,7 +758,7 @@
 							    <div class="row">
 							        <div class="col-md-6">
 							            <div class="panel panel-default">
-							            	<div id="chartContainer" style="height: 300px; width: 110%;">
+							            	<div id="chartContainer" style="height: 300px; width: 110%;"></div>
 							            </div>
 							        </div>
 							    </div>   

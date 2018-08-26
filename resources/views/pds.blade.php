@@ -300,7 +300,7 @@
 			<div class="tender-container">
 				<div class="row">
 					<div class="col-sm-12 active-tenders">
-						<h3>Tender Queries</h3>
+						<b>Tender Queries</b>
 						<div class="row">	
 							<div class="col-sm-12">				
 								<table class="table table-striped table-hover">
@@ -445,7 +445,7 @@
 <div class="container">
 	<div class="owl-container">
 		<div class="active-tenders">
-			<h3><a href="{{ url('/winwork') }}">Other Projects From This Employer</a></h3>
+			<h3><a href="{{ url('/winwork') }}">Employers's Name</a></h3>
 		</div>
 		<span class="prev"><i class="fa fa-angle-left"></i></span>
 		<span class="next"><i class="fa fa-angle-right"></i></span>

@@ -4,6 +4,72 @@
 <div class="container below-header">
 	<h1 class="project-title bid-page-title centerh">Project Dashboard</small></h1>
 </div>
+<div class="container">
+ <div class="modal fade" id="myModal2" role="dialog">
+									    <div class="modal-dialog">
+									      <!-- Modal content-->
+									      <div class="modal-content">
+									        <div class="modal-header">
+									          <button type="button" class="close" data-dismiss="modal">&times;</button>
+									          <h4 class="modal-title"></h4>
+									        </div>
+									        <div class="modal-body">
+									          <p>Deadline<div class="form-group">
+												<div class="input-group date" id="datepicker4" data-date="02-2012" 
+												         data-date-format="mm-yyyy">
+
+													 <input class="form-control" type="text" placeholder="Select year" readonly="readonly" name="date" >	  
+													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+												</div>
+												
+											</div>
+										</p>
+									          <p>Feedback Time<div class="form-group">
+															<select name="days" class="form-control" onchange='Days(this.value);'> 
+											 <option value="" disabled selected>Select Days</option> 
+											 <option>1 days</option>
+											 <option>2 days</option>
+											 <option>3 days</option>
+											 <option>4 days</option>
+											 <option>5 days</option>
+											 <option>6 days</option>
+											 <option>7 days</option>
+											 <option>8 days</option>
+											 <option>9 days</option>
+											 <option>10 days</option>
+											 <option>11 days</option>
+											 <option>12 days</option>
+											 <option>13 days</option>
+											 <option>14 days</option>
+											 <option>15 days</option>
+											 <option>16 days</option>
+											 <option>17 days</option>
+											 <option>18 days</option>
+											 <option>19 days</option>
+											 <option>20 days</option>
+											 <option>21 days</option>
+											 <option>22 days</option>
+											 <option>23 days</option>
+											 <option>24 days</option>
+											 <option>25 days</option>
+											 <option>26 days</option>
+											 <option>27 days</option>
+											 <option>28 days</option>
+											 <option>29 days</option>
+											 <option>30 days</option>
+											</select>
+															</div></p>
+									          <input type="text" placeholder="Search.." name="search">
+									      <button type="submit">Add</button>
+									        </div>
+									        <div class="modal-footer">
+									          <button type="button" class="btn btn-success">Submit</button>
+									          <button type="button" class="btn btn-primary">Go Back</button>
+									        </div>
+									      </div>   
+									    </div>
+									  </div>
+									</div>
 <div class="container" style="width: 95%;">
 	<div class="row">
 		<div class="col-sm-12">
@@ -13,6 +79,7 @@
 					<li><a class="abut" data-toggle="tab" href="#section2">Scope</a></li>
 					<li><a class="abut" data-toggle="tab" href="#section3">Tenders</a></li>
 					<li><a class="abut" data-toggle="tab" href="#section4">Create New Tender</a></li>
+
 				</ul><br>
 			</div>
 		</div>
@@ -521,7 +588,13 @@
 		    						<li class="active"><a data-toggle="tab" href="#section11">Scope</a></li>
 		    						<li><a data-toggle="tab" href="#section21">Appointment</a></li>
 		    						<li><a data-toggle="tab" href="#section31">Evaluation Settings</a></li>
-		    						<li><a data-toggle="tab" href="#section41">Quality Assurance</a></li>
+		    						<li><a data-toggle="tab" href="#section41">Quality Assurance</a></li><br>
+		    						<li>
+  										<!-- Trigger the modal with a button -->
+									  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">Start Tender Process</button>
+									  <!-- Modal -->
+									 
+									 </li>
 		    					</ul><br>
 		    				</div>
 		    			</div>
@@ -698,54 +771,7 @@
 															</div>
 		    										</div>
 		    									</div>
-		    									<div class="row">
-		    										<div class="col-sm-6">
-		    											<div class="form-group">
-		    												Execution 
-		    											</div>
-		    										</div>
-		    										<div class="col-sm-6">
-		    											<div class="form-group">
-															<select name="execution[]"  class="form-control" >
-																<option value="" disabled selected>Select</option>
-																<?php
-																$Service = array(
-																	"Deed", "Under Hand"
-																);
-																sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
-																foreach ($Service as $key ) {
-																    echo "<option value='".$key."'>".$key."</option>";
-																}
-
-																?>
-															</select>
-															</div>
-		    										</div>
-		    									</div>
-		    									<div class="row">
-		    										<div class="col-sm-6">
-		    											<div class="form-group">
-		    												Net Contribution Clause 
-		    											</div>
-		    										</div>
-		    										<div class="col-sm-6">
-		    											<div class="form-group">
-															<select name="execution[]"  class="form-control" >
-																<option value="" disabled selected>Select</option>
-																<?php
-																$Service = array(
-																	"Yes", "No"
-																);
-																sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
-																foreach ($Service as $key ) {
-																    echo "<option value='".$key."'>".$key."</option>";
-																}
-
-																?>
-															</select>
-															</div>
-		    										</div>
-		    									</div>
+		    									
 		    									<div class="row">
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
