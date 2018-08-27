@@ -115,25 +115,25 @@
 		    		<div class="tender-container">
 		    			<div class="row">
 		    				<div class="col-sm-12 active-tenders" id="cprofile">
-		    					<h3>Project Information</h3>
+		    						<h3>Project Information <button class="pull-right btn"><i class="fa fa-edit"></i>Edit</button></h3>
 		    				</div>			
 		    				<div class="col-sm-12">
 		    					<table class="table table-striped table-hover">
 		    						<tr>
 		    							<td>Project Title
-  											<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+  											
 										</td>
 		    							<td><input class="inputproj" id="project" type="text" name="projectTitle" value="Canada Water Masterplan"></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Project ID
-			    							<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+			    							
 		    							</td>
 		    							<td><input class="inputproj" id="project" type="text" name="projectTitle" value="123456789"></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Location
-		    								<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    								
 		    							</td>
 		    							<td><input class="inputproj" type="text" name="location" value="Canada Water, London, SE16, United Kingdom"></td>
 		    						</tr>
@@ -144,7 +144,7 @@
 		    						</tr>
 		    						<tr>
 		    							<td>Transport Links
-		    								<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    								
 		    							</td>
 		    							<td>
 		    								<table width="100%">
@@ -178,7 +178,7 @@
 		    						</tr>
 		    						<tr>
 		    							<td>Area Specific Information
-		    								<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    								
 		    							</td>
 		    							<td>
 		    								<table width="100%">
@@ -195,7 +195,7 @@
 		    						</tr>
 		    						<tr>
 		    							<td>Constraints
-		    								<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    								
 		    							</td>
 		    							<td>                               
 		    								<p><input class="inputproj" type="text" value="Adjacent Tube Tunnel"></p>
@@ -205,19 +205,19 @@
 		    						</tr>
 		    						<tr>
 		    							<td>Type of Development
-		    								<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    								
 		    							</td>
 		    							<td><input name="dev_type" class="inputproj" type="text" value="New Built"></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Construction Value
-		    								<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    								
 		    							</td>
 		    							<td><span>£</span><input name="const_value" class="inputproj"type="text" value="300,000,000"></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Types of Use
-		    								<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    								
 		    							</td>
 		    							<td>
 		    								<table width="100%">
@@ -256,7 +256,7 @@
 		    						</tr>
 		    						<tr>
 		    							<td>Milestones
-		    								<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    								
 		    							</td>
 		    							<td>
 		    								<table width="100%">
@@ -281,7 +281,7 @@
 		    						</tr>
 		    						<tr>
 		    							<td>Meetings
-		    								<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    								
 		    							</td>
 		    							<td>
 		    								<table width="100%">
@@ -298,13 +298,13 @@
 		    						</tr>
 		    						<tr>
 		    							<td>Procurement Route
-		    								<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    								
 		    							</td>
 		    							<td><input class="inputproj"type="text" value="Design & Build"></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Project Team
-		    								<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    								
 		    							</td>
 		    							<td>
 		    								<table width="100%">
@@ -333,7 +333,7 @@
 		    						</tr>
 		    						<tr>
 		    							<td>Supporting Documents
-		    								<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+		    								
 		    							</td>
 		    							<td>
 		    								<p><a href="#">Site Plan <i class="fa fa-download"></i></a></p>
@@ -362,7 +362,7 @@
 											<tr>
 												<td id="black"><span style="    margin-left: 10px;
 												    font-size: 20px;">1</span>
-													<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+													
 												</td>
 												<td><input class="inputproj"type="text" value="TextTextTextTextTextTextTextTextText"></td>
 												<td><input class="inputproj"type="text" value="TextTextTextTextTextTextTextTextTextTextTextText"></td>
@@ -370,7 +370,7 @@
 											<tr>
 												<td id="black"><span style="    margin-left: 10px;
 												    font-size: 20px;">2</span>
-													<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+													
 												</td>
 												<td><input class="inputproj"type="text" value="TextTextTextTextTextTextTextTextText"></td>
 												<td><input class="inputproj"type="text" value="TextTextTextTextTextTextTextTextTextTextTextText"></td>
@@ -378,7 +378,7 @@
 											<tr>
 												<td id="black"><span style="    margin-left: 10px;
 												    font-size: 20px;">3</span>
-													<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+													
 												</td>
 												<td><input class="inputproj"type="text" value="TextTextTextTextTextTextTextTextText"></td>
 												<td><input class="inputproj"type="text" value="TextTextTextTextTextTextTextTextTextTextTextText"></td>
@@ -398,31 +398,31 @@
 										<table class="table table-striped table-hover">
 											<tr>
 												<td>Employer
-													<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+													
 												</td>
 												<td><input class="inputproj"type="text" value="British Land"></td>
 											</tr>
 											<tr>
 												<td>Registered Office Address
-													<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+													
 												</td>
 												<td><input class="inputproj"type="text" value="100 Sample Road, London, W1 23Y, United Kingdom"></td>
 											</tr>
 											<tr>
 												<td>Industry
-													<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+													
 												</td>
 												<td><input class="inputproj"type="text" value="Developer"></td>
 											</tr>
 											<tr>
 												<td>Year Established
-													<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+													
 												</td>
 												<td><input class="inputproj"type="text" value="1955"></td>
 											</tr>
 											<tr>
 												<td>Number of Employees
-													<div><a onclick=edits('project')><button class="buttones">Edit</button></a></div>
+													
 												</td>
 												<td><input class="inputproj"type="text" value="10-50"></td>
 											</tr>

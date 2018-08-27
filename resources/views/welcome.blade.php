@@ -468,14 +468,16 @@
                     <div class="pcard">
                         <div class="card-head">
                             <h3>SCOPE's most powerful tool</h3>
-                            <h3 style="margin-top:0;">BENCHMARKING</h3>
+                            <b style="margin-top:0; font-family: bahnschrift; font-size:39px;">BENCHMARKING</b>
+                            <hr style="border: 1px solid #FE7235;">
                         </div>
+                       
                         <div class="card-body">
-                            <p>Over are the times of searching through hundreds of historic files, consulting colleagues and requesting peer reviews. All just to find out whether the proposal you have just received is too expensive.</p>
-                            <br>
-                            <p>SCOPE's Benchmarking tool allows you to filter through every single tender proposal you have ever received and offers you a strong basis for taking decisions and negotiating prices.</p>
-                            <br>
-                            <p>And it gets even better. By signing up to our Pro+ plan you don't only have access to your own tender data but a database fed by every single SCOPE user. An entire industry's benchmarking data at your finger tips!</p>
+                            <p style="text-align: justify;font-family:bahnschrift;font-size: 20px;padding-left: 20px; padding-right: 20px;">Over are the times of searching through hundreds of historic files, consulting colleagues and requesting peer reviews. All just to find out whether the proposal you have just received is too expensive.<br>
+                            
+                            SCOPE's Benchmarking tool allows you to filter through every single tender proposal you have ever received and offers you a strong basis for taking decisions and negotiating prices.<br>
+                            
+                            And it gets even better. By signing up to our Pro+ plan you don't only have access to your own tender data but a database fed by every single SCOPE user. An entire industry's benchmarking data at your finger tips!</p>
                         </div>
                     </div>
                 </div>
@@ -483,12 +485,14 @@
                     <div class="pcard">
                         <div class="card-head">
                             <h3>Create watertight scopes with our</h3>
-                            <h3 style="margin-top:0;">SCOPES OF SERVICES TOOL</h3>
+                            <b style="margin-top:0;font-family:bahnschrift;font-size:39px;">SCOPES OF SERVICES TOOL</b>
+                            <hr style="border: 1px solid #FE7235; ">
                         </div>
+
                         <div class="card-body">
-                            <p>Creating a good scope can be a challenging task. This starts with the right approach to structuring scopes and ends with relevant content to achieve your goals</p><br>
-                            <p>Our Scopes of Services tool leads you through a structured process of producing scopes without endless duplicates and unneccessary wording to prevent ambiguity.</p><br>
-                            <p>This tool has a great future. SCOPE keeps learning from the scopes you and your peers produce and will soon be able to do this job for you. Our end goal is to be able to automatically produce scopes of services tailored to the specifics of your project.</p>
+                            <p style="text-align:justify; font-family: bahnschrift;font-size:20px;padding-left: 20px; padding-right: 20px;">Creating a good scope can be a challenging task. This starts with the right approach to structuring scopes and ends with relevant content to achieve your goals.<br>
+                            Our Scopes of Services tool leads you through a structured process of producing scopes without endless duplicates and unneccessary wording to prevent ambiguity.<br>
+                            This tool has a great future. SCOPE keeps learning from the scopes you and your peers produce and will soon be able to do this job for you. Our end goal is to be able to automatically produce scopes of services tailored to the specifics of your project.</p>
                         </div>
                     </div>
                 </div>
