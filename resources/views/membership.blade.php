@@ -38,10 +38,10 @@
                               <div class="row">
                                   <h3 class="text-center" style="color:black; margin-bottom: 5px;">Payment Details</h3>
                                   <div class="text-center">
-                                    <img src="https://my.fastcomet.com/images/icons/payments/payment-AmericanExpress.png">
-                                    <img src="https://my.fastcomet.com/images/icons/payments/payment-Visa.png">
-                                    <img src="https://my.fastcomet.com/images/icons/payments/payment-MasterCard.png">
-                                    <img src="https://my.fastcomet.com/images/icons/payments/payment-discover.png">
+                                    <img src="https://my.fastcomet.com/images/icons/payments/payment-AmericanExpress.png" height="50" width="60">
+                                    <img src="https://my.fastcomet.com/images/icons/payments/payment-Visa.png" height="50" width="60">
+                                    <img src="https://my.fastcomet.com/images/icons/payments/payment-MasterCard.png" height="50" width="60">
+                                    <img src="https://my.fastcomet.com/images/icons/payments/payment-discover.png" height="50" width="60">
                                   </div>
                               </div>
                           </div>

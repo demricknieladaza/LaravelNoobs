@@ -118,7 +118,7 @@ h3.light-title{ font-size: 35px; font-weight: bolder; color: #fff; text-transfor
 .how-it-works h1{ font-size: 29px; margin-bottom: 3%; text-align: center; }
 .how-it-works p{ font-size: 13px; line-height: 1.5em; }
 .contacts-head h1{ margin-top: 0; }
-.faq-head{ text-align: center; background: #FE7235; font-size: 19px; text-transform: uppercase; font-weight: bolder; color: #fff; padding: 10px; margin-top: 0; }
+.faq-head{border-radius: 6px; background: #FE7235; font-size: 19px; text-transform: uppercase; font-weight: bolder; color: #fff; padding: 10px; margin-top: 0; }
 .panel-title a{ display: block; text-decoration: none; }
 .panel-group .panel-heading+.panel-collapse>.panel-body{ border-top: 1px solid #f4bc16; font-size: 16px; }
 .panel{ border-bottom: 1px solid #f4bc16; box-shadow: none;}
@@ -310,12 +310,12 @@ figcaption{
     height: 100%;
     text-align: center;
     opacity: 0;
-    background: rgba(58,70,97,0.9);
+    background: #8C8C8C;
     transition: 0.7s;
     cursor: pointer;
 }
 .figcaption1{
-    background: rgba(51,34,25,0.9);
+    background: #8C8C8C;
 }
 .search_result_row figcaption h3 {
     -webkit-transition: -webkit-transform 0.5s;
@@ -1146,7 +1146,7 @@ input[type=range]::-ms-thumb {
      background: #FE7235; 
 }
 
-body > div.container.publish-project-outer-page > div > div > div > div > div:nth-child(1) > div{
+body > div.container.publish-project-outer-page > div > div > div > div > owl-div:nth-child(1) > div{
     background-color: #3E506B;
 }
 
@@ -1392,7 +1392,8 @@ body > div:nth-child(17) > div > div.col-sm-12{
 }
 
 .act, .accord:hover {
-    background-color: #FFB548;
+    background-color: #FE7235;
+    color: white;
 }
 
 .accord:after {
@@ -1592,10 +1593,10 @@ textarea{
 
 div.ex3 {
     /*background-color: lightblue;*/
-    width: 260px;
+    width: 100%;
     height: 360px;
     overflow: auto;
-    margin-left: -10px;
+    margin-left: 0;
     padding-top: 13px;
 
 }
@@ -1718,99 +1719,6 @@ body > div:nth-child(15) > div > div > div.row{
     line-height: 1px;
 }
 
-.angkol{
-    border: 1px solid;
-    /* padding: 10px; */
-    box-shadow: 3px 5px;
-    color: grey;
-    border:0px solid;
-    background:#fe7235;
-    width:110px;
-    height:110px;  
-}
-.angkol h2 {
-  font-size:18px;
-  color:white;
-     padding-top: 38px;
-     padding-left:15px; 
-}
-.ante{
-    border: 1px solid;
-    /* padding: 10px; */
-    box-shadow: 3px 5px;
-    color: grey;
-    border:0px solid;
-    background:#fe7235;
-    width:110px;
-    height:110px;
-    margin-left: 129px;
-    margin-top: -110px;  
-}
-.ante h2 {
-  font-size:18px;
-  color:white;
-     padding-top: 38px;
-     padding-left:32px; 
-}
-.ate{
-    border: 1px solid;
-    /* padding: 10px; */
-    box-shadow: 3px 5px;
-    color: grey;
-    border:0px solid;
-    background:#fe7235;
-    width:110px;
-    height:110px;
-    margin-left: 262px;
-    margin-top: -110px;  
-}
-.ate h2 {
-  font-size:18px;
-  color:white;
-     padding-top: 38px;
-     padding-left:32px; 
-}
-.kuya{
-    border: 5px solid black;
-    width: 375px;
-    margin-top: 32px;
-  padding: 11px 
-}
-.nanay{
-    border: 1px solid;
-    box-shadow: 3px 5px grey;
-    width: 369px;
-    margin-left: 4px;
-    padding: 9px;
-    margin-top: 10px;
-    background-color: #fe7235;
-    font-size: 22px;
-    color: white;
-    font-family: arial
-}
-.button5{
-    border: 1px solid;
-    /* padding: 10px; */
-    box-shadow: 2px 2px grey;
-    background-color: #fe7235;
-    border: none;
-    color: white;
-    padding: 50px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 30px;
-    /* margin: 4px 2px; */
-    float: right;
-    margin-top: 15px;
-    margin-right: 7px;
-    cursor: pointer;
-    border-radius: 50%
-}
-.manghud{
-    margin-top:10px; 
-    margin-right:17px;
-}
 
 body > header > nav > div > div > div.collapse.navbar-collapse > ul > div > ul > li:nth-child(4) > a{
     margin-left: 585px;
@@ -1923,8 +1831,9 @@ body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.
 body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(6) > div.tender-tiles.new-project-tile,
 body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(7) > div.tender-tiles.new-project-tile,
 body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(8) > div.tender-tiles.new-project-tile{
-    width: 110% !important;
-    margin-left: -11px;
+    width: 100% !important;
+    /*margin-left: -11px;*/
+    border-radius: 6px;
 }
 
 .pages{
@@ -1965,10 +1874,10 @@ body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.
   transform: translateY(4px);
 }
 
-.general{
+/*.general{
     margin-left: 100px;
     margin-right: 100px;
-}
+}*/
 
 #collapse6 > div > div.col-sm-9 > div.angkol > a,
 #collapse6 > div > div.col-sm-9 > div.ante > a,
@@ -2060,3 +1969,58 @@ body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.
     background: #757575; 
 }
 
+body > div.container.publish-project-outer-page > div > div > div > div > div:nth-child(1) > div,
+body > div.container.publish-project-outer-page > div > div > div > div > div:nth-child(2) > div,
+body > div.container.publish-project-outer-page > div > div > div > div > div:nth-child(3) > div,
+body > div.container.publish-project-outer-page > div > div > div > div > div:nth-child(4) > div,
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(1),
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(3),
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4),
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(5),
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(6),
+body > div:nth-child(5) > div,
+body > div.container.tender-details > div > div.col-sm-4 > div,
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(3) > div,
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(5) > div{
+    border-radius: 6px;
+}
+
+body > div.container.publish-project-outer-page > div > div > div > div > div:nth-child(1) > div{
+    background-color: #3E506B;
+}
+
+#black{
+    width: 5%;
+}
+
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(5) > div > div{
+    word-break: break-word;
+}
+
+.space{
+    margin-right: 0;
+}
+
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(2) > div:nth-child(1){
+    padding-bottom: 20px;
+}
+
+.rad{
+    border-radius: 6px;
+}
+
+
+.fa{
+    margin-right: 5px;
+}
+
+body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(2) > div > div > div.row > div.col-sm-3.company-quick-details > p:nth-child(1) > img,
+body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(6) > div > div > div > div.col-sm-3.company-quick-details > p:nth-child(1) > img{
+    box-sizing: border-box;
+    border: 2px solid #404040;
+    padding: 13px;
+}
+
+body > div.container-fluid.lounge-wrapper > div.col-sm-10.col-sm-offset-2.lounge-main > div > div > div > div:nth-child(2) > div > div > div.row.table-tender-details > div.col-sm-6.table-left > table > tbody{
+    transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}

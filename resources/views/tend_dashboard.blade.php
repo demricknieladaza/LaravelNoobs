@@ -23,13 +23,13 @@
 								<h1 style="color: #000; text-align: center; font-size: 20px;">There are<br><span style="color: #FE7235; font-size: 50px;">26</span><br>Opportunity Nearby
 								</h1>
 							</div>
-							<div class="form-group" style="background: #FE7235; ">
-								<div class="tender-tiles new-project-tile">
+							<div class="form-group ">
+								<div class="tender-tiles new-project-tile rad">
 								<h2><a href="{{ url('/winwork') }}">Win Work</a></h2>
 								</div>
 							</div>
 							<div class="col-sm-6 tab1">
-								<div class="tender-tiles new-project-tile" style="background: #FE7235; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px;">
+								<div class="tender-tiles new-project-tile" style="background: #FE7235; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px;">
 									<h3><a href="{{ url('/winwork/pds') }}">Request for Proposal   <span  class="badge pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></a></h3>
 								</div>
 								<table >
@@ -147,7 +147,7 @@
 								</table>
 							</div>
 							<div class="col-sm-6 tab2 pull-right">
-								<div class="tender-tiles new-project-tile" style="background: #FE7235; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px;">
+								<div class="tender-tiles new-project-tile" style="background: #FE7235;  color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px;">
 									<h3>Saved Opportunities<span  class="badge pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></h3>
 								</div>
 								<table >
@@ -264,7 +264,7 @@
 								</table>
 							</div>
 							<div class="col-sm-6 tab1">
-								<div class="tender-tiles new-project-tile" style="background: #FE7235; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px;    margin-top: 15px; padding-bottom: 14px;">
+								<div class="tender-tiles new-project-tile" style="background: #FE7235;  color: #fff; text-align: center; font-size: 20px;     padding-top: 20px;    margin-top: 15px; padding-bottom: 14px;">
 									<h3>Active<span  class="badge pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></h3>
 								</div>
 								<table >
@@ -381,7 +381,7 @@
 								</table>
 							</div>
 							<div class="col-sm-6 tab2">
-								<div class="tender-tiles new-project-tile" style="background: #FE7235; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px;    margin-top: 15px; padding-bottom: 14px;">
+								<div class="tender-tiles new-project-tile" style="background: #FE7235;  color: #fff; text-align: center; font-size: 20px;     padding-top: 20px;    margin-top: 15px; padding-bottom: 14px;">
 									<h3>Drafted<span  class="badge pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></h3>
 								</div>
 								<table >
@@ -499,7 +499,7 @@
 								</table>
 							</div>
 							<div class="col-sm-6 tab1">
-								<div class="tender-tiles new-project-tile" style="background: #FE7235; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px;    margin-top: 15px; padding-bottom: 14px;">
+								<div class="tender-tiles new-project-tile" style="background: #FE7235;  color: #fff; text-align: center; font-size: 20px;     padding-top: 20px;    margin-top: 15px; padding-bottom: 14px;">
 									<h3>Successful<span  class="badge pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></h3>
 								</div>
 								<table >
@@ -616,7 +616,7 @@
 								</table>
 							</div>
 							<div class="col-sm-6 tab2">
-								<div class="tender-tiles new-project-tile" style="background: #FE7235; padding: 2px; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px;     margin-top: 15px; padding-bottom: 14px;">
+								<div class="tender-tiles new-project-tile" style="background: #FE7235;  color: #fff; text-align: center; font-size: 20px;     padding-top: 20px;     margin-top: 15px; padding-bottom: 14px;">
 									<h3>Unsuccessful<span  class="badge pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></h3>
 								</div>
 								<table >

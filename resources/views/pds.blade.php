@@ -303,7 +303,7 @@
 						<b>Tender Queries</b>
 						<div class="row">	
 							<div class="col-sm-12">				
-								<table class="table table-striped table-hover">
+								<table class="table table-striped table-hover" id="a">
 									<tr>
 										<td id="black">#</td>
 										<td>Query</td>

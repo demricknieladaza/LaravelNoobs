@@ -561,7 +561,7 @@
     <div class="container-fluid white-bg">
         <div class="container">
             <div class="col-sm-6">
-                <div class="row">
+                <div class="row space">
                     <h1 class="faq-head">For Employers</h1>
                 </div>
                     <button class="accord">What can SCOPE do for me? </button>
@@ -654,9 +654,7 @@
                 <div class="row general">
                     <h1 class="faq-head">General</h1>
                 </div>
-                <div style="padding-left: 25%;
-                            padding-right: 25%;
-                            padding-bottom: 20px;">
+                <div >
                     <button class="accord">How does the Benchmarking tool work? </button>
                     <div class="panel1">
                         <p>SCOPE helps you to find out what a specific service in a defined location for a certain type of use usually costs. As an employer you will be able to create more accurate cash flow forecasts, benchmark received tender proposals or support viability assessments for your development. As a tenderer you will be able to submit more competitive tender proposals.</p>
