@@ -514,7 +514,7 @@ table table tr td{ vertical-align: top; }
 .lounge-main tbody tr:hover{ background: #f6d3bc !important; }
 .benchmark-dashboard .col-sm-12{ box-shadow: 0 0 5px #333; padding: 0 15px 15px; }
 .my-select-form{ padding: 10px; border: 1px solid transparent; box-shadow: 0 0 3px #333;margin-right: 10px;}
-.selected{ background: #FE7235; border: none; color: #fff;}
+/*.selected{ background: #FE7235; border: none; color: #fff;}*/
 .my-select-form option{ padding: 10px; display: block; }
 .benchmark-head{ margin-bottom: 30px; }
 .apply-dash-filter{ padding: 10px 30px; margin-top: -2px; display: inline-block; margin-right: 10px;}
@@ -2035,5 +2035,14 @@ body > div.container-fluid.lounge-wrapper > div.col-sm-10.col-sm-offset-2.lounge
 
 body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(3) > div > div > h3 > button{
     border-radius: 6px;
+}
+
+#mama,
+#section11{
+    border: none;
+}
+
+.form-control {
+    width: 100%;
 }
 
