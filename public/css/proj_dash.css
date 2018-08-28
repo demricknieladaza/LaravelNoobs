@@ -234,5 +234,11 @@ ul.user li a:focus {
 .pbtn {
 	background: #E2EFDA;
 	border: 1px solid #00b050;
-	color: #00b050;
+	color: #00b050;	
+}
+
+.shadow {
+	padding-top: 15px;
+    padding-bottom: 15px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;
 }

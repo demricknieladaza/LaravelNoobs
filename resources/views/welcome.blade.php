@@ -290,6 +290,7 @@
                 </div>
                 <div class="col-sm-8 col-sm-offset-1" style="margin-top: 5px;margin-bottom: 20px;">
                     <div class="col-sm-4 basic" style="text-align: center;">
+                        <div class="shadow">
                         <div class="pricing-title" style="background: #285080;">
                             <h4></h4>
                             <h4>BASIC</h4>
@@ -341,6 +342,7 @@
                                 <button class="btn pbtn">Get Started</button>
                             </div>
                         </div>
+                    </div>
                     </div>
                     <div class="col-sm-4 PRO" style="text-align: center;margin-top: -39px;">
                         <h4 style="color: #FE7235;"> POPULAR </h4>
