@@ -115,7 +115,7 @@
 		    		<div class="tender-container">
 		    			<div class="row">
 		    				<div class="col-sm-12 active-tenders" id="cprofile">
-		    						<h3>Project Information <button class="pull-right btn"><i class="fa fa-edit"></i>Edit</button></h3>
+		    						<h3>Project Information<button onclick="myFunction()" style="float:right;" ><i class="fa fa-edit" style="font-size:24px"></i>Edit</button></h3>
 		    				</div>			
 		    				<div class="col-sm-12">
 		    					<table class="table table-striped table-hover">
@@ -123,19 +123,19 @@
 		    							<td>Project Title
   											
 										</td>
-		    							<td><input class="inputproj" id="project" type="text" name="projectTitle" value="Canada Water Masterplan"></td>
+		    							<td><p id="water">Canada Water Masterplan</p></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Project ID
 			    							
 		    							</td>
-		    							<td><input class="inputproj" id="project" type="text" name="projectTitle" value="123456789"></td>
+		    							<td><p id="number">123456789</p></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Location
 		    								
 		    							</td>
-		    							<td><input class="inputproj" type="text" name="location" value="Canada Water, London, SE16, United Kingdom"></td>
+		    							<td><p id="location">Canada Water, London, SE16, United Kingdom</p></td>
 		    						</tr>
 		    						<tr>
 		    							<td colspan="2">
@@ -153,7 +153,7 @@
 		    											<p><b>Main Roads</b></p>
 		    										</td>
 		    										<td>
-		    											<p><input class="inputproj" type="text" name="mainRoads" value="Surrey Quays Road"></p>
+		    											<p id="survey">Surrey Quays Road</p>
 		    										</td>
 		    									</tr>
 		    									<tr>
@@ -161,8 +161,8 @@
 		    											<p><b>Tube Stations</b></p>
 		    										</td>
 		    										<td>
-		    											<p><input class="inputproj" type="text" value="Canada Water 0.5km"></p>
-		    											<p><input class="inputproj" type="text" value="Surrey Quays 1.5km"></p>
+		    											<p id="tube">Canada Water 0.5km</p>
+		    											<p id="tube1">Surrey Quays 1.5km</p>
 		    										</td>
 		    									</tr>
 		    									<tr>
@@ -170,7 +170,7 @@
 		    											<p><b>Bus Lines</b> </p>
 		    										</td>
 		    										<td>
-		    											<p><input class="inputproj" type="text" name="bus_lines" value="701, 702, 851, 930"></p>
+		    											<p id="bus">701, 702, 851, 930</p>
 		    										</td>
 		    									</tr>
 		    								</table>
@@ -184,11 +184,11 @@
 		    								<table width="100%">
 		    									<tr>
 		    										<td>Adjacent Uses</td>
-		    										<td><input class="inputproj" type="text" name="adjacent_use" value="Residential (High-End), Regeneration Space, Retail"></td>
+		    										<td id="Adjacent">Residential (High-End), Regeneration Space, Retail</td>
 		    									</tr>
 		    									<tr>
 		    										<td>History</td>
-		    										<td><input class="inputproj" type="text" name="history" value="Former Docks and Warehouses"></td>
+		    										<td id="history">Former Docks and Warehouses</td>
 		    									</tr>
 		    								</table>
 		    							</td>
@@ -198,22 +198,22 @@
 		    								
 		    							</td>
 		    							<td>                               
-		    								<p><input class="inputproj" type="text" value="Adjacent Tube Tunnel"></p>
-		    								<p><input class="inputproj" type="text" value="Existing Buildings"></p>
-		    								<p><input class="inputproj" type="text" value="Weak Ground Conditions"></p>
+		    								<p id="cons1">Adjacent Tube Tunnel</p>
+		    								<p id="cons2">Existing Buildings</p>
+		    								<p id="cons3">Weak Ground Conditions</p>
 		    							</td>
 		    						</tr>
 		    						<tr>
 		    							<td>Type of Development
 		    								
 		    							</td>
-		    							<td><input name="dev_type" class="inputproj" type="text" value="New Built"></td>
+		    							<td id="type">New Built</td>
 		    						</tr>
 		    						<tr>
 		    							<td>Construction Value
 		    								
 		    							</td>
-		    							<td><span>£</span><input name="const_value" class="inputproj"type="text" value="300,000,000"></td>
+		    							<td><span>£</span><p id="value">300,000,000</p></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Types of Use
@@ -222,32 +222,32 @@
 		    							<td>
 		    								<table width="100%">
 		    									<tr>
-		    										<td>Residential</td>
-		    										<td><input class="inputproj"type="text" value="30,000m2"></td>
-		    										<td><input class="inputproj"type="text" value="200 units"></td>
-		    										<td><input class="inputproj"type="text" value="High-End"></td>
+		    										<td>Residential</td>&nbsp
+		    										<td id="red1">30,000m2</td>
+		    										<td id="red2">200 units</td>
+		    										<td id="red3">High-End</td>
 		    									</tr>
 		    									<tr>
 		    										<td>Residential</td>
-		    										<td><input class="inputproj"type="text" value="10,000m2"></td>
-		    										<td><input class="inputproj"type="text" value="70 units"></td>
-		    										<td><input class="inputproj"type="text" value="Affordable"></td>
+		    										<td id="res1">10,000m2</td>
+		    										<td id="res2">70 units</td>
+		    										<td id="res3">Affordable</td>
 		    									</tr>
 		    									<tr>
 		    										<td>Office</td>
-		    										<td><input class="inputproj"type="text" value="15,000m2"></td>
+		    										<td id="office">15,000m2</td>
 		    										<td></td>
 		    										<td></td>
 		    									</tr>
 		    									<tr>
 		    										<td>Retail</td>
-		    										<td><input class="inputproj"type="text" value="15,000m2"></td>
-		    										<td><input class="inputproj"type="text" value="5 units"></td>
+		    										<td id="ret1">15,000m2</td>
+		    										<td id="ret2">5 units</td>
 		    										<td></td>
 		    									</tr>
 		    									<tr>
 		    										<td>Total</td>
-		    										<td><input class="inputproj"type="text" value="57,000m2"></td>
+		    										<td id="total">57,000m2</td>
 		    										<td></td>
 		    										<td></td>
 		    									</tr>
@@ -262,19 +262,19 @@
 		    								<table width="100%">
 		    									<tr>
 		    										<td>RIBA Stage 1 Completion</td>
-		    										<td><input class="inputproj"type="text" value="01/03/2019"></td>
+		    										<td id="rib1">01/03/2019</td>
 		    									</tr>
 		    									<tr>
 		    										<td>RIBA Stage 2 Completion</td>
-		    										<td><input class="inputproj"type="text" value="01/07/2019"></td>
+		    										<td id="rib2">01/07/2019</td>
 		    									</tr>
 		    									<tr>
 		    										<td>RIBA Stage 3 Completion</td>
-		    										<td><input class="inputproj"type="text" value="01/10/2019"></td>
+		    										<td id="rib3">01/10/2019</td>
 		    									</tr>
 		    									<tr>
 		    										<td>RIBA Stage 4 Completion</td>
-		    										<td><input class="inputproj"type="text" value="01/12/2019"></td>
+		    										<td id="rib4">01/12/2019</td>
 		    									</tr>
 		    								</table>
 		    							</td>								
@@ -287,11 +287,11 @@
 		    								<table width="100%">
 		    									<tr>
 		    										<td>Design Team Meeting</td>
-		    										<td><input class="inputproj"type="text" value="Tuesday, 14:00 – 15:30, Weekly"></td>
+		    										<td id="met1">Tuesday, 14:00 – 15:30, Weekly</td>
 		    									</tr>
 		    									<tr>
 		    										<td>Project Progress Meeting</td>
-		    										<td><input class="inputproj"type="text" value="Tuesday, 15:30 – 16:30, Fortnightly"></td>
+		    										<td id="met2">Tuesday, 15:30 – 16:30, Fortnightly</td>
 		    									</tr>
 		    								</table>
 		    							</td>
@@ -300,7 +300,7 @@
 		    							<td>Procurement Route
 		    								
 		    							</td>
-		    							<td><input class="inputproj"type="text" value="Design & Build"></td>
+		    							<td id="pro">Design & Build</td>
 		    						</tr>
 		    						<tr>
 		    							<td>Project Team
@@ -310,15 +310,15 @@
 		    								<table width="100%">
 		    									<tr>
 		    										<td>Architect</td>
-		    										<td><input class="inputproj"type="text" value="Allies and Morrison"></td>
+		    										<td id="arc">Allies and Morrison</td>
 		    									</tr>
 		    									<tr>
 		    										<td>Structural Engineer</td>
-		    										<td><input class="inputproj"type="text" value="AKT II"></td>
+		    										<td id="struc">AKT II</td>
 		    									</tr>
 		    									<tr>
 		    										<td>Services Engineer</td>
-		    										<td><input class="inputproj"type="text" value="Sweco"></td>
+		    										<td id="ing">Sweco</td>
 		    									</tr>
 		    									<tr>
 		    										<td>Fire Engineer </td>
@@ -348,7 +348,7 @@
 		    		<div class="tender-container">
 						<div class="row">
 							<div class="col-sm-12 active-tenders">
-								<h3>Tender Queries</h3>
+								<h3>Tender Queries<button onclick="myFunction1()" style="float: right;"><i class="fa fa-edit" style="font-size:24px"></i>Edit</button></h3>
 								<div class="row">	
 									<div class="col-sm-12">				
 										<table class="table table-striped table-hover">
@@ -364,24 +364,24 @@
 												    font-size: 20px;">1</span>
 													
 												</td>
-												<td><input class="inputproj"type="text" value="TextTextTextTextTextTextTextTextText"></td>
-												<td><input class="inputproj"type="text" value="TextTextTextTextTextTextTextTextTextTextTextText"></td>
+												<td id="que1">TextTextTextTextTextTextTextTextText</td>
+												<td id="que2">TextTextTextTextTextTextTextTextTextTextTextText</td>
 											</tr>
 											<tr>
 												<td id="black"><span style="    margin-left: 10px;
 												    font-size: 20px;">2</span>
 													
 												</td>
-												<td><input class="inputproj"type="text" value="TextTextTextTextTextTextTextTextText"></td>
-												<td><input class="inputproj"type="text" value="TextTextTextTextTextTextTextTextTextTextTextText"></td>
+												<td id="que3">TextTextTextTextTextTextTextTextText"></td>
+												<td id="que4">TextTextTextTextTextTextTextTextTextTextTextText</td>
 											</tr>
 											<tr>
 												<td id="black"><span style="    margin-left: 10px;
 												    font-size: 20px;">3</span>
 													
 												</td>
-												<td><input class="inputproj"type="text" value="TextTextTextTextTextTextTextTextText"></td>
-												<td><input class="inputproj"type="text" value="TextTextTextTextTextTextTextTextTextTextTextText"></td>
+												<td id="que5">TextTextTextTextTextTextTextTextText</td>
+												<td id="que6">TextTextTextTextTextTextTextTextTextTextTextText</td>
 											</tr>
 										</table>
 									</div>
@@ -392,39 +392,39 @@
 					<div class="tender-container">
 						<div class="row">
 							<div class="col-sm-12 active-tenders">
-								<h3>Employer Details</h3>
+								<h3>Employer Details<button onclick="myFunction2()" style="float: right;"><i class="fa fa-edit" style="font-size:24px"></i>Edit</button></h3>
 								<div class="row">	
 									<div class="col-sm-9">				
 										<table class="table table-striped table-hover">
 											<tr>
 												<td>Employer
 													
-												</td>
-												<td><input class="inputproj"type="text" value="British Land"></td>
+												</td >
+												<td id="emp1">British Land</td>
 											</tr>
 											<tr>
 												<td>Registered Office Address
 													
 												</td>
-												<td><input class="inputproj"type="text" value="100 Sample Road, London, W1 23Y, United Kingdom"></td>
+												<td id="emp2">100 Sample Road, London, W1 23Y, United Kingdom</td>
 											</tr>
 											<tr>
 												<td>Industry
 													
 												</td>
-												<td><input class="inputproj"type="text" value="Developer"></td>
+												<td id="emp3">Developer</td>
 											</tr>
 											<tr>
 												<td>Year Established
 													
 												</td>
-												<td><input class="inputproj"type="text" value="1955"></td>
+												<td id="emp4">1955</td>
 											</tr>
 											<tr>
 												<td>Number of Employees
 													
 												</td>
-												<td><input class="inputproj"type="text" value="10-50"></td>
+												<td id="emp5">10-50</td>
 											</tr>
 										</table>
 									</div>
@@ -1317,6 +1317,64 @@ var element=document.getElementById('bonds');
    element.style.display='block';
  else  
    element.style.display='none';
+	}
+</script>
+<script>
+function myFunction() {
+   document.getElementById("water").contentEditable = true;
+   document.getElementById("number").contentEditable = true;
+   document.getElementById("location").contentEditable = true;
+   document.getElementById("survey").contentEditable = true;
+   document.getElementById("tube").contentEditable = true;
+   document.getElementById("tube1").contentEditable = true;
+   document.getElementById("bus").contentEditable = true;
+   document.getElementById("Adjacent").contentEditable = true;
+   document.getElementById("history").contentEditable = true;
+   document.getElementById("cons1").contentEditable = true;
+   document.getElementById("cons2").contentEditable = true;
+   document.getElementById("cons3").contentEditable = true;
+   document.getElementById("type").contentEditable = true;
+   document.getElementById("value").contentEditable = true;
+   document.getElementById("red1").contentEditable = true;
+   document.getElementById("red2").contentEditable = true;
+   document.getElementById("red3").contentEditable = true;
+   document.getElementById("res1").contentEditable = true;
+   document.getElementById("res2").contentEditable = true;
+   document.getElementById("res3").contentEditable = true;
+   document.getElementById("office").contentEditable = true;
+   document.getElementById("ret1").contentEditable = true;
+   document.getElementById("ret2").contentEditable = true;
+   document.getElementById("total").contentEditable = true;
+   document.getElementById("rib1").contentEditable = true;
+   document.getElementById("rib2").contentEditable = true;
+   document.getElementById("rib3").contentEditable = true;
+   document.getElementById("rib4").contentEditable = true;
+   document.getElementById("met1").contentEditable = true;
+   document.getElementById("met2").contentEditable = true;
+   document.getElementById("pro").contentEditable = true;
+   document.getElementById("arc").contentEditable = true;
+   document.getElementById("struc").contentEditable = true;
+   document.getElementById("ing").contentEditable = true;
+}
+</script>
+<script type="text/javascript">
+	function myFunction1(){
+   document.getElementById("que1").contentEditable = true;
+   document.getElementById("que2").contentEditable = true;
+   document.getElementById("que3").contentEditable = true;
+   document.getElementById("que4").contentEditable = true;
+   document.getElementById("que5").contentEditable = true;
+   document.getElementById("que6").contentEditable = true;
+	}
+</script>
+
+<script type="text/javascript">
+	function myFunction2(){
+    document.getElementById("emp1").contentEditable = true;
+   document.getElementById("emp2").contentEditable = true;
+   document.getElementById("emp3").contentEditable = true;
+   document.getElementById("emp4").contentEditable = true;
+   document.getElementById("emp5").contentEditable = true;
 	}
 </script>
 @endsection
