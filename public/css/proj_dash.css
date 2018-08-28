@@ -216,7 +216,9 @@ ul.user li a:focus {
 .pcard {
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;
 	padding: 10px;
-	height: 400px;
+	height: 517px;
+	border: 2px solid;
+	border-radius:6px;
 }
 
 .card-head {
