@@ -533,7 +533,7 @@
                     <div class="pcard">
                         <div class="card-head">
                             <h3>Create watertight scopes with our</h3>
-                            <b style="margin-top:0;font-family:bahnschrift;font-size:39px;">SCOPES OF SERVICES TOOL</b>
+                            <b style="margin-top:0;font-family:bahnschrift;font-size:35px;">SCOPES OF SERVICES TOOL</b>
                             <hr style="border: 1px solid #FE7235; ">
                         </div>
 
