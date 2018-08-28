@@ -473,7 +473,7 @@
                         </div>
                        
                         <div class="card-body">
-                            <p style="text-align: justify;font-family:bahnschrift;font-size: 20px;padding-left: 20px; padding-right: 20px;"> bacl">Over are the times of searching through hundreds of historic files, consulting colleagues and requesting peer reviews. All just to find out whether the proposal you have just received is too expensive.<br>
+                            <p style="text-align: justify;font-family:bahnschrift;font-size: 20px;padding-left: 20px; padding-right: 20px;">Over are the times of searching through hundreds of historic files, consulting colleagues and requesting peer reviews. All just to find out whether the proposal you have just received is too expensive.<br>
                             
                             SCOPE's Benchmarking tool allows you to filter through every single tender proposal you have ever received and offers you a strong basis for taking decisions and negotiating prices.<br>
                             
