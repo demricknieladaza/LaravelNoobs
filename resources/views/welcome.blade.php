@@ -257,7 +257,7 @@
     </div>
     <div class="container-fluid price-section">
         <div class="container">
-            <div class="row" style="margin-top:45px;">
+            <div class="row" style="margin-top:75px;">
                 <div class="col-sm-3 khalifa">
                     <input type="range" orient="vertical" name="range" id="range" min="0" max="25" step="5" value="5"/> 
                     <output for="range" class="output"></output>
@@ -289,22 +289,25 @@
                     </div>
                 </div>
                 <div class="col-sm-8 col-sm-offset-1" style="margin-top: 5px;margin-bottom: 20px;">
+                    <div id="hider">
                     <div class="col-sm-4 basic" style="text-align: center;">
-                        <div class="shadow">
                         <div class="pricing-title" style="background: #285080;">
                             <h4></h4>
                             <h4>BASIC</h4>
                         </div>
                         <div class="pricing-body">
-                            <div class="col-sm-6">
+                            <div class="col-sm-6" style="border-right: 1px solid #00b050;">
                                 <div class="pricing-body-title" >
                                     <h4>Monthly Plan (£/mo)</h4>
                                 </div>
-                                <div class="BMprice">
-                                    <p>750.00</p>
+                                <div class="BMprice" id="grower">
+                                    <p>985.00</p>
                                 </div>
                                 <div class="BMdisc" style="color: #00b050;font-weight: 700;">
-                                    <p>---</p>
+                                    <p>1.5% Discount</p>
+                                </div>
+                                <div>
+                                    <button class="btn pbtn">Get Started</button>
                                 </div>
                             </div>
                             <div class="col-sm-6 ">
@@ -312,10 +315,13 @@
                                     <h4>Annual Plan (£/mo)</h4>
                                 </div>
                                 <div class="BAprice" >
-                                    <p>750.00</p>
+                                    <p>970.00</p>
                                 </div>
                                 <div class="BAdisc" style="color: #00b050;font-weight: 700;">
-                                    <p>---</p>
+                                    <p>3.0% Discount</p>
+                                </div>
+                                <div>
+                                    <button class="btn pbtn">Get Started</button>
                                 </div>
                             </div>
                             <div class="col-sm-12" style="color: #00b050;font-weight: 700;">
@@ -335,14 +341,7 @@
                                     <p>Employer Dashboard 1</p>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
-                                <button class="btn pbtn">Get Started</button>
-                            </div>
-                            <div class="col-sm-6">
-                                <button class="btn pbtn">Get Started</button>
-                            </div>
                         </div>
-                    </div>
                     </div>
                     <div class="col-sm-4 PRO" style="text-align: center;margin-top: -39px;">
                         <h4 style="color: #FE7235;"> POPULAR </h4>
@@ -350,15 +349,18 @@
                             <h4>PRO</h4>
                         </div>
                         <div class="pricing-body">
-                            <div class="col-sm-6">
+                            <div class="col-sm-6" style="border-right: 1px solid #00b050;">
                                 <div class="pricing-body-title">
                                     <h4>Monthly Plan (£/mo)</h4>
                                 </div>
                                 <div class="PMprice">
-                                    <p>985.00</p>
+                                    <p>1,280.50</p>
                                 </div>
                                 <div class="PMdisc" style="color: #00b050;font-weight: 700;">
                                     <p>1.5% Discount</p>
+                                </div>
+                                <div>
+                                    <button class="btn pbtn">Get Started</button>
                                 </div>
                             </div>
                             <div class="col-sm-6 ">
@@ -366,10 +368,13 @@
                                     <h4>Annual Plan (£/mo)</h4>
                                 </div>
                                 <div class="PAprice" >
-                                    <p>970.00</p>
+                                    <p>1,261.00</p>
                                 </div>
                                 <div class="PAdisc" style="color: #00b050;font-weight: 700;">
                                     <p>3.0% Discount</p>
+                                </div>
+                                <div>
+                                    <button class="btn pbtn">Get Started</button>
                                 </div>
                             </div>
                             <div class="col-sm-12" style="color: #00b050;font-weight: 700;">
@@ -392,12 +397,6 @@
                                     <p>Benchmarking Pro 1</p>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
-                                <button class="btn pbtn">Get Started</button>
-                            </div>
-                            <div class="col-sm-6">
-                                <button class="btn pbtn">Get Started</button>
-                            </div>
                         </div>
                     </div>
                     <div class="col-sm-4 PROp" style="text-align: center;">
@@ -406,15 +405,18 @@
                             <h4>PRO+</h4>
                         </div>
                         <div class="pricing-body">
-                            <div class="col-sm-6">
+                            <div class="col-sm-6" style="border-right: 1px solid #00b050;">
                                 <div class="pricing-body-title">
                                     <h4>Monthly Plan (£/mo)</h4>
                                 </div>
                                 <div class="PpMprice">
-                                    <p>738.75</p>
+                                    <p>1,576.00</p>
                                 </div>
                                 <div class="PpMdisc" style="color: #00b050;font-weight: 700;">
                                     <p>1.5% Discount</p>
+                                </div>
+                                <div>
+                                    <button class="btn pbtn">Get Started</button>
                                 </div>
                             </div>
                             <div class="col-sm-6 ">
@@ -422,10 +424,13 @@
                                     <h4>Annual Plan (£/mo)</h4>
                                 </div>
                                 <div class="PpAprice" >
-                                    <p>727.50</p>
+                                    <p>1,552.00</p>
                                 </div>
                                 <div class="PpAdisc" style="color: #00b050;font-weight: 700;">
                                     <p>3.0% Discount</p>
+                                </div>
+                                <div>
+                                    <button class="btn pbtn">Get Started</button>
                                 </div>
                             </div>
                             <div class="col-sm-12" style="color: #00b050;font-weight: 700;">
@@ -451,19 +456,62 @@
                                     <p>Scope of Services Tool 1</p>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
-                                <button class="btn pbtn">Get Started</button>
-                            </div>
-                            <div class="col-sm-6">
-                                <button class="btn pbtn">Get Started</button>
-                            </div>
                         </div>
                     </div>
-                    
-                   
+                    </div>
+                    <div class="col-sm-12 flex" style="text-align: center;display: none;">
+                        <div class="col-sm-6">
+                            <div class="pricing-title" style="background: #ffd710;">
+                                <h4></h4>
+                                <h4>FLEX</h4>
+                            </div>
+                            <div class="pricing-body">
+                                <div class="col-sm-12" style="color: #00b050;font-weight: 700;">
+                                    <div>
+                                        <h4 style="color: #ffd710;">Pay as you tender <br>(£/mo)</h4>
+                                    </div>
+                                    <div>
+                                        <h4 style="color: #ffd710;">150.00</h4>
+                                    </div>
+                                    <div>
+                                        <h4 style="color: darkgray;">No discount</h4>
+                                    </div>
+                                    <div class="services">
+                                        <p>Internal Benchmarking  1</p>
+                                    </div>
+                                    <div class="services">
+                                        <p>Tenderer Management 1</p>
+                                    </div>
+                                    <div class="services">
+                                        <p>Full Tenderer Functionalities 1</p>
+                                    </div>
+                                    <div class="services">
+                                        <p>Tenderer Dashboard 1</p>
+                                    </div>
+                                    <div class="services">
+                                        <p>Employer Dashboard 1</p>
+                                    </div>
+                                    <div class="">
+                                        <button class="btn pbtn col-sm-12">Get Started</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6" style="margin-top: 10px;">
+                            <div class="flexni">
+                                Stay flexible
+                            </div>
+                            <div class="flexni">
+                                or
+                            </div>
+                            <div class="flexni">
+                                simply top up your plan without upgrading
+                            </div>
+                        </div>
+                    </div> 
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="margin-top: 25px;">
                 <div class="col-sm-6">
                     <div class="pcard">
                         <div class="card-head">
@@ -727,78 +775,109 @@
       $(document).on('change', '#range', function() {
         var tenders = $(this).val();
         if(tenders == '5'){
-            $('.BMprice p').text('750.00');
-            $('.BAprice p').text('750.00');
+            $('.BMprice p').text('985.00');
+            $('.BAprice p').text('970.00');
+            $('.BMdisc p').text('1.5% Discount');
+            $('.BAdisc p').text('3.0% Discount');
 
-            $('.PMprice p').text('985.00');
-            $('.PAprice p').text('970.00');
+            $('.PMprice p').text('1,280.50');
+            $('.PAprice p').text('1,261.00');
             $('.PMdisc p').text('1.5% Discount');
             $('.PAdisc p').text('3.0% Discount');
 
-            $('.PpMprice p').text('985.00');
-            $('.PpAprice p').text('970.00');
+            $('.PpMprice p').text('1,576.00');
+            $('.PpAprice p').text('1,552.00');
             $('.PpMdisc p').text('1.5% Discount');
             $('.PpAdisc p').text('3.0% Discount');
+
+            $('#hider').css('display','block');
+            $('.flex').css('display','none');
         }
         else if(tenders == '10')
         {
-            $('.BMprice p').text('1500.00');
-            $('.BAprice p').text('1500.00');
+            $('.BMprice p').text('1,940.00');
+            $('.BAprice p').text('1,880.00');
+            $('.BMdisc p').text('3.0% Discount');
+            $('.BAdisc p').text('6.0% Discount');
 
-            $('.PMprice p').text('1,940.00');
-            $('.PAprice p').text('1,880.00');
+            $('.PMprice p').text('2,522.00');
+            $('.PAprice p').text('2,444.00');
             $('.PMdisc p').text('3.0% Discount');
             $('.PAdisc p').text('6.0% Discount');
 
-            $('.PpMprice p').text('985.00');
-            $('.PpAprice p').text('970.00');
+            $('.PpMprice p').text('3,104.00');
+            $('.PpAprice p').text('3,008.00');
             $('.PpMdisc p').text('3.0% Discount');
             $('.PpAdisc p').text('6.0% Discount');
+
+            $('#hider').css('display','block');
+            $('.flex').css('display','none');
         }
         else if(tenders == '15')
         {
-            $('.BMprice p').text('2,250.00');
-            $('.BAprice p').text('2,250.00');
+            $('.BMprice p').text('2,865.00');
+            $('.BAprice p').text('2,730.00');
+            $('.BMdisc p').text('4.5% Discount');
+            $('.BAdisc p').text('9.0% Discount');
 
-            $('.PMprice p').text('2,865.00');
-            $('.PAprice p').text('2,730.00');
+            $('.PMprice p').text('3,724.50');
+            $('.PAprice p').text('3,549.00');
             $('.PMdisc p').text('4.5% Discount');
             $('.PAdisc p').text('9.0% Discount');
 
-            $('.PpMprice p').text('985.00');
-            $('.PpAprice p').text('970.00');
+            $('.PpMprice p').text('4,584.00');
+            $('.PpAprice p').text('4,368.00');
             $('.PpMdisc p').text('4.5% Discount');
             $('.PpAdisc p').text('9.0% Discount');
+
+            $('#hider').css('display','block');
+            $('.flex').css('display','none');
         }
         else if(tenders == '20')
         {
-            $('.BMprice p').text('3,000.00');
-            $('.BAprice p').text('3,000.00');
+            $('.BMprice p').text('3,760.00');
+            $('.BAprice p').text('3,520.00');
+            $('.BMdisc p').text('6.0% Discount');
+            $('.BAdisc p').text('12.0% Discount');
 
-            $('.PMprice p').text('3,760.00');
-            $('.PAprice p').text('3,520.00');
+            $('.PMprice p').text('4,888.00');
+            $('.PAprice p').text('4,576.00');
             $('.PMdisc p').text('6.0% Discount');
             $('.PAdisc p').text('12.0% Discount');
 
-            $('.PpMprice p').text('985.00');
-            $('.PpAprice p').text('970.00');
+            $('.PpMprice p').text('6,016.00');
+            $('.PpAprice p').text('5,632.00');
             $('.PpMdisc p').text('6.0% Discount');
             $('.PpAdisc p').text('12.0% Discount');
+
+            $('#hider').css('display','block');
+            $('.flex').css('display','none');
         }
         else if(tenders == '25')
         {
-            $('.BMprice p').text('3,750.00');
-            $('.BAprice p').text('3,750.00');
+            $('.BMprice p').text('4,625.00');
+            $('.BAprice p').text('4,250.00');
+            $('.BMdisc p').text('7.5% Discount');
+            $('.BAdisc p').text('15.0% Discount');
 
-            $('.PMprice p').text('4,625.00');
-            $('.PAprice p').text('4,250.00');
+            $('.PMprice p').text('6,012.50');
+            $('.PAprice p').text('5,525.00');
             $('.PMdisc p').text('7.5% Discount');
             $('.PAdisc p').text('15.0% Discount');
 
-            $('.PpMprice p').text('985.00');
-            $('.PpAprice p').text('970.00');
+            $('.PpMprice p').text('7,400.00');
+            $('.PpAprice p').text('6,800.00');
             $('.PpMdisc p').text('7.5% Discount');
             $('.PpAdisc p').text('15.0% Discount');
+
+            $('#hider').css('display','block');
+            $('.flex').css('display','none');
+        }
+        else if(tenders == '0')
+        {
+            $('#hider').fadeOut("slow");
+            $('#hider').css('display','none');
+            $('.flex').css('display','block');
         }
       });
     });

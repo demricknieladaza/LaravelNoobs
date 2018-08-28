@@ -216,7 +216,8 @@ ul.user li a:focus {
 .pcard {
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;
 	padding: 10px;
-	height: 517px;
+	min-height: 550px;
+	height: auto;
 	border: 2px solid;
 	border-radius:6px;
 }
@@ -299,4 +300,42 @@ ul.user li a:focus {
 
 .pnp:hover {
 	color: white;
+}
+
+.basic:hover, .PRO:hover, .PROp:hover {
+	transform: scale(1.1);
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;
+}
+
+.basic:hover, .PROp:hover{
+	padding-top: 40px;
+	margin-top: -40px;
+}
+
+.basic, .PRO, .PROp {
+	min-height: 412px;
+	height: auto;
+}
+
+.basic, .PRO, .PROp{
+	transition: all .2s ease-in-out;
+}
+
+.BMprice,.BAprice,.PMprice,.PAprice,.PMdisc,.PAdisc,.PpMprice,.PpAprice,.PpMdisc,.PpAdisc{
+	transition: 1.5s;
+}
+
+.grower {
+	transform: scale(1.1);
+}
+
+.flexni {
+	color: #ffd710;
+	font-size: xx-large;
+	padding: 10px 15px;
+}
+
+.flex {
+	transition: visibility 0s, opacity 0.5s linear;
+	animation: anim .3s ease-in-out;
 }
