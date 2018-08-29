@@ -611,7 +611,7 @@
 		    					<div id="section11" class="tab-pane fade in active tender-container">
 		    						<h3 class="bid-form-title">Scope</h3>
 		    						<div class="row" style="margin: 0;">	
-		    						<div class="row">
+		    						
 								<div class="col-sm-12">
 									<table id="customers">
 											  <tr>
