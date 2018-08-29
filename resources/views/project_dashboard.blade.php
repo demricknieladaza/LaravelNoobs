@@ -115,7 +115,7 @@
 		    		<div class="tender-container">
 		    			<div class="row">
 		    				<div class="col-sm-12 active-tenders" id="cprofile">
-		    						<h3>Project Information<button onclick="myFunction()" style="float:right;" ><i class="fa fa-edit" style="font-size:24px"></i>Edit</button></h3>
+		    						<h3>Project Information<button onclick="myFunction()" style="float:right;margin-top:-10px;" ><i class="fa fa-edit" style="font-size:24px"></i>Edit</button></h3>
 		    				</div>			
 		    				<div class="col-sm-12">
 		    					<table class="table table-striped table-hover">
@@ -348,7 +348,7 @@
 		    		<div class="tender-container">
 						<div class="row">
 							<div class="col-sm-12 active-tenders">
-								<h3>Tender Queries<button onclick="myFunction1()" style="float: right;"><i class="fa fa-edit" style="font-size:24px"></i>Edit</button></h3>
+								<h3>Tender Queries<button onclick="myFunction1()" style="float: right;margin-top:-10px;"><i class="fa fa-edit" style="font-size:24px"></i>Edit</button></h3>
 								<div class="row">	
 									<div class="col-sm-12">				
 										<table class="table table-striped table-hover">
@@ -392,7 +392,7 @@
 					<div class="tender-container">
 						<div class="row">
 							<div class="col-sm-12 active-tenders">
-								<h3>Employer Details<button onclick="myFunction2()" style="float: right;"><i class="fa fa-edit" style="font-size:24px"></i>Edit</button></h3>
+								<h3>Employer Details<button onclick="myFunction2()" style="float: right;margin-top:-10px;"><i class="fa fa-edit" style="font-size:24px"></i>Edit</button></h3>
 								<div class="row">	
 									<div class="col-sm-9">				
 										<table class="table table-striped table-hover">

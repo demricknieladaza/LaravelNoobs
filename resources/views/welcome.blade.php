@@ -291,7 +291,7 @@
                 <div class="col-sm-8 col-sm-offset-1" style="margin-top: 5px;margin-bottom: 20px;">
                     <div id="hider">
                     <div class="col-sm-4 basic" style="text-align: center;">
-                        <div class="pricing-title" style="background: #285080;">
+                        <div class="pricing-title" style="background: #285080;border: 1px solid #285080;">
                             <h4></h4>
                             <h4>BASIC</h4>
                         </div>
@@ -303,11 +303,13 @@
                                 <div class="BMprice" id="grower">
                                     <p>985.00</p>
                                 </div>
-                                <div class="BMdisc" style="color: #00b050;font-weight: 700;">
+                                <div class="BMdisc" style="color: #ffffff;font-weight: 700;">
                                     <p>1.5% Discount</p>
                                 </div>
                                 <div>
-                                    <button class="btn pbtn">Get Started</button>
+                                    <button class="btn" style=" border-radius: 5px;
+    color: white;
+    background: #285080;">Get Started</button>
                                 </div>
                             </div>
                             <div class="col-sm-6 ">
@@ -317,14 +319,16 @@
                                 <div class="BAprice" >
                                     <p>970.00</p>
                                 </div>
-                                <div class="BAdisc" style="color: #00b050;font-weight: 700;">
+                                <div class="BAdisc" style="color: #ffffff;font-weight: 700;">
                                     <p>3.0% Discount</p>
                                 </div>
                                 <div>
-                                    <button class="btn pbtn">Get Started</button>
+                                    <button class="btn" style=" border-radius: 5px;
+    color: white;
+    background: #285080;">Get Started</button>
                                 </div>
                             </div>
-                            <div class="col-sm-12" style="color: #00b050;font-weight: 700;">
+                            <div class="col-sm-12" style="color: #00b050;font-weight: 700;    padding-top: 15px;">
                                 <div class="services">
                                     <p>Internal Benchmarking  1</p>
                                 </div>
@@ -337,7 +341,7 @@
                                 <div class="services">
                                     <p>Tenderer Dashboard 1</p>
                                 </div>
-                                <div class="services">
+                                <div class="services" style="border-bottom:none;">
                                     <p>Employer Dashboard 1</p>
                                 </div>
                             </div>
@@ -345,7 +349,7 @@
                     </div>
                     <div class="col-sm-4 PRO" style="text-align: center;margin-top: -39px;">
                         <h4 style="color: #FE7235;"> POPULAR </h4>
-                        <div class="pricing-title" style="background: #FE7235">
+                        <div class="pricing-title" style="background: #FE7235;border: 1px solid #FE7235;">
                             <h4>PRO</h4>
                         </div>
                         <div class="pricing-body">
@@ -356,11 +360,13 @@
                                 <div class="PMprice">
                                     <p>1,280.50</p>
                                 </div>
-                                <div class="PMdisc" style="color: #00b050;font-weight: 700;">
+                                <div class="PMdisc" style="color: #ffffff;font-weight: 700;">
                                     <p>1.5% Discount</p>
                                 </div>
                                 <div>
-                                    <button class="btn pbtn">Get Started</button>
+                                    <button class="btn" style=" border-radius: 5px;
+    color: white;
+    background: #FE7235">Get Started</button>
                                 </div>
                             </div>
                             <div class="col-sm-6 ">
@@ -370,14 +376,16 @@
                                 <div class="PAprice" >
                                     <p>1,261.00</p>
                                 </div>
-                                <div class="PAdisc" style="color: #00b050;font-weight: 700;">
+                                <div class="PAdisc" style="color: #ffffff;font-weight: 700;">
                                     <p>3.0% Discount</p>
                                 </div>
                                 <div>
-                                    <button class="btn pbtn">Get Started</button>
+                                    <button class="btn" style=" border-radius: 5px;
+    color: white;
+    background: #FE7235">Get Started</button>
                                 </div>
                             </div>
-                            <div class="col-sm-12" style="color: #00b050;font-weight: 700;">
+                            <div class="col-sm-12" style="color: #00b050;font-weight: 700;    padding-top: 15px;">
                                 <div class="services">
                                     <p>Internal Benchmarking  1</p>
                                 </div>
@@ -393,14 +401,14 @@
                                 <div class="services">
                                     <p>Employer Dashboard 1</p>
                                 </div>
-                                <div class="services">
+                                <div class="services" style="border-bottom:none;">
                                     <p>Benchmarking Pro 1</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-4 PROp" style="text-align: center;">
-                        <div class="pricing-title" style="background: #000;">
+                        <div class="pricing-title" style="background: #000;border: 1px solid #000;">
                             <h4></h4>
                             <h4>PRO+</h4>
                         </div>
@@ -412,11 +420,13 @@
                                 <div class="PpMprice">
                                     <p>1,576.00</p>
                                 </div>
-                                <div class="PpMdisc" style="color: #00b050;font-weight: 700;">
+                                <div class="PpMdisc" style="color: #ffffff;font-weight: 700;">
                                     <p>1.5% Discount</p>
                                 </div>
                                 <div>
-                                    <button class="btn pbtn">Get Started</button>
+                                    <button class="btn" style=" border-radius: 5px;
+    color: white;
+    background: #000">Get Started</button>
                                 </div>
                             </div>
                             <div class="col-sm-6 ">
@@ -426,14 +436,16 @@
                                 <div class="PpAprice" >
                                     <p>1,552.00</p>
                                 </div>
-                                <div class="PpAdisc" style="color: #00b050;font-weight: 700;">
+                                <div class="PpAdisc" style="color: #ffffff;font-weight: 700;">
                                     <p>3.0% Discount</p>
                                 </div>
                                 <div>
-                                    <button class="btn pbtn">Get Started</button>
+                                    <button class="btn" style=" border-radius: 5px;
+    color: white;
+    background: #000">Get Started</button>
                                 </div>
                             </div>
-                            <div class="col-sm-12" style="color: #00b050;font-weight: 700;">
+                            <div class="col-sm-12" style="color: #00b050;font-weight: 700;    padding-top: 15px;">
                                 <div class="services">
                                     <p>Internal Benchmarking  1</p>
                                 </div>
@@ -452,7 +464,7 @@
                                 <div class="services">
                                     <p>Benchmarking Pro 1</p>
                                 </div>
-                                <div class="services">
+                                <div class="services" style="border-bottom:none;">
                                     <p>Scope of Services Tool 1</p>
                                 </div>
                             </div>
@@ -461,17 +473,17 @@
                     </div>
                     <div class="col-sm-12 flex" style="text-align: center;display: none;">
                         <div class="col-sm-6">
-                            <div class="pricing-title" style="background: #ffd710;">
+                            <div class="pricing-title" style="background: #285080;border: 1px solid #285080;">
                                 <h4></h4>
                                 <h4>FLEX</h4>
                             </div>
                             <div class="pricing-body">
                                 <div class="col-sm-12" style="color: #00b050;font-weight: 700;">
                                     <div>
-                                        <h4 style="color: #ffd710;">Pay as you tender <br>(£/mo)</h4>
+                                        <h4 style="">Pay as you tender <br>(£/mo)</h4>
                                     </div>
                                     <div>
-                                        <h4 style="color: #ffd710;">150.00</h4>
+                                        <h4 style="">150.00</h4>
                                     </div>
                                     <div>
                                         <h4 style="color: darkgray;">No discount</h4>
@@ -488,11 +500,13 @@
                                     <div class="services">
                                         <p>Tenderer Dashboard 1</p>
                                     </div>
-                                    <div class="services">
+                                    <div class="services" style="border-bottom:none;">
                                         <p>Employer Dashboard 1</p>
                                     </div>
-                                    <div class="">
-                                        <button class="btn pbtn col-sm-12">Get Started</button>
+                                    <div style="">
+                                        <button class="btn col-sm-12" style=" border-radius: 5px;
+    color: white;
+    background: #285080;margin-bottom:25px;">Get Started</button>
                                     </div>
                                 </div>
                             </div>
@@ -516,7 +530,7 @@
                     <div class="pcard">
                         <div class="card-head">
                             <h3>SCOPE's most powerful tool</h3>
-                            <b style="margin-top:0; font-family: bahnschrift; font-size:39px;">BENCHMARKING</b>
+                            <b style="margin-top:0; font-family: bahnschrift; font-size:35px;">BENCHMARKING</b>
                             <hr style="border: 1px solid #FE7235;">
                         </div>
                        
@@ -881,5 +895,29 @@
         }
       });
     });
+</script>
+<script type="text/javascript">
+    var acc = document.getElementsByClassName("accord");
+    var panel = document.getElementsByClassName('panel1');
+
+for (var i = 0; i < acc.length; i++) {
+    acc[i].onclick = function() {
+        var setClasses = !this.classList.contains('active');
+        setClass(acc, 'active', 'remove');
+        setClass(acc, 'act', 'remove');
+        setClass(panel, 'show', 'remove');
+        
+        if (setClasses) {
+            this.classList.toggle("active");
+            this.nextElementSibling.classList.toggle("show");
+        }
+    }
+}
+
+function setClass(els, className, fnName) {
+    for (var i = 0; i < els.length; i++) {
+        els[i].classList[fnName](className);
+    }
+}
 </script>
 @endsection

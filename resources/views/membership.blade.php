@@ -14,7 +14,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-12 project-anchor">
+				<div class="col-sm-12 project-anchor" style="padding-bottom: 0;">
 					<a>My Subscription</a>
 				</div>
 			</div>

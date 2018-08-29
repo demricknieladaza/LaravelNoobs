@@ -30,11 +30,11 @@
 											<table style="table-layout: fixed;" class="table table-striped table-hover">
 												<thead>
 													<tr>
-														<th>Project</th>
-														<th>Issue</th>
-														<th>Date Raised</th>
-														<th>Date Required</th>
-														<th>Action</th>
+														<th style="color: black;">Project</th>
+														<th style="color: black;">Issue</th>
+														<th style="color: black;">Date Raised</th>
+														<th style="color: black;">Date Required</th>
+														<th style="color: black;">Action</th>
 													</tr>
 												</thead>
 												<tbody>
@@ -70,12 +70,12 @@
 								<div class="row">
 									<div class="col-sm-4">
 										<div class="box">
-											<p>Increase Discount</p>
+											<p style="font-size: 13px;">Increase Discount</p>
 										</div>
 									</div>
 									<div class="col-sm-4">
 										<div class="box">
-											<p>Go PRO+</p>
+											<p style="font-size: 18px;">Go PRO+</p>
 										</div>
 									</div>
 									<div class="col-sm-4">

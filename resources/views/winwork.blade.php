@@ -132,7 +132,7 @@
 									<input type="text" name="location" class="form-control" placeholder="Enter your location">
 								</div>								
 								<div class="form-group">
-								  
+								 	<input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"/>
 								</div>
 								<div class="formm-group">
 									<p><input type="submit" name="submit" value="Apply Filter" class="btn btn-lg btn-primary"></p>
@@ -559,6 +559,16 @@
 		  };
 
 		  $this.text(linkText);
+		});
+	</script>
+	<script type="text/javascript">
+		$("#ex8").slider({
+			tooltip: 'always'
+		});
+
+		// Without JQuery
+		var slider = new Slider("#ex8", {
+			tooltip: 'always'
 		});
 	</script>
 	

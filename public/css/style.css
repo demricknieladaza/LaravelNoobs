@@ -1352,11 +1352,14 @@ body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(1) > di
 
 .tab1{
     /*width: 49%;*/
+    padding: 0;
 }
 
 .tab2{
     /*width: 49%;*/
     float: right;
+    padding: 0;
+    padding-left: 15px;
 }
 
 body > div:nth-child(17) > div > div.col-sm-12{
@@ -1403,7 +1406,6 @@ body > div:nth-child(17) > div > div.col-sm-12{
     float: right;
     margin-left: 5px;
 }
-
 /*.active:after {
     content: "\2212";
 }*/
@@ -1411,7 +1413,7 @@ body > div:nth-child(17) > div > div.col-sm-12{
 .panel1 {
     padding: 0 18px;
     background-color: white;
-    max-height: 0;
+    display: none;
     font-size: 16px;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
@@ -1598,6 +1600,7 @@ div.ex3 {
     overflow: auto;
     margin-left: 0;
     padding-top: 13px;
+    padding-left: 10px;
 
 }
 
@@ -2033,3 +2036,4 @@ body > div.container-fluid.lounge-wrapper > div.col-sm-10.col-sm-offset-2.lounge
 body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(3) > div > div > h3 > button{
     border-radius: 6px;
 }
+

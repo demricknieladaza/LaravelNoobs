@@ -11,6 +11,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/masterslider.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/animate.min.css')}} ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.0/css/bootstrap-slider.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.0/css/bootstrap-slider.min.css" />
     <link rel="stylesheet" type="text/css" href="{{asset('css/owl.carousel.css')}} ">
     <link rel="stylesheet" type="text/css" href="{{asset('css/bxslider.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
@@ -28,6 +30,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css"> -->
 	<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/bootstrap.datepicker/0.1/css/datepicker.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.0/bootstrap-slider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.0/bootstrap-slider.js"></script>
 	<link rel="stylesheet" type="text/css" href="{{asset('css/animate.min.css')}}">
 	<!-- <link rel="shortcut icon" href="{{asset('logo.jpg')}}"> -->
 	<script type="text/javascript" src="http://cdn.jsdelivr.net/bootstrap.datepicker/0.1/js/bootstrap-datepicker.js"></script>
