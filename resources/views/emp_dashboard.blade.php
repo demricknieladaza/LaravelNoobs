@@ -18,22 +18,22 @@
 				<div class="row">
 					<div class="col-sm-6 lounge-action">
 						<div class="shadow-wrapper shadow-wrappernigids">
-							<div class="panel-group" id="accordion1">
+							<div class="panel-group" id="accordioned">
 								<div class="panel">
 									<div class="panel-heading">
 										<h4 class="panel-title">
-											<a >Actions Required <span class="badge">2</span> <span class="pull-right"></span></a>
+											<h4>Actions Required  <span class="badge">2</span></h4>
 										</h4>
 									</div>
 									<div id="collapse5" class="panel-collapse collapse in">
-										<div class="panel-body">
+										<div class="panel-body linya">
 											<table style="table-layout: fixed;" class="table table-striped table-hover">
 												<thead>
 													<tr>
 														<th style="color: black;">Project</th>
 														<th style="color: black;">Issue</th>
 														<th style="color: black;">Date Raised</th>
-														<th style="color: black;">Date Required</th>
+														<th style="color: black; width: 24%;">Date Required</th>
 														<th style="color: black;">Action</th>
 													</tr>
 												</thead>
@@ -91,7 +91,7 @@
 								</div>
 								<div class="row" style="margin-top: 25px; padding-right: 10px; padding-left: 10px;">
 									<div class="form-group">
-										<button class="btn col-sm-12 pnp" style="height: 50px;"><strong>Publish New Project</strong></button>
+										<button class="btn col-sm-12 pnp" style="height: 50px;box-shadow: 5px 5px #888888;"><strong>Publish New Project</strong></button>
 									</div>
 								</div>
 							</div>
@@ -121,17 +121,17 @@
 									<div class="row">
 										<div class="hover-container-holder">
 											<div class="tender-tile-single">
-												<div class="tender-tiles">
+												<div class="tender-tiles thin">
 													<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>		
 												</div>
 											</div>
 											<div class="tender-tile-single">
-												<div class="tender-tiles">
+												<div class="tender-tiles thin">
 													<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>
 												</div>
 											</div>
 											<div class="tender-tile-single">
-												<div class="tender-tiles">
+												<div class="tender-tiles thin">
 													<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>
 												</div>
 											</div>
@@ -185,17 +185,17 @@
 									<div class="row">
 										<div class="hover-container-holder">
 											<div class="tender-tile-single">
-												<div class="tender-tiles">
+												<div class="tender-tiles thin">
 													<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>		
 												</div>
 											</div>
 											<div class="tender-tile-single">
-												<div class="tender-tiles">
+												<div class="tender-tiles thin">
 													<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>
 												</div>
 											</div>
 											<div class="tender-tile-single">
-												<div class="tender-tiles">
+												<div class="tender-tiles thin">
 													<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>
 												</div>
 											</div>
