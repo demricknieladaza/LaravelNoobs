@@ -875,7 +875,7 @@
 						<form method="post">
 							<div class="row">
 								<div class="col-sm-12">
-									<table id="customers">
+									<table id="customers1">
 											  <tr>
 											    <th>Deliverable</th>
 											    <th>Details / Contents</th>
@@ -888,151 +888,161 @@
 											    <th>5</th>
 											    <th>6</th>
 											    <th>7</th>
-
-
+											    <th>Total</th>
 											  </tr>
 											  <tr>
 											    <td>Strategic Brief</td>
 											  <td contenteditable='true'></td>
+											  <td contenteditable='true'></td>
+											   <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
 											     <td contenteditable='true'></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>											
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
+											    											
 											  </tr>
 											  <tr>
 											    <td>Project Programme (Lead)</td>
 											     <td contenteditable='true'></td>
+											  <td contenteditable='true'></td>
+											   <td contenteditable='true'></td>
 											    <td contenteditable='true'></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											     <td contenteditable='true'></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>
 											  <tr>
 											    <td>Feasibility Study</td>
 											    <td contenteditable='true'></td>
+											  <td contenteditable='true'></td>
+											   <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
 											     <td contenteditable='true'></td>
-											   <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  <tr>
 											    <td>Design Responsibility Matrix</td>
+											    <td contenteditable='true'></td>
+											  <td contenteditable='true'></td>
+											   <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
 											     <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											   <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>
 											  <tr>
 											   <td>Site Information Report</td>
 											     <td contenteditable='true'></td>
+											  <td contenteditable='true'></td>
+											   <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
 											     <td contenteditable='true'></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>
 											  <tr>
 											    <td>Information Exchange Strategy</td>
 											     <td contenteditable='true'></td>
+											  <td contenteditable='true'></td>
+											   <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
 											     <td contenteditable='true'></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>
 											  <tr>
 											    <td>Project Brief/td>
+											    <td contenteditable='true'></td>
+											  <td contenteditable='true'></td>
+											   <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
 											     <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>
 											  <tr>
 											    <td>Risk Assessment (Lead)</td>
 											     <td contenteditable='true'></td>
+											  <td contenteditable='true'></td>
+											   <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
 											     <td contenteditable='true'></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>
 											  <tr>
 											    <td>Handover Strategy (Lead)</td>
+											    <td contenteditable='true'></td>
+											  <td contenteditable='true'></td>
+											   <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
 											     <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>
 											  <tr>
 											    <td>Project Execution Plan</td>
 											     <td contenteditable='true'></td>
+											  <td contenteditable='true'></td>
+											   <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
 											     <td contenteditable='true'></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>
 											  <tr>
 											    <td>Design Proposals from Design Team members</td>
+											    <td contenteditable='true'></td>
+											  <td contenteditable='true'></td>
+											   <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
 											     <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>
 											</table><br>
 											 <button type="button" class="btn btn-info">Add another Lines</button>
@@ -1040,7 +1050,7 @@
 							</div><br>
 							<div class="row">
 								<div class="col-sm-12">
-									<table id="Riba" style="overflow-x:auto;">
+									<table id="Riba1" style="overflow-x:auto;">
 											  <tr>
 											    <th> Meetings</th>
 											    <th>Purpose</th>
@@ -1049,6 +1059,7 @@
 											    <th>Reoccurence / Number of Meetings</th>
 											    <th>Arrange</th>
 											    <th>Attend</th>
+											    <th>Minute</th>
 											    <th>1</th>
 											    <th>2</th>
 											    <th>3</th>
@@ -1066,12 +1077,14 @@
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											   
 											 
 											    
 											  </tr>
@@ -1084,12 +1097,14 @@
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											   
 											  </tr>
 											  <tr>
 											    <td>Site / Project Meetings (RIBA Stage 4/5)</td>
@@ -1100,12 +1115,14 @@
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											    
 											  </tr>
 											  <tr>
 											   <td>SC / PC Site Inspection</td>
@@ -1113,15 +1130,17 @@
 											    <td contenteditable='true'></td>
 											    <td contenteditable='true'></td>
 											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											    
 											  </tr>
 											  <tr>
 										</table><br>
@@ -1163,7 +1182,7 @@
 							</div><br>
 								<div class="row">
 								<div class="col-sm-12">
-									<table id="Stages">
+									<table id="Stages1">
 											  <tr>
 											    <th>Advise on</th>
 											    <th>0</th>
@@ -1178,83 +1197,83 @@
 											  
 										      <tr>
 											  <td>Any products or materials, specified within the guidelines named in Item ???, that are relevant to the project and have been found to be deleterious or hazardous to health and safety.</td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td contenteditable='true'></td>
+											   <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											     <td contenteditable='true'></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
 											  </tr>
 											     <tr>
 											  <td>Assembly of Project Team. (Lead)</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+										        <td contenteditable='true'></td>
+										         <td contenteditable='true'></td>
+										          <td contenteditable='true'></td>
+										           <td contenteditable='true'></td>
+										            <td contenteditable='true'></td>
+										             <td contenteditable='true'></td>
+										              <td contenteditable='true'></td>
+										               <td contenteditable='true'></td>
 											  </tr>
 											   <tr>
 											  <td>Need for and the scope of services by consultants, specialists, sub-contractors or suppliers. (Lead)</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											   <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											     <td contenteditable='true'></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>
 
 											   <tr>
 											  <td>Form and content of design outputs, their interfaces and a verification procedure. (Lead)</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											     <td contenteditable='true'></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>
 
 											   <tr>
 											  <td>Resolution of defects.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											     <td contenteditable='true'></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>
 											  <tr>
 											  <td>Form and content of design outputs, their interfaces and a verification procedure. (Lead)</td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											     <td contenteditable='true'></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>
 
 											   <tr>
 											  <td>Relevant experience from previous projects.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											     <td contenteditable='true'></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>
 											  <tr>
 											    <th>Monitor</th>
@@ -1270,39 +1289,39 @@
 
 											  <tr>
 											  <td>Work of the Designers Designers regarding…. [WHAT?]</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											     <td contenteditable='true'></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>
 
 											  <tr>
 											  <td>Performance of Design Team.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-												</div></td>
+											  <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											     <td contenteditable='true'></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
+												
 											  </tr>										    
 											 
 											 <tr>
 											  <td>Compliance with statutory and contract requirements.</td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											 <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											     <td contenteditable='true'></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>
 											  <tr>
 											    <th>Collaborate / Consult with</th>
@@ -1317,47 +1336,47 @@
 											  </tr>
 											  <tr>
 											  <td>Relevant Third Parties as required.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											   <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											     <td contenteditable='true'></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>
 											  <tr>
 											  <td>Planning authority to discuss the project</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											   <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											     <td contenteditable='true'></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>	
 											  <tr>
 											  <td>Statutory authorities on developing design.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											   <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											     <td contenteditable='true'></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>	
                                                <tr>
 											  <td>Project Manager & Employer on significant design issues. (Lead).</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											     <td contenteditable='true'></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>	
 											  <tr>
 											    <th>Co-ordinate</th>
@@ -1372,26 +1391,26 @@
 											  </tr>
 											  <tr>
 											  <td>Collation of all planning submission documents.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											     <td contenteditable='true'></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>
 
 											  <tr>
 											  <td>Reviewing design information provided by contractors or specialists to establish whether that information can be co-ordinated and integrated with other project information.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											   <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											     <td contenteditable='true'></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>
 											   <tr>
 											    <th>Other</th>
@@ -1407,50 +1426,50 @@
                                               
                                               <tr>
 											  <td>Submit the [detailed / outline] planning application.</td>
-                                              <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+                                               <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											     <td contenteditable='true'></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>
 
 											   <tr>
 											  <td>Assisting building user during initial occupation period.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											     <td contenteditable='true'></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>
 
 											  <tr>
 											  <td>Review all instructions and information about the Project, provided by the Employer.</td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											     <td contenteditable='true'></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>
 
 											  <tr>
 											  <td>preparing and making submissions under building acts and/or regulations or other statutory requirements.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											   <td contenteditable='true'></td>
+											    <td contenteditable='true'></td>
+											     <td contenteditable='true'></td>
+											      <td contenteditable='true'></td>
+											       <td contenteditable='true'></td>
+											        <td contenteditable='true'></td>
+											         <td contenteditable='true'></td>
+											          <td contenteditable='true'></td>
 											  </tr>
 
 

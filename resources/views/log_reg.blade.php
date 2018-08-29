@@ -216,7 +216,7 @@
                    // jQuery('.alertss').show();
                    // jQuery('.alertss').html(result.success);
                    if(result.success=='naa'){
-                        window.location.replace("/");
+                      window.location.href = "{{ url('/dashboard/emp_dashboard') }}";
                    }
                    else
                    {

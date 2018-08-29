@@ -109,21 +109,21 @@
 									<td>John</td>
 									<td>Doe</td>
 									<td>johndoe@gmail.com</td>
-									<td><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i>Delete</button></td>
+									<td><button type="button" class="btn del"><i class="fa fa-trash"></i>Delete</button></td>
 								</tr>
 								<tr>
 									<td>002</td>
 									<td>Test</td>
 									<td>Test</td>
 									<td>Test@gmail.com</td>
-									<td><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i>Delete</button></td>
+									<td><button type="button" class="btn del"><i class="fa fa-trash"></i>Delete</button></td>
 								</tr>
 								<tr>
 									<td>003</td>
 									<td>First Name</td>
 									<td>Surname</td>
 									<td>fns@yahoo.com</td>
-									<td><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i>Delete</button></td>
+									<td><button type="button" class="btn del"><i class="fa fa-trash"></i>Delete</button></td>
 								</tr>
 							</tbody>
 						</table>

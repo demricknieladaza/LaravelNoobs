@@ -70,7 +70,7 @@
 								<div class="row">
 									<div class="col-sm-4">
 										<div class="box">
-											<p style="font-size: 13px;">Increase Discount</p>
+											<p style="font-size: 1vw;">Increase Discount</p>
 										</div>
 									</div>
 									<div class="col-sm-4">
