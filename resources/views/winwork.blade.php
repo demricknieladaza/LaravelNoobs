@@ -133,6 +133,7 @@
 								</div>								
 								<div class="form-group">
 								 	<input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"/>
+								 	<span id="ex6CurrentSliderValLabel">Miles: <span id="ex6SliderVal">Any</span></span>
 								</div>
 								<div class="formm-group">
 									<p><input type="submit" name="submit" value="Apply Filter" class="btn btn-lg btn-primary"></p>
@@ -570,8 +571,19 @@
 		var slider = new Slider("#ex8", {
 			tooltip: 'always'
 		});
+		slider.on("slide", function(sliderValue) {
+			if (sliderValue == 0){
+				document.getElementById("ex6SliderVal").textContent = 'Any';
+			}
+			else{
+				document.getElementById("ex6SliderVal").textContent = sliderValue;
+			}
+		});
 	</script>
-	
+	<script type="text/javascript">
+		
+	</script>
+
 	<!-- end -->
 
 @endsection
