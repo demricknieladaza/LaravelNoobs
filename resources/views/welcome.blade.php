@@ -12,10 +12,10 @@
     <div id="home" class="container-fluid">
         <div class="row">
             <div class="master-slider ms-skin-black-2 round-skin sliderloading" id="mainSlider">
-                {{-- <div class="ms-slide slide-1" data-delay="3" style="z-index: 10">
+                <div class="ms-slide slide-1" data-delay="3" style="z-index: 10">
                     <img src="../images/blank.gif" data-src="../images/slider-plain.jpg" />
                     <img src="../images/blank.gif" data-src="../images/scope-white.png" width="800" class="ms-layer" style="bottom:200px; left:200px;font-family:bahnschrift;" data-effect="bottom(100,500,true)" data-type="image" data-delay="0" data-duration="3500" data-ease="easeOutQuad" class="slider-logo" />  
-                </div> --}}
+                </div>
                 <div class="ms-slide slide-2" data-delay="3" style="z-index: 11">
                     <img src="../images/blank.gif" data-src="../images/Build Relationships.jpg" />
                     <h1 class="ms-layer bold-title"  style="left:47px; top:230px;font-family:bahnschrift;"
