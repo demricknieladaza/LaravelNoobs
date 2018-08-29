@@ -1649,6 +1649,31 @@ body > div:nth-child(15) > div > div > div.row{
     color: white;
 }
 
+#customers1 {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+#customers1 td {
+   max-width:110px; 
+   max-height:40px;
+}
+
+#customers1 td, #customers1 th {
+    border: 1px solid #00B0F0;
+    padding: 8px;  
+}
+
+
+
+#customers1 th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #00B0F0;
+    color: white;
+}
+
 #Riba {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-size:13px;
@@ -1674,6 +1699,70 @@ body > div:nth-child(15) > div > div > div.row{
     background-color: #7030A0;
     color: white;
 }
+
+
+
+#Riba1 {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size:13px;
+   border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+#Riba1 td {
+   max-width:110px; 
+   max-height:40px;
+}
+
+#Riba1 td, #Riba1 th {
+    border: 1px solid #7030A0 ;
+   width:20px; 
+    
+}
+
+#Riba1 th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #7030A0;
+    color: white;
+}
+
+
+#Stages1 th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #FBDC7D;
+    color: white;
+}
+#Stages1 {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#Stages1 td, #Stages1 th {
+    border: 1px solid #FBDC7D;
+    width:20px; 
+    
+}
+
+
+
+#Stages1 th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #FBDC7D;
+    color: white;
+}
+
+
+
+
+
+
 #Content {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
@@ -2054,3 +2143,14 @@ body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.
 /*#contact > h1{
     padding-top: 20px;
 }*/
+
+.buts{
+    background-color: white; 
+        color: black; 
+        border: 2px solid #fe7235;
+}
+
+.buts:hover {
+    background-color: #fe7235;
+    color: white;
+}
