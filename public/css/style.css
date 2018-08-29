@@ -2143,3 +2143,14 @@ body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.
 /*#contact > h1{
     padding-top: 20px;
 }*/
+
+.buts{
+    background-color: white; 
+        color: black; 
+        border: 2px solid #fe7235;
+}
+
+.buts:hover {
+    background-color: #fe7235;
+    color: white;
+}
