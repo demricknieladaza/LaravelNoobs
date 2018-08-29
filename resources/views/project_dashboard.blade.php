@@ -428,6 +428,7 @@
 											</tr>
 										</table>
 									</div>
+
 									<div class="col-sm-3 company-quick-details">
 										<p><img src="../images/logo-british.jpg"></p>
 										<p>Active Projects <span class="badge">4</span></p>
@@ -439,13 +440,19 @@
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
 										</p>
+
 									</div>
 								</div>
 							</div>
+							<button style="margin-left: 40px;height: 35px;width: 90px;}" type="button" class="btn btn-success">Save</button>
+
 						</div>
 					</div>
+
 		    	</div>
+
 		    </div>
+
 				</div>
 				<div id="section2" class="tab-pane fade tender-container" style="padding-top:0;margin-left:auto;margin-right:auto;width:1040px;">
 					<div class="row">
@@ -454,6 +461,7 @@
 						</div>
 					</div>
 				</div>
+
 				<div id="section3" class="tab-pane fade tender-container" style="padding-top:0;margin-left:auto;margin-right:auto;width:1040px;">
 					<div class="row" style="margin: 25px;">
 	    			<table class="table table-bordered">
@@ -604,14 +612,7 @@
 		    						<h3 class="bid-form-title">Scope</h3>
 		    						<div class="row" style="margin: 0;">
 		    						<table class="table table-bordered tabsl" style="table-layout: unset;">
-		    							<thead class="thead" style="color: white;
-																							    font-weight: 700;
-																							    border-top: 1px solid #00B0F0;
-																							    border-right: none;
-																							    border-bottom: none;
-																							    border-left: 1px solid #00B0F0;
-																							    background: #00B0F0;
-																							    white-space: normal;">
+		    							<thead class="thead" style="color: white;">
 		    								<tr>
 		    									<td>Deliverable</td>
 		    									<td>Details / Contents</td>
@@ -1358,7 +1359,7 @@ function myFunction() {
 }
 </script>
 <script type="text/javascript">
-	function myFunction1(){
+	function myFunction1(){	
    document.getElementById("que1").contentEditable = true;
    document.getElementById("que2").contentEditable = true;
    document.getElementById("que3").contentEditable = true;
