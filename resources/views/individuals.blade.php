@@ -12,7 +12,7 @@
 			<div class="col-sm-10 col-sm-offset-2 lounge-main">
 				<div class="row">
 					<div class="col-sm-12 lounge-header">
-						<span>Company Information</span>
+						<span>Individuals</span>
 						<button class="btn btn-warning pull-right">Print Company Information</button>
 					</div>
 				</div>

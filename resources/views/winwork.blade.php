@@ -55,7 +55,7 @@
 					</div>
 				</div>
 				<div class="col-sm-2">
-					<button class="btn btn-lg btn-primary">Search</button>
+					<button class="btn btn-lg btn-primary" style="border-radius: 6px;">Search</button>
 				</div>
 			</form>
 		</div>
@@ -84,7 +84,7 @@
 								?>
 								</div>
 								<div class="show-more">
-								    <a href="#">Show more</a>
+								    <a href="#" style="color: #FE7235;">Show more</a>
 								 </div><br>
 								</div>
 								<div class="textcont">
@@ -103,8 +103,8 @@
 								<p><input type="checkbox" class="filled-in" name="other" value="other" id="other"> <label for="other">Other</label></p>
 								</div>
 								<div class="show-more">
-								    <a href="#">Show more</a>
-								 </div>
+								    <a href="#" style="color: #FE7235;">Show more</a>
+								 </div><br>
 								 </div>
 								
 								<!-- <p><input type="checkbox" class="filled-in" name="architect" value="architect" id="architect"> <label for="architect">Architect</label></p>
@@ -133,10 +133,10 @@
 								</div>								
 								<div class="form-group">
 								 	<input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"/>
-								 	<span id="ex6CurrentSliderValLabel">Miles: <span id="ex6SliderVal">Any</span></span>
+								 	
 								</div>
 								<div class="formm-group">
-									<p><input type="submit" name="submit" value="Apply Filter" class="btn btn-lg btn-primary"></p>
+									<p><input type="submit" name="submit" value="Apply Filter" class="btn btn-lg btn-primary" style="border-radius:6px; "></p>
 								</div>	
 							</form>
 						</div>
@@ -173,7 +173,7 @@
 									<div class="col-sm-9 project-excerpt">
 										<div class="row">
 											<div class="col-sm-12">
-												<h3>Canada Water Masterplan<small> - 9 days left</small></h3>
+												<h3 sty>Canada Water Masterplan<small> - 9 days left</small></h3>
 											</div>			
 											<div class="col-sm-6">
 												<h5>Fire Engineer and 9 Other Services</h5>
@@ -192,42 +192,7 @@
 								</div>						
 							</div>
 							<figcaption>
-								<a href="{{ url('/winwork/pds') }}"><h3>Canada Water Masterplan</h3></a>
-								<p>
-									<a href="#" data-toggle="tooltip" title="Add to Favourites"><i class="fa fa-fw fa-star-o"></i></a>
-									<a href="#" data-toggle="tooltip" title="Send Via Email"><i class="fa fa-fw fa-envelope-o"></i></a>
-								</p>
-							</figcaption>	
-						</div>	
-						<div class="col-sm-12 search_result_row">
-							<div class="search_data">
-								<div class="row">
-									<div class="col-sm-3 project_image">
-										<img src="{{asset('images/construction.jpg')}}" width="100%">
-									</div>
-									<div class="col-sm-9 project-excerpt">
-										<div class="row">
-											<div class="col-sm-12">
-												<h3>Canada Water Masterplan<small> - 9 days left</small></h3>
-											</div>			
-											<div class="col-sm-6">
-												<h5>Fire Engineer and 9 Other Services</h5>
-												<p>New-built located in Canada Water, London<br> 33,000 m2 office space, 5,500 m2 retail space</p>
-											</div>
-											<div class="col-sm-3 bid_section text-center">
-												<p>Construction Value</p>
-												<h3>£ 510K</h3>
-											</div>
-											<div class="col-sm-3 bid_section text-center">
-												<p>Avg Bid</p>
-												<h3>£ 310K</h3>
-											</div>				
-										</div>
-									</div>							
-								</div>						
-							</div>
-							<figcaption>
-								<a href="#"><h3>Canada Water Masterplan</h3></a>
+								<a href="{{ url('/winwork/pds') }}"><h3 style="color:white; ">Canada Water Masterplan</h3></a>
 								<p>
 									<a href="#" data-toggle="tooltip" title="Add to Favourites"><i class="fa fa-fw fa-star-o"></i></a>
 									<a href="#" data-toggle="tooltip" title="Send Via Email"><i class="fa fa-fw fa-envelope-o"></i></a>
@@ -262,7 +227,42 @@
 								</div>						
 							</div>
 							<figcaption>
-								<a href="#"><h3>Canada Water Masterplan</h3></a>
+								<a href="#"><h3 style="color:white; ">Canada Water Masterplan</h3></a>
+								<p>
+									<a href="#" data-toggle="tooltip" title="Add to Favourites"><i class="fa fa-fw fa-star-o"></i></a>
+									<a href="#" data-toggle="tooltip" title="Send Via Email"><i class="fa fa-fw fa-envelope-o"></i></a>
+								</p>
+							</figcaption>	
+						</div>	
+						<div class="col-sm-12 search_result_row">
+							<div class="search_data">
+								<div class="row">
+									<div class="col-sm-3 project_image">
+										<img src="{{asset('images/construction.jpg')}}" width="100%">
+									</div>
+									<div class="col-sm-9 project-excerpt">
+										<div class="row">
+											<div class="col-sm-12">
+												<h3>Canada Water Masterplan<small> - 9 days left</small></h3>
+											</div>			
+											<div class="col-sm-6">
+												<h5>Fire Engineer and 9 Other Services</h5>
+												<p>New-built located in Canada Water, London<br> 33,000 m2 office space, 5,500 m2 retail space</p>
+											</div>
+											<div class="col-sm-3 bid_section text-center">
+												<p>Construction Value</p>
+												<h3>£ 510K</h3>
+											</div>
+											<div class="col-sm-3 bid_section text-center">
+												<p>Avg Bid</p>
+												<h3>£ 310K</h3>
+											</div>				
+										</div>
+									</div>							
+								</div>						
+							</div>
+							<figcaption>
+								<a href="#"><h3 style="color:white; ">Canada Water Masterplan</h3></a>
 								<p>
 									<a href="#" data-toggle="tooltip" title="Add to Favourites"><i class="fa fa-fw fa-star-o"></i></a>
 									<a href="#" data-toggle="tooltip" title="Send Via Email"><i class="fa fa-fw fa-envelope-o"></i></a>
@@ -297,7 +297,7 @@
 								</div>						
 							</div>
 							<figcaption class="figcaption1">
-								<a href="#"><h3>Canada Water Masterplan</h3></a>
+								<a href="#"><h3 style="color: white;">Canada Water Masterplan</h3></a>
 								<p>
 									<a href="#" data-toggle="tooltip" title="Add to Favourites"><i class="fa fa-fw fa-star-o"></i></a>
 									<a href="#" data-toggle="tooltip" title="Send Via Email"><i class="fa fa-fw fa-envelope-o"></i></a>
@@ -332,7 +332,7 @@
 								</div>						
 							</div>
 							<figcaption class="figcaption1">
-								<a href="#"><h3>Canada Water Masterplan</h3></a>
+								<a href="#"><h3 style="color:white; ">Canada Water Masterplan</h3></a>
 								<p>
 									<a href="#" data-toggle="tooltip" title="Add to Favourites"><i class="fa fa-fw fa-star-o"></i></a>
 									<a href="#" data-toggle="tooltip" title="Send Via Email"><i class="fa fa-fw fa-envelope-o"></i></a>
@@ -367,7 +367,7 @@
 								</div>						
 							</div>
 							<figcaption class="figcaption1">
-								<a href="#"><h3>Canada Water Masterplan</h3></a>
+								<a href="#"><h3 style="color:white; ">Canada Water Masterplan</h3></a>
 								<p>
 									<a href="#" data-toggle="tooltip" title="Add to Favourites"><i class="fa fa-fw fa-star-o"></i></a>
 									<a href="#" data-toggle="tooltip" title="Send Via Email"><i class="fa fa-fw fa-envelope-o"></i></a>
@@ -402,7 +402,7 @@
 								</div>						
 							</div>
 							<figcaption class="figcaption1">
-								<a href="#"><h3>Canada Water Masterplan</h3></a>
+								<a href="#"><h3 style="color:white; ">Canada Water Masterplan</h3></a>
 								<p>
 									<a href="#" data-toggle="tooltip" title="Add to Favourites"><i class="fa fa-fw fa-star-o"></i></a>
 									<a href="#" data-toggle="tooltip" title="Send Via Email"><i class="fa fa-fw fa-envelope-o"></i></a>
@@ -437,7 +437,7 @@
 								</div>						
 							</div>
 							<figcaption class="figcaption1">
-								<a href="#"><h3>Canada Water Masterplan</h3></a>
+								<a href="#"><h3 style="color:white; ">Canada Water Masterplan</h3></a>
 								<p>
 									<a href="#" data-toggle="tooltip" title="Add to Favourites"><i class="fa fa-fw fa-star-o"></i></a>
 									<a href="#" data-toggle="tooltip" title="Send Via Email"><i class="fa fa-fw fa-envelope-o"></i></a>
@@ -472,7 +472,7 @@
 								</div>						
 							</div>
 							<figcaption class="figcaption1">
-								<a href="#"><h3>Canada Water Masterplan</h3></a>
+								<a href="#"><h3 style="color:white; ">Canada Water Masterplan</h3></a>
 								<p>
 									<a href="#" data-toggle="tooltip" title="Add to Favourites"><i class="fa fa-fw fa-star-o"></i></a>
 									<a href="#" data-toggle="tooltip" title="Send Via Email"><i class="fa fa-fw fa-envelope-o"></i></a>
@@ -507,7 +507,7 @@
 								</div>						
 							</div>
 							<figcaption class="figcaption1">
-								<a href="#"><h3>Canada Water Masterplan</h3></a>
+								<a href="#"><h3 style="color:white; ">Canada Water Masterplan</h3></a>
 								<p>
 									<a href="#" data-toggle="tooltip" title="Add to Favourites"><i class="fa fa-fw fa-star-o"></i></a>
 									<a href="#" data-toggle="tooltip" title="Send Via Email"><i class="fa fa-fw fa-envelope-o"></i></a>
