@@ -40,7 +40,7 @@
                                 {{ csrf_field() }}
 								<input type="text" name="data_name" id="data_name">
 								<input type="hidden" name="uid" id="uid" value="{{ Session::get('id') }}">
-								<button type="submit" id="ajaxSubmitadd">
+								<button >
 								Add
 								</button>
 							</form>
@@ -88,7 +88,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row usertable" style="display: none;">
+				<div class="usertable container-fluid" style="display: none;">
 					<div class="col-sm-12 text-center">
 						<div class="pull-right" style="margin-bottom: 15px">
 							<button type="button" class="btn btn-success" data-toggle="modal" data-target="#adduser"><i class="fa fa-user"></i>Add User</button>
@@ -127,7 +127,7 @@
 								</tr>
 							</tbody>
 						</table>
-						<div class="panel-footer">
+						<div class="utablu">
 			                <div class="row">
 			                  <div class="col col-xs-4" style="text-align: left;">Page 1 of 5
 			                  </div>

@@ -461,8 +461,13 @@ ul.user li a:focus {
 	background-image: linear-gradient(to bottom,#fe7235 0,#fe7235 100%);
 }
 
-.shadow-wrapper {
+.shadow-wrapper{
 	border-radius: 6px;
+}
+
+.shadow-wrappernigids {
+	min-height: 360px;
+	max-height: 360px;
 }
     
 .tender-tiles {
@@ -477,4 +482,20 @@ ul.user li a:focus {
     color: #fff;
     background-color: #fe7235;
     border-color: #fe7235;
+}
+
+.usertable.container-fluid {
+    background: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    margin-bottom: 60px;
+}
+
+.utablu {
+    padding: 10px 15px;
+    background-color: transparent; 
+    border-top: none; 
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
 }

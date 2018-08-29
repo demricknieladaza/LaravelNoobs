@@ -17,7 +17,7 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-6 lounge-action">
-						<div class="shadow-wrapper">
+						<div class="shadow-wrapper shadow-wrappernigids">
 							<div class="panel-group" id="accordion1">
 								<div class="panel">
 									<div class="panel-heading">
@@ -65,7 +65,7 @@
 						</div>	
 					</div>
 					<div class="col-sm-6 lounge-action">
-						<div class="shadow-wrapper col-cont">
+						<div class="shadow-wrapper col-cont shadow-wrappernigids">
 							<div class="col-sm-8">
 								<div class="row">
 									<div class="col-sm-4">
@@ -115,10 +115,7 @@
 				</div>
 					<div class="row" style="margin-top: 25px; ">
 						<div class="col-sm-12">
-							<div class="shadow-wrapper lounge-demo">
-								<div class="form-group">
-									<a href="#collapse1">Bid New Project <span class="btn btn-warning remaining-tenders">Remaining Tender Credits 2</span></a>
-								</div>
+							<div class="shadow-wrapper lounge-demo" style="padding-top: 30px;">
 								<div class="form-group">
 									<h4>Active Projects  <span class="badge">2</span></h4>
 									<div class="row">
