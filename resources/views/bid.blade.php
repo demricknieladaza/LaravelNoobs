@@ -508,92 +508,17 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<select name="" class="form-control">
-													<option value="" disabled selected>Select accrediatation</option>
-													<option>ACABE</option>
-													<option>ACIBSE</option>
-													<option>ADPPA</option>
-													<option>AIFireE</option>
-													<option>AIIRSM</option>
-													<option>AIOSH</option>
-													<option>AMCIHT</option>
-													<option>AMICE</option>
-													<option>AMIHE</option>
-													<option>AMIMechE</option>
-													<option>AMIStructE</option>
-													<option>APM ChPP</option>
-													<option>APM PFQ</option>
-													<option>APM PPQ</option>
-													<option>APM PQ </option>
-													<option>APM RPP</option>
-													<option>AppIHE </option>
-													<option>AssocRICS</option>
-													<option>BREEAM  AP</option>
-													<option>CEng </option>
-													<option>CEnv</option>
-													<option>CFIOSH</option>
-													<option>CIBSE  Licentiate </option>
-													<option>CMIOSH  </option>
-													<option>CSci  </option>
-													<option>EI</option>
-													<option>EngTech</option>
-													<option>FCABE  </option>
-													<option>FCIBSE  </option>
-													<option>FCIHT  </option>
-													<option>FCIWEM  </option>
-													<option>FICE  </option>
-													<option>FIET  </option>
-													<option>FIFireE  </option>
-													<option>FIHE  </option>
-													<option>FIIRSM  </option>
-													<option>FIStructE  </option>
-													<option>FREng  </option>
-													<option>FRICS  </option>
-													<option>FSoPHE  </option>
-													<option>GIFireE  </option>
-													<option>GMICE  </option>
-													<option>Grad  CABE</option>
-													<option>Grad  IOSH</option>
-													<option>GradCIHT  </option>
-													<option>GradCIWEM  </option>
-													<option>HonFIET  </option>
-													<option>HonFREng  </option>
-													<option>HonRICS  </option>
-													<option>IEMA</option>
-													<option>IEng </option>
-													<option>IMechE</option>
-													<option>IPMA  Level  A</option>
-													<option>IPMA  Level  B </option>
-													<option>LCC  </option>
-													<option>LCEA  </option>
-													<option>LEED  AP </option>
-													<option>MAPM  </option>
-													<option>MCABE  </option>
-													<option>MCIArb  </option>
-													<option>MCIHT    </option>
-													<option>MCIOB    </option>
-													<option>MCIWEM    </option>
-													<option>MICE    </option>
-													<option>MIET    </option>
-													<option>MIFireE    </option>
-													<option>MIHE    </option>
-													<option>MIIRSM    </option>
-													<option>MIStructE    </option>
-													<option>MRICS    </option>
-													<option>MSoPHE    </option>
-													<option>OCDEA    </option>
-													<option>RIBA    </option>
-													<option>SFIIRSM    </option>
-													<option>SIIRSM    </option>
-													<option>SKA  Assessor   </option>
-													<option>TechCIWEM    </option>
-													<option>TIFireE  </option>
-													<option>TIStructE  </option>
-													<option>TMIET  </option>
-													<option>WELL  AP  </option>
-													<option>Other </option>
-												</select>
-											</div>
+												<select Name='ddlSelectYear' class="form-control">
+										            <option value="">--- Select ---</option>
+
+										            <?php
+										            for ($x=date("Y"); $x>1900; $x--)
+										              {
+										                echo'<option value="'.$x.'">'.$x.'</option>'; 
+										              } 
+										            ?> 
+										        </select>
+									</div>
 										</div>
 									</div>
 									<div class="row">
@@ -1898,6 +1823,7 @@ $('textarea').keyup(function() {
 	});
 
 </script>
+
 <!-- end -->
 
 @endsection

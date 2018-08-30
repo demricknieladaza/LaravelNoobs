@@ -474,7 +474,7 @@ table table tr td{ vertical-align: top; }
 .lounge-main .table{ margin-bottom: 0; }
 .lounge-main .panel-heading{ padding: 10px 0; }
 .lounge-main .panel-body{ padding: 15px 0; }
-.badge{ color: #fff; background: #fe7235; border-radius: 50%;}
+.badge{color: #fff; background: #fe7235; margin-left: 15px; font-size: 17px; border-radius: 50%;vertical-align: text-bottom;}
 .lounge-main .panel-title{ font-size: 14px; font-weight: bold; }
 .lounge-main .panel-title a:hover, .lounge-main .panel-title a:focus{ color: #c45911; }
 .lounge-main .subtitle{ background: #c45911; color: #fff; padding: 5px 15px; margin-left: 15px; }
@@ -487,8 +487,8 @@ table table tr td{ vertical-align: top; }
 .lounge-header button{ text-transform: capitalize; }
 .shadow-wrapper{ box-shadow: 0 0 5px #999; background: #fff; padding: 10px;}
 .remaining-tenders{ font-size: 12px; padding: 3px 10px; }
-.policies-link:hover{ color: #fff !important; }
-.lounge-main h4{ font-size: 18px; font-weight: bold; margin: 0; }
+/*.policies-link:hover{ color: #fff !important; }*/
+.lounge-main h4{ font-size: 17px; font-weight: bold; margin: 0; }
 .tender-tile-single{ width: 33.33%; float: left; padding: 0 15px; }
 .tender-tiles{ background: #fe7235; padding: 30px 15px; text-align: center; cursor: pointer; }
 .tender-tiles a{ color: #fff; text-decoration: none; }
@@ -1341,7 +1341,7 @@ body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(1) > di
 
 
 .navbar {
-    margin-bottom: -2px;
+    margin-bottom: -1px;
 }
 
 .lounge-main .panel {
@@ -1688,7 +1688,7 @@ body > div:nth-child(15) > div > div > div.row{
 
 #Riba td, #Riba th {
     border: 1px solid #7030A0 ;
-
+    text-align:center;
     
 }
 
@@ -1774,7 +1774,7 @@ body > div:nth-child(15) > div > div > div.row{
 }
 #Content td, #Content th {
     border: 1px solid #7BD4A5;
-   
+   text-align:center;
 }
 
 
@@ -1795,7 +1795,7 @@ body > div:nth-child(15) > div > div > div.row{
 
 #Stages td, #Stages th {
     border: 1px solid #FBDC7D;
-    
+    text-align:center;  
 }
 
 
@@ -2153,4 +2153,46 @@ body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.
 .buts:hover {
     background-color: #fe7235;
     color: white;
+}
+
+body > div.container-fluid.lounge-wrapper > div.row > div.col-sm-2.lounge-menu{
+    margin-top: 1px;
+}
+
+#accordioned{
+    border-top: none;
+}
+
+.linya{
+    border-top: 1px solid #eee;
+}
+
+.lounge-main .panel-group .panel-heading+.panel-collapse>.linya{
+    border-top: 1px solid #eee;
+}
+
+.thin{
+width: 80%; margin-left: 35px;
+}
+
+table.table.table-hover.table-striped thead tr th{
+    color: black;
+}
+
+h4.panel-title.kahoy a:active{
+    color: #fe7235;
+}
+
+ul.nav.navs.bid-form-nav li a{
+    border-radius: 6px;
+}
+
+body > div.container.below-header > h1{
+    background: white;
+        font-size: 40px;
+        padding: 25px;
+        margin-left: 25%;
+        margin-right: 25%;
+        border-radius: 6px;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 }

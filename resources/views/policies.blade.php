@@ -40,17 +40,17 @@
 			<div class="col-sm-10 col-sm-offset-2 lounge-main">
 				<div class="row">
 					<div class="col-sm-12 lounge-header">
-						<span style="color: #D8652B;">Policies</span>
+						<span style="color: #000;">Policies</span>
 						<button class="btn btn-warning pull-right">Print Policies</button>
 					</div>
 				</div>
 				<div class="row">					
 					<div class="col-sm-12">
 						<div class="shadow-wrapper">
-							<div class="panel-group" id="accordion1">
+							<div class="panel-group" id="accordioned">
 								<div class="panel">
 									<div class="panel-heading">
-										<h4 class="panel-title">
+										<h4 class="panel-title kahoy">
 											<a data-toggle="collapse" data-parent="#accordion2" href="#collapse6">Terms &amp; Conditions<span class="pull-right caret"></span></a>
 										</h4>
 									</div>
@@ -67,7 +67,7 @@
 								</div>
 								<div class="panel">
 									<div class="panel-heading">
-										<h4 class="panel-title">
+										<h4 class="panel-title kahoy">
 											<a data-toggle="collapse" data-parent="#accordion2" href="#collapse7">Data Protection <span class="pull-right caret"></span></a>
 										</h4>
 									</div>
@@ -84,7 +84,7 @@
 								</div>
 								<div class="panel">
 									<div class="panel-heading">
-										<h4 class="panel-title">
+										<h4 class="panel-title kahoy">
 											<a data-toggle="collapse" data-parent="#accordion2" href="#collapse8">Cookies <span class="pull-right caret"></span></a>
 										</h4>
 									</div>
