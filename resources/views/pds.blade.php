@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<div class="container-fluid below-header project-img-collection text-center">
+	<div id="actTinder" class="container-fluid below-header project-img-collection text-center">
 		<h1>Canada Water Masterplan</h1>
 		<div class="project-image popup-gallery">
 			<a href="../images/demo1.jpg"><img src="../images/demo1.jpg"/></a>
@@ -327,6 +327,9 @@
 									</tr>
 								</table>
 							</div>
+						</div>
+						<div class="toactive pull-right">
+							To submit a tender query, please scroll up to <a href="#actTinder" style="color:#fe7235;">Active Tenders</a> 
 						</div>
 					</div>
 				</div>
