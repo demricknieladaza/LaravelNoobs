@@ -310,12 +310,12 @@ figcaption{
     height: 100%;
     text-align: center;
     opacity: 0;
-    background: #8C8C8C;
+    background: #FE7235;
     transition: 0.7s;
     cursor: pointer;
 }
 .figcaption1{
-    background: #8C8C8C;
+   /* background: #8C8C8C;*/
 }
 .search_result_row figcaption h3 {
     -webkit-transition: -webkit-transform 0.5s;
