@@ -266,10 +266,10 @@
         }
         .dropdown-content a {
             color: black;
-            padding: 12px 16px;
+            padding: 30px 9px !important;
             text-decoration: none;
             display: block;
-            height: 20px;
+            height: 10px !important;
         }  
         .dropdown:hover .dropdown-content {display: block;}
     </style>
