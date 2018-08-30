@@ -117,9 +117,6 @@
 						<div class="col-sm-12">
 							<div class="shadow-wrapper lounge-demo">
 								<div class="form-group">
-									<a href="#collapse1">Bid New Project <span class="btn btn-warning remaining-tenders">Remaining Tender Credits 2</span></a>
-								</div>
-								<div class="form-group">
 									<h4>Active Projects  <span class="badge">2</span></h4>
 									<div class="row">
 										<div class="hover-container-holder">

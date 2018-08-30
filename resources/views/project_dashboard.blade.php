@@ -797,7 +797,7 @@
 											    <th>7</th>
 											  </tr>
 											  <tr>
-											    <td>Pre-Application Meetings</td>
+											    <td style="padding-left:10px; ">Pre-Application Meetings</td>
 											   <td contenteditable='true'></td>
 											    <td contenteditable='true'></td>
 											    <td contenteditable='true'></td>
