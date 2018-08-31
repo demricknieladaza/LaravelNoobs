@@ -290,8 +290,14 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="{{ url('/') }}">Home</a></li>
-                        <li><a href="{{ url('/publish') }}" class="highlight">Publish Projects</a></li>    
-                        <li><a href="{{ url('/winwork') }}" class="highlight">Win Work</a></li>
+                        @if(Session::has('fullname'))
+                            <li><a href="{{ url('/publish') }}" class="highlight">Publish Projects</a></li>    
+                            <li><a href="{{ url('/winwork') }}" class="highlight">Win Work</a></li>
+                        @else
+                            <li><a data-toggle="modal" href="#myModal" class="highlight">Publish Projects</a></li>    
+                            <li><a data-toggle="modal" href="#myModal" class="highlight">Win Work</a></li>
+                        @endif
+                        
                         @if(Route::currentRouteName()=='Landing' )
                             <li><a href="#how-it-works">How It Works</a></li>
                             <li><a href="#pricing">Pricing</a></li>
@@ -1423,21 +1429,21 @@
         });
     </script>   
     <script>
-        var acc = document.getElementsByClassName("accord");
-        var i;
+        // var acc = document.getElementsByClassName("accord");
+        // var i;
         
 
-        for (i = 0; i < acc.length; i++) {
-          acc[i].addEventListener("click", function() {
-            this.classList.toggle("act");
-            var panel1 = this.nextElementSibling;
-            if (panel1.style.maxHeight){
-              panel1.style.maxHeight = null;
-            } else {
-              panel1.style.maxHeight = panel1.scrollHeight + "px";
-            } 
-          });
-        }
+        // for (i = 0; i < acc.length; i++) {
+        //   acc[i].addEventListener("click", function() {
+        //     // this.classList.toggle("act");
+        //     var panel1 = this.nextElementSibling;
+        //     if (panel1.style.maxHeight){
+        //       panel1.style.maxHeight = null;
+        //     } else {
+        //       panel1.style.maxHeight = panel1.scrollHeight + "px";
+        //     } 
+        //   });
+        // }
     </script>
     <script>
         $.ajaxSetup({

@@ -627,7 +627,7 @@
     <div class="container-fluid white-bg">
         <div class="container">
             <div class="col-sm-6">
-                <div class="row space">
+                <div class="row">
                     <h1 class="faq-head">For Employers</h1>
                 </div>
                     <button class="accord">What can SCOPE do for me? </button>
@@ -901,24 +901,38 @@
     var acc = document.getElementsByClassName("accord");
     var panel = document.getElementsByClassName('panel1');
 
-for (var i = 0; i < acc.length; i++) {
-    acc[i].onclick = function() {
-        var setClasses = !this.classList.contains('active');
-        setClass(acc, 'active', 'remove');
-        setClass(acc, 'act', 'remove');
-        setClass(panel, 'show', 'remove');
-        
-        if (setClasses) {
-            this.classList.toggle("active");
-            this.nextElementSibling.classList.toggle("show");
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].onclick = function() {
+            var setClasses = !this.classList.contains('active');
+            setClass(acc, 'active', 'remove');
+            setClass(acc, 'act', 'remove');
+            setClass(panel, 'show', 'remove');
+            
+
+            if (setClasses) {
+                this.classList.toggle("active");
+                this.classList.toggle("act");
+                this.nextElementSibling.classList.toggle("show");
+                var panel1 = this.nextElementSibling;
+                if (panel1.style.maxHeight){
+                  panel1.style.maxHeight = null;
+                } else {
+                  panel1.style.maxHeight = panel1.scrollHeight + "px";
+                } 
+            }
         }
     }
-}
 
-function setClass(els, className, fnName) {
-    for (var i = 0; i < els.length; i++) {
-        els[i].classList[fnName](className);
+    function setClass(els, className, fnName) {
+        for (var i = 0; i < els.length; i++) {
+            els[i].classList[fnName](className);
+            els[i].style.maxHeight = null;
+            
+            if(els[i].style.maxHeight){
+                alert('niara');
+            }
+            
+        }
     }
-}
 </script>
 @endsection

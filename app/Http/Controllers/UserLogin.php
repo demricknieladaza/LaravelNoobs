@@ -50,7 +50,7 @@ class UserLogin extends Controller
 
      public function logout(Request $request)
      {
-        $request->session()->forget('fullname');
+        $request->session()->flush();
         return redirect('/');
      }
 }

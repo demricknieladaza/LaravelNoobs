@@ -454,9 +454,9 @@ ul.user li a:focus {
 }*/
 
 .show {
-  visibility: visible;
-  height: auto !important;
-  transition:  1s ;
+  /*visibility: visible;*/
+  /*height: 200px !important;*/
+  transition: max-height 0.2s ease-out ;
 }
 
 .slider.slider-horizontal {
@@ -509,7 +509,10 @@ ul.user li a:focus {
 }
 
 .parallax:before {
-  height: 130% !important;
+  height: 101% ;
+}
+.parallax4:before {
+    height: 100% !important;
 }
 
 .accordiondem {
