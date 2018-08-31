@@ -51,7 +51,7 @@
 								<div class="panel">
 									<div class="panel-heading">
 										<h4 class="panel-title kahoy">
-											<a data-toggle="collapse" data-parent="#accordion2" href="#collapse6">Terms &amp; Conditions<span class="pull-right caret"></span></a>
+											<a id="polititle1" data-toggle="collapse" data-parent="#accordion2" style="color: #c45911;" href="#collapse6">Terms &amp; Conditions<span class="pull-right caret"></span></a>
 										</h4>
 									</div>
 									<div id="collapse6" class="panel-collapse collapse in">
@@ -68,10 +68,10 @@
 								<div class="panel">
 									<div class="panel-heading">
 										<h4 class="panel-title kahoy">
-											<a data-toggle="collapse" data-parent="#accordion2" href="#collapse7">Data Protection <span class="pull-right caret"></span></a>
+											<a id="polititle2" data-toggle="collapse" data-parent="#accordion2" style="color: #c45911;" href="#collapse7">Data Protection <span class="pull-right caret"></span></a>
 										</h4>
 									</div>
-									<div id="collapse7" class="panel-collapse collapse">
+									<div id="collapse7" class="panel-collapse collapse in">
 										<div class="panel-body">
 											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -85,10 +85,10 @@
 								<div class="panel">
 									<div class="panel-heading">
 										<h4 class="panel-title kahoy">
-											<a data-toggle="collapse" data-parent="#accordion2" href="#collapse8">Cookies <span class="pull-right caret"></span></a>
+											<a id="polititle3" data-toggle="collapse" data-parent="#accordion2" style="color: #c45911;" href="#collapse8">Cookies <span class="pull-right caret"></span></a>
 										</h4>
 									</div>
-									<div id="collapse8" class="panel-collapse collapse">
+									<div id="collapse8" class="panel-collapse collapse in">
 										<div class="panel-body">
 											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -107,7 +107,14 @@
 		</div>
 	</div>
 
-	
+	{{-- <script type="text/javascript">
+		$(document).ready(function()//When the dom is ready or just add it if you already have a .ready function
+		{
+		  $("#polititle1").css("color","black");
+		  $("#polititle2").css("color","black");
+		  $("#polititle3").css("color","black");
+		});
+	</script> --}}
 	
 
 	<!-- end -->

@@ -118,7 +118,7 @@ h3.light-title{ font-size: 35px; font-weight: bolder; color: #fff; text-transfor
 .how-it-works h1{ font-size: 29px; margin-bottom: 3%; text-align: center; }
 .how-it-works p{ font-size: 13px; line-height: 1.5em; }
 .contacts-head h1{ margin-top: 0; }
-.faq-head{border-radius: 6px; background: #FE7235; font-size: 19px; text-transform: uppercase; font-weight: bolder; color: #fff; padding: 10px; margin-top: 0; }
+.faq-head{margin-top:10px; border-radius: 6px; background: #FE7235; font-size: 19px; text-transform: uppercase; font-weight: bolder; color: #fff; padding: 10px;margin-left: auto;margin-right: auto;width: 99%; }
 .panel-title a{ display: block; text-decoration: none; }
 .panel-group .panel-heading+.panel-collapse>.panel-body{ border-top: 1px solid #f4bc16; font-size: 16px; }
 .panel{ border-bottom: 1px solid #f4bc16; box-shadow: none;}
@@ -1417,14 +1417,19 @@ body > div:nth-child(17) > div > div.col-sm-12{
     float: right;
     margin-left: 5px;
 }
-/*.active:after {
+.active:after {
     content: "\2212";
-}*/
+    color: white;
+}
+
+.accord:hover:after {
+    color:white;
+}
 
 .panel1 {
     padding: 0 18px;
     background-color: white;
-    display: none;
+    max-height: 0;
     font-size: 16px;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
@@ -2300,4 +2305,8 @@ body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.
 
 .dropdown1:hover .dropbtn1 {
     background-color: #3e8e41;
+}
+
+.collapsed {
+    color: black !important;
 }
