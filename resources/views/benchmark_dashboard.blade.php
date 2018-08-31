@@ -163,14 +163,14 @@
 									<th>Project ID</th>
 									<th>Location</th>
 									<th>Construction Value</th>
-								    <th class="ribs">0</th>
+								    <th class="ribs tender">0</th>
 								    <th  class="ribs">1</th>
 								    <th  class="ribs">2</th>
 								    <th  class="ribs">3</th>
 								    <th  class="ribs">4</th>
 								    <th  class="ribs">5</th>
 								    <th  class="ribs">6</th>
-								    <th class="ribs">7</th>
+								    <th class="ribs backribs">7</th>
 
     									
 							
