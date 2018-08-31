@@ -1144,6 +1144,13 @@ input[type=range]::-ms-thumb {
 .tender-container .table-striped tbody tr table tr:nth-of-type(odd){ background: inherit; }
 .publish-project-outer-page .tender-tile-single .tender-tiles {
      background: #FE7235; 
+
+}
+.publish-project-outer-page .tender-tile-single .tender-tiles:hover {
+ 
+  box-shadow: 0 10px 18px 0 rgba(0, 0, 0, 0.2), 0 16px 40px 0 rgba(0, 0, 0, 0.19);
+}
+     
 }
 
 body > div.container.publish-project-outer-page > div > div > div > div > owl-div:nth-child(1) > div{
@@ -1917,9 +1924,6 @@ body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(1) > di
     padding-top: 10px;
 }
 
-.publish-project-outer-page .tender-tile-single:hover{
-    box-shadow: 0 0 15px rgba(33,33,33,.2); 
-}
 
 body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(3) > div.tender-tiles.new-project-tile,
 body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(2) > div:nth-child(1) > div > div.col-sm-6.tab2.pull-right > div.tender-tiles.new-project-tile,
@@ -1928,7 +1932,7 @@ body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.
 body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(7) > div.tender-tiles.new-project-tile,
 body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(8) > div.tender-tiles.new-project-tile{
     width: 100% !important;
-    /*margin-left: -11px;*/
+  
     border-radius: 6px;
 }
 
@@ -2083,7 +2087,7 @@ body > div:nth-child(20) > div > div > div.col-sm-12 > div:nth-child(2) > input{
 }
 
 body > div.container.publish-project-outer-page > div > div > div > div > div:nth-child(1) > div{
-    background-color: #3E506B;
+    background-color: #4B4B4E;
 }
 
 #black{
@@ -2227,4 +2231,73 @@ body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.
 }
 .backribs{
     border-right:1px solid orange 
+}
+.tender-tiles.new-project-tile:hover{
+    transform: scale(1.1);
+  box-shadow: 0 10px 18px 0 rgba(0, 0, 0, 0.2), 0 16px 40px 0 rgba(0, 0, 0, 0.19);
+}
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+.dropbtn1 {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    height:140px;
+    width:140px;
+}
+
+.dropdown1 {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content1 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    
+}
+
+.dropdown-content1 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content1 a:hover {background-color: #f1f1f1}
+
+.dropdown1:hover .dropdown-content1 {
+    display: block;
+ 
+}
+
+.dropdown1:hover .dropbtn1 {
+    background-color: #3e8e41;
 }
