@@ -163,9 +163,16 @@
 									<th>Project ID</th>
 									<th>Location</th>
 									<th>Construction Value</th>
-								
-									<th colspan="8" style="border: 1px solid orange;text-align:left ">&nbsp&nbsp&nbsp&nbsp&nbsp0&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 1&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 2&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp3&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 4&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 5&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 6&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 7</th>
-									
+								    <th class="ribs">0</th>
+								    <th  class="ribs">1</th>
+								    <th  class="ribs">2</th>
+								    <th  class="ribs">3</th>
+								    <th  class="ribs">4</th>
+								    <th  class="ribs">5</th>
+								    <th  class="ribs">6</th>
+								    <th class="ribs">7</th>
+
+    									
 							
 									<th>Average Fee</th>
 									<th>Scope of Service</th>

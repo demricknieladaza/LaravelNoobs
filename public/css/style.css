@@ -2214,3 +2214,7 @@ body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.
     padding: 8px;
 }
 .imomama tr:nth-of-type(odd){ background: #fbe4d5; }
+
+.ribs{
+    border: 1px solid orange;
+}
