@@ -28,7 +28,7 @@
 					</div>
 				</div>
 				<div class="col-sm-2">
-					<button style="background-color: #FE7235;border-color:#FE7235;" class="btn btn-lg btn-primary">Search</button>
+					<button style="background-color: #FE7235;border-color:#FE7235;border-radius:6px; " class="btn btn-lg btn-primary">Search</button>
 				</div>
 			</form>
 		</div>
@@ -40,8 +40,8 @@
 				<div class="row">
 					<div class="hover-container-holder">
 						<div class="tender-tile-single">
-							<div class="tender-tiles new-project-tile">
-								<h2><a href="{{ url('/publish/project_dashboard') }}">Publish<br> New<br> Project</a></h2>
+							<div class="tender-tiles new-project-tile hover-tile">
+								<h2><a href="{{ url('/publish/project_dashboard') }}" style="">Publish<br> New<br> Project</a></h2>
 							</div>
 						</div>
 						<div class="tender-tile-single">
