@@ -1,5 +1,5 @@
 $('#range').on("change", function() {
-		if($(this).val() == 5){
+		if($(this).val() == 1){
 	    	$('.output').val(this.value +" Tenders" );
 	    	$(".discount5").show();
 	    	$(".discount10").hide();
@@ -11,7 +11,7 @@ $('#range').on("change", function() {
 	    	$(".plan15").hide();
 	    	$(".plan20").hide();
 	    	$(".plan25").hide();
-	    }else if($(this).val() == 10){
+	    }else if($(this).val() == 2){
 	    	$('.output').val(this.value +" Tenders" );
 	    	$(".discount10").show();
 	    	$(".discount5").hide();
@@ -23,7 +23,7 @@ $('#range').on("change", function() {
 	    	$(".plan15").hide();
 	    	$(".plan20").hide();
 	    	$(".plan25").hide();
-	    }else if($(this).val() == 15){
+	    }else if($(this).val() == 3){
 	    	$('.output').val(this.value +" Tenders" );
 	    	$(".discount15").show();
 	    	$(".discount5").hide();
@@ -35,7 +35,7 @@ $('#range').on("change", function() {
 	    	$(".plan5").hide();
 	    	$(".plan20").hide();
 	    	$(".plan25").hide();
-	    }else if($(this).val() == 20){
+	    }else if($(this).val() == 4){
 	    	$('.output').val(this.value +" Tenders" );
 	    	$(".discount20").show();
 	    	$(".discount5").hide();
@@ -47,7 +47,7 @@ $('#range').on("change", function() {
 	    	$(".plan15").hide();
 	    	$(".plan5").hide();
 	    	$(".plan25").hide();
-	    }else if($(this).val() == 25){
+	    }else if($(this).val() == 5){
 	    	$('.output').val(this.value +" Tenders" );
 	    	$(".discount25").show();
 	    	$(".discount5").hide();

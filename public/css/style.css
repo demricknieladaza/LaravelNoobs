@@ -917,21 +917,22 @@ body > div.container-fluid.search_results.wow.fadeInUp > div > div > div > div.c
 
 /* vertical range slider */
 .khalifa{
-    background: url(../images/khalifa-model.png) no-repeat;
+    background: url(../images/khalifa-high.png) no-repeat;
     background-size: contain;
     background-position: center;
-    height: 300px;
+    height: 528px;
 }
 input[type=range] {
--webkit-appearance: none;
-width: 270px;
-height: 270px;
-overflow:hidden;
-margin: 0;
-position: absolute;
-bottom: 4px;
-background: none;
-transform: rotate(-90deg);
+    -webkit-appearance: none;
+    width: 493px;
+    height: 101px;
+    overflow: hidden;
+    top: 225px;
+    margin: 0;
+    left: -95px;
+    position: absolute;
+    background: none;
+    transform: rotate(-90deg);
 }
 input[type=range]:focus{
   outline:none;
@@ -988,7 +989,7 @@ input[type=range]::-ms-thumb {
     background: #fff;
     box-shadow: 0 0 3px #999;
     position: absolute;
-    right: -100px;
+    right: -74px;
     top: 40%;
     padding: 10px 15px;
     color: #fe7235;

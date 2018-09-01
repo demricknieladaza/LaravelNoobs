@@ -7,6 +7,236 @@
             src: url('{{ public_path('css\fonts\bahnschrift._semibold.tff') }}');
         }
     </style>
+    <style type="text/css">
+        .pricingTable{
+            border: 1px solid #e7e7e7;
+            text-align: center;
+            padding: 0 8px 8px;
+            transition: all 0.5s ease 0s;
+            border: 1px solid #c3bdbd;
+            border-radius: 12px;
+            font-weight: 700;
+            background-image: radial-gradient(#f9f9f9,#ececec);
+        }
+        .pricingTable:hover{
+            border: 1px solid #c3bdbd;
+        }
+
+        .propbg {
+            background-image: radial-gradient(#2b2b2b,#000000);
+        }
+
+        .propbg .heading:after {
+            border-color: #060606  rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+        }
+
+        .propbg:after{
+            border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #060606;
+        }
+
+        .propbg:before{
+            border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #060606;
+        }
+
+        .probg {
+            background-image: radial-gradient(#fb783f,#ff6100);
+        }
+
+        .probg .heading:after {
+            border-color: #fe650b  rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+        }
+
+        .probg:after{
+            border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #a23c00;
+        }
+
+        .probg:before{
+            border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #a23c00;
+        }
+
+        .basicbg .heading:after {
+            border-color: #81c000 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+        }
+
+        .basicbg{
+            background-image: radial-gradient(#81c000,#81c000);
+        }
+
+        .basicbg:after{
+            border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #5e8c01;
+        }
+
+        .basicbg:before{
+            border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #5e8c01;
+        }
+
+        .pricingTable .pricingTable-header{
+            width: 150px;
+            color: #fff;
+            margin: -15px auto 95px;
+            padding-top: 18px;
+            position: relative;
+            filter : drop-shadow(0px 3px 4px rgba(70,70,70,1));
+        }
+        .pricingTable .pricingTable-header:before{
+            content: "";
+            border-width: 0 0 15px 10px;
+            border-style: solid;
+            position: absolute;
+            top: 0;
+            left: -10px;
+        }
+        .pricingTable .pricingTable-header:after{
+            content: "";
+            border-width: 15px 0 0 10px;
+            border-style: solid;
+            position: absolute;
+            top: 0;
+            right: -10px;
+        }
+        .pricingTable .heading{
+            font-size: 32px;
+            font-weight: 800;
+            margin: 5px 0;
+            text-transform: uppercase;
+            position: relative;
+        }
+        .pricingTable .heading:after{
+            content: "";
+            border-width: 25px 75px 0;
+            border-style: solid;
+            position: absolute;
+            top: 34px;
+            bottom: -108px;
+            z-index: -1;
+            left: 0px;
+        }
+        .pricingTable .currency,
+        .pricingTable .month{
+            font-size: 20px;
+        }
+        .pricingTable .price-value{
+            font-size: 30px;
+        }
+        .pricingTable .pricing-content ul{
+            list-style: none;
+            padding: 0;
+            margin: 0 0 25px 0;
+        }
+        .pricingTable .pricing-content ul li{
+            font-size: 14px;
+            color: #334a6b;
+            line-height: 30px;
+        }
+        .pricingTable .pricingTable-signup{
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #334a6b;
+            text-transform: capitalize;
+            border: 2px solid #e7e7e7;
+            padding: 10px 40px;
+            transition: all 0.5s ease 0s;
+        }
+        .pricingTable .pricingTable-signup:hover{
+            border: 2px solid #1ed193;
+        }
+        @media only screen and (max-width:990px){
+            .pricingTable{ margin-bottom: 50px; }
+        }
+
+        .terms {
+            margin-top: -75px;
+        }
+
+        .texal {
+            text-align: left;
+        }
+
+        .texalpro {
+            text-align: left;
+        }
+
+        .texalprop {
+            text-align: left;
+        }
+
+        .texal li i {
+            float: right;
+        }
+
+        .texalpro li i {
+            float: right;
+        }
+
+        .texalprop li i {
+            float: right;
+        }
+
+        .texal li {
+            font-size: 14px;
+            padding: 8px 0;
+            color: #9da1ad;
+            line-height: inherit !important;
+        }
+
+        .texalpro li {
+            font-size: 14px;
+            padding: 8px 0;
+            color: #9da1ad;
+            line-height: inherit !important;
+        }
+
+        .texalprop li {
+            font-size: 14px;
+            padding: 8px 0;
+            color: #9da1ad;
+            line-height: inherit !important;
+        }
+
+        .texal li .fa-check:before {
+            color: #81c000;
+        }
+
+        .fa-times:before {
+            color: grey;
+        }
+
+        .bsc {
+            background-image: radial-gradient(#81c000,#81c000);
+            color: white;
+        }
+
+        .probut {
+            background-image: radial-gradient(#fb783f,#ff6100);
+            color: white;
+        }
+
+        .propbot {
+            background-image: radial-gradient(#2b2b2b,#000000);
+            color: white;
+        }
+
+        .texalpro li .fa-check:before {
+            color: #ff6100;
+        }
+
+        .texalprop li .fa-check:before {
+            color: #000000;
+        }
+
+        .ppadd {
+            padding-right: 1px;
+            padding-left: 1px;
+        }
+
+        .line{
+            border: 1px solid #e4e2e2;
+            border-radius: 6px;
+            background-image: radial-gradient(#2b2b2b,#000000);
+        }
+
+    </style>
 
 
     <div id="home" class="container-fluid">
@@ -259,15 +489,15 @@
         <div class="container">
             <div class="row" style="margin-top:75px;">
                 <div class="col-sm-3 khalifa">
-                    <input type="range" orient="vertical" name="range" id="range" min="0" max="25" step="5" value="5"/> 
+                    <input type="range" class="sliderkhal" orient="vertical" name="range" id="range" min="0" max="20" value="1"/> 
                     <output for="range" class="output"></output>
                     <div class="discount0"></div>
-                    <div class="plan-discount discount5">   
+                    <div class="plan-discount discount5">
                         <h3>Discount</h3> 
-                        <p>Annual Plan 3.0% </p>
-                        <p>Monthly Plan 1.5% </p>
+                        <p class="anp"></p>
+                        <p class="mop"></p>
                     </div>
-                    <div class="plan-discount discount10">  
+                    {{-- <div class="plan-discount discount10">  
                         <h3>Discount</h3> 
                         <p>Annual Plan 6.0% </p>
                         <p>Monthly Plan 3.0% </p>
@@ -286,191 +516,155 @@
                         <h3>Discount</h3> 
                         <p>Annual Plan 15.0% </p>
                         <p>Monthly Plan 7.5% </p>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="col-sm-8 col-sm-offset-1" style="margin-top: 5px;margin-bottom: 20px;">
-                    <div id="hider">
-                    <div class="col-sm-4 basic" style="text-align: center;">
-                        <div class="pricing-title" style="background: #285080;border: 1px solid #285080;">
-                            <h4></h4>
-                            <h4>BASIC</h4>
-                        </div>
-                        <div class="pricing-body">
-                            <div class="col-sm-6" style="border-right: 1px solid #00b050;">
-                                <div class="pricing-body-title" >
-                                    <h4>Monthly Plan (£/mo)</h4>
-                                </div>
-                                <div class="BMprice" id="grower">
-                                    <p>985.00</p>
-                                </div>
-                                <div class="BMdisc" style="color: #ffffff;font-weight: 700;">
-                                    <p>1.5% Discount</p>
-                                </div>
-                                <div>
-                                    <button class="btn" style=" border-radius: 5px;
-    color: white;
-    background: #285080;">Get Started</button>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 ">
-                                <div class="pricing-body-title">
-                                    <h4>Annual Plan (£/mo)</h4>
-                                </div>
-                                <div class="BAprice" >
-                                    <p>970.00</p>
-                                </div>
-                                <div class="BAdisc" style="color: #ffffff;font-weight: 700;">
-                                    <p>3.0% Discount</p>
-                                </div>
-                                <div>
-                                    <button class="btn" style=" border-radius: 5px;
-    color: white;
-    background: #285080;">Get Started</button>
-                                </div>
-                            </div>
-                            <div class="col-sm-12" style="color: #00b050;font-weight: 700;    padding-top: 15px;">
-                                <div class="services">
-                                    <p>Internal Benchmarking  1</p>
-                                </div>
-                                <div class="services">
-                                    <p>Tenderer Management 1</p>
-                                </div>
-                                <div class="services">
-                                    <p>Full Tenderer Functionalities 1</p>
-                                </div>
-                                <div class="services">
-                                    <p>Tenderer Dashboard 1</p>
-                                </div>
-                                <div class="services" style="border-bottom:none;">
-                                    <p>Employer Dashboard 1</p>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 ppadd">
+                                <div class="pricingTable">
+                                    <div class="pricingTable-header basicbg">
+                                        <h3 class="heading">BASIC</h3>
+                                        <!-- <span class="currency">$</span>
+                                        <span class="price-value">10</span>
+                                        <span class="month">/monthly</span> -->
+                                    </div>
+                                    <div class="pricing-content terms">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                            <ul>
+                                                <li>Monthly Plan (£/mo)</li>
+                                                <li>985.00</li>
+                                                <li>1.5% Discount</li>
+                                                <li><button class="btn bsc">Get Started</button></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <ul>
+                                                <li>Annual Plan (£/mo)</li>
+                                                <li>970.00</li>
+                                                <li>3.0% Discount</li>
+                                                <li><button class="btn bsc">Get Started</button></li>
+                                            </ul>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="pricing-content">
+                                        <ul class="texal">
+                                            <li>Internal Benchmarking <i class="fa fa-check" style="line-height: -1px !important;"></i></li>
+                                            <div class="line"></div>
+                                            <li>Tenderer Management <i class="fa fa-check"></i></li>
+                                            <div class="line"></div>
+                                            <li>Full Tenderer Functionalities <i class="fa fa-check"></i></li>
+                                            <div class="line"></div>
+                                            <li>Tenderer Dashboard <i class="fa fa-check"></i></li>
+                                            <div class="line"></div>
+                                            <li>Employer Dashboard <i class="fa fa-check"></i></li>
+                                            <div class="line"></div>
+                                            <li>Benchmarking Pro <i class="fa fa-times"></i></li>
+                                            <div class="line"></div>
+                                            <li>Scope of Services Tool <i class="fa fa-times"></i></li>
+                                        </ul>
+                                    </div>
+                                    <!-- <a href="#" class="pricingTable-signup">SIGN IN</a> -->
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 PRO" style="text-align: center;margin-top: -39px;">
-                        <h4 style="color: #FE7235;"> POPULAR </h4>
-                        <div class="pricing-title" style="background: #FE7235;border: 1px solid #FE7235;">
-                            <h4>PRO</h4>
-                        </div>
-                        <div class="pricing-body">
-                            <div class="col-sm-6" style="border-right: 1px solid #00b050;">
-                                <div class="pricing-body-title">
-                                    <h4>Monthly Plan (£/mo)</h4>
-                                </div>
-                                <div class="PMprice">
-                                    <p>1,280.50</p>
-                                </div>
-                                <div class="PMdisc" style="color: #ffffff;font-weight: 700;">
-                                    <p>1.5% Discount</p>
-                                </div>
-                                <div>
-                                    <button class="btn" style=" border-radius: 5px;
-    color: white;
-    background: #FE7235">Get Started</button>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 ">
-                                <div class="pricing-body-title">
-                                    <h4>Annual Plan (£/mo)</h4>
-                                </div>
-                                <div class="PAprice" >
-                                    <p>1,261.00</p>
-                                </div>
-                                <div class="PAdisc" style="color: #ffffff;font-weight: 700;">
-                                    <p>3.0% Discount</p>
-                                </div>
-                                <div>
-                                    <button class="btn" style=" border-radius: 5px;
-    color: white;
-    background: #FE7235">Get Started</button>
-                                </div>
-                            </div>
-                            <div class="col-sm-12" style="color: #00b050;font-weight: 700;    padding-top: 15px;">
-                                <div class="services">
-                                    <p>Internal Benchmarking  1</p>
-                                </div>
-                                <div class="services">
-                                    <p>Tenderer Management 1</p>
-                                </div>
-                                <div class="services">
-                                    <p>Full Tenderer Functionalities 1</p>
-                                </div>
-                                <div class="services">
-                                    <p>Tenderer Dashboard 1</p>
-                                </div>
-                                <div class="services">
-                                    <p>Employer Dashboard 1</p>
-                                </div>
-                                <div class="services" style="border-bottom:none;">
-                                    <p>Benchmarking Pro 1</p>
+                            <div class="col-md-4 col-sm-6 ppadd">
+                                <div class="pricingTable">
+                                    <div class="pricingTable-header probg">
+                                        <h3 class="heading">PRO</h3>
+                                        <!-- <span class="currency">$</span>
+                                        <span class="price-value">10</span>
+                                        <span class="month">/monthly</span> -->
+                                    </div>
+                                    <div class="pricing-content terms">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                            <ul>
+                                                <li>Monthly Plan (£/mo)</li>
+                                                <li>1,280.50</li>
+                                                <li>1.5% Discount</li>
+                                                <li><button class="btn probut">Get Started</button></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <ul>
+                                                <li>Annual Plan (£/mo)</li>
+                                                <li>1,261.00</li>
+                                                <li>3.0% Discount</li>
+                                                <li><button class="btn probut">Get Started</button></li>
+                                            </ul>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="pricing-content">
+                                        <ul class="texalpro">
+                                            <li>Internal Benchmarking <i class="fa fa-check" style="line-height: -1px !important;"></i></li>
+                                            <div class="line"></div>
+                                            <li>Tenderer Management <i class="fa fa-check"></i></li>
+                                            <div class="line"></div>
+                                            <li>Full Tenderer Functionalities <i class="fa fa-check"></i></li>
+                                            <div class="line"></div>
+                                            <li>Tenderer Dashboard <i class="fa fa-check"></i></li>
+                                            <div class="line"></div>
+                                            <li>Employer Dashboard <i class="fa fa-check"></i></li>
+                                            <div class="line"></div>
+                                            <li>Benchmarking Pro <i class="fa fa-check"></i></li>
+                                            <div class="line"></div>
+                                            <li>Scope of Services Tool <i class="fa fa-times"></i></li>
+                                        </ul>
+                                    </div>
+                                    <!-- <a href="#" class="pricingTable-signup">SIGN IN</a> -->
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 PROp" style="text-align: center;">
-                        <div class="pricing-title" style="background: #000;border: 1px solid #000;">
-                            <h4></h4>
-                            <h4>PRO+</h4>
-                        </div>
-                        <div class="pricing-body">
-                            <div class="col-sm-6" style="border-right: 1px solid #00b050;">
-                                <div class="pricing-body-title">
-                                    <h4>Monthly Plan (£/mo)</h4>
-                                </div>
-                                <div class="PpMprice">
-                                    <p>1,576.00</p>
-                                </div>
-                                <div class="PpMdisc" style="color: #ffffff;font-weight: 700;">
-                                    <p>1.5% Discount</p>
-                                </div>
-                                <div>
-                                    <button class="btn" style=" border-radius: 5px;
-    color: white;
-    background: #000">Get Started</button>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 ">
-                                <div class="pricing-body-title">
-                                    <h4>Annual Plan (£/mo)</h4>
-                                </div>
-                                <div class="PpAprice" >
-                                    <p>1,552.00</p>
-                                </div>
-                                <div class="PpAdisc" style="color: #ffffff;font-weight: 700;">
-                                    <p>3.0% Discount</p>
-                                </div>
-                                <div>
-                                    <button class="btn" style=" border-radius: 5px;
-    color: white;
-    background: #000">Get Started</button>
-                                </div>
-                            </div>
-                            <div class="col-sm-12" style="color: #00b050;font-weight: 700;    padding-top: 15px;">
-                                <div class="services">
-                                    <p>Internal Benchmarking  1</p>
-                                </div>
-                                <div class="services">
-                                    <p>Tenderer Management 1</p>
-                                </div>
-                                <div class="services">
-                                    <p>Full Tenderer Functionalities 1</p>
-                                </div>
-                                <div class="services">
-                                    <p>Tenderer Dashboard 1</p>
-                                </div>
-                                <div class="services">
-                                    <p>Employer Dashboard 1</p>
-                                </div>
-                                <div class="services">
-                                    <p>Benchmarking Pro 1</p>
-                                </div>
-                                <div class="services" style="border-bottom:none;">
-                                    <p>Scope of Services Tool 1</p>
+                            <div class="col-md-4 col-sm-6 ppadd">
+                                <div class="pricingTable">
+                                    <div class="pricingTable-header propbg">
+                                        <h3 class="heading">PRO +</h3>
+                                        <!-- <span class="currency">$</span>
+                                        <span class="price-value">10</span>
+                                        <span class="month">/monthly</span> -->
+                                    </div>
+                                    <div class="pricing-content terms">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                            <ul>
+                                                <li>Monthly Plan (£/mo)</li>
+                                                <li>1,576.00</li>
+                                                <li>1.5% Discount</li>
+                                                <li><button class="btn propbot">Get Started</button></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <ul>
+                                                <li>Annual Plan (£/mo)</li>
+                                                <li>1,552.00</li>
+                                                <li>3.0% Discount</li>
+                                                <li><button class="btn propbot">Get Started</button></li>
+                                            </ul>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="pricing-content">
+                                        <ul class="texalprop">
+                                            <li>Internal Benchmarking <i class="fa fa-check" style="line-height: -1px !important;"></i></li>
+                                            <div class="line"></div>
+                                            <li>Tenderer Management <i class="fa fa-check"></i></li>
+                                            <div class="line"></div>
+                                            <li>Full Tenderer Functionalities <i class="fa fa-check"></i></li>
+                                            <div class="line"></div>
+                                            <li>Tenderer Dashboard <i class="fa fa-check"></i></li>
+                                            <div class="line"></div>
+                                            <li>Employer Dashboard <i class="fa fa-check"></i></li>
+                                            <div class="line"></div>
+                                            <li>Benchmarking Pro <i class="fa fa-check"></i></li>
+                                            <div class="line"></div>
+                                            <li>Scope of Services Tool <i class="fa fa-check"></i></li>
+                                        </ul>
+                                    </div>
+                                    <!-- <a href="#" class="pricingTable-signup">SIGN IN</a> -->
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    </div>
                     <div class="col-sm-12 flex" style="text-align: center;display: none;">
                         <div class="col-sm-6">
                             <div class="pricing-title" style="background: #285080;border: 1px solid #285080;">
@@ -934,5 +1128,8 @@
             
         }
     }
+</script>
+<script type="text/javascript">
+
 </script>
 @endsection
