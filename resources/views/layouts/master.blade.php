@@ -481,7 +481,7 @@
     @endsection
     @yield('content')
 
-<footer class="text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
+<footer id="footr" class="text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
         <div class="col-sm-12">
             <p><img src="{{asset('images/scope-white.png')}}" width="80%"></p>
             <p>
