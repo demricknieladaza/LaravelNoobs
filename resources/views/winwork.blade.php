@@ -189,7 +189,7 @@
 											</div>				
 										</div>
 									</div>							
-								</div>						
+								</div>							
 							</div>
 							<figcaption>
 								<a href="{{ url('/winwork/pds') }}"><h3 style="color:white; ">Canada Water Masterplan</h3></a>

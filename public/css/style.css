@@ -412,14 +412,14 @@ figcaption{
 .owl-container .prev{ position: absolute; top: 48%; left: 30px; z-index: 99; cursor: pointer; display: block;}
 .owl-container .next{ position: absolute; top: 48%; right: 30px; z-index: 99; cursor: pointer; display: block;}
 #owl-carousel{ padding: 0 50px 0 80px; }
-.owl-div a h3{ font-size: 16px; font-weight: bold; color: #1874c1; margin-top: 0; margin-bottom: 0; }
+.owl-div a h3{ font-size: 16px; font-weight: bold; color: #fe7235; margin-top: 0; margin-bottom: 0; }
 .owl-div a{ text-decoration: none; display: block;}
 table table tr td{ vertical-align: top; }
 .tender-container table a{ color: #fe7235; font-weight: bold; text-decoration: none; }
 .tender-details{ margin-top: 30px; }
-.tender-details table tr td:first-child{ font-weight: bold; }
+
 .tender-details .media a{ display: block; text-decoration: none; color: #222;}
-.tender-details .media a h3{ color: #1874c1; margin-top: 10px; font-weight: bold; font-size: 18px; }
+.tender-details .media a h3{  margin-top: 10px; font-weight: bold; font-size: 18px; }
 .tender-details .media, .owl-div{
     -webkit-transform: perspective(1px) translateZ(0);
       transform: perspective(1px) translateZ(0);
@@ -474,7 +474,7 @@ table table tr td{ vertical-align: top; }
 .lounge-main .table{ margin-bottom: 0; }
 .lounge-main .panel-heading{ padding: 10px 0; }
 .lounge-main .panel-body{ padding: 15px 0; }
-.badge{color: #fff; background: #fe7235; margin-left: 15px; font-size: 17px; border-radius: 50%;vertical-align: text-bottom;}
+.badge{color: #fff;}
 .lounge-main .panel-title{ font-size: 14px; font-weight: bold; }
 .lounge-main .panel-title a:hover, .lounge-main .panel-title a:focus{ color: #c45911; }
 .lounge-main .subtitle{ background: #c45911; color: #fff; padding: 5px 15px; margin-left: 15px; }
@@ -1128,7 +1128,7 @@ input[type=range]::-ms-thumb {
   background-position: center;
 }	
 .tender-container .table-striped tbody tr:nth-of-type(odd) { background: #fff8f3;}
-.tender-container .table-striped tbody tr td:first-child{ color: #fe7235; }
+
 .tender-container .table-striped tbody table td:first-child{ color: #333; font-weight: bold; }
 .tender-container .table-striped tbody tr table tr:nth-of-type(odd){ background: inherit; }
  body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(1) > div{
@@ -1136,9 +1136,7 @@ input[type=range]::-ms-thumb {
 }
 
 .tender-container .gids tbody tr td:first-child{ color: #000; }
- .tender-details .media a h3, .owl-div a h3 {
-    color: rgb(40,80,128);
-} 
+ 
 
 .tender-container .table-striped tbody table tr{ border-bottom: 2px solid #fe7235; line-height: 2em; }
 .tender-container .table-striped tbody table tr:last-child{ border-bottom: none; }
@@ -1733,13 +1731,39 @@ body > div:nth-child(15) > div > div > div.row{
     
 }
 
-#Riba1 th {
+#Riba2 th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
-    background-color: #7030A0;
+    background-color: blue;
     color: white;
 }
+#Riba2 {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size:13px;
+   border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+#Riba2 td {
+   max-width:110px; 
+   max-height:40px;
+}
+
+#Riba2 td, #Riba2 th {
+    border: 1px solid blue ;
+   width:20px; 
+    
+}
+
+#Riba2 th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: blue;
+    color: white;
+}
+
 
 
 #Stages1 th {
@@ -2185,9 +2209,7 @@ body > div.container-fluid.lounge-wrapper > div.row > div.col-sm-2.lounge-menu{
 width: 80%; margin-left: 35px;
 }
 
-table.table.table-hover.table-striped thead tr th{
-    color: black;
-}
+
 
 h4.panel-title.kahoy a:active{
     color: #fe7235;
@@ -2310,4 +2332,20 @@ body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.
 
 .collapsed {
     color: black !important;
+}
+.media-body h3 {
+    color: #FE7235;
+}
+.project1{
+   display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-weight: 700;
+    border-radius: 50%;
+    background-color: #fe7235;
+    color: white;
+}
+
+.imomama:hover{
+  background-color: darkgrey;
 }

@@ -76,13 +76,23 @@
 					</div>
 				</div>				
 			</div>
+			<div class="tender-container">				
+				<div class="row">
+					<div class="col-sm-12 active-tenders">
+						<h3>Project Vision and Brief</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+				</div>				
+			</div>
 			<div class="row">
 				<div class="col-sm-12 project-anchor">
 					<a href="#">Project Details</a>
-					<a href="#">Tender Queries</a>
-					<a href="#cprofile">Employer Details</a>
+					<a href="#tender-queries">Tender Queries</a>
+					<a href="#employers">Employer Details</a>
 				</div>
 			</div>
+	
 			<div class="tender-container">
 				<div class="row">
 					<div class="col-sm-12 active-tenders" id="cprofile">
@@ -288,40 +298,32 @@
 					</div>
 				</div>
 			</div>
-			<div class="tender-container">				
+			
+			<div class="tender-container" id="tender-queries">
 				<div class="row">
 					<div class="col-sm-12 active-tenders">
-						<h3>Project Vision and Brief</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					</div>
-				</div>				
-			</div>
-			<div class="tender-container">
-				<div class="row">
-					<div class="col-sm-12 active-tenders">
-						<b>Tender Queries</b>
+						<b style="font-size:20px;">Tender Queries</b>
 						<div class="row">	
 							<div class="col-sm-12">				
 								<table class="table table-striped table-hover" id="a">
 									<tr>
-										<td id="black">#</td>
+										<td width="10%">#</td>
 										<td>Query</td>
 										<td>Responses</td>
 
 									</tr>
 									<tr>
-										<td id="black">1</td>
+										<td>1</td>
 										<td>TextTextTextTextTextTextTextTextText</td>
 										<td>TextTextTextTextTextTextTextTextTextTextTextText</td>
 									</tr>
 									<tr>
-										<td id="black">2</td>
+										<td>2</td>
 										<td>TextTextTextTextTextTextTextTextText</td>
 										<td>TextTextTextTextTextTextTextTextTextTextTextText</td>
 									</tr>
 									<tr>
-										<td id="black">3</td>
+										<td>3</td>
 										<td>TextTextTextTextTextTextTextTextText</td>
 										<td>TextTextTextTextTextTextTextTextTextTextTextText</td>
 									</tr>
@@ -334,7 +336,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="tender-container">
+			<div class="tender-container" id="employers">
 				<div class="row">
 					<div class="col-sm-12 active-tenders">
 						<h3>Employer Details</h3>
@@ -365,15 +367,9 @@
 							</div>
 							<div class="col-sm-3 company-quick-details">
 								<p><img src="../images/logo-british.jpg"></p>
-								<p>Active Projects <span class="badge">4</span></p>
-								<p>Active Tenders <span class="badge">9</span></p>
-								<p>Status 
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-								</p>
+								<p>Active Projects <span class="project1">4</span></p>
+								<p>Active Tenders <span class="project1">9</span></p>
+								
 							</div>
 						</div>
 					</div>
@@ -448,7 +444,7 @@
 <div class="container">
 	<div class="owl-container">
 		<div class="active-tenders">
-			<h3><a href="{{ url('/winwork') }}">Employers's Name</a></h3>
+			<h3><a href="{{ url('/winwork') }}">Similar Projects</a></h3>
 		</div>
 		<span class="prev"><i class="fa fa-angle-left"></i></span>
 		<span class="next"><i class="fa fa-angle-right"></i></span>

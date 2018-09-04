@@ -486,7 +486,7 @@
 			            <td class="td">5 days</td>
 			            <td class="td"><strong style="font-size: 25px;">3</strong><a data-toggle="modal" data-target="#viewBid"><p>View Bids</p></a></td>
 			            <td class="td"><strong style="font-size: 25px;">7</strong><a data-toggle="modal" data-target="#viewQueries"><p>View Answer/ Queries</p></a></td>
-			            <td class="td"><button class="">Complete Tender Process</button></td>
+			            <td class="td"></button><button style="width: 101px;" class="btn btn-success">Complete <br>Tender  <br>Process</button></td>
   			        </tr>
   			        <tr>
 			            <td style="text-align: left;" class="td">Service Engineer <a><p>Edit Tender</p></a></td>
@@ -496,7 +496,7 @@
 			            <td class="td">TBC</td>
 			            <td class="td">TBC</td>
 			            <td class="td">TBC</td>
-			            <td class="td"><button class="">Download Evaluation Report</button></td>
+			            <td class="td"></td>
   			        </tr>
   			        <tr>
 			            <td style="text-align: left;" class="td">Structural Engineer <a><p>Edit Tender</p></a></td>
@@ -506,7 +506,9 @@
 			            <td class="td">5 days</td>
 			            <td class="td"><strong style="font-size: 25px;">3</strong><a data-toggle="modal" data-target="#viewBid"><p>View Bids</p></a></td>
 			            <td class="td"><strong style="font-size: 25px;">7</strong><a data-toggle="modal" data-target="#viewQueries"><p>View Answer/Queries</p></a></td>
-			            <td class="td"><button class="">Negotiate Scope and Appointment</button></td>
+			            <td class="td">
+			              </button><button class="btn btn-primary" style="margin-bottom:10px;    width: 102px;">Dowload <br>Evalution<br>Report</button>
+			            </button><button class="btn btn-warning">Negotiate <br>Scope and <br>Appointment</button></td>
 			            
   			        </tr>
     			    </tbody>
@@ -565,21 +567,21 @@
 			            <td class="td">£1,000.00</td>
 			            <td class="td">£1,000.00</td>
   			        </tr>
-  			        <tr>
+  			        <tr style=" border-top: 5px solid orange;">
 			            <td class="td"><strong>Total</strong></td>
-			            <td class="td"><strong>£ 2,000.00</strong></td>
-			            <td class="td"><strong>£ 2,000.00</strong></td>
-			            <td class="td"><strong>£ 2,000.00</strong></td>
-			            <td class="td"><strong>£ 2,000.00</strong></td>
-			            <td class="td"><strong>£ 2,000.00</strong></td>
-			            <td class="td"><strong>£ 2,000.00</strong></td>
-			            <td class="td"><strong>£ 2,000.00</strong></td>
-			            <td class="td"><strong>£ 2,000.00</strong></td>
-			            <td class="td"><strong>£ 2,000.00</strong></td>
-			            <td class="td"><strong>£ 2,000.00</strong></td>
-			            <td class="td"><strong>£ 2,000.00</strong></td>
-			            <td class="td"><strong>£ 2,000.00</strong></td>
-  			        </tr>
+			            <td class="td"><b>£2,000.00</b></td>
+			            <td class="td"><b>£2,000.00</b></td>
+			            <td class="td"><b>£2,000.00</b></td>
+			            <td class="td"><b>£2,000.00</b></td>
+			            <td class="td"><b>£2,000.00</b></td>
+			            <td class="td"><b>£2,000.00</b></td>
+			            <td class="td"><b>£2,000.00</b></td>
+			            <td class="td"><b>£2,000.00</b></td>
+			            <td class="td"><b>£2,000.00</b></td>
+			            <td class="td"><b>£2,000.00</b></td>
+			            <td class="td"><b>£2,000.00</b></td>
+			            <td class="td"><b>£2,000.00</b></td>
+			          
     			    </tbody>
     				</table>
 	    			</table>
@@ -613,11 +615,14 @@
 		    						<div class="row" style="margin: 0;">	
 		    						
 								<div class="col-sm-12">
-									<table id="customers">
+									<table id="Riba2">
 											  <tr>
 											    <th>Deliverable</th>
 											    <th>Details / Contents</th>
-											    <th>RACI</th>
+											    <th>R</th>
+											    <th>A</th>
+											    <th>C</th>
+											    <th>I</th>
 											    <th>0</th>
 											    <th>1</th>
 											    <th>2</th>
@@ -632,7 +637,10 @@
 											  <tr>
 											    <td>Strategic Brief</td>
 											  <td contenteditable='true'></td>
-											  <td contenteditable='true'></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
@@ -645,9 +653,13 @@
 											  </tr>
 											  <tr>
 											    <td>Project Programme (Lead)</td>
-											     <td contenteditable='true'></td>
+											    
 											    <td contenteditable='true'></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
@@ -659,8 +671,12 @@
 											  <tr>
 											    <td>Feasibility Study</td>
 											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											   <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											   
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
@@ -672,8 +688,13 @@
 											  <tr>
 											    <td>Design Responsibility Matrix</td>
 											     <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											   <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											   
+											   
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
@@ -686,7 +707,11 @@
 											   <td>Site Information Report</td>
 											     <td contenteditable='true'></td>
 											     <td contenteditable='true'></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											     <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											     <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											     <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											    
+											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
@@ -700,6 +725,10 @@
 											     <td contenteditable='true'></td>
 											     <td contenteditable='true'></td>
 											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											    
 											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
@@ -713,6 +742,10 @@
 											     <td contenteditable='true'></td>
 											     <td contenteditable='true'></td>
 											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											   
 											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
@@ -726,6 +759,11 @@
 											     <td contenteditable='true'></td>
 											     <td contenteditable='true'></td>
 											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											   
+
 											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
@@ -739,6 +777,11 @@
 											     <td contenteditable='true'></td>
 											     <td contenteditable='true'></td>
 											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											    
+
 											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
@@ -752,6 +795,10 @@
 											     <td contenteditable='true'></td>
 											     <td contenteditable='true'></td>
 											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											   
 											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
@@ -763,7 +810,10 @@
 											  <tr>
 											    <td>Design Proposals from Design Team members</td>
 											     <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
+											   <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											   <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											   <td><div class="mama" onmouseup="mUp(this)"></div></td>
+											   <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
@@ -779,7 +829,7 @@
 							</div><br>
 							<div class="row">
 								<div class="col-sm-12">
-									<table id="Riba" style="overflow-x:auto;">
+									<table id="Riba">
 											  <tr>
 											    <th> Meetings</th>
 											    <th>Purpose</th>
@@ -797,7 +847,7 @@
 											    <th>7</th>
 											  </tr>
 											  <tr>
-											    <td style="padding-left:10px; ">Pre-Application Meetings</td>
+											    <td >Pre-Application Meetings</td>
 											   <td contenteditable='true'></td>
 											    <td contenteditable='true'></td>
 											    <td contenteditable='true'></td>
