@@ -515,7 +515,7 @@
 										            for ($x=date("Y"); $x>1900; $x--)
 										              {
 										                echo'<option value="'.$x.'">'.$x.'</option>'; 
-										              } 
+										               } 
 										            ?> 
 										        </select>
 									</div>

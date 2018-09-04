@@ -99,7 +99,7 @@
 	background-color: #fe7235;
 }
 
-.thead > td, th {
+.thead {
 	text-align: center;
 	color: white;
 }
