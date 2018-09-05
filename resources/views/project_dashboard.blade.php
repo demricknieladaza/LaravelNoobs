@@ -619,10 +619,10 @@
 											  <tr>
 											    <th>Deliverable</th>
 											    <th>Details / Contents</th>
-											    <th>R</th>
+											    <th style="border-left:3px solid orange;border-top: ">R</th>
 											    <th>A</th>
 											    <th>C</th>
-											    <th>I</th>
+											    <th style="border-right:3px solid orange; ">I</th>
 											    <th>0</th>
 											    <th>1</th>
 											    <th>2</th>

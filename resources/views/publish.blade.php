@@ -40,7 +40,7 @@
 				<div class="row">
 					<div class="hover-container-holder">
 						<div class="tender-tile-single">
-							<div class="tender-tiles new-project-tile hover-tile">
+							<div class="scaslerni tender-tiles new-project-tile hover-tile">
 								<h2><a href="{{ url('/publish/project_dashboard') }}" style="">Publish<br> New<br> Project</a></h2>
 							</div>
 						</div>
