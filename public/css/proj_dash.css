@@ -542,3 +542,21 @@ ul.user li a:focus {
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
+
+i.fa.fa-check.checkerg {
+    color: #64e864;
+    height: 170px;
+    float: right;
+    transition: 1s;
+}
+
+.hidecheck
+{
+  visibility: hidden;
+  opacity: 0;
+}
+
+.disd {
+  pointer-events: none;
+  opacity: 0.4;
+}

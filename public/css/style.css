@@ -2345,7 +2345,9 @@ body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.
     background-color: #fe7235;
     color: white;
 }
-
-.imomama:hover{
-  background-color: darkgrey;
+.col-md-4.col-sm-6.ppadd:hover {
+  transform: scale(1.1);
+  transition: .5s;
+  position: relative;
+  z-index: 999;
 }

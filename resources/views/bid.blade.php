@@ -53,8 +53,8 @@
 			<div id="d" class="col-sm-4" style="position: fixed; width:400px;">
 				<div class="tender-container">
 					<ul class="nav bid-form-nav">
-						<li class="active"><a data-toggle="tab" href="#section1">Pre-Qualification Questionnaire</a></li>
-						<li class="disabled"><a href="#section2">Organisation</a></li>
+						<li class="active"><a data-toggle="tab" href="#section1">Pre-Qualification Questionnaire<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disd"><a data-toggle="tab" href="#section2">Organisation</a></li>
 						<li class="disabled"><a href="#section3">Individuals</a></li>
 						<li class="disabled"><a href="#section4">Approach</a></li>
 						<li class="disabled"><a href="#section5">Scope</a></li>
@@ -1752,8 +1752,10 @@ $('textarea').keyup(function() {
 			{
 				var ch = $('.tata:checked').length == $('.tata').length;
 				if(ch){
-					alert('okna');
+					// alert('okna');
+					$("li.active").next().removeClass("disd");
 					$(".nbtn").removeClass("disabled");
+					$(".checkerg").removeClass("hidecheck");
 				}
 			}
 		);
