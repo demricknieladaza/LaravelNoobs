@@ -42,7 +42,27 @@
 	      </div>
 	      
 	    </div>
-	  </div>
+	</div>
+  	<div id="pngnext" class="modal fade">
+		<div class="modal-dialog modal-confirm">
+			<div class="modal-content">
+				<div class="modal-head">
+					<div class="icon-box">
+						<i class="material-icons">done</i>
+					</div>				
+					<h4 class="modal-title">Are  you  sure  you  want  to  submit  this  tender  query? </h4>	
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+				<div class="modal-body">
+					<p>Your  query  will  be  sent  to  the  Employer  and  published  on  the  project  page,  visible  for  everyone,  once  you  have  received  a  response. This process cannot be undone.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info" data-dismiss="modal">Go Back</button>
+					<button type="button" class="btn btn-success">Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div class="container below-header">
 		<h1 class="project-title bid-page-title">Canada Water Masterplan - <small>Structural Engineer</small></h1>			
@@ -54,12 +74,12 @@
 				<div class="tender-container">
 					<ul class="nav bid-form-nav">
 						<li class="active"><a data-toggle="tab" href="#section1">Pre-Qualification Questionnaire<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disd"><a data-toggle="tab" href="#section2">Organisation</a></li>
-						<li class="disabled"><a href="#section3">Individuals</a></li>
-						<li class="disabled"><a href="#section4">Approach</a></li>
-						<li class="disabled"><a href="#section5">Scope</a></li>
-						<li class="disabled"><a href="#section6">Appointment</a></li>
-						<li class="disabled"><a href="#section7">Quality Assurance</a></li>
+						<li class="disd"><a data-toggle="tab" href="#section2">Organisation<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disd"><a data-toggle="tab" href="#section3">Individuals<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disd"><a data-toggle="tab" href="#section4">Approach<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disd"><a data-toggle="tab" href="#section5">Scope<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disd"><a data-toggle="tab" href="#section6">Appointment<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disd"><a data-toggle="tab" href="#section7">Quality Assurance<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
 					</ul><br>
 				</div>
 				<div class="form-group">
@@ -70,9 +90,9 @@
 			<div class="col-sm-8 questionnaire-section" style="margin-left: 400px;">
 				<form>
 				<div class="tab-content">
-					<div id="section1" class="section1 tab-pane fade in active tender-container">
+					<div id="section1" class="tab-pane fade in active tender-container">
 						<h3 class="bid-form-title">Pre-Qualification Questionnaire</h3>
-						
+							<div class="inputscheck">
 							<div class="form-group">
 								<input type="checkbox" name="" value="" class="tata filled-in" id="check1"> <label for="check1">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
 							</div>
@@ -102,9 +122,10 @@
 							</div>
 							<div class="form-group">
 								<input type="checkbox" name="" value="" class="tata filled-in" id="check10"> <label for="check10">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
+							</div>
 							</div>						
 							<div class="form-group butcent">
-								<input type="submit" name="Next" value="Next" class="nbtn disabled btn btn-primary butsize">
+								<input id="sec2" type="submit" data-toggle="tab" href="#section2" name="Next" value="Next" class="nbtn disabled btn btn-primary butsize">
 							</div>
 						
 					</div>
@@ -116,7 +137,8 @@
 							</div>
 						</div>
 						<h3 class="bid-form-title">Organisation</h3>
-						
+						<div class="kuwestion">
+							<div class="inputscheck">
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="row">
@@ -220,7 +242,7 @@
 											</div>
 
 										<div class="form-group">
-								               <input type="checkbox" name="" value="" class="filled-in" id="check12" >     <label for="check12">Value Confidential </label>
+								               <input type="checkbox" name="" value="cheked" class="filled-in" id="check12" >     <label for="check12">Value Confidential </label>
 							              </div>
 							              <div class="form-group">
 												<textarea cols="4" rows="5" id="textarea" maxlength="2000" placeholder="Enter description of the project  "></textarea>
@@ -373,18 +395,19 @@
 										</div>
 									</div>
 									<div class="form-group butcent">
-										<input type="submit" name="Next" value="Next" class="btn btn-primary butsize ">
+										<button data-toggle="tab" href="#section3" type="button" id="checkinpbut2" name="Next" class="btn btn-primary butsize ">Next</button>
 										
 									</div>
 									
 									</div>
 								</div>
-							<!-- </div> -->
-						
+							</div>
+						</div>
 					</div>
 					<div id="section3" class="tab-pane fade tender-container">
 						<h3 class="bid-form-title">Individuals</h3>
-						
+						<div class="kuwestion">
+							<div class="inputscheck">
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="row" style="padding-bottom: 10px;">
@@ -611,16 +634,18 @@
 											</div>
 									</div><br>
 									<div class="form-group butcent">
-										<input type="submit" name="Next" value="Next" class="btn btn-primary butsize ">
-										
+										<button data-toggle="tab" href="#section4" type="button" id="checkinpbut" name="Next" class="btn btn-primary butsize ">Next</button>
 									</div>
 								</div>
 							</div>
+						</div>
+					</div>
 						
 					</div>
 					<div id="section4" class="tab-pane fade tender-container">
 						<h3 class="bid-form-title">Approach</h3>
-						
+						<div class="kuwestion">
+							<div class="inputscheck">
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="row">
@@ -686,11 +711,13 @@
 									</div><br>
 									
 									<div class="form-group butcent">
-										<input type="submit" name="Next" value="Next" class="btn btn-primary  butsize">
+										<button data-toggle="tab" href="#section5" type="button" id="checkinpbut3" name="Next" class="btn btn-primary butsize ">Next</button>
 										
 									</div>
 								</div>
 							</div>
+						</div>
+					</div>
 						
 					</div>
 					<div id="section5" class="tab-pane fade tender-container">
@@ -1299,13 +1326,18 @@
 										</table><br>
 										<button type="button" class="btn btn-success">Add another Lines</button>
 								</div>
+								<div class="form-group butcent">
+									<button data-toggle="tab" href="#section6" type="button" id="checkinpbut4" name="Next" class="btn btn-primary butsize ">Next</button>
+									
+								</div>
 							</div><br>
 						
 					</div>
 
 					<div id="section6" class="tab-pane fade tender-container">
 						<h3 class="bid-form-title">Appointment</h3>
-						
+						<div class="kuwestion">
+							<div class="inputscheck">
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="row">
@@ -1356,8 +1388,8 @@
 									<div class="row">
 										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Insurance</option>
+												<select name="Sel"  value="test" class="form-control" >
+													<option  disabled selected>Select Insurance</option>
 													
 												</select>
 										</div>
@@ -1380,8 +1412,8 @@
 										<div class="col-sm-6">
 								              <select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select</option>
-													<option>Agreed  To  be  negotiated</option>
-													<option>Rejected  </option>
+													<option value="test">Agreed  To  be  negotiated</option>
+													<option value="test">Rejected  </option>
 													
 												</select>
 							             
@@ -1408,8 +1440,8 @@
 										<div class="col-sm-6">
 								              <select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select</option>
-													<option>Agreed  To  be  negotiated</option>
-													<option>Rejected  </option>
+													<option value="test">Agreed  To  be  negotiated</option>
+													<option value="test">Rejected  </option>
 													
 												</select>
 							             
@@ -1435,8 +1467,8 @@
 										<div class="col-sm-6">
 								              <select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select</option>
-													<option>Agreed  To  be  negotiated</option>
-													<option>Rejected  </option>
+													<option value="test">Agreed  To  be  negotiated</option>
+													<option value="test">Rejected  </option>
 													
 												</select>
 							             
@@ -1459,7 +1491,7 @@
 									<div class="row">
 										<div class="col-sm-6"></div>
 										<div class="col-sm-6">
-								               <input type="checkbox" name="" value="" class="filled-in" id="check14" >   <label for="check14">I Agree</label>
+								               <input type="checkbox" name="" value="test" class="filled-in" id="check14" >   <label for="check14">I Agree</label>
 							             </div>
 									</div><br>
 									<div class="row">
@@ -1474,8 +1506,8 @@
 										<div class="col-sm-6">
 								              <select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select</option>
-													<option>Agreed  To  be  negotiated</option>
-													<option>Rejected  </option>
+													<option value="test" >Agreed  To  be  negotiated</option>
+													<option value="test" >Rejected  </option>
 													
 												</select>
 							             
@@ -1553,12 +1585,13 @@
 									</div><br>
 									
 									<div class="form-group butcent">
-										<input type="submit" name="Next" value="Next" class="btn btn-primary butsize ">
+										<button data-toggle="tab" href="#section7" type="button" id="checkinpbut5" name="Next" class="btn btn-primary butsize ">Next</button>
 										
 									</div>
 								</div>
 							</div>
-						
+						</div>
+					</div>
 					</div>
 					<div id="section7" class="tab-pane fade tender-container">
 						<h3 class="bid-form-title">Quality Assurance</h3>
@@ -1753,45 +1786,131 @@ $('textarea').keyup(function() {
 				var ch = $('.tata:checked').length == $('.tata').length;
 				if(ch){
 					// alert('okna');
-					$("li.active").next().removeClass("disd");
 					$(".nbtn").removeClass("disabled");
-					$(".checkerg").removeClass("hidecheck");
+					$("li.active").next().removeClass("disd");
+					// display sa modal
+					// $("#pngnext").modal('toggle');
 				}
 			}
 		);
-	});
-</script>
-<script type="text/javascript">
-	// function validateFormSection() {
- //        var valid = false; //As long as it's true, we may continue
- //        var section = $('.section1'); //Find the active section
- //        var inputs = section.find('input, select, textarea'); //Get all its inputs, of all types
- //        //We'll save the first validated element in here
- //        //We have to define it here, not inside the `inputs.each()` loop
- //        //So we have access to it outside that loop
- //        var focusElem;
+		$('#sec2').click(function(){
+			var list = $("li.active");
+			$("li.active a i.checkerg").removeClass("hidecheck");
+			$("li.active").next('li').addClass("active");
+			list.removeClass("active");
+
+			$(".tender-container.active.in").find('.inputscheck').addClass("disd");
+		});
+
+		$('#checkinpbut').click(function(e)
+		{
+			var validation = validateFormSection();
+			if(validation){
+				var list = $("li.active");
+				$("li.active a i.checkerg").removeClass("hidecheck");
+				$("li.active").next('li').addClass("active");
+				list.removeClass("active");
+
+				$(".tender-container.active.in").find('.inputscheck').addClass("disd");
+
+			}
+			e.preventDefault();
+		});
+
+		$('#checkinpbut2').click(function()
+		{
+			var validation = validateFormSection();
+			if(validation){
+				var list = $("li.active");
+				$("li.active a i.checkerg").removeClass("hidecheck");
+				$("li.active").next('li').addClass("active");
+				list.removeClass("active");
+
+				$(".tender-container.active.in").find('.inputscheck').addClass("disd");
+
+			}
+		});
+
+		$('#checkinpbut3').click(function()
+		{
+			var validation = validateFormSection();
+			if(validation){
+				var list = $("li.active");
+				$("li.active a i.checkerg").removeClass("hidecheck");
+				$("li.active").next('li').addClass("active");
+				list.removeClass("active");
+
+				$(".tender-container.active.in").find('.inputscheck').addClass("disd");
+
+			}
+		});
+
+		$('#checkinpbut4').click(function()
+		{
+			var list = $("li.active");
+			$("li.active").next().removeClass("disd");
+			$("li.active a i.checkerg").removeClass("hidecheck");
+			$("li.active").next('li').addClass("active");
+			list.removeClass("active");
+
+			$(".tender-container.active.in").find('.inputscheck').addClass("disd");
+		});
+
+		$('#checkinpbut5').click(function()
+		{
+			var validation = validateFormSection();
+			if(validation){
+				var list = $("li.active");
+				$("li.active a i.checkerg").removeClass("hidecheck");
+				$("li.active").next('li').addClass("active");
+				list.removeClass("active");
+
+				$(".tender-container.active.in").find('.inputscheck').addClass("disd");
+
+			}
+		});
+	
+	function validateFormSection() {
+        var valid = true; //As long as it's true, we may continue
+        var section = $('.tender-container.active.in').find('.kuwestion'); //Find the active section
+        var inputs = section.find('input, select, textarea'); //Get all its inputs, of all types
+        //We'll save the first validated element in here
+        //We have to define it here, not inside the `inputs.each()` loop
+        //So we have access to it outside that loop
+        var focusElem;
+        // alert(inputs.length);
+        inputs.each(function(index, el) {
+            var elem = $(el); //Current element we're working with
+            //alert(elem.val());
+            if( elem.val() === 'null'){
+            	valid = false;
+            }
+            else{
+            	// alert(elem.val().length);
+            	if ( elem.val().length === 0 ) {
+            		// alert(elem.val().length);
+            		// alert(elem);
+	                valid = false;
+	                alert('Please fill mandatory fields');
+	                return valid;
+	                // elem.addClass('active');
+	                if ( ! focusElem ) { //Only save when it's empty (first time around)
+	                    focusElem = elem;
+	                }
+	            }
+            }
+        });
+        if ( ! valid ) {
+            alert('Please fill mandatory fields');
+            focusElem.focus();
+        }
+        else if(valid){
+        	$("li.active").next().removeClass("disd");
+        }
         
- //        inputs.each(function(index, el) {
- //            var elem = $(el); //Current element we're working with
- //            if ( elem.data('validate') == true ) { //We get the validate attribute and check if it's true
- //            	alert('data validate');
- //                if ( elem.val() == "" ) {
- //                	alert('elem.val');
- //                    valid = false;
- //                    elem.addClass('active');
- //                    if ( ! focusElem ) { //Only save when it's empty (first time around)
- //                        focusElem = elem;
- //                    	alert('focusElem');
- //                    }
- //                }
- //            }
- //        });
- //        if ( ! valid ) {
- //            alert('Please fill mandatory fields');
- //            focusElem.focus();
- //        }
- //        return valid;
- //    }
+        return valid;
+    }
+    });
 </script>
 <!-- end -->
 
