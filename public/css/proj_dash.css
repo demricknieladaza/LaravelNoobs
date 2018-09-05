@@ -545,7 +545,6 @@ ul.user li a:focus {
 
 i.fa.fa-check.checkerg {
     color: #64e864;
-    height: 170px;
     float: right;
     transition: 1s;
 }
@@ -559,4 +558,10 @@ i.fa.fa-check.checkerg {
 .disd {
   pointer-events: none;
   opacity: 0.4;
+}
+
+.pricingTable:hover{
+  transform: scale(1.1);
+    position: relative;
+    z-index: 99;
 }

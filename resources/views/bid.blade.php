@@ -1891,7 +1891,7 @@ $('textarea').keyup(function() {
             		// alert(elem.val().length);
             		// alert(elem);
 	                valid = false;
-	                alert('Please fill mandatory fields');
+	                // alert('Please fill mandatory fields');
 	                return valid;
 	                // elem.addClass('active');
 	                if ( ! focusElem ) { //Only save when it's empty (first time around)
