@@ -1,10 +1,12 @@
-$('#range').on("change", function() {
+$('#range').on("change", function(event) {
+		// event.stopPropagation();
 		if($(this).val() == 1){
 	    	$('.output').val(5 +" Tenders" );
 	    	$('.output').css("top"," 476px" );
 	    	$('.output').css("left","0" );
+	    	
 
-	    	$(".discount5").show();
+	    	$(".discount5").show(200);
 	    	$('.discount5').css("top"," 443px" );
 	    	$('.anp').text('Annual Plan 3.0%');
 	    	$('.mop').text('Monthly Plan 1.5%');
@@ -13,7 +15,7 @@ $('#range').on("change", function() {
 	    	$('.output').css("top"," 451px" );
 	    	$('.output').css("left","0" );
 
-	    	$(".discount5").show();
+	    	$(".discount5").show(200);
 	    	$('.discount5').css("top"," 416px" );
 	    	$('.anp').text('Annual Plan 6.0%');
 	    	$('.mop').text('Monthly Plan 3.0%');
@@ -23,7 +25,7 @@ $('#range').on("change", function() {
 	    	$('.output').css("top","427px" );
 	    	$('.output').css("left","0" );
 
-	    	$(".discount5").show();
+	    	$(".discount5").show(1000);
 	    	$('.discount5').css("top"," 390px" );
 	    	$('.anp').text('Annual Plan 9.0%');
 	    	$('.mop').text('Monthly Plan 4.5%');
@@ -33,7 +35,7 @@ $('#range').on("change", function() {
 	    	$('.output').css("top"," 401px" );
 	    	$('.output').css("left","0" );
 
-	    	$(".discount5").show();
+	    	$(".discount5").show(1000);
 	    	$('.discount5').css("top"," 367px" );
 	    	$('.anp').text('Annual Plan 12.0%');
 	    	$('.mop').text('Monthly Plan 6.0%');
@@ -43,7 +45,7 @@ $('#range').on("change", function() {
 	    	$('.output').css("top"," 377px" );
 	    	$('.output').css("left","0" );
 
-	    	$(".discount5").show();
+	    	$(".discount5").show(1000);
 	    	$('.discount5').css("top"," 341px" );
 	    	$('.anp').text('Annual Plan 15.0%');
 	    	$('.mop').text('Monthly Plan 7.5%');
@@ -53,7 +55,7 @@ $('#range').on("change", function() {
 	    	$('.output').css("top"," 353px" );
 	    	$('.output').css("left","0" );
 
-	    	$(".discount5").show();
+	    	$(".discount5").show(1000);
 	    	$('.discount5').css("top"," 316px" );
 	    	$('.anp').text('Annual Plan 18.0%');
 	    	$('.mop').text('Monthly Plan 9.0%');
@@ -63,7 +65,7 @@ $('#range').on("change", function() {
 	    	$('.output').css("top"," 329px" );
 	    	$('.output').css("left","0" );
 
-	    	$(".discount5").show();
+	    	$(".discount5").show(1000);
 	    	$('.discount5').css("top"," 290px" );
 	    	$('.anp').text('Annual Plan 21.0%');
 	    	$('.mop').text('Monthly Plan 10.5%');
@@ -73,7 +75,7 @@ $('#range').on("change", function() {
 	    	$('.output').css("top"," 303px" );
 	    	$('.output').css("left","0" );
 
-	    	$(".discount5").show();
+	    	$(".discount5").show(1000);
 	    	$('.discount5').css("top"," 271px" );
 	    	$('.anp').text('Annual Plan 24.0%');
 	    	$('.mop').text('Monthly Plan 12.0%');
@@ -83,7 +85,7 @@ $('#range').on("change", function() {
 	    	$('.output').css("top"," 280px" );
 	    	$('.output').css("left","0" );
 
-	    	$(".discount5").show();
+	    	$(".discount5").show(1000);
 	    	$('.discount5').css("top"," 248px" );
 	    	$('.anp').text('Annual Plan 26.0%');
 	    	$('.mop').text('Monthly Plan 13.0%');
@@ -93,7 +95,7 @@ $('#range').on("change", function() {
 	    	$('.output').css("top"," 255px" );
 	    	$('.output').css("left","0" );
 
-	    	$(".discount5").show();
+	    	$(".discount5").show(1000);
 	    	$('.discount5').css("top"," 223px" );
 	    	$('.anp').text('Annual Plan 28.0%');
 	    	$('.mop').text('Monthly Plan 14.0%');
@@ -103,7 +105,7 @@ $('#range').on("change", function() {
 	    	$('.output').css("top"," 231px" );
 	    	$('.output').css("left","0" );
 
-	    	$(".discount5").show();
+	    	$(".discount5").show(1000);
 	    	$('.discount5').css("top"," 197px" );
 	    	$('.anp').text('Annual Plan 30.0%');
 	    	$('.mop').text('Monthly Plan 15.0%');
@@ -113,7 +115,7 @@ $('#range').on("change", function() {
 	    	$('.output').css("top"," 206px" );
 	    	$('.output').css("left","0" );
 
-	    	$(".discount5").show();
+	    	$(".discount5").show(1000);
 	    	$('.discount5').css("top"," 169px" );
 	    	$('.anp').text('Annual Plan 32.0%');
 	    	$('.mop').text('Monthly Plan 16.0%');
@@ -123,7 +125,7 @@ $('#range').on("change", function() {
 	    	$('.output').css("top"," 182px" );
 	    	$('.output').css("left","0" );
 
-	    	$(".discount5").show();
+	    	$(".discount5").show(1000);
 	    	$('.discount5').css("top"," 147px" );
 	    	$('.anp').text('Annual Plan 34.0%');
 	    	$('.mop').text('Monthly Plan 17.0%');
@@ -133,7 +135,7 @@ $('#range').on("change", function() {
 	    	$('.output').css("top"," 160px" );
 	    	$('.output').css("left","0" );
 
-	    	$(".discount5").show();
+	    	$(".discount5").show(1000);
 	    	$('.discount5').css("top"," 126px" );
 	    	$('.anp').text('Annual Plan 36.0%');
 	    	$('.mop').text('Monthly Plan 18.0%');
@@ -143,7 +145,7 @@ $('#range').on("change", function() {
 	    	$('.output').css("top"," 134px" );
 	    	$('.output').css("left","0" );
 
-	    	$(".discount5").show();
+	    	$(".discount5").show(1000);
 	    	$('.discount5').css("top"," 103px" );
 	    	$('.anp').text('Annual Plan 38.0%');
 	    	$('.mop').text('Monthly Plan 19.0%');
@@ -153,7 +155,7 @@ $('#range').on("change", function() {
 	    	$('.output').css("top"," 108px" );
 	    	$('.output').css("left","0" );
 
-	    	$(".discount5").show();
+	    	$(".discount5").show(1000);
 	    	$('.discount5').css("top"," 77px" );
 	    	$('.anp').text('Annual Plan 40.0%');
 	    	$('.mop').text('Monthly Plan 20.0%');
@@ -163,7 +165,7 @@ $('#range').on("change", function() {
 	    	$('.output').css("top"," 86px" );
 	    	$('.output').css("left","0" );
 
-	    	$(".discount5").show();
+	    	$(".discount5").show(1000);
 	    	$('.discount5').css("top"," 52px" );
 	    	$('.anp').text('Annual Plan 42.0%');
 	    	$('.mop').text('Monthly Plan 21.0%');
@@ -173,7 +175,7 @@ $('#range').on("change", function() {
 	    	$('.output').css("top"," 61px" );
 	    	$('.output').css("left","0" );
 
-	    	$(".discount5").show();
+	    	$(".discount5").show(1000);
 	    	$('.discount5').css("top"," 33px" );
 	    	$('.anp').text('Annual Plan 44.0%');
 	    	$('.mop').text('Monthly Plan 22.0%');
@@ -183,7 +185,7 @@ $('#range').on("change", function() {
 	    	$('.output').css("top"," 35px" );
 	    	$('.output').css("left","0" );
 
-	    	$(".discount5").show();
+	    	$(".discount5").show(1000);
 	    	$('.discount5').css("top"," 7px" );
 	    	$('.anp').text('Annual Plan 50.0%');
 	    	$('.mop').text('Monthly Plan 25.0%');
@@ -193,14 +195,16 @@ $('#range').on("change", function() {
 	    	$('.output').css("top"," 13px" );
 	    	$('.output').css("left"," -50px" );
 
-	    	$(".discount5").show();
+	    	$(".discount5").show(1000);
 	    	$('.discount5').css("top"," -14px" );
 	    	$('.anp').text('Annual Plan --');
 	    	$('.mop').text('Monthly Plan --');
 
 	    }else{
 	    	$('.output').val("Pay per Tender" );
-	    	$(".discount5").hide();
-	    	$('.discount0').show();
+	    	$(".discount5").hide(400);
+	    	$('.discount0').show(1000);
+	    	$('.output').css("top", "495px");
+	    	$('.output').css("left", "-34px");
 	    }
     }).trigger("change");

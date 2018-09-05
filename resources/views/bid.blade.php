@@ -1,109 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-
-	<div id="myModal" class="modal fade" role="dialog" tabindex='-1'>
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Login / Register</h4>
-				</div>
-				<div class="modal-body">
-					<ul class="nav nav-tabs">
-						<li class="active"><a data-toggle="tab" href="#login">Login</a></li>
-						<li><a data-toggle="tab" href="#signup">Register</a></li>
-					</ul>
-					<div class="tab-content">
-						<div id="login" class="tab-pane fade in active">
-							<form method="post" class="form-horizontal" autocomplete="off">
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Email</label>
-									<div class="col-sm-8 ">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="fa fa-user"></i></span>
-											<input type="email" class="form-control" placeholder="Email address" name="" autocomplete="off" required="">
-										</div>
-									</div>
-								</div>
-
-								<div class="form-group">
-									<label class="col-sm-3 control-label">Password</label>
-									<div class="col-sm-8 ">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="fa fa-lock"></i></span>
-											<input type="password" class="form-control" placeholder="Password" name="" required="">
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-3 control-label"></label>
-									<div class="col-sm-8 ">
-										<input type="submit" class="btn btn-primary col-sm-12" value="LOGIN">
-									</div>
-								</div>
-
-								<div class="form-group">   							
-									<div class="col-sm-8 col-sm-offset-3 text-right">   
-										<a href="#" class="forgot"><i class="fa fa-lock"></i> Forgot password</a>
-									</div>
-								</div>
-							</form>
-						</div>
-						<div id="signup" class="tab-pane fade">
-							<form method="post" class="form-horizontal" autocomplete="off">
-								<div class="form-group has-feedback">
-									<label class="col-sm-3 control-label">Full Name</label>
-									<div class="col-sm-8">
-										<input type="text" class="form-control" name="name" required="" data-msg-required="Please enter your full  name">
-									</div>
-								</div>
-								<div class="form-group has-feedback">
-									<label class="col-sm-3 control-label">Company</label>
-									<div class="col-sm-8">
-										<input type="text" class="form-control" name="company" required="" data-msg-required="Please enter your company name">
-									</div>
-								</div>
-								<div class="form-group has-feedback">
-									<label class="col-sm-3 control-label">Email</label>
-									<div class="col-sm-8">
-										<input type="email" class="form-control" name="email" required="" data-msg-required="Please enter your email">
-									</div>
-								</div>
-								<div class="form-group has-feedback">
-									<label class="col-sm-3 control-label">Phone</label>
-									<div class="col-sm-8">
-										<input type="text" class="form-control" name="phone" required="" data-msg-required="Please enter your phone number">
-									</div>
-								</div>
-								<div class="form-group has-feedback">
-									<label class="col-sm-3 control-label">Password</label>
-									<div class="col-sm-8">
-										<input type="password" class="form-control" name="password" required="" data-msg-required="Please enter your password">
-									</div>
-								</div>
-								<div class="form-group has-feedback">
-									<label class="col-sm-3 control-label">Confirm Password</label>
-									<div class="col-sm-8">
-										<input type="password" class="form-control" name="cpassword" required="" data-msg-required="Please enter your password again">
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-3 control-label"></label>
-									<div class="col-sm-8">
-										<input type="submit" class="btn btn-primary col-sm-12" value="REGISTER">
-
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-				<div class="modal-footer">					
-				</div>
-			</div>
-		</div>
-	</div> 
 	<div class="modal fade" id="Modal" role="dialog">
 	    <div class="modal-dialog">
 	    
@@ -153,16 +50,16 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-4" style="position: fixed; width:400px;">
+			<div id="d" class="col-sm-4" style="position: fixed; width:400px;">
 				<div class="tender-container">
 					<ul class="nav bid-form-nav">
-						<li class="active"><a data-toggle="tab" href="#section1">Pre-Qualification Questionnaire</a></li>
-						<li><a data-toggle="tab" href="#section2">Organisation</a></li>
-						<li><a data-toggle="tab" href="#section3">Individuals</a></li>
-						<li><a data-toggle="tab" href="#section4">Approach</a></li>
-						<li><a data-toggle="tab" href="#section5">Scope</a></li>
-						<li><a data-toggle="tab" href="#section6">Appointment</a></li>
-						<li><a data-toggle="tab" href="#section7">Quality Assurance</a></li>
+						<li class="active"><a data-toggle="tab" href="#section1">Pre-Qualification Questionnaire<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disd"><a data-toggle="tab" href="#section2">Organisation</a></li>
+						<li class="disabled"><a href="#section3">Individuals</a></li>
+						<li class="disabled"><a href="#section4">Approach</a></li>
+						<li class="disabled"><a href="#section5">Scope</a></li>
+						<li class="disabled"><a href="#section6">Appointment</a></li>
+						<li class="disabled"><a href="#section7">Quality Assurance</a></li>
 					</ul><br>
 				</div>
 				<div class="form-group">
@@ -171,46 +68,47 @@
 				</div>
 			</div>
 			<div class="col-sm-8 questionnaire-section" style="margin-left: 400px;">
+				<form>
 				<div class="tab-content">
-					<div id="section1" class="tab-pane fade in active tender-container">
+					<div id="section1" class="section1 tab-pane fade in active tender-container">
 						<h3 class="bid-form-title">Pre-Qualification Questionnaire</h3>
-						<form method="post">
+						
 							<div class="form-group">
-								<input type="checkbox" name="" value="" class="filled-in" id="check1"> <label for="check1">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
+								<input type="checkbox" name="" value="" class="tata filled-in" id="check1"> <label for="check1">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
 							</div>
 							<div class="form-group">
-								<input type="checkbox" name="" value="" class="filled-in" id="check2"> <label for="check2">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
+								<input type="checkbox" name="" value="" class="tata filled-in" id="check2"> <label for="check2">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
 							</div>
 							<div class="form-group">
-								<input type="checkbox" name="" value="" class="filled-in" id="check3"> <label for="check3">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
+								<input type="checkbox" name="" value="" class="tata filled-in" id="check3"> <label for="check3">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
 							</div>
 							<div class="form-group">
-								<input type="checkbox" name="" value="" class="filled-in" id="check4"> <label for="check4">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
+								<input type="checkbox" name="" value="" class="tata filled-in" id="check4"> <label for="check4">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
 							</div>
 							<div class="form-group">
-								<input type="checkbox" name="" value="" class="filled-in" id="check5"> <label for="check5">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
+								<input type="checkbox" name="" value="" class="tata filled-in" id="check5"> <label for="check5">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
 							</div>
 							<div class="form-group">
-								<input type="checkbox" name="" value="" class="filled-in" id="check6"> <label for="check6">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
+								<input type="checkbox" name="" value="" class="tata filled-in" id="check6"> <label for="check6">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
 							</div>
 							<div class="form-group">
-								<input type="checkbox" name="" value="" class="filled-in" id="check7"> <label for="check7">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
+								<input type="checkbox" name="" value="" class="tata filled-in" id="check7"> <label for="check7">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
 							</div>
 							<div class="form-group">
-								<input type="checkbox" name="" value="" class="filled-in" id="check8"> <label for="check8">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
+								<input type="checkbox" name="" value="" class="tata filled-in" id="check8"> <label for="check8">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
 							</div>
 							<div class="form-group">
-								<input type="checkbox" name="" value="" class="filled-in" id="check9"> <label for="check9">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
+								<input type="checkbox" name="" value="" class="tata filled-in" id="check9"> <label for="check9">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
 							</div>
 							<div class="form-group">
-								<input type="checkbox" name="" value="" class="filled-in" id="check10"> <label for="check10">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
+								<input type="checkbox" name="" value="" class="tata filled-in" id="check10"> <label for="check10">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
 							</div>						
 							<div class="form-group butcent">
-								<input type="submit" name="Next" value="Next" class="btn btn-primary butsize">
-								
+								<input type="submit" name="Next" value="Next" class="nbtn disabled btn btn-primary butsize">
 							</div>
-						</form>
+						
 					</div>
+					{{-- <input type="button" id="next" value="Next" onclick="validateFormSection()" /> --}}
 					<div id="section2" class="tab-pane fade tender-container">
 						<div class="form-group" style="text-align: right;">
 							<div class="input_fields_team">
@@ -218,7 +116,7 @@
 							</div>
 						</div>
 						<h3 class="bid-form-title">Organisation</h3>
-						<form method="post">
+						
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="row">
@@ -482,11 +380,11 @@
 									</div>
 								</div>
 							<!-- </div> -->
-						</form>
+						
 					</div>
 					<div id="section3" class="tab-pane fade tender-container">
 						<h3 class="bid-form-title">Individuals</h3>
-						<form method="post">
+						
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="row" style="padding-bottom: 10px;">
@@ -718,11 +616,11 @@
 									</div>
 								</div>
 							</div>
-						</form>
+						
 					</div>
 					<div id="section4" class="tab-pane fade tender-container">
 						<h3 class="bid-form-title">Approach</h3>
-						<form method="post">
+						
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="row">
@@ -793,11 +691,11 @@
 									</div>
 								</div>
 							</div>
-						</form>
+						
 					</div>
 					<div id="section5" class="tab-pane fade tender-container">
 						<h3 class="bid-form-title">Scope</h3>
-						<form method="post">
+						
 							<div class="row">
 								<div class="col-sm-12">
 									<table id="customers1">
@@ -1402,12 +1300,12 @@
 										<button type="button" class="btn btn-success">Add another Lines</button>
 								</div>
 							</div><br>
-						</form>
+						
 					</div>
 
 					<div id="section6" class="tab-pane fade tender-container">
 						<h3 class="bid-form-title">Appointment</h3>
-						<form method="post">
+						
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="row">
@@ -1660,11 +1558,11 @@
 									</div>
 								</div>
 							</div>
-						</form>
+						
 					</div>
 					<div id="section7" class="tab-pane fade tender-container">
 						<h3 class="bid-form-title">Quality Assurance</h3>
-						<form method="post">
+						
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="row">
@@ -1795,8 +1693,8 @@
 									</div>
 								</div>
 							</div>
-						</form>
 					</div>
+					</form>
 				</div>
 			</div>			
 		</div>
@@ -1823,7 +1721,78 @@ $('textarea').keyup(function() {
 	});
 
 </script>
+<script type="text/javascript">
+	$(window).scroll(function () { 
 
+	// distance from top of footer to top of document
+	footertotop = ($('#footr').position().top);
+	// distance user has scrolled from top, adjusted to take in height of sidebar (570 pixels inc. padding)
+	scrolltop = $(document).scrollTop()+720;
+	// difference between the two
+	difference = scrolltop-footertotop;
+
+	// if user has scrolled further than footer,
+	// pull sidebar up using a negative margin
+
+	if (scrolltop > footertotop) {
+
+	$('#d').css('margin-top',  0-difference);
+	}
+
+	else  {
+	$('#d').css('margin-top', 0);
+	}
+
+
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.tata').click(function()
+			{
+				var ch = $('.tata:checked').length == $('.tata').length;
+				if(ch){
+					// alert('okna');
+					$("li.active").next().removeClass("disd");
+					$(".nbtn").removeClass("disabled");
+					$(".checkerg").removeClass("hidecheck");
+				}
+			}
+		);
+	});
+</script>
+<script type="text/javascript">
+	// function validateFormSection() {
+ //        var valid = false; //As long as it's true, we may continue
+ //        var section = $('.section1'); //Find the active section
+ //        var inputs = section.find('input, select, textarea'); //Get all its inputs, of all types
+ //        //We'll save the first validated element in here
+ //        //We have to define it here, not inside the `inputs.each()` loop
+ //        //So we have access to it outside that loop
+ //        var focusElem;
+        
+ //        inputs.each(function(index, el) {
+ //            var elem = $(el); //Current element we're working with
+ //            if ( elem.data('validate') == true ) { //We get the validate attribute and check if it's true
+ //            	alert('data validate');
+ //                if ( elem.val() == "" ) {
+ //                	alert('elem.val');
+ //                    valid = false;
+ //                    elem.addClass('active');
+ //                    if ( ! focusElem ) { //Only save when it's empty (first time around)
+ //                        focusElem = elem;
+ //                    	alert('focusElem');
+ //                    }
+ //                }
+ //            }
+ //        });
+ //        if ( ! valid ) {
+ //            alert('Please fill mandatory fields');
+ //            focusElem.focus();
+ //        }
+ //        return valid;
+ //    }
+</script>
 <!-- end -->
 
 @endsection

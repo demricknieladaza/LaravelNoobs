@@ -533,16 +533,16 @@
                                             <div class="col-sm-6">
                                             <ul>
                                                 <li>Monthly Plan (£/mo)</li>
-                                                <li>985.00</li>
-                                                <li>1.5% Discount</li>
+                                                <li class="BMprice">985.00</li>
+                                                <li class="BMdisc">1.5% Discount</li>
                                                 <li><button class="btn bsc">Get Started</button></li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-6">
                                             <ul>
                                                 <li>Annual Plan (£/mo)</li>
-                                                <li>970.00</li>
-                                                <li>3.0% Discount</li>
+                                                <li class="BAprice">970.00</li>
+                                                <li class="BAdisc">3.0% Discount</li>
                                                 <li><button class="btn bsc">Get Started</button></li>
                                             </ul>
                                         </div>
@@ -581,16 +581,16 @@
                                             <div class="col-sm-6">
                                             <ul>
                                                 <li>Monthly Plan (£/mo)</li>
-                                                <li>1,280.50</li>
-                                                <li>1.5% Discount</li>
+                                                <li class="PMprice">1,280.50</li>
+                                                <li class="PMdisc">1.5% Discount</li>
                                                 <li><button class="btn probut">Get Started</button></li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-6">
                                             <ul>
                                                 <li>Annual Plan (£/mo)</li>
-                                                <li>1,261.00</li>
-                                                <li>3.0% Discount</li>
+                                                <li class="PAprice">1,261.00</li>
+                                                <li class="PAdisc">3.0% Discount</li>
                                                 <li><button class="btn probut">Get Started</button></li>
                                             </ul>
                                         </div>
@@ -629,16 +629,16 @@
                                             <div class="col-sm-6">
                                             <ul>
                                                 <li>Monthly Plan (£/mo)</li>
-                                                <li>1,576.00</li>
-                                                <li>1.5% Discount</li>
+                                                <li class="PpMprice">1,576.00</li>
+                                                <li class="PpMdisc">1.5% Discount</li>
                                                 <li><button class="btn propbot">Get Started</button></li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-6">
                                             <ul>
                                                 <li>Annual Plan (£/mo)</li>
-                                                <li>1,552.00</li>
-                                                <li>3.0% Discount</li>
+                                                <li class="PpAprice">1,552.00</li>
+                                                <li class="PpAdisc">3.0% Discount</li>
                                                 <li><button class="btn propbot">Get Started</button></li>
                                             </ul>
                                         </div>
@@ -982,110 +982,410 @@
     $(document).ready(function() {
       $(document).on('change', '#range', function() {
         var tenders = $(this).val();
-        if(tenders == '5'){
-            $('.BMprice p').text('985.00');
-            $('.BAprice p').text('970.00');
-            $('.BMdisc p').text('1.5% Discount');
-            $('.BAdisc p').text('3.0% Discount');
+        if(tenders == '1'){
+            $('.BMprice').text('985.00');
+            $('.BAprice').text('970.00');
+            $('.BMdisc').text('1.5% Discount');
+            $('.BAdisc').text('3.0% Discount');
 
-            $('.PMprice p').text('1,280.50');
-            $('.PAprice p').text('1,261.00');
-            $('.PMdisc p').text('1.5% Discount');
-            $('.PAdisc p').text('3.0% Discount');
+            $('.PMprice').text('1,280.50');
+            $('.PAprice').text('1,261.00');
+            $('.PMdisc').text('1.5% Discount');
+            $('.PAdisc').text('3.0% Discount');
 
-            $('.PpMprice p').text('1,576.00');
-            $('.PpAprice p').text('1,552.00');
-            $('.PpMdisc p').text('1.5% Discount');
-            $('.PpAdisc p').text('3.0% Discount');
+            $('.PpMprice').text('1,576.00');
+            $('.PpAprice').text('1,552.00');
+            $('.PpMdisc').text('1.5% Discount');
+            $('.PpAdisc').text('3.0% Discount');
+
+            $('#hider').css('display','block');
+            $('.flex').css('display','none');
+        }
+        else if(tenders == '2')
+        {
+            $('.BMprice').text('1,940.00');
+            $('.BAprice').text('1,880.00');
+            $('.BMdisc').text('3.0% Discount');
+            $('.BAdisc').text('6.0% Discount');
+
+            $('.PMprice').text('2,522.00');
+            $('.PAprice').text('2,444.00');
+            $('.PMdisc').text('3.0% Discount');
+            $('.PAdisc').text('6.0% Discount');
+
+            $('.PpMprice').text('3,104.00');
+            $('.PpAprice').text('3,008.00');
+            $('.PpMdisc').text('3.0% Discount');
+            $('.PpAdisc').text('6.0% Discount');
+
+            $('#hider').css('display','block');
+            $('.flex').css('display','none');
+        }
+        else if(tenders == '3')
+        {
+            $('.BMprice').text('2,865.00');
+            $('.BAprice').text('2,730.00');
+            $('.BMdisc').text('4.5% Discount');
+            $('.BAdisc').text('9.0% Discount');
+
+            $('.PMprice').text('3,724.50');
+            $('.PAprice').text('3,549.00');
+            $('.PMdisc').text('4.5% Discount');
+            $('.PAdisc').text('9.0% Discount');
+
+            $('.PpMprice').text('4,584.00');
+            $('.PpAprice').text('4,368.00');
+            $('.PpMdisc').text('4.5% Discount');
+            $('.PpAdisc').text('9.0% Discount');
+
+            $('#hider').css('display','block');
+            $('.flex').css('display','none');
+        }
+        else if(tenders == '4')
+        {
+            $('.BMprice').text('3,760.00');
+            $('.BAprice').text('3,520.00');
+            $('.BMdisc').text('6.0% Discount');
+            $('.BAdisc').text('12.0% Discount');
+
+            $('.PMprice').text('4,888.00');
+            $('.PAprice').text('4,576.00');
+            $('.PMdisc').text('6.0% Discount');
+            $('.PAdisc').text('12.0% Discount');
+
+            $('.PpMprice').text('6,016.00');
+            $('.PpAprice').text('5,632.00');
+            $('.PpMdisc').text('6.0% Discount');
+            $('.PpAdisc').text('12.0% Discount');
+
+            $('#hider').css('display','block');
+            $('.flex').css('display','none');
+        }
+        else if(tenders == '5')
+        {
+            $('.BMprice').text('4,625.00');
+            $('.BAprice').text('4,250.00');
+            $('.BMdisc').text('7.5% Discount');
+            $('.BAdisc').text('15.0% Discount');
+
+            $('.PMprice').text('6,012.50');
+            $('.PAprice').text('5,525.00');
+            $('.PMdisc').text('7.5% Discount');
+            $('.PAdisc').text('15.0% Discount');
+
+            $('.PpMprice').text('7,400.00');
+            $('.PpAprice').text('6,800.00');
+            $('.PpMdisc').text('7.5% Discount');
+            $('.PpAdisc').text('15.0% Discount');
+
+            $('#hider').css('display','block');
+            $('.flex').css('display','none');
+        }
+        else if(tenders == '6')
+        {
+            $('.BMprice').text('5,460.00');
+            $('.BAprice').text('4,920.00');
+            $('.BMdisc').text('9.0% Discount');
+            $('.BAdisc').text('18.0% Discount');
+
+            $('.PMprice').text('7,098.00');
+            $('.PAprice').text('6,396.00');
+            $('.PMdisc').text('9.0% Discount');
+            $('.PAdisc').text('18.0% Discount');
+
+            $('.PpMprice').text('8,736.00');
+            $('.PpAprice').text('7,872.00');
+            $('.PpMdisc').text('9.0% Discount');
+            $('.PpAdisc').text('18.0% Discount');
+
+            $('#hider').css('display','block');
+            $('.flex').css('display','none');
+        }
+        else if(tenders == '7')
+        {
+            $('.BMprice').text('6,265.00');
+            $('.BAprice').text('5,530.00');
+            $('.BMdisc').text('10.5% Discount');
+            $('.BAdisc').text('21.0% Discount');
+
+            $('.PMprice').text('8,144.50');
+            $('.PAprice').text('7,189.00');
+            $('.PMdisc').text('10.5% Discount');
+            $('.PAdisc').text('21.0% Discount');
+
+            $('.PpMprice').text('10,024.00');
+            $('.PpAprice').text('8,848.00');
+            $('.PpMdisc').text('10.5% Discount');
+            $('.PpAdisc').text('21.0% Discount');
+
+            $('#hider').css('display','block');
+            $('.flex').css('display','none');
+        }
+        else if(tenders == '8')
+        {
+            $('.BMprice').text('7,040.00');
+            $('.BAprice').text('6,080.00');
+            $('.BMdisc').text('12.0% Discount');
+            $('.BAdisc').text('24.0% Discount');
+
+            $('.PMprice').text('9,152.00');
+            $('.PAprice').text('7,904.00');
+            $('.PMdisc').text('12.0% Discount');
+            $('.PAdisc').text('24.0% Discount');
+
+            $('.PpMprice').text('11,264.00');
+            $('.PpAprice').text('9,728.00');
+            $('.PpMdisc').text('12.0% Discount');
+            $('.PpAdisc').text('24.0% Discount');
+
+            $('#hider').css('display','block');
+            $('.flex').css('display','none');
+        }
+        else if(tenders == '9')
+        {
+            $('.BMprice').text('8,700.00');
+            $('.BAprice').text('7,400.00');
+            $('.BMdisc').text('13.0% Discount');
+            $('.BAdisc').text('26.0% Discount');
+
+            $('.PMprice').text('11,310.00');
+            $('.PAprice').text('9,620.00');
+            $('.PMdisc').text('13.0% Discount');
+            $('.PAdisc').text('26.0% Discount');
+
+            $('.PpMprice').text('13,920.00');
+            $('.PpAprice').text('11,840.00');
+            $('.PpMdisc').text('13.0% Discount');
+            $('.PpAdisc').text('26.0% Discount');
 
             $('#hider').css('display','block');
             $('.flex').css('display','none');
         }
         else if(tenders == '10')
         {
-            $('.BMprice p').text('1,940.00');
-            $('.BAprice p').text('1,880.00');
-            $('.BMdisc p').text('3.0% Discount');
-            $('.BAdisc p').text('6.0% Discount');
+            $('.BMprice').text('10,320.00');
+            $('.BAprice').text('8,640.00');
+            $('.BMdisc').text('14.0% Discount');
+            $('.BAdisc').text('28.0% Discount');
 
-            $('.PMprice p').text('2,522.00');
-            $('.PAprice p').text('2,444.00');
-            $('.PMdisc p').text('3.0% Discount');
-            $('.PAdisc p').text('6.0% Discount');
+            $('.PMprice').text('13,416.00');
+            $('.PAprice').text('11,232.00');
+            $('.PMdisc').text('14.0% Discount');
+            $('.PAdisc').text('28.0% Discount');
 
-            $('.PpMprice p').text('3,104.00');
-            $('.PpAprice p').text('3,008.00');
-            $('.PpMdisc p').text('3.0% Discount');
-            $('.PpAdisc p').text('6.0% Discount');
+            $('.PpMprice').text('16,512.00');
+            $('.PpAprice').text('13,824.00');
+            $('.PpMdisc').text('14.0% Discount');
+            $('.PpAdisc').text('28.0% Discount');
+
+            $('#hider').css('display','block');
+            $('.flex').css('display','none');
+        }
+        else if(tenders == '11')
+        {
+            $('.BMprice').text('11,900.00');
+            $('.BAprice').text('9,800.00');
+            $('.BMdisc').text('15.0% Discount');
+            $('.BAdisc').text('30.0% Discount');
+
+            $('.PMprice').text('15,470.00');
+            $('.PAprice').text('12,740.00');
+            $('.PMdisc').text('15.0% Discount');
+            $('.PAdisc').text('30.0% Discount');
+
+            $('.PpMprice').text('19,040.00');
+            $('.PpAprice').text('15,680.00');
+            $('.PpMdisc').text('15.0% Discount');
+            $('.PpAdisc').text('30.0% Discount');
+
+            $('#hider').css('display','block');
+            $('.flex').css('display','none');
+        }
+        else if(tenders == '12')
+        {
+            $('.BMprice').text('13,440.00');
+            $('.BAprice').text('10,880.00');
+            $('.BMdisc').text('16.0% Discount');
+            $('.BAdisc').text('15.0% Discount');
+
+            $('.PMprice').text('17,472.00');
+            $('.PAprice').text('14,144.00');
+            $('.PMdisc').text('16.0% Discount');
+            $('.PAdisc').text('32.0% Discount');
+
+            $('.PpMprice').text('21,504.00');
+            $('.PpAprice').text('17,408.00');
+            $('.PpMdisc').text('16.0% Discount');
+            $('.PpAdisc').text('32.0% Discount');
+
+            $('#hider').css('display','block');
+            $('.flex').css('display','none');
+        }
+        else if(tenders == '13')
+        {
+            $('.BMprice').text('14,940.00');
+            $('.BAprice').text('11,880.00');
+            $('.BMdisc').text('17.0% Discount');
+            $('.BAdisc').text('34.0% Discount');
+
+            $('.PMprice').text('19,422.00');
+            $('.PAprice').text('15,444.00');
+            $('.PMdisc').text('17.0% Discount');
+            $('.PAdisc').text('34.0% Discount');
+
+            $('.PpMprice').text('23,904.00');
+            $('.PpAprice').text('19,008.00');
+            $('.PpMdisc').text('17.0% Discount');
+            $('.PpAdisc').text('34.0% Discount');
+
+            $('#hider').css('display','block');
+            $('.flex').css('display','none');
+        }
+        else if(tenders == '14')
+        {
+            $('.BMprice').text('16,400.00');
+            $('.BAprice').text('12,800.00');
+            $('.BMdisc').text('18.0% Discount');
+            $('.BAdisc').text('36.0% Discount');
+
+            $('.PMprice').text('21,320.00');
+            $('.PAprice').text('16,640.00');
+            $('.PMdisc').text('18.0% Discount');
+            $('.PAdisc').text('36.0% Discount');
+
+            $('.PpMprice').text('26,240.00');
+            $('.PpAprice').text('20,480.00');
+            $('.PpMdisc').text('18.0% Discount');
+            $('.PpAdisc').text('36.0% Discount');
 
             $('#hider').css('display','block');
             $('.flex').css('display','none');
         }
         else if(tenders == '15')
         {
-            $('.BMprice p').text('2,865.00');
-            $('.BAprice p').text('2,730.00');
-            $('.BMdisc p').text('4.5% Discount');
-            $('.BAdisc p').text('9.0% Discount');
+            $('.BMprice').text('20,250.00');
+            $('.BAprice').text('15,500.00');
+            $('.BMdisc').text('19.0% Discount');
+            $('.BAdisc').text('38.0% Discount');
 
-            $('.PMprice p').text('3,724.50');
-            $('.PAprice p').text('3,549.00');
-            $('.PMdisc p').text('4.5% Discount');
-            $('.PAdisc p').text('9.0% Discount');
+            $('.PMprice').text('26,325.00');
+            $('.PAprice').text('20,150.00');
+            $('.PMdisc').text('19.0% Discount');
+            $('.PAdisc').text('38.0% Discount');
 
-            $('.PpMprice p').text('4,584.00');
-            $('.PpAprice p').text('4,368.00');
-            $('.PpMdisc p').text('4.5% Discount');
-            $('.PpAdisc p').text('9.0% Discount');
+            $('.PpMprice').text('32,400.00');
+            $('.PpAprice').text('24,800.00');
+            $('.PpMdisc').text('19.0% Discount');
+            $('.PpAdisc').text('38.0% Discount');
+
+            $('#hider').css('display','block');
+            $('.flex').css('display','none');
+        }
+        else if(tenders == '16')
+        {
+            $('.BMprice').text('24,000.00');
+            $('.BAprice').text('18,000.00');
+            $('.BMdisc').text('20.0% Discount');
+            $('.BAdisc').text('40.0% Discount');
+
+            $('.PMprice').text('31,200.00');
+            $('.PAprice').text('23,400.00');
+            $('.PMdisc').text('20.0% Discount');
+            $('.PAdisc').text('40.0% Discount');
+
+            $('.PpMprice').text('38,400.00');
+            $('.PpAprice').text('28,800.00');
+            $('.PpMdisc').text('20.0% Discount');
+            $('.PpAdisc').text('40.0% Discount');
+
+            $('#hider').css('display','block');
+            $('.flex').css('display','none');
+        }
+        else if(tenders == '17')
+        {
+            $('.BMprice').text('27,650.00');
+            $('.BAprice').text('20,300.00');
+            $('.BMdisc').text('21.0% Discount');
+            $('.BAdisc').text('42.0% Discount');
+
+            $('.PMprice').text('35,945.00');
+            $('.PAprice').text('26,390.00');
+            $('.PMdisc').text('21.0% Discount');
+            $('.PAdisc').text('42.0% Discount');
+
+            $('.PpMprice').text('44,240.00');
+            $('.PpAprice').text('32,480.00');
+            $('.PpMdisc').text('21.0% Discount');
+            $('.PpAdisc').text('42.0% Discount');
+
+            $('#hider').css('display','block');
+            $('.flex').css('display','none');
+        }
+        else if(tenders == '18')
+        {
+            $('.BMprice').text('31,200.00');
+            $('.BAprice').text('22,400.00');
+            $('.BMdisc').text('22.0% Discount');
+            $('.BAdisc').text('44.0% Discount');
+
+            $('.PMprice').text('40,560.00');
+            $('.PAprice').text('29,120.00');
+            $('.PMdisc').text('22.0% Discount');
+            $('.PAdisc').text('44.0% Discount');
+
+            $('.PpMprice').text('49,920.00');
+            $('.PpAprice').text('35,840.00');
+            $('.PpMdisc').text('22.0% Discount');
+            $('.PpAdisc').text('44.0% Discount');
+
+            $('#hider').css('display','block');
+            $('.flex').css('display','none');
+        }
+        else if(tenders == '19')
+        {
+            $('.BMprice').text('37,500.00');
+            $('.BAprice').text('25,000.00');
+            $('.BMdisc').text('25.0% Discount');
+            $('.BAdisc').text('50.0% Discount');
+
+            $('.PMprice').text('48,750.00');
+            $('.PAprice').text('32,500.00');
+            $('.PMdisc').text('25.0% Discount');
+            $('.PAdisc').text('50.0% Discount');
+
+            $('.PpMprice').text('60,000.00');
+            $('.PpAprice').text('40,000.00');
+            $('.PpMdisc').text('25.0% Discount');
+            $('.PpAdisc').text('50.0% Discount');
 
             $('#hider').css('display','block');
             $('.flex').css('display','none');
         }
         else if(tenders == '20')
         {
-            $('.BMprice p').text('3,760.00');
-            $('.BAprice p').text('3,520.00');
-            $('.BMdisc p').text('6.0% Discount');
-            $('.BAdisc p').text('12.0% Discount');
+            $('.BMprice').text('39,900.00');
+            $('.BAprice').text('27,900.00');
+            $('.BMdisc').text('--');
+            $('.BAdisc').text('--');
 
-            $('.PMprice p').text('4,888.00');
-            $('.PAprice p').text('4,576.00');
-            $('.PMdisc p').text('6.0% Discount');
-            $('.PAdisc p').text('12.0% Discount');
+            $('.PMprice').text('49,800.00');
+            $('.PAprice').text('36,270.00');
+            $('.PMdisc').text('--');
+            $('.PAdisc').text('--');
 
-            $('.PpMprice p').text('6,016.00');
-            $('.PpAprice p').text('5,632.00');
-            $('.PpMdisc p').text('6.0% Discount');
-            $('.PpAdisc p').text('12.0% Discount');
-
-            $('#hider').css('display','block');
-            $('.flex').css('display','none');
-        }
-        else if(tenders == '25')
-        {
-            $('.BMprice p').text('4,625.00');
-            $('.BAprice p').text('4,250.00');
-            $('.BMdisc p').text('7.5% Discount');
-            $('.BAdisc p').text('15.0% Discount');
-
-            $('.PMprice p').text('6,012.50');
-            $('.PAprice p').text('5,525.00');
-            $('.PMdisc p').text('7.5% Discount');
-            $('.PAdisc p').text('15.0% Discount');
-
-            $('.PpMprice p').text('7,400.00');
-            $('.PpAprice p').text('6,800.00');
-            $('.PpMdisc p').text('7.5% Discount');
-            $('.PpAdisc p').text('15.0% Discount');
+            $('.PpMprice').text('59,700.00');
+            $('.PpAprice').text('44,640.00');
+            $('.PpMdisc').text('--');
+            $('.PpAdisc').text('--');
 
             $('#hider').css('display','block');
             $('.flex').css('display','none');
         }
         else if(tenders == '0')
         {
-            $('#hider').fadeOut("slow");
-            $('#hider').css('display','none');
-            $('.flex').css('display','block');
+            // $('#hider').fadeOut("slow");
+            // $('#hider').css('display','none');
+            // $('.flex').css('display','block');
         }
       });
     });
@@ -1122,9 +1422,9 @@
             els[i].classList[fnName](className);
             els[i].style.maxHeight = null;
             
-            if(els[i].style.maxHeight){
-                alert('niara');
-            }
+            // if(els[i].style.maxHeight){
+            //     alert('niara');
+            // }
             
         }
     }
