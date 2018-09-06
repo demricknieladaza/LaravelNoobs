@@ -16,7 +16,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-sm-6 lounge-action">
+					<div class="col-sm-6 lounge-action" style="background: transparent;">
 						<div class="shadow-wrapper shadow-wrappernigids">
 							<div class="panel-group" id="accordioned">
 								<div class="panel">

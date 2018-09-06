@@ -96,7 +96,7 @@
         }
         .pricingTable .heading{
             font-size: 32px;
-            font-weight: 800;
+            font-weight: 500;
             margin: 5px 0;
             text-transform: uppercase;
             position: relative;

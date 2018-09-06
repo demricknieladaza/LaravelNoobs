@@ -68,7 +68,7 @@
 				<div class="row">					
 					<div class="col-sm-12">
 						<div class="shadow-wrapper">
-							<h3 class="org-head">Individuals <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><span><i class="fa fa-plus-square"></i> </span> Add</button></h3>
+							
 							<div class="clearfix"></div>
 							<div class="panel-group" id="accordion1">
 								<div class="panel">
@@ -140,13 +140,13 @@
 															<tr>
 																<td>Track Record</td>
 																<td>
-																	<table width="100%">
+																	<table >
 																		<tr>
-																			<td colspan="3">
+																	<td colspan="3">
 																				<div class="form-group">
 																					<input type="text" name="" class="form-control" placeholder="Enter Project Title">
-																				</div>
-																			</td>
+																			</div>
+																	</td>
 																		</tr>
 																		<tr>
 																			<td colspan="3">
@@ -363,13 +363,7 @@
 																<td>Track Record</td>
 																<td>
 																	<table width="100%">
-																		<tr>
-																			<td colspan="3">
-																				<div class="form-group">
-																					<input type="text" name="" class="form-control" placeholder="Enter Project Title">
-																				</div>
-																			</td>
-																		</tr>
+																	
 																		<tr>
 																			<td colspan="3">
 																				<div class="form-group">
@@ -521,6 +515,7 @@
 											<a data-toggle="collapse" data-parent="#accordion2" href="#collapse8">US Land <span class="pull-right caret"></span></a>
 										</h4>
 									</div>
+									<h3 class="org-head"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><span><i class="fa fa-plus-square"></i> </span> Add</button></h3>
 									<div id="collapse8" class="panel-collapse collapse">
 										<div class="panel-body">
 											<div class="row">	
@@ -587,8 +582,8 @@
 																	<table width="100%">
 																		<tr>
 																			<td colspan="3">
-																				<div class="form-group">
-																					<input type="text" name="" class="form-control" placeholder="Enter Project Title">
+																			<div class="form-group">
+													<input type="text" name="" class="form-control" placeholder="Enter Project Title">
 																				</div>
 																			</td>
 																		</tr>

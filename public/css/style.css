@@ -2348,7 +2348,3 @@ body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.
     color: white;
 }
 
-body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(2) > div:nth-child(1){
-        background-color: #FDFEFE;
-    border-radius: 6px;
-}

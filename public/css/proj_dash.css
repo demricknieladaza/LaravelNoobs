@@ -562,6 +562,6 @@ i.fa.fa-check.checkerg {
 
 .pricingTable:hover{
   transform: scale(1.1);
-    position: relative;
-    z-index: 99;
+  position: relative;
+  z-index: 99;
 }
