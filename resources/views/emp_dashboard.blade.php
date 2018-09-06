@@ -22,7 +22,7 @@
 								<div class="panel">
 									<div class="panel-heading">
 										<h4 class="panel-title">
-											<h4>Actions Required  <span class="badge">2</span></h4>
+											<h4>Actions Required  <span class="project1">2</span></h4>
 										</h4>
 									</div>
 									<div id="collapse5" class="panel-collapse collapse in">
@@ -117,7 +117,7 @@
 						<div class="col-sm-12">
 							<div class="shadow-wrapper lounge-demo" style="padding-top: 30px;">
 								<div class="form-group">
-									<h4>Active Projects  <span class="badge">2</span></h4>
+									<h4>Active Projects  <span class="project1">2</span></h4>
 									<div class="row">
 										<div class="hover-container-holder">
 											<div class="tender-tile-single">
@@ -181,7 +181,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<h4>Closed Projects  <span class="badge">2</span></h4>
+									<h4>Closed Projects  <span class="project1">2</span></h4>
 									<div class="row">
 										<div class="hover-container-holder">
 											<div class="tender-tile-single">

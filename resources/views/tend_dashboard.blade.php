@@ -30,7 +30,7 @@
 							</div>
 							<div class="col-sm-6 tab1">
 								<div class="tender-tiles new-project-tile" style="background: #FE7235; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px;">
-									<h3><a href="{{ url('/winwork/pds') }}">Request for Proposal   <span  class="badge pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></a></h3>
+									<h3><a href="{{ url('/winwork/pds') }}">Request for Proposal   <span  class="project1 pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></a></h3>
 								</div>
 								<table >
 									<tr class="col-sm-3">
@@ -148,7 +148,7 @@
 							</div>
 							<div class="col-sm-6 tab2 pull-right">
 								<div class="tender-tiles new-project-tile" style="background: #FE7235;  color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px;">
-									<h3>Saved Opportunities<span  class="badge pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></h3>
+									<h3>Saved Opportunities<span  class="project1 pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></h3>
 								</div>
 								<table >
 									<tr class="col-sm-3">
@@ -265,7 +265,7 @@
 							</div>
 							<div class="col-sm-6 tab1">
 								<div class="tender-tiles new-project-tile" style="background: #FE7235;  color: #fff; text-align: center; font-size: 20px;     padding-top: 20px;    margin-top: 15px; padding-bottom: 14px;">
-									<h3>Active<span  class="badge pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></h3>
+									<h3>Active<span  class="project1 pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></h3>
 								</div>
 								<table >
 									<tr class="col-sm-3">
@@ -382,7 +382,7 @@
 							</div>
 							<div class="col-sm-6 tab2">
 								<div class="tender-tiles new-project-tile" style="background: #FE7235;  color: #fff; text-align: center; font-size: 20px;     padding-top: 20px;    margin-top: 15px; padding-bottom: 14px;">
-									<h3>Drafted<span  class="badge pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></h3>
+									<h3>Drafted<span  class="project1 pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></h3>
 								</div>
 								<table >
 									<tr class="col-sm-3 pull-right">
@@ -500,7 +500,7 @@
 							</div>
 							<div class="col-sm-6 tab1">
 								<div class="tender-tiles new-project-tile" style="background: #FE7235;  color: #fff; text-align: center; font-size: 20px;     padding-top: 20px;    margin-top: 15px; padding-bottom: 14px;">
-									<h3>Successful<span  class="badge pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></h3>
+									<h3>Successful<span  class="project1 pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></h3>
 								</div>
 								<table >
 									<tr class="col-sm-3">
@@ -617,7 +617,7 @@
 							</div>
 							<div class="col-sm-6 tab2">
 								<div class="tender-tiles new-project-tile" style="background: #FE7235;  color: #fff; text-align: center; font-size: 20px;     padding-top: 20px;     margin-top: 15px; padding-bottom: 14px;">
-									<h3>Unsuccessful<span  class="badge pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></h3>
+									<h3>Unsuccessful<span  class="project1 pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></h3>
 								</div>
 								<table >
 									<tr class="col-sm-3">

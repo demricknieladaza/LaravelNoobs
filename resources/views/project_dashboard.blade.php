@@ -431,21 +431,16 @@
 
 									<div class="col-sm-3 company-quick-details">
 										<p><img src="../images/logo-british.jpg"></p>
-										<p>Active Projects <span class="badge">4</span></p>
-										<p>Active Tenders <span class="badge">9</span></p>
-										<p>Status 
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-										</p>
+										<p>Active Projects <span class="project1">4</span></p>
+										<p>Active Tenders <span class="project1">9</span></p>
+									
 
 									</div>
 								</div>
 							</div>
-							<button style="margin-left: 40px;height: 35px;width: 90px;}" type="button" class="btn btn-success">Save</button>
-
+							<div >
+							<button type="button"  class="save1">Save</button>
+ 								</div>
 						</div>
 					</div>
 
@@ -619,10 +614,10 @@
 											  <tr>
 											    <th>Deliverable</th>
 											    <th>Details / Contents</th>
-											    <th style="border-left:3px solid orange;border-top: ">R</th>
+											    <th style="border-left:3px solid #fe7235;border-top: ">R</th>
 											    <th>A</th>
 											    <th>C</th>
-											    <th style="border-right:3px solid orange; ">I</th>
+											    <th style="border-right:3px solid #fe7235; ">I</th>
 											    <th>0</th>
 											    <th>1</th>
 											    <th>2</th>
