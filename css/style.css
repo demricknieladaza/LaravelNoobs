@@ -1425,9 +1425,8 @@ body > div:nth-child(17) > div > div.col-sm-12{
     padding: 15px;
     color: #fff;
     font-size: 20px;
-    margin-left: 3px;
-    padding-left: 100px;
-    padding-right: 98px;
+    width: 100%;
+    line-height: .6em;
     box-shadow: 0 0 3px #999;
 }
 

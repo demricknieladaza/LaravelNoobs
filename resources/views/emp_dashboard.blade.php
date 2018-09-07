@@ -1,7 +1,42 @@
  @extends('layouts.master')
 
  @section('content')
+	<style>
+	.dropbtn {
+	    color: white;
+	    padding: 16px;
+	    font-size: 16px;
+	    border: none;
+	}
 
+	.dropdown {
+	    position: relative;
+	    display: inline-block;
+	}
+
+	.dropdown-content {
+	    display: none;
+	    position: relative;
+	    background-color: #f1f1f1;
+	    min-width: 160px;
+	    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	    z-index: 1;
+	    margin-bottom: 15px;
+	}
+
+	.dropdown-content a {
+	    color: black;
+	    padding: 12px 16px;
+	    text-decoration: none;
+	    display: block;
+	}
+
+	.dropdown:hover .dropdown-content {display: block;}
+
+	.dropdown:hover {
+		transform: scale(1.1);
+	}
+	</style>
 	<div class="container-fluid below-header">
 	</div>
 
@@ -27,32 +62,68 @@
 									</div>
 									<div id="collapse5" class="panel-collapse collapse in">
 										<div class="panel-body linya">
-											<table style="table-layout: fixed;" class="table table-striped table-hover">
+											<table style="table-layout: fixed;" class="scroll table table-striped">
 												<thead>
 													<tr>
-														<th style="color: black;">Project</th>
-														<th style="color: black;">Issue</th>
-														<th style="color: black;">Date Raised</th>
-														<th style="color: black; width: 24%;">Date Required</th>
-														<th style="color: black;">Action</th>
+														<th style="color: black;" class="centerAlign">Project</th>
+														<th style="color: black;" class="centerAlign">Issue</th>
+														<th style="color: black;" class="centerAlign">Date Raised</th>
+														<th style="color: black; width: 24%;" class="centerAlign">Date Required</th>
+														<th style="color: black;" class="centerAlign">Action</th>
 													</tr>
 												</thead>
-												<tbody>
+												<tbody class="bodyscroll">
 													<tr>
-														<td>Canada Water Masterplan</td>
-														<td>Request for information</td>
-														<td>01 January 2018</td>
-														<td>07 January 2018</td>
-														<td><a style="    white-space: normal;" href="{{ url('/publish/project_dashboard') }}" class="btn btn-warning">
+														<td class="centerAlign">Canada Water Masterplan</td>
+														<td class="centerAlign">Request for information</td>
+														<td class="centerAlign">01 January 2018</td>
+														<td class="centerAlign">07 January 2018</td>
+														<td class="centerAlign"><a style="white-space: normal;" href="{{ url('/publish/project_dashboard') }}" class="btn btn-warning">
 															Deal now
 														</a></td>
 													</tr>
 													<tr>
-														<td>Hounslow Place</td>
-														<td>Tenderer Feedback</td>
-														<td>01 January 2018</td>
-														<td>03 January 2018</td>
-														<td><a style="    white-space: normal;" href="#" class="btn btn-warning">
+														<td class="centerAlign">Hounslow Place</td>
+														<td class="centerAlign">Tenderer Feedback</td>
+														<td class="centerAlign">01 January 2018</td>
+														<td class="centerAlign">03 January 2018</td>
+														<td class="centerAlign"><a style="white-space: normal;" href="#" class="btn btn-warning">
+															Deal now
+														</a></td>
+													</tr>
+													<tr>
+														<td class="centerAlign">Canada Water Masterplan</td>
+														<td class="centerAlign">Request for information</td>
+														<td class="centerAlign">01 January 2018</td>
+														<td class="centerAlign">07 January 2018</td>
+														<td class="centerAlign"><a style="white-space: normal;" href="{{ url('/publish/project_dashboard') }}" class="btn btn-warning">
+															Deal now
+														</a></td>
+													</tr>
+													<tr>
+														<td class="centerAlign">Hounslow Place</td>
+														<td class="centerAlign">Tenderer Feedback</td>
+														<td class="centerAlign">01 January 2018</td>
+														<td class="centerAlign">03 January 2018</td>
+														<td class="centerAlign"><a style="white-space: normal;" href="#" class="btn btn-warning">
+															Deal now
+														</a></td>
+													</tr>
+													<tr>
+														<td class="centerAlign">Canada Water Masterplan</td>
+														<td class="centerAlign">Request for information</td>
+														<td class="centerAlign">01 January 2018</td>
+														<td class="centerAlign">07 January 2018</td>
+														<td class="centerAlign"><a style="white-space: normal;" href="{{ url('/publish/project_dashboard') }}" class="btn btn-warning">
+															Deal now
+														</a></td>
+													</tr>
+													<tr>
+														<td class="centerAlign">Hounslow Place</td>
+														<td class="centerAlign">Tenderer Feedback</td>
+														<td class="centerAlign">01 January 2018</td>
+														<td class="centerAlign">03 January 2018</td>
+														<td class="centerAlign"><a style="white-space: normal;" href="#" class="btn btn-warning">
 															Deal now
 														</a></td>
 													</tr>
@@ -120,63 +191,154 @@
 									<h4>Active Projects  <span class="project1">2</span></h4>
 									<div class="row">
 										<div class="hover-container-holder">
-											<div class="tender-tile-single">
-												<div class="tender-tiles thin">
+											<div class="tender-tile-single dropdown">
+												<div class="tender-tiles thin dropbtn">
 													<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>		
 												</div>
+												<div class="dropdown-content">
+											    <div class="row table-tender-details">
+											    	<div class="col-sm-6 table-left">
+											    		<table class="table table-hover table-striped">
+											    			<thead>
+											    				<tr>
+											    					<th>Active Projects</th>
+											    				</tr>
+											    			</thead>
+											    			<tbody>
+											    				<tr>
+											    					<td>Fire Engineer</td>
+											    				</tr>
+											    				<tr>
+											    					<td>Structural Engineer</td>
+											    				</tr>
+											    				<tr>
+											    					<td>Service Engineer</td>
+											    				</tr>
+											    				<tr>
+											    					<td>Architect</td>
+											    				</tr>
+											    				<tr>
+											    					<td>Facede Engineer</td>
+											    				</tr>
+											    			</tbody>
+											    		</table>
+											    	</div>
+											    	<div class="col-sm-6 table-right">
+											    		<table class="table table-hover table-striped">
+											    			<thead>
+											    				<tr>
+											    					<th>Drafted Projects</th>
+											    				</tr>
+											    			</thead>
+											    			<tbody>
+											    				<tr>
+											    					<td>Acoustic Engineer</td>
+											    				</tr>			
+											    			</tbody>
+											    		</table>
+											    	</div>
+											    </div>
+											  </div>
 											</div>
-											<div class="tender-tile-single">
-												<div class="tender-tiles thin">
+											<div class="tender-tile-single dropdown">
+												<div class="tender-tiles thin dropbtn">
 													<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>
 												</div>
+												<div class="dropdown-content">
+											    <div class="row table-tender-details">
+											    	<div class="col-sm-6 table-left">
+											    		<table class="table table-hover table-striped">
+											    			<thead>
+											    				<tr>
+											    					<th>Active Projects</th>
+											    				</tr>
+											    			</thead>
+											    			<tbody>
+											    				<tr>
+											    					<td>Fire Engineer</td>
+											    				</tr>
+											    				<tr>
+											    					<td>Structural Engineer</td>
+											    				</tr>
+											    				<tr>
+											    					<td>Service Engineer</td>
+											    				</tr>
+											    				<tr>
+											    					<td>Architect</td>
+											    				</tr>
+											    				<tr>
+											    					<td>Facede Engineer</td>
+											    				</tr>
+											    			</tbody>
+											    		</table>
+											    	</div>
+											    	<div class="col-sm-6 table-right">
+											    		<table class="table table-hover table-striped">
+											    			<thead>
+											    				<tr>
+											    					<th>Drafted Projects</th>
+											    				</tr>
+											    			</thead>
+											    			<tbody>
+											    				<tr>
+											    					<td>Acoustic Engineer</td>
+											    				</tr>			
+											    			</tbody>
+											    		</table>
+											    	</div>
+											    </div>
+											  </div>
 											</div>
-											<div class="tender-tile-single">
-												<div class="tender-tiles thin">
+											<div class="tender-tile-single dropdown">
+												<div class="tender-tiles thin dropbtn">
 													<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>
 												</div>
+												<div class="dropdown-content">
+											    <div class="row table-tender-details">
+											    	<div class="col-sm-6 table-left">
+											    		<table class="table table-hover table-striped">
+											    			<thead>
+											    				<tr>
+											    					<th>Active Projects</th>
+											    				</tr>
+											    			</thead>
+											    			<tbody>
+											    				<tr>
+											    					<td>Fire Engineer</td>
+											    				</tr>
+											    				<tr>
+											    					<td>Structural Engineer</td>
+											    				</tr>
+											    				<tr>
+											    					<td>Service Engineer</td>
+											    				</tr>
+											    				<tr>
+											    					<td>Architect</td>
+											    				</tr>
+											    				<tr>
+											    					<td>Facede Engineer</td>
+											    				</tr>
+											    			</tbody>
+											    		</table>
+											    	</div>
+											    	<div class="col-sm-6 table-right">
+											    		<table class="table table-hover table-striped">
+											    			<thead>
+											    				<tr>
+											    					<th>Drafted Projects</th>
+											    				</tr>
+											    			</thead>
+											    			<tbody>
+											    				<tr>
+											    					<td>Acoustic Engineer</td>
+											    				</tr>			
+											    			</tbody>
+											    		</table>
+											    	</div>
+											    </div>
+											  </div>
 											</div>
-											<div class="row table-tender-details">
-												<div class="col-sm-6 table-left">
-													<table class="table table-hover table-striped">
-														<thead>
-															<tr>
-																<th>Active Projects</th>
-															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<td>Fire Engineer</td>
-															</tr>
-															<tr>
-																<td>Structural Engineer</td>
-															</tr>
-															<tr>
-																<td>Service Engineer</td>
-															</tr>
-															<tr>
-																<td>Architect</td>
-															</tr>
-															<tr>
-																<td>Facede Engineer</td>
-															</tr>
-														</tbody>
-													</table>
-												</div>
-												<div class="col-sm-6 table-right">
-													<table class="table table-hover table-striped">
-														<thead>
-															<tr>
-																<th>Drafted Projects</th>
-															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<td>Acoustic Engineer</td>
-															</tr>			
-														</tbody>
-													</table>
-												</div>
-											</div>
+											
 										</div>
 									</div>
 								</div>
@@ -184,62 +346,152 @@
 									<h4>Closed Projects  <span class="project1">2</span></h4>
 									<div class="row">
 										<div class="hover-container-holder">
-											<div class="tender-tile-single">
-												<div class="tender-tiles thin">
-													<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>		
-												</div>
-											</div>
-											<div class="tender-tile-single">
-												<div class="tender-tiles thin">
+											<div class="tender-tile-single dropdown">
+												<div class="tender-tiles thin dropbtn">
 													<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>
 												</div>
+												<div class="dropdown-content">
+											    <div class="row table-tender-details">
+											    	<div class="col-sm-6 table-left">
+											    		<table class="table table-hover table-striped">
+											    			<thead>
+											    				<tr>
+											    					<th>Active Projects</th>
+											    				</tr>
+											    			</thead>
+											    			<tbody>
+											    				<tr>
+											    					<td>Fire Engineer</td>
+											    				</tr>
+											    				<tr>
+											    					<td>Structural Engineer</td>
+											    				</tr>
+											    				<tr>
+											    					<td>Service Engineer</td>
+											    				</tr>
+											    				<tr>
+											    					<td>Architect</td>
+											    				</tr>
+											    				<tr>
+											    					<td>Facede Engineer</td>
+											    				</tr>
+											    			</tbody>
+											    		</table>
+											    	</div>
+											    	<div class="col-sm-6 table-right">
+											    		<table class="table table-hover table-striped">
+											    			<thead>
+											    				<tr>
+											    					<th>Drafted Projects</th>
+											    				</tr>
+											    			</thead>
+											    			<tbody>
+											    				<tr>
+											    					<td>Acoustic Engineer</td>
+											    				</tr>			
+											    			</tbody>
+											    		</table>
+											    	</div>
+											    </div>
+											  </div>
 											</div>
-											<div class="tender-tile-single">
-												<div class="tender-tiles thin">
+											<div class="tender-tile-single dropdown">
+												<div class="tender-tiles thin dropbtn">
 													<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>
 												</div>
+												<div class="dropdown-content">
+											    <div class="row table-tender-details">
+											    	<div class="col-sm-6 table-left">
+											    		<table class="table table-hover table-striped">
+											    			<thead>
+											    				<tr>
+											    					<th>Active Projects</th>
+											    				</tr>
+											    			</thead>
+											    			<tbody>
+											    				<tr>
+											    					<td>Fire Engineer</td>
+											    				</tr>
+											    				<tr>
+											    					<td>Structural Engineer</td>
+											    				</tr>
+											    				<tr>
+											    					<td>Service Engineer</td>
+											    				</tr>
+											    				<tr>
+											    					<td>Architect</td>
+											    				</tr>
+											    				<tr>
+											    					<td>Facede Engineer</td>
+											    				</tr>
+											    			</tbody>
+											    		</table>
+											    	</div>
+											    	<div class="col-sm-6 table-right">
+											    		<table class="table table-hover table-striped">
+											    			<thead>
+											    				<tr>
+											    					<th>Drafted Projects</th>
+											    				</tr>
+											    			</thead>
+											    			<tbody>
+											    				<tr>
+											    					<td>Acoustic Engineer</td>
+											    				</tr>			
+											    			</tbody>
+											    		</table>
+											    	</div>
+											    </div>
+											  </div>
 											</div>
-											<div class="row table-tender-details">
-												<div class="col-sm-6 table-left">
-													<table class="table table-hover table-striped">
-														<thead>
-															<tr>
-																<th>Active Projects</th>
-															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<td>Fire Engineer</td>
-															</tr>
-															<tr>
-																<td>Structural Engineer</td>
-															</tr>
-															<tr>
-																<td>Service Engineer</td>
-															</tr>
-															<tr>
-																<td>Architect</td>
-															</tr>
-															<tr>
-																<td>Facede Engineer</td>
-															</tr>
-														</tbody>
-													</table>
+											<div class="tender-tile-single dropdown">
+												<div class="tender-tiles thin dropbtn">
+													<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>
 												</div>
-												<div class="col-sm-6 table-right">
-													<table class="table table-hover table-striped">
-														<thead>
-															<tr>
-																<th>Drafted Projects</th>
-															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<td>Acoustic Engineer</td>
-															</tr>			
-														</tbody>
-													</table>
-												</div>
+												<div class="dropdown-content">
+											    <div class="row table-tender-details">
+											    	<div class="col-sm-6 table-left">
+											    		<table class="table table-hover table-striped">
+											    			<thead>
+											    				<tr>
+											    					<th>Active Projects</th>
+											    				</tr>
+											    			</thead>
+											    			<tbody>
+											    				<tr>
+											    					<td>Fire Engineer</td>
+											    				</tr>
+											    				<tr>
+											    					<td>Structural Engineer</td>
+											    				</tr>
+											    				<tr>
+											    					<td>Service Engineer</td>
+											    				</tr>
+											    				<tr>
+											    					<td>Architect</td>
+											    				</tr>
+											    				<tr>
+											    					<td>Facede Engineer</td>
+											    				</tr>
+											    			</tbody>
+											    		</table>
+											    	</div>
+											    	<div class="col-sm-6 table-right">
+											    		<table class="table table-hover table-striped">
+											    			<thead>
+											    				<tr>
+											    					<th>Drafted Projects</th>
+											    				</tr>
+											    			</thead>
+											    			<tbody>
+											    				<tr>
+											    					<td>Acoustic Engineer</td>
+											    				</tr>			
+											    			</tbody>
+											    		</table>
+											    	</div>
+											    </div>
+											  </div>
 											</div>
 										</div>
 									</div>
@@ -256,7 +508,7 @@
 	</div>
 
 	
-	
+	<script type="text/javascript"></script>
 	<!-- end -->
 
 

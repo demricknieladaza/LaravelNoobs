@@ -1,75 +1,129 @@
 @extends('layouts.master')
 
 @section('content')
+<style type="text/css">
+	thead.thead tr th {
+	  vertical-align: middle;
+	}
+	.widt th {
+		width: 80px;
+	}
+	.zui-table {
+	    border: none;
+	    border-right: solid 1px #DDEFEF;
+	    border-collapse: separate;
+	    border-spacing: 0;
+	}
+	.zui-table thead th {
+	    background-color: #fe7235;
+	    border: none;
+	    color: white;
+	    padding: 10px;
+	    text-align: left;
+	    white-space: nowrap;
+	}
+	.zui-table tbody td {
+	    border-bottom: solid 1px #DDEFEF;
+	    color: #333;
+	    padding: 10px;
+	    text-shadow: 1px 1px 1px #fff;
+	    white-space: nowrap;
+	}
+	.zui-wrapper {
+	    position: relative;
+	}
+	.zui-scroller {
+	    margin-left: 141px;
+	    overflow-x: scroll;
+	    overflow-y: visible;
+	    padding-bottom: 5px;
+	}
+	.zui-table .zui-sticky-col {
+	    left: 0;
+	    position: absolute;
+	    top: auto;
+	    border-right: 1px solid orange;
+	    width: 141px;
+	}
+	table.zui-table tbody tr:nth-child(even){
+		background: #fff8f3;
+	}
+	table.zui-table tbody tr:hover {
+	    background-color: #ffc2a7 !important;
+	}
+	.btop td{
+		border-top: 5px solid orange;
+	}
+</style>
 <div class="container below-header">
 	<h1 class="project-title bid-page-title centerh">Project Dashboard</small></h1>
 </div>
 <div class="container">
  <div class="modal fade" id="myModal2" role="dialog">
-									    <div class="modal-dialog">
-									      <!-- Modal content-->
-									      <div class="modal-content">
-									        <div class="modal-header">
-									          <button type="button" class="close" data-dismiss="modal">&times;</button>
-									          <h4 class="modal-title"></h4>
-									        </div>
-									        <div class="modal-body">
-									          <p>Deadline<div class="form-group">
-												<div class="input-group date" id="datepicker4" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
+		    <div class="modal-dialog">
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4 class="modal-title"></h4>
+		        </div>
+		        <div class="modal-body">
+		          <p>Deadline<div class="form-group">
+					<div class="input-group date" id="datepicker4" data-date="02-2012" 
+					         data-date-format="mm-yyyy">
 
-													 <input class="form-control" type="text" placeholder="Select year" readonly="readonly" name="date" >	  
-													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-												</div>
-												
-											</div>
-										</p>
-									          <p>Feedback Time<div class="form-group">
-															<select name="days" class="form-control" onchange='Days(this.value);'> 
-											 <option value="" disabled selected>Select Days</option> 
-											 <option>1 days</option>
-											 <option>2 days</option>
-											 <option>3 days</option>
-											 <option>4 days</option>
-											 <option>5 days</option>
-											 <option>6 days</option>
-											 <option>7 days</option>
-											 <option>8 days</option>
-											 <option>9 days</option>
-											 <option>10 days</option>
-											 <option>11 days</option>
-											 <option>12 days</option>
-											 <option>13 days</option>
-											 <option>14 days</option>
-											 <option>15 days</option>
-											 <option>16 days</option>
-											 <option>17 days</option>
-											 <option>18 days</option>
-											 <option>19 days</option>
-											 <option>20 days</option>
-											 <option>21 days</option>
-											 <option>22 days</option>
-											 <option>23 days</option>
-											 <option>24 days</option>
-											 <option>25 days</option>
-											 <option>26 days</option>
-											 <option>27 days</option>
-											 <option>28 days</option>
-											 <option>29 days</option>
-											 <option>30 days</option>
-											</select>
-															</div></p>
-									          <input type="text" placeholder="Search.." name="search">
-									      <button type="submit">Add</button>
-									        </div>
-									        <div class="modal-footer">
-									          <button type="button" class="btn btn-success">Submit</button>
-									          <button type="button" class="btn btn-primary">Go Back</button>
-									        </div>
-									      </div>   
-									    </div>
-									  </div>
-									</div>
+						 <input class="form-control" type="text" placeholder="Select year" readonly="readonly" name="date" >	  
+						 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+					</div>
+					
+				</div>
+			</p>
+		          <p>Feedback Time<div class="form-group">
+								<select name="days" class="form-control" onchange='Days(this.value);'> 
+				 <option value="" disabled selected>Select Days</option> 
+				 <option>1 days</option>
+				 <option>2 days</option>
+				 <option>3 days</option>
+				 <option>4 days</option>
+				 <option>5 days</option>
+				 <option>6 days</option>
+				 <option>7 days</option>
+				 <option>8 days</option>
+				 <option>9 days</option>
+				 <option>10 days</option>
+				 <option>11 days</option>
+				 <option>12 days</option>
+				 <option>13 days</option>
+				 <option>14 days</option>
+				 <option>15 days</option>
+				 <option>16 days</option>
+				 <option>17 days</option>
+				 <option>18 days</option>
+				 <option>19 days</option>
+				 <option>20 days</option>
+				 <option>21 days</option>
+				 <option>22 days</option>
+				 <option>23 days</option>
+				 <option>24 days</option>
+				 <option>25 days</option>
+				 <option>26 days</option>
+				 <option>27 days</option>
+				 <option>28 days</option>
+				 <option>29 days</option>
+				 <option>30 days</option>
+				</select>
+								</div></p>
+		          <input type="text" placeholder="Search.." name="search">
+		      <button type="submit">Add</button>
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-success">Submit</button>
+		          <button type="button" class="btn btn-primary">Go Back</button>
+		        </div>
+		      </div>   
+		    </div>
+		  </div>
+		</div>
 <div class="container" style="width: 95%;">
 	<div class="row">
 		<div class="col-sm-12">
@@ -85,7 +139,7 @@
 		</div>
 		<div class="col-sm-12 questionnaire-section">
 			<div class="tab-content tabmargin" >
-				<div id="section1" class="tab-pane fade in active tender-container" style="padding-top:0;margin-left:auto;margin-right:auto;width:1040px;">
+				<div id="section1" class="tab-pane fade in active tender-container" style="    background:transparent;border: none;padding-top:0;margin-left:auto;margin-right:auto;width:1040px;">
 					<div class="row">
 		    	<div class="below-header project-img-collection text-center projhead">
 		    		<h1>Canada Water Masterplan</h1>
@@ -108,8 +162,8 @@
 		    		<div class="row">
 		    			<div class="col-sm-12 project-anchor">
 		    				<a href="#">Project Details</a>
-		    				<a href="#">Tender Queries</a>
-		    				<a href="#cprofile">Employer Details</a>
+		    				<a href="#tend">Tender Queries</a>
+		    				<a href="#emptab">Employer Details</a>
 		    			</div>
 		    		</div>
 		    		<div class="tender-container">
@@ -213,7 +267,7 @@
 		    							<td>Construction Value
 		    								
 		    							</td>
-		    							<td><span>£</span><p id="value">300,000,000</p></td>
+		    							<td><p id="value">£ 300,000,000</p></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Types of Use
@@ -341,55 +395,51 @@
 		    								<p><a href="#">H&S Policy <i class="fa fa-download"></i></a></p>
 		    							</td>
 		    						</tr>
-		    					</table>						
+		    					</table>		
+		    					<div style="text-align: center;">
+		    						<button type="button" class="btn btn-default" style="color: white; background: gray;width: 120px;">Save</button>
+		    					</div>				
 		    				</div>
 		    			</div>
 		    		</div>
-		    		<div class="tender-container">
-						<div class="row">
-							<div class="col-sm-12 active-tenders">
-								<h3>Tender Queries<button class="btn buts" onclick="myFunction1()" style="float: right;margin-top:-14px;"><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
-								<div class="row">	
-									<div class="col-sm-12">				
-										<table class="table table-striped table-hover">
-											<tr>
-												<td id="black"><span style="    margin-left: 10px;
-												    ">#</span></td>
-												<td>Query</td>
-												<td>Responses</td>
+		    		<div class="tender-container" id="tend">
+		    			<div class="row">
+		    				<div class="col-sm-12 active-tenders">
+		    					<h3>Tender Queries<button class="btn buts" onclick="myFunction1()" style="float: right;margin-top:-14px;"><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
+		    					<div class="row">	
+		    						<div class="col-sm-12">				
+		    							<table class="table table-striped table-hover" id="a">
+		    								<tr>
+		    									<td width="10%" style="font-weight: 600;">#</td>
+		    									<td style="font-weight: 600;">Query</td>
+		    									<td style="font-weight: 600;">Responses</td>
 
-											</tr>
-											<tr>
-												<td id="black"><span style="    margin-left: 10px;
-												    font-size: 20px;">1</span>
-													
-												</td>
-												<td id="que1">TextTextTextTextTextTextTextTextText</td>
-												<td id="que2">TextTextTextTextTextTextTextTextTextTextTextText</td>
-											</tr>
-											<tr>
-												<td id="black"><span style="    margin-left: 10px;
-												    font-size: 20px;">2</span>
-													
-												</td>
-												<td id="que3">TextTextTextTextTextTextTextTextText"></td>
-												<td id="que4">TextTextTextTextTextTextTextTextTextTextTextText</td>
-											</tr>
-											<tr>
-												<td id="black"><span style="    margin-left: 10px;
-												    font-size: 20px;">3</span>
-													
-												</td>
-												<td id="que5">TextTextTextTextTextTextTextTextText</td>
-												<td id="que6">TextTextTextTextTextTextTextTextTextTextTextText</td>
-											</tr>
-										</table>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="tender-container">
+		    								</tr>
+		    								<tr>
+		    									<td>1</td>
+		    									<td>TextTextTextTextTextTextTextTextText</td>
+		    									<td>TextTextTextTextTextTextTextTextTextTextTextText</td>
+		    								</tr>
+		    								<tr>
+		    									<td>2</td>
+		    									<td>TextTextTextTextTextTextTextTextText</td>
+		    									<td>TextTextTextTextTextTextTextTextTextTextTextText</td>
+		    								</tr>
+		    								<tr>
+		    									<td>3</td>
+		    									<td>TextTextTextTextTextTextTextTextText</td>
+		    									<td>TextTextTextTextTextTextTextTextTextTextTextText</td>
+		    								</tr>
+		    							</table>
+		    						</div>
+		    					</div>
+		    					<div style="text-align: center;">
+		    						<button type="button" class="btn btn-default" style="color: white; background: gray;width: 120px;">Save</button>
+		    					</div>
+		    				</div>
+		    			</div>
+		    		</div>
+					<div class="tender-container" id="emptab">
 						<div class="row">
 							<div class="col-sm-12 active-tenders">
 								<h3>Employer Details<button class="btn buts" onclick="myFunction2()" style="float: right;margin-top:-14px;"><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
@@ -437,10 +487,10 @@
 
 									</div>
 								</div>
+								<div style="text-align: center;">
+									<button type="button" class="btn btn-default" style="color: white; background: gray;width: 120px;">Save</button>
+								</div>
 							</div>
-							<div >
-							<button type="button"  class="save1">Save</button>
- 								</div>
 						</div>
 					</div>
 
@@ -494,7 +544,7 @@
 			            <td class="td"></td>
   			        </tr>
   			        <tr>
-			            <td style="text-align: left;" class="td">Structural Engineer <a><p>Edit Tender</p></a></td>
+			            <td style="text-align: left;" class="td">Structural Engineer</td>
 			            <td class="td">Closed</td>
 			            <td class="td">1/1/2018</td>
 			            <td class="td">1/9/2018</td>
@@ -511,12 +561,12 @@
 	    			<button class="btn">Print Report</button>
 					</div>
 					<div class="row" style="margin: 25px;">
-	    			<table class="table table-bordered">
-	    			<table class="table table-striped table-hover">
+						<h4>Cashflow of selected tenderers</h4>
+						{{-- <div style="overflow-x: overlay; ">
+	    			<table class="table table-striped table-hover" style="height: 200px;">
     			    <thead class="thead">
-    			    	<tr><h4>Cashflow of selected tenderers</h4></tr>
-  			        <tr>
-			            <th>Services</th>
+  			        <tr class="widt">
+			            <th class="zui-sticky-col" >Services</th>
 			            <th>Jan-18</th>
 			            <th>Feb-18</th>
 			            <th>Mar-18</th>
@@ -529,26 +579,17 @@
 			            <th>Oct-18</th>
 			            <th>Nov-18</th>
 			            <th>Dec-18</th>
+			            <th>Jan-19</th>
+			            <th>Feb-19</th>
+			            <th>Mar-19</th>
   			        </tr>
     			    </thead>
     			    <tbody>
-  			        <tr>
-			            <td class="td">Fire Engineer</td>
+  			        <tr class="widt">
+			            <th class="td zui-sticky-col">Fire Engineer</th>
 			            <td class="td">£1,000.00</td>
 			            <td class="td">£1,000.00</td>
 			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-  			        </tr>
-  			        <tr>
-			            <td class="td">Architect</td>
 			            <td class="td">£1,000.00</td>
 			            <td class="td">£1,000.00</td>
 			            <td class="td">£1,000.00</td>
@@ -562,8 +603,26 @@
 			            <td class="td">£1,000.00</td>
 			            <td class="td">£1,000.00</td>
   			        </tr>
-  			        <tr style=" border-top: 5px solid orange;">
-			            <td class="td"><strong>Total</strong></td>
+  			        <tr class="widt">
+			            <th class="td zui-sticky-col">Architect</th>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+			            <td class="td">£1,000.00</td>
+  			        </tr>
+  			        <tr class="widt" style=" border-top: 5px solid orange;">
+			            <td class="td zui-sticky-col"><strong>Total</strong></td>
 			            <td class="td"><b>£2,000.00</b></td>
 			            <td class="td"><b>£2,000.00</b></td>
 			            <td class="td"><b>£2,000.00</b></td>
@@ -576,10 +635,95 @@
 			            <td class="td"><b>£2,000.00</b></td>
 			            <td class="td"><b>£2,000.00</b></td>
 			            <td class="td"><b>£2,000.00</b></td>
-			          
+			            <td class="td"><b>£2,000.00</b></td>
+			            <td class="td"><b>£2,000.00</b></td>
+			            <td class="td"><b>£2,000.00</b></td>
+			          </tr>
     			    </tbody>
     				</table>
-	    			</table>
+    			</div> --}}
+    			<div class="zui-wrapper">
+    			    <div class="zui-scroller">
+    			        <table class="zui-table">
+    			            <thead>
+    			                <tr>
+    			                    <th class="zui-sticky-col">Services</th>
+    			                    <th>Jan-18</th>
+    			                    <th>Feb-18</th>
+    			                    <th>Mar-18</th>
+    			                    <th>Apr-18</th>
+    			                    <th>May-18</th>
+    			                    <th>Jun-18</th>
+    			                    <th>Jul-18</th>
+    			                    <th>Aug-18</th>
+    			                    <th>Sep-18</th>
+    			                    <th>Oct-18</th>
+    			                    <th>Nov-18</th>
+    			                    <th>Dec-18</th>
+    			                    <th>Jan-19</th>
+    			                    <th>Feb-19</th>
+    			                    <th>Mar-19</th>
+    			                </tr>
+    			            </thead>
+    			            <tbody>
+    			                <tr>
+    			                    <td class="zui-sticky-col">Fire Engineer</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                </tr>
+    			                <tr>
+    			                    <td class="zui-sticky-col">Architect</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                    <td class="td">£1,000.00</td>
+    			                </tr>
+    			                <tr class="btop">
+    			                    <td class="zui-sticky-col"><strong>Total</strong></td>
+    			                    <td class="td"><b>£2,000.00</b></td>
+    			                    <td class="td"><b>£2,000.00</b></td>
+    			                    <td class="td"><b>£2,000.00</b></td>
+    			                    <td class="td"><b>£2,000.00</b></td>
+    			                    <td class="td"><b>£2,000.00</b></td>
+    			                    <td class="td"><b>£2,000.00</b></td>
+    			                    <td class="td"><b>£2,000.00</b></td>
+    			                    <td class="td"><b>£2,000.00</b></td>
+    			                    <td class="td"><b>£2,000.00</b></td>
+    			                    <td class="td"><b>£2,000.00</b></td>
+    			                    <td class="td"><b>£2,000.00</b></td>
+    			                    <td class="td"><b>£2,000.00</b></td>
+    			                    <td class="td"><b>£2,000.00</b></td>
+    			                    <td class="td"><b>£2,000.00</b></td>
+    			                    <td class="td"><b>£2,000.00</b></td>
+    			                </tr>
+    			            </tbody>
+    			        </table>
+    			    </div>
+    			</div>
 	    			<button class="btn">Export to MS Excel</button>
 					</div>
 				</div>	
@@ -596,7 +740,7 @@
 		    						<li><a data-toggle="tab" href="#section41">Quality Assurance</a></li><br>
 		    						<li>
   										<!-- Trigger the modal with a button -->
-									  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">Start Tender Process</button>
+									  <button type="button" id="but" class="btn" style="width:100%;line-height: .8em;" data-toggle="modal" data-target="#myModal2">Start Tender Process</button>
 									  <!-- Modal -->
 									 
 									 </li>

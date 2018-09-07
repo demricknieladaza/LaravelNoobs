@@ -1,7 +1,17 @@
 @extends('layouts.master')
 
 @section('content')
-
+<style type="text/css">
+	.table-striped>tbody>tr:nth-of-type(odd) {
+	    background: #fbe4d5 ;
+	}
+	tr:hover {
+	    background: #f6d3bc !important;
+	}
+	tr th {
+		background: white !important;
+	}
+</style>
 	<div class="container search_filter wow fadeInDown" data-wow-duration="1s" data-wow-delay="200ms">
 		<div class="row top-row">
 			<form method="post">
@@ -52,13 +62,12 @@
 										<table class="table table-hover table-striped">
 											<thead>
 												<tr>
-													<th>Active Tenders</th>
+													<th>Active Projects</th>
 												</tr>
 											</thead>
 											<tbody>
 												<tr>
-													<td><a style="color: black;" href="{{ url('/publish/canada_hover') }}">
-													Fire Engineer</a></td>
+													<td>Fire Engineer</td>
 												</tr>
 												<tr>
 													<td>Structural Engineer</td>
@@ -79,7 +88,7 @@
 										<table class="table table-hover table-striped">
 											<thead>
 												<tr>
-													<th>Drafted Tenders</th>
+													<th>Drafted Projects</th>
 												</tr>
 											</thead>
 											<tbody>
