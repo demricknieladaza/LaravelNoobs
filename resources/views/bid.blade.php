@@ -8,7 +8,7 @@
 	      <div class="modal-content">
 	        <div class="modal-header inq">
 	          <button type="button" class="close" data-dismiss="modal">&times;</button>
-	          <h4 class="modal-title">Inquiries</h4>
+	          <h4 class="modal-title">Ask the Employer</h4>
 	        </div>
 	        <div class="modal-body">
 	          <textarea placeholder="Enter your query here" rows="4" cols="50"></textarea>
@@ -19,38 +19,40 @@
 					<a style="color: #fff;" href="#mode" class="trigger-btn" data-toggle="modal">Submit Tender Query</a>
 				</div>
 	          	<div id="mode" class="modal fade">
-					<div class="modal-dialog modal-confirm">
+					<div class="modal-confirm">
+						<div class="modal-dialog">
 						<div class="modal-content">
 							<div class="modal-head">
-								<div class="icon-box">
-									<i class="material-icons">done</i>
+								<div class="icon-box" style="color:#1ce62b;">
+									<i class="material-icons" style="color:#1ce62b;">done</i>
 								</div>				
 								<h4 class="modal-title">Are  you  sure  you  want  to  submit  this  tender  query? </h4>	
 				                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 							</div>
 							<div class="modal-body">
-								<p>Your  query  will  be  sent  to  the  Employer  and  published  on  the  project  page,  visible  for  everyone,  once  you  have  received  a  response. This process cannot be undone.</p>
+								{{-- <p>Your  query  will  be  sent  to  the  Employer  and  published  on  the  project  page,  visible  for  everyone,  once  you  have  received  a  response. This process cannot be undone.</p> --}}
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-info" data-dismiss="modal">Go Back</button>
-								<button type="button" class="btn btn-success">Submit</button>
+								<button type="button" class="btn btn-success">Scope Business Lounge</button>
 							</div>
 						</div>
 					</div>
+				</div>
 				</div>
 	        </div>
 	      </div>
 	      
 	    </div>
 	</div>
-  	<div id="pngnext" class="modal fade">
+  	<div id="pngsubmit" class="modal fade">
 		<div class="modal-dialog modal-confirm">
-			<div class="modal-content">
+			<div class="modal-content" style="margin-right: auto;margin-left: auto;width: 40%;">
 				<div class="modal-head">
 					<div class="icon-box">
 						<i class="material-icons">done</i>
 					</div>				
-					<h4 class="modal-title">Are  you  sure  you  want  to  submit  this  tender  query? </h4>	
+					<h4 class="modal-title">Success! </h4>	
 	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
 				<div class="modal-body">
@@ -64,14 +66,14 @@
 		</div>
 	</div>
 
-	<div class="container below-header">
-		<h1 class="project-title bid-page-title">Canada Water Masterplan - <small>Structural Engineer</small></h1>			
+	<div class="container below-header" style="padding-right: 0;">
+		<h1 class="project-title bid-page-title" style="margin-right:0;margin-left:0;width: 100%;">Canada Water Masterplan - <small>Structural Engineer</small></h1>			
 	</div> 
 
 	<div class="container">
 		<div class="row">
-			<div id="d" class="col-sm-4" style="position: fixed; width:400px;">
-				<div class="tender-container">
+			<div id="d" class="col-sm-4" style="position: fixed; width:355px;">
+				<div class="tender-container" style="border-radius: 6px;">
 					<ul class="nav bid-form-nav">
 						<li class="active"><a data-toggle="tab" href="#section1">Pre-Qualification Questionnaire<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
 						<li class="disd"><a data-toggle="tab" href="#section2">Organisation<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
@@ -83,14 +85,14 @@
 					</ul><br>
 				</div>
 				<div class="form-group">
-					<button type="button" class="btn btn-info btn-lg raise" id="but" data-toggle="modal" data-target="#Modal">Ask the Employer</button>
+					<button type="button" class="btn" style="width:100%;line-height: .8em;" id="but" data-toggle="modal" data-target="#Modal">Ask the Employer</button>
 					
 				</div>
 			</div>
-			<div class="col-sm-8 questionnaire-section" style="margin-left: 400px;">
+			<div class="col-sm-8 questionnaire-section" style="margin-left: 338px; width: 845px;">
 				<form>
 				<div class="tab-content">
-					<div id="section1" class="tab-pane fade in active tender-container">
+					<div id="section1" class="tab-pane fade in active tender-container" style="border-radius: 6px;">
 						<h3 class="bid-form-title">Pre-Qualification Questionnaire</h3>
 							<div class="inputscheck">
 							<div class="form-group">
@@ -142,12 +144,12 @@
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											<div class="form-group">
 												Providing the required service since
 											</div>
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 											<div class="form-group">
 												<div class="input-group date" id="datepicker" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
@@ -160,12 +162,12 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											<div class="form-group">
 												Offered services
 											</div>
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select service</option>
@@ -196,12 +198,12 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											<div class="form-group">
 												Awards
 											</div>
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 											<div class="form-group">
 												<input type="text" name="" class="form-control" placeholder="Enter name of award">
 											</div>
@@ -228,12 +230,12 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											<div class="form-group">
 												Track Record of relevant Projects
 											</div>
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 											<div class="form-group">
 												<input type="text" name="" class="form-control" placeholder="Enter profile title">
 											</div>
@@ -395,8 +397,8 @@
 										</div>
 									</div>
 									<div class="form-group butcent">
-										<button data-toggle="tab" href="#section3" type="button" id="checkinpbut2" name="Next" class="btn btn-primary butsize ">Next</button>
-										
+										<button type="button" id="checkinpbut2" name="Next" class="btn btn-primary butsize ">Next</button>
+										<button type="button" name="Save" value="Save" class="btn  butsize color">Save</button>
 									</div>
 									
 									</div>
@@ -411,23 +413,23 @@
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="row" style="padding-bottom: 10px;">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											<div class="form-group">
 												Image
 											</div>
 										</div>
-										<div class="col-sm-6" >						
+										<div class="col-sm-7" >						
 											<img id="uploadPreview" style="width: 100px; height: 100px;" />
 											<input id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage();" />
 								        </div>
 						            </div>
 						            <div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											<div class="form-group">
 												Accreditations
 											</div>
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 											<div class="form-group">
 												<select Name='ddlSelectYear' class="form-control">
 										            <option value="">--- Select ---</option>
@@ -443,12 +445,12 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											<div class="form-group">
 												Degrees
 											</div>
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 											<div class="form-group">
 												<select name="" class="form-control">
 													<option value="" disabled selected>Select degree</option>
@@ -512,8 +514,8 @@
 									</div>
 
 									<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
+										<div class="col-sm-5"></div>
+										<div class="col-sm-7">
 											<div class="input-group date" id="datepickers" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 											<input class="form-control" type="text" placeholder="Year Awarded" readonly="readonly" name="date" >	  
@@ -524,10 +526,10 @@
 									<br>
 									
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											Awards
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 											<div class="input-group date" id="datepickers5" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 											<input class="form-control" type="text" placeholder="Year awarded" readonly="readonly" name="date" >	  
@@ -540,24 +542,24 @@
 									</div>
 								
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											<div class="form-group">
 												Professional Pathway
 											</div>
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 											<div class="form-group">
 												<input type="text" name="" class="form-control" placeholder="Previous Employer">
 											</div>
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											<div class="form-group">
 											 
 											</div>
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select Service</option>
@@ -584,10 +586,10 @@
 									
 									
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											
 										</div>
-											<div class="col-sm-6">
+											<div class="col-sm-7">
 												<div class="input-group date" id="datepicker7" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
@@ -598,10 +600,10 @@
 
 									</div><br>
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											
 										</div>
-											<div class="col-sm-6">
+											<div class="col-sm-7">
 												<div class="input-group date" id="datepicker8" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
@@ -612,10 +614,10 @@
 
 									</div><br>
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 												<div class="input_fields_serve2">
 												    <button class="btn btn-primary" id="add_field_serve2">Add another service</button>
 												    <div></div>
@@ -623,10 +625,10 @@
 											</div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 												<div class="input_fields_project1">
 												    <button class="btn btn-primary" id="add_field_project1">Add another project</button>
 												    <div></div>
@@ -634,7 +636,8 @@
 											</div>
 									</div><br>
 									<div class="form-group butcent">
-										<button data-toggle="tab" href="#section4" type="button" id="checkinpbut" name="Next" class="btn btn-primary butsize ">Next</button>
+										<button type="button" id="checkinpbut" name="Next" class="btn btn-primary butsize ">Next</button>
+										<button type="button" name="Save" value="Save" class="btn  butsize color">Save</button>
 									</div>
 								</div>
 							</div>
@@ -649,12 +652,12 @@
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											<div class="form-group">
 												Comments on Constraints/Issues
 											</div>
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 											<div class="form-group">
 												<textarea cols="4" rows="5" id="textareaap" maxlength="2000" placeholder="Enter here  "></textarea>
   												<span id="rchars1">2000</span> 
@@ -662,17 +665,17 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class=" col-sm-6"></div>
-										<div class="col-sm-6">
+										<div class=" col-sm-5"></div>
+										<div class="col-sm-7">
 											<img id="uploadPreview2" style="width:100px; height: 100px;" />
 											<input id="uploadImage2" type="file" name="myPhoto" onchange="PreviewImage2();" />
 						                </div>
 									</div><br>
                                     <div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 												<div class="input_fields_com">
 												    <button class="btn btn-primary" id="add_field_com">Add another comment</button>
 												    <div></div>
@@ -680,29 +683,29 @@
 											</div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											<div class="form-group">
 												Solutions
 											</div>
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 											<div class="form-group">
 												<textarea placeholder="Enter text here"></textarea>
 											</div>
 										</div>
 									</div>
 									<div class="row">
-										<div class=" col-sm-6"></div>
-										<div class="col-sm-6">
+										<div class=" col-sm-5"></div>
+										<div class="col-sm-7">
 											<img id="uploadPreview3" style="width: 100px; height: 100px;" />
 											<input id="uploadImage3" type="file" name="myPhoto" onchange="PreviewImage3();" />
 						                </div>
 									</div><br>
 									 <div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 												<div class="input_fields_sul">
 												    <button class="btn btn-primary" id="add_field_sul">Add another solution</button>
 												    <div></div>
@@ -711,7 +714,8 @@
 									</div><br>
 									
 									<div class="form-group butcent">
-										<button data-toggle="tab" href="#section5" type="button" id="checkinpbut3" name="Next" class="btn btn-primary butsize ">Next</button>
+										<button type="button" id="checkinpbut3" name="Next" class="btn btn-primary butsize ">Next</button>
+										<button type="button" name="Save" value="Save" class="btn  butsize color">Save</button>
 										
 									</div>
 								</div>
@@ -1327,8 +1331,8 @@
 										<button type="button" class="btn btn-success">Add another Lines</button>
 								</div>
 								<div class="form-group butcent">
-									<button data-toggle="tab" href="#section6" type="button" id="checkinpbut4" name="Next" class="btn btn-primary butsize ">Next</button>
-									
+									<button type="button" id="checkinpbut4" name="Next" class="btn btn-primary butsize ">Next</button>
+									<button type="button" name="Save" value="Save" class="btn  butsize color">Save</button>
 								</div>
 							</div><br>
 						
@@ -1341,20 +1345,20 @@
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											<div class="form-group">
 												Insurance
 											</div>
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 											<div class="form-group">
 												<p contenteditable="true">Professional Indemnity Insurance</p>
 											</div>
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
+										<div class="col-sm-5"></div>
+										<div class="col-sm-7">
 											<div class="form-group">
 												<input type="text" name="" class="form-control" placeholder="Insurance level">
 											</div>
@@ -1362,8 +1366,8 @@
 
 									</div>
 									<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
+										<div class="col-sm-5"></div>
+										<div class="col-sm-7">
 											<div class="form-group">
 												<input type="text" name="" class="form-control" placeholder="Premium Cost Uplift to achieve required Insurance Level">
 											</div>
@@ -1371,8 +1375,8 @@
 
 									</div>
 									<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
+										<div class="col-sm-5"></div>
+										<div class="col-sm-7">
 											<div class="form-group">
 												<img id="uploadPreview4" style="width: 100px; height: 100px;" />
 												<input id="uploadImage4" type="file" name="myPhoto" onchange="PreviewImage4();" />
@@ -1380,36 +1384,37 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
+										<div class="col-sm-5"></div>
+										<div class="col-sm-7">
 												<input type="text" name="" class="form-control" placeholder="As per selections by the employer">
 										</div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
-												<select name="Sel"  value="test" class="form-control" >
+										<div class="col-sm-5"></div>
+										<div class="col-sm-7">
+												<select name="Sel" class="form-control" >
 													<option  disabled selected>Select Insurance</option>
+													<option  value="test">Test</option>
 													
 												</select>
 										</div>
 									</div><br>
 										<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											<div class="form-group">
 												Bonds
 											</div>
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 											<div class="form-group">
 												<p contenteditable="true">Parent Company Guarantee</p>
 											</div>
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-6"></div>
+										<div class="col-sm-5"></div>
 										
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 								              <select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select</option>
 													<option value="test">Agreed  To  be  negotiated</option>
@@ -1421,23 +1426,23 @@
 									</div><br>
 	
 								    <div class="row">
-										<div class="col-sm-6"></div>
+										<div class="col-sm-5"></div>
 										
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 								             <textarea placeholder="Comments"></textarea>
 							             
 										</div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-6">Collateral  Warranties  /  Third  Parties  </div>
-										<div class="col-sm-6">
+										<div class="col-sm-5">Collateral  Warranties  /  Third  Parties  </div>
+										<div class="col-sm-7">
 												<input type="text" name="" class="form-control" placeholder="Either deed or under hands as selected by the employer">
 										</div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-6"></div>
+										<div class="col-sm-5"></div>
 										
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 								              <select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select</option>
 													<option value="test">Agreed  To  be  negotiated</option>
@@ -1448,25 +1453,25 @@
 										</div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-6"></div>
+										<div class="col-sm-5"></div>
 										
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 								             <textarea placeholder="Comments"></textarea>
 							             
 										</div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-6">Limit  of  Liability  </div>
-										<div class="col-sm-6">
+										<div class="col-sm-5">Limit  of  Liability  </div>
+										<div class="col-sm-7">
 												<input type="text" name="" class="form-control" placeholder="Either deed or under hands as selected by the employer">
 										</div>
                                        </div><br>
                                        <div class="row">
-										<div class="col-sm-6"></div>
+										<div class="col-sm-5"></div>
 										
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 								              <select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select</option>
+													<option disabled selected>Select</option>
 													<option value="test">Agreed  To  be  negotiated</option>
 													<option value="test">Rejected  </option>
 													
@@ -1475,35 +1480,35 @@
 										</div>
 									</div><br>
                                      <div class="row">
-										<div class="col-sm-6"></div>
+										<div class="col-sm-5"></div>
 										
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 								             <textarea placeholder="Comments"></textarea>
 							             
 										</div>
 									</div><br>
 										<div class="row">
-										<div class="col-sm-6">Execution</div>
-										<div class="col-sm-6">
+										<div class="col-sm-5">Execution</div>
+										<div class="col-sm-7">
 												<input type="text" name="" class="form-control" placeholder="Either deed or under hands as selected by the employer">
 										</div>
                                       </div><br>
 									<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-sm-6">
+										<div class="col-sm-5"></div>
+										<div class="col-sm-7">
 								               <input type="checkbox" name="" value="test" class="filled-in" id="check14" >   <label for="check14">I Agree</label>
 							             </div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-6">Net  Contribution  Clause </div>
-										<div class="col-sm-6">
+										<div class="col-sm-5">Net  Contribution  Clause </div>
+										<div class="col-sm-7">
 												<input type="text" name="" class="form-control" placeholder="">
 										</div>
                                        </div><br>
                                        <div class="row">
-										<div class="col-sm-6"></div>
+										<div class="col-sm-5"></div>
 										
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 								              <select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select</option>
 													<option value="test" >Agreed  To  be  negotiated</option>
@@ -1515,43 +1520,43 @@
 									</div><br>
 									<div class="row">
                                     
-										<div class="col-sm-6">	
+										<div class="col-sm-5">	
 												Form of Appointment
 										</div>
-											<div class="col-sm-6">
+											<div class="col-sm-7">
 												<button class="btn"><i class="fa fa-download"></i> Download</button>
 												<button type="button" class="btn btn-danger">View</button>
 										</div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 												<input type="text" name="" class="form-control" placeholder="Enter clause here">
 										</div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 												<input type="text" name="" class="form-control" placeholder="Enter new suggested work here">
 										</div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 												<textarea placeholder="Comments"></textarea>
 										</div>
 									</div><br>
 									 <div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 												<div class="input_fields_comm">
 												    <button class="btn btn-primary" id="add_field_comm">Add another comment</button>
 												    <div></div>
@@ -1559,33 +1564,34 @@
 											</div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 												<input type="text" name="" class="form-control" placeholder="Enter new suggested work here">
 										</div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											Documents for Signature
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 												<input type="text" name="" class="form-control" placeholder="Document Title">
 									</div>
 								</div><br>
 									<div class="row">
-										<div class="col-sm-6">	
+										<div class="col-sm-5">	
 												
 										</div>
-											<div class="col-sm-6">
+											<div class="col-sm-7">
 												<button class="btn"><i class="fa fa-download"></i> Download</button>
 												<button type="button" class="btn btn-info">Upload</button>
 										</div>
 									</div><br>
 									
 									<div class="form-group butcent">
-										<button data-toggle="tab" href="#section7" type="button" id="checkinpbut5" name="Next" class="btn btn-primary butsize ">Next</button>
+										<button type="button" id="checkinpbut5" name="Next" class="btn btn-primary butsize ">Next</button>
+										<button type="button" name="Save" value="Save" class="btn  butsize color">Save</button>
 										
 									</div>
 								</div>
@@ -1599,32 +1605,35 @@
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											<div class="form-group">
 												Created by
 											</div>
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="First name">
+												<div class="col-sm-6" style="padding:0;">
+													<input type="text" name="" class="form-control" placeholder="First name">
+												</div>
+												<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+													<input type="text" name="" class="form-control" placeholder="Surname">
+												</div>
 											</div>
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											<div class="form-group">
 												
 											</div>
 										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Surname">
-											</div>
+										<div class="col-sm-7">
+											
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-6"></div>
-											<div class="col-sm-6">
+										<div class="col-sm-5"></div>
+											<div class="col-sm-7">
 											<div class="form-group">
 												<div class="input-group date" id="datepicker4" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
@@ -1637,32 +1646,35 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											<div class="form-group">
 												Checked by
 											</div>
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="First name">
+												<div class="col-sm-6" style="padding:0;">
+													<input type="text" name="" class="form-control" placeholder="First name">
+												</div>
+												<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+													<input type="text" name="" class="form-control" placeholder="Surname">
+												</div>
 											</div>
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											<div class="form-group">
 												
 											</div>
 										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Surname">
-											</div>
+										<div class="col-sm-7">
+											
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-6"></div>
-											<div class="col-sm-6">
+										<div class="col-sm-5"></div>
+											<div class="col-sm-7">
 											<div class="form-group">
 												<div class="input-group date" id="datepicker10" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
@@ -1675,32 +1687,35 @@
 										</div>
 									</div>
 										<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											<div class="form-group">
 												Approved by
 											</div>
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="First name">
+												<div class="col-sm-6" style="padding:0;">
+													<input type="text" name="" class="form-control" placeholder="First name">
+												</div>
+												<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+													<input type="text" name="" class="form-control" placeholder="Surname">
+												</div>
 											</div>
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											<div class="form-group">
 												
 											</div>
 										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Surname">
-											</div>
+										<div class="col-sm-7">
+											
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-6"></div>
-											<div class="col-sm-6">
+										<div class="col-sm-5"></div>
+											<div class="col-sm-7">
 											<div class="form-group">
 												<div class="input-group date" id="datepicker11" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
@@ -1713,16 +1728,16 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-6">
+										<div class="col-sm-5">
 											Statements
 										</div>
-										<div class="col-sm-6">
+										<div class="col-sm-7">
 								               <input type="checkbox" name="" value="" class="filled-in" id="check13" >     <label for="check13">I Agree to XXX</label>
 							              </div>
 									</div>
 									<div class="form-group butcent">
-										<input type="submit" name="submit" value="Submit" class="btn btn-primary butsize ">
-										<input type="submit" name="Save" value="Save" class="btn  butsize color">
+										<button id="submitfrm" type="submit" name="submit" class="btn btn-primary butsize ">Submit</button>
+										<button name="Save" value="Save" class="btn  butsize color">Save</button>
 									</div>
 								</div>
 							</div>
@@ -1800,6 +1815,7 @@ $('textarea').keyup(function() {
 			list.removeClass("active");
 
 			$(".tender-container.active.in").find('.inputscheck').addClass("disd");
+
 		});
 
 		$('#checkinpbut').click(function(e)
@@ -1813,8 +1829,16 @@ $('textarea').keyup(function() {
 
 				$(".tender-container.active.in").find('.inputscheck').addClass("disd");
 
+				
+
+				var divi = $(".tender-container.active.in");
+				$(".tender-container.active.in").next().addClass("active");
+				$(".tender-container.active.in").next().addClass("in");
+				divi.removeClass("active");
+				divi.removeClass("in");
+
+
 			}
-			e.preventDefault();
 		});
 
 		$('#checkinpbut2').click(function()
@@ -1827,6 +1851,12 @@ $('textarea').keyup(function() {
 				list.removeClass("active");
 
 				$(".tender-container.active.in").find('.inputscheck').addClass("disd");
+
+				var divi = $(".tender-container.active.in");
+				$(".tender-container.active.in").next().addClass("active");
+				$(".tender-container.active.in").next().addClass("in");
+				divi.removeClass("active");
+				divi.removeClass("in");
 
 			}
 		});
@@ -1842,6 +1872,12 @@ $('textarea').keyup(function() {
 
 				$(".tender-container.active.in").find('.inputscheck').addClass("disd");
 
+				var divi = $(".tender-container.active.in");
+				$(".tender-container.active.in").next().addClass("active");
+				$(".tender-container.active.in").next().addClass("in");
+				divi.removeClass("active");
+				divi.removeClass("in");
+
 			}
 		});
 
@@ -1854,9 +1890,16 @@ $('textarea').keyup(function() {
 			list.removeClass("active");
 
 			$(".tender-container.active.in").find('.inputscheck').addClass("disd");
+
+			var divi = $(".tender-container.active.in");
+			$(".tender-container.active.in").next().addClass("active");
+			$(".tender-container.active.in").next().addClass("in");
+			divi.removeClass("active");
+			divi.removeClass("in");
+			jQuery('html,body').animate({scrollTop:0},0);
 		});
 
-		$('#checkinpbut5').click(function()
+		$('#checkinpbut5').click(function(e)
 		{
 			var validation = validateFormSection();
 			if(validation){
@@ -1867,7 +1910,21 @@ $('textarea').keyup(function() {
 
 				$(".tender-container.active.in").find('.inputscheck').addClass("disd");
 
+				var divi = $(".tender-container.active.in");
+				$(".tender-container.active.in").next().addClass("active");
+				$(".tender-container.active.in").next().addClass("in");
+				divi.removeClass("active");
+				divi.removeClass("in");
+
 			}
+			else{
+				e.stopPropagation();
+			}
+		});
+
+		$('#submitfrm').click(function()
+		{
+			$("#pngsubmit").modal('toggle');
 		});
 	
 	function validateFormSection() {
@@ -1902,12 +1959,13 @@ $('textarea').keyup(function() {
         });
         if ( ! valid ) {
             alert('Please fill mandatory fields');
-            focusElem.focus();
+            // focusElem.focus();
+
         }
         else if(valid){
         	$("li.active").next().removeClass("disd");
         }
-        
+        jQuery('html,body').animate({scrollTop:0},0);
         return valid;
     }
     });
