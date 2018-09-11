@@ -2002,6 +2002,7 @@ $('textarea').keyup(function() {
             	    if($.inArray(imgname, ['gif','png','jpg','jpeg']) == -1)
             	    {
             	    	alert("Invalid file type");
+            	    	$("#uploadImage7s").val('');
             	    }
             	}
             }
