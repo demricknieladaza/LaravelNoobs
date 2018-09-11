@@ -91,7 +91,7 @@
 				<div class="usertable container-fluid" style="display: none;">
 					<div class="col-sm-12 text-center">
 						<div class="pull-right" style="margin-bottom: 15px">
-							<button type="button" class="btn btn-success" data-toggle="modal" data-target="#adduser"><i class="fa fa-user"></i>Add User</button>
+							<button type="button" class="btn btn-success" data-toggle="modal" data-backdrop="static" data-target="#adduser"><i class="fa fa-user"></i>Add User</button>
 						</div>
 						<table class="table table-bordered" style="border: 1px solid #ddd;">
 							<thead>

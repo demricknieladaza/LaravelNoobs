@@ -79,38 +79,38 @@
 				</div>
 			</p>
 		          <p>Feedback Time<div class="form-group">
-								<select name="days" class="form-control" onchange='Days(this.value);'> 
-				 <option value="" disabled selected>Select Days</option> 
-				 <option>1 days</option>
-				 <option>2 days</option>
-				 <option>3 days</option>
-				 <option>4 days</option>
-				 <option>5 days</option>
-				 <option>6 days</option>
-				 <option>7 days</option>
-				 <option>8 days</option>
-				 <option>9 days</option>
-				 <option>10 days</option>
-				 <option>11 days</option>
-				 <option>12 days</option>
-				 <option>13 days</option>
-				 <option>14 days</option>
-				 <option>15 days</option>
-				 <option>16 days</option>
-				 <option>17 days</option>
-				 <option>18 days</option>
-				 <option>19 days</option>
-				 <option>20 days</option>
-				 <option>21 days</option>
-				 <option>22 days</option>
-				 <option>23 days</option>
-				 <option>24 days</option>
-				 <option>25 days</option>
-				 <option>26 days</option>
-				 <option>27 days</option>
-				 <option>28 days</option>
-				 <option>29 days</option>
-				 <option>30 days</option>
+				<select name="days" class="form-control" onchange='Days(this.value);'> 
+					<option value="" disabled selected>Select Days</option> 
+					<option>1 days</option>
+					<option>2 days</option>
+					<option>3 days</option>
+					<option>4 days</option>
+					<option>5 days</option>
+					<option>6 days</option>
+					<option>7 days</option>
+					<option>8 days</option>
+					<option>9 days</option>
+					<option>10 days</option>
+					<option>11 days</option>
+					<option>12 days</option>
+					<option>13 days</option>
+					<option>14 days</option>
+					<option>15 days</option>
+					<option>16 days</option>
+					<option>17 days</option>
+					<option>18 days</option>
+					<option>19 days</option>
+					<option>20 days</option>
+					<option>21 days</option>
+					<option>22 days</option>
+					<option>23 days</option>
+					<option>24 days</option>
+					<option>25 days</option>
+					<option>26 days</option>
+					<option>27 days</option>
+					<option>28 days</option>
+					<option>29 days</option>
+					<option>30 days</option>
 				</select>
 								</div></p>
 		          <input type="text" placeholder="Search.." name="search">
@@ -172,24 +172,26 @@
 		    						<h3>Project Information<button class="btn buts" onclick="myFunction()" style="float:right;margin-top:-14px;" ><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
 		    				</div>			
 		    				<div class="col-sm-12">
+		    					<form id="projform" action="{{ url('project_info')}}" method="POST">
+		    						@csrf
 		    					<table class="table table-striped table-hover">
 		    						<tr>
 		    							<td>Project Title
   											
 										</td>
-		    							<td><p id="water">Canada Water Masterplan</p></td>
+		    							<td><input id="water" type="text" name="project_title" class="form-control proje" placeholder="Canada Water Masterplan" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Project ID
 			    							
 		    							</td>
-		    							<td><p id="number">123456789</p></td>
+		    							<td><input type="number" name="project_id" class="form-control proje" placeholder="123456789" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Location
 		    								
 		    							</td>
-		    							<td><p id="location">Canada Water, London, SE16, United Kingdom</p></td>
+		    							<td><input type="text" name="location" class="form-control proje" placeholder="Canada Water, London, SE16, United Kingdom" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td colspan="2">
@@ -207,7 +209,7 @@
 		    											<p><b>Main Roads</b></p>
 		    										</td>
 		    										<td>
-		    											<p id="survey">Surrey Quays Road</p>
+		    											<input type="text" name="main_roads" class="form-control proje" placeholder="Surrey Quays Road" readonly>
 		    										</td>
 		    									</tr>
 		    									<tr>
@@ -215,8 +217,8 @@
 		    											<p><b>Tube Stations</b></p>
 		    										</td>
 		    										<td>
-		    											<p id="tube">Canada Water 0.5km</p>
-		    											<p id="tube1">Surrey Quays 1.5km</p>
+		    											<input type="text" name="tube_station1" class="form-control proje" placeholder="Canada Water 0.5km" readonly>
+		    											<input type="text" name="tube_station2" class="form-control proje" placeholder="Surrey Quays 1.5km" readonly>
 		    										</td>
 		    									</tr>
 		    									<tr>
@@ -224,7 +226,7 @@
 		    											<p><b>Bus Lines</b> </p>
 		    										</td>
 		    										<td>
-		    											<p id="bus">701, 702, 851, 930</p>
+		    											<input type="text" name="bus_lines" class="form-control proje" placeholder="701, 702, 851, 930" readonly>
 		    										</td>
 		    									</tr>
 		    								</table>
@@ -238,11 +240,11 @@
 		    								<table width="100%">
 		    									<tr>
 		    										<td>Adjacent Uses</td>
-		    										<td id="Adjacent">Residential (High-End), Regeneration Space, Retail</td>
+		    										<td><input type="text" name="adjacent_uses" class="form-control proje" placeholder="Residential (High-End), Regeneration Space, Retail" readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>History</td>
-		    										<td id="history">Former Docks and Warehouses</td>
+		    										<td><input type="text" name="history" class="form-control proje" placeholder="Residential (High-End), Former Docks and Warehouses" readonly></td>
 		    									</tr>
 		    								</table>
 		    							</td>
@@ -252,22 +254,22 @@
 		    								
 		    							</td>
 		    							<td>                               
-		    								<p id="cons1">Adjacent Tube Tunnel</p>
-		    								<p id="cons2">Existing Buildings</p>
-		    								<p id="cons3">Weak Ground Conditions</p>
+		    								<input type="text" name="cons1" class="form-control proje" placeholder="Adjacent Tube Tunnel" readonly>
+		    								<input type="text" name="cons2" class="form-control proje" placeholder="Existing Buildings" readonly>
+		    								<input type="text" name="cons3" class="form-control proje" placeholder="Weak Ground Conditions" readonly>
 		    							</td>
 		    						</tr>
 		    						<tr>
 		    							<td>Type of Development
 		    								
 		    							</td>
-		    							<td id="type">New Built</td>
+		    							<td><input type="text" name="type_of_development" class="form-control proje" placeholder="New Built" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Construction Value
 		    								
 		    							</td>
-		    							<td><p id="value">£ 300,000,000</p></td>
+		    							<td><input type="text" name="construction_value" class="form-control proje" placeholder="£ 300,000,000" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Types of Use
@@ -277,26 +279,26 @@
 		    								<table width="100%">
 		    									<tr>
 		    										<td>Residential</td>&nbsp
-		    										<td id="red1">30,000m2</td>
-		    										<td id="red2">200 units</td>
-		    										<td id="red3">High-End</td>
+		    										<td><input type="text" name="res1_m1" class="form-control proje" placeholder="30,000m2" readonly></td>
+		    										<td><input type="text" name="res1_units" class="form-control proje" placeholder="200 units" readonly></td>
+		    										<td><input type="text" name="res1_type" class="form-control proje" placeholder="High-End" readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>Residential</td>
-		    										<td id="res1">10,000m2</td>
-		    										<td id="res2">70 units</td>
-		    										<td id="res3">Affordable</td>
+		    										<td><input type="text" name="res2_m1" class="form-control proje" placeholder="10,000m2" readonly></td>
+		    										<td><input type="text" name="res2_units" class="form-control proje" placeholder="70 units" readonly></td>
+		    										<td><input type="text" name="res2_type" class="form-control proje" placeholder="Affordable" readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>Office</td>
-		    										<td id="office">15,000m2</td>
+		    										<td><input type="text" name="office" class="form-control proje" placeholder="15,000m2" readonly></td>
 		    										<td></td>
 		    										<td></td>
 		    									</tr>
 		    									<tr>
 		    										<td>Retail</td>
-		    										<td id="ret1">15,000m2</td>
-		    										<td id="ret2">5 units</td>
+		    										<td><input type="text" name="ret_m2" class="form-control proje" placeholder="15,000m2" readonly></td>
+		    										<td><input type="text" name="ret_units" class="form-control proje" placeholder="5 units" readonly></td>
 		    										<td></td>
 		    									</tr>
 		    									<tr>
@@ -316,19 +318,19 @@
 		    								<table width="100%">
 		    									<tr>
 		    										<td>RIBA Stage 1 Completion</td>
-		    										<td id="rib1">01/03/2019</td>
+		    										<td><input type="text" name="riba_s1comp" class="form-control proje" placeholder="01/03/2019" readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>RIBA Stage 2 Completion</td>
-		    										<td id="rib2">01/07/2019</td>
+		    										<td><input type="text" name="riba_s2comp" class="form-control proje" placeholder="01/07/2019" readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>RIBA Stage 3 Completion</td>
-		    										<td id="rib3">01/10/2019</td>
+		    										<td><input type="text" name="riba_s3comp" class="form-control proje" placeholder="01/10/2019" readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>RIBA Stage 4 Completion</td>
-		    										<td id="rib4">01/12/2019</td>
+		    										<td><input type="text" name="riba_s4comp" class="form-control proje" placeholder="01/12/2019" readonly></td>
 		    									</tr>
 		    								</table>
 		    							</td>								
@@ -341,11 +343,11 @@
 		    								<table width="100%">
 		    									<tr>
 		    										<td>Design Team Meeting</td>
-		    										<td id="met1">Tuesday, 14:00 – 15:30, Weekly</td>
+		    										<td><input type="text" name="design_team" class="form-control proje" placeholder="Tuesday, 14:00 – 15:30, Weekly" readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>Project Progress Meeting</td>
-		    										<td id="met2">Tuesday, 15:30 – 16:30, Fortnightly</td>
+		    										<td><input type="text" name="project_progress" class="form-control proje" placeholder="Tuesday, 15:30 – 16:30, Fortnightly" readonly></td>
 		    									</tr>
 		    								</table>
 		    							</td>
@@ -354,7 +356,7 @@
 		    							<td>Procurement Route
 		    								
 		    							</td>
-		    							<td id="pro">Design & Build</td>
+		    							<td><input type="text" name="procurement_nd_route" class="form-control proje" placeholder="Design & Build" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Project Team
@@ -364,15 +366,15 @@
 		    								<table width="100%">
 		    									<tr>
 		    										<td>Architect</td>
-		    										<td id="arc">Allies and Morrison</td>
+		    										<td><input type="text" name="architect" class="form-control proje" placeholder="Allies and Morrison" readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>Structural Engineer</td>
-		    										<td id="struc">AKT II</td>
+		    										<td><input type="text" name="structural" class="form-control proje" placeholder="AKT II" readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>Services Engineer</td>
-		    										<td id="ing">Sweco</td>
+		    										<td><input type="text" name="services" class="form-control proje" placeholder="Sweco" readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>Fire Engineer </td>
@@ -398,7 +400,9 @@
 		    					</table>		
 		    					<div style="text-align: center;">
 		    						<button type="button" class="btn btn-default" style="color: white; background: gray;width: 120px;">Save</button>
-		    					</div>				
+		    						<button type="submit" class="btn btn-default">submit</button>
+		    					</div>
+		    					</form>				
 		    				</div>
 		    			</div>
 		    		</div>
@@ -489,6 +493,7 @@
 								</div>
 								<div style="text-align: center;">
 									<button type="button" class="btn btn-default" style="color: white; background: gray;width: 120px;">Save</button>
+
 								</div>
 							</div>
 						</div>
@@ -529,8 +534,8 @@
 			            <td class="td">1/1/2018</td>
 			            <td class="td">1/9/2018</td>
 			            <td class="td">5 days</td>
-			            <td class="td"><strong style="font-size: 25px;">3</strong><a data-toggle="modal" data-target="#viewBid"><p>View Bids</p></a></td>
-			            <td class="td"><strong style="font-size: 25px;">7</strong><a data-toggle="modal" data-target="#viewQueries"><p>View Answer/ Queries</p></a></td>
+			            <td class="td"><strong style="font-size: 25px;">3</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewBid"><p>View Bids</p></a></td>
+			            <td class="td"><strong style="font-size: 25px;">7</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewQueries"><p>View Answer/ Queries</p></a></td>
 			            <td class="td"></button><button style="width: 101px;" class="btn btn-success">Complete <br>Tender  <br>Process</button></td>
   			        </tr>
   			        <tr>
@@ -549,8 +554,8 @@
 			            <td class="td">1/1/2018</td>
 			            <td class="td">1/9/2018</td>
 			            <td class="td">5 days</td>
-			            <td class="td"><strong style="font-size: 25px;">3</strong><a data-toggle="modal" data-target="#viewBid"><p>View Bids</p></a></td>
-			            <td class="td"><strong style="font-size: 25px;">7</strong><a data-toggle="modal" data-target="#viewQueries"><p>View Answer/Queries</p></a></td>
+			            <td class="td"><strong style="font-size: 25px;">3</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewBid"><p>View Bids</p></a></td>
+			            <td class="td"><strong style="font-size: 25px;">7</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewQueries"><p>View Answer/Queries</p></a></td>
 			            <td class="td">
 			              </button><button class="btn btn-primary" style="margin-bottom:10px;    width: 102px;">Dowload <br>Evalution<br>Report</button>
 			            </button><button class="btn btn-warning">Negotiate <br>Scope and <br>Appointment</button></td>
@@ -740,7 +745,7 @@
 		    						<li><a data-toggle="tab" href="#section41">Quality Assurance</a></li><br>
 		    						<li>
   										<!-- Trigger the modal with a button -->
-									  <button type="button" id="but" class="btn" style="width:100%;line-height: .8em;" data-toggle="modal" data-target="#myModal2">Start Tender Process</button>
+									  <button type="button" id="but" class="btn" style="width:100%;line-height: .8em;" data-toggle="modal" data-backdrop="static" data-target="#myModal2">Start Tender Process</button>
 									  <!-- Modal -->
 									 
 									 </li>
@@ -2037,42 +2042,9 @@ var element=document.getElementById('bonds');
 	}
 </script>
 <script>
-function myFunction() {
-   document.getElementById("water").contentEditable = true;
-   document.getElementById("number").contentEditable = true;
-   document.getElementById("location").contentEditable = true;
-   document.getElementById("survey").contentEditable = true;
-   document.getElementById("tube").contentEditable = true;
-   document.getElementById("tube1").contentEditable = true;
-   document.getElementById("bus").contentEditable = true;
-   document.getElementById("Adjacent").contentEditable = true;
-   document.getElementById("history").contentEditable = true;
-   document.getElementById("cons1").contentEditable = true;
-   document.getElementById("cons2").contentEditable = true;
-   document.getElementById("cons3").contentEditable = true;
-   document.getElementById("type").contentEditable = true;
-   document.getElementById("value").contentEditable = true;
-   document.getElementById("red1").contentEditable = true;
-   document.getElementById("red2").contentEditable = true;
-   document.getElementById("red3").contentEditable = true;
-   document.getElementById("res1").contentEditable = true;
-   document.getElementById("res2").contentEditable = true;
-   document.getElementById("res3").contentEditable = true;
-   document.getElementById("office").contentEditable = true;
-   document.getElementById("ret1").contentEditable = true;
-   document.getElementById("ret2").contentEditable = true;
-   document.getElementById("total").contentEditable = true;
-   document.getElementById("rib1").contentEditable = true;
-   document.getElementById("rib2").contentEditable = true;
-   document.getElementById("rib3").contentEditable = true;
-   document.getElementById("rib4").contentEditable = true;
-   document.getElementById("met1").contentEditable = true;
-   document.getElementById("met2").contentEditable = true;
-   document.getElementById("pro").contentEditable = true;
-   document.getElementById("arc").contentEditable = true;
-   document.getElementById("struc").contentEditable = true;
-   document.getElementById("ing").contentEditable = true;
-}
+	function myFunction() {
+	   $('#projform input.proje').attr('readonly',false);
+	}
 </script>
 <script type="text/javascript">
 	function myFunction1(){	

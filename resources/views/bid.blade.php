@@ -1,6 +1,48 @@
 @extends('layouts.master')
 
 @section('content')
+<style type="text/css">
+	input[type="checkbox"] + .label-text:before{
+		content: "\f096";
+		font-family: "FontAwesome";
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+		-webkit-font-smoothing:antialiased;
+		width: 1em;
+		display: inline-block;
+		margin-right: 5px;
+	}
+
+	input[type="checkbox"]:checked + .label-text:before{
+		content: "\f14a";
+		color: #fe7235;
+		animation: effect 250ms ease-in;
+	}
+
+	input[type="checkbox"]:disabled + .label-text{
+		color: #aaa;
+	}
+
+	input[type="checkbox"]:disabled + .label-text:before{
+		content: "\f0c8";
+		color: #ccc;
+	}
+
+	ul.servicelist {
+	  columns: 2;
+	  -webkit-columns: 2;
+	  -moz-columns: 2;
+	  padding: 0;
+	  list-style: none;
+	}
+	.hid {
+		display: none;
+	}
+</style>
 	<div class="modal fade" id="Modal" role="dialog">
 	    <div class="modal-dialog">
 	    
@@ -14,31 +56,31 @@
 	          <textarea placeholder="Enter your query here" rows="4" cols="50"></textarea>
 	        </div>
 	        <div class="modal-footer">
-	          	<div class="text-center">
 					<!-- Button HTML (to Trigger Modal) -->
-					<a style="color: #fff;" href="#mode" class="trigger-btn" data-toggle="modal">Submit Tender Query</a>
+				<div style="text-align:center;">
+					<button type="button" style="color: #fff;background-color: #fe7235;border-radius: inherit;" href="#mode"  class="btn" data-backdrop="static" data-toggle="modal">Submit Tender Query</button>
 				</div>
 	          	<div id="mode" class="modal fade">
 					<div class="modal-confirm">
 						<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-head">
-								<div class="icon-box" style="color:#1ce62b;">
-									<i class="material-icons" style="color:#1ce62b;">done</i>
-								</div>				
-								<h4 class="modal-title">Are  you  sure  you  want  to  submit  this  tender  query? </h4>	
-				                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-							</div>
-							<div class="modal-body">
-								{{-- <p>Your  query  will  be  sent  to  the  Employer  and  published  on  the  project  page,  visible  for  everyone,  once  you  have  received  a  response. This process cannot be undone.</p> --}}
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-info" data-dismiss="modal">Go Back</button>
-								<button type="button" class="btn btn-success">Scope Business Lounge</button>
+							<div class="modal-content">
+								<div class="modal-head">
+									<div class="icon-box" style="color:#1ce62b;">
+										<i class="material-icons" style="color:#1ce62b;">done</i>
+									</div>				
+									<h4 class="modal-title">Are  you  sure  you  want  to  submit  this  tender  query? </h4>	
+					                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								</div>
+								<div class="modal-body">
+									<p>Your  query  will  be  sent  to  the  Employer  and  published  on  the  project  page,  visible  for  everyone,  once  you  have  received  a  response. This process cannot be undone.</p>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-info" data-dismiss="modal">Go Back</button>
+									<button type="button" class="btn btn-success" style="color: #fff;background-color: #fe7235;">Scope Business Lounge</button>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 				</div>
 	        </div>
 	      </div>
@@ -85,7 +127,7 @@
 					</ul><br>
 				</div>
 				<div class="form-group">
-					<button type="button" class="btn" style="width:100%;line-height: .8em;" id="but" data-toggle="modal" data-target="#Modal">Ask the Employer</button>
+					<button type="button" class="btn" style="width:100%;line-height: .8em;" id="but" data-toggle="modal" data-backdrop="static" data-target="#Modal">Ask the Employer</button>
 					
 				</div>
 			</div>
@@ -151,13 +193,24 @@
 										</div>
 										<div class="col-sm-7">
 											<div class="form-group">
-												<div class="input-group date" id="datepicker" data-date="02-2012" 
+												{{-- <div class="input-group date" id="datepicker" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
 													 <input class="form-control" type="text" placeholder="Select Year" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-												</div>
-												
+												</div> --}}
+												<select name="servicesince" class="form-control">
+												<?php 
+													$cur_year = date('Y');
+													$years = [];
+												    for ($i=0; $i<=50; $i++) {
+												        array_push($years,$cur_year--);
+												    }
+												    foreach (array_reverse($years) as $year ) {
+												    	echo "<option value='".$year."'>".$year."</option>";
+												    }
+												?>
+												</select>
 											</div>
 										</div>
 									</div>
@@ -168,32 +221,32 @@
 											</div>
 										</div>
 										<div class="col-sm-7">
-											<div class="form-group">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select service</option>
-													<option>Architect</option>
-													<option>Structural Engineer</option>
-													<option>Service Engineer</option>
-													<option>Fire Engineer</option>
-													<option>Acoustic Engineer</option>
-													<option>Principal Designer</option>
-													<option>Fascade Engineer</option>
-													<option>Building Control</option>
-													<option>Lighting Consultant</option>
-													<option>Security Consultant</option>
-													<option>Planning Consultant</option>
-													<option>Sustainability Consultant</option>
-													<option>BIM Consultant</option>
-													<option>Quantity Surveyor</option>
-													<option>Project Manager</option>
-													<option>Other</option>
-												</select>
-											</div>
-											<div class="form-group">
-												<div class="input_fields_service">
-												    <button class="btn btn-primary" id="add_field_service">Add another service</button>
-												    <div></div>
-												</div>
+											<ul id="servicelist" class="servicelist">
+											<?php
+											$Service = array(
+												"Architect", "Structural Engineer", "Service Engineer",
+												"Fire Engineer", "Acoustic Engineer", "Principal Designer","Fascade Engineer" , "Building Control", "Lighting Consultant", "Security Consultant", "Planning Consultant" , "Sustainability Consultant", "BIM Consultant", "Quantity Surveyor", "Project Manager"
+											);
+											sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
+											foreach ($Service as $key ) {
+											    echo "<li><div class='form-check'>
+														<label>
+															<input type='checkbox' name='offeredservices[]' value='".$key."'><span class='label-text'>".$key."</span>
+														</label>
+													</div></li>";
+											}
+
+											?>
+											</ul>
+											{{-- <div class="form-check">
+												<label>
+													<input type="checkbox" name="other"> <span class="label-text">Other</span>
+												</label>
+											</div> --}}
+											<div class="form-group divaddservbid">
+												<input type="text" class="form-control hid adserv" name="adserv">
+											    <button type="button" class="btn btn-primary notherbut" onclick="showadd()">Add another service</button>
+											    <button type="button" class="btn btn-primary hid" id="addservicebut" onclick="addservice()">Add Service</button>
 											</div>
 										</div>
 									</div>
@@ -204,27 +257,28 @@
 											</div>
 										</div>
 										<div class="col-sm-7">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter name of award">
-											</div>
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter details">
-											</div>
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Awarded by body">
-											</div>
-											<div class="form-group">
-												<div class="input-group date" id="datepicker1" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
+											<div id="Awards">
+												<div class="form-group">
+													<input type="text" name="" class="form-control" placeholder="Enter name of award">
+												</div>
+												<div class="form-group">
+													<input type="text" name="" class="form-control" placeholder="Enter details">
+												</div>
+												<div class="form-group">
+													<input type="text" name="" class="form-control" placeholder="Awarded by body">
+												</div>
+												<div class="form-group">
+													<div class="input-group date" id="datepicker1" data-date="02-2012" 
+													         data-date-format="mm-yyyy">
 
-													 <input class="form-control" type="text" placeholder="Year awarded  " readonly="readonly" name="date" >	  
-													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+														 <input class="form-control" type="text" placeholder="Year awarded  " readonly="readonly" name="date" >	  
+														 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+													</div>
 												</div>
 											</div>
 											<div class="form-group">
 												<div class="input_fields_piste">
-												    <button class="btn btn-primary" id="add_field_piste">Add another award</button>
-												    <div></div>
+												    <button type="button" class="btn btn-primary" id="add_award">Add another award</button>
 												</div>
 											</div>
 										</div>
@@ -240,19 +294,20 @@
 												<input type="text" name="" class="form-control" placeholder="Enter profile title">
 											</div>
 											<div class="form-group">
-												<input type="number" name="" class="form-control" placeholder="Construction value ">
+												<input type="number" name="" id="consvalue" class="form-control" placeholder="Construction value ">
 											</div>
 
 										<div class="form-group">
-								               <input type="checkbox" name="" value="cheked" class="filled-in" id="check12" >     <label for="check12">Value Confidential </label>
+								               <input type="checkbox" name="" value="cheked" class="filled-in" id="valconfi" ><label for="valconfi">Value Confidential </label>
 							              </div>
 							              <div class="form-group">
 												<textarea cols="4" rows="5" id="textarea" maxlength="2000" placeholder="Enter description of the project  "></textarea>
   												<span id="rchars">2000</span> 
 											</div>
 											<div class="form-group">													
-												<img id="uploadPreview7" style="width: 100px; height: 100px;" />
-											<input id="uploadImage7" type="file" name="myPhoto" onchange="PreviewImage7();" />
+												{{-- <img id="uploadPreview7" style="width: 100px; height: 100px;" /> --}}
+												<label for="uploadImage7s">Upload Images</label>
+												<input id="uploadImage7s" type="file" name="upimages[]" multiple accept='image/*'name="myPhoto" />
 						                    </div>
 							
 											<div class="form-group">
@@ -1922,6 +1977,36 @@ $('textarea').keyup(function() {
 			}
 		});
 
+		$('#valconfi').click(function(e)
+			{
+				if ($(this).is(':checked')) {
+					$('#consvalue').prop('readonly', true);
+				}
+				else{
+					$('#consvalue').prop('readonly', false);
+				}
+			});
+
+		$('#uploadImage7s').change(function()
+		{
+			var $fileUpload = $("#uploadImage7s");
+            if (parseInt($fileUpload.get(0).files.length) > 10){
+                alert("You are only allowed to upload a maximum of 10 files");
+                $("#uploadImage7s").val('');
+            }
+            else{
+            	var fileup = $("#uploadImage7s")[0].files;
+            	var i;
+            	for (i = 0; i < fileup.length; i++) { 
+            	    var imgname = fileup[i].name.split('.').pop().toLowerCase();;
+            	    if($.inArray(imgname, ['gif','png','jpg','jpeg']) == -1)
+            	    {
+            	    	alert("Invalid file type");
+            	    }
+            	}
+            }
+		});
+
 		$('#submitfrm').click(function()
 		{
 			$("#pngsubmit").modal('toggle');
@@ -1969,6 +2054,25 @@ $('textarea').keyup(function() {
         return valid;
     }
     });
+</script>
+<script type="text/javascript">
+	function showadd(){
+		$('.hid').css('display','block');
+		$('.notherbut').css('display','none');
+	};
+	function addservice()
+	{
+		var ival = $('.adserv').val();
+		ival = ival.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+		    return letter.toUpperCase();
+		});
+		var out = "<li><div class='form-check'><label><input type='checkbox' checked name='offeredservices[]' value='"+ival+"'><span class='label-text'>"+ival+"</span></label></div></li>";
+		$('ul#servicelist').append(out);
+
+		$('.hid').css('display','none');
+		$('.notherbut').css('display','block');
+		$('.adserv').val('');
+	}
 </script>
 <!-- end -->
 

@@ -15,7 +15,7 @@
 	<div class="container">
 
   <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1">View Bid</button>
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-backdrop="static" data-target="#myModal1">View Bid</button>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal1" role="dialog">
@@ -91,7 +91,7 @@
 <div class="container">
 
   <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">View Bid</button>
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-backdrop="static" data-target="#myModal2">View Bid</button>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal2" role="dialog">

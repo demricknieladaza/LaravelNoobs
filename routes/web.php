@@ -64,3 +64,5 @@ Route::get('/dashboard/comp_indi', 'UsersController@comp_indi_controller');
 Route::get('/dashboard/organisation', 'UsersController@organisation_controller');
 
 Route::get('/dashboard/individuals', 'UsersController@individuals_controller');
+
+Route::resource('project_info','ProjectInformationController');

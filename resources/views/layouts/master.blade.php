@@ -294,8 +294,8 @@
                             <li><a href="{{ url('/publish') }}" class="highlight">Publish Projects</a></li>    
                             <li><a href="{{ url('/winwork') }}" class="highlight">Win Work</a></li>
                         @else
-                            <li><a data-toggle="modal" href="#myModal" class="highlight">Publish Projects</a></li>    
-                            <li><a data-toggle="modal" href="#myModal" class="highlight">Win Work</a></li>
+                            <li><a data-toggle="modal" href="#myModal" data-backdrop="static"  class="highlight">Publish Projects</a></li>    
+                            <li><a data-toggle="modal" href="#myModal" data-backdrop="static" class="highlight">Win Work</a></li>
                         @endif
                         
                         @if(Route::currentRouteName()=='Landing' )
@@ -312,7 +312,7 @@
                             <li><a href="{{ url('/') }}">contact</a></li>
                         @endif
                         @if(Session::has('fullname'))
-                            <li class="dropdown"><a href="" class="highlight">SCOPE Business Lounge</a>
+                            <li class="dropdown"><a class="highlight">SCOPE Business Lounge</a>
                                 <div class="dropdown-content">
                                   <a href="{{ url('/dashboard/emp_dashboard') }}">Employer Dashboard</a>
                                   <a href="{{ url('/dashboard/tend_dashboard') }}">Tenderer Dashboard</a>
@@ -321,11 +321,11 @@
                                   <a href="#">Individuals</a>
                                   <a href="{{ url('/dashboard/users') }}">Users</a>
                                   <a href="{{ url('/dashboard/membership') }}">Membership</a>
-                                  <a href="{{ url('logout') }}">Logout</a>
+                                  <a href="{{ url('logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
                                 </div>
                             </li>
                         @else
-                            <li><a data-toggle="modal" href="#myModal" class="highlight">Login/register</a></li>
+                            <li><a data-toggle="modal" href="#myModal" data-backdrop="static" class="highlight">Login/register</a></li>
                         @endif
                     </ul>
                 </div>

@@ -2,19 +2,19 @@
 
  @section('content')
 	<style>
-	.dropbtn {
+	.dropbtnmod {
 	    color: white;
 	    padding: 16px;
 	    font-size: 16px;
 	    border: none;
 	}
 
-	.dropdown {
+	.dropdownmod {
 	    position: relative;
 	    display: inline-block;
 	}
 
-	.dropdown-content {
+	.dropdownmod-content {
 	    display: none;
 	    position: relative;
 	    background-color: #f1f1f1;
@@ -24,16 +24,16 @@
 	    margin-bottom: 15px;
 	}
 
-	.dropdown-content a {
+	.dropdownmod-content a {
 	    color: black;
 	    padding: 12px 16px;
 	    text-decoration: none;
 	    display: block;
 	}
 
-	.dropdown:hover .dropdown-content {display: block;}
+	.dropdownmod:hover .dropdownmod-content {display: block;}
 
-	.dropdown:hover {
+	.dropdownmod:hover {
 		transform: scale(1.1);
 	}
 	</style>
@@ -191,11 +191,11 @@
 									<h4>Active Projects  <span class="project1">2</span></h4>
 									<div class="row">
 										<div class="hover-container-holder">
-											<div class="tender-tile-single dropdown">
-												<div class="tender-tiles thin dropbtn">
+											<div class="tender-tile-single dropdownmod">
+												<div class="tender-tiles thin dropbtnmod">
 													<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>		
 												</div>
-												<div class="dropdown-content">
+												<div class="dropdownmod-content">
 											    <div class="row table-tender-details">
 											    	<div class="col-sm-6 table-left">
 											    		<table class="table table-hover table-striped">
@@ -240,11 +240,11 @@
 											    </div>
 											  </div>
 											</div>
-											<div class="tender-tile-single dropdown">
-												<div class="tender-tiles thin dropbtn">
+											<div class="tender-tile-single dropdownmod">
+												<div class="tender-tiles thin dropbtnmod">
 													<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>
 												</div>
-												<div class="dropdown-content">
+												<div class="dropdownmod-content">
 											    <div class="row table-tender-details">
 											    	<div class="col-sm-6 table-left">
 											    		<table class="table table-hover table-striped">
@@ -289,11 +289,11 @@
 											    </div>
 											  </div>
 											</div>
-											<div class="tender-tile-single dropdown">
-												<div class="tender-tiles thin dropbtn">
+											<div class="tender-tile-single dropdownmod">
+												<div class="tender-tiles thin dropbtnmod">
 													<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>
 												</div>
-												<div class="dropdown-content">
+												<div class="dropdownmod-content">
 											    <div class="row table-tender-details">
 											    	<div class="col-sm-6 table-left">
 											    		<table class="table table-hover table-striped">
@@ -346,11 +346,11 @@
 									<h4>Closed Projects  <span class="project1">2</span></h4>
 									<div class="row">
 										<div class="hover-container-holder">
-											<div class="tender-tile-single dropdown">
-												<div class="tender-tiles thin dropbtn">
+											<div class="tender-tile-single dropdownmod">
+												<div class="tender-tiles thin dropbtnmod">
 													<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>
 												</div>
-												<div class="dropdown-content">
+												<div class="dropdownmod-content">
 											    <div class="row table-tender-details">
 											    	<div class="col-sm-6 table-left">
 											    		<table class="table table-hover table-striped">
@@ -395,11 +395,11 @@
 											    </div>
 											  </div>
 											</div>
-											<div class="tender-tile-single dropdown">
-												<div class="tender-tiles thin dropbtn">
+											<div class="tender-tile-single dropdownmod">
+												<div class="tender-tiles thin dropbtnmod">
 													<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>
 												</div>
-												<div class="dropdown-content">
+												<div class="dropdownmod-content">
 											    <div class="row table-tender-details">
 											    	<div class="col-sm-6 table-left">
 											    		<table class="table table-hover table-striped">
@@ -444,11 +444,11 @@
 											    </div>
 											  </div>
 											</div>
-											<div class="tender-tile-single dropdown">
-												<div class="tender-tiles thin dropbtn">
+											<div class="tender-tile-single dropdownmod">
+												<div class="tender-tiles thin dropbtnmod">
 													<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>
 												</div>
-												<div class="dropdown-content">
+												<div class="dropdownmod-content">
 											    <div class="row table-tender-details">
 											    	<div class="col-sm-6 table-left">
 											    		<table class="table table-hover table-striped">
