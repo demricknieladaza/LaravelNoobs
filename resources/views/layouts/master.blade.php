@@ -248,6 +248,18 @@
           options: chartOptions
         });
     </script>
+    <script type="text/javascript">
+        $(document).on("click", ".open-log", function () {
+             var myBookId = $(this).data('id');
+             // $(".modal-body #bookId").val( myBookId );
+             // alert( myBookId );
+             $("#id").val(myBookId);
+             $("#id2").val(myBookId);
+             // As pointed out in comments, 
+             // it is superfluous to have to manually call the modal.
+             // $('#addBookDialog').modal('show');
+        });
+    </script>
     
     <style type="text/css">
         @font-face {
@@ -294,8 +306,8 @@
                             <li><a href="{{ url('/publish') }}" class="highlight">Publish Projects</a></li>    
                             <li><a href="{{ url('/winwork') }}" class="highlight">Win Work</a></li>
                         @else
-                            <li><a data-toggle="modal" href="#myModal" data-backdrop="static"  class="highlight">Publish Projects</a></li>    
-                            <li><a data-toggle="modal" href="#myModal" data-backdrop="static" class="highlight">Win Work</a></li>
+                            <li><a data-toggle="modal" href="#myModal" data-backdrop="static"  data-id="pub" class="highlight open-log">Publish Projects</a></li>    
+                            <li><a data-toggle="modal" href="#myModal" data-backdrop="static" data-id="win" class="highlight open-log" >Win Work</a></li>
                         @endif
                         
                         @if(Route::currentRouteName()=='Landing' )
@@ -366,6 +378,7 @@
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                                             <input type="password" id="lpassword" class="form-control" placeholder="Password" name="" required="">
+                                            <input type="hidden" id="id" class="form-control" name="" >
                                         </div>
                                     </div>
                                 </div>
@@ -429,6 +442,7 @@
                                     <label class="col-sm-3 control-label">Password</label>
                                     <div class="col-sm-8">
                                         <input type="password" class="form-control" id="password" name="password" required="" data-msg-required="Please enter your password">
+                                        <input type="hidden" id="id2" class="form-control" name="" >
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -1490,7 +1504,16 @@
                    // jQuery('.alertss').show();
                    // jQuery('.alertss').html(result.success);
                    if(result.success=='naa'){
-                        window.location.href = "{{ url('/dashboard/emp_dashboard') }}";
+                        if(jQuery('#id').val() == 'pub'){
+                            window.location.href = "{{ url('/publish') }}";
+                        }
+                        else if(jQuery('#id').val() == 'win'){
+                            window.location.href = "{{ url('/winwork') }}";
+                        }
+                        else{
+                            window.location.href = "{{ url('/dashboard/emp_dashboard') }}";
+                        }   
+                       
                    }
                    else
                    {

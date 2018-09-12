@@ -39,7 +39,17 @@
 	  padding: 0;
 	  list-style: none;
 	}
-	.hid {
+	.hid.adserv {
+		display: none;
+	}
+	ul.typeofuse {
+	  columns: 2;
+	  -webkit-columns: 2;
+	  -moz-columns: 2;
+	  padding: 0;
+	  list-style: none;
+	}
+	.hid.adtypeofuse {
 		display: none;
 	}
 </style>
@@ -246,7 +256,7 @@
 											<div class="form-group divaddservbid">
 												<input type="text" class="form-control hid adserv" name="adserv">
 											    <button type="button" class="btn btn-primary notherbut" onclick="showadd()">Add another service</button>
-											    <button type="button" class="btn btn-primary hid" id="addservicebut" onclick="addservice()">Add Service</button>
+											    <button type="button" class="btn btn-primary hid adserv" id="addservicebut" onclick="addservice()">Add Service</button>
 											</div>
 										</div>
 									</div>
@@ -306,11 +316,37 @@
 											</div>
 											<div class="form-group">													
 												{{-- <img id="uploadPreview7" style="width: 100px; height: 100px;" /> --}}
-												<label for="uploadImage7s">Upload Images</label>
+												<label for="uploadImage7s"><strong>Upload Images</strong></label>
 												<input id="uploadImage7s" type="file" name="upimages[]" multiple accept='image/*'name="myPhoto" />
 						                    </div>
-							
-											<div class="form-group">
+						                    <label for="typeofuse"><strong>Type of use</strong></label>
+											<ul id="typeofuse" class="typeofuse">
+											<?php
+											$Service = array(
+												"Residential","Commercial ","Retail","Leisure","Sports and Venues","Hotel","Industrial","Education","Healthcare","Defence","Aviation","Highways","Bridges","Rail","Water","Oil,Gas and Chemical"
+											);
+											sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
+											foreach ($Service as $key ) {
+											    echo "<li><div class='form-check'>
+														<label>
+															<input type='checkbox' name='typeofuse[]' value='".$key."'><span class='label-text'>".$key."</span>
+														</label>
+													</div></li>";
+											}
+
+											?>
+											</ul>
+											{{-- <div class="form-check">
+												<label>
+													<input type="checkbox" name="other"> <span class="label-text">Other</span>
+												</label>
+											</div> --}}
+											<div class="form-group divaddservtypeofuse">
+												<input type="text" class="form-control hid adtypeofuse" name="adserv">
+											    <button type="button" class="btn btn-primary notherbuttypeofuse" onclick="showaddtype()">Add another type of use</button>
+											    <button type="button" class="btn btn-primary hid adtypeofuse" id="addservicebut" onclick="addtypeofuse()">Add type of use</button>
+											</div>
+											{{-- <div class="form-group">
 													<select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select Type of Use</option>
 													<option>Residential</option>
@@ -337,7 +373,7 @@
 												    <button class="btn btn-primary" id="add_field_types">Add another types of use</button>
 												    <div></div>
 												</div>
-											</div>
+											</div> --}}
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select Service</option>
@@ -2058,7 +2094,7 @@ $('textarea').keyup(function() {
 </script>
 <script type="text/javascript">
 	function showadd(){
-		$('.hid').css('display','block');
+		$('.hid.adserv').css('display','block');
 		$('.notherbut').css('display','none');
 	};
 	function addservice()
@@ -2070,9 +2106,27 @@ $('textarea').keyup(function() {
 		var out = "<li><div class='form-check'><label><input type='checkbox' checked name='offeredservices[]' value='"+ival+"'><span class='label-text'>"+ival+"</span></label></div></li>";
 		$('ul#servicelist').append(out);
 
-		$('.hid').css('display','none');
+		$('.hid.adserv').css('display','none');
 		$('.notherbut').css('display','block');
 		$('.adserv').val('');
+	}
+
+	function showaddtype(){
+		$('.hid.adtypeofuse').css('display','block');
+		$('.notherbuttypeofuse').css('display','none');
+	};
+	function addtypeofuse()
+	{
+		var ival = $('.adtypeofuse').val();
+		ival = ival.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+		    return letter.toUpperCase();
+		});
+		var out = "<li><div class='form-check'><label><input type='checkbox' checked name='offeredservices[]' value='"+ival+"'><span class='label-text'>"+ival+"</span></label></div></li>";
+		$('ul#typeofuse').append(out);
+
+		$('.hid.adtypeofuse').css('display','none');
+		$('.notherbuttypeofuse').css('display','block');
+		$('.adtypeofuse').val('');
 	}
 </script>
 <!-- end -->
