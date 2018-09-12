@@ -2400,3 +2400,10 @@ input.form-control.proje::-webkit-input-placeholder {
 .form-control[readonly] {
     background: none;
 }*/
+
+#tender-queries > div > div > div.toactive.pull-right{
+    border: 1px solid #fe7235;
+    padding: 9px;
+    border-radius: 6px;
+    width: 31%;
+}
