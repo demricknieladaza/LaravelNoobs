@@ -52,6 +52,16 @@
 	.hid.adtypeofuse {
 		display: none;
 	}
+	ul.typeofdev {
+	  columns: 2;
+	  -webkit-columns: 2;
+	  -moz-columns: 2;
+	  padding: 0;
+	  list-style: none;
+	}
+	.hid.adtypeofdev {
+		display: none;
+	}
 </style>
 	<div class="modal fade" id="Modal" role="dialog">
 	    <div class="modal-dialog">
@@ -275,7 +285,7 @@
 													<input type="text" name="" class="form-control" placeholder="Enter details">
 												</div>
 												<div class="form-group">
-													<input type="text" name="" class="form-control" placeholder="Awarded by body">
+													<input type="text" name="" class="form-control" placeholder="Awarded by">
 												</div>
 												<div class="form-group">
 													<div class="input-group date" id="datepicker1" data-date="02-2012" 
@@ -310,15 +320,7 @@
 										<div class="form-group">
 								               <input type="checkbox" name="" value="cheked" class="filled-in" id="valconfi" ><label for="valconfi">Value Confidential </label>
 							              </div>
-							              <div class="form-group">
-												<textarea cols="4" rows="5" id="textarea" maxlength="2000" placeholder="Enter description of the project  "></textarea>
-  												<span id="rchars">2000</span> 
-											</div>
-											<div class="form-group">													
-												{{-- <img id="uploadPreview7" style="width: 100px; height: 100px;" /> --}}
-												<label for="uploadImage7s"><strong>Upload Images</strong></label>
-												<input id="uploadImage7s" type="file" name="upimages[]" multiple accept='image/*'name="myPhoto" />
-						                    </div>
+							              
 						                    <label for="typeofuse"><strong>Type of use</strong></label>
 											<ul id="typeofuse" class="typeofuse">
 											<?php
@@ -417,7 +419,29 @@
 												    <div></div>
 												</div>
 											</div>
-											<div class="form-group">
+											<label for="typeofdev"><strong>Select Type of Development</strong></label>
+											<ul id="typeofdev" class="typeofdev">
+											<?php
+											$Service = array(
+												"New Built","Refurbishment ","Demolition"
+											);
+											sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
+											foreach ($Service as $key ) {
+											    echo "<li><div class='form-check'>
+														<label>
+															<input type='checkbox' name='typeofdev[]' value='".$key."'><span class='label-text'>".$key."</span>
+														</label>
+													</div></li>";
+											}
+
+											?>
+											</ul>
+											<div class="form-group divaddservtypeofdev">
+												<input type="text" class="form-control hid adtypeofdev" name="addev">
+											    <button type="button" class="btn btn-primary notherbuttypeofdev" onclick="showaddtypedev()">Add another type of Development</button>
+											    <button type="button" class="btn btn-primary hid adtypeofdev" id="adddevbut" onclick="addtypeofdev()">Add type of development</button>
+											</div>
+											{{-- <div class="form-group">
 												<select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select Type of Development</option>
 													<option>New Built</option>
@@ -428,10 +452,16 @@
 											<div class="input_fields_type">
 												    <button class="btn btn-primary" id="add_field_type">Add another type</button>
 												    <div></div>
-											</div><br>
+											</div><br> --}}
 													
-											<div class="form-group">									 <img id="uploadPreview8" style="width: 100px; height: 100px;" />
-											     <input id="uploadImage8" type="file" name="myPhoto" onchange="PreviewImage8();" />
+											<div class="form-group">
+												<textarea cols="4" rows="5" id="textarea" maxlength="2000" placeholder="Enter description of the project  "></textarea>
+  												<span id="rchars">2000</span> 
+											</div>
+											<div class="form-group">													
+												{{-- <img id="uploadPreview7" style="width: 100px; height: 100px;" /> --}}
+												<label for="uploadImage7s"><strong>Upload Images</strong></label>
+												<input id="uploadImage7s" type="file" name="upimages[]" multiple accept='image/*'name="myPhoto" />
 						                    </div>
 						                    <div class="form-group">
 												<select name="Sel"  class="form-control" >
@@ -2099,12 +2129,14 @@ $('textarea').keyup(function() {
 	};
 	function addservice()
 	{
-		var ival = $('.adserv').val();
-		ival = ival.toLowerCase().replace(/\b[a-z]/g, function(letter) {
-		    return letter.toUpperCase();
-		});
-		var out = "<li><div class='form-check'><label><input type='checkbox' checked name='offeredservices[]' value='"+ival+"'><span class='label-text'>"+ival+"</span></label></div></li>";
-		$('ul#servicelist').append(out);
+		var ival = $.trim($('.adserv').val());
+		if( ival.length != "" ){
+			ival = ival.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+			    return letter.toUpperCase();
+			});
+			var out = "<li><div class='form-check'><label><input type='checkbox' checked name='offeredservices[]' value='"+ival+"'><span class='label-text'>"+ival+"</span></label></div></li>";
+			$('ul#servicelist').append(out);
+		}
 
 		$('.hid.adserv').css('display','none');
 		$('.notherbut').css('display','block');
@@ -2117,16 +2149,38 @@ $('textarea').keyup(function() {
 	};
 	function addtypeofuse()
 	{
-		var ival = $('.adtypeofuse').val();
-		ival = ival.toLowerCase().replace(/\b[a-z]/g, function(letter) {
-		    return letter.toUpperCase();
-		});
-		var out = "<li><div class='form-check'><label><input type='checkbox' checked name='offeredservices[]' value='"+ival+"'><span class='label-text'>"+ival+"</span></label></div></li>";
-		$('ul#typeofuse').append(out);
+		var ival = $.trim($('.adtypeofuse').val());
+		if( ival.length != "" ){
+			ival = ival.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+			    return letter.toUpperCase();
+			});
+			var out = "<li><div class='form-check'><label><input type='checkbox' checked name='typeofuse[]' value='"+ival+"'><span class='label-text'>"+ival+"</span></label></div></li>";
+			$('ul#typeofuse').append(out);
+		}
 
 		$('.hid.adtypeofuse').css('display','none');
 		$('.notherbuttypeofuse').css('display','block');
 		$('.adtypeofuse').val('');
+	}
+
+	function showaddtypedev(){
+		$('.hid.adtypeofdev').css('display','block');
+		$('.notherbuttypeofdev').css('display','none');
+	};
+	function addtypeofdev()
+	{
+		var ival = $.trim($('.adtypeofdev').val());
+		if( ival.length != "" ){
+			ival = ival.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+			    return letter.toUpperCase();
+			});
+			var out = "<li><div class='form-check'><label><input type='checkbox' checked name='typeofdev[]' value='"+ival+"'><span class='label-text'>"+ival+"</span></label></div></li>";
+			$('ul#typeofdev').append(out);
+		}
+
+		$('.hid.adtypeofdev').css('display','none');
+		$('.notherbuttypeofdev').css('display','block');
+		$('.adtypeofdev').val('');
 	}
 </script>
 <!-- end -->
