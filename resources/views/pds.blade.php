@@ -331,7 +331,7 @@
 							</div>
 						</div>
 						<div class="toactive pull-right">
-							To submit a tender query, please scroll up to <a href="#actTinder" style="color:#fe7235;">Active Tenders</a> 
+							To submit a tender query, please scroll up to <a href="#actTinder" style="color:#fe7235; text-decoration: none;">Active Tenders</a> 
 						</div>
 					</div>
 				</div>

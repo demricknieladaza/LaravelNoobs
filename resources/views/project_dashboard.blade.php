@@ -882,7 +882,7 @@
 											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
 											  </tr>
 											  <tr>
-											    <td>Project Brief/td>
+											    <td>Project Brief</td>
 											     <td contenteditable='true'></td>
 											     <td contenteditable='true'></td>
 											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
