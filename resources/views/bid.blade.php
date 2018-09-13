@@ -62,7 +62,12 @@
 	.hid.adtypeofdev {
 		display: none;
 	}
+	.pointerev{
+		pointer-events: none;
+	}
 </style>
+
+
 	<div class="modal fade" id="Modal" role="dialog">
 	    <div class="modal-dialog">
 	    
@@ -189,7 +194,7 @@
 							</div>
 							</div>						
 							<div class="form-group butcent">
-								<input id="sec2" type="submit" data-toggle="tab" href="#section2" name="Next" value="Next" class="nbtn disabled btn btn-primary butsize">
+								<input id="sec2" type="submit" data-toggle="tab" href="#section2" name="Next" value="Next" class="nbtn disabled btn btn-primary butsize pointerev">
 							</div>
 						
 					</div>
@@ -518,7 +523,7 @@
 										</div>
 									</div>
 									<div class="form-group butcent">
-										<button type="button" id="checkinpbut2" name="Next" class="btn btn-primary butsize ">Next</button>
+										<button type="button" data-toggle="tab" href="#section3" id="checkinpbut2" name="Next" class="btn btn-primary butsize ">Next</button>
 										<button type="button" name="Save" value="Save" class="btn  butsize color">Save</button>
 									</div>
 									
@@ -757,7 +762,7 @@
 											</div>
 									</div><br>
 									<div class="form-group butcent">
-										<button type="button" id="checkinpbut" name="Next" class="btn btn-primary butsize ">Next</button>
+										<button type="button" data-toggle="tab" href="#section4" id="checkinpbut" name="Next" class="btn btn-primary butsize ">Next</button>
 										<button type="button" name="Save" value="Save" class="btn  butsize color">Save</button>
 									</div>
 								</div>
@@ -835,7 +840,7 @@
 									</div><br>
 									
 									<div class="form-group butcent">
-										<button type="button" id="checkinpbut3" name="Next" class="btn btn-primary butsize ">Next</button>
+										<button type="button" data-toggle="tab" href="#section5" id="checkinpbut3" name="Next" class="btn btn-primary butsize ">Next</button>
 										<button type="button" name="Save" value="Save" class="btn  butsize color">Save</button>
 										
 									</div>
@@ -847,8 +852,72 @@
 					</div>
 					<div id="section5" class="tab-pane fade tender-container">
 						<h3 class="bid-form-title">Scope</h3>
-						
-							<div class="row">
+
+						<p style="padding: 18px; border: 1px solid grey;border-radius: 6px;">
+						<b>Note: Instruction Section</b> <br>
+						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+						{{-- 
+						<div class="down">
+							<a download="Book-Scope.xlsx" href="{{asset('css/scopexl/Book-Scope.xlsx')}} "><i class="fa fa-download"> Download</i></a>
+						</div> --}}
+
+						<div class="row downloader" style="    display: flex;     padding: 25px;">
+						  <img
+						  	style="width: 150px;height: 150px;"
+						    alt="excel-logo"
+						    class="excel"
+						    src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Microsoft_Excel_2013_logo.svg/2000px-Microsoft_Excel_2013_logo.svg.png" />
+						  <div class="download_icon">
+						    <p>
+						     <a download="Book-Scope.xlsx" href="{{asset('css/scopexl/Book-Scope.xlsx')}} "><i class="fa fa-download"> Download</i></a>
+						    </p>
+						    <p class="download_para">
+						      <small>Lorem <abbr title="Download">DL</abbr>.  It has survived not only five centuries, but also the leap into electronic typesetting</small>
+						    </p>
+						  </div>
+						</div><br>
+
+						<p style="padding: 18px; border: 1px solid grey;border-radius: 6px;">
+						<b>Note: Instruction Section</b> <br>
+						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+						<div class="row" style="padding: 30px; background: antiquewhite;">
+							{{-- <form method="POSt" enctype="multipart/form-data" action="upload.php">
+								<input type="file" name="file" value="Upload">
+								<input type="submit" value="Upload">
+							</form> --}}
+
+							<form id="upload" action="index.html" method="POST" enctype="multipart/form-data">
+
+							<fieldset>
+							<legend>Upload Excel File</legend>
+
+							<input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
+
+							<div>
+								<label for="fileselect">File to upload:</label>
+								<input type="file" id="fileselect" name="fileselect[]" />
+								<div id="filedrag">or drop file here</div>
+							</div>
+
+							{{-- <div id="submitbutton">
+								<button type="submit">Upload Files</button>
+							</div> --}}
+
+							</fieldset>
+
+							</form>
+
+							<div id="messages">
+							<p>Status Messages</p>
+							</div>
+
+						</div><br> 
+
+
+
+
+							{{-- <div class="row">
 								<div class="col-sm-12">
 									<table id="customers1">
 											  <tr>
@@ -1022,8 +1091,8 @@
 											</table><br>
 											 <button type="button" class="btn btn-info">Add another Lines</button>
 								</div>
-							</div><br>
-							<div class="row">
+							</div><br> --}}
+							{{-- <div class="row">
 								<div class="col-sm-12">
 									<table id="Riba1" style="overflow-x:auto;">
 											  <tr>
@@ -1121,8 +1190,8 @@
 										</table><br>
 										<button type="button" class="btn btn-primary">Add another Lines</button>
 								</div>
-							</div><br>
-							<div class="row">
+							</div><br> --}}
+							{{-- <div class="row">
 								<div class="col-sm-12">
 									<table id="Content">
 											  <tr>
@@ -1154,8 +1223,8 @@
 										</table><br>
 										<button type="button" class="btn btn-info">Add another Lines</button>
 								</div>
-							</div><br>
-								<div class="row">
+							</div><br> --}}
+								{{-- <div class="row">
 								<div class="col-sm-12">
 									<table id="Stages1">
 											  <tr>
@@ -1451,11 +1520,13 @@
 										</table><br>
 										<button type="button" class="btn btn-success">Add another Lines</button>
 								</div>
-								<div class="form-group butcent">
-									<button type="button" id="checkinpbut4" name="Next" class="btn btn-primary butsize ">Next</button>
-									<button type="button" name="Save" value="Save" class="btn  butsize color">Save</button>
-								</div>
-							</div><br>
+								
+							</div><br> --}}
+
+							<div class="form-group butcent">
+								<button type="button" data-toggle="tab" href="#section6" id="checkinpbut4" name="Next" class="btn btn-primary butsize ">Next</button>
+								<button type="button" name="Save" value="Save" class="btn  butsize color">Save</button>
+							</div>
 						
 					</div>
 
@@ -1711,7 +1782,7 @@
 									</div><br>
 									
 									<div class="form-group butcent">
-										<button type="button" id="checkinpbut5" name="Next" class="btn btn-primary butsize ">Next</button>
+										<button type="button" data-toggle="tab" href="#section7" id="checkinpbut5" name="Next" class="btn btn-primary butsize ">Next</button>
 										<button type="button" name="Save" value="Save" class="btn  butsize color">Save</button>
 										
 									</div>
@@ -1720,7 +1791,7 @@
 						</div>
 					</div>
 					</div>
-					<div id="section7" class="tab-pane fade tender-container">
+					<div id="section7" class="tab-pane fade tender-container" style="margin-bottom: 117px;">
 						<h3 class="bid-form-title">Quality Assurance</h3>
 						
 							<div class="row">
@@ -1915,6 +1986,7 @@ $('textarea').keyup(function() {
 
 	});
 </script>
+
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('.tata').click(function()
@@ -1923,32 +1995,35 @@ $('textarea').keyup(function() {
 				if(ch){
 					// alert('okna');
 					$(".nbtn").removeClass("disabled");
-					$("li.active").next().removeClass("disd");
+					$(".nbtn").removeClass("pointerev");
 					// display sa modal
 					// $("#pngnext").modal('toggle');
 				}
 			}
 		);
 		$('#sec2').click(function(){
+			$("li.disd").next().removeClass("disd");
 			var list = $("li.active");
 			$("li.active a i.checkerg").removeClass("hidecheck");
 			$("li.active").next('li').addClass("active");
+			$("li.active").next().removeClass("disd");
 			list.removeClass("active");
 
 			$(".tender-container.active.in").find('.inputscheck').addClass("disd");
+			
 
 		});
 
 		$('#checkinpbut').click(function(e)
 		{
-			var validation = validateFormSection();
-			if(validation){
+			// var validation = validateFormSection();
+			// if(validation){
 				var list = $("li.active");
-				$("li.active a i.checkerg").removeClass("hidecheck");
+				// $("li.active a i.checkerg").removeClass("hidecheck");
 				$("li.active").next('li').addClass("active");
 				list.removeClass("active");
 
-				$(".tender-container.active.in").find('.inputscheck').addClass("disd");
+				// $(".tender-container.active.in").find('.inputscheck').addClass("disd");
 
 				
 
@@ -1959,19 +2034,17 @@ $('textarea').keyup(function() {
 				divi.removeClass("in");
 
 
-			}
+			// }
 		});
 
 		$('#checkinpbut2').click(function()
 		{
-			var validation = validateFormSection();
-			if(validation){
 				var list = $("li.active");
-				$("li.active a i.checkerg").removeClass("hidecheck");
+				// $("li.active a i.checkerg").removeClass("hidecheck");
 				$("li.active").next('li').addClass("active");
 				list.removeClass("active");
 
-				$(".tender-container.active.in").find('.inputscheck').addClass("disd");
+				// $(".tender-container.active.in").find('.inputscheck').addClass("disd");
 
 				var divi = $(".tender-container.active.in");
 				$(".tender-container.active.in").next().addClass("active");
@@ -1979,19 +2052,16 @@ $('textarea').keyup(function() {
 				divi.removeClass("active");
 				divi.removeClass("in");
 
-			}
 		});
 
 		$('#checkinpbut3').click(function()
 		{
-			var validation = validateFormSection();
-			if(validation){
 				var list = $("li.active");
-				$("li.active a i.checkerg").removeClass("hidecheck");
+				// $("li.active a i.checkerg").removeClass("hidecheck");
 				$("li.active").next('li').addClass("active");
 				list.removeClass("active");
 
-				$(".tender-container.active.in").find('.inputscheck').addClass("disd");
+				// $(".tender-container.active.in").find('.inputscheck').addClass("disd");
 
 				var divi = $(".tender-container.active.in");
 				$(".tender-container.active.in").next().addClass("active");
@@ -1999,18 +2069,17 @@ $('textarea').keyup(function() {
 				divi.removeClass("active");
 				divi.removeClass("in");
 
-			}
 		});
 
 		$('#checkinpbut4').click(function()
 		{
 			var list = $("li.active");
 			$("li.active").next().removeClass("disd");
-			$("li.active a i.checkerg").removeClass("hidecheck");
+			// $("li.active a i.checkerg").removeClass("hidecheck");
 			$("li.active").next('li').addClass("active");
 			list.removeClass("active");
 
-			$(".tender-container.active.in").find('.inputscheck').addClass("disd");
+			// $(".tender-container.active.in").find('.inputscheck').addClass("disd");
 
 			var divi = $(".tender-container.active.in");
 			$(".tender-container.active.in").next().addClass("active");
@@ -2022,14 +2091,12 @@ $('textarea').keyup(function() {
 
 		$('#checkinpbut5').click(function(e)
 		{
-			var validation = validateFormSection();
-			if(validation){
 				var list = $("li.active");
-				$("li.active a i.checkerg").removeClass("hidecheck");
+				// $("li.active a i.checkerg").removeClass("hidecheck");
 				$("li.active").next('li').addClass("active");
 				list.removeClass("active");
 
-				$(".tender-container.active.in").find('.inputscheck').addClass("disd");
+				// $(".tender-container.active.in").find('.inputscheck').addClass("disd");
 
 				var divi = $(".tender-container.active.in");
 				$(".tender-container.active.in").next().addClass("active");
@@ -2037,10 +2104,6 @@ $('textarea').keyup(function() {
 				divi.removeClass("active");
 				divi.removeClass("in");
 
-			}
-			else{
-				e.stopPropagation();
-			}
 		});
 
 		$('#valconfi').click(function(e)
@@ -2184,6 +2247,96 @@ $('textarea').keyup(function() {
 	}
 </script>
 <!-- end -->
+
+
+<script type="text/javascript">
+	(function() {
+
+		// getElementById
+		function $id(id) {
+			return document.getElementById(id);
+		}
+
+
+		// output information
+		function Output(msg) {
+			var m = $id("messages");
+			m.innerHTML = msg + m.innerHTML;
+		}
+
+
+		// file drag hover
+		function FileDragHover(e) {
+			e.stopPropagation();
+			e.preventDefault();
+			e.target.className = (e.type == "dragover" ? "hover" : "");
+		}
+
+
+		// file selection
+		function FileSelectHandler(e) {
+
+			// cancel event and hover styling
+			FileDragHover(e);
+
+			// fetch FileList object
+			var files = e.target.files || e.dataTransfer.files;
+
+			// process all File objects
+			for (var i = 0, f; f = files[i]; i++) {
+				ParseFile(f);
+			}
+
+		}
+
+
+		// output file information
+		function ParseFile(file) {
+
+			Output(
+				"<p>File information: <strong>" + file.name +
+				"</strong> type: <strong>" + file.type +
+				"</strong> size: <strong>" + file.size +
+				"</strong> bytes</p>"
+			);
+
+		}
+
+
+		// initialize
+		function Init() {
+
+			var fileselect = $id("fileselect"),
+				filedrag = $id("filedrag"),
+				submitbutton = $id("submitbutton");
+
+			// file select
+			fileselect.addEventListener("change", FileSelectHandler, false);
+
+			// is XHR2 available?
+			var xhr = new XMLHttpRequest();
+			if (xhr.upload) {
+
+				// file drop
+				filedrag.addEventListener("dragover", FileDragHover, false);
+				filedrag.addEventListener("dragleave", FileDragHover, false);
+				filedrag.addEventListener("drop", FileSelectHandler, false);
+				filedrag.style.display = "block";
+
+				// remove submit button
+				submitbutton.style.display = "none";
+			}
+
+		}
+
+		// call initialization file
+		if (window.File && window.FileList && window.FileReader) {
+			Init();
+		}
+
+
+	})();
+</script>
 
 @endsection
 

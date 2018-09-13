@@ -162,8 +162,8 @@
 		    		<div class="row">
 		    			<div class="col-sm-12 project-anchor">
 		    				<a href="#">Project Details</a>
-		    				{{-- <a href="#tend">Tender Queries</a>
-		    				<a href="#emptab">Employer Details</a> --}}
+		    				<a href="#tend">Tender Queries</a>
+		    				<a href="#emptab">Employer Details</a>
 		    			</div>
 		    		</div>
 		    		<div class="tender-container">
@@ -406,7 +406,7 @@
 		    				</div>
 		    			</div>
 		    		</div>
-		    		{{-- <div class="tender-container" id="tend">
+		    		<div class="tender-container" id="tend">
 		    			<div class="row">
 		    				<div class="col-sm-12 active-tenders">
 		    					<h3>Tender Queries<button class="btn buts" onclick="myFunction1()" style="float: right;margin-top:-14px;"><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
@@ -442,8 +442,8 @@
 		    					</div>
 		    				</div>
 		    			</div>
-		    		</div> --}}
-					{{-- <div class="tender-container" id="emptab">
+		    		</div>
+					<div class="tender-container" id="emptab">
 						<div class="row">
 							<div class="col-sm-12 active-tenders">
 								<h3>Employer Details<button class="btn buts" onclick="myFunction2()" style="float: right;margin-top:-14px;"><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
@@ -497,7 +497,7 @@
 								</div>
 							</div>
 						</div>
-					</div> --}}
+					</div>
 
 		    	</div>
 

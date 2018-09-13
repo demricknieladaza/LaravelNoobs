@@ -29,6 +29,29 @@
 	  text-align: left;
 	}
 </style>
+<script type="text/javascript">
+	// $('#ex1').slider({
+	// 	formatter: function() {
+	// 		return 'Current value: ';
+	// 	}
+	// });
+
+	// Without JQuery
+	$(document).ready(function(){
+		var slider = new Slider('#ex1', {
+		tooltip:'always',
+		formatter: function(value) {
+			if (value == 101){
+				return 'Any';
+			}else{
+				return value;
+			}
+			// return 'Current value: ';
+		}
+	});
+	});
+	
+</script>
 	<div class="container search_filter wow fadeInDown" data-wow-duration="1s" data-wow-delay="200ms">
 		<div class="row top-row">
 			<form method="post">
@@ -125,6 +148,7 @@
 								<p></p>
 								<p><b>Location</b></p>
 								
+								
 								<!-- <p><input type="checkbox" class="filled-in" name="office" value="office" id="office"> <label for="office">Office</label></p>
 								<p><input type="checkbox" class="filled-in" name="residential" value="residential" id="residential"> <label for="residential">Residential</label></p>
 								<p><input type="checkbox" class="filled-in" name="retail" value="retail" id="retail"> <label for="retail">Retail</label></p> -->
@@ -132,8 +156,8 @@
 									<input type="text" name="location" class="form-control" placeholder="Enter your location">
 								</div>								
 								<div class="form-group">
-								 	<input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"/>
-								 	
+								 	{{-- <input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="101" data-slider-step="1" data-slider-value="0"/> --}}
+								 	<input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="101" data-slider-step="1" data-slider-value="0" />
 								</div>
 								<div class="formm-group">
 									<p><input type="submit" name="submit" value="Apply Filter" class="btn btn-lg btn-primary" style="border-radius:6px; "></p>
