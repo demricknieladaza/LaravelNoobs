@@ -854,8 +854,8 @@
 						<h3 class="bid-form-title">Scope</h3>
 
 						<p style="padding: 18px; border: 1px solid grey;border-radius: 6px;">
-						<b>Note: Instruction Section</b> <br>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+						<b>Note: Read first!</b> <br>
+						In order to complete this section, you have to download the excel file below. Afterwards, you have to fill out all the important information or fields needed. Please be informed that all the data you have  inputted will remain confidential.</p>
 						{{-- 
 						<div class="down">
 							<a download="Book-Scope.xlsx" href="{{asset('css/scopexl/Book-Scope.xlsx')}} "><i class="fa fa-download"> Download</i></a>
@@ -878,10 +878,10 @@
 						</div><br>
 
 						<p style="padding: 18px; border: 1px solid grey;border-radius: 6px;">
-						<b>Note: Instruction Section</b> <br>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+						<b>Note: Almost there!</b> <br>
+						Already done filling up the fields? Well you're almost done! Once, you have completed it. Kindly, submit or drag the excel file below. You are good to proceed now. Thank you!</p>
 
-						<div class="row" style="padding: 30px; background: antiquewhite;">
+						<div class="row" style="padding: 30px;">
 							{{-- <form method="POSt" enctype="multipart/form-data" action="upload.php">
 								<input type="file" name="file" value="Upload">
 								<input type="submit" value="Upload">

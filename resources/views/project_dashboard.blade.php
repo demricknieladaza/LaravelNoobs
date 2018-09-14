@@ -756,7 +756,70 @@
 		    				<div class="tab-content">
 		    					<div id="section11" class="tab-pane fade in active tender-container">
 		    						<h3 class="bid-form-title">Scope</h3>
-		    						<div class="row" style="margin: 0;">	
+
+		    						<p style="padding: 18px; border: 1px solid grey;border-radius: 6px;">
+		    						<b>Note: Read first!</b> <br>
+		    						In order to complete this section, you have to download the excel file below. Afterwards, you have to fill out all the important information or fields needed. Please be informed that all the data you have  inputted will remain confidential.</p>
+		    						{{-- 
+		    						<div class="down">
+		    							<a download="Book-Scope.xlsx" href="{{asset('css/scopexl/Book-Scope.xlsx')}} "><i class="fa fa-download"> Download</i></a>
+		    						</div> --}}
+
+		    						<div class="row downloader" style="    display: flex;     padding: 25px;">
+		    						  <img
+		    						  	style="width: 150px;height: 150px;"
+		    						    alt="excel-logo"
+		    						    class="excel"
+		    						    src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Microsoft_Excel_2013_logo.svg/2000px-Microsoft_Excel_2013_logo.svg.png" />
+		    						  <div class="download_icon">
+		    						    <p>
+		    						     <a download="Emp_Book-Scope.xlsx" href="{{asset('css/scopexl/Emp_Book-Scope.xlsx')}} "><i class="fa fa-download"> Download</i></a>
+		    						    </p>
+		    						    <p class="download_para">
+		    						      <small>Lorem <abbr title="Download">DL</abbr>.  It has survived not only five centuries, but also the leap into electronic typesetting</small>
+		    						    </p>
+		    						  </div>
+		    						</div><br>
+
+		    						<p style="padding: 18px; border: 1px solid grey;border-radius: 6px;">
+		    						<b>Note: Almost there!</b> <br>
+		    						Already done filling up the fields? Well you're almost done! Once, you have completed it. Kindly, submit or drag the excel file below. You are good to proceed now. Thank you!</p>
+
+		    						<div class="row" style="padding: 30px; ">
+		    							{{-- <form method="POSt" enctype="multipart/form-data" action="upload.php">
+		    								<input type="file" name="file" value="Upload">
+		    								<input type="submit" value="Upload">
+		    							</form> --}}
+
+		    							<form id="upload" action="index.html" method="POST" enctype="multipart/form-data">
+
+		    							<fieldset>
+		    							<legend>Upload Excel File</legend>
+
+		    							<input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
+
+		    							<div>
+		    								<label for="fileselect">File to upload:</label>
+		    								<input type="file" id="fileselect" name="fileselect[]" />
+		    								<div id="filedrag">or drop file here</div>
+		    							</div>
+
+		    							{{-- <div id="submitbutton">
+		    								<button type="submit">Upload Files</button>
+		    							</div> --}}
+
+		    							</fieldset>
+
+		    							</form>
+
+		    							<div id="messages">
+		    							<p>Status Messages</p>
+		    							</div>
+
+		    						</div><br> 
+
+
+		    						{{-- <div class="row" style="margin: 0;">	
 		    						
 								<div class="col-sm-12">
 									<table id="Riba2">
@@ -1388,7 +1451,7 @@
 										</table><br>
 										<button type="button" class="btn btn-success">Add another Lines</button>
 								</div>
-							</div><br>
+							</div><br> --}}
 		    					</div>
 		    					<div id="section21" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Appointment</h3>
@@ -1530,248 +1593,68 @@
 		    					</div>
 		    					<div id="section31" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Evaluation Settings</h3>
-		    						<table class="table table-striped table-hover gids" id="customers">
-									  <tr>
-									    <th>Factors</th>
-									    <th>Importance</th>
-									    <th>Factors</th>
-									    <th>Importance</th>
-									    <th>Factors</th>
-									    <th>Importance</th>
-									  </tr>
-									  <tr>
-									  	<td class="qua" style="color: black;">Qualitative</td>
-									  	<td>30%</td>
-									  	<td>Oraganisation</td>
-									    <td>30%</td>
-									    <td>Project Experience</td>
-									    <td></td>
-									  </tr>
-									  <tr>
-									  	<td rowspan="19"></td>
-									  	<td rowspan="19"></td>
-									  	<td rowspan="5"></td>
-									    <td rowspan="5"></td>
-									    <td>Variety of Services</td>
-									    <td></td>
-									  </tr>
-									  <tr>
-									  	{{-- <td></td>
-									  	<td></td> --}}
-									  	{{-- <td></td>
-									    <td></td> --}}
-									    <td>Awards</td>
-									    <td></td>
-									  </tr>
-									  <tr>
-									  	{{-- <td></td>
-									  	<td></td> --}}
-									  	{{-- <td></td>
-									    <td></td> --}}
-									    <td>Accreditations</td>
-									    <td></td>
-									  </tr>
-									  <tr>
-									  	{{-- <td></td>
-									  	<td></td> --}}
-									  	{{-- <td></td>
-									    <td></td> --}}
-									    <td>Relationship to<br>Employer</td>
-									    <td></td>
-									  </tr>
-									  <tr>
-									  	{{-- <td></td>
-									  	<td></td> --}}
-									  	{{-- <td></td>
-									    <td></td> --}}
-									    <td><b>Total</b></td>
-									    <td><b>100%</b></td>
-									  </tr>
-									  <tr>
-									  	{{-- <td></td>
-									  	<td></td> --}}
-									  	<td>Individuals</td>
-									    <td>70%</td>
-									    <td>Project Experience</td>
-									    <td></td>
-									  </tr>
-									  <tr>
-									  	{{-- <td></td>
-									  	<td></td> --}}
-									  	<td rowspan="12"></td>
-									    <td rowspan="12"></td>
-									    <td>Years of relevant<br>Experience</td>
-									    <td></td>
-									  </tr>
-									  <tr>
-									  	{{-- <td></td>
-									  	<td></td> --}}
-									  	{{-- <td></td>
-									    <td></td> --}}
-									    <td>Industry Experience</td>
-									    <td></td>
-									  </tr>
-									  <tr>
-									  	{{-- <td></td>
-									  	<td></td> --}}
-									  	{{-- <td></td>
-									    <td></td> --}}
-									    <td>Awards</td>
-									    <td></td>
-									  </tr>
-									  <tr>
-									  	{{-- <td></td>
-									  	<td></td> --}}
-									  	{{-- <td></td>
-									    <td></td> --}}
-									    <td>Accreditations</td>
-									    <td></td>
-									  </tr>
-									  <tr>
-									  {{-- 	<td></td>
-									  	<td></td> --}}
-									  	{{-- <td></td>
-									    <td></td> --}}
-									    <td>Relationship to<br>Employer</td>
-									    <td></td>
-									  </tr>
-									  <tr>
-									  	{{-- <td></td>
-									  	<td></td> --}}
-									  	{{-- <td></td>
-									    <td></td> --}}
-									    <td>Communication Skills</td>
-									    <td></td>
-									  </tr>
-									  <tr>
-									  	{{-- <td></td>
-									  	<td></td> --}}
-									  	{{-- <td></td>
-									    <td></td> --}}
-									    <td>People Management</td>
-									    <td></td>
-									  </tr>
-									  <tr>
-									  	{{-- <td></td>
-									  	<td></td> --}}
-									  	{{-- <td></td>
-									    <td></td> --}}
-									    <td>Time Management</td>
-									    <td></td>
-									  </tr>
-									  <tr>
-									  	{{-- <td></td>
-									  	<td></td> --}}
-									  	{{-- <td></td>
-									    <td></td> --}}
-									    <td>Pro-Active</td>
-									    <td></td>
-									  </tr>
-									  <tr>
-									  	{{-- <td></td>
-									  	<td></td> --}}
-									  	{{-- <td></td>
-									    <td></td> --}}
-									    <td>Social Behaviour</td>
-									    <td></td>
-									  </tr>
-									  <tr>
-									  	{{-- <td></td>
-									  	<td></td> --}}
-									  	{{-- <td></td>
-									    <td></td> --}}
-									    <td>Technical 'Hard' Skills</td>
-									    <td></td>
-									  </tr>
-									  <tr>
-									  	{{-- <td></td>
-									  	<td></td> --}}
-									  	{{-- <td></td>
-									    <td></td> --}}
-									    <td><b>Total</b></td>
-									    <td><b>100%</b></td>
-									  </tr>
-									  <tr>
-									  	{{-- <td></td>
-									  	<td></td> --}}
-									  	<td><b>Total</b></td>
-									    <td><b>100%</b></td>
-									    <td rowspan="9"></td>
-									    <td rowspan="9"></td>
-									  </tr>
-									  <tr>
-									  	<td>Quantitave</td>
-									  	<td>40%</td>
-									  	<td></td>
-									    <td></td>
-									    {{-- <td></td>
-									    <td></td> --}}
-									  </tr>
-									  <tr>
-									  	<td>Risk</td>
-									  	<td>30%</td>
-									  	<td></td>
-									    <td></td>
-									    {{-- <td></td>
-									    <td></td> --}}
-									  </tr>
-									  <tr>
-									  	<td rowspan="6"></td>
-									  	<td rowspan="6"></td>
-									  	<td>Insurances</td>
-									    <td></td>
-									    {{-- <td></td>
-									    <td></td> --}}
-									  </tr>
-									  <tr>
-									  	{{-- <td></td>
-									  	<td></td> --}}
-									  	<td>Bonds</td>
-									    <td></td>
-									    {{-- <td></td>
-									    <td></td> --}}
-									  </tr>
-									  <tr>
-									  	{{-- <td></td>
-									  	<td></td> --}}
-									  	<td>3rd Parties</td>
-									    <td></td>
-									    {{-- <td></td>
-									    <td></td> --}}
-									  </tr>
-									  <tr>
-									  	{{-- <td></td>
-									  	<td></td> --}}
-									  	<td>Limit of <br>Liability</td>
-									    <td></td>
-									    {{-- <td></td>
-									    <td></td> --}}
-									  </tr>
-									  <tr>
-									  	{{-- <td></td>
-									  	<td></td> --}}
-									  	<td>Net<br>Contribution<br>Clause</td>
-									    <td></td>
-									    {{-- <td></td>
-									    <td></td> --}}
-									  </tr>
-									  <tr>
-									  	{{-- <td></td>
-									  	<td></td> --}}
-									  	<td rowspan="1"><b>Total</b></td>
-									    <td rowspan="1"><b>100%</b></td>
-									    {{-- <td></td>
-									    <td></td> --}}
-									  </tr>
-									  <tr>
-									  	<td><b>Total</b></td>
-									  	<td><b>100%</b></td>
-									  	{{-- <td></td>
-									    <td></td> --}}
-									    {{-- <td></td>
-									    <td></td> --}}
-									  </tr>
-									</table>
+		    						
+		    						<p style="padding: 18px; border: 1px solid grey;border-radius: 6px;">
+		    						<b>Note: Read first!</b> <br>
+		    						In order to complete this section, you have to download the excel file below. Afterwards, you have to fill out all the important information or fields needed. Please be informed that all the data you have  inputted will remain confidential.</p>
+		    						{{-- 
+		    						<div class="down">
+		    							<a download="Book-Scope.xlsx" href="{{asset('css/scopexl/Book-Scope.xlsx')}} "><i class="fa fa-download"> Download</i></a>
+		    						</div> --}}
+
+		    						<div class="row downloader" style="    display: flex;     padding: 25px;">
+		    						  <img
+		    						  	style="width: 150px;height: 150px;"
+		    						    alt="excel-logo"
+		    						    class="excel"
+		    						    src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Microsoft_Excel_2013_logo.svg/2000px-Microsoft_Excel_2013_logo.svg.png" />
+		    						  <div class="download_icon">
+		    						    <p>
+		    						     <a download="Evaluation Setting.xlsx" href="{{asset('css/scopexl/Evaluation Setting.xlsx')}} "><i class="fa fa-download"> Download</i></a>
+		    						    </p>
+		    						    <p class="download_para">
+		    						      <small>Lorem <abbr title="Download">DL</abbr>.  It has survived not only five centuries, but also the leap into electronic typesetting</small>
+		    						    </p>
+		    						  </div>
+		    						</div><br>
+
+		    						<p style="padding: 18px; border: 1px solid grey;border-radius: 6px;">
+		    						<b>Note: Almost there!</b> <br>
+		    						Already done filling up the fields? Well you're almost done! Once, you have completed it. Kindly, submit or drag the excel file below. You are good to proceed now. Thank you!</p>
+
+		    						<div class="row" style="padding: 30px;">
+		    							{{-- <form method="POSt" enctype="multipart/form-data" action="upload.php">
+		    								<input type="file" name="file" value="Upload">
+		    								<input type="submit" value="Upload">
+		    							</form> --}}
+
+		    							<form id="upload" action="index.html" method="POST" enctype="multipart/form-data">
+
+		    							<fieldset>
+		    							<legend>Upload Excel File</legend>
+
+		    							<input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
+
+		    							<div>
+		    								<label for="fileselect">File to upload:</label>
+		    								<input type="file" id="fileselect" name="fileselect[]" />
+		    								<div id="filedrag">or drop file here</div>
+		    							</div>
+
+		    							{{-- <div id="submitbutton">
+		    								<button type="submit">Upload Files</button>
+		    							</div> --}}
+
+		    							</fieldset>
+
+		    							</form>
+
+		    							<div id="messages">
+		    							<p>Status Messages</p>
+		    							</div>
+
+		    						</div><br> 
+
 		    					</div>
 		    					<div id="section41" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Quality Assurance</h3>
