@@ -143,7 +143,7 @@
 				<div class="tender-container" style="border-radius: 6px;">
 					<ul class="nav bid-form-nav">
 						<li class="active"><a data-toggle="tab" href="#section1">Pre-Qualification Questionnaire<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disd"><a data-toggle="tab" href="#section2">Organisation<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li ><a data-toggle="tab" href="#section2">Organisation<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
 						<li class="disd"><a data-toggle="tab" href="#section3">Individuals<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
 						<li class="disd"><a data-toggle="tab" href="#section4">Approach<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
 						<li class="disd"><a data-toggle="tab" href="#section5">Scope<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
@@ -353,52 +353,20 @@
 											    <button type="button" class="btn btn-primary notherbuttypeofuse" onclick="showaddtype()">Add another type of use</button>
 											    <button type="button" class="btn btn-primary hid adtypeofuse" id="addservicebut" onclick="addtypeofuse()">Add type of use</button>
 											</div>
-											{{-- <div class="form-group">
-													<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Type of Use</option>
-													<option>Residential</option>
-													<option>Commercial </option>
-													<option>Retail</option>
-													<option>Leisure</option>
-													<option>Sports and Venues</option>
-													<option>Hotel</option>
-													<option>Industrial</option>
-													<option>Education</option>
-													<option>Healthcare</option>
-													<option>Defence</option>
-													<option>Aviation</option>
-													<option>Highways</option>
-													<option>Bridges</option>
-													<option>Rail</option>
-													<option>Water</option>
-													<option>Oil,Gas and Chemical</option>
-													<option>Other</option>
-												</select>
-											</div>
-											<div class="form-group">
-												<div class="input_fields_types">
-												    <button class="btn btn-primary" id="add_field_types">Add another types of use</button>
-												    <div></div>
-												</div>
-											</div> --}}
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select Service</option>
-													<option>Architect</option>
-													<option>Structural Engineer</option>
-													<option>Service Engineer</option>
-													<option>Fire Engineer</option>
-													<option>Acoustic Engineer</option>
-													<option>Principal Designer</option>
-													<option>Fascade Engineer</option>
-													<option>Building Control</option>
-													<option>Lighting Consultant</option>
-													<option>Security Consultant</option>
-													<option>Planning Consultant</option>
-													<option>Sustainability Consultant</option>
-													<option>BIM Consultant</option>
-													<option>Quantity Surveyor</option>
-													<option>Project Manager</option>
+													<?php 
+														$Services = array(
+															"Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Fascade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager"
+														);
+														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
+														foreach ($Services as $key ) {
+														    echo "<option value='".$key."'>".$key."</option>";
+														}
+
+													 ?>
+
 													<option>Other</option>
 												</select>
 											</div>
@@ -446,54 +414,49 @@
 											    <button type="button" class="btn btn-primary notherbuttypeofdev" onclick="showaddtypedev()">Add another type of Development</button>
 											    <button type="button" class="btn btn-primary hid adtypeofdev" id="adddevbut" onclick="addtypeofdev()">Add type of development</button>
 											</div>
-											{{-- <div class="form-group">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Type of Development</option>
-													<option>New Built</option>
-													<option>Refurbishment</option>
-													<option>Demolition</option>
-												</select>
-											</div>
-											<div class="input_fields_type">
-												    <button class="btn btn-primary" id="add_field_type">Add another type</button>
-												    <div></div>
-											</div><br> --}}
 													
 											<div class="form-group">
 												<textarea cols="4" rows="5" id="textarea" maxlength="2000" placeholder="Enter description of the project  "></textarea>
   												<span id="rchars">2000</span> 
 											</div>
 											<div class="form-group">													
-												{{-- <img id="uploadPreview7" style="width: 100px; height: 100px;" /> --}}
+												
 												<label for="uploadImage7s"><strong>Upload Images</strong></label>
 												<input id="uploadImage7s" type="file" name="upimages[]" multiple accept='image/*'name="myPhoto" />
 						                    </div>
 						                    <div class="form-group">
 												<select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select Project Team Member</option>
-													<option>Architect</option>
-													<option>Structural Engineer</option>
-													<option>Service Engineer</option>
-													<option>Fire Engineer</option>
-													<option>Acoustic Engineer</option>
-													<option>Principal Designer</option>
-													<option>Fascade Engineer</option>
-													<option>Building Control</option>
-													<option>Lighting Consultant</option>
-													<option>Security Consultant</option>
-													<option>Planning Consultant</option>
-													<option>Sustainability Consultant</option>
-													<option>BIM Consultant</option>
-													<option>Quantity Surveyor</option>
-													<option>Project Manager</option>
+													<?php 
+														$members = array(
+															"Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Fascade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager"
+														);
+														sort($members, SORT_NATURAL | SORT_FLAG_CASE);
+														foreach ($members as $key ) {
+														    echo "<option value='".$key."'>".$key."</option>";
+														}
+
+													 ?>
 												</select>
 											</div>
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select Company</option>
-													<option>Architect</option>
-													<option>Structural Engineer</option>
-													<option>Service Engineer</option>
+													<?php 
+
+													$company = array(
+																	"Architect",
+																"Structural Engineer",
+																"Service Engineer");
+
+													sort($company,SORT_NATURAL | SORT_FLAG_CASE);
+
+													foreach ($company as $key) {
+													  echo "<option value='".$key."'>".$key."</option>";
+													}
+
+													 ?>
+												
 													<option>Other</option>
 												</select>
 											</div>
@@ -580,59 +543,25 @@
 											<div class="form-group">
 												<select name="" class="form-control">
 													<option value="" disabled selected>Select degree</option>
-													<option>BA</option>
-													<option>BSA</option>
-													<option>BAcy</option>
-													<option>BAcc</option>
-													<option>B.A.Sc.</option>
-													<option>BArch </option>
-													<option>BBA</option>
-													<option>BCE</option>
-													<option>BCom</option>
-													<option>BCA</option>
-													<option>BDes</option>
-													<option>B.Des.Corp</option>
-													<option>B.Des.Arch</option>
-													<option>BEng</option>
-													<option>BEC</option>
-													<option>BEE</option>
-													<option>BFA</option>
-													<option>B.Hlth.Sci.</option>
-													<option>BIT</option>
-													<option>BIGS</option>
-													<option>LLB</option>
-													<option>BLAS</option>
-													<option>BMath</option>
-													<option>BME</option>
-													<option>B.P.E.S.S</option>
-													<option>B.Res.Ec</option>
-													<option>BSc</option>
-													<option>BS.EOH</option>
-													<option>BSLS</option>
-													<option>BTech</option>
-													<option>BVA</option>
-													<option>MA</option>
-													<option>MBA</option>
-													<option>MCom</option>
-													<option>BCA</option>
-													<option>MEM</option>
-													<option>MEDM</option>
-													<option>MFA</option>
-													<option>MIS</option>
-													<option>LLM</option>
-													<option>MLA</option>
-													<option>MPS</option>
-													<option>MPA</option>
-													<option>MPH</option>
-													<option>MSc</option>
-													<option>MSF</option>
-													<option>MTech</option>
-													<option>DLP</option>
-													<option>Dr.mph.</option>
-													<option>PhD</option>
-													<option>PsyD</option>
-													<option>DrPH</option>
-													<option>DSc</option>
+													<?php 
+
+													$degree = array("BA",
+															"BSA","BAcy","BAcc","B.A.Sc.","BArch ","BBA",
+															"BCE","BCom","BCA","BDes","B.Des.Corp","B.Des.Arch",
+															"BEng","BEC","BEE","BFA","B.Hlth.Sci.","BIT","BIGS",
+															"LLB","BLAS","BMath","BME","B.P.E.S.S","B.Res.Ec","BSc",
+															"BS.EOH","BSLS","BTech","BVA","MA","MBA","MCom","BCA","MEM",
+															"MEDM","MFA","MIS","LLM","MLA","MPS","MPA","MPH","MSc","MSF",
+															"MTech","DLP","Dr.mph.","PhD","PsyD","DrPH","DSc"
+																);
+
+													sort($degree,SORT_NATURAL | SORT_FLAG_CASE);
+
+													foreach ($degree as $key) {
+													  echo "<option value='".$key."'>".$key."</option>";
+													}
+
+													 ?>
 													<option>Other</option>
 												</select>
 											</div>
@@ -689,21 +618,33 @@
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select Service</option>
-													<option>Architect</option>
-													<option>Structural Engineer</option>
-													<option>Service Engineer</option>
-													<option>Fire Engineer</option>
-													<option>Acoustic Engineer</option>
-													<option>Principal Designer</option>
-													<option>Fascade Engineer</option>
-													<option>Building Control</option>
-													<option>Lighting Consultant</option>
-													<option>Security Consultant</option>
-													<option>Plannning Consultant</option>
-													<option>Sustainability Consultant</option>
-													<option>BIM Consultant</option>
-													<option>Quantity Surveyor</option>
-													<option>Project Manager</option>
+													<?php 
+
+													$service = array(
+															"Architect",
+															"Structural Engineer",
+															"Service Engineer",
+															"Fire Engineer",
+															"Acoustic Engineer",
+															"Principal Designer",
+															"Fascade Engineer",
+															"Building Control",
+															"Lighting Consultant",
+															"Security Consultant",
+															"Plannning Consultant",
+															"Sustainability Consultant",
+															"BIM Consultant",
+															"Quantity Surveyor",
+															"Project Manager"
+																);
+
+													sort($service,SORT_NATURAL | SORT_FLAG_CASE);
+
+													foreach ($service as $key) {
+													  echo "<option value='".$key."'>".$key."</option>";
+													}
+
+													 ?>
 													<option>Other</option>
 												</select>
 											</div>
