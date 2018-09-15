@@ -65,8 +65,45 @@
 	.pointerev{
 		pointer-events: none;
 	}
+	.alert-awrds{
+		color: #fe7235;
+	    background-color: transparent;
+	    border-color: #fe7235;
+	}
 </style>
-
+<div class="modal fade" id="awards" role="dialog">
+	  <div class="modal-dialog">
+	  
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">Add Awards</h4>
+	      </div>
+	      <div class="modal-body">
+	        <div class="form-group">
+	        	<input type="text" name="awrd_name" class="form-control awrd_name" placeholder="Enter name of award">
+	        </div>
+	        <div class="form-group">
+	        	<input type="text" name="awrd_details" class="form-control awrd_details" placeholder="Enter details">
+	        </div>
+	        <div class="form-group">
+	        	<input type="text" name="awrd_by" class="form-control awrd_by" placeholder="Awarded by">
+	        </div>
+	        <div class="form-group">
+	        <div class="input-group date" id="datepicker1" data-date="02-2012" data-date-format="mm-yyyy">
+	        <input class="form-control awrd_date" type="text" placeholder="Year awarded  " readonly="readonly" name="awrd_date" >	  
+	        <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+	        </div>
+	        </div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="Submit" class="btn btn-success addawrd">Add</button>
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 
 	<div class="modal fade" id="Modal" role="dialog">
 	    <div class="modal-dialog">
@@ -282,7 +319,7 @@
 											</div>
 										</div>
 										<div class="col-sm-7">
-											<div id="Awards">
+											{{-- <div id="Awards">
 												<div class="form-group">
 													<input type="text" name="" class="form-control" placeholder="Enter name of award">
 												</div>
@@ -300,10 +337,13 @@
 														 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 													</div>
 												</div>
-											</div>
+											</div> --}}
+											<ul class="addeditem" style="list-style: none;padding: 0;">
+													
+												</ul>
 											<div class="form-group">
 												<div class="input_fields_piste">
-												    <button type="button" class="btn btn-primary" id="add_award">Add another award</button>
+												    <button type="button" class="btn btn-primary" id="add_award" data-toggle="modal" data-backdrop="static" data-target="#awards">Add another award</button>
 												</div>
 											</div>
 										</div>
@@ -2277,6 +2317,22 @@ $('textarea').keyup(function() {
 
 
 	})();
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+	    $(".addawrd").click(function(){
+	    var name = $('.awrd_name').val();
+	    var detail = $('.awrd_details').val();
+	    var by = $('.awrd_by').val();
+	    var datew = $('.awrd_date').val();
+	    $('.addeditem').append('<div onclick="showedit()" class="alert alert-awrds alert-dismissible itemadd"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>'+name+'</strong><input type="hidden" name="award[name]" value="'+name+'"><input type="hidden" name="award[details]" value="'+detail+'"><input type="hidden" name="award[by]" value="'+by+'"><input type="hidden" name="award[datew]" value="'+datew+'"></div>');
+	    $('.awrd_name').val('');
+	    $('.awrd_details').val('');
+	    $('.awrd_by').val('');
+	    $('.awrd_date').val('');
+	    $('#awards').modal('toggle');
+	    });
+	});
 </script>
 
 @endsection
