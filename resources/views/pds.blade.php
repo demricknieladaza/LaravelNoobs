@@ -96,7 +96,7 @@
 			<div class="tender-container">
 				<div class="row">
 					<div class="col-sm-12 active-tenders" id="cprofile">
-						<h3 style="font-weight: 900;">Project Information</h3>
+						<h3 >Project Information</h3>
 					</div>			
 					<div class="col-sm-12">
 						<table class="table table-striped table-hover">
@@ -302,7 +302,7 @@
 			<div class="tender-container" id="tender-queries">
 				<div class="row">
 					<div class="col-sm-12 active-tenders">
-						<b style="font-size:20px; font-weight: 900;">Tender Queries</b>
+						<h3>Tender Queries</h3>
 						<div class="row">	
 							<div class="col-sm-12">				
 								<table class="table table-striped table-hover" id="a">
@@ -339,7 +339,7 @@
 			<div class="tender-container" id="employers">
 				<div class="row">
 					<div class="col-sm-12 active-tenders">
-						<h3 style="font-weight: 900;">Employer Details</h3>
+						<h3 >Employer Details</h3>
 						<div class="row">	
 							<div class="col-sm-9">				
 								<table class="table table-striped table-hover">

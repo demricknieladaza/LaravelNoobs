@@ -401,19 +401,20 @@
 		    								<p><a href="#">H&S Policy <i class="fa fa-download"></i></a></p>
 		    							</td>
 		    						</tr>
-		    					</table>		
+		    					</table>
+		    					<section id="tend">
+		    						
+		    					</section>		
 		    					<div style="text-align: center;">
-		    						<button type="button" class="btn btn-default" style="color: white; background: gray;width: 120px;">Save</button>
-		    						<button type="submit" class="btn btn-default">submit</button>
 		    					</div>
 		    					</form>				
 		    				</div>
 		    			</div>
 		    		</div>
-		    		<div class="tender-container" id="tend">
+		    		<div class="tender-container" >
 		    			<div class="row">
 		    				<div class="col-sm-12 active-tenders">
-		    					<h3>Tender Queries
+		    					<h3 >Tender Queries
 		    					<button class="btn buts save_proj1" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction1()"><i class="fa fa-save" style="font-size:15px"></i>Save</button>
 		    					<button class="btn buts" id="edit_proj1" onclick="myFunction1()" style="float: right;margin-top:-14px;"><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
 		    					<div class="row">	
@@ -443,13 +444,15 @@
 		    							</table>
 		    						</div>
 		    					</div>
+		    					<section id="emptab">
+		    						
+		    					</section>
 		    					<div style="text-align: center;">
-		    						<button type="button" class="btn btn-default" style="color: white; background: gray;width: 120px;">Save</button>
 		    					</div>
 		    				</div>
 		    			</div>
 		    		</div>
-					<div class="tender-container" id="emptab">
+					<div class="tender-container">
 						<div class="row">
 							<div class="col-sm-12 active-tenders">
 								<h3>Project Information
@@ -498,10 +501,6 @@
 									
 
 									</div>
-								</div>
-								<div style="text-align: center;">
-									<button type="button" class="btn btn-default" style="color: white; background: gray;width: 120px;">Save</button>
-
 								</div>
 							</div>
 						</div>
@@ -1834,6 +1833,9 @@
     </div>
   </div>
 </div>
+
+<a href="#" id="scroll" style="display: none; z-index: 999;"><span></span></a>
+
 <script type="text/javascript">
 	function edits(name) {
     document.getElementById(name).addClass('active');
@@ -1916,5 +1918,38 @@ function mUp(obj) {
     obj.innerHTML="x";
 }
 </script>
+
+<script>
+$('a[href^="#"]').on('click', function(event) {
+
+    var target = $(this.getAttribute('href'));
+
+    if( target.length ) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+            scrollTop: target.offset().top
+        }, 1000);
+    }
+
+});
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){ 
+	    $(window).scroll(function(){ 
+	        if ($(this).scrollTop() > 100) { 
+	            $('#scroll').fadeIn(); 
+	        } else { 
+	            $('#scroll').fadeOut(); 
+	        } 
+	    }); 
+	    $('#scroll').click(function(){ 
+	        $("html, body").animate({ scrollTop: 0 }, 600); 
+	        return false; 
+	    }); 
+	});
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 @endsection
