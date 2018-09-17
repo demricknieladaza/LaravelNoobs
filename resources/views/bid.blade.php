@@ -172,9 +172,9 @@
 	        <div class="modal-footer">
 					<!-- Button HTML (to Trigger Modal) -->
 				<div style="text-align:center;">
-					<button type="button" style="color: #fff;background-color: #fe7235;border-radius: inherit;" href="#mode"  class="btn" data-backdrop="false" data-toggle="modal">Submit Tender Query</button>
+					<button type="button" style="color: #fff;background-color: #fe7235;border-radius: 6px;" href="#mode"  class="btn" data-backdrop="false" data-toggle="modal">Submit Tender Query</button>
 				</div>
-	          	<div id="mode" class="modal fade">
+	          	<div id="mode" class="modal fade" style="padding-left: 0;">
 					<div class="modal-confirm">
 						<div class="modal-dialog">
 							<div class="modal-content">
@@ -313,18 +313,19 @@
 													 <input class="form-control" type="text" placeholder="Select Year" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div> --}}
-												<select name="servicesince" class="form-control">
-												<?php 
-													$cur_year = date('Y');
-													$years = [];
-												    for ($i=0; $i<=50; $i++) {
-												        array_push($years,$cur_year--);
-												    }
-												    foreach (array_reverse($years) as $year ) {
-												    	echo "<option value='".$year."'>".$year."</option>";
-												    }
-												?>
-												</select>
+												<select name='providedsince' class="form-control">
+										            <option value="">Select year</option>
+										            <?php 
+														$cur_year = date('Y');
+														$years = [];
+													    for ($i=0; $i<=50; $i++) {
+													        array_push($years,$cur_year--);
+													    }
+													    foreach ($years as $year ) {
+													    	echo "<option value='".$year."'>".$year."</option>";
+													    }
+													?>
+										        </select>
 											</div>
 										</div>
 									</div>
@@ -382,10 +383,19 @@
 													<input type="text" name="" class="form-control" placeholder="Awarded by">
 												</div>
 												<div class="form-group">
-													<div class="input-group date" id="datepicker1" data-date="02-2012" data-date-format="mm-yyyy">
-													 <input class="form-control" type="text" placeholder="Year awarded  " readonly="readonly" name="date" >	  
-													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-													</div>
+													<select name="awards_year" class="form-control">
+														<option value="">Year awarded</option>
+													<?php 
+														$cur_year = date('Y');
+														$years = [];
+													    for ($i=0; $i<=50; $i++) {
+													        array_push($years,$cur_year--);
+													    }
+													    foreach ($years as $year ) {
+													    	echo "<option value='".$year."'>".$year."</option>";
+													    }
+													?>
+													</select>
 												</div>
 											</div>
 											<ul class="addeditem" style="list-style: none;padding: 0;">
@@ -445,7 +455,7 @@
 											</div>
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Service</option>
+													<option value="" disabled selected>Select service</option>
 													<?php 
 														$Services = array(
 															"Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Fascade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager"
@@ -464,7 +474,7 @@
 												<div class="input-group date" id="datepicker2" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
-													 <input class="form-control" type="text" placeholder="Provided this Service from" readonly="readonly" name="date" >	  
+													 <input class="form-control" type="text" placeholder="Provided this service from" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
 											</div>
@@ -472,7 +482,7 @@
 												<div class="input-group date" id="datepicker3" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
-													 <input class="form-control" type="text" placeholder="Provided this Service until" readonly="readonly" name="date" >	  
+													 <input class="form-control" type="text" placeholder="Provided this service until" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
 											</div>
@@ -504,13 +514,13 @@
 											</ul>
 											<div class="form-group divaddservtypeofdev">
 												<input type="text" class="form-control hid adtypeofdev" name="addev">
-											    <button type="button" class="btn btn-primary notherbuttypeofdev" onclick="showaddtypedev()">Add another type of Development</button>
+											    <button type="button" class="btn btn-primary notherbuttypeofdev" onclick="showaddtypedev()">Add another type of development</button>
 											    <button type="button" class="btn btn-primary hid adtypeofdev" id="adddevbut" onclick="addtypeofdev()">Add type of development</button>
 											</div>
 													
 											<div class="form-group">
 												<textarea cols="4" rows="5" id="textarea" maxlength="2000" placeholder="Enter description of the project  "></textarea>
-  												<span id="rchars">2000</span> 
+  												<p style="color: grey;"><span id="rchars" >3000</span>/3000 words remaining</p>
 											</div>
 											<div class="form-group">													
 												
@@ -519,7 +529,7 @@
 						                    </div>
 						                    <div class="form-group">
 												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Project Team Member</option>
+													<option value="" disabled selected>Select project team member</option>
 													<?php 
 														$members = array(
 															"Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Fascade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager"
@@ -534,7 +544,7 @@
 											</div>
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Company</option>
+													<option value="" disabled selected>Select company</option>
 													<?php 
 
 													$company = array(
@@ -601,8 +611,8 @@
 											</div>
 										</div>
 										<div class="col-sm-7" >						
-											<img id="uploadPreview" style="width: 100px; height: 100px;" />
-											<input id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage();" />
+											<label for="uploadImage7s"><strong>Upload Images</strong></label>
+											<input id="uploadImage7s" type="file" name="upimages[]" multiple accept='image/*'name="myPhoto" />
 								        </div>
 						            </div>
 						            <div class="row">
@@ -613,17 +623,20 @@
 										</div>
 										<div class="col-sm-7">
 											<div class="form-group">
-												<select Name='ddlSelectYear' class="form-control">
-										            <option value="">--- Select ---</option>
-
-										            <?php
-										            for ($x=date("Y"); $x>1900; $x--)
-										              {
-										                echo'<option value="'.$x.'">'.$x.'</option>'; 
-										               } 
-										            ?> 
+												<select name='ddlSelectYear' class="form-control">
+										            <option value="">Year awarded</option>
+										            <?php 
+														$cur_year = date('Y');
+														$years = [];
+													    for ($i=0; $i<=50; $i++) {
+													        array_push($years,$cur_year--);
+													    }
+													    foreach ($years as $year ) {
+													    	echo "<option value='".$year."'>".$year."</option>";
+													    }
+													?>
 										        </select>
-									</div>
+											</div>
 										</div>
 									</div>
 									<div class="row">
@@ -664,11 +677,19 @@
 									<div class="row">
 										<div class="col-sm-5"></div>
 										<div class="col-sm-7">
-											<div class="input-group date" id="datepickers" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
-											<input class="form-control" type="text" placeholder="Year Awarded" readonly="readonly" name="date" >	  
-											<span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-											</div>
+											<select name='degree_year' class="form-control">
+											    <option value="">Year awarded</option>
+											    <?php 
+													$cur_year = date('Y');
+													$years = [];
+												    for ($i=0; $i<=50; $i++) {
+												        array_push($years,$cur_year--);
+												    }
+												    foreach ($years as $year ) {
+												    	echo "<option value='".$year."'>".$year."</option>";
+												    }
+												?>
+											</select>
 										</div>
 									</div>
 									<br>
@@ -678,11 +699,26 @@
 											Awards
 										</div>
 										<div class="col-sm-7">
-											<div class="input-group date" id="datepickers5" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
-											<input class="form-control" type="text" placeholder="Year awarded" readonly="readonly" name="date" >	  
-											<span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Enter name of award">
 											</div>
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Awarded by body">
+											</div>
+											<select name='yeard_awards' class="form-control">
+											    <option value="">Year awarded</option>
+											    <?php 
+													$cur_year = date('Y');
+													$years = [];
+												    for ($i=0; $i<=50; $i++) {
+												        array_push($years,$cur_year--);
+												    }
+												    foreach ($years as $year ) {
+												    	echo "<option value='".$year."'>".$year."</option>";
+												    }
+												?>
+											</select>
 											<br>
 											
 											
@@ -697,7 +733,7 @@
 										</div>
 										<div class="col-sm-7">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Previous Employer">
+												<input type="text" name="" class="form-control" placeholder="Previous employer">
 											</div>
 										</div>
 									</div>
@@ -710,7 +746,7 @@
 										<div class="col-sm-7">
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select Service</option>
+													<option value="" disabled selected>Select service</option>
 													<?php 
 
 													$service = array(
@@ -819,8 +855,8 @@
 										</div>
 										<div class="col-sm-7">
 											<div class="form-group">
-												<textarea cols="4" rows="5" id="textareaap" maxlength="2000" placeholder="Enter here  "></textarea>
-  												<span id="rchars1">2000</span> 
+												<textarea cols="4" rows="5" id="textareaap" maxlength="3000" placeholder="Enter here  "></textarea>
+  												<p style="color: grey;"><span id="rchars1" >3000</span>/3000 words remaining</p>
 											</div>
 										</div>
 									</div>
@@ -850,7 +886,8 @@
 										</div>
 										<div class="col-sm-7">
 											<div class="form-group">
-												<textarea placeholder="Enter text here"></textarea>
+												<textarea id="textarea2" placeholder="Enter text here"></textarea>
+												<p style="color: grey;"><span id="rchars2" >3000</span>/3000 words remaining</p>
 											</div>
 										</div>
 									</div>
@@ -1578,7 +1615,7 @@
 										</div>
 										<div class="col-sm-7">
 											<div class="form-group">
-												<p contenteditable="true">Professional Indemnity Insurance</p>
+												<p >Professional indemnity insurance</p>
 											</div>
 										</div>
 									</div>
@@ -1595,7 +1632,7 @@
 										<div class="col-sm-5"></div>
 										<div class="col-sm-7">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Premium Cost Uplift to achieve required Insurance Level">
+												<input type="text" name="" class="form-control" placeholder="Premium cost uplift to achieve required insurance level">
 											</div>
 										</div>
 
@@ -1604,7 +1641,8 @@
 										<div class="col-sm-5"></div>
 										<div class="col-sm-7">
 											<div class="form-group">
-												<img id="uploadPreview4" style="width: 100px; height: 100px;" />
+												{{-- <img id="uploadPreview4" style="width: 100px; height: 100px;" /> --}}
+												<label for="uploadImage7s"><strong>Upload Insurance Certificate</strong></label>
 												<input id="uploadImage4" type="file" name="myPhoto" onchange="PreviewImage4();" />
 											</div>
 										</div>
@@ -1612,14 +1650,8 @@
 									<div class="row">
 										<div class="col-sm-5"></div>
 										<div class="col-sm-7">
-												<input type="text" name="" class="form-control" placeholder="As per selections by the employer">
-										</div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-5"></div>
-										<div class="col-sm-7">
 												<select name="Sel" class="form-control" >
-													<option  disabled selected>Select Insurance</option>
+													<option  disabled selected>Select insurance</option>
 													<option  value="test">Test</option>
 													
 												</select>
@@ -1633,7 +1665,7 @@
 										</div>
 										<div class="col-sm-7">
 											<div class="form-group">
-												<p contenteditable="true">Parent Company Guarantee</p>
+												<p >Parent company guarantee</p>
 											</div>
 										</div>
 									</div>
@@ -1643,8 +1675,9 @@
 										<div class="col-sm-7">
 								              <select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select</option>
-													<option value="test">Agreed  To  be  negotiated</option>
-													<option value="test">Rejected  </option>
+													<option value="test">Agreed</option>
+													<option value="test">To be negotiated</option>
+													<option value="test">Rejected</option>
 													
 												</select>
 							             
@@ -1655,14 +1688,14 @@
 										<div class="col-sm-5"></div>
 										
 										<div class="col-sm-7">
-								             <textarea placeholder="Comments"></textarea>
-							             
+								            <textarea id="textarea3" placeholder="Comments"></textarea>
+							             	<p style="color: grey;"><span id="rchars3" >3000</span>/3000 words remaining</p>	
 										</div>
 									</div><br>
 									<div class="row">
 										<div class="col-sm-5">Collateral  Warranties  /  Third  Parties  </div>
 										<div class="col-sm-7">
-												<input type="text" name="" class="form-control" placeholder="Either deed or under hands as selected by the employer">
+												<p>Collateral Warranties</p>
 										</div>
 									</div><br>
 									<div class="row">
@@ -1671,8 +1704,9 @@
 										<div class="col-sm-7">
 								              <select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select</option>
-													<option value="test">Agreed  To  be  negotiated</option>
-													<option value="test">Rejected  </option>
+													<option value="test">Agreed</option>
+													<option value="test">To be negotiated</option>
+													<option value="test">Rejected</option>
 													
 												</select>
 							             
@@ -1682,14 +1716,15 @@
 										<div class="col-sm-5"></div>
 										
 										<div class="col-sm-7">
-								             <textarea placeholder="Comments"></textarea>
+								             <textarea id="textarea6" placeholder="Comments"></textarea>
+								             <p style="color: grey;"><span id="rchars6" >3000</span>/3000 words remaining</p>
 							             
 										</div>
 									</div><br>
 									<div class="row">
 										<div class="col-sm-5">Limit  of  Liability  </div>
 										<div class="col-sm-7">
-												<input type="text" name="" class="form-control" placeholder="Either deed or under hands as selected by the employer">
+												<p>Collateral Warranties</p>
 										</div>
                                        </div><br>
                                        <div class="row">
@@ -1698,7 +1733,8 @@
 										<div class="col-sm-7">
 								              <select name="Sel"  class="form-control" >
 													<option disabled selected>Select</option>
-													<option value="test">Agreed  To  be  negotiated</option>
+													<option value="test">Agreed</option>
+													<option value="test">To be negotiated</option>
 													<option value="test">Rejected  </option>
 													
 												</select>
@@ -1709,14 +1745,15 @@
 										<div class="col-sm-5"></div>
 										
 										<div class="col-sm-7">
-								             <textarea placeholder="Comments"></textarea>
+								             <textarea id="textarea4" placeholder="Comments"></textarea>
+								             <p style="color: grey;"><span id="rchars4" >3000</span>/3000 words remaining</p>
 							             
 										</div>
 									</div><br>
 										<div class="row">
 										<div class="col-sm-5">Execution</div>
 										<div class="col-sm-7">
-												<input type="text" name="" class="form-control" placeholder="Either deed or under hands as selected by the employer">
+												<p>Collateral Warranties</p>
 										</div>
                                       </div><br>
 									<div class="row">
@@ -1728,7 +1765,7 @@
 									<div class="row">
 										<div class="col-sm-5">Net  Contribution  Clause </div>
 										<div class="col-sm-7">
-												<input type="text" name="" class="form-control" placeholder="">
+												<p >Yes</p>
 										</div>
                                        </div><br>
                                        <div class="row">
@@ -1737,8 +1774,9 @@
 										<div class="col-sm-7">
 								              <select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select</option>
-													<option value="test" >Agreed  To  be  negotiated</option>
-													<option value="test" >Rejected  </option>
+													<option value="test" >Agreed</option>
+													<option value="test" >To be negotiated</option>
+													<option value="test" >Rejected</option>
 													
 												</select>
 							             
@@ -1775,7 +1813,8 @@
 											
 										</div>
 										<div class="col-sm-7">
-												<textarea placeholder="Comments"></textarea>
+												<textarea id="textarea5" placeholder="Comments"></textarea>
+												<p style="color: grey;"><span id="rchars5" >3000</span>/3000 words remaining</p>
 										</div>
 									</div><br>
 									 <div class="row">
@@ -1802,7 +1841,7 @@
 											Documents for Signature
 										</div>
 										<div class="col-sm-7">
-												<input type="text" name="" class="form-control" placeholder="Document Title">
+												<input type="text" name="" class="form-control" placeholder="Document title">
 									</div>
 								</div><br>
 									<div class="row">
@@ -1980,7 +2019,7 @@ function mUp(obj) {
 }
 </script>
 <script type="text/javascript">
-	var maxLength = 2000;
+	var maxLength = 3000;
 $('textarea').keyup(function() {
   var textlen = maxLength - $(this).val().length;
   $('#rchars').text(textlen);
@@ -1988,10 +2027,50 @@ $('textarea').keyup(function() {
 
 </script>
 <script type="text/javascript">
-	var maxLength1 = 2000;
+	var maxLength1 = 3000;
 	$('#textareaap').keyup(function() {
    var textlen1 = maxLength1 - $(this).val().length;
     $('#rchars1').text(textlen1);
+	});
+
+</script>
+<script type="text/javascript">
+	var maxLength2 = 3000;
+	$('#textarea2').keyup(function() {
+   var textlen2 = maxLength2 - $(this).val().length;
+    $('#rchars2').text(textlen2);
+	});
+
+</script>
+<script type="text/javascript">
+	var maxLength3 = 3000;
+	$('#textarea3').keyup(function() {
+   var textlen3 = maxLength3 - $(this).val().length;
+    $('#rchars3').text(textlen3);
+	});
+
+</script>
+<script type="text/javascript">
+	var maxLength4 = 3000;
+	$('#textarea4').keyup(function() {
+   var textlen4 = maxLength4 - $(this).val().length;
+    $('#rchars4').text(textlen4);
+	});
+
+</script>
+<script type="text/javascript">
+	var maxLength5 = 3000;
+	$('#textarea5').keyup(function() {
+   var textlen5 = maxLength5 - $(this).val().length;
+    $('#rchars5').text(textlen5);
+	});
+
+</script>
+<script type="text/javascript">
+	var maxLength6 = 3000;
+	$('#textarea6').keyup(function() {
+   var textlen6 = maxLength6 - $(this).val().length;
+    $('#rchars6').text(textlen6);
 	});
 
 </script>
