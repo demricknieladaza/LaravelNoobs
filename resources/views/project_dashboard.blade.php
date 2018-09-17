@@ -171,7 +171,9 @@
 		    		<div class="tender-container">
 		    			<div class="row">
 		    				<div class="col-sm-12 active-tenders" id="cprofile">
-		    						<h3>Project Information<button class="btn buts" onclick="myFunction()" style="float:right;margin-top:-14px;" ><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
+		    						<h3>Project Information
+		    						<button class="btn buts save_proj" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction()"><i class="fa fa-save" style="font-size:15px"></i>Save</button>
+		    						<button class="btn buts" id="edit_proj" onclick="myFunction()" style="float:right;margin-top:-14px;" ><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
 		    				</div>			
 		    				<div class="col-sm-12">
 		    					<form id="projform" action="{{ url('project_info')}}" method="POST">
@@ -411,10 +413,12 @@
 		    		<div class="tender-container" id="tend">
 		    			<div class="row">
 		    				<div class="col-sm-12 active-tenders">
-		    					<h3>Tender Queries<button class="btn buts" onclick="myFunction1()" style="float: right;margin-top:-14px;"><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
+		    					<h3>Tender Queries
+		    					<button class="btn buts save_proj1" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction1()"><i class="fa fa-save" style="font-size:15px"></i>Save</button>
+		    					<button class="btn buts" id="edit_proj1" onclick="myFunction1()" style="float: right;margin-top:-14px;"><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
 		    					<div class="row">	
-		    						<div class="col-sm-12">				
-		    							<table class="table table-striped table-hover" id="a">
+		    						<div class="col-sm-12">	
+		    							<table class="table table-striped table-hover tender_queries" id="a">
 		    								<tr>
 		    									<td width="10%" style="font-weight: 600;">#</td>
 		    									<td style="font-weight: 600;">Query</td>
@@ -424,17 +428,17 @@
 		    								<tr>
 		    									<td>1</td>
 		    									<td>TextTextTextTextTextTextTextTextText</td>
-		    									<td>TextTextTextTextTextTextTextTextTextTextTextText</td>
+		    									<td><input id="respo1" type="text" name="respo1" class="form-control proje" placeholder="TextTextTextTextTextTextTextTextTextTextTextText" readonly></td>
 		    								</tr>
 		    								<tr>
 		    									<td>2</td>
 		    									<td>TextTextTextTextTextTextTextTextText</td>
-		    									<td>TextTextTextTextTextTextTextTextTextTextTextText</td>
+		    									<td><input id="respo2" type="text" name="respo2" class="form-control proje" placeholder="TextTextTextTextTextTextTextTextTextTextTextText" readonly></td>
 		    								</tr>
 		    								<tr>
 		    									<td>3</td>
 		    									<td>TextTextTextTextTextTextTextTextText</td>
-		    									<td>TextTextTextTextTextTextTextTextTextTextTextText</td>
+		    									<td><input id="respo3" type="text" name="respo3" class="form-control proje" placeholder="TextTextTextTextTextTextTextTextTextTextTextText" readonly></td>
 		    								</tr>
 		    							</table>
 		    						</div>
@@ -448,39 +452,41 @@
 					<div class="tender-container" id="emptab">
 						<div class="row">
 							<div class="col-sm-12 active-tenders">
-								<h3>Employer Details<button class="btn buts" onclick="myFunction2()" style="float: right;margin-top:-14px;"><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
+								<h3>Project Information
+		    						<button class="btn buts save_proj2" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction2()"><i class="fa fa-save" style="font-size:15px"></i>Save</button>
+		    						<button class="btn buts" id="edit_proj2" onclick="myFunction2()" style="float:right;margin-top:-14px;" ><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
 								<div class="row">	
 									<div class="col-sm-9">				
-										<table class="table table-striped table-hover">
+										<table class="table table-striped table-hover emp_details">
 											<tr>
 												<td>Employer
 													
 												</td >
-												<td id="emp1">British Land</td>
+												<td><input id="emp1" type="text" name="emp1" class="form-control proje" placeholder="British Land" readonly></td>
 											</tr>
 											<tr>
 												<td>Registered Office Address
 													
 												</td>
-												<td id="emp2">100 Sample Road, London, W1 23Y, United Kingdom</td>
+												<td><input id="emp2" type="text" name="emp2" class="form-control proje" placeholder="100 Sample Road, London, W1 23Y, United Kingdom" readonly></td>
 											</tr>
 											<tr>
 												<td>Industry
 													
 												</td>
-												<td id="emp3">Developer</td>
+												<td><input id="emp3" type="text" name="emp3" class="form-control proje" placeholder="Developer" readonly></td>
 											</tr>
 											<tr>
 												<td>Year Established
 													
 												</td>
-												<td id="emp4">1955</td>
+												<td><input id="emp4" type="text" name="emp4" class="form-control proje" placeholder="1955" readonly></td>
 											</tr>
 											<tr>
 												<td>Number of Employees
 													
 												</td>
-												<td id="emp5">10-50</td>
+												<td><input id="emp5" type="text" name="emp5" class="form-control proje" placeholder="10-50" readonly></td>
 											</tr>
 										</table>
 									</div>
@@ -519,14 +525,14 @@
 	    			<table class="table table-bordered">
     			    <thead class="thead">
   			        <tr>
-  			        	<th>Services</th>
-			            <th>Status</th>
-			            <th>Start</th>
-			            <th>End</th>
-			            <th>Time Remaining</th>
-			            <th>Bids received</th>
-			            <th>Queries received (outstanding)</th>
-			            <th>Actions</th>
+  			        	<th class="kilid" style="width: 95px;">Services</th>
+			            <th class="kilid" style="width: 95px;">Status</th>
+			            <th class="kilid" style="width: 95px;">Start</th>
+			            <th class="kilid" style="width: 95px;">End</th>
+			            <th class="kilid" style="width: 95px;">Time Remaining</th>
+			            <th class="kilid" style="width: 95px;">Bids received</th>
+			            <th class="kilid" style="width: 95px;">Queries received (outstanding)</th>
+			            <th class="kilid" style="width: 130px;">Actions</th>
   			        </tr>
     			    </thead>
     			    <tbody>
@@ -538,7 +544,7 @@
 			            <td class="td">5 days</td>
 			            <td class="td"><strong style="font-size: 25px;">3</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewBid"><p>View Bids</p></a></td>
 			            <td class="td"><strong style="font-size: 25px;">7</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewQueries"><p>View Answer/ Queries</p></a></td>
-			            <td class="td"></button><button style="width: 101px;" class="btn btn-success">Complete <br>Tender  <br>Process</button></td>
+			            <td class="td"></button><button style="width: 135px;" class="btn btn-success">Complete Tender  <br>Process</button></td>
   			        </tr>
   			        <tr>
 			            <td style="text-align: left;font-weight:bolder; " class="td">Service Engineer <a><p>Edit Tender</p></a></td>
@@ -557,10 +563,10 @@
 			            <td class="td">1/9/2018</td>
 			            <td class="td">5 days</td>
 			            <td class="td"><strong style="font-size: 25px;">3</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewBid"><p>View Bids</p></a></td>
-			            <td class="td"><strong style="font-size: 25px;">7</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewQueries"><p>View Answer/Queries</p></a></td>
+			            <td class="td"><strong style="font-size: 25px;">7</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewQueries"><p>View Answer/<br>Queries</p></a></td>
 			            <td class="td">
-			              </button><button class="btn btn-primary" style="margin-bottom:10px;    width: 102px;">Dowload <br>Evalution<br>Report</button>
-			            </button><button class="btn btn-warning">Negotiate <br>Scope and <br>Appointment</button></td>
+			              </button><button class="btn btn-primary" style="margin-bottom:10px;    width: 135px;">Dowload Evalution<br>Report</button>
+			            </button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td>
 			            
   			        </tr>
     			    </tbody>
@@ -662,8 +668,8 @@
 		    			<div class="col-sm-3">
 		    				<div class="tender-container" id="mama">
 		    					<ul class="nav bid-form-nav">
-		    						<li class=""><a data-toggle="tab" href="#">Pre-Qualification Questionnaire</a></li>
-		    						<li class="active"><a data-toggle="tab" href="#section11">Scope</a></li>
+		    						<li class="active"><a data-toggle="tab" href="#section01">Pre-Qualification Questionnaire</a></li>
+		    						<li ><a data-toggle="tab" href="#section11">Scope</a></li>
 		    						<li><a data-toggle="tab" href="#section21">Appointment</a></li>
 		    						<li><a data-toggle="tab" href="#section31">Evaluation Settings</a></li>
 		    						<li><a data-toggle="tab" href="#section41">Quality Assurance</a></li><br>
@@ -673,7 +679,12 @@
 		    			</div>
 		    			<div class="col-sm-9 questionnaire-section">
 		    				<div class="tab-content">
-		    					<div id="section11" class="tab-pane fade in active tender-container">
+		    					<div id="section01" class="tab-pane fade in active tender-container">
+		    						<h3 class="bid-form-title">Pre-Qualification Questionnaire</h3>
+		    						
+		    					</div>
+
+		    					<div id="section11" class="tab-pane tender-container">
 		    						<h3 class="bid-form-title">Scope</h3>
 
 		    						<p style="padding: 18px; border: 1px solid grey;border-radius: 6px;">
@@ -1864,28 +1875,41 @@ var element=document.getElementById('bonds');
 <script>
 	function myFunction() {
 	   $('#projform input.proje').attr('readonly',false);
+	   $('.save_proj').css('display', 'block');
+	   $('#edit_proj').css('display', 'none');
+	}
+	function saveFunction() {
+	   $('#projform input.proje').attr('readonly',true);
+	   $('.save_proj').css('display', 'none');
+	   $('#edit_proj').css('display', 'block');
 	}
 </script>
-<script type="text/javascript">
-	function myFunction1(){	
-   document.getElementById("que1").contentEditable = true;
-   document.getElementById("que2").contentEditable = true;
-   document.getElementById("que3").contentEditable = true;
-   document.getElementById("que4").contentEditable = true;
-   document.getElementById("que5").contentEditable = true;
-   document.getElementById("que6").contentEditable = true;
+<script>
+	function myFunction1() {
+	   $('.tender_queries input.proje').attr('readonly',false);
+	   $('.save_proj1').css('display', 'block');
+	   $('#edit_proj1').css('display', 'none');
+	}
+	function saveFunction1() {
+	   $('.tender_queries input.proje').attr('readonly',true);
+	   $('.save_proj1').css('display', 'none');
+	   $('#edit_proj1').css('display', 'block');
+	}
+</script>
+<script>
+	function myFunction2() {
+	   $('.emp_details input.proje').attr('readonly',false);
+	   $('.save_proj2').css('display', 'block');
+	   $('#edit_proj2').css('display', 'none');
+	}
+	function saveFunction2() {
+	   $('.emp_details input.proje').attr('readonly',true);
+	   $('.save_proj2').css('display', 'none');
+	   $('#edit_proj2').css('display', 'block');
 	}
 </script>
 
-<script type="text/javascript">
-	function myFunction2(){
-    document.getElementById("emp1").contentEditable = true;
-   document.getElementById("emp2").contentEditable = true;
-   document.getElementById("emp3").contentEditable = true;
-   document.getElementById("emp4").contentEditable = true;
-   document.getElementById("emp5").contentEditable = true;
-	}
-</script>
+
 <script>
 function mUp(obj) {
     obj.style.backgroundColor="none";

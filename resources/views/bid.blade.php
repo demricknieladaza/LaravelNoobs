@@ -300,12 +300,12 @@
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											<div class="form-group">
 												Providing the required service since
 											</div>
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 											<div class="form-group">
 												{{-- <div class="input-group date" id="datepicker" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
@@ -330,12 +330,12 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											<div class="form-group">
 												Offered services
 											</div>
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 											<ul id="servicelist" class="servicelist">
 											<?php
 											$Service = array(
@@ -366,12 +366,12 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											<div class="form-group">
 												Awards
 											</div>
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 											<div id="Awards">
 												<div class="form-group">
 													<input type="text" name="" class="form-control" placeholder="Enter name of award">
@@ -409,12 +409,12 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											<div class="form-group">
 												Track Record of relevant Projects
 											</div>
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 											<div class="form-group">
 												<input type="text" name="" class="form-control" placeholder="Enter profile title">
 											</div>
@@ -605,23 +605,23 @@
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="row" style="padding-bottom: 10px;">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											<div class="form-group">
 												Image
 											</div>
 										</div>
-										<div class="col-sm-7" >						
+										<div class="col-sm-8" >						
 											<label for="uploadImage7s"><strong>Upload Images</strong></label>
 											<input id="uploadImage7s" type="file" name="upimages[]" multiple accept='image/*'name="myPhoto" />
 								        </div>
 						            </div>
 						            <div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											<div class="form-group">
 												Accreditations
 											</div>
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 											<div class="form-group">
 												<select name='ddlSelectYear' class="form-control">
 										            <option value="">Year awarded</option>
@@ -640,12 +640,12 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											<div class="form-group">
 												Degrees
 											</div>
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 											<div class="form-group">
 												<select name="" class="form-control">
 													<option value="" disabled selected>Select degree</option>
@@ -675,8 +675,8 @@
 									</div>
 
 									<div class="row">
-										<div class="col-sm-5"></div>
-										<div class="col-sm-7">
+										<div class="col-sm-4"></div>
+										<div class="col-sm-8">
 											<select name='degree_year' class="form-control">
 											    <option value="">Year awarded</option>
 											    <?php 
@@ -695,10 +695,10 @@
 									<br>
 									
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											Awards
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 
 											<div class="form-group">
 												<input type="text" name="" class="form-control" placeholder="Enter name of award">
@@ -726,24 +726,24 @@
 									</div>
 								
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											<div class="form-group">
 												Professional Pathway
 											</div>
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 											<div class="form-group">
 												<input type="text" name="" class="form-control" placeholder="Previous employer">
 											</div>
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											<div class="form-group">
 											 
 											</div>
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select service</option>
@@ -782,10 +782,10 @@
 									
 									
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											
 										</div>
-											<div class="col-sm-7">
+											<div class="col-sm-8">
 												<div class="input-group date" id="datepicker7" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
@@ -796,10 +796,10 @@
 
 									</div><br>
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											
 										</div>
-											<div class="col-sm-7">
+											<div class="col-sm-8">
 												<div class="input-group date" id="datepicker8" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
@@ -810,10 +810,10 @@
 
 									</div><br>
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 												<div class="input_fields_serve2">
 												    <button class="btn btn-primary" id="add_field_serve2">Add another service</button>
 												    <div></div>
@@ -821,10 +821,10 @@
 											</div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 												<div class="input_fields_project1">
 												    <button class="btn btn-primary" id="add_field_project1">Add another project</button>
 												    <div></div>
@@ -848,12 +848,12 @@
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											<div class="form-group">
 												Comments on Constraints/Issues
 											</div>
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 											<div class="form-group">
 												<textarea cols="4" rows="5" id="textareaap" maxlength="3000" placeholder="Enter here  "></textarea>
   												<p style="color: grey;"><span id="rchars1" >3000</span>/3000 words remaining</p>
@@ -861,17 +861,17 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class=" col-sm-5"></div>
-										<div class="col-sm-7">
+										<div class=" col-sm-4"></div>
+										<div class="col-sm-8">
 											<img id="uploadPreview2" style="width:100px; height: 100px;" />
 											<input id="uploadImage2" type="file" name="myPhoto" onchange="PreviewImage2();" />
 						                </div>
 									</div><br>
                                     <div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 												<div class="input_fields_com">
 												    <button class="btn btn-primary" id="add_field_com">Add another comment</button>
 												    <div></div>
@@ -879,12 +879,12 @@
 											</div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											<div class="form-group">
 												Solutions
 											</div>
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 											<div class="form-group">
 												<textarea id="textarea2" placeholder="Enter text here"></textarea>
 												<p style="color: grey;"><span id="rchars2" >3000</span>/3000 words remaining</p>
@@ -892,17 +892,17 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class=" col-sm-5"></div>
-										<div class="col-sm-7">
+										<div class=" col-sm-4"></div>
+										<div class="col-sm-8">
 											<img id="uploadPreview3" style="width: 100px; height: 100px;" />
 											<input id="uploadImage3" type="file" name="myPhoto" onchange="PreviewImage3();" />
 						                </div>
 									</div><br>
 									 <div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 												<div class="input_fields_sul">
 												    <button class="btn btn-primary" id="add_field_sul">Add another solution</button>
 												    <div></div>
@@ -1608,20 +1608,20 @@
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											<div class="form-group">
 												Insurance
 											</div>
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 											<div class="form-group">
 												<p >Professional indemnity insurance</p>
 											</div>
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-5"></div>
-										<div class="col-sm-7">
+										<div class="col-sm-4"></div>
+										<div class="col-sm-8">
 											<div class="form-group">
 												<input type="text" name="" class="form-control" placeholder="Insurance level">
 											</div>
@@ -1629,8 +1629,8 @@
 
 									</div>
 									<div class="row">
-										<div class="col-sm-5"></div>
-										<div class="col-sm-7">
+										<div class="col-sm-4"></div>
+										<div class="col-sm-8">
 											<div class="form-group">
 												<input type="text" name="" class="form-control" placeholder="Premium cost uplift to achieve required insurance level">
 											</div>
@@ -1638,8 +1638,8 @@
 
 									</div>
 									<div class="row">
-										<div class="col-sm-5"></div>
-										<div class="col-sm-7">
+										<div class="col-sm-4"></div>
+										<div class="col-sm-8">
 											<div class="form-group">
 												{{-- <img id="uploadPreview4" style="width: 100px; height: 100px;" /> --}}
 												<label for="uploadImage7s"><strong>Upload Insurance Certificate</strong></label>
@@ -1648,8 +1648,8 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-5"></div>
-										<div class="col-sm-7">
+										<div class="col-sm-4"></div>
+										<div class="col-sm-8">
 												<select name="Sel" class="form-control" >
 													<option  disabled selected>Select insurance</option>
 													<option  value="test">Test</option>
@@ -1658,21 +1658,21 @@
 										</div>
 									</div><br>
 										<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											<div class="form-group">
 												Bonds
 											</div>
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 											<div class="form-group">
 												<p >Parent company guarantee</p>
 											</div>
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-5"></div>
+										<div class="col-sm-4"></div>
 										
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 								              <select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select</option>
 													<option value="test">Agreed</option>
@@ -1685,23 +1685,23 @@
 									</div><br>
 	
 								    <div class="row">
-										<div class="col-sm-5"></div>
+										<div class="col-sm-4"></div>
 										
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 								            <textarea id="textarea3" placeholder="Comments"></textarea>
 							             	<p style="color: grey;"><span id="rchars3" >3000</span>/3000 words remaining</p>	
 										</div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-5">Collateral  Warranties  /  Third  Parties  </div>
-										<div class="col-sm-7">
+										<div class="col-sm-4">Collateral  Warranties  /  Third  Parties  </div>
+										<div class="col-sm-8">
 												<p>Collateral Warranties</p>
 										</div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-5"></div>
+										<div class="col-sm-4"></div>
 										
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 								              <select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select</option>
 													<option value="test">Agreed</option>
@@ -1713,24 +1713,24 @@
 										</div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-5"></div>
+										<div class="col-sm-4"></div>
 										
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 								             <textarea id="textarea6" placeholder="Comments"></textarea>
 								             <p style="color: grey;"><span id="rchars6" >3000</span>/3000 words remaining</p>
 							             
 										</div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-5">Limit  of  Liability  </div>
-										<div class="col-sm-7">
+										<div class="col-sm-4">Limit  of  Liability  </div>
+										<div class="col-sm-8">
 												<p>Collateral Warranties</p>
 										</div>
                                        </div><br>
                                        <div class="row">
-										<div class="col-sm-5"></div>
+										<div class="col-sm-4"></div>
 										
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 								              <select name="Sel"  class="form-control" >
 													<option disabled selected>Select</option>
 													<option value="test">Agreed</option>
@@ -1742,36 +1742,36 @@
 										</div>
 									</div><br>
                                      <div class="row">
-										<div class="col-sm-5"></div>
+										<div class="col-sm-4"></div>
 										
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 								             <textarea id="textarea4" placeholder="Comments"></textarea>
 								             <p style="color: grey;"><span id="rchars4" >3000</span>/3000 words remaining</p>
 							             
 										</div>
 									</div><br>
 										<div class="row">
-										<div class="col-sm-5">Execution</div>
-										<div class="col-sm-7">
+										<div class="col-sm-4">Execution</div>
+										<div class="col-sm-8">
 												<p>Collateral Warranties</p>
 										</div>
                                       </div><br>
 									<div class="row">
-										<div class="col-sm-5"></div>
-										<div class="col-sm-7">
+										<div class="col-sm-4"></div>
+										<div class="col-sm-8">
 								               <input type="checkbox" name="" value="test" class="filled-in" id="check14" >   <label for="check14">I Agree</label>
 							             </div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-5">Net  Contribution  Clause </div>
-										<div class="col-sm-7">
+										<div class="col-sm-4">Net  Contribution  Clause </div>
+										<div class="col-sm-8">
 												<p >Yes</p>
 										</div>
                                        </div><br>
                                        <div class="row">
-										<div class="col-sm-5"></div>
+										<div class="col-sm-4"></div>
 										
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 								              <select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select</option>
 													<option value="test" >Agreed</option>
@@ -1784,44 +1784,44 @@
 									</div><br>
 									<div class="row">
                                     
-										<div class="col-sm-5">	
+										<div class="col-sm-4">	
 												Form of Appointment
 										</div>
-											<div class="col-sm-7">
+											<div class="col-sm-8">
 												<button class="btn"><i class="fa fa-download"></i> Download</button>
 												<button type="button" class="btn btn-danger">View</button>
 										</div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 												<input type="text" name="" class="form-control" placeholder="Enter clause here">
 										</div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 												<input type="text" name="" class="form-control" placeholder="Enter new suggested work here">
 										</div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 												<textarea id="textarea5" placeholder="Comments"></textarea>
 												<p style="color: grey;"><span id="rchars5" >3000</span>/3000 words remaining</p>
 										</div>
 									</div><br>
 									 <div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 												<div class="input_fields_comm">
 												    <button class="btn btn-primary" id="add_field_comm">Add another comment</button>
 												    <div></div>
@@ -1829,26 +1829,26 @@
 											</div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 												<input type="text" name="" class="form-control" placeholder="Enter new suggested work here">
 										</div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											Documents for Signature
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 												<input type="text" name="" class="form-control" placeholder="Document title">
 									</div>
 								</div><br>
 									<div class="row">
-										<div class="col-sm-5">	
+										<div class="col-sm-4">	
 												
 										</div>
-											<div class="col-sm-7">
+											<div class="col-sm-8">
 												<button class="btn"><i class="fa fa-download"></i> Download</button>
 												<button type="button" class="btn btn-info">Upload</button>
 										</div>
@@ -1870,12 +1870,12 @@
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											<div class="form-group">
 												Created by
 											</div>
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 											<div class="form-group">
 												<div class="col-sm-6" style="padding:0;">
 													<input type="text" name="" class="form-control" placeholder="First name">
@@ -1887,18 +1887,18 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											<div class="form-group">
 												
 											</div>
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 											
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-5"></div>
-											<div class="col-sm-7">
+										<div class="col-sm-4"></div>
+											<div class="col-sm-8">
 											<div class="form-group">
 												<div class="input-group date" id="datepicker4" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
@@ -1911,12 +1911,12 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											<div class="form-group">
 												Checked by
 											</div>
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 											<div class="form-group">
 												<div class="col-sm-6" style="padding:0;">
 													<input type="text" name="" class="form-control" placeholder="First name">
@@ -1928,18 +1928,18 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											<div class="form-group">
 												
 											</div>
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 											
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-5"></div>
-											<div class="col-sm-7">
+										<div class="col-sm-4"></div>
+											<div class="col-sm-8">
 											<div class="form-group">
 												<div class="input-group date" id="datepicker10" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
@@ -1952,12 +1952,12 @@
 										</div>
 									</div>
 										<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											<div class="form-group">
 												Approved by
 											</div>
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 											<div class="form-group">
 												<div class="col-sm-6" style="padding:0;">
 													<input type="text" name="" class="form-control" placeholder="First name">
@@ -1969,18 +1969,18 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											<div class="form-group">
 												
 											</div>
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 											
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-5"></div>
-											<div class="col-sm-7">
+										<div class="col-sm-4"></div>
+											<div class="col-sm-8">
 											<div class="form-group">
 												<div class="input-group date" id="datepicker11" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
@@ -1993,10 +1993,10 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-5">
+										<div class="col-sm-4">
 											Statements
 										</div>
-										<div class="col-sm-7">
+										<div class="col-sm-8">
 								               <input type="checkbox" name="" value="" class="filled-in" id="check13" >     <label for="check13">I Agree to XXX</label>
 							              </div>
 									</div>
