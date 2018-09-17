@@ -1430,11 +1430,18 @@ body > div:nth-child(17) > div > div.col-sm-12{
     color:white;
 }
 
-.btn.focus, .btn:focus, .btn:hover
+.btn:hover
 {
     outline: none !important;
     transform: scale(.9);
 }
+
+.btn:focus
+{
+    outline: none !important;
+    background: #FE7235;
+}
+
 .panel1 {
     padding: 0 18px;
     background-color: white;

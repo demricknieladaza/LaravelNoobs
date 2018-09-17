@@ -70,7 +70,53 @@
 	    background-color: transparent;
 	    border-color: #fe7235;
 	}
+	.datepicker.dropdown-menu
+	{ 
+		background: white;
+	}
+	.datepicker{z-index:9999 !important}
 </style>
+<script type="text/javascript">
+	$(document).ready(function() {
+	    var max_fields      = 10; //maximum input boxes allowed
+	    var wrapper         = $("#Awards"); //Fields wrapper
+	    var add_button      = $("#add_award"); //Add button ID
+	    
+	    var x = 1; //initlal text box count
+	    $(add_button).click(function(e){ //on add input button click
+	        e.preventDefault();
+	        if(x < max_fields){ //max input box allowed
+	            x++; //text box increment
+	            $(wrapper).append('<div><div class="form-group"><input type="text" name="" class="form-control" placeholder="Enter name of award"></div><div class="form-group"><input type="text" name="" class="form-control" placeholder="Enter details"></div><div class="form-group"><input type="text" name="" class="form-control" placeholder="Awarded by"></div><div class="form-group"><div class="input-group date" id="datepicker1" data-date="02-2012" data-date-format="mm-yyyy"><input class="form-control" type="text" placeholder="Year awarded  " readonly="readonly" name="date" >	  <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span></div></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
+	        }
+	    });
+	    
+	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+	        e.preventDefault(); $(this).parent('div').remove(); x--;
+	    })
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+	    var max_fields      = 10; //maximum input boxes allowed
+	    var wrapper         = $("#addedservices"); //Fields wrapper
+	    var add_button      = $("#addservices"); //Add button ID
+	    var adddiv   		= "<?php $Services = array("Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Fascade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager");sort($Services, SORT_NATURAL | SORT_FLAG_CASE);foreach ($Services as $key ) {echo "<option value='".$key."'>".$key."</option>";} ?>";
+	    
+	    var x = 1; //initlal text box count
+	    $(add_button).click(function(e){ //on add input button click
+	        e.preventDefault();
+	        if(x < max_fields){ //max input box allowed
+	            x++; //text box increment
+	            $(wrapper).append('<div><div class="form-group"><select name="Sel"  class="form-control" ><option value="" disabled selected>Select Service</option>'+adddiv+'<option value="other">Other</option></select></div><div class="form-group"><div class="input-group date" id="datepicker2" data-date="02-2012"data-date-format="mm-yyyy"><input class="form-control" type="text" placeholder="Provided this Service from" readonly="readonly" name="date" > <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span></div></div><div class="form-group"><div class="input-group date" id="datepicker3" data-date="02-2012" data-date-format="mm-yyyy"><input class="form-control" type="text" placeholder="Provided this Service until" readonly="readonly" name="date" ><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span></div></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
+	        }
+	    });
+	    
+	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+	        e.preventDefault(); $(this).parent('div').remove(); x--;
+	    })
+	});
+</script>
 <div class="modal fade" id="awards" role="dialog">
 	  <div class="modal-dialog">
 	  
@@ -120,7 +166,7 @@
 	        <div class="modal-footer">
 					<!-- Button HTML (to Trigger Modal) -->
 				<div style="text-align:center;">
-					<button type="button" style="color: #fff;background-color: #fe7235;border-radius: inherit;" href="#mode"  class="btn" data-backdrop="static" data-toggle="modal">Submit Tender Query</button>
+					<button type="button" style="color: #fff;background-color: #fe7235;border-radius: inherit;" href="#mode"  class="btn" data-backdrop="false" data-toggle="modal">Submit Tender Query</button>
 				</div>
 	          	<div id="mode" class="modal fade">
 					<div class="modal-confirm">
@@ -180,7 +226,7 @@
 				<div class="tender-container" style="border-radius: 6px;">
 					<ul class="nav bid-form-nav">
 						<li class="active"><a data-toggle="tab" href="#section1">Pre-Qualification Questionnaire<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li ><a data-toggle="tab" href="#section2">Organisation<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disd" ><a data-toggle="tab" href="#section2">Organisation<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
 						<li class="disd"><a data-toggle="tab" href="#section3">Individuals<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
 						<li class="disd"><a data-toggle="tab" href="#section4">Approach<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
 						<li class="disd"><a data-toggle="tab" href="#section5">Scope<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
@@ -319,7 +365,7 @@
 											</div>
 										</div>
 										<div class="col-sm-7">
-											{{-- <div id="Awards">
+											<div id="Awards">
 												<div class="form-group">
 													<input type="text" name="" class="form-control" placeholder="Enter name of award">
 												</div>
@@ -330,20 +376,18 @@
 													<input type="text" name="" class="form-control" placeholder="Awarded by">
 												</div>
 												<div class="form-group">
-													<div class="input-group date" id="datepicker1" data-date="02-2012" 
-													         data-date-format="mm-yyyy">
-
-														 <input class="form-control" type="text" placeholder="Year awarded  " readonly="readonly" name="date" >	  
-														 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+													<div class="input-group date" id="datepicker1" data-date="02-2012" data-date-format="mm-yyyy">
+													 <input class="form-control" type="text" placeholder="Year awarded  " readonly="readonly" name="date" >	  
+													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 													</div>
 												</div>
-											</div> --}}
+											</div>
 											<ul class="addeditem" style="list-style: none;padding: 0;">
 													
 												</ul>
 											<div class="form-group">
 												<div class="input_fields_piste">
-												    <button type="button" class="btn btn-primary" id="add_award" data-toggle="modal" data-backdrop="static" data-target="#awards">Add another award</button>
+												    <button type="button" class="btn btn-primary" id="add_award" >Add another award</button>
 												</div>
 											</div>
 										</div>
@@ -417,8 +461,8 @@
 													 <input class="form-control" type="text" placeholder="Provided this Service from" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
-										</div>
-										<div class="form-group">
+											</div>
+											<div class="form-group">
 												<div class="input-group date" id="datepicker3" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
@@ -426,9 +470,12 @@
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
 											</div>
+											<div id="addedservices">
+												
+											</div>
 											<div class="form-group">
 												<div class="input_fields_serve">
-												    <button class="btn btn-primary" id="add_field_serve">Add another service</button>
+												    <button type="button" class="btn btn-primary" id="addservices">Add another service</button>
 												    <div></div>
 												</div>
 											</div>
@@ -2332,6 +2379,8 @@ $('textarea').keyup(function() {
 	    $('.awrd_date').val('');
 	    $('#awards').modal('toggle');
 	    });
+
+
 	});
 </script>
 
