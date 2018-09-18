@@ -21,6 +21,7 @@
 	    padding: 10px;
 	    text-align: left;
 	    white-space: nowrap;
+	    text-align: center;
 	}
 	.zui-table tbody td {
 	    border-bottom: solid 1px #DDEFEF;
@@ -44,6 +45,7 @@
 	    top: auto;
 	    border-right: 1px solid orange;
 	    width: 141px;
+	    text-align:center; 
 	}
 	table.zui-table tbody tr:nth-child(even){
 		background: #fff8f3;
@@ -59,7 +61,7 @@
 	<h1 class="project-title bid-page-title centerh">Project Dashboard</small></h1>
 </div>
 <div class="container">
- <div class="modal fade" id="myModal2" role="dialog">
+ <div class="modal fade" id="myModal2" role="dialog" tabindex="-1">
 		    <div class="modal-dialog">
 		      <!-- Modal content-->
 		      <div class="modal-content">
@@ -78,7 +80,7 @@
 					
 				</div>
 			</p>
-		          <p>Feedback Time<div class="form-group">
+		          <p>Feedback date<div class="form-group">
 				<select name="days" class="form-control" onchange='Days(this.value);'> 
 					<option value="" disabled selected>Select Days</option> 
 					<option>1 days</option>
@@ -116,9 +118,9 @@
 		          <input type="text" placeholder="Search.." name="search">
 		      <button type="submit">Add</button>
 		        </div>
-		        <div class="modal-footer">
-		          <button type="button" class="btn btn-success">Submit</button>
-		          <button type="button" class="btn btn-primary">Go Back</button>
+		        <div class="modal-footer" style="text-align: center;">
+		          <button type="button" class="btn btn-primary">Start Tender Process</button>
+		          <button type="button" class="btn btn-primary butgrey">Go Back</button>
 		        </div>
 		      </div>   
 		    </div>
@@ -529,7 +531,7 @@
     			    </thead>
     			    <tbody>
   			        <tr>
-			            <td style="text-align: left;" class="td">Fire Engineer <a><p>Edit Tender</p></a></td>
+			            <td style="text-align: left;font-weight:bolder; " class="td">Fire Engineer <a><p>Edit Tender</p></a></td>
 			            <td class="td">Active</td>
 			            <td class="td">1/1/2018</td>
 			            <td class="td">1/9/2018</td>
@@ -539,7 +541,7 @@
 			            <td class="td"></button><button style="width: 101px;" class="btn btn-success">Complete <br>Tender  <br>Process</button></td>
   			        </tr>
   			        <tr>
-			            <td style="text-align: left;" class="td">Service Engineer <a><p>Edit Tender</p></a></td>
+			            <td style="text-align: left;font-weight:bolder; " class="td">Service Engineer <a><p>Edit Tender</p></a></td>
 			            <td class="td">Drafted</td>
 			            <td class="td">TBC</td>
 			            <td class="td">TBC</td>
@@ -549,7 +551,7 @@
 			            <td class="td"></td>
   			        </tr>
   			        <tr>
-			            <td style="text-align: left;" class="td">Structural Engineer</td>
+			            <td style="text-align: left;font-weight:bolder; " class="td">Structural Engineer</td>
 			            <td class="td">Closed</td>
 			            <td class="td">1/1/2018</td>
 			            <td class="td">1/9/2018</td>
@@ -566,87 +568,8 @@
 	    			<button class="btn">Print Report</button>
 					</div>
 					<div class="row" style="margin: 25px;">
-						<h4>Cashflow of selected tenderers</h4>
-						{{-- <div style="overflow-x: overlay; ">
-	    			<table class="table table-striped table-hover" style="height: 200px;">
-    			    <thead class="thead">
-  			        <tr class="widt">
-			            <th class="zui-sticky-col" >Services</th>
-			            <th>Jan-18</th>
-			            <th>Feb-18</th>
-			            <th>Mar-18</th>
-			            <th>Apr-18</th>
-			            <th>May-18</th>
-			            <th>Jun-18</th>
-			            <th>Jul-18</th>
-			            <th>Aug-18</th>
-			            <th>Sep-18</th>
-			            <th>Oct-18</th>
-			            <th>Nov-18</th>
-			            <th>Dec-18</th>
-			            <th>Jan-19</th>
-			            <th>Feb-19</th>
-			            <th>Mar-19</th>
-  			        </tr>
-    			    </thead>
-    			    <tbody>
-  			        <tr class="widt">
-			            <th class="td zui-sticky-col">Fire Engineer</th>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-  			        </tr>
-  			        <tr class="widt">
-			            <th class="td zui-sticky-col">Architect</th>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-			            <td class="td">£1,000.00</td>
-  			        </tr>
-  			        <tr class="widt" style=" border-top: 5px solid orange;">
-			            <td class="td zui-sticky-col"><strong>Total</strong></td>
-			            <td class="td"><b>£2,000.00</b></td>
-			            <td class="td"><b>£2,000.00</b></td>
-			            <td class="td"><b>£2,000.00</b></td>
-			            <td class="td"><b>£2,000.00</b></td>
-			            <td class="td"><b>£2,000.00</b></td>
-			            <td class="td"><b>£2,000.00</b></td>
-			            <td class="td"><b>£2,000.00</b></td>
-			            <td class="td"><b>£2,000.00</b></td>
-			            <td class="td"><b>£2,000.00</b></td>
-			            <td class="td"><b>£2,000.00</b></td>
-			            <td class="td"><b>£2,000.00</b></td>
-			            <td class="td"><b>£2,000.00</b></td>
-			            <td class="td"><b>£2,000.00</b></td>
-			            <td class="td"><b>£2,000.00</b></td>
-			            <td class="td"><b>£2,000.00</b></td>
-			          </tr>
-    			    </tbody>
-    				</table>
-    			</div> --}}
+						<h4 style="font-weight:bolder; ">Cashflow of selected tenderers</h4>
+						
     			<div class="zui-wrapper">
     			    <div class="zui-scroller">
     			        <table class="zui-table">
@@ -728,7 +651,7 @@
     			            </tbody>
     			        </table>
     			    </div>
-    			</div>
+    			</div><br>
 	    			<button class="btn">Export to MS Excel</button>
 					</div>
 				</div>	
@@ -739,16 +662,12 @@
 		    			<div class="col-sm-3">
 		    				<div class="tender-container" id="mama">
 		    					<ul class="nav bid-form-nav">
+		    						<li class=""><a data-toggle="tab" href="#">Pre-Qualification Questionnaire</a></li>
 		    						<li class="active"><a data-toggle="tab" href="#section11">Scope</a></li>
 		    						<li><a data-toggle="tab" href="#section21">Appointment</a></li>
 		    						<li><a data-toggle="tab" href="#section31">Evaluation Settings</a></li>
 		    						<li><a data-toggle="tab" href="#section41">Quality Assurance</a></li><br>
-		    						<li>
-  										<!-- Trigger the modal with a button -->
-									  <button type="button" id="but" class="btn" style="width:100%;line-height: .8em;" data-toggle="modal" data-backdrop="static" data-target="#myModal2">Start Tender Process</button>
-									  <!-- Modal -->
-									 
-									 </li>
+		    						
 		    					</ul><br>
 		    				</div>
 		    			</div>
@@ -815,6 +734,10 @@
 		    							<div id="messages">
 		    							<p>Status Messages</p>
 		    							</div>
+
+		    							<div class="form-group butcent">
+								<input id="sec2" type="submit" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
+							</div>
 
 		    						</div><br> 
 
@@ -1585,7 +1508,11 @@
 															<div class="form-group">
 																<button type="button" class="btn btn-danger">Add another document </button>
 															</div>
+
 		    										</div>
+		    										<div class="form-group butcent">
+														<input id="sec2" type="submit" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
+													</div>
 		    									</div>
 		    								</div>
 		    							</div>
@@ -1651,8 +1578,11 @@
 
 		    							<div id="messages">
 		    							<p>Status Messages</p>
-		    							</div>
+		    							</div><br>
 
+		    							<div class="form-group butcent">
+											<input id="sec2" type="submit" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
+										</div>
 		    						</div><br> 
 
 		    					</div>
@@ -1756,10 +1686,17 @@
 													<div class="form-group">
 														<div class="cnt_statement">
 													    <button class="btn btn-primary" id="cnt_statement" >Add another statement</button>
-													    <div></div>
+													    
 														</div>
 													</div>
     										</div>
+    										<div class="form-group butcent">
+
+    											<button type="button" class="btn btn-primary butsize" s data-toggle="modal"data-target="#myModal2">Start Tender Process</button>
+
+											<input id="sec2" type="button" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
+										</div>
+    										
     									</div>
 		    						</form>
 		    					</div>
@@ -1774,7 +1711,7 @@
 	</div>
 </div>
 
-<div class="modal fade" id="viewBid" role="dialog">
+<div class="modal fade" id="viewBid" role="dialog" tabindex="-1">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
@@ -1825,7 +1762,7 @@
   </div>
 </div>
 
-<div class="modal fade" id="viewQueries" role="dialog">
+<div class="modal fade" id="viewQueries" role="dialog" tabindex="-1">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
