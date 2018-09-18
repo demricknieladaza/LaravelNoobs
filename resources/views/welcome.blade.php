@@ -239,6 +239,9 @@
             content: "\2212";
             color: white;
         }
+        .media-body h3{
+            color: black;
+        }
     </style>
 
 

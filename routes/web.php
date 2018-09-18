@@ -23,9 +23,9 @@ Route::get('/winwork/pds/bid', 'UsersController@bid_controller');
 
 Route::get('/dashboard', 'UsersController@dashboard_controller');
 
-Route::get('/dashboard/emp_dashboard', 'UsersController@emp_dashboard_controller');
+Route::get('/dashboard/emp_dashboard', 'UsersController@emp_dashboard_controller')->name('Employer Dashboard');
 
-Route::get('/dashboard/tend_dashboard', 'UsersController@tend_dashboard_controller');
+Route::get('/dashboard/tend_dashboard', 'UsersController@tend_dashboard_controller')->name('Tenderer Dashboard');
 
 Route::get('/dashboard/benchmark_dashboard', 'UsersController@benchmark_dashboard_controller');
 

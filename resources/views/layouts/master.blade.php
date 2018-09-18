@@ -322,9 +322,9 @@
                             <li><a href="{{ url('/') }}">About Scope</a></li>
                             <li><a href="{{ url('/') }}">FAQ</a></li>       
                             <li><a href="{{ url('/') }}">contact</a></li>
-                        @endif
+                        @endif  
                         @if(Session::has('fullname'))
-                            <li class="dropdown"><a class="highlight">SCOPE Business Lounge</a>
+                            <li class="dropdown"><a href="{{ url('/dashboard/emp_dashboard') }}" class="highlight">SCOPE Business Lounge</a>
                                 <div class="dropdown-content">
                                   <a href="{{ url('/dashboard/emp_dashboard') }}">Employer Dashboard</a>
                                   <a href="{{ url('/dashboard/tend_dashboard') }}">Tenderer Dashboard</a>
@@ -333,6 +333,7 @@
                                   <a href="#">Individuals</a>
                                   <a href="{{ url('/dashboard/users') }}">Users</a>
                                   <a href="{{ url('/dashboard/membership') }}">Membership</a>
+                                  <a href="{{ url('/dashboard/policies') }}">Policies</a>
                                   <a href="{{ url('logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
                                 </div>
                             </li>

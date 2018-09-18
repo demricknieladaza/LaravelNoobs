@@ -43,8 +43,12 @@
 		formatter: function(value) {
 			if (value == 101){
 				return 'Any';
-			}else{
-				return value;
+			}
+			else if(value == 0 || value == 1){
+				return value + ' mile';
+			}
+			else{
+				return value + ' miles';
 			}
 			// return 'Current value: ';
 		}

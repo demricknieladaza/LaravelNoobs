@@ -2,8 +2,8 @@ header .nav li a{ color: #fff; font-size: 13px; font-weight: bold; padding: 40px
 header{ background: #222; padding: 0; background: rgba(34, 34, 34, 0.5); position: fixed; width: 100%; z-index: 999999; top: 0; }
 .navbar{ margin-bottom: 0; }
 header .nav li a:hover, header .nav li a:focus{ color: #fff; background: none; } 
-header .nav li a.highlight{ background: #fe7235; }
-header .nav li a.highlight:hover{ background: rgba(254,114,53,0.8); color: #000; }
+header .nav li a.highlight{ background: rgba(254,114,53,0.2); }
+header .nav li a.highlight:hover{ background: rgba(254,114,53,1); color: #000; }
 .navbar-brand{ padding: 38px 15px; }
 .nav .open>a, .nav .open>a:focus, .nav .open>a:hover{ background: #fff; }
 .bold-title{ font-size: 62px; font-weight: bolder; color: #fff; text-transform: uppercase; margin-top: -20px; line-height: 1em !important;}
@@ -1458,7 +1458,6 @@ body > div:nth-child(17) > div > div.col-sm-12{
     font-size: 17px;
     width: 100%;
     line-height: .5em;
-    box-shadow: 0 0 3px #999;
 }
 
 .raise:hover,
@@ -1479,6 +1478,8 @@ textarea{
 
 .inq{
     background: #FE7235;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
 }
 
 
@@ -2164,13 +2165,13 @@ body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.
     margin-right: 5px;
 }
 
-body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(2) > div > div > div.row > div.col-sm-3.company-quick-details > p:nth-child(1) > img,
+/*body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.lounge-main > div:nth-child(2) > div > div > div.row > div.col-sm-3.company-quick-details > p:nth-child(1) > img,
 body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(6) > div > div > div > div.col-sm-3.company-quick-details > p:nth-child(1) > img,
 #collapse6 > div > div > div.col-sm-3.company-quick-details > p:nth-child(1) > img{
     box-sizing: border-box;
     border: 2px solid #404040;
     padding: 13px;
-}
+}*/
 
 body > div.container-fluid.lounge-wrapper > div.col-sm-10.col-sm-offset-2.lounge-main > div > div > div > div:nth-child(2) > div > div > div.row.table-tender-details > div.col-sm-6.table-left > table > tbody{
     transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
@@ -2368,8 +2369,8 @@ body > div.container-fluid.lounge-wrapper > div > div.col-sm-10.col-sm-offset-2.
 }
 .project1{
    display: inline-block;
-    min-width: 10px;
-    padding: 3px 7px;
+    min-width: 25px;
+    padding: 3px 8px;
     font-weight: 700;
     border-radius: 50%;
     background-color: #fe7235;
@@ -2412,7 +2413,7 @@ input.form-control.proje::-webkit-input-placeholder {
     border: 1px solid #fe7235;
     padding: 9px;
     border-radius: 6px;
-    width: 31%;
+    width: 45%;
 }
 
 /*download*/
@@ -2517,4 +2518,21 @@ pre
 #progress p.failed
 {
     background: #c00 none 0 0 no-repeat;
+}
+
+.fa-star-o:before {
+    color: white;
+}
+
+.fa-envelope-o:before {
+    color: white;
+}
+
+.btn:hover{
+    color: white !important;
+}
+
+.modal-content {
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
 }

@@ -117,6 +117,12 @@
 	    })
 	});
 </script>
+<script type="text/javascript">
+	$(document).ready(function(){
+    $("#Modal").on('shown.bs.modal', function(){
+        $(this).find('#inputName').focus();
+    });
+</script>
 <div class="modal fade" id="awards" role="dialog">
 	  <div class="modal-dialog">
 	  
@@ -151,7 +157,7 @@
 	  </div>
 	</div>
 
-	<div class="modal fade" id="Modal" role="dialog">
+	<div class="modal fade" id="Modal" tabindex="-1" role="dialog">
 	    <div class="modal-dialog">
 	    
 	      <!-- Modal content-->
@@ -161,7 +167,7 @@
 	          <h4 class="modal-title">Ask the Employer</h4>
 	        </div>
 	        <div class="modal-body">
-	          <textarea placeholder="Enter your query here" rows="4" cols="50"></textarea>
+	          <textarea placeholder="Enter your query here" rows="4" cols="50" active></textarea>
 	        </div>
 	        <div class="modal-footer">
 					<!-- Button HTML (to Trigger Modal) -->
@@ -184,7 +190,7 @@
 								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-info" data-dismiss="modal">Go Back</button>
-									<button type="button" class="btn btn-success" style="color: #fff;background-color: #fe7235;">Scope Business Lounge</button>
+									<button type="button" class="btn btn-success" style="color: #fff;background-color: #fe7235;">Submit</button>
 								</div>
 							</div>
 						</div>

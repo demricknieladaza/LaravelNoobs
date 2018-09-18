@@ -308,8 +308,8 @@
 								<table class="table table-striped table-hover" id="a">
 									<tr>
 										<td width="10%">#</td>
-										<td>Query</td>
-										<td>Responses</td>
+										<td style="font-weight: 800;"><strong>Query</strong></td>
+										<td style="font-weight: 800;"><strong>Responses</strong></td>
 
 									</tr>
 									<tr>
@@ -331,7 +331,7 @@
 							</div>
 						</div>
 						<div class="toactive pull-right">
-							To submit a tender query, please scroll up to <a href="#actTinder" style="color:#fe7235; text-decoration: none;">Active Tenders</a> 
+							To submit a tender query, please scroll up to <a href="#actTinder" style="color:#fe7235; text-decoration: none;">Active Tenders</a> and choose one of the services to submit a bid
 						</div>
 					</div>
 				</div>
@@ -444,7 +444,7 @@
 <div class="container">
 	<div class="owl-container">
 		<div class="active-tenders">
-			<h3><a href="{{ url('/winwork') }}">Similar Projects</a></h3>
+			<h3><a href="{{ url('/winwork') }}">Other Projects from British Land</a></h3>
 		</div>
 		<span class="prev"><i class="fa fa-angle-left"></i></span>
 		<span class="next"><i class="fa fa-angle-right"></i></span>
