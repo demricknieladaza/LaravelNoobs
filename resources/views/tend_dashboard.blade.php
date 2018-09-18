@@ -19,117 +19,134 @@
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="lounge-demo">
-							<div class="form-group">
-								<h1 style="color: #000; text-align: center; font-size: 20px;">There are<br><span style="color: #FE7235; font-size: 50px;">26</span><br>Opportunity Nearby
+							<!-- <div class="form-group">
+								<h1 style="color: #000; text-align: center; font-size: 17px;">There are<br><span style="color: #FE7235; font-size: 50px;">26</span><br>Opportunity Nearby
 								</h1>
 							</div>
 							<div class="form-group ">
 								<div class="tender-tiles new-project-tile rad">
 								<h2><a href="{{ url('/winwork') }}">Win Work</a></h2>
 								</div>
+							</div> -->
+							<div class="row" style=" margin-right: 0;
+							    margin-left: 0;
+							    margin-bottom: 25px;
+							    padding: 10px;
+							    border-radius: 6px;">
+								<div class="col-sm-6">
+									<h1 style="color: #000; text-align: center; font-size: 17px; margin-top: 4px;">There are<br><span style="color: #FE7235; font-size: 50px;">26</span><br>Opportunity Nearby
+									</h1>
+								</div>
+								<div class="col-sm-6">
+									<div class="overlay-ribbon">
+										<div class="ribbon-content">
+											<h2 style="transform: rotate(270deg); font-size: 28px;margin-top: 75px;"><a href="{{ url('/winwork') }}" style="color: #fff; text-decoration: none;">Win Work</a></h2>
+										</div>
+									</div>
+								</div>
 							</div>
 							<div class="col-sm-6 tab1">
-								<div class="tender-tiles new-project-tile" style="background: #FE7235; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px;">
+								<div class="tender-tiles new-project-tile" style="background: #FE7235; color: #fff; text-align: center; font-size: 17px;     padding-top: 20px; padding-bottom: 14px;">
 									<h3><a href="{{ url('/winwork/pds') }}">Request for Proposal   <span  class="project1 pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></a></h3>
 								</div>
 								<table >
 									<tr class="col-sm-3">
 										<div class="ex3">
-											<a href="{{ url('/dashboard/tend_dashboard/active_page') }}"><p style="font-weight: bold; font-size: 20px; border-top: 2px black solid; color: #000; padding-top: 10px; ">Project Infinity Tree</p></a>
+											<a href="{{ url('/dashboard/tend_dashboard/active_page') }}"><p style="font-weight: bold; font-size: 17px; border-top: 2px black solid; color: #000; padding-top: 10px; ">Project Infinity Tree</p></a>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<a href="{{ url('/dashboard/tend_dashboard/active_page') }}"><p style="font-weight: bold; font-size: 20px; color: #000; padding-top: 10px; ">Project Green Lagune</p></a>
+											<a href="{{ url('/dashboard/tend_dashboard/active_page') }}"><p style="font-weight: bold; font-size: 17px; color: #000; padding-top: 10px; ">Project Green Lagune</p></a>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<a href="{{ url('/dashboard/tend_dashboard/active_page') }}"><p style="font-weight: bold; font-size: 20px; color: #000; padding-top: 10px; ">Project Infinity Tree</p></a>
+											<a href="{{ url('/dashboard/tend_dashboard/active_page') }}"><p style="font-weight: bold; font-size: 17px; color: #000; padding-top: 10px; ">Project Infinity Tree</p></a>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
-											 <p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											 <p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
@@ -147,107 +164,107 @@
 								</table>
 							</div>
 							<div class="col-sm-6 tab2 pull-right">
-								<div class="tender-tiles new-project-tile" style="background: #FE7235;  color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px;">
+								<div class="tender-tiles new-project-tile" style="background: #FE7235;  color: #fff; text-align: center; font-size: 17px;     padding-top: 20px; padding-bottom: 14px;">
 									<h3>Saved Opportunities<span  class="project1 pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></h3>
 								</div>
 								<table >
 									<tr class="col-sm-3">
 										<div class="ex3">
-											<a href="{{ url('/winwork/pds') }}"><p style="font-weight: bold; font-size: 20px; border-top: 2px black solid; color: #000; padding-top: 10px; ">Project Infinity Tree</p></a>
+											<a href="{{ url('/winwork/pds') }}"><p style="font-weight: bold; font-size: 17px; border-top: 2px black solid; color: #000; padding-top: 10px; ">Project Infinity Tree</p></a>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<a href="{{ url('/winwork/pds') }}"><p style="font-weight: bold; font-size: 20px; color: #000; padding-top: 10px; ">Project Green Lagune</p></a>
+											<a href="{{ url('/winwork/pds') }}"><p style="font-weight: bold; font-size: 17px; color: #000; padding-top: 10px; ">Project Green Lagune</p></a>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<a href="{{ url('/winwork/pds') }}"><p style="font-weight: bold; font-size: 20px; color: #000; padding-top: 10px; ">Project Infinity Tree</p></a>
+											<a href="{{ url('/winwork/pds') }}"><p style="font-weight: bold; font-size: 17px; color: #000; padding-top: 10px; ">Project Infinity Tree</p></a>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
-											 <p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											 <p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
@@ -264,107 +281,107 @@
 								</table>
 							</div>
 							<div class="col-sm-6 tab1">
-								<div class="tender-tiles new-project-tile" style="background: #FE7235;  color: #fff; text-align: center; font-size: 20px;     padding-top: 20px;    margin-top: 15px; padding-bottom: 14px;">
+								<div class="tender-tiles new-project-tile" style="background: #FE7235;  color: #fff; text-align: center; font-size: 17px;     padding-top: 20px;    margin-top: 15px; padding-bottom: 14px;">
 									<h3>Active<span  class="project1 pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></h3>
 								</div>
 								<table >
 									<tr class="col-sm-3">
 										<div class="ex3">
-											<a href="{{ url('/dashboard/tend_dashboard/active_page') }}"><p style="font-weight: bold; font-size: 20px; border-top: 2px black solid; color: #000; padding-top: 10px; ">Project Infinity Tree</p></a>
+											<a href="{{ url('/dashboard/tend_dashboard/active_page') }}"><p style="font-weight: bold; font-size: 17px; border-top: 2px black solid; color: #000; padding-top: 10px; ">Project Infinity Tree</p></a>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<a href="{{ url('/dashboard/tend_dashboard/active_page') }}"><p style="font-weight: bold; font-size: 20px; color: #000;"><p style="font-weight: bold; font-size: 20px; color: #000; padding-top: 10px; ">Project Green Lagune</p></a>
+											<a href="{{ url('/dashboard/tend_dashboard/active_page') }}"><p style="font-weight: bold; font-size: 17px; color: #000;"><p style="font-weight: bold; font-size: 17px; color: #000; padding-top: 10px; ">Project Green Lagune</p></a>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<a href="{{ url('/dashboard/tend_dashboard/active_page') }}"><p style="font-weight: bold; font-size: 20px; color: #000;"><p style="font-weight: bold; color: #000; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p></a>
+											<a href="{{ url('/dashboard/tend_dashboard/active_page') }}"><p style="font-weight: bold; font-size: 17px; color: #000;"><p style="font-weight: bold; color: #000; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p></a>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<a href="{{ url('/dashboard/tend_dashboard/active_page') }}"><p style="font-weight: bold; font-size: 20px; color: #000;"><p style="font-weight: bold; color: #000; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p></a>
+											<a href="{{ url('/dashboard/tend_dashboard/active_page') }}"><p style="font-weight: bold; font-size: 17px; color: #000;"><p style="font-weight: bold; color: #000; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p></a>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<a href="{{ url('/dashboard/tend_dashboard/active_page') }}"><p style="font-weight: bold; font-size: 20px; color: #000;"><p style="font-weight: bold; color: #000; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p></a>
+											<a href="{{ url('/dashboard/tend_dashboard/active_page') }}"><p style="font-weight: bold; font-size: 17px; color: #000;"><p style="font-weight: bold; color: #000; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p></a>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<a href="{{ url('/dashboard/tend_dashboard/active_page') }}"><p style="font-weight: bold; font-size: 20px; color: #000;"><p style="font-weight: bold; color: #000; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p></a>
+											<a href="{{ url('/dashboard/tend_dashboard/active_page') }}"><p style="font-weight: bold; font-size: 17px; color: #000;"><p style="font-weight: bold; color: #000; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p></a>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
-											 <p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											 <p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
@@ -381,107 +398,107 @@
 								</table>
 							</div>
 							<div class="col-sm-6 tab2">
-								<div class="tender-tiles new-project-tile" style="background: #FE7235;  color: #fff; text-align: center; font-size: 20px;     padding-top: 20px;    margin-top: 15px; padding-bottom: 14px;">
+								<div class="tender-tiles new-project-tile" style="background: #FE7235;  color: #fff; text-align: center; font-size: 17px;     padding-top: 20px;    margin-top: 15px; padding-bottom: 14px;">
 									<h3>Drafted<span  class="project1 pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></h3>
 								</div>
 								<table >
 									<tr class="col-sm-3 pull-right">
 										<div class="ex3">
-											<a href="{{ url('/winwork/pds/bid') }}"><p style="font-weight: bold; font-size: 20px; border-top: 2px black solid; color: #000; padding-top: 10px; ">Project Infinity Tree</p></a>
+											<a href="{{ url('/winwork/pds/bid') }}"><p style="font-weight: bold; font-size: 17px; border-top: 2px black solid; color: #000; padding-top: 10px; ">Project Infinity Tree</p></a>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<a href="{{ url('/winwork/pds/bid') }}"><p style="font-weight: bold; font-size: 20px; color: #000; padding-top: 10px; ">Project Green Lagune</p></a>
+											<a href="{{ url('/winwork/pds/bid') }}"><p style="font-weight: bold; font-size: 17px; color: #000; padding-top: 10px; ">Project Green Lagune</p></a>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<a href="{{ url('/winwork/pds/bid') }}"><p style="font-weight: bold; font-size: 20px; color: #000; padding-top: 10px; ">Project Infinity Tree</p></a>
+											<a href="{{ url('/winwork/pds/bid') }}"><p style="font-weight: bold; font-size: 17px; color: #000; padding-top: 10px; ">Project Infinity Tree</p></a>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
-											 <p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											 <p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
@@ -499,107 +516,107 @@
 								</table>
 							</div>
 							<div class="col-sm-6 tab1">
-								<div class="tender-tiles new-project-tile" style="background: #FE7235;  color: #fff; text-align: center; font-size: 20px;     padding-top: 20px;    margin-top: 15px; padding-bottom: 14px;">
+								<div class="tender-tiles new-project-tile" style="background: #FE7235;  color: #fff; text-align: center; font-size: 17px;     padding-top: 20px;    margin-top: 15px; padding-bottom: 14px;">
 									<h3>Successful<span  class="project1 pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></h3>
 								</div>
 								<table >
 									<tr class="col-sm-3">
 										<div class="ex3">
-											<a href="{{ url('dashboard/tend_dashboard/success_page') }}"><p style="font-weight: bold; font-size: 20px; border-top: 2px black solid; color: #000; padding-top: 10px; ">Project Infinity Tree</p></a>
+											<a href="{{ url('dashboard/tend_dashboard/success_page') }}"><p style="font-weight: bold; font-size: 17px; border-top: 2px black solid; color: #000; padding-top: 10px; ">Project Infinity Tree</p></a>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<a href="{{ url('dashboard/tend_dashboard/success_page') }}"><p style="font-weight: bold; font-size: 20px; color: #000; padding-top: 10px; ">Project Green Lagune</p></a>
+											<a href="{{ url('dashboard/tend_dashboard/success_page') }}"><p style="font-weight: bold; font-size: 17px; color: #000; padding-top: 10px; ">Project Green Lagune</p></a>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<a href="{{ url('dashboard/tend_dashboard/success_page') }}"><p style="font-weight: bold; font-size: 20px; color: #000; padding-top: 10px; ">Project Infinity Tree</p></a>
+											<a href="{{ url('dashboard/tend_dashboard/success_page') }}"><p style="font-weight: bold; font-size: 17px; color: #000; padding-top: 10px; ">Project Infinity Tree</p></a>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
-											 <p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											 <p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
@@ -616,107 +633,107 @@
 								</table>
 							</div>
 							<div class="col-sm-6 tab2">
-								<div class="tender-tiles new-project-tile" style="background: #FE7235;  color: #fff; text-align: center; font-size: 20px;     padding-top: 20px;     margin-top: 15px; padding-bottom: 14px;">
+								<div class="tender-tiles new-project-tile" style="background: #FE7235;  color: #fff; text-align: center; font-size: 17px;     padding-top: 20px;     margin-top: 15px; padding-bottom: 14px;">
 									<h3>Unsuccessful<span  class="project1 pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></h3>
 								</div>
 								<table >
 									<tr class="col-sm-3">
 										<div class="ex3">
-											<a href="{{ url('dashboard/tend_dashboard/unsuccess_page') }}"><p style="font-weight: bold; font-size: 20px; border-top: 2px black solid; color: #000; padding-top: 10px; ">Project Infinity Tree</p></a>
+											<a href="{{ url('dashboard/tend_dashboard/unsuccess_page') }}"><p style="font-weight: bold; font-size: 17px; border-top: 2px black solid; color: #000; padding-top: 10px; ">Project Infinity Tree</p></a>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<a href="{{ url('dashboard/tend_dashboard/unsuccess_page') }}"><p style="font-weight: bold; font-size: 20px; color: #000; padding-top: 10px; ">Project Green Lagune</p></a>
+											<a href="{{ url('dashboard/tend_dashboard/unsuccess_page') }}"><p style="font-weight: bold; font-size: 17px; color: #000; padding-top: 10px; ">Project Green Lagune</p></a>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<a href="{{ url('dashboard/tend_dashboard/unsuccess_page') }}"><p style="font-weight: bold; font-size: 20px; color: #000; padding-top: 10px; ">Project Infinity Tree</p></a>
+											<a href="{{ url('dashboard/tend_dashboard/unsuccess_page') }}"><p style="font-weight: bold; font-size: 17px; color: #000; padding-top: 10px; ">Project Infinity Tree</p></a>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
 
-											<p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Infinity Tree</p>
+											<p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Infinity Tree</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
-											 <p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
+											 <p style="font-weight: bold; font-size: 17px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
