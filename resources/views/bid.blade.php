@@ -600,6 +600,23 @@
 					</div>
 					<div id="section3" class="tab-pane fade tender-container">
 						<h3 class="bid-form-title">Individuals</h3>
+							<div class="row">
+										<div class="col-sm-4">
+											Name
+										</div>
+										<div class="col-sm-8">
+
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Firstname">
+											</div>
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Surname">
+											</div>
+											
+											
+											
+										</div>
+									</div>
 						<div class="kuwestion">
 							<div class="inputscheck">
 							<div class="row">
@@ -624,21 +641,60 @@
 										<div class="col-sm-8">
 											<div class="form-group">
 												<select name='ddlSelectYear' class="form-control">
-										            <option value="">Year awarded</option>
-										            <?php 
-														$cur_year = date('Y');
-														$years = [];
-													    for ($i=0; $i<=50; $i++) {
-													        array_push($years,$cur_year--);
-													    }
-													    foreach ($years as $year ) {
-													    	echo "<option value='".$year."'>".$year."</option>";
-													    }
-													?>
+										            <option value="">Select Accreditation</option>
+										         <?php 
+
+													$Accre = array("MCIOD",
+																	"AssocRICS",
+																	"MRICS",
+																	"FRICS",
+																	"HonRICS",
+																	"BREEAM AP",
+																	"RIBA"
+																);
+
+													sort($Accre,SORT_NATURAL | SORT_FLAG_CASE);
+
+													foreach ($Accre as $key) {
+													  echo "<option value='".$key."'>".$key."</option>";
+													}
+
+													 ?>
+													 <option>Others</option>
 										        </select>
 											</div>
 										</div>
 									</div>
+
+									<div class="row">
+										<div class="col-sm-4"></div>
+										<div class="col-sm-8">
+											<select name='degree_year' class="form-control">
+											    <option value="">Year awarded</option>
+											    <?php 
+													$cur_year = date('Y');
+													$years = [];
+												    for ($i=0; $i<=50; $i++) {
+												        array_push($years,$cur_year--);
+												    }
+												    foreach ($years as $year ) {
+												    	echo "<option value='".$year."'>".$year."</option>";
+												    }
+												?>
+											</select>
+										</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-4">
+											
+										</div>
+										<div class="col-sm-8">
+												<div class="input_fields_serve2">
+												    <button class="btn btn-primary" id="add_field_serve2">Add another accreditation</button>
+												    <div></div>
+												</div>
+											</div>
+									</div><br>
 									<div class="row">
 										<div class="col-sm-4">
 											<div class="form-group">
@@ -693,7 +749,28 @@
 										</div>
 									</div>
 									<br>
-									
+									<div class="row">
+										<div class="col-sm-4">
+											
+										</div>
+										<div class="col-sm-8">
+												<div class="input_fields_serve2">
+												    <button class="btn btn-primary" id="add_field_serve2">Add another degree</button>
+												    <div></div>
+												</div>
+											</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-4">
+											Seniority
+										</div>
+										<div class="col-sm-8">
+
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Enter level of seniority">
+											</div>
+										</div>
+									</div>
 									<div class="row">
 										<div class="col-sm-4">
 											Awards
@@ -706,6 +783,12 @@
 											<div class="form-group">
 												<input type="text" name="" class="form-control" placeholder="Awarded by body">
 											</div>
+											
+											<div class="form-group">
+												<textarea cols="4" rows="5" id="textareaap" maxlength="3000" placeholder="Enter here  "></textarea>
+  												<p style="color: grey;"><span id="rchars1" >3000</span>/3000 words remaining</p>
+											</div>
+									
 											<select name='yeard_awards' class="form-control">
 											    <option value="">Year awarded</option>
 											    <?php 
@@ -725,22 +808,11 @@
 										</div>
 									</div>
 								
+									
 									<div class="row">
 										<div class="col-sm-4">
 											<div class="form-group">
-												Professional Pathway
-											</div>
-										</div>
-										<div class="col-sm-8">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Previous employer">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-4">
-											<div class="form-group">
-											 
+											 Service
 											</div>
 										</div>
 										<div class="col-sm-8">
@@ -780,7 +852,17 @@
 										</div>
 									</div>
 									
-									
+									<div class="row">
+										<div class="col-sm-4">
+											
+										</div>
+										<div class="col-sm-8">
+												<div class="input_fields_serve2">
+												    <button class="btn btn-primary" id="add_field_serve2">Add another service</button>
+												    <div></div>
+												</div>
+											</div>
+									</div><br>
 									<div class="row">
 										<div class="col-sm-4">
 											
@@ -809,17 +891,7 @@
 											</div>
 
 									</div><br>
-									<div class="row">
-										<div class="col-sm-4">
-											
-										</div>
-										<div class="col-sm-8">
-												<div class="input_fields_serve2">
-												    <button class="btn btn-primary" id="add_field_serve2">Add another service</button>
-												    <div></div>
-												</div>
-											</div>
-									</div><br>
+									
 									<div class="row">
 										<div class="col-sm-4">
 											
