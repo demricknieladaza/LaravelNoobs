@@ -1490,7 +1490,57 @@
 															</div>
 		    										</div>
 		    									</div>
-		    									
+
+		    									<div class="row">
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+		    												Execution
+		    											</div>
+		    										</div>
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+															<select name=""  class="form-control" >
+																<option value="" disabled selected>Select</option>
+																<?php
+																$Service = array(
+																	"Deed", "Under Hand"
+																);
+																sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
+																foreach ($Service as $key ) {
+																    echo "<option value='".$key."'>".$key."</option>";
+																}
+
+																?>
+															</select>
+		    										</div>
+		    									</div>
+		    								</div>
+
+		    								<div class="row">
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+		    												Net Contribution Clause
+		    											</div>
+		    										</div>
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+															<select name=""  class="form-control" >
+																<option value="" disabled selected>Select</option>
+																<?php
+																$Service = array(
+																	"Yes", "No"
+																);
+																sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
+																foreach ($Service as $key ) {
+																    echo "<option value='".$key."'>".$key."</option>";
+																}
+
+																?>
+															</select>
+		    										</div>
+		    									</div>
+		    								</div>
+
 		    									<div class="row">
 		    										<div class="col-sm-6">
 		    											<div class="form-group">

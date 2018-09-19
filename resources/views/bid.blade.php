@@ -729,7 +729,18 @@
 											</div>
 										</div>
 									</div>
+                                       <div class="row">
+										<div class="col-sm-4">
+											
+										</div>
+										<div class="col-sm-8">
 
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Name of Degree">
+											</div>
+
+										</div>
+									</div>
 									<div class="row">
 										<div class="col-sm-4"></div>
 										<div class="col-sm-8">
@@ -891,6 +902,31 @@
 											</div>
 
 									</div><br>
+									<div class="row">
+										<div class="col-sm-4">
+											<div class="form-group">
+												
+											</div>
+										</div>
+										<div class="col-sm-8">
+											<div class="form-group">
+												<select name="" class="form-control">
+													<option value="" disabled selected>Select type of development</option>
+													<?php 
+														$Services = array("New Built","Refurbishment","Demolition"
+															
+														);
+														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
+														foreach ($Services as $key ) {
+														    echo "<option value='".$key."'>".$key."</option>";
+														}
+
+													 ?>
+													<option>Other</option>
+												</select>
+											</div>
+										</div>
+									</div>
 									
 									<div class="row">
 										<div class="col-sm-4">
@@ -899,6 +935,106 @@
 										<div class="col-sm-8">
 												<div class="input_fields_project1">
 												    <button class="btn btn-primary" id="add_field_project1">Add another project</button>
+												    <div></div>
+												</div>
+											</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-4"></div>
+										<div class="col-sm-8">
+												<textarea cols="4" rows="5" id="textareaap" maxlength="3000" placeholder="Enter Description of the project ....... "></textarea>
+  												<p style="color: grey;"><span id="rchars1" >3000</span>/3000 words remaining</p>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-4">
+											<div class="form-group">
+												
+											</div>
+										</div>
+										<div class="col-sm-8" >						
+											<label for="uploadImage7s"><strong>Upload Images</strong></label>
+											<input id="uploadImage7s" type="file" name="upimages[]" multiple accept='image/*'name="myPhoto" />
+								        </div>
+						            </div><br>
+						            <div class="row">
+										<div class="col-sm-4">
+											<div class="form-group">
+												
+											</div>
+										</div>
+										<div class="col-sm-8">
+											<div class="form-group">
+												<select name='ddlSelectYear' class="form-control">
+										            <option value="">Select project team member</option>
+										       <?php 
+														$Services = array(
+															"Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Fascade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager"
+														);
+														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
+														foreach ($Services as $key ) {
+														    echo "<option value='".$key."'>".$key."</option>";
+														}
+
+													 ?>
+													 <option>Others</option>
+										        </select>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-4">
+											<div class="form-group">
+												
+											</div>
+										</div>
+										<div class="col-sm-8">
+											<div class="form-group">
+												<select name='ddlSelectYear' class="form-control">
+										            <option value="">Company name</option>
+										       <?php 
+														$Services = array(
+															
+														);
+														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
+														foreach ($Services as $key ) {
+														    echo "<option value='".$key."'>".$key."</option>";
+														}
+
+													 ?>
+													 <option>Others</option>
+										        </select>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-4">
+											
+										</div>
+										<div class="col-sm-8">
+											<div class="form-group">
+												<input type="text" name="" id="" class="form-control" placeholder="Enter new company name ">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-4">
+											
+										</div>
+										<div class="col-sm-8">
+												<div class="input_fields_project1">
+												    <button class="btn btn-primary" id="add_field_project1">Add another project team member</button>
+												    <div></div>
+												</div>
+											</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-4">
+											
+										</div>
+										<div class="col-sm-8">
+												<div class="input_fields_project1">
+												    <button class="btn btn-primary" id="add_field_project1">Add another project </button>
 												    <div></div>
 												</div>
 											</div>
@@ -1729,6 +1865,16 @@
 												</select>
 										</div>
 									</div><br>
+									<div class="row">
+										<div class="col-sm-4">Execution</div>
+										<div class="col-sm-8">
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Fixed text">
+											</div>
+										</div>
+
+									</div>
+
 										<div class="row">
 										<div class="col-sm-4">
 											<div class="form-group">
@@ -1872,14 +2018,7 @@
 												<input type="text" name="" class="form-control" placeholder="Enter clause here">
 										</div>
 									</div><br>
-									<div class="row">
-										<div class="col-sm-4">
-											
-										</div>
-										<div class="col-sm-8">
-												<input type="text" name="" class="form-control" placeholder="Enter new suggested work here">
-										</div>
-									</div><br>
+									  
 									<div class="row">
 										<div class="col-sm-4">
 											
