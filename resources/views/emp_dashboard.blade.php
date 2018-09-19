@@ -52,7 +52,7 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-6 lounge-action" style="background: transparent;">
-						<div class="shadow-wrapper shadow-wrappernigids">
+						<div class="shadow-wrapper shadow-wrappernigids latest_article_preview fade_in_and_bounce_from_left_left">
 							<div class="panel-group" id="accordioned">
 								<div class="panel">
 									<div class="panel-heading">
@@ -136,12 +136,20 @@
 						</div>	
 					</div>
 					<div class="col-sm-6 lounge-action">
-						<div class="shadow-wrapper col-cont shadow-wrappernigids">
-							<div class="col-sm-8">
+						<div class="shadow-wrapper col-cont shadow-wrappernigids latest_article_preview fade_in_and_bounce_from_left_right">
+							<article>
+							<div class="col-sm-8 berna ">
 								<div class="row">
 									<div class="col-sm-4">
 										<div class="box">
-											<p style="font-size: 1vw;">Increase Discount</p>
+											<p style="font-size: 18px;
+										    height: 70px;
+										    line-height: 1;
+										    word-wrap: normal;
+										    padding-left: 0px;
+										    padding-right: 0px;
+										    padding-top: 20px;
+										    padding-bottom: 0px;">Increase Discount</p>
 										</div>
 									</div>
 									<div class="col-sm-4">
@@ -151,7 +159,7 @@
 									</div>
 									<div class="col-sm-4">
 										<div class="box">
-											<p>Top Up</p>
+											<p style="font-size: 18px;">Top Up</p>
 										</div>
 									</div>
 								</div>
@@ -162,11 +170,11 @@
 								</div>
 								<div class="row" style="margin-top: 25px; padding-right: 10px; padding-left: 10px;">
 									<div class="form-group">
-										<button class="btn col-sm-12 pnp" style="height: 50px;box-shadow: 5px 5px #888888;"><strong>Publish New Project</strong></button>
+										<button class="btn col-sm-12 pnp" style="height: 50px;"><strong>Publish New Project</strong></button>
 									</div>
 								</div>
 							</div>
-							<div class="col-sm-4">
+							<div class="col-sm-4 berna ">
 								<div class="titlehead">
 									<h3>You have</h3>
 								</div>
@@ -181,6 +189,7 @@
 									</h3>
 								</div>
 							</div>
+							</article>
 						</div>
 					</div>	
 				</div>
