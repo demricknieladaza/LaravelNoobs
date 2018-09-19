@@ -32,8 +32,7 @@
 							    margin-left: 0;
 							    margin-bottom: 15px;
 							    padding: 10px;
-							    border-radius: 6px;
-							    box-shadow: 12px 10px 5px rgba(0,0,0,0.6);">
+							    border-radius: 6px;">
 								<div class="col-sm-6">
 									<h1 style="color: #000; text-align: center; font-size: 20px; margin-top: 4px;">There are<br><span style="color: #FE7235; font-size: 50px;">26</span><br>Opportunity Nearby
 									</h1>
@@ -41,7 +40,7 @@
 								<div class="col-sm-6">
 									<div class="overlay-ribbon">
 										<div class="ribbon-content">
-											<h2 style="transform: rotate(270deg); font-size: 28px;"><a href="{{ url('/winwork') }}">Win Work</a></h2>
+											<h2 style="transform: rotate(270deg); font-size: 28px; margin-top: 70px;"><a href="{{ url('/winwork') }}" style="color: #fff; text-decoration: none;">Win Work</a></h2>
 										</div>
 									</div>
 								</div>

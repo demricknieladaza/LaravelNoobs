@@ -924,12 +924,12 @@ body > div.container-fluid.search_results.wow.fadeInUp > div > div > div > div.c
 }
 input[type=range] {
     -webkit-appearance: none;
-    width: 493px;
-    height: 101px;
-    overflow: hidden;
-    top: 225px;
+    width: 499px;
+    height: 33px;
+    overflow: visible;
+    top: 263px;
     margin: 0;
-    left: -95px;
+    left: -99px;
     position: absolute;
     background: none;
     transform: rotate(-90deg);
@@ -989,7 +989,7 @@ input[type=range]::-ms-thumb {
     background: #fff;
     box-shadow: 0 0 3px #999;
     position: absolute;
-    right: -74px;
+    right: -35px;
     top: 40%;
     padding: 10px 15px;
     color: #fe7235;
@@ -2599,6 +2599,7 @@ pre
   height: 0;
   border-top: 10em solid #fe7235;
   border-right: 10em solid transparent;
+  z-index: 997;
 }
 
 .overlay-ribbon:after {
@@ -2610,6 +2611,7 @@ pre
   height: 0;
   border-top: 10em solid #fe7235;;
   border-left: 10em solid transparent;
+  z-index: 998;
 }
 
 .slideout {
@@ -2691,6 +2693,7 @@ pre
 .ribbon-content {
   position: relative;
   margin: 0 5px;
+  z-index: 99999;
 }
 
 .overlay-ribbon {
@@ -2699,7 +2702,10 @@ position: absolute;
     height: 9em;
     top: -11px;
     border-radius: 6px;
-    right: -8%;
+    right: -2%;
     background: #fe7235;
     padding: 5px 0;
     transform: rotate(450deg);
+    z-index: 9999;
+    filter: drop-shadow(10px -11px 1px rgba(0,0,0,0.4));
+}
