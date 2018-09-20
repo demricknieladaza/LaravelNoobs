@@ -157,7 +157,7 @@
 						<table class="imomama">
 							<thead style="color:black;">
 								<tr>
-									<b style="margin-left: 50%; font-size: 19px;"> RIBA  STAGES</b> 
+									<b style="margin-left: 49%; font-size: 14px;"> RIBA  STAGES</b> 
 								</tr>
 								<tr class="imomama">
 									<th>Project ID</th>
