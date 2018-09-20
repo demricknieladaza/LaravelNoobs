@@ -1,4 +1,4 @@
-$('#range').on("change", function(event) {
+$('#range').on("input change", function(event) {
 		// event.stopPropagation();
 		if($(this).val() == 1){
 	    	$('.output').val(5 +" Tenders" );
