@@ -19,13 +19,31 @@
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="lounge-demo">
-							<div class="form-group">
+							<!-- <div class="form-group">
 								<h1 style="color: #000; text-align: center; font-size: 20px;">There are<br><span style="color: #FE7235; font-size: 50px;">26</span><br>Opportunity Nearby
 								</h1>
 							</div>
 							<div class="form-group ">
 								<div class="tender-tiles new-project-tile rad">
 								<h2><a href="{{ url('/winwork') }}">Win Work</a></h2>
+								</div>
+							</div> -->
+							<div class="row" style=" margin-right: 0;
+							    margin-left: 0;
+							    margin-bottom: 15px;
+							    padding: 10px;
+							    border-radius: 6px;
+							    box-shadow: 12px 10px 5px rgba(0,0,0,0.6);">
+								<div class="col-sm-6">
+									<h1 style="color: #000; text-align: center; font-size: 20px; margin-top: 4px;">There are<br><span style="color: #FE7235; font-size: 50px;">26</span><br>Opportunity Nearby
+									</h1>
+								</div>
+								<div class="col-sm-6">
+									<div class="overlay-ribbon">
+										<div class="ribbon-content">
+											<h2 style="transform: rotate(270deg); font-size: 28px;"><a href="{{ url('/winwork') }}">Win Work</a></h2>
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="col-sm-6 tab1">
