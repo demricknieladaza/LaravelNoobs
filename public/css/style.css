@@ -3209,3 +3209,7 @@ position: absolute;
 .sakto, .sakto2{
     width: 100%
 }
+
+.fixer{
+    max-height: 174px;
+}

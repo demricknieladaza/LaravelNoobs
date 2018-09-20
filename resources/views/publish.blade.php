@@ -11,6 +11,12 @@
 	tr th {
 		background: white !important;
 	}
+	.fixes{
+		height: 174px;
+	}
+	.fixes1{
+		height: 100%;
+	}
 </style>
 	<div class="container search_filter wow fadeInDown" data-wow-duration="1s" data-wow-delay="200ms">
 		<div class="row top-row">
@@ -49,16 +55,16 @@
 			<div class="form-group">
 				<div class="row">
 					<div class="hover-container-holder">
-						<div class="tender-tile-single">
+						<div class="tender-tile-single ">
 							<div class="scaslerni tender-tiles new-project-tile hover-tile">
 								<h2><a href="{{ url('/publish/project_dashboard') }}" style="">Publish<br> New<br> Project</a></h2>
 							</div>
 						</div>
 						@foreach ($projects as $proj)
-						<div class="tender-tile-single">
-							<div class="tender-tiles">
+						<div class="tender-tile-single fixes">
+							<div class="tender-tiles fixes1">
 								<h2><a href="/project_info/{{ $proj->project_record_id }}/edit">{{ $proj->project_title }}</a></h2>
-								<div class="row table-tender-details">
+								<!-- <div class="row table-tender-details">
 									<div class="col-sm-6 table-left">
 										<table class="table table-hover table-striped">
 											<thead>
@@ -99,7 +105,7 @@
 											</tbody>
 										</table>
 									</div>
-								</div>
+								</div> -->
 							</div>
 						</div>
 						@endforeach
