@@ -65,4 +65,13 @@ Route::get('/dashboard/organisation', 'UsersController@organisation_controller')
 
 Route::get('/dashboard/individuals', 'UsersController@individuals_controller');
 
+Route::get('/dashboard/individuals', 'UsersController@individuals_controller');
+
+
 Route::resource('project_info','ProjectInformationController');
+Route::resource('project_info_view','Project_Info_Controller');
+//Route::get('project_info_view/{id}', 'Project_Info_Controller@show');
+
+//Route::get('project_info_view/{id}','Project_Info_Controller@update');
+
+//Route::post('project_info','ProjectInformationController@store');

@@ -14,7 +14,8 @@ class Project_Info_Controller extends Controller
      */
     public function index()
     {
-        //
+        //$user = $id;
+       // return view('publish_edit');
     }
 
     /**
@@ -24,7 +25,7 @@ class Project_Info_Controller extends Controller
      */
     public function create()
     {
-        return view('create');
+
     }
 
     /**
@@ -35,17 +36,7 @@ class Project_Info_Controller extends Controller
      */
     public function store(Request $request)
     {
-        $project = new ProjectInformation;
-        $project->project_title = $request->get('project_title');
-        $project->project_id = $request->get('project_id');
-        $project->location = $request->get('location');
-        $project->type_of_development = $request->get('type_of_development');
-        $project->construction_value = $request->get('construction_value');
-        $project->procurement_nd_route = $request->get('procurement_nd_route');
-        
-        if($project->save()){
-            return Response::json(array('success' => true, 'insert_id' => $project->id), 200);
-        }
+
     }
 
     /**
@@ -54,9 +45,32 @@ class Project_Info_Controller extends Controller
      * @param  \App\Project_Info  $project_Info
      * @return \Illuminate\Http\Response
      */
-    public function show(Project_Info $project_Info)
+    public function show(Project_Info $project_Info, $id)
     {
-        //
+        /*$project = $id;
+        $projectInfo = ProjectInformations::where('project_record_id', $project_id)->get();
+        $transportInfo = TransportLink::where('project_record_id', $project)->get();
+        $areaInfo = AreaSpecificInformation::where('project_record_id', $project)->get();
+        $constraintsInfo = Constraints::where('project_record_id', $project)->get();
+        $useInfo = TypeOfUse::where('project_record_id', $project)->get();
+        $milestonesInfo = Milestones::where('project_record_id', $project)->get();
+        $meetingsInfo = Meetings::where('project_record_id', $project)->get();
+        $projectTeamInfo = ProjectTeam::where('project_record_id', $project)->get();
+
+        return view('publish_edit')->with([
+
+                'project' => $projectInfo,
+                'transport' => $transportInfo,
+                'area' => $areaInfo,
+                'constraints' => $constraintsInfo,
+                'use' => $useInfo,
+                'milestones' => $milestonesInfo,
+                'meetings' => $meetingsInfo,
+                'team' => $projectTeamInfo
+
+        ]);
+        return view('publish_edit')->with($id);*/
+
     }
 
     /**
@@ -67,7 +81,7 @@ class Project_Info_Controller extends Controller
      */
     public function edit(Project_Info $project_Info)
     {
-        //
+        return view('publish_edit');
     }
 
     /**

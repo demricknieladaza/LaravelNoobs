@@ -2,7 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\ProjectInformations;
+use App\TransportLink;
+use App\AreaSpecificInformation;
+use App\Constraints;
+use App\TypeOfUse;
+use App\Milestones;
+use App\Meetings;
+use App\UserAccountsModel;
+use App\ProjectTeam;
 
 class UsersController extends Controller
 {
@@ -11,11 +21,16 @@ class UsersController extends Controller
     	return view('welcome');
     }
 
-     public function publish_controller(Request $request)
+    public function publish_controller(Request $request)
     {
+
     	if($request->session()->has('fullname'))
         {
-           return view('publish');
+           $user = $request->session()->get('id');
+           $data = DB::table('project_information_tbl')
+                    ->where('user_id', $user)
+                    ->get();
+           return view('publish')->with('projects', $data);
         }
         else
         {
