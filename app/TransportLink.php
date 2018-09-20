@@ -17,8 +17,6 @@ class TransportLink extends Model
         'bus_lines',
         'project_record_id'
     ];
-    //public $primaryKey = true;
-    //public $timeStamps = true;
     
     public function projectInformations(){
         return $this->belongsTo('App\ProjectInformations');

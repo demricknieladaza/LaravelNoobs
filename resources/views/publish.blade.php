@@ -54,9 +54,10 @@
 								<h2><a href="{{ url('/publish/project_dashboard') }}" style="">Publish<br> New<br> Project</a></h2>
 							</div>
 						</div>
+						@foreach ($projects as $proj)
 						<div class="tender-tile-single">
 							<div class="tender-tiles">
-								<h2><a href="#">Canada Water Masterplan</a></h2>
+								<h2><a href="/project_info/{{ $proj->project_record_id }}/edit">{{ $proj->project_title }}</a></h2>
 								<div class="row table-tender-details">
 									<div class="col-sm-6 table-left">
 										<table class="table table-hover table-striped">
@@ -101,100 +102,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="tender-tile-single">
-							<div class="tender-tiles">
-								<h2><a href="#">Canada Water Masterplan</a></h2>
-								<div class="row table-tender-details">
-									<div class="col-sm-6 table-left">
-										<table class="table table-hover table-striped">
-											<thead>
-												<tr>
-													<th>Active Tenders</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Fire Engineer</td>
-												</tr>
-												<tr>
-													<td>Structural Engineer</td>
-												</tr>
-												<tr>
-													<td>Service Engineer</td>
-												</tr>
-												<tr>
-													<td>Architect</td>
-												</tr>
-												<tr>
-													<td>Facede Engineer</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-									<div class="col-sm-6 table-right">
-										<table class="table table-hover table-striped">
-											<thead>
-												<tr>
-													<th>Drafted Tenders</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Acoustic Engineer</td>
-												</tr>			
-											</tbody>
-										</table>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="tender-tile-single">
-							<div class="tender-tiles">
-								<h2><a href="#">Canada Water Masterplan</a></h2>
-								<div class="row table-tender-details">
-									<div class="col-sm-6 table-left">
-										<table class="table table-hover table-striped">
-											<thead>
-												<tr>
-													<th>Active Tenders</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Fire Engineer</td>
-												</tr>
-												<tr>
-													<td>Structural Engineer</td>
-												</tr>
-												<tr>
-													<td>Service Engineer</td>
-												</tr>
-												<tr>
-													<td>Architect</td>
-												</tr>
-												<tr>
-													<td>Facede Engineer</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-									<div class="col-sm-6 table-right">
-										<table class="table table-hover table-striped">
-											<thead>
-												<tr>
-													<th>Drafted Tenders</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Acoustic Engineer</td>
-												</tr>			
-											</tbody>
-										</table>
-									</div>
-								</div>
-							</div>
-						</div>
+						@endforeach
 					</div>
 				</div>
 			</div>

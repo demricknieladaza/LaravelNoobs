@@ -11,7 +11,9 @@ class AreaSpecificInformation extends Model
     public $primaryKey = 'area_id';
     public $timestamps = false;
     protected $fillable = [
-            'adjacent_uses', 'history', 'project_record_id'
+            'adjacent_uses', 
+            'history', 
+            'project_record_id'
     ];
 
     public function projectInformations(){

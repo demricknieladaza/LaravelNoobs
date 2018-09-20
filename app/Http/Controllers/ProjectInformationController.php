@@ -62,11 +62,14 @@ class ProjectInformationController extends Controller
         $project = new ProjectInformations;
         $project->project_title = $request->input('project_title');
         $project->project_id = $request->input('project_id');
+        $project->location = $request->input('location');
         $project->type_of_development = $request->input('type_of_development');
         $project->construction_value = $request->input('construction_value');
         $project->procurement_route = $request->input('procurement_route');
         $project->user_id = $request->session()->get('id');
         $project->save();
+
+        $id = $project->project_record_id;
 
 
         //This the sub models
@@ -75,65 +78,105 @@ class ProjectInformationController extends Controller
         $transport->tube_station_one = $request->input('tube_station_one');
         $transport->tube_station_two = $request->input('tube_station_two');
         $transport->bus_lines = $request->input('bus_lines');
-        $transport->project_record_id = $project->project_record_id;
+        $transport->project_record_id = $id;
         $transport->save();
         
         $area = new AreaSpecificInformation;
-        $area->adjacent_uses = $request->input('adjacent_users');
+        $area->adjacent_uses = $request->input('adjacent_uses');
         $area->history = $request->input('history');
-        $area->project_record_id = $project->project_record_id;
+        $area->project_record_id = $id;
         $area->save();
 
         $constraints = new Constraints;
         $constraints->constraint_one = $request->input('constraint_one');
         $constraints->constraint_two = $request->input('constraint_two');
         $constraints->constraint_three = $request->input('constraint_three');
-        $constraints->project_record_id = $project->project_record_id;
+        $constraints->project_record_id = $id;
+        $constraints->save();
 
-        //Dynamic Field
-        $use_name = $request->input('use_name');
-        $use_area = $request->input('use_area');
-        $use_units = $request->input('use_units');
-        $use_type = $request->input('use_type');
+        
+        $type = new TypeOfUse;
 
-        for($counter = 0; $counter < count($use_name); $counter++){
-           
-            $type = new TypeOfUse;
-            $type->use_name = $use_name[$counter];
-            $type->use_area = $use_area[$counter];
-            $type->use_units = $use_units[$counter];
-            $type->use_type = $use_type[$counter];
-            $type->project_record_id = $project->project_record_id;
-            $type->save();
+        $type->use_area_one = $request->input('use_area_one');
+        $type->use_units_one = $request->input('use_units_one');
+        $type->use_type_one = $request->input('use_type_one');
 
-        }
+        $type->use_area_two = $request->input('use_area_two');
+        $type->use_units_two = $request->input('use_units_two');
+        $type->use_type_two = $request->input('use_type_two');
+
+        $type->use_area_three = $request->input('use_area_three');
+        $type->use_units_three = $request->input('use_units_three');
+        $type->use_type_three = $request->input('use_type_three');
+
+        $type->use_area_four = $request->input('use_area_four');
+        $type->use_units_four = $request->input('use_units_four');
+        $type->use_type_four = $request->input('use_type_four');
+        $type->project_record_id = $id;
+
+        $type->save();
+        
         
         $milestones = new Milestones;
         $milestones->riba_stage_one = $request->input('riba_stage_one');
         $milestones->riba_stage_two = $request->input('riba_stage_two');
         $milestones->riba_stage_three = $request->input('riba_stage_three');
         $milestones->riba_stage_four = $request->input('riba_stage_four');
-        $milestones->project_record_id = $project->project_record_id;
+        $milestones->project_record_id = $id;
         $milestones->save();
 
         $meetings = new Meetings;
         $meetings->design_team_meeting = $request->input('design_team_meeting');
         $meetings->project_progress_meeting = $request->input('project_progress_meeting');
-        $meetings->project_record_id = $project->project_record_id;
+        $meetings->project_record_id = $id;
         $meetings->save();
 
         $team = new ProjectTeam;
         $team->position = $request->input('position');
         $team->name = $request->input('name');
-        $team->project_record_id = $project->project_record_id;
+        $team->project_record_id = $id;
         $team->save();
         
         $data = [
-            'project' => $project
+            'project_record_id' => $id,
+            'project_title' => $project->project_title,
+            'project_id' => $project->project_id,
+            'location' => $project->location,
+            'main_road' => $transport->main_road,
+            'tube_station_one' => $transport->tube_station_one,
+            'tube_station_two' => $transport->tube_station_two,
+            'bus_lines' => $transport->bus_lines,
+            'adjacent_uses' => $area->adjacent_uses,
+            'history' => $area->history,
+            'constraint_one' => $constraints->constraint_one,
+            'constraint_two' => $constraints->constraint_two,
+            'constraint_three' => $constraints->constraint_three,
+            'use_area_one' => $type->use_area_one,
+            'use_units_one' => $type->use_units_one,
+            'use_type_one' => $type->use_type_one,
+
+            'use_area_two' => $type->use_area_two,
+            'use_units_two' => $type->use_units_two,
+            'use_type_two' => $type->use_type_two,
+
+            'use_area_three' => $type->use_area_three,
+            'use_units_three' => $type->use_units_three,
+            'use_type_three' => $type->use_type_three,
+
+            'use_area_four' => $type->use_area_four,
+            'use_units_four' => $type->use_units_four,
+            'use_type_four' => $type->use_type_four,
+            'riba_stage_one' => $milestones->riba_stage_one,
+            'riba_stage_two' => $milestones->riba_stage_two,
+            'riba_stage_three' => $milestones->riba_stage_three,
+            'design_team_meeting' => $meetings->design_team_meeting,
+            'project_progress_meeting' => $meetings->project_progress_meeting,
+            'position' => $team->position,
+            'name' => $team->name
         ];
 
         //return response()->json(array('success' => true, 'insert_id' => $project->project_record_id), 200);
-        return view('publish_edit')->with('project', $data);
+        return view('publish_edit')->with('data', $data);
 
         /*$project = ProjectInformations::create([
             'project_title' => $request->input('project_title'),
@@ -170,9 +213,36 @@ class ProjectInformationController extends Controller
      * @param  \App\ProjectInformation  $projectInformation
      * @return \Illuminate\Http\Response
      */
-    public function edit(ProjectInformation $projectInformation)
+    public function edit($id)
     {
-        //
+        //This is the main model
+        $project = ProjectInformations::find($id);
+
+        //This the sub models
+        $transport = TransportLink::find($id);
+        
+        $area = AreaSpecificInformation::where('project_record_id', $id)->get();
+
+        $constraints = Constraints::where('project_record_id', $id)->get();
+
+        $type = TypeOfUse::find($id);
+
+        $milestones = Milestones::where('project_record_id', $id)->get();
+
+        $meetings = Meetings::where('project_record_id', $id)->get();
+
+        $team = ProjectTeam::where('project_record_id', $id)->get();
+
+        return view('publish_view')->with([
+            'project' => $project,
+            'transport' => $transport,
+            'area' => $area,
+            'constraints' => $constraints,
+            'type' => $type,
+            'milestones' => $milestones,
+            'meetings' => $meetings,
+            'team' => $team
+        ]);
     }
 
     /**
@@ -182,9 +252,90 @@ class ProjectInformationController extends Controller
      * @param  \App\ProjectInformation  $projectInformation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ProjectInformation $projectInformation)
+    public function update(Request $request, $id)
     {
-        //
+                //This is the main model
+                $project = ProjectInformations::find($id);
+                $project->project_title = $request->input('project_title');
+                $project->project_id = $request->input('project_id');
+                $project->location = $request->input('location');
+                $project->type_of_development = $request->input('type_of_development');
+                $project->construction_value = $request->input('construction_value');
+                $project->procurement_route = $request->input('procurement_route');
+                //$project->user_id = $request->session()->get('id');
+                $project->save();
+        
+        
+                //This the sub models
+                $transport = TransportLink::find($id);
+                $main_road = $request->input('main_road');
+                $tube_station_one = $request->input('tube_station_one');
+                $tube_station_two = $request->input('tube_station_two');
+                $bus_lines = $request->input('bus_lines');
+                $transport->update([
+                    'main_road' => $main_road,
+                    'tube_station_one' => $tube_station_one,
+                    'tube_station_two' => $tube_station_two,
+                ]);
+                
+
+                $area = AreaSpecificInformation::where('project_record_id', $id);
+                $area->update([
+                    'adjacent_uses' => $area->adjacent_uses = $request->input('adjacent_uses'),
+                    'history' => $area->history = $request->input('history')
+                ]);
+        
+                $constraints = Constraints::where('project_record_id', $id);
+                $constraints->update([
+                    'constraint_one' => $constraints->constraint_one = $request->input('constraint_one'),
+                    'constraint_two' => $constraints->constraint_two = $request->input('constraint_two'),
+                    'constraint_three' => $constraints->constraint_three = $request->input('constraint_three')    
+                ]);
+        
+                
+                $type = TypeOfUse::where('project_record_id', $id);
+                $type->update([
+                            
+                    'use_area_one' => $type->use_area_one = $request->input('use_area_one'),
+                    'use_units_one' => $type->use_units_one = $request->input('use_units_one'),
+                    'use_type_one' => $type->use_type_one = $request->input('use_type_one'),
+            
+                    'use_area_two' => $type->use_area_two = $request->input('use_area_two'),
+                    'use_units_two' => $type->use_units_two = $request->input('use_units_two'),
+                    'use_type_two' => $type->use_type_two = $request->input('use_type_two'),
+            
+                    'use_area_three' => $type->use_area_three = $request->input('use_area_three'),
+                    'use_units_three' => $type->use_units_three = $request->input('use_units_three'),
+                    'use_type_three' => $type->use_type_three = $request->input('use_type_three'),
+            
+                    'use_area_four' => $type->use_area_four = $request->input('use_area_four'),
+                    'use_units_four' => $type->use_units_four = $request->input('use_units_four'),
+                    'use_type_four' => $type->use_type_four = $request->input('use_type_four'),
+                            
+                ]);
+                
+                
+                $milestones = Milestones::where('project_record_id', $id);
+                $milestones->update([
+                    'riba_stage_one' => $milestones->riba_stage_one = $request->input('riba_stage_one'),
+                    'riba_stage_two' => $milestones->riba_stage_two = $request->input('riba_stage_two'),
+                    'riba_stage_three' => $milestones->riba_stage_three = $request->input('riba_stage_three'),
+                    'riba_stage_four' => $milestones->riba_stage_four = $request->input('riba_stage_four')
+                ]);
+        
+                $meetings = Meetings::where('project_record_id', $id);
+                $meetings->update([
+                    'design_team_meeting' => $meetings->design_team_meeting = $request->input('design_team_meeting'),
+                    'project_progress_meeting' => $meetings->project_progress_meeting = $request->input('project_progress_meeting')
+                ]);
+        
+                $team = ProjectTeam::where('project_record_id', $id);
+                $team->update([
+                    'position' => $team->position = $request->input('position'),
+                    'name' => $team->name = $request->input('name')
+                ]);
+
+                return redirect('/project_info'.'/'.$id.'/edit');
     }
 
     /**

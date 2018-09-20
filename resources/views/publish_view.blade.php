@@ -178,13 +178,13 @@
 		    				<div class="col-sm-12">
 		    					<!--<form id="projform" action="{{ url('project_info')}}" method="POST">-->
 		    						@csrf
-									{!! Form::open(['action' => ['ProjectInformationController@update',  $data['project_record_id'] ], 'id' => 'projform', 'method' => 'POST'])!!}
+									{!! Form::open(['action' => ['ProjectInformationController@update',  $project->project_record_id ], 'id' => 'projform', 'method' => 'POST'])!!}
 		    					<table class="table table-striped table-hover">
 		    						<tr>
 		    							<td>Project Title
   											
 										</td>
-		    							<td><input id="water" type="text" name="project_title" class="form-control proje" placeholder="Canada Water Masterplan" value="{{ $data['project_title'] }}" readonly></td>
+		    							<td><input id="water" type="text" name="project_title" class="form-control proje" placeholder="Canada Water Masterplan" value="{{ $project->project_title }}" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Project ID

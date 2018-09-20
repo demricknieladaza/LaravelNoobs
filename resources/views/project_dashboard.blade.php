@@ -284,16 +284,28 @@
 		    							<td>
 		    								<table width="100%">
 		    									<tr>
-		    										<td><input type="text" name="use_name[]" class="form-control proje" readonly placeholder="Name"></td>&nbsp
-		    										<td><input type="text" name="use_area[]" class="form-control proje" placeholder="30,000m2" readonly></td>
-		    										<td><input type="text" name="use_units[]" class="form-control proje" placeholder="200 units" readonly></td>
-		    										<td><input type="text" name="use_types[]" class="form-control proje" placeholder="High-End" readonly></td>
+		    										<td>Residential</td>&nbsp
+		    										<td><input type="text" name="use_area_one" class="form-control proje" placeholder="30,000m2" readonly></td>
+		    										<td><input type="text" name="use_units_one" class="form-control proje" placeholder="200 units" readonly></td>
+		    										<td><input type="text" name="use_types_one" class="form-control proje" placeholder="High-End" readonly></td>
 												</tr>
 												<tr>
-		    										<td><input type="text" name="use_name[]" class="form-control proje" readonly placeholder="Name"></td>&nbsp
-		    										<td><input type="text" name="use_area[]" class="form-control proje" placeholder="30,000m2" readonly></td>
-		    										<td><input type="text" name="use_units[]" class="form-control proje" placeholder="200 units" readonly></td>
-		    										<td><input type="text" name="use_types[]" class="form-control proje" placeholder="High-End" readonly></td>
+		    										<td>Residential</td>&nbsp
+		    										<td><input type="text" name="use_area_two" class="form-control proje" placeholder="30,000m2" readonly></td>
+		    										<td><input type="text" name="use_units_two" class="form-control proje" placeholder="200 units" readonly></td>
+		    										<td><input type="text" name="use_types_two" class="form-control proje" placeholder="High-End" readonly></td>
+												</tr>
+												<tr>
+		    										<td>Office</td>&nbsp
+		    										<td><input type="text" name="use_area_three" class="form-control proje" placeholder="30,000m2" readonly></td>
+		    										<td><input type="text" name="use_units_three" class="form-control proje" placeholder="200 units" readonly></td>
+		    										<td><input type="text" name="use_types_three" class="form-control proje" placeholder="High-End" readonly></td>
+												</tr>
+												<tr>
+		    										<td>Retail</td>&nbsp
+		    										<td><input type="text" name="use_area_four" class="form-control proje" placeholder="30,000m2" readonly></td>
+		    										<td><input type="text" name="use_units_four" class="form-control proje" placeholder="200 units" readonly></td>
+		    										<td><input type="text" name="use_types_four" class="form-control proje" placeholder="High-End" readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>Total</td>
