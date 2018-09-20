@@ -2745,6 +2745,9 @@ position: absolute;
   text-shadow: none;
 }
 
+.disd:hover{
+    cursor: no-drop;
+}
 
 @-webkit-keyframes flip {
   0% {
@@ -3202,4 +3205,3 @@ position: absolute;
   }
 }
 
-*/

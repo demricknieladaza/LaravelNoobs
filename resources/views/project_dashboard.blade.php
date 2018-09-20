@@ -132,9 +132,9 @@
 			<div class="tender-container tendnew">
 				<ul class="nav navs bid-form-nav">
 					<li class="active"><a class="abut" data-toggle="tab" href="#section1">Project</a></li>
-					<li><a class="abut" data-toggle="tab" href="#section2">Scope</a></li>
-					<li><a class="abut" data-toggle="tab" href="#section3">Tenders</a></li>
-					<li><a class="abut" data-toggle="tab" href="#section4">Create New Tender</a></li>
+					<li class="disd"><a class="abut" data-toggle="tab" href="#section2">Scope</a></li>
+					<li class="disd"><a class="abut" data-toggle="tab" href="#section3">Tenders</a></li>
+					<li class="disd"><a class="abut" data-toggle="tab" href="#section4">Create New Tender</a></li>
 
 				</ul><br>
 			</div>
