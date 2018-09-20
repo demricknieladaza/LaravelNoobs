@@ -190,13 +190,13 @@
 		    							<td>Project ID
 			    							
 		    							</td>
-		    							<td><input type="number" name="project_id" class="form-control proje" placeholder="123456789" readonly></td>
+		    							<td><input type="number" name="project_id" class="form-control proje" placeholder="123456789" value="{{ $project->project_id }}" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Location
 		    								
 		    							</td>
-		    							<td><input type="text" name="location" class="form-control proje" placeholder="Canada Water, London, SE16, United Kingdom" readonly></td>
+		    							<td><input type="text" name="location" class="form-control proje" placeholder="Canada Water, London, SE16, United Kingdom" value="{{ $project->location }}" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td colspan="2">
@@ -214,7 +214,7 @@
 		    											<p><b>Main Roads</b></p>
 		    										</td>
 		    										<td>
-		    											<input type="text" name="main_road" class="form-control proje" placeholder="Surrey Quays Road" readonly>
+		    											<input type="text" name="main_road" class="form-control proje" placeholder="Surrey Quays Road" value="{{ $transport->main_road }}" readonly>
 		    										</td>
 		    									</tr>
 		    									<tr>
@@ -222,8 +222,8 @@
 		    											<p><b>Tube Stations</b></p>
 		    										</td>
 		    										<td>
-		    											<input type="text" name="tube_station_one" class="form-control proje" placeholder="Canada Water 0.5km" readonly>
-		    											<input type="text" name="tube_station_two" class="form-control proje" placeholder="Surrey Quays 1.5km" readonly>
+		    											<input type="text" name="tube_station_one" class="form-control proje" placeholder="Canada Water 0.5km" value="{{ $transport->tube_station_one }}" readonly>
+		    											<input type="text" name="tube_station_two" class="form-control proje" placeholder="Surrey Quays 1.5km" value="{{ $transport->tube_staion_two }}" readonly>
 		    										</td>
 		    									</tr>
 		    									<tr>
@@ -231,7 +231,7 @@
 		    											<p><b>Bus Lines</b> </p>
 		    										</td>
 		    										<td>
-		    											<input type="text" name="bus_lines" class="form-control proje" placeholder="701, 702, 851, 930" readonly>
+		    											<input type="text" name="bus_lines" class="form-control proje" placeholder="701, 702, 851, 930" value="{{ $transport->bus_lines }}" readonly>
 		    										</td>
 		    									</tr>
 		    								</table>
@@ -245,11 +245,11 @@
 		    								<table width="100%">
 		    									<tr>
 		    										<td>Adjacent Uses</td>
-		    										<td><input type="text" name="adjacent_uses" class="form-control proje" placeholder="Residential (High-End), Regeneration Space, Retail" readonly></td>
+		    										<td><input type="text" name="adjacent_uses" class="form-control proje" placeholder="Residential (High-End), Regeneration Space, Retail"  readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>History</td>
-		    										<td><input type="text" name="history" class="form-control proje" placeholder="Residential (High-End), Former Docks and Warehouses" readonly></td>
+		    										<td><input type="text" name="history" class="form-control proje" placeholder="Residential (High-End), Former Docks and Warehouses"  readonly></td>
 		    									</tr>
 		    								</table>
 		    							</td>
@@ -259,22 +259,22 @@
 		    								
 		    							</td>
 		    							<td>                               
-		    								<input type="text" name="constraint_one" class="form-control proje" placeholder="Adjacent Tube Tunnel" readonly>
-		    								<input type="text" name="constraint_two" class="form-control proje" placeholder="Existing Buildings" readonly>
-		    								<input type="text" name="constraint_three" class="form-control proje" placeholder="Weak Ground Conditions" readonly>
+		    								<input type="text" name="constraint_one" class="form-control proje" placeholder="Adjacent Tube Tunnel"  readonly>
+		    								<input type="text" name="constraint_two" class="form-control proje" placeholder="Existing Buildings"  readonly>
+		    								<input type="text" name="constraint_three" class="form-control proje" placeholder="Weak Ground Conditions"  readonly>
 		    							</td>
 		    						</tr>
 		    						<tr>
 		    							<td>Type of Development
 		    								
 		    							</td>
-		    							<td><input type="text" name="type_of_development" class="form-control proje" placeholder="New Built" readonly></td>
+		    							<td><input type="text" name="type_of_development" class="form-control proje" placeholder="New Built"  readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Construction Value
 		    								
 		    							</td>
-		    							<td><input type="text" name="construction_value" class="form-control proje" placeholder="£ 300,000,000" readonly></td>
+		    							<td><input type="text" name="construction_value" class="form-control proje" placeholder="£ 300,000,000"  readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Types of Use
@@ -284,27 +284,27 @@
 		    								<table width="100%">
 		    									<tr>
 		    										<td>Residential</td>&nbsp
-		    										<td><input type="text" name="use_area_one" class="form-control proje" placeholder="30,000m2" readonly></td>
-		    										<td><input type="text" name="use_units_one" class="form-control proje" placeholder="200 units" readonly></td>
-		    										<td><input type="text" name="use_types_one" class="form-control proje" placeholder="High-End" readonly></td>
+		    										<td><input type="text" name="use_area_one" class="form-control proje" placeholder="30,000m2"  readonly></td>
+		    										<td><input type="text" name="use_units_one" class="form-control proje" placeholder="200 units"  readonly></td>
+		    										<td><input type="text" name="use_type_one" class="form-control proje" placeholder="High-End"  readonly></td>
 												</tr>
 												<tr>
 		    										<td>Residential</td>&nbsp
-		    										<td><input type="text" name="use_area_two" class="form-control proje" placeholder="30,000m2" readonly></td>
-		    										<td><input type="text" name="use_units_two" class="form-control proje" placeholder="200 units" readonly></td>
-		    										<td><input type="text" name="use_types_two" class="form-control proje" placeholder="High-End" readonly></td>
+		    										<td><input type="text" name="use_area_two" class="form-control proje" placeholder="30,000m2"  readonly></td>
+		    										<td><input type="text" name="use_units_two" class="form-control proje" placeholder="200 units"  readonly></td>
+		    										<td><input type="text" name="use_type_two" class="form-control proje" placeholder="High-End"  readonly></td>
 												</tr>
 												<tr>
 		    										<td>Office</td>&nbsp
-		    										<td><input type="text" name="use_area_three" class="form-control proje" placeholder="30,000m2" readonly></td>
-		    										<td><input type="text" name="use_units_three" class="form-control proje" placeholder="200 units" readonly></td>
-		    										<td><input type="text" name="use_types_three" class="form-control proje" placeholder="High-End" readonly></td>
+		    										<td><input type="text" name="use_area_three" class="form-control proje" placeholder="30,000m2"  readonly></td>
+		    										<td><input type="text" name="use_units_three" class="form-control proje" placeholder="200 units"  readonly></td>
+		    										<td><input type="text" name="use_type_three" class="form-control proje" placeholder="High-End"  readonly></td>
 												</tr>
 												<tr>
 		    										<td>Retail</td>&nbsp
-		    										<td><input type="text" name="use_area_four" class="form-control proje" placeholder="30,000m2" readonly></td>
-		    										<td><input type="text" name="use_units_four" class="form-control proje" placeholder="200 units" readonly></td>
-		    										<td><input type="text" name="use_types_four" class="form-control proje" placeholder="High-End" readonly></td>
+		    										<td><input type="text" name="use_area_four" class="form-control proje" placeholder="30,000m2"  readonly></td>
+		    										<td><input type="text" name="use_units_four" class="form-control proje" placeholder="200 units"  readonly></td>
+		    										<td><input type="text" name="use_type_four" class="form-control proje" placeholder="High-End"  readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>Total</td>
@@ -323,11 +323,11 @@
 		    								<table width="100%">
 		    									<tr>
 		    										<td>RIBA Stage 1 Completion</td>
-		    										<td><input type="text" name="riba_stage_one" class="form-control proje" placeholder="01/03/2019" readonly></td>
+		    										<td><input type="text" name="riba_stage_one" class="form-control proje" placeholder="01/03/2019"  readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>RIBA Stage 2 Completion</td>
-		    										<td><input type="text" name="riba_stage_two" class="form-control proje" placeholder="01/07/2019" readonly></td>
+		    										<td><input type="text" name="riba_stage_two" class="form-control proje" placeholder="01/07/2019"  readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>RIBA Stage 3 Completion</td>
@@ -335,7 +335,7 @@
 		    									</tr>
 		    									<tr>
 		    										<td>RIBA Stage 4 Completion</td>
-		    										<td><input type="text" name="riba_stage_four" class="form-control proje" placeholder="01/12/2019" readonly></td>
+		    										<td><input type="text" name="riba_stage_four" class="form-control proje" placeholder="01/12/2019"  readonly></td>
 		    									</tr>
 		    								</table>
 		    							</td>								
@@ -348,11 +348,11 @@
 		    								<table width="100%">
 		    									<tr>
 		    										<td>Design Team Meeting</td>
-		    										<td><input type="text" name="design_team_meeting" class="form-control proje" placeholder="Tuesday, 14:00 – 15:30, Weekly" readonly></td>
+		    										<td><input type="text" name="design_team_meeting" class="form-control proje" placeholder="Tuesday, 14:00 – 15:30, Weekly"  readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>Project Progress Meeting</td>
-		    										<td><input type="text" name="project_progress_meeting" class="form-control proje" placeholder="Tuesday, 15:30 – 16:30, Fortnightly" readonly></td>
+		    										<td><input type="text" name="project_progress_meeting" class="form-control proje" placeholder="Tuesday, 15:30 – 16:30, Fortnightly"  readonly></td>
 		    									</tr>
 		    								</table>
 		    							</td>
@@ -361,7 +361,7 @@
 		    							<td>Procurement Route
 		    								
 		    							</td>
-		    							<td><input type="text" name="procurement_route" class="form-control proje" placeholder="Design & Build" readonly></td>
+		    							<td><input type="text" name="procurement_route" class="form-control proje" placeholder="Design & Build" value="{{ $project->procurement_route }}" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Project Team
@@ -371,7 +371,7 @@
 		    								<table width="100%">
 		    									<tr>
 		    										<td>Architect</td>
-		    										<td><input type="text" name="architect" class="form-control proje" placeholder="Allies and Morrison" readonly></td>
+		    										<td><input type="text" name="architect" class="form-control proje" placeholder="Allies and Morrison"  readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>Structural Engineer</td>
