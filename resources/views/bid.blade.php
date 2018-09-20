@@ -973,6 +973,100 @@
 									</div>
 									<div class="row">
 										<div class="col-sm-4">
+											Project Experience
+										</div>
+										<div class="col-sm-8">
+											<div class="form-group">
+												<input type="text" name="" id="consvalue1" class="form-control" placeholder="Enter project title ">
+											</div>
+
+										<div class="form-group">
+								               <input type="checkbox" name="" value="cheked" class="filled-in" id="valconfi1" ><label for="valconfi1">Value Confidential </label>
+							              </div>
+										</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-4">
+											<div class="form-group">
+												
+											</div>
+										</div>
+										<div class="col-sm-8">
+											<div class="form-group">
+												<select name="" class="form-control">
+													<option value="" disabled selected>Select types of uses</option>
+													<?php 
+
+													$uses = array("Residential",
+																	"Commercial",
+																	"Retial",
+																	"Leisure",
+																	"Sports and Venues",
+																	"Hotel",
+																	"Industrial",
+																	"Education",
+																	"Healthcare",
+																	"Defence",
+																	"Avaition",
+																	"Highways",
+																	"Bridges",
+																	"Rail",
+																	"Water",
+																	"Power",
+																	"Oil,Gas And Chemicals"
+
+																);
+
+													sort($uses,SORT_NATURAL | SORT_FLAG_CASE);
+
+													foreach ($uses as $key) {
+													  echo "<option value='".$key."'>".$key."</option>";
+													}
+
+													 ?>
+													<option>Other</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-4">
+											
+										</div>
+										<div class="col-sm-8">
+												<div class="input_fields_project1">
+												    <button class="btn btn-primary" id="add_field_project1">Add another type of uses</button>
+												    <div></div>
+												</div>
+											</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-4">
+											<div class="form-group">
+												
+											</div>
+										</div>
+										<div class="col-sm-8">
+											<div class="form-group">
+												<select name="" class="form-control">
+													<option value="" disabled selected>Select service</option>
+													<?php 
+														$Services = array(
+															"Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Fascade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager"
+														);
+														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
+														foreach ($Services as $key ) {
+														    echo "<option value='".$key."'>".$key."</option>";
+														}
+
+													 ?>
+													<option>Other</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-4">
 											
 										</div>
 											<div class="col-sm-8">
@@ -1001,6 +1095,17 @@
 									</div><br>
 									<div class="row">
 										<div class="col-sm-4">
+											
+										</div>
+										<div class="col-sm-8">
+												<div class="input_fields_project1">
+												    <button class="btn btn-primary" id="add_field_project1">Add another service</button>
+												    <div></div>
+												</div>
+											</div>
+										</div><br>
+									<div class="row">
+										<div class="col-sm-4">
 											<div class="form-group">
 												
 											</div>
@@ -1024,14 +1129,14 @@
 											</div>
 										</div>
 									</div>
-									
-									<div class="row">
+								
+								<div class="row">
 										<div class="col-sm-4">
 											
 										</div>
 										<div class="col-sm-8">
 												<div class="input_fields_project1">
-												    <button class="btn btn-primary" id="add_field_project1">Add another project</button>
+												    <button class="btn btn-primary" id="add_field_project1">Add another type of uses</button>
 												    <div></div>
 												</div>
 											</div>
@@ -1113,29 +1218,8 @@
 												<input type="text" name="" id="" class="form-control" placeholder="Enter new company name ">
 											</div>
 										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-4">
-											
-										</div>
-										<div class="col-sm-8">
-												<div class="input_fields_project1">
-												    <button class="btn btn-primary" id="add_field_project1">Add another project team member</button>
-												    <div></div>
-												</div>
-											</div>
 									</div><br>
-									<div class="row">
-										<div class="col-sm-4">
-											
-										</div>
-										<div class="col-sm-8">
-												<div class="input_fields_project1">
-												    <button class="btn btn-primary" id="add_field_project1">Add another project </button>
-												    <div></div>
-												</div>
-											</div>
-									</div><br>
+									
 									<div class="form-group butcent">
 										<button type="button" data-toggle="tab" href="#section4" id="checkinpbut" name="Next" class="btn btn-primary butsize ">Next</button>
 										<button type="button" name="Save" value="Save" class="btn  butsize color">Save</button>
