@@ -729,7 +729,18 @@
 											</div>
 										</div>
 									</div>
+                                       <div class="row">
+										<div class="col-sm-4">
+											
+										</div>
+										<div class="col-sm-8">
 
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Name of Degree">
+											</div>
+
+										</div>
+									</div>
 									<div class="row">
 										<div class="col-sm-4"></div>
 										<div class="col-sm-8">
@@ -2007,7 +2018,7 @@
 												<input type="text" name="" class="form-control" placeholder="Enter clause here">
 										</div>
 									</div><br>
-									
+									  
 									<div class="row">
 										<div class="col-sm-4">
 											
