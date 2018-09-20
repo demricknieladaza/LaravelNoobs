@@ -57,9 +57,8 @@
 		border-top: 5px solid orange;
 	}
 </style>
-<div class="container below-header flip animated hinge">
-	<h1 id="logo" class="project-title bid-page-title centerh" style="margin-left: 5%;
-    margin-right: 5%;">Project Dashboard</small></h1>
+<div class="container below-header">
+	<h1 class="project-title bid-page-title centerh">Project Dashboard</small></h1>
 </div>
 <div class="container">
  <div class="modal fade" id="myModal2" role="dialog" tabindex="-1">
@@ -173,12 +172,13 @@
 		    			<div class="row">
 		    				<div class="col-sm-12 active-tenders" id="cprofile">
 		    						<h3>Project Information
-		    						<button class="btn buts save_proj" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction()"><i class="fa fa-save" style="font-size:15px"></i>Save</button>
+		    						<button class="btn buts save_proj" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction()"><i class="fa fa-save" style="font-size:15px" href=""></i>Save</button>
 		    						<button class="btn buts" id="edit_proj" onclick="myFunction()" style="float:right;margin-top:-14px;" ><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
 		    				</div>			
 		    				<div class="col-sm-12">
-		    					<form id="projform" action="{{ url('project_info')}}" method="POST">
+		    					<!--<form id="projform" action="{{ url('project_info')}}" method="POST">-->
 		    						@csrf
+								{!! Form::open(['action' => 'ProjectInformationController@store', 'id' => 'projform', 'method' => 'POST'])!!}
 		    					<table class="table table-striped table-hover">
 		    						<tr>
 		    							<td>Project Title
@@ -214,7 +214,7 @@
 		    											<p><b>Main Roads</b></p>
 		    										</td>
 		    										<td>
-		    											<input type="text" name="main_roads" class="form-control proje" placeholder="Surrey Quays Road" readonly>
+		    											<input type="text" name="main_road" class="form-control proje" placeholder="Surrey Quays Road" readonly>
 		    										</td>
 		    									</tr>
 		    									<tr>
@@ -222,8 +222,8 @@
 		    											<p><b>Tube Stations</b></p>
 		    										</td>
 		    										<td>
-		    											<input type="text" name="tube_station1" class="form-control proje" placeholder="Canada Water 0.5km" readonly>
-		    											<input type="text" name="tube_station2" class="form-control proje" placeholder="Surrey Quays 1.5km" readonly>
+		    											<input type="text" name="tube_station_one" class="form-control proje" placeholder="Canada Water 0.5km" readonly>
+		    											<input type="text" name="tube_station_two" class="form-control proje" placeholder="Surrey Quays 1.5km" readonly>
 		    										</td>
 		    									</tr>
 		    									<tr>
@@ -259,9 +259,9 @@
 		    								
 		    							</td>
 		    							<td>                               
-		    								<input type="text" name="cons1" class="form-control proje" placeholder="Adjacent Tube Tunnel" readonly>
-		    								<input type="text" name="cons2" class="form-control proje" placeholder="Existing Buildings" readonly>
-		    								<input type="text" name="cons3" class="form-control proje" placeholder="Weak Ground Conditions" readonly>
+		    								<input type="text" name="constraint_one" class="form-control proje" placeholder="Adjacent Tube Tunnel" readonly>
+		    								<input type="text" name="constraint_two" class="form-control proje" placeholder="Existing Buildings" readonly>
+		    								<input type="text" name="constraint_three" class="form-control proje" placeholder="Weak Ground Conditions" readonly>
 		    							</td>
 		    						</tr>
 		    						<tr>
@@ -283,28 +283,16 @@
 		    							<td>
 		    								<table width="100%">
 		    									<tr>
-		    										<td>Residential</td>&nbsp
-		    										<td><input type="text" name="res1_m1" class="form-control proje" placeholder="30,000m2" readonly></td>
-		    										<td><input type="text" name="res1_units" class="form-control proje" placeholder="200 units" readonly></td>
-		    										<td><input type="text" name="res1_type" class="form-control proje" placeholder="High-End" readonly></td>
-		    									</tr>
-		    									<tr>
-		    										<td>Residential</td>
-		    										<td><input type="text" name="res2_m1" class="form-control proje" placeholder="10,000m2" readonly></td>
-		    										<td><input type="text" name="res2_units" class="form-control proje" placeholder="70 units" readonly></td>
-		    										<td><input type="text" name="res2_type" class="form-control proje" placeholder="Affordable" readonly></td>
-		    									</tr>
-		    									<tr>
-		    										<td>Office</td>
-		    										<td><input type="text" name="office" class="form-control proje" placeholder="15,000m2" readonly></td>
-		    										<td></td>
-		    										<td></td>
-		    									</tr>
-		    									<tr>
-		    										<td>Retail</td>
-		    										<td><input type="text" name="ret_m2" class="form-control proje" placeholder="15,000m2" readonly></td>
-		    										<td><input type="text" name="ret_units" class="form-control proje" placeholder="5 units" readonly></td>
-		    										<td></td>
+		    										<td><input type="text" name="use_name[]" class="form-control proje" readonly placeholder="Name"></td>&nbsp
+		    										<td><input type="text" name="use_area[]" class="form-control proje" placeholder="30,000m2" readonly></td>
+		    										<td><input type="text" name="use_units[]" class="form-control proje" placeholder="200 units" readonly></td>
+		    										<td><input type="text" name="use_types[]" class="form-control proje" placeholder="High-End" readonly></td>
+												</tr>
+												<tr>
+		    										<td><input type="text" name="use_name[]" class="form-control proje" readonly placeholder="Name"></td>&nbsp
+		    										<td><input type="text" name="use_area[]" class="form-control proje" placeholder="30,000m2" readonly></td>
+		    										<td><input type="text" name="use_units[]" class="form-control proje" placeholder="200 units" readonly></td>
+		    										<td><input type="text" name="use_types[]" class="form-control proje" placeholder="High-End" readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>Total</td>
@@ -323,19 +311,19 @@
 		    								<table width="100%">
 		    									<tr>
 		    										<td>RIBA Stage 1 Completion</td>
-		    										<td><input type="text" name="riba_s1comp" class="form-control proje" placeholder="01/03/2019" readonly></td>
+		    										<td><input type="text" name="riba_stage_one" class="form-control proje" placeholder="01/03/2019" readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>RIBA Stage 2 Completion</td>
-		    										<td><input type="text" name="riba_s2comp" class="form-control proje" placeholder="01/07/2019" readonly></td>
+		    										<td><input type="text" name="riba_stage_two" class="form-control proje" placeholder="01/07/2019" readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>RIBA Stage 3 Completion</td>
-		    										<td><input type="text" name="riba_s3comp" class="form-control proje" placeholder="01/10/2019" readonly></td>
+		    										<td><input type="text" name="riba_stage_three" class="form-control proje" placeholder="01/10/2019" readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>RIBA Stage 4 Completion</td>
-		    										<td><input type="text" name="riba_s4comp" class="form-control proje" placeholder="01/12/2019" readonly></td>
+		    										<td><input type="text" name="riba_stage_four" class="form-control proje" placeholder="01/12/2019" readonly></td>
 		    									</tr>
 		    								</table>
 		    							</td>								
@@ -348,11 +336,11 @@
 		    								<table width="100%">
 		    									<tr>
 		    										<td>Design Team Meeting</td>
-		    										<td><input type="text" name="design_team" class="form-control proje" placeholder="Tuesday, 14:00 – 15:30, Weekly" readonly></td>
+		    										<td><input type="text" name="design_team_meeting" class="form-control proje" placeholder="Tuesday, 14:00 – 15:30, Weekly" readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>Project Progress Meeting</td>
-		    										<td><input type="text" name="project_progress" class="form-control proje" placeholder="Tuesday, 15:30 – 16:30, Fortnightly" readonly></td>
+		    										<td><input type="text" name="project_progress_meeting" class="form-control proje" placeholder="Tuesday, 15:30 – 16:30, Fortnightly" readonly></td>
 		    									</tr>
 		    								</table>
 		    							</td>
@@ -361,7 +349,7 @@
 		    							<td>Procurement Route
 		    								
 		    							</td>
-		    							<td><input type="text" name="procurement_nd_route" class="form-control proje" placeholder="Design & Build" readonly></td>
+		    							<td><input type="text" name="procurement_route" class="form-control proje" placeholder="Design & Build" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Project Team
@@ -407,8 +395,8 @@
 		    						
 		    					</section>		
 		    					<div style="text-align: center;">
-		    					</div>
-		    					</form>				
+								</div>
+								{!! Form::close() !!}			
 		    				</div>
 		    			</div>
 		    		</div>
@@ -1490,57 +1478,7 @@
 															</div>
 		    										</div>
 		    									</div>
-
-		    									<div class="row">
-		    										<div class="col-sm-6">
-		    											<div class="form-group">
-		    												Execution
-		    											</div>
-		    										</div>
-		    										<div class="col-sm-6">
-		    											<div class="form-group">
-															<select name=""  class="form-control" >
-																<option value="" disabled selected>Select</option>
-																<?php
-																$Service = array(
-																	"Deed", "Under Hand"
-																);
-																sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
-																foreach ($Service as $key ) {
-																    echo "<option value='".$key."'>".$key."</option>";
-																}
-
-																?>
-															</select>
-		    										</div>
-		    									</div>
-		    								</div>
-
-		    								<div class="row">
-		    										<div class="col-sm-6">
-		    											<div class="form-group">
-		    												Net Contribution Clause
-		    											</div>
-		    										</div>
-		    										<div class="col-sm-6">
-		    											<div class="form-group">
-															<select name=""  class="form-control" >
-																<option value="" disabled selected>Select</option>
-																<?php
-																$Service = array(
-																	"Yes", "No"
-																);
-																sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
-																foreach ($Service as $key ) {
-																    echo "<option value='".$key."'>".$key."</option>";
-																}
-
-																?>
-															</select>
-		    										</div>
-		    									</div>
-		    								</div>
-
+		    									
 		    									<div class="row">
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
@@ -1935,6 +1873,9 @@ var element=document.getElementById('bonds');
 	   $('#projform input.proje').attr('readonly',true);
 	   $('.save_proj').css('display', 'none');
 	   $('#edit_proj').css('display', 'block');
+	   $('#projform').submit();
+
+
 	}
 </script>
 <script>

@@ -128,9 +128,12 @@ class ProjectInformationController extends Controller
         $team->project_record_id = $project->project_record_id;
         $team->save();
         
+        $data = [
+            'project' => $project
+        ];
 
         //return response()->json(array('success' => true, 'insert_id' => $project->project_record_id), 200);
-        return redirect('publish_edit');
+        return view('publish_edit')->with('project', $data);
 
         /*$project = ProjectInformations::create([
             'project_title' => $request->input('project_title'),
