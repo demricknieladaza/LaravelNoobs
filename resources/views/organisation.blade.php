@@ -515,7 +515,7 @@
 											<a data-toggle="collapse" data-parent="#accordion2" href="#collapse8">US Land <span class="pull-right caret"></span></a>
 										</h4>
 									</div>
-									<h3 class="org-head"><button type="button" class="btn btn-primary" data-toggle="modal" data-backdrop="static" data-target="#exampleModalCenter"><span><i class="fa fa-plus-square"></i> </span> Add</button></h3>
+									
 									<div id="collapse8" class="panel-collapse collapse">
 										<div class="panel-body">
 											<div class="row">	
@@ -732,6 +732,7 @@
 										</div>
 									</div>
 								</div>
+								<h3 class="org-head"><button type="button" class="btn btn-primary" data-toggle="modal" data-backdrop="static" data-target="#exampleModalCenter"><span><i class="fa fa-plus-square"></i> </span> Add</button></h3>
 							</div>
 						</div>	
 					</div>

@@ -42,6 +42,18 @@
 	.hid.adserv {
 		display: none;
 	}
+
+	ul.servicelistindi {
+	  columns: 2;
+	  -webkit-columns: 2;
+	  -moz-columns: 2;
+	  padding: 0;
+	  list-style: none;
+	}
+	.hid.adservindi {
+		display: none;
+	}
+
 	ul.typeofuse {
 	  columns: 2;
 	  -webkit-columns: 2;
@@ -79,21 +91,110 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 	    var max_fields      = 10; //maximum input boxes allowed
-	    var wrapper         = $("#Awards"); //Fields wrapper
-	    var add_button      = $("#add_award"); //Add button ID
+	    var wrapper         = $("#indiaddedaward"); //Fields wrapper
+	    var add_button      = $("#indiaddaward"); //Add button ID
+	    var yir 			= "<?php $cur_year = date('Y');$years = [];for ($i=0; $i<=50; $i++) { array_push($years,$cur_year--);}foreach ($years as $year ) {echo "<option value='".$year."'>".$year."</option>"; }?>";
 	    
 	    var x = 1; //initlal text box count
 	    $(add_button).click(function(e){ //on add input button click
 	        e.preventDefault();
 	        if(x < max_fields){ //max input box allowed
 	            x++; //text box increment
-	            $(wrapper).append('<div><div class="form-group"><input type="text" name="" class="form-control" placeholder="Enter name of award"></div><div class="form-group"><input type="text" name="" class="form-control" placeholder="Enter details"></div><div class="form-group"><input type="text" name="" class="form-control" placeholder="Awarded by"></div><div class="form-group"><div class="input-group date" id="datepicker1" data-date="02-2012" data-date-format="mm-yyyy"><input class="form-control" type="text" placeholder="Year awarded  " readonly="readonly" name="date" >	  <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span></div></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
+	            $(wrapper).append('<div><div class="form-group"><input type="text" name="" class="form-control" placeholder="Enter name of award"></div><div class="form-group"><input type="text" name="" class="form-control" placeholder="Awarded by"></div><div class="form-group"><textarea cols="4" rows="5" id="textareaap" maxlength="3000" placeholder="Enter details"></textarea><p style="color: grey;"><span id="rchars1" >3000</span>/3000 words remaining</p></div><div class="form-group"><select name="yeard_awards" class="form-control"><option value="">Year awarded</option>'+yir+'</select></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
 	        }
 	    });
 	    
 	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
 	        e.preventDefault(); $(this).parent('div').remove(); x--;
-	    })
+	    });
+	});
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+	    var max_fields      = 10; //maximum input boxes allowed
+	    var wrapper         = $("#addeddegree"); //Fields wrapper
+	    var add_button      = $("#adddegree"); //Add button ID
+	    var sele           	= "<?php $degree = array("BA","BSA","BAcy","BAcc","B.A.Sc.","BArch ","BBA","BCE","BCom","BCA","BDes","B.Des.Corp","B.Des.Arch","BEng","BEC","BEE","BFA","B.Hlth.Sci.","BIT","BIGS","LLB","BLAS","BMath","BME","B.P.E.S.S","B.Res.Ec","BSc","BS.EOH","BSLS","BTech","BVA","MA","MBA","MCom","BCA","MEM","MEDM","MFA","MIS","LLM","MLA","MPS","MPA","MPH","MSc","MSF","MTech","DLP","Dr.mph.","PhD","PsyD","DrPH","DSc");sort($degree,SORT_NATURAL | SORT_FLAG_CASE);foreach ($degree as $key) {echo "<option value='".$key."'>".$key."</option>";}?>";
+	    var yir 			= "<?php $cur_year = date('Y');$years = [];for ($i=0; $i<=50; $i++) { array_push($years,$cur_year--);}foreach ($years as $year ) {echo "<option value='".$year."'>".$year."</option>"; }?>";
+	    
+	    var x = 1; //initlal text box count
+	    $(add_button).click(function(e){ //on add input button click
+	        e.preventDefault();
+	        if(x < max_fields){ //max input box allowed
+	            x++; //text box increment
+	            $(wrapper).append('<div><div class="form-group"><select name="" class="form-control"><option value="" disabled selected>Select degree</option>'+sele+'<option>Other</option></select></div><div class="form-group"><input type="text" name="" class="form-control" placeholder="Name of Degree"></div><select name="degree_year" class="form-control"> <option value="">Year awarded</option>'+yir+'</select><a href="#" class="remove_field">Remove</a></div>'); //add input box
+	        }
+	    });
+	    
+	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+	        e.preventDefault(); $(this).parent('div').remove(); x--;
+	    });
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+	    var max_fields      = 10; //maximum input boxes allowed
+	    var wrapper         = $("#addedaccreditation"); //Fields wrapper
+	    var add_button      = $("#addaccreditation"); //Add button ID
+	    var sele           	= "<?php $Accre = array("MCIOD","AssocRICS","MRICS","FRICS","HonRICS","BREEAM AP","RIBA");sort($Accre,SORT_NATURAL | SORT_FLAG_CASE);foreach ($Accre as $key) { echo "<option value='".$key."'>".$key."</option>";}?>";
+	    var yir 			= "<?php $cur_year = date('Y');$years = [];for ($i=0; $i<=50; $i++) { array_push($years,$cur_year--);}foreach ($years as $year ) {echo "<option value='".$year."'>".$year."</option>"; }?>";
+	    
+	    var x = 1; //initlal text box count
+	    $(add_button).click(function(e){ //on add input button click
+	        e.preventDefault();
+	        if(x < max_fields){ //max input box allowed
+	            x++; //text box increment
+	            $(wrapper).append('<div><div class="form-group"><select name="ddlSelectYear" class="form-control"><option value="">Select Accreditation</option>'+sele+'<option>Others</option></select></div><div class="form-group"><select name="degree_year" class="form-control"><option value="">Year awarded</option>'+yir+'</select></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
+	        }
+	    });
+	    
+	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+	        e.preventDefault(); $(this).parent('div').remove(); x--;
+	    });
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+	    var max_fields      = 10; //maximum input boxes allowed
+	    var wrapper         = $("#newprojmem"); //Fields wrapper
+	    var add_button      = $("#addprojmember"); //Add button ID
+	    var mem  			= "<?php $members = array("Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Fascade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager");sort($members, SORT_NATURAL | SORT_FLAG_CASE);foreach ($members as $key ) {echo "<option value='".$key."'>".$key."</option>";}?>";
+	    var comp  			= "<?php $company = array("Architect","Structural Engineer","Service Engineer");sort($company,SORT_NATURAL | SORT_FLAG_CASE);foreach ($company as $key) {echo "<option value='".$key."'>".$key."</option>";}?>";
+	    
+	    var x = 1; //initlal text box count
+	    $(add_button).click(function(e){ //on add input button click
+	        e.preventDefault();
+	        if(x < max_fields){ //max input box allowed
+	            x++; //text box increment
+	            $(wrapper).append('<div><div class="form-group"><select name="Sel"  class="form-control" ><option value="" disabled selected>Select project team member</option>'+mem+'</select></div><div class="form-group"><select name="Sel"  class="form-control" ><option value="" disabled selected>Select company</option>'+comp+'<option>Other</option></select></div><div class="form-group"><div class="form-group"><input type="text" name="" class="form-control" placeholder="Enter new company name"></div></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
+	        }
+	    });
+	    
+	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+	        e.preventDefault(); $(this).parent('div').remove(); x--;
+	    });
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+	    var max_fields      = 10; //maximum input boxes allowed
+	    var wrapper         = $("#Awards"); //Fields wrapper
+	    var add_button      = $("#add_award"); //Add button ID
+	    var dateer  		= "<?php $cur_year = date('Y');$years = [];for ($i=0; $i<=50; $i++) {array_push($years,$cur_year--);}foreach ($years as $year ) { echo "<option value='".$year."'>".$year."</option>";}?>";
+	    
+	    var x = 1; //initlal text box count
+	    $(add_button).click(function(e){ //on add input button click
+	        e.preventDefault();
+	        if(x < max_fields){ //max input box allowed
+	            x++; //text box increment
+	            $(wrapper).append('<div><div class="form-group"><input type="text" name="" class="form-control" placeholder="Enter name of award"></div><div class="form-group"><input type="text" name="" class="form-control" placeholder="Enter details"></div><div class="form-group"><input type="text" name="" class="form-control" placeholder="Awarded by"></div><div class="form-group"><select name="awards_year" class="form-control"><option value="">Year awarded</option>'+dateer+'</select></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
+	        }
+	    });
+	    
+	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+	        e.preventDefault(); $(this).parent('div').remove(); x--;
+	    });
 	});
 </script>
 <script type="text/javascript">
@@ -108,13 +209,21 @@
 	        e.preventDefault();
 	        if(x < max_fields){ //max input box allowed
 	            x++; //text box increment
-	            $(wrapper).append('<div><div class="form-group"><select name="Sel"  class="form-control" ><option value="" disabled selected>Select Service</option>'+adddiv+'<option value="other">Other</option></select></div><div class="form-group"><div class="input-group date" id="datepicker2" data-date="02-2012"data-date-format="mm-yyyy"><input class="form-control" type="text" placeholder="Provided this Service from" readonly="readonly" name="date" > <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span></div></div><div class="form-group"><div class="input-group date" id="datepicker3" data-date="02-2012" data-date-format="mm-yyyy"><input class="form-control" type="text" placeholder="Provided this Service until" readonly="readonly" name="date" ><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span></div></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
+	            $(wrapper).append('<div><div class="form-group"><select name="Sel"  class="form-control" ><option value="" disabled selected>Select Service</option>'+adddiv+'<option value="other">Other</option></select></div><div class="form-group"><div class="input-group date" id="datepickernichuy" data-date="02-2012" data-date-format="mm-yyyy"><input class="form-control" type="text" placeholder="Provided this Service from" readonly="readonly" name="date" > <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span></div></div><div class="form-group"><div class="input-group date" id="datepickernichuy" data-date="02-2012" data-date-format="mm-yyyy"><input class="form-control" type="text" placeholder="Provided this Service until" readonly="readonly" name="date" ><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span></div></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
 	        }
 	    });
 	    
 	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
 	        e.preventDefault(); $(this).parent('div').remove(); x--;
-	    })
+	    });
+
+	    $('body').on('click',"#datepickernichuy", function(){
+	        $(this).datepicker( {
+			    format: "mm-yyyy",
+			    viewMode: "months", 
+			    minViewMode: "months"
+			});
+	    });
 	});
 </script>
 <script type="text/javascript">
@@ -568,24 +677,27 @@
 													<input type="text" name="" class="form-control" placeholder="Enter new company name">
 												</div>
 											</div>
+											<div id="newprojmem">
+												
+											</div>
 											<div class="form-group">
 												<div class="input_fields_team">
-												    <button class="btn btn-primary" id="add_field_team">Add another project team member</button>
+												    <button class="btn btn-primary" id="addprojmember">Add another project team member</button>
 												    <div></div>
 												</div>
 											</div><br>
 											<div class="form-group">
 												<div class="input_fields_project">
-												    <button class="btn btn-primary" id="add_field_project">Add another project</button>
+												    <button type="button" class="btn btn-primary" id="" >Add another project</button>
 												    <div></div>
 												</div>
 											</div><br>
-											<div class="form-group">
+											{{-- <div class="form-group">
 												<div class="input_fields_project">
 												    <button class="btn btn-primary" id="add_field_project">Add another XXX</button>
 												    <div></div>
 												</div>
-											</div><br>
+											</div> --}}<br>
 										</div>
 									</div>
 									<div class="form-group butcent">
@@ -600,6 +712,21 @@
 					</div>
 					<div id="section3" class="tab-pane fade tender-container">
 						<h3 class="bid-form-title">Individuals</h3>
+							<div class="row" style="padding-bottom:10px;">
+								<div class="col-sm-4">
+									Name
+								</div>
+								<div class="col-sm-8">
+									<div class="form-group">
+										<div class="col-sm-6" style="padding:0;">
+											<input type="text" name="" class="form-control" placeholder="First name">
+										</div>
+										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+											<input type="text" name="" class="form-control" placeholder="Surname">
+										</div>
+									</div>
+								</div>
+							</div>
 						<div class="kuwestion">
 							<div class="inputscheck">
 							<div class="row">
@@ -624,21 +751,63 @@
 										<div class="col-sm-8">
 											<div class="form-group">
 												<select name='ddlSelectYear' class="form-control">
-										            <option value="">Year awarded</option>
-										            <?php 
-														$cur_year = date('Y');
-														$years = [];
-													    for ($i=0; $i<=50; $i++) {
-													        array_push($years,$cur_year--);
-													    }
-													    foreach ($years as $year ) {
-													    	echo "<option value='".$year."'>".$year."</option>";
-													    }
-													?>
+										            <option value="">Select Accreditation</option>
+										         <?php 
+
+													$Accre = array("MCIOD",
+																	"AssocRICS",
+																	"MRICS",
+																	"FRICS",
+																	"HonRICS",
+																	"BREEAM AP",
+																	"RIBA"
+																);
+
+													sort($Accre,SORT_NATURAL | SORT_FLAG_CASE);
+
+													foreach ($Accre as $key) {
+													  echo "<option value='".$key."'>".$key."</option>";
+													}
+
+													 ?>
+													 <option>Others</option>
 										        </select>
 											</div>
 										</div>
 									</div>
+
+									<div class="row">
+										<div class="col-sm-4"></div>
+										<div class="col-sm-8">
+											<select name='degree_year' class="form-control">
+											    <option value="">Year awarded</option>
+											    <?php 
+													$cur_year = date('Y');
+													$years = [];
+												    for ($i=0; $i<=50; $i++) {
+												        array_push($years,$cur_year--);
+												    }
+												    foreach ($years as $year ) {
+												    	echo "<option value='".$year."'>".$year."</option>";
+												    }
+												?>
+											</select>
+										</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-4">
+											
+										</div>
+										<div class="col-sm-8">
+											<div id="addedaccreditation">
+												
+											</div>
+											<div class="">
+											    <button class="btn btn-primary" id="addaccreditation">Add another accreditation</button>
+											    <div></div>
+											</div>
+										</div>
+									</div><br>
 									<div class="row">
 										<div class="col-sm-4">
 											<div class="form-group">
@@ -673,7 +842,18 @@
 											</div>
 										</div>
 									</div>
+                                       <div class="row">
+										<div class="col-sm-4">
+											
+										</div>
+										<div class="col-sm-8">
 
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Name of Degree">
+											</div>
+
+										</div>
+									</div>
 									<div class="row">
 										<div class="col-sm-4"></div>
 										<div class="col-sm-8">
@@ -693,7 +873,31 @@
 										</div>
 									</div>
 									<br>
-									
+									<div class="row">
+										<div class="col-sm-4">
+											
+										</div>
+										<div class="col-sm-8">
+											<div id="addeddegree">
+												
+											</div>
+											<div class="">
+											    <button type="button" class="btn btn-primary" id="adddegree">Add another degree</button>
+											    <div></div>
+											</div>
+											</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-4">
+											Seniority
+										</div>
+										<div class="col-sm-8">
+
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Enter level of seniority">
+											</div>
+										</div>
+									</div>
 									<div class="row">
 										<div class="col-sm-4">
 											Awards
@@ -704,8 +908,14 @@
 												<input type="text" name="" class="form-control" placeholder="Enter name of award">
 											</div>
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Awarded by body">
+												<input type="text" name="" class="form-control" placeholder="Awarded by">
 											</div>
+											
+											<div class="form-group">
+												<textarea cols="4" rows="5" id="textareaap" maxlength="3000" placeholder="Enter details"></textarea>
+  												<p style="color: grey;"><span id="rchars1" >3000</span>/3000 words remaining</p>
+											</div>
+											<div class="form-group">
 											<select name='yeard_awards' class="form-control">
 											    <option value="">Year awarded</option>
 											    <?php 
@@ -719,68 +929,48 @@
 												    }
 												?>
 											</select>
-											<br>
-											
-											
-										</div>
-									</div>
-								
-									<div class="row">
-										<div class="col-sm-4">
-											<div class="form-group">
-												Professional Pathway
 											</div>
-										</div>
-										<div class="col-sm-8">
+											<div id="indiaddedaward"></div>
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Previous employer">
+											    <button class="btn btn-primary" id="indiaddaward">Add another award</button>
+											    <div></div>
 											</div>
+											
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-sm-4">
 											<div class="form-group">
-											 
+											 Service
 											</div>
 										</div>
 										<div class="col-sm-8">
 											<div class="form-group">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select service</option>
-													<?php 
+												<ul id="servicelistindi" class="servicelist">
+												<?php
+												$Service = array(
+													"Architect", "Structural Engineer", "Service Engineer",
+													"Fire Engineer", "Acoustic Engineer", "Principal Designer","Fascade Engineer" , "Building Control", "Lighting Consultant", "Security Consultant", "Planning Consultant" , "Sustainability Consultant", "BIM Consultant", "Quantity Surveyor", "Project Manager"
+												);
+												sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
+												foreach ($Service as $key ) {
+												    echo "<li><div class='form-check'>
+															<label>
+																<input type='checkbox' name='offeredservicesindi[]' value='".$key."'><span class='label-text'>".$key."</span>
+															</label>
+														</div></li>";
+												}
 
-													$service = array(
-															"Architect",
-															"Structural Engineer",
-															"Service Engineer",
-															"Fire Engineer",
-															"Acoustic Engineer",
-															"Principal Designer",
-															"Fascade Engineer",
-															"Building Control",
-															"Lighting Consultant",
-															"Security Consultant",
-															"Plannning Consultant",
-															"Sustainability Consultant",
-															"BIM Consultant",
-															"Quantity Surveyor",
-															"Project Manager"
-																);
-
-													sort($service,SORT_NATURAL | SORT_FLAG_CASE);
-
-													foreach ($service as $key) {
-													  echo "<option value='".$key."'>".$key."</option>";
-													}
-
-													 ?>
-													<option>Other</option>
-												</select>
+												?>
+												</ul>
+											</div>
+											<div class="form-group divaddservbid">
+												<input type="text" class="form-control hid adservindi" name="adserv">
+											    <button type="button" class="btn btn-primary notherbutindi" onclick="showaddserindi()">Add another service</button>
+											    <button type="button" class="btn btn-primary hid adservindi" id="addservicebutindi" onclick="addserviceindi()">Add Service</button>
 											</div>
 										</div>
 									</div>
-									
-									
 									<div class="row">
 										<div class="col-sm-4">
 											
@@ -811,11 +1001,126 @@
 									</div><br>
 									<div class="row">
 										<div class="col-sm-4">
+											<div class="form-group">
+												
+											</div>
+										</div>
+										<div class="col-sm-8">
+											<div class="form-group">
+												<select name="" class="form-control">
+													<option value="" disabled selected>Select type of development</option>
+													<?php 
+														$Services = array("New Built","Refurbishment","Demolition"
+															
+														);
+														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
+														foreach ($Services as $key ) {
+														    echo "<option value='".$key."'>".$key."</option>";
+														}
+
+													 ?>
+													<option>Other</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									
+									<div class="row">
+										<div class="col-sm-4">
 											
 										</div>
 										<div class="col-sm-8">
-												<div class="input_fields_serve2">
-												    <button class="btn btn-primary" id="add_field_serve2">Add another service</button>
+												<div class="input_fields_project1">
+												    <button class="btn btn-primary" id="add_field_project1">Add another project</button>
+												    <div></div>
+												</div>
+											</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-4"></div>
+										<div class="col-sm-8">
+												<textarea cols="4" rows="5" id="textareaap" maxlength="3000" placeholder="Enter Description of the project ....... "></textarea>
+  												<p style="color: grey;"><span id="rchars1" >3000</span>/3000 words remaining</p>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-4">
+											<div class="form-group">
+												
+											</div>
+										</div>
+										<div class="col-sm-8" >						
+											<label for="uploadImage7s"><strong>Upload Images</strong></label>
+											<input id="uploadImage7s" type="file" name="upimages[]" multiple accept='image/*'name="myPhoto" />
+								        </div>
+						            </div><br>
+						            <div class="row">
+										<div class="col-sm-4">
+											<div class="form-group">
+												
+											</div>
+										</div>
+										<div class="col-sm-8">
+											<div class="form-group">
+												<select name='ddlSelectYear' class="form-control">
+										            <option value="">Select project team member</option>
+										       <?php 
+														$Services = array(
+															"Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Fascade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager"
+														);
+														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
+														foreach ($Services as $key ) {
+														    echo "<option value='".$key."'>".$key."</option>";
+														}
+
+													 ?>
+													 <option>Others</option>
+										        </select>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-4">
+											<div class="form-group">
+												
+											</div>
+										</div>
+										<div class="col-sm-8">
+											<div class="form-group">
+												<select name='ddlSelectYear' class="form-control">
+										            <option value="">Company name</option>
+										       <?php 
+														$Services = array(
+															
+														);
+														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
+														foreach ($Services as $key ) {
+														    echo "<option value='".$key."'>".$key."</option>";
+														}
+
+													 ?>
+													 <option>Others</option>
+										        </select>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-4">
+											
+										</div>
+										<div class="col-sm-8">
+											<div class="form-group">
+												<input type="text" name="" id="" class="form-control" placeholder="Enter new company name ">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-4">
+											
+										</div>
+										<div class="col-sm-8">
+												<div class="input_fields_project1">
+												    <button class="btn btn-primary" id="add_field_project1">Add another project team member</button>
 												    <div></div>
 												</div>
 											</div>
@@ -826,7 +1131,7 @@
 										</div>
 										<div class="col-sm-8">
 												<div class="input_fields_project1">
-												    <button class="btn btn-primary" id="add_field_project1">Add another project</button>
+												    <button class="btn btn-primary" id="add_field_project1">Add another project </button>
 												    <div></div>
 												</div>
 											</div>
@@ -1657,6 +1962,16 @@
 												</select>
 										</div>
 									</div><br>
+									<div class="row">
+										<div class="col-sm-4">Execution</div>
+										<div class="col-sm-8">
+											<div class="form-group">
+												<input type="text" name="" class="form-control" placeholder="Fixed text">
+											</div>
+										</div>
+
+									</div>
+
 										<div class="row">
 										<div class="col-sm-4">
 											<div class="form-group">
@@ -1800,14 +2115,7 @@
 												<input type="text" name="" class="form-control" placeholder="Enter clause here">
 										</div>
 									</div><br>
-									<div class="row">
-										<div class="col-sm-4">
-											
-										</div>
-										<div class="col-sm-8">
-												<input type="text" name="" class="form-control" placeholder="Enter new suggested work here">
-										</div>
-									</div><br>
+									  
 									<div class="row">
 										<div class="col-sm-4">
 											
@@ -2317,6 +2625,26 @@ $('textarea').keyup(function() {
 		$('.hid.adserv').css('display','none');
 		$('.notherbut').css('display','block');
 		$('.adserv').val('');
+	}
+
+	function showaddserindi(){
+		$('.hid.adservindi').css('display','block');
+		$('.notherbutindi').css('display','none');
+	};
+	function addserviceindi()
+	{
+		var ival = $.trim($('.adservindi').val());
+		if( ival.length != "" ){
+			ival = ival.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+			    return letter.toUpperCase();
+			});
+			var out = "<li><div class='form-check'><label><input type='checkbox' checked name='offeredservicesindi[]' value='"+ival+"'><span class='label-text'>"+ival+"</span></label></div></li>";
+			$('ul#servicelistindi').append(out);
+		}
+
+		$('.hid.adservindi').css('display','none');
+		$('.notherbutindi').css('display','block');
+		$('.adservindi').val('');
 	}
 
 	function showaddtype(){

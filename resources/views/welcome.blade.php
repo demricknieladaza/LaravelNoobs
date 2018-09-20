@@ -242,6 +242,20 @@
         .media-body h3{
             color: black;
         }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            border: none;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background: #fe7235
+            margin-top: -9px;
+            transition: box-shadow 0.5s;
+        }
+        input[type=range]:hover::-webkit-slider-thumb {
+            box-shadow: 0 0 0 5pt rgba(190,190,190,0.4);
+            cursor:pointer;
+        }
     </style>
 
 
@@ -496,6 +510,7 @@
             <div class="row" style="margin-top:75px;">
                 <div class="col-sm-3 khalifa">
                     <input type="range" class="sliderkhal" orient="vertical" name="range" id="range" min="0" max="20" value="1"/> 
+                    {{-- <input id="ex4" type="text" class="sliderkhal" data-slider-min="-5" id="range" data-slider-max="20" data-slider-step="1" data-slider-value="1" data-slider-orientation="vertical"/> --}}
                     <output for="range" class="output"></output>
                     <div class="discount0"></div>
                     <div class="plan-discount discount5">
@@ -988,7 +1003,7 @@
 </div>
 <script type="text/javascript">
     $(document).ready(function() {
-      $(document).on('change', '#range', function() {
+      $(document).on('input change', '#range', function() {
         var tenders = $(this).val();
         if(tenders == '1'){
             $('.BMprice').text('985.00');

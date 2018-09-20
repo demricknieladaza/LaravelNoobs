@@ -260,6 +260,12 @@
              // $('#addBookDialog').modal('show');
         });
     </script>
+    <script type="text/javascript">
+        function hideaconex(){
+            $('#aconex').css('display','none');
+            $('#showlogin').css('display','block');
+        }
+    </script>
     
     <style type="text/css">
         @font-face {
@@ -360,42 +366,66 @@
                     </ul>
                     <div class="tab-content">
                         <div id="login" class="tab-pane fade in active">
+                            <div id="aconex" style="padding: 25px;">
+                            <div class="row">
+                                <div class="col-sm-9">
+                                    <div class="form-group">
+                                        <select class="form-control">
+                                            <option value="Location">Location</option>
+                                            <option value="Department">Department</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <button type="button" class="btn" onclick="hideaconex()" style="width: 70%;background-color: #fe7235;color: white;">Go</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="" style="padding-bottom: 25px;">
+                                <div class="form-group">
+                                    <input type="checkbox" name="" value="" class="tata filled-in" id="check1"> <label for="check1">Remember my selection</label>
+                                </div>
+                            </div>
+                            </div>
+                            <div id="showlogin" style="display: none;">
                             <div class="alert alertss alert-success" style="display:none"></div>
-                            <form method="post" class="form-horizontal" id="logForm" autocomplete="off">
-                                {{ csrf_field() }}
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">Email</label>
-                                    <div class="col-sm-8 ">
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                            <input type="email" id="lemail" class="form-control" placeholder="Email address" name="" autocomplete="off" required="">
+                                <form method="post" class="form-horizontal" id="logForm" autocomplete="off">
+                                    {{ csrf_field() }}
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Email</label>
+                                        <div class="col-sm-8 ">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                                <input type="email" id="lemail" class="form-control" placeholder="Email address" name="" autocomplete="off" required="">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">Password</label>
-                                    <div class="col-sm-8 ">
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                            <input type="password" id="lpassword" class="form-control" placeholder="Password" name="" required="">
-                                            <input type="hidden" id="id" class="form-control" name="" >
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Password</label>
+                                        <div class="col-sm-8 ">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                                <input type="password" id="lpassword" class="form-control" placeholder="Password" name="" required="">
+                                                <input type="hidden" id="id" class="form-control" name="" >
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label"></label>
-                                    <div class="col-sm-8 ">
-                                        <button type="submit" class="btn btn-primary col-sm-12" id="ajaxSubmits">LOGIN</button>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"></label>
+                                        <div class="col-sm-8 ">
+                                            <button type="submit" class="btn btn-primary col-sm-12" id="ajaxSubmits">LOGIN</button>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group">                            
-                                    <div class="col-sm-8 col-sm-offset-3 text-right">   
-                                        <a href="#" class="forgot"><i class="fa fa-lock"></i> Forgot password</a>
+                                    <div class="form-group">                            
+                                        <div class="col-sm-8 col-sm-offset-3 text-right">   
+                                            <a href="#" class="forgot"><i class="fa fa-lock"></i> Forgot password</a>
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                         <div id="signup" class="tab-pane fade">
                             @if(count($errors) > 0)

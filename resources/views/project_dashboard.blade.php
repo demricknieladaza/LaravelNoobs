@@ -57,8 +57,9 @@
 		border-top: 5px solid orange;
 	}
 </style>
-<div class="container below-header">
-	<h1 class="project-title bid-page-title centerh">Project Dashboard</small></h1>
+<div class="container below-header flip animated hinge">
+	<h1 id="logo" class="project-title bid-page-title centerh" style="margin-left: 5%;
+    margin-right: 5%;">Project Dashboard</small></h1>
 </div>
 <div class="container">
  <div class="modal fade" id="myModal2" role="dialog" tabindex="-1">
@@ -1489,7 +1490,57 @@
 															</div>
 		    										</div>
 		    									</div>
-		    									
+
+		    									<div class="row">
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+		    												Execution
+		    											</div>
+		    										</div>
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+															<select name=""  class="form-control" >
+																<option value="" disabled selected>Select</option>
+																<?php
+																$Service = array(
+																	"Deed", "Under Hand"
+																);
+																sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
+																foreach ($Service as $key ) {
+																    echo "<option value='".$key."'>".$key."</option>";
+																}
+
+																?>
+															</select>
+		    										</div>
+		    									</div>
+		    								</div>
+
+		    								<div class="row">
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+		    												Net Contribution Clause
+		    											</div>
+		    										</div>
+		    										<div class="col-sm-6">
+		    											<div class="form-group">
+															<select name=""  class="form-control" >
+																<option value="" disabled selected>Select</option>
+																<?php
+																$Service = array(
+																	"Yes", "No"
+																);
+																sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
+																foreach ($Service as $key ) {
+																    echo "<option value='".$key."'>".$key."</option>";
+																}
+
+																?>
+															</select>
+		    										</div>
+		    									</div>
+		    								</div>
+
 		    									<div class="row">
 		    										<div class="col-sm-6">
 		    											<div class="form-group">

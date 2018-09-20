@@ -141,145 +141,145 @@
 																<td>Track Record</td>
 																<td>
 																	<table >
-																		<tr>
+																	<tr>
 																	<td colspan="3">
-																				<div class="form-group">
-																					<input type="text" name="" class="form-control" placeholder="Enter Project Title">
-																			</div>
+																		<div class="form-group">
+																			<input type="text" name="" class="form-control" placeholder="Enter Project Title">
+																	</div>
 																	</td>
-																		</tr>
-																		<tr>
-																			<td colspan="3">
-																				<div class="form-group">
-																					<input type="text" name="" class="form-control" placeholder="Enter Project Value">
-																				</div>
-																			</td>
-																		</tr>
-																		<tr>
-																			<td width="33.33%">
-																				<div class="form-group">
-																					<select class="form-control">
-																						<option>Type of Use</option>
-																						<option>Residential</option>
-																						<option>Office</option>
-																						<option>Retail</option>
-																						<option>Hotel</option>
-																					</select>
-																				</div>
-																			</td>
-																			<td width="33.33%">
-																				<div class="form-group">
-																					<input type="text" name="" class="form-control" placeholder="Area">
-																				</div>
-																			</td>
-																			<td width="33.33%">
-																				<div class="form-group">
-																					<input type="text" name="" class="form-control" placeholder="Units">
-																				</div>
-																			</td>
-																		</tr>
-																		<tr>
-																			<td colspan="3">
-																				<div class="form-group">
-																					<button class="btn btn-warning"><i class="fa fa-plus"></i> Add another type of use</button>
-																				</div>
-																			</td>
-																		</tr>
-																		<tr>
-																			<td colspan="3">
-																				<label>Service Provided</label>
-																			</td>
-																		</tr>
-																		<tr>
-																			<td width="33.33%">
-																				<div class="form-group">
-																					<select class="form-control">
-																						<option>Service</option>
-																						<option>Service 1</option>
-																						<option>Service 2</option>
-																						<option>Service 3</option>
-																					</select>
-																				</div>
-																			</td>
-																			<td width="33.33%">
-																				<div class="form-group">
-																					<input type="date" name="" class="form-control" placeholder="Area">
-																				</div>
-																			</td>
-																			<td width="33.33%">
-																				<div class="form-group">
-																					<input type="date" name="" class="form-control" placeholder="Units">
-																				</div>
-																			</td>
-																		</tr>
-																		<tr>
-																			<td colspan="3">
-																				<div class="form-group">
-																					<button class="btn btn-warning"><i class="fa fa-plus"></i> Add another service</button>
-																				</div>
-																			</td>
-																		</tr>
-																		<tr>
-																			<td colspan="3">
-																				<label>Type of Development</label>
-																			</td>
-																		</tr>
-																		<tr>
-																			<td colspan="3" class="tenders-checkbox">
-																				<input type="checkbox" name="development" class="filled-in" id="new"> <label for="new"> New built</label>
-																				<input type="checkbox" name="development" class="filled-in" id="refurbishment"> <label for="refurbishment"> Refurbishment</label>
-																				<input type="checkbox" name="development" class="filled-in" id="demolition"> <label for="demolition"> Demolition</label>
-																			</td>
-																		</tr>
-																		<tr>
-																			<td colspan="3">
-																				<div class="form-group">
-																					<textarea class="form-control" rows="10" placeholder="Enter Project Description"></textarea>
-																				</div>
-																			</td>
-																		</tr>
-																		<tr>
-																			<td colspan="3">
-																				<div class="form-group">
-																					<button class="btn btn-warning"><i class="fa fa-plus"></i> Upload Images</button>
-																				</div>
-																			</td>
-																		</tr>
-																		<tr>
-																			<td><label>Project Team Member</label></td>
-																			<td colspan="2"><label>Company</label></td>
-																		</tr>
-																		<tr>
-																			<td>
-																				<div class="form-group">
-																					<select class="form-control">
-																						<option>Project Team Member</option>
-																						<option>Architect</option>
-																						<option>MEP Engineer</option>
-																						<option>Structural Engineer</option>
-																					</select>
-																				</div>
-																			</td>
-																			<td colspan="2">
-																				<div class="form-group">
-																					<input type="text" name="" class="form-control" placeholder="Enter Company">
-																				</div>
-																			</td>
-																		</tr>
-																		<tr>
-																			<td colspan="3">
-																				<div class="form-group">
-																					<button class="btn btn-warning"><i class="fa fa-plus"></i> Add another project team member</button>
-																				</div>
-																			</td>
-																		</tr>
-																		<tr>
-																			<td colspan="3">
-																				<div class="form-group">
-																					<button class="btn btn-warning"><i class="fa fa-plus"></i> Add another project</button>
-																				</div>
-																			</td>
-																		</tr>
+																	</tr>
+																	<tr>
+																		<td colspan="3">
+																			<div class="form-group">
+																				<input type="text" name="" class="form-control" placeholder="Enter Project Value">
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td width="33.33%">
+																			<div class="form-group">
+																				<select class="form-control">
+																					<option>Type of Use</option>
+																					<option>Residential</option>
+																					<option>Office</option>
+																					<option>Retail</option>
+																					<option>Hotel</option>
+																				</select>
+																			</div>
+																		</td>
+																		<td width="33.33%">
+																			<div class="form-group">
+																				<input type="text" name="" class="form-control" placeholder="Area">
+																			</div>
+																		</td>
+																		<td width="33.33%">
+																			<div class="form-group">
+																				<input type="text" name="" class="form-control" placeholder="Units">
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td colspan="3">
+																			<div class="form-group">
+																				<button class="btn btn-warning"><i class="fa fa-plus"></i> Add another type of use</button>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td colspan="3">
+																			<label>Service Provided</label>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td width="33.33%">
+																			<div class="form-group">
+																				<select class="form-control">
+																					<option>Service</option>
+																					<option>Service 1</option>
+																					<option>Service 2</option>
+																					<option>Service 3</option>
+																				</select>
+																			</div>
+																		</td>
+																		<td width="33.33%">
+																			<div class="form-group">
+																				<input type="date" name="" class="form-control" placeholder="Area">
+																			</div>
+																		</td>
+																		<td width="33.33%">
+																			<div class="form-group">
+																				<input type="date" name="" class="form-control" placeholder="Units">
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td colspan="3">
+																			<div class="form-group">
+																				<button class="btn btn-warning"><i class="fa fa-plus"></i> Add another service</button>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td colspan="3">
+																			<label>Type of Development</label>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td colspan="3" class="tenders-checkbox">
+																			<input type="checkbox" name="development" class="filled-in" id="new"> <label for="new"> New built</label>
+																			<input type="checkbox" name="development" class="filled-in" id="refurbishment"> <label for="refurbishment"> Refurbishment</label>
+																			<input type="checkbox" name="development" class="filled-in" id="demolition"> <label for="demolition"> Demolition</label>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td colspan="3">
+																			<div class="form-group">
+																				<textarea class="form-control" rows="10" placeholder="Enter Project Description"></textarea>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td colspan="3">
+																			<div class="form-group">
+																				<button class="btn btn-warning"><i class="fa fa-plus"></i> Upload Images</button>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td><label>Project Team Member</label></td>
+																		<td colspan="2"><label>Company</label></td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<div class="form-group">
+																				<select class="form-control">
+																					<option>Project Team Member</option>
+																					<option>Architect</option>
+																					<option>MEP Engineer</option>
+																					<option>Structural Engineer</option>
+																				</select>
+																			</div>
+																		</td>
+																		<td colspan="2">
+																			<div class="form-group">
+																				<input type="text" name="" class="form-control" placeholder="Enter Company">
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td colspan="3">
+																			<div class="form-group">
+																				<button class="btn btn-warning"><i class="fa fa-plus"></i> Add another project team member</button>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td colspan="3">
+																			<div class="form-group">
+																				<button class="btn btn-warning"><i class="fa fa-plus"></i> Add another project</button>
+																			</div>
+																		</td>
+																	</tr>
 																	</table>
 																</td>
 															</tr>											
@@ -515,7 +515,7 @@
 											<a data-toggle="collapse" data-parent="#accordion2" href="#collapse8">US Land <span class="pull-right caret"></span></a>
 										</h4>
 									</div>
-									<h3 class="org-head"><button type="button" class="btn btn-primary" data-toggle="modal" data-backdrop="static" data-target="#exampleModalCenter"><span><i class="fa fa-plus-square"></i> </span> Add</button></h3>
+									
 									<div id="collapse8" class="panel-collapse collapse">
 										<div class="panel-body">
 											<div class="row">	
@@ -732,6 +732,7 @@
 										</div>
 									</div>
 								</div>
+								<h3 class="org-head"><button type="button" class="btn btn-primary" data-toggle="modal" data-backdrop="static" data-target="#exampleModalCenter"><span><i class="fa fa-plus-square"></i> </span> Add</button></h3>
 							</div>
 						</div>	
 					</div>
