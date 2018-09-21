@@ -57,11 +57,70 @@
 		border-top: 5px solid orange;
 	}
 </style>
+<script type="text/javascript">
+	$(document).ready(function (){
+		$('#createservproj').click(function(){
+			var serv = $('select[name="servicechoice"]').val();
+			// $('#selectServe').toggle();
+			$('#serveprojtitle').html(serv);
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+	    var max_fields      = 10; //maximum input boxes allowed
+	    var wrapper         = $("#addeddegree"); //Fields wrapper
+	    var add_button      = $("#adddegree"); //Add button ID
+	    
+	    var x = 1; //initlal text box count
+	    $(add_button).click(function(e){ //on add input button click
+	        e.preventDefault();
+	        if(x < max_fields){ //max input box allowed
+	            x++; //text box increment
+	            $(wrapper).append('<div><a href="#" class="remove_field">Remove</a></div>'); //add input box
+	        }
+	    });
+	    
+	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+	        e.preventDefault(); $(this).parent('div').remove(); x--;
+	    });
+	});
+</script>
+
+
+<!-- ========================================================================== -->
 <div class="container below-header flip animated hinge">
 	<h1 id="logo" class="project-title bid-page-title centerh" style="margin-left: 5%;
     margin-right: 5%;">Project Dashboard</small></h1>
 </div>
 <div class="container">
+	<div class="modal fade" id="selectServe" role="dialog" tabindex="-1">
+	    <div class="modal-dialog">
+	      <!-- Modal content-->
+	      <div class="modal-content" style="top: 83px;">
+	        <div class="modal-header" style="border-top-left-radius: 6px;border-top-right-radius: 6px;">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">
+	          	Choose your service
+	          </h4>
+	        </div>
+	        <div class="modal-body">
+	            <p>Offered Services:
+	            	<div class="form-group">
+		          		<select name="servicechoice" class="form-control" onchange='Days(this.value);'> 
+		          			<option value="" disabled selected>Select service</option> 
+		          			<?php $members = array("Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Facade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager");sort($members, SORT_NATURAL | SORT_FLAG_CASE);foreach ($members as $key ) {echo "<option value='".$key."'>".$key."</option>";}?>
+		          		</select>
+	          		</div>
+	          	</p>
+	        </div>
+	        <div class="modal-footer" style="text-align: center;">
+	          <button type="button" class="btn btn-primary" data-toggle="tab" data-backdrop="false" data-dismiss="modal" href="#section4" id="createservproj" >Create</button>
+	          <button type="button" class="btn btn-primary butgrey">Go Back</button>
+	        </div>
+	      </div>   
+	    </div>
+	</div>
  <div class="modal fade" id="myModal2" role="dialog" tabindex="-1">
 		    <div class="modal-dialog">
 		      <!-- Modal content-->
@@ -135,7 +194,7 @@
 					<li class="active"><a class="abut" data-toggle="tab" href="#section1">Project</a></li>
 					<li><a class="abut" data-toggle="tab" href="#section2">Scope</a></li>
 					<li><a class="abut" data-toggle="tab" href="#section3">Tenders</a></li>
-					<li><a class="abut" data-toggle="tab" href="#section4">Create New Tender</a></li>
+					<li><a class="abut" data-toggle="modal" data-target="#selectServe" href="#section4">Create New Tender</a></li>
 
 				</ul><br>
 			</div>
@@ -671,6 +730,7 @@
 		    			<div class="col-sm-3">
 		    				<div class="tender-container" id="mama">
 		    					<ul class="nav bid-form-nav">
+		    						<h3 id="serveprojtitle"></h3>
 		    						<li class="active"><a data-toggle="tab" href="#section01">Pre-Qualification Questionnaire</a></li>
 		    						<li ><a data-toggle="tab" href="#section11">Scope</a></li>
 		    						<li><a data-toggle="tab" href="#section21">Appointment</a></li>
@@ -1403,18 +1463,20 @@
 		    										</div>
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
-															<select name="insurance" class="form-control" onchange='Insurance(this.value);'> 
-																    <option value="" disabled selected>Select Insurance</option>  
-																    <option value="professional">Professional</option>
-																    <option value="indemnity">Indemnity</option>
-																    <option value="public liability">Public Liability</option>
-																    <option value="products liability">Products Liability</option>
-																    <option value="employers liability">Employers Liability</option>
-																    <option value="others">Others</option>
-																  </select>
-																  <input type="text" name="bonds" id="insurance" style='display:none;'/>
-															</div>
-															<div class="form-group">
+															<select name="insurance" class="form-control" onchange='Insurance(this.value);'>
+															    <option value="" disabled selected>Select Insurance</option>  
+															    <option value="professional">Professional</option>
+															    <option value="indemnity">Indemnity</option>
+															    <option value="public liability">Public Liability</option>
+															    <option value="products liability">Products Liability</option>
+															    <option value="employers liability">Employers Liability</option>
+															    <option value="others">Others</option>
+															</select>
+														</div>
+														<div class="form-group">
+															<input type="text" name="bonds" class="form-control" id="insurance" style='display:none;'/>
+														</div>
+														<div class="form-group">
 																<input type="number" placeholder="Insurance Level" name="insurance_level" class="form-control">
 															</div>
 															<div class="form-group">
@@ -1706,7 +1768,7 @@
     										</div>
     										<div class="form-group butcent">
 
-    											<button type="button" class="btn btn-primary butsize" s data-toggle="modal"data-target="#myModal2">Start Tender Process</button>
+    											<button type="button" class="btn btn-primary butsize" data-toggle="modal" data-target="#myModal2">Start Tender Process</button>
 
 											<input id="sec2" type="button" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
 										</div>
