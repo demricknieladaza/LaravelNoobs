@@ -29,6 +29,8 @@ class UsersController extends Controller
            $user = $request->session()->get('id');
            $data = DB::table('project_information_tbl')
                     ->where('user_id', $user)
+                    //Order By GIDO!!!!!!!!!@!!@
+                    ->orderBy('created_at','DESC')
                     ->get();
            return view('publish')->with('projects', $data);
         }
