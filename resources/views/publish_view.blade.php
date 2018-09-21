@@ -215,7 +215,7 @@
 		    											<p><b>Main Roads</b></p>
 		    										</td>
 		    										<td>
-		    											<input type="text" name="main_road" class="form-control proje" placeholder="Surrey Quays Road" value="" readonly>
+		    											<input type="text" name="main_road" class="form-control proje" placeholder="Surrey Quays Road" value="{{ $transport->main_road }}" readonly>
 		    										</td>
 		    									</tr>
 		    									<tr>
@@ -223,8 +223,8 @@
 		    											<p><b>Tube Stations</b></p>
 		    										</td>
 		    										<td>
-		    											<input type="text" name="tube_station_one" class="form-control proje" placeholder="Canada Water 0.5km" value="" readonly>
-		    											<input type="text" name="tube_station_two" class="form-control proje" placeholder="Surrey Quays 1.5km" value="" readonly>
+		    											<input type="text" name="tube_station_one" class="form-control proje" placeholder="Canada Water 0.5km" value="{{ $transport->tube_station_one }}" readonly>
+		    											<input type="text" name="tube_station_two" class="form-control proje" placeholder="Surrey Quays 1.5km" value="{{ $transport->tube_station_two }}" readonly>
 		    										</td>
 		    									</tr>
 		    									<tr>
@@ -232,7 +232,7 @@
 		    											<p><b>Bus Lines</b> </p>
 		    										</td>
 		    										<td>
-		    											<input type="text" name="bus_lines" class="form-control proje" placeholder="701, 702, 851, 930" value="" readonly>
+		    											<input type="text" name="bus_lines" class="form-control proje" placeholder="701, 702, 851, 930" value="{{ $transport->bus_lines }}" readonly>
 		    										</td>
 		    									</tr>
 		    								</table>
@@ -246,12 +246,12 @@
 		    								<table width="100%">
 		    									<tr>
 		    										<td>Adjacent Uses</td>
-		    										<td><input type="text" name="adjacent_uses" class="form-control proje" placeholder="Residential (High-End), Regeneration Space, Retail" value="" readonly></td>
+		    										<td><input type="text" name="adjacent_uses" class="form-control proje" placeholder="Residential (High-End), Regeneration Space, Retail" value="{{ $area->adjacent_uses }}" readonly></td>
 												<!--<?php var_dump($area)?>-->
 												</tr>
 		    									<tr>
 		    										<td>History</td>
-		    										<td><input type="text" name="history" class="form-control proje" placeholder="Residential (High-End), Former Docks and Warehouses" value="" readonly></td>
+		    										<td><input type="text" name="history" class="form-control proje" placeholder="Residential (High-End), Former Docks and Warehouses" value="{{ $area->history }}" readonly></td>
 		    									</tr>
 		    								</table>
 		    							</td>
@@ -261,22 +261,22 @@
 		    								
 		    							</td>
 		    							<td>                               
-		    								<input type="text" name="constraint_one" class="form-control proje" placeholder="Adjacent Tube Tunnel"  readonly>
-		    								<input type="text" name="constraint_two" class="form-control proje" placeholder="Existing Buildings"  readonly>
-		    								<input type="text" name="constraint_three" class="form-control proje" placeholder="Weak Ground Conditions"  readonly>
+		    								<input type="text" name="constraint_one" class="form-control proje" placeholder="Adjacent Tube Tunnel" value="{{ $constraints->constraint_one }}" readonly>
+		    								<input type="text" name="constraint_two" class="form-control proje" placeholder="Existing Buildings" value="{{ $constraints->constraint_two }}" readonly>
+		    								<input type="text" name="constraint_three" class="form-control proje" placeholder="Weak Ground Conditions" value="{{ $constraints->constraint_three }}" readonly>
 		    							</td>
 		    						</tr>
 		    						<tr>
 		    							<td>Type of Development
 		    								
 		    							</td>
-		    							<td><input type="text" name="type_of_development" class="form-control proje" placeholder="New Built"  readonly></td>
+		    							<td><input type="text" name="type_of_development" class="form-control proje" placeholder="New Built" value="{{ $project->type_of_development }}" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Construction Value
 		    								
 		    							</td>
-		    							<td><input type="text" name="construction_value" class="form-control proje" placeholder="£ 300,000,000"  readonly></td>
+		    							<td><input type="text" name="construction_value" class="form-control proje" placeholder="£ 300,000,000" value="{{ $project->construction_value }}" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Types of Use
@@ -286,27 +286,27 @@
 		    								<table width="100%">
 		    									<tr>
 		    										<td>Residential</td>&nbsp
-		    										<td><input type="text" name="use_area_one" class="form-control proje" placeholder="30,000m2"  readonly></td>
-		    										<td><input type="text" name="use_units_one" class="form-control proje" placeholder="200 units"  readonly></td>
-		    										<td><input type="text" name="use_type_one" class="form-control proje" placeholder="High-End"  readonly></td>
+		    										<td><input type="text" name="use_area_one" class="form-control proje" placeholder="30,000m2" value="{{ $type->use_area_one }}"  readonly></td>
+		    										<td><input type="text" name="use_units_one" class="form-control proje" placeholder="200 units" value="{{ $type->use_units_one }}" readonly></td>
+		    										<td><input type="text" name="use_types_one" class="form-control proje" placeholder="High-End" value="{{ $type->use_type_one }}" readonly></td>
 												</tr>
 												<tr>
 		    										<td>Residential</td>&nbsp
-		    										<td><input type="text" name="use_area_two" class="form-control proje" placeholder="30,000m2"  readonly></td>
-		    										<td><input type="text" name="use_units_two" class="form-control proje" placeholder="200 units"  readonly></td>
-		    										<td><input type="text" name="use_type_two" class="form-control proje" placeholder="High-End"  readonly></td>
+		    										<td><input type="text" name="use_area_two" class="form-control proje" placeholder="30,000m2" value="{{ $type->use_area_two }}" readonly></td>
+		    										<td><input type="text" name="use_units_two" class="form-control proje" placeholder="200 units" value="{{ $type->use_units_two }}" readonly></td>
+		    										<td><input type="text" name="use_types_two" class="form-control proje" placeholder="High-End" value="{{ $type->use_type_two }}" readonly></td>
 												</tr>
 												<tr>
 		    										<td>Office</td>&nbsp
-		    										<td><input type="text" name="use_area_three" class="form-control proje" placeholder="30,000m2"  readonly></td>
-		    										<td><input type="text" name="use_units_three" class="form-control proje" placeholder="200 units"  readonly></td>
-		    										<td><input type="text" name="use_type_three" class="form-control proje" placeholder="High-End"  readonly></td>
+		    										<td><input type="text" name="use_area_three" class="form-control proje" placeholder="30,000m2" value="{{ $type->use_area_three }}" readonly></td>
+		    										<td><input type="text" name="use_units_three" class="form-control proje" placeholder="200 units" value="{{ $type->use_units_three }}" readonly></td>
+		    										<td><input type="text" name="use_types_three" class="form-control proje" placeholder="High-End" value="{{ $type->use_type_three }}" readonly></td>
 												</tr>
 												<tr>
 		    										<td>Retail</td>&nbsp
-		    										<td><input type="text" name="use_area_four" class="form-control proje" placeholder="30,000m2"  readonly></td>
-		    										<td><input type="text" name="use_units_four" class="form-control proje" placeholder="200 units"  readonly></td>
-		    										<td><input type="text" name="use_type_four" class="form-control proje" placeholder="High-End"  readonly></td>
+		    										<td><input type="text" name="use_area_four" class="form-control proje" placeholder="30,000m2" value="{{ $type->use_area_four }}" readonly></td>
+		    										<td><input type="text" name="use_units_four" class="form-control proje" placeholder="200 units" value="{{ $type->use_units_four }}" readonly></td>
+		    										<td><input type="text" name="use_types_four" class="form-control proje" placeholder="High-End" value="{{ $type->use_type_four }}" readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>Total</td>
@@ -325,19 +325,19 @@
 		    								<table width="100%">
 		    									<tr>
 		    										<td>RIBA Stage 1 Completion</td>
-		    										<td><input type="text" name="riba_stage_one" class="form-control proje" placeholder="01/03/2019"  readonly></td>
+		    										<td><input type="text" name="riba_stage_one" class="form-control proje" placeholder="01/03/2019" value="{{ $milestones->riba_stage_one }}" readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>RIBA Stage 2 Completion</td>
-		    										<td><input type="text" name="riba_stage_two" class="form-control proje" placeholder="01/07/2019"  readonly></td>
+		    										<td><input type="text" name="riba_stage_two" class="form-control proje" placeholder="01/07/2019" value="{{ $milestones->riba_stage_two }}" readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>RIBA Stage 3 Completion</td>
-		    										<td><input type="text" name="riba_stage_three" class="form-control proje" placeholder="01/10/2019" readonly></td>
+		    										<td><input type="text" name="riba_stage_three" class="form-control proje" placeholder="01/10/2019" value="{{ $milestones->riba_stage_three }}" readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>RIBA Stage 4 Completion</td>
-		    										<td><input type="text" name="riba_stage_four" class="form-control proje" placeholder="01/12/2019"  readonly></td>
+		    										<td><input type="text" name="riba_stage_four" class="form-control proje" placeholder="01/12/2019" value="{{ $milestones->riba_stage_four }}" readonly></td>
 		    									</tr>
 		    								</table>
 		    							</td>								
@@ -350,11 +350,11 @@
 		    								<table width="100%">
 		    									<tr>
 		    										<td>Design Team Meeting</td>
-		    										<td><input type="text" name="design_team_meeting" class="form-control proje" placeholder="Tuesday, 14:00 – 15:30, Weekly"  readonly></td>
+		    										<td><input type="text" name="design_team_meeting" class="form-control proje" placeholder="Tuesday, 14:00 – 15:30, Weekly" value="{{ $meetings->design_team_meeting }}" readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>Project Progress Meeting</td>
-		    										<td><input type="text" name="project_progress_meeting" class="form-control proje" placeholder="Tuesday, 15:30 – 16:30, Fortnightly"  readonly></td>
+		    										<td><input type="text" name="project_progress_meeting" class="form-control proje" placeholder="Tuesday, 15:30 – 16:30, Fortnightly" value="{{ $meetings->project_progress_meeting }}" readonly></td>
 		    									</tr>
 		    								</table>
 		    							</td>
@@ -373,7 +373,7 @@
 		    								<table width="100%">
 		    									<tr>
 		    										<td>Architect</td>
-		    										<td><input type="text" name="architect" class="form-control proje" placeholder="Allies and Morrison"  readonly></td>
+		    										<td><input type="text" name="name" class="form-control proje" placeholder="Allies and Morrison" value="{{ $team->name }}" readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>Structural Engineer</td>

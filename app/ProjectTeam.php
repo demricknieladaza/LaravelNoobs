@@ -12,7 +12,8 @@ class ProjectTeam extends Model
     public $timestamps = false;
     protected $fillable = [
         'position',
-        'name'
+        'name',
+        'project_record_id'
     ];
 
     public function projectInformations(){

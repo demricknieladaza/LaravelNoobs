@@ -99,21 +99,17 @@ class ProjectInformationController extends Controller
 
         $type->use_area_one = $request->input('use_area_one');
         $type->use_units_one = $request->input('use_units_one');
-        $type->use_type_one = $request->input('use_type_one');
-
+        $type->use_type_one = $request->input('use_types_one');
         $type->use_area_two = $request->input('use_area_two');
         $type->use_units_two = $request->input('use_units_two');
-        $type->use_type_two = $request->input('use_type_two');
-
+        $type->use_type_two = $request->input('use_types_two');
         $type->use_area_three = $request->input('use_area_three');
         $type->use_units_three = $request->input('use_units_three');
-        $type->use_type_three = $request->input('use_type_three');
-
+        $type->use_type_three = $request->input('use_types_three');
         $type->use_area_four = $request->input('use_area_four');
         $type->use_units_four = $request->input('use_units_four');
-        $type->use_type_four = $request->input('use_type_four');
+        $type->use_type_four = $request->input('use_types_four');
         $type->project_record_id = $id;
-
         $type->save();
         
         
@@ -183,14 +179,14 @@ class ProjectInformationController extends Controller
         $project = ProjectInformations::find($id);
 
         //This the sub models
-        $transport = TransportLink::find($id);
+        $transport = TransportLink::where('project_record_id', $id)->first();
         
         //$area = AreaSpecificInformation::where('project_record_id', $id)->get();
         $area = AreaSpecificInformation::where('project_record_id', $id)->first();
 
         $constraints = Constraints::where('project_record_id', $id)->first();
 
-        $type = TypeOfUse::find($id);
+        $type = TypeOfUse::where('project_record_id', $id)->first();
 
         $milestones = Milestones::where('project_record_id', $id)->first();
 
