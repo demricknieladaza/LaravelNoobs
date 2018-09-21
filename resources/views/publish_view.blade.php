@@ -1464,17 +1464,17 @@
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
 															<select name="insurance" class="form-control" onchange='Insurance(this.value);'>
-															    <option value="" disabled selected>Select Insurance</option>  
+															    <option value="" disabled selected>Select insurance</option>  
 															    <option value="professional">Professional</option>
 															    <option value="indemnity">Indemnity</option>
-															    <option value="public liability">Public Liability</option>
-															    <option value="products liability">Products Liability</option>
-															    <option value="employers liability">Employers Liability</option>
+															    <option value="public liability">Public liability</option>
+															    <option value="products liability">Products liability</option>
+															    <option value="employers liability">Employers liability</option>
 															    <option value="others">Others</option>
 															</select>
 														</div>
 														<div class="form-group">
-															<input type="text" name="bonds" class="form-control" id="insurance" style='display:none;'/>
+															<input type="text" name="bonds" class="form-control" id="insurance" placeholder="Other insurance..." style='display:none;'/>
 														</div>
 														<div class="form-group">
 																<input type="number" placeholder="Insurance Level" name="insurance_level" class="form-control">
