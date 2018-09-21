@@ -137,46 +137,10 @@ class ProjectInformationController extends Controller
         $team->project_record_id = $id;
         $team->save();
         
-        $data = [
-            'project_record_id' => $id,
-            'project_title' => $project->project_title,
-            'project_id' => $project->project_id,
-            'location' => $project->location,
-            'main_road' => $transport->main_road,
-            'tube_station_one' => $transport->tube_station_one,
-            'tube_station_two' => $transport->tube_station_two,
-            'bus_lines' => $transport->bus_lines,
-            'adjacent_uses' => $area->adjacent_uses,
-            'history' => $area->history,
-            'constraint_one' => $constraints->constraint_one,
-            'constraint_two' => $constraints->constraint_two,
-            'constraint_three' => $constraints->constraint_three,
-            'use_area_one' => $type->use_area_one,
-            'use_units_one' => $type->use_units_one,
-            'use_type_one' => $type->use_type_one,
-
-            'use_area_two' => $type->use_area_two,
-            'use_units_two' => $type->use_units_two,
-            'use_type_two' => $type->use_type_two,
-
-            'use_area_three' => $type->use_area_three,
-            'use_units_three' => $type->use_units_three,
-            'use_type_three' => $type->use_type_three,
-
-            'use_area_four' => $type->use_area_four,
-            'use_units_four' => $type->use_units_four,
-            'use_type_four' => $type->use_type_four,
-            'riba_stage_one' => $milestones->riba_stage_one,
-            'riba_stage_two' => $milestones->riba_stage_two,
-            'riba_stage_three' => $milestones->riba_stage_three,
-            'design_team_meeting' => $meetings->design_team_meeting,
-            'project_progress_meeting' => $meetings->project_progress_meeting,
-            'position' => $team->position,
-            'name' => $team->name
-        ];
 
         //return response()->json(array('success' => true, 'insert_id' => $project->project_record_id), 200);
-        return view('publish_edit')->with('data', $data);
+        // return view('publish_edit')->with('data', $data);
+        return redirect('/project_info'.'/'.$id.'/edit');
 
         /*$project = ProjectInformations::create([
             'project_title' => $request->input('project_title'),
@@ -192,7 +156,7 @@ class ProjectInformationController extends Controller
 
 
 
-        return redirect('/publish/project_dashboard');
+        // return redirect('/publish/project_dashboard');
 
     }
 
@@ -221,17 +185,18 @@ class ProjectInformationController extends Controller
         //This the sub models
         $transport = TransportLink::find($id);
         
-        $area = AreaSpecificInformation::where('project_record_id', $id)->get();
+        //$area = AreaSpecificInformation::where('project_record_id', $id)->get();
+        $area = AreaSpecificInformation::where('project_record_id', $id)->first();
 
-        $constraints = Constraints::where('project_record_id', $id)->get();
+        $constraints = Constraints::where('project_record_id', $id)->first();
 
         $type = TypeOfUse::find($id);
 
-        $milestones = Milestones::where('project_record_id', $id)->get();
+        $milestones = Milestones::where('project_record_id', $id)->first();
 
-        $meetings = Meetings::where('project_record_id', $id)->get();
+        $meetings = Meetings::where('project_record_id', $id)->first();
 
-        $team = ProjectTeam::where('project_record_id', $id)->get();
+        $team = ProjectTeam::where('project_record_id', $id)->first();
 
         return view('publish_view')->with([
             'project' => $project,

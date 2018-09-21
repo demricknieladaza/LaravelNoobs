@@ -245,11 +245,12 @@
 		    								<table width="100%">
 		    									<tr>
 		    										<td>Adjacent Uses</td>
-		    										<td><input type="text" name="adjacent_uses" class="form-control proje" placeholder="Residential (High-End), Regeneration Space, Retail"  readonly></td>
-		    									</tr>
+		    										<td><input type="text" name="adjacent_uses" class="form-control proje" placeholder="Residential (High-End), Regeneration Space, Retail" value="" readonly></td>
+												<!--<?php var_dump($area)?>-->
+												</tr>
 		    									<tr>
 		    										<td>History</td>
-		    										<td><input type="text" name="history" class="form-control proje" placeholder="Residential (High-End), Former Docks and Warehouses"  readonly></td>
+		    										<td><input type="text" name="history" class="form-control proje" placeholder="Residential (High-End), Former Docks and Warehouses" value="}" readonly></td>
 		    									</tr>
 		    								</table>
 		    							</td>
