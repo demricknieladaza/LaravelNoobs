@@ -198,16 +198,16 @@ class ProjectInformationController extends Controller
 
         $team = ProjectTeam::where('project_record_id', $id)->first();
 
-        return view('publish_view')->with([
-            'project' => $project,
-            'transport' => $transport,
-            'area' => $area,
-            'constraints' => $constraints,
-            'type' => $type,
-            'milestones' => $milestones,
-            'meetings' => $meetings,
-            'team' => $team
-        ]);
+        return view('publish_view')->with(compact(
+            'project' , $project,
+            'transport' , $transport,
+            'area' , $area,
+            'constraints' , $constraints,
+            'type' , $type,
+            'milestones' , $milestones,
+            'meetings' , $meetings,
+            'team' , $team
+        ));
     }
 
     /**

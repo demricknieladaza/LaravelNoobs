@@ -214,7 +214,7 @@
 		    											<p><b>Main Roads</b></p>
 		    										</td>
 		    										<td>
-		    											<input type="text" name="main_road" class="form-control proje" placeholder="Surrey Quays Road" value="{{ $transport->main_road }}" readonly>
+		    											<input type="text" name="main_road" class="form-control proje" placeholder="Surrey Quays Road" value="" readonly>
 		    										</td>
 		    									</tr>
 		    									<tr>
@@ -222,8 +222,8 @@
 		    											<p><b>Tube Stations</b></p>
 		    										</td>
 		    										<td>
-		    											<input type="text" name="tube_station_one" class="form-control proje" placeholder="Canada Water 0.5km" value="{{ $transport->tube_station_one }}" readonly>
-		    											<input type="text" name="tube_station_two" class="form-control proje" placeholder="Surrey Quays 1.5km" value="{{ $transport->tube_staion_two }}" readonly>
+		    											<input type="text" name="tube_station_one" class="form-control proje" placeholder="Canada Water 0.5km" value="" readonly>
+		    											<input type="text" name="tube_station_two" class="form-control proje" placeholder="Surrey Quays 1.5km" value="" readonly>
 		    										</td>
 		    									</tr>
 		    									<tr>
@@ -231,7 +231,7 @@
 		    											<p><b>Bus Lines</b> </p>
 		    										</td>
 		    										<td>
-		    											<input type="text" name="bus_lines" class="form-control proje" placeholder="701, 702, 851, 930" value="{{ $transport->bus_lines }}" readonly>
+		    											<input type="text" name="bus_lines" class="form-control proje" placeholder="701, 702, 851, 930" value="" readonly>
 		    										</td>
 		    									</tr>
 		    								</table>
@@ -250,7 +250,7 @@
 												</tr>
 		    									<tr>
 		    										<td>History</td>
-		    										<td><input type="text" name="history" class="form-control proje" placeholder="Residential (High-End), Former Docks and Warehouses" value="}" readonly></td>
+		    										<td><input type="text" name="history" class="form-control proje" placeholder="Residential (High-End), Former Docks and Warehouses" value="" readonly></td>
 		    									</tr>
 		    								</table>
 		    							</td>
