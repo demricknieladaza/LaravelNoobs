@@ -290,6 +290,36 @@
             height: 10px !important;
         }  
         .dropdown:hover .dropdown-content {display: block;}
+
+        input[type="checkbox"] + .label-text:before{
+            content: "\f096";
+            font-family: "FontAwesome";
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing:antialiased;
+            width: 1em;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        input[type="checkbox"]:checked + .label-text:before{
+            content: "\f14a";
+            color: #fe7235;
+            animation: effect 250ms ease-in;
+        }
+
+        input[type="checkbox"]:disabled + .label-text{
+            color: #aaa;
+        }
+
+        input[type="checkbox"]:disabled + .label-text:before{
+            content: "\f0c8";
+            color: #ccc;
+        }
     </style>
 </head>
 <body>
@@ -383,8 +413,11 @@
                                 </div>
                             </div>
                             <div class="" style="padding-bottom: 25px;">
-                                <div class="form-group">
-                                    <input type="checkbox" name="" value="" class="tata filled-in" id="check10"> <label for="check10">Remember my selection</label>
+                                <div class='form-check'>
+                                    <label>
+                                        <input type='checkbox' name='typeofuse[]' value=""
+                                        ><span class='label-text'>Remember my selection</span>
+                                    </label>
                                 </div>
                             </div>
                             </div>
