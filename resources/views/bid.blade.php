@@ -159,7 +159,7 @@
 	    var max_fields      = 10; //maximum input boxes allowed
 	    var wrapper         = $("#newprojmem"); //Fields wrapper
 	    var add_button      = $("#addprojmember"); //Add button ID
-	    var mem  			= "<?php $members = array("Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Fascade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager");sort($members, SORT_NATURAL | SORT_FLAG_CASE);foreach ($members as $key ) {echo "<option value='".$key."'>".$key."</option>";}?>";
+	    var mem  			= "<?php $members = array("Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Facade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager");sort($members, SORT_NATURAL | SORT_FLAG_CASE);foreach ($members as $key ) {echo "<option value='".$key."'>".$key."</option>";}?>";
 	    var comp  			= "<?php $company = array("Architect","Structural Engineer","Service Engineer");sort($company,SORT_NATURAL | SORT_FLAG_CASE);foreach ($company as $key) {echo "<option value='".$key."'>".$key."</option>";}?>";
 	    
 	    var x = 1; //initlal text box count
@@ -202,7 +202,7 @@
 	    var max_fields      = 10; //maximum input boxes allowed
 	    var wrapper         = $("#addedservices"); //Fields wrapper
 	    var add_button      = $("#addservices"); //Add button ID
-	    var adddiv   		= "<?php $Services = array("Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Fascade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager");sort($Services, SORT_NATURAL | SORT_FLAG_CASE);foreach ($Services as $key ) {echo "<option value='".$key."'>".$key."</option>";} ?>";
+	    var adddiv   		= "<?php $Services = array("Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Facade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager");sort($Services, SORT_NATURAL | SORT_FLAG_CASE);foreach ($Services as $key ) {echo "<option value='".$key."'>".$key."</option>";} ?>";
 	    
 	    var x = 1; //initlal text box count
 	    $(add_button).click(function(e){ //on add input button click
@@ -449,7 +449,7 @@
 											<?php
 											$Service = array(
 												"Architect", "Structural Engineer", "Service Engineer",
-												"Fire Engineer", "Acoustic Engineer", "Principal Designer","Fascade Engineer" , "Building Control", "Lighting Consultant", "Security Consultant", "Planning Consultant" , "Sustainability Consultant", "BIM Consultant", "Quantity Surveyor", "Project Manager"
+												"Fire Engineer", "Acoustic Engineer", "Principal Designer","Facade Engineer" , "Building Control", "Lighting Consultant", "Security Consultant", "Planning Consultant" , "Sustainability Consultant", "BIM Consultant", "Quantity Surveyor", "Project Manager"
 											);
 											sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
 											foreach ($Service as $key ) {
@@ -567,7 +567,7 @@
 													<option value="" disabled selected>Select service</option>
 													<?php 
 														$Services = array(
-															"Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Fascade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager"
+															"Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Facade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager"
 														);
 														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
 														foreach ($Services as $key ) {
@@ -641,7 +641,7 @@
 													<option value="" disabled selected>Select project team member</option>
 													<?php 
 														$members = array(
-															"Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Fascade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager"
+															"Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Facade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager"
 														);
 														sort($members, SORT_NATURAL | SORT_FLAG_CASE);
 														foreach ($members as $key ) {
@@ -950,7 +950,7 @@
 												<?php
 												$Service = array(
 													"Architect", "Structural Engineer", "Service Engineer",
-													"Fire Engineer", "Acoustic Engineer", "Principal Designer","Fascade Engineer" , "Building Control", "Lighting Consultant", "Security Consultant", "Planning Consultant" , "Sustainability Consultant", "BIM Consultant", "Quantity Surveyor", "Project Manager"
+													"Fire Engineer", "Acoustic Engineer", "Principal Designer","Facade Engineer" , "Building Control", "Lighting Consultant", "Security Consultant", "Planning Consultant" , "Sustainability Consultant", "BIM Consultant", "Quantity Surveyor", "Project Manager"
 												);
 												sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
 												foreach ($Service as $key ) {
@@ -1052,7 +1052,7 @@
 													<option value="" disabled selected>Select service</option>
 													<?php 
 														$Services = array(
-															"Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Fascade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager"
+															"Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Facade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager"
 														);
 														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
 														foreach ($Services as $key ) {
@@ -1171,7 +1171,7 @@
 										            <option value="">Select project team member</option>
 										       <?php 
 														$Services = array(
-															"Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Fascade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager"
+															"Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Facade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager"
 														);
 														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
 														foreach ($Services as $key ) {

@@ -56,12 +56,118 @@
 	.btop td{
 		border-top: 5px solid orange;
 	}
+	ul.bondlist {
+	  columns: 2;
+	  -webkit-columns: 2;
+	  -moz-columns: 2;
+	  padding: 0;
+	  list-style: none;
+	}
+	.hid.bond {
+		display: none;
+	}
 </style>
+<script type="text/javascript">
+	$(document).ready(function (){
+		$('#createservproj').click(function(){
+			var serv = $('select[name="servicechoice"]').val();
+			// $('#selectServe').toggle();
+			$('#serveprojtitle').html(serv);
+		});
+
+		$('#addother').click(function(){
+			var insura = $('#ins').val();
+			insura = insura.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+			    return letter.toUpperCase();
+			});
+			$('#drpinsu option:last').before('<option value="'+insura+'">'+insura+'</option>');
+			var element = document.getElementById('showother');
+			element.style.display='none';
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+	    var max_fields      = 10; //maximum input boxes allowed
+	    var wrapper         = $("#addedinsurance"); //Fields wrapper
+	    var add_button      = $("#addanotherinsu"); //Add button ID
+	    var insus      = "<?php $insurance = array("Professional","Indemnity","Public liability","Products liability","Employers liability");sort($insurance, SORT_NATURAL | SORT_FLAG_CASE);foreach ($insurance as $key ) {echo "<option value='".$key."'>".$key."</option>";}?>";
+	    
+	    var x = 1; //initlal text box count
+	    $(add_button).click(function(e){ //on add input button click
+	        e.preventDefault();
+	        if(x < max_fields){ //max input box allowed
+	            x++; //text box increment
+	            $(wrapper).append('<div><div class="form-group"><select name="insurance" class="form-control" onchange="Insurance(this.value);"><option value="" disabled selected>Select insurance</option>'+insus+'<option value="others">Others</option></select></div><div class="form-group"><div id="showother" style="display:none;"/><input type="text" name="bonds" id="ins" class="form-control" id="insurance" placeholder="Other insurance..." ><button type="button" class="btn btn-primary" id="addother" >Add to list</button></div></div><div class="form-group"><input type="number" placeholder="Insurance Level" name="insurance_level" class="form-control"></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
+	        }
+	    });
+	    
+	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+	        e.preventDefault(); $(this).parent('div').remove(); x--;
+	    });
+	});
+	function showaddbond(){
+		$('.hid.bond').css('display','block');
+		$('.notherbut').css('display','none');
+	};
+	function addbond()
+	{
+		var ival = $.trim($('.bond').val());
+		if( ival.length != "" ){
+			ival = ival.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+			    return letter.toUpperCase();
+			});
+			var out = "<li><div class='form-check'><label><input type='checkbox' checked name='offeredservices[]' value='"+ival+"'><span class='label-text'>"+ival+"</span></label></div></li>";
+			$('ul#bondlist').append(out);
+		}
+
+		$('.hid.bond').css('display','none');
+		$('.notherbut').css('display','block');
+		$('.bond').val('');
+	}
+</script>
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- <script type="text/javascript">
+	function modal_shower(){
+		$('#selectServe').toggle();
+	}
+</script>
+ -->
+
+<!-- ========================================================================== -->
 <div class="container below-header flip animated hinge">
 	<h1 id="logo" class="project-title bid-page-title centerh" style="margin-left: 5%;
     margin-right: 5%;">Project Dashboard</small></h1>
 </div>
 <div class="container">
+	<div class="modal fade" id="selectServe" role="dialog" tabindex="-1">
+	    <div class="modal-dialog">
+	      <!-- Modal content-->
+	      <div class="modal-content" style="top: 83px;">
+	        <div class="modal-header" style="border-top-left-radius: 6px;border-top-right-radius: 6px;">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">
+	          	Choose your service
+	          </h4>
+	        </div>
+	        <div class="modal-body">
+	            <p>Offered Services:
+	            	<div class="form-group">
+		          		<select name="servicechoice" class="form-control" onchange='Days(this.value);'> 
+		          			<option value="" disabled selected>Select service</option> 
+		          			<?php $members = array("Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Facade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager");sort($members, SORT_NATURAL | SORT_FLAG_CASE);foreach ($members as $key ) {echo "<option value='".$key."'>".$key."</option>";}?>
+		          		</select>
+	          		</div>
+	          	</p>
+	        </div>
+	        <div class="modal-footer" style="text-align: center;">
+	          <button type="button" class="btn btn-primary" data-toggle="tab" data-backdrop="false" data-dismiss="modal" href="#section4" id="createservproj" >Create</button>
+	          <button type="button" class="btn btn-primary butgrey">Go Back</button>
+	        </div>
+	      </div>   
+	    </div>
+	</div>
  <div class="modal fade" id="myModal2" role="dialog" tabindex="-1">
 		    <div class="modal-dialog">
 		      <!-- Modal content-->
@@ -83,37 +189,21 @@
 			</p>
 		          <p>Feedback date<div class="form-group">
 				<select name="days" class="form-control" onchange='Days(this.value);'> 
-					<option value="" disabled selected>Select Days</option> 
-					<option>1 days</option>
-					<option>2 days</option>
-					<option>3 days</option>
-					<option>4 days</option>
-					<option>5 days</option>
-					<option>6 days</option>
-					<option>7 days</option>
-					<option>8 days</option>
-					<option>9 days</option>
-					<option>10 days</option>
-					<option>11 days</option>
-					<option>12 days</option>
-					<option>13 days</option>
-					<option>14 days</option>
-					<option>15 days</option>
-					<option>16 days</option>
-					<option>17 days</option>
-					<option>18 days</option>
-					<option>19 days</option>
-					<option>20 days</option>
-					<option>21 days</option>
-					<option>22 days</option>
-					<option>23 days</option>
-					<option>24 days</option>
-					<option>25 days</option>
-					<option>26 days</option>
-					<option>27 days</option>
-					<option>28 days</option>
-					<option>29 days</option>
-					<option>30 days</option>
+					<option value="" disabled selected>Select days</option> 
+					<?php 
+														$days = array(
+															"1 days",
+															"2 days","3 days","4 days","5 days","6 days","7 days","8 days",
+															"9 days","10 days","11 days","12 days","13 days","14 days",
+															"15 days","16 days","17 days","18 days","19 days","20 days","21 days","22 days",
+															"23 days","24 days","25 days","26 days","27 days","28 days","29 days","30 days"
+														);
+														sort($days, SORT_NATURAL | SORT_FLAG_CASE);
+														foreach ($days as $key ) {
+														    echo "<option value='".$key."'>".$key."</option>";
+														}
+
+													 ?>
 				</select>
 								</div></p>
 		          <input type="text" placeholder="Search.." name="search">
@@ -135,7 +225,7 @@
 					<li class="active"><a class="abut" data-toggle="tab" href="#section1">Project</a></li>
 					<li><a class="abut" data-toggle="tab" href="#section2">Scope</a></li>
 					<li><a class="abut" data-toggle="tab" href="#section3">Tenders</a></li>
-					<li><a class="abut" data-toggle="tab" href="#section4">Create New Tender</a></li>
+					<li><a class="abut" data-toggle="modal" data-target="#selectServe" href="#section4">Create New Tender</a></li>
 
 				</ul><br>
 			</div>
@@ -671,6 +761,8 @@
 		    			<div class="col-sm-3">
 		    				<div class="tender-container" id="mama">
 		    					<ul class="nav bid-form-nav">
+		    						<h3 data-toggle="modal" data-target="#selectServe" style="margin-bottom: 10px; margin-top: 0;padding: 15px;border: 3px solid grey;border-radius: 6px;text-align: center;" id="serveprojtitle" class="header-title animate-pop-in">
+		    						</h3>
 		    						<li class="active"><a data-toggle="tab" href="#section01">Pre-Qualification Questionnaire</a></li>
 		    						<li ><a data-toggle="tab" href="#section11">Scope</a></li>
 		    						<li><a data-toggle="tab" href="#section21">Appointment</a></li>
@@ -1403,25 +1495,40 @@
 		    										</div>
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
-															<select name="insurance" class="form-control" onchange='Insurance(this.value);'> 
-																    <option value="" disabled selected>Select Insurance</option>  
-																    <option value="professional">Professional</option>
-																    <option value="indemnity">Indemnity</option>
-																    <option value="public liability">Public Liability</option>
-																    <option value="products liability">Products Liability</option>
-																    <option value="employers liability">Employers Liability</option>
-																    <option value="others">Others</option>
-																  </select>
-																  <input type="text" name="bonds" id="insurance" style='display:none;'/>
+															<select name="insurance" id="drpinsu" class="form-control" onchange="Insurance(this.value);">
+															    <option value="" disabled selected>Select insurance</option>  
+															    <?php 
+																	$insurance = array(
+																	"Professional",
+																	"Indemnity",
+																	"Public liability",
+																	"Products liability",
+																	"Employers liability"
+																	);
+																	sort($insurance, SORT_NATURAL | SORT_FLAG_CASE);
+																	foreach ($insurance as $key ) {
+																	    echo "<option value='".$key."'>".$key."</option>";
+																	}
+
+																 ?>
+															   		
+															    <option value="others">Others</option>
+															</select>
+														</div>
+														<div class="form-group">
+															<div id="showother" style="display:none;"/>
+																<input type="text" name="bonds" id="ins" class="form-control" id="insurance" placeholder="Other insurance..." ><button type="button" class="btn btn-primary" id="addother" >Add to list</button>
 															</div>
-															<div class="form-group">
-																<input type="number" placeholder="Insurance Level" name="insurance_level" class="form-control">
+														</div>
+														<div class="form-group">
+															<input type="number" placeholder="Insurance Level" name="insurance_level" class="form-control">
+														</div>
+														<div id="addedinsurance"></div>
+														{{-- <div class="form-group">
+															<div class="cnt_insurance">
+															    <button class="btn btn-primary" id="addanotherinsu" >Add Another Insurance</button>
 															</div>
-															<div class="form-group">
-																<div class="cnt_insurance">
-																    <button class="btn btn-primary" id="cnt_insurance" >Add Another Insurance</button>
-																</div>
-															</div>
+														</div> --}}
 		    										</div>
 		    									</div>
 		    									<div class="row">
@@ -1432,21 +1539,34 @@
 		    										</div>
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
-															<select name="bonds" class="form-control" onchange='Bonds(this.value);'> 
-														    <option value="" disabled selected>Select Bonds </option>  
-														    <option value="performance bond">Performance Bond</option>
-														    <option value="parent company guarantee">Parent Company Guarantee</option>
-														    <option value="tender/bid bond">Tender/Bid Bond</option>
-														    <option value="on demand bond">On Demand Bond</option>
-														    <option value="conditional/on  default bond">Conditional/On  Default Bond</option>
-														    <option value="others">Others</option>
-														  </select>
-														  <input type="text" name="bonds" id="bonds" style='display:none;'/>
+		    												<ul id="bondlist" class="bondlist">
+		    												<?php
+		    												$Service = array(
+																	"Performance Bond",
+																	"Parent Company Guarantee",
+																	"Tender/Bid Bond",
+																	"On Demand Bond",
+																	"Conditional/On  Default Bond"
+																	);
+		    												sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
+		    												foreach ($Service as $key ) {
+		    												    echo "<li><div class='form-check'>
+		    															<label>
+		    																<input type='checkbox' name='cntbonds[]' value='".$key."'><span class='label-text'>".$key."</span>
+		    															</label>
+		    														</div></li>";
+		    												}
+
+		    												?>
+		    												</ul>
 															</div>
 															<div class="form-group">
 																<div class="cnt_bond">
-																    <button class="btn btn-primary" id="cnt_bond" >Add Another Bond</button>
-																    <div></div>
+																	<input type="text" class="form-control hid bond" name="bond">
+																    <button type="button" class="btn btn-primary notherbut" onclick="showaddbond()">Add another bond</button>
+																    <button type="button" class="btn btn-primary hid bond" id="addservicebut" onclick="addbond()">Add bond</button>
+																    {{-- <button class="btn btn-primary" id="addbondcnt" >Add Another Bond</button>
+																    <div></div> --}}
 																</div>
 															</div>
 		    										</div>
@@ -1502,8 +1622,8 @@
 		    										</div>
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
-															<input type="file" class="form-control" name="net_contribution_clause">
-															</div>
+															<input style="box-shadow: none;border: none;" type="file" class="form-control" name="net_contribution_clause">
+														</div>
 		    										</div>
 		    									</div>
 		    									<div class="row">
@@ -1517,7 +1637,7 @@
 															<input type="text" placeholder="Enter Document Title" class="form-control" name="net_contribution_clause">
 															</div>
 															<div class="form-group">
-															<input type="file" class="form-control" name="documents_for_signature">
+															<input style="box-shadow: none;border: none;" type="file" class="form-control" name="documents_for_signature">
 															</div>
 															<div class="form-group">
 																<button type="button" class="btn btn-danger">Add another document </button>
@@ -1706,7 +1826,7 @@
     										</div>
     										<div class="form-group butcent">
 
-    											<button type="button" class="btn btn-primary butsize" s data-toggle="modal"data-target="#myModal2">Start Tender Process</button>
+    											<button type="button" class="btn btn-primary butsize" data-toggle="modal" data-target="#myModal2">Start Tender Process</button>
 
 											<input id="sec2" type="button" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
 										</div>
@@ -1862,11 +1982,11 @@
 </script>
 <script type="text/javascript">
 	function Insurance(val){
- var element=document.getElementById('insurance');
- if(val=='Select Insurance'||val=='others')
-   element.style.display='block';
- else  
-   element.style.display='none';
+		var element=document.getElementById('showother');
+		if(val=='Select Insurance'||val=='others')
+		  element.style.display = 'block';
+		else  
+		  element.style.display = 'none';
 	}
 </script>
 <script type="text/javascript">
