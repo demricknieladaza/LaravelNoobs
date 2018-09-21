@@ -1568,8 +1568,8 @@
 		    										</div>
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
-															<input type="file" class="form-control" name="net_contribution_clause">
-															</div>
+															<input style="box-shadow: none;border: none;" type="file" class="form-control" name="net_contribution_clause">
+														</div>
 		    										</div>
 		    									</div>
 		    									<div class="row">
@@ -1583,7 +1583,7 @@
 															<input type="text" placeholder="Enter Document Title" class="form-control" name="net_contribution_clause">
 															</div>
 															<div class="form-group">
-															<input type="file" class="form-control" name="documents_for_signature">
+															<input style="box-shadow: none;border: none;" type="file" class="form-control" name="documents_for_signature">
 															</div>
 															<div class="form-group">
 																<button type="button" class="btn btn-danger">Add another document </button>
