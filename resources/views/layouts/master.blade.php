@@ -384,7 +384,7 @@
                             </div>
                             <div class="" style="padding-bottom: 25px;">
                                 <div class="form-group">
-                                    <input type="checkbox" name="" value="" class="tata filled-in" id="check1"> <label for="check1">Remember my selection</label>
+                                    <input type="checkbox" name="" value="" class="tata filled-in" id="check10"> <label for="check10">Remember my selection</label>
                                 </div>
                             </div>
                             </div>
