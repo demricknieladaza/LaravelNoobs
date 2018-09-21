@@ -154,12 +154,20 @@
 									</div>
 									<div class="col-sm-4">
 										<div class="box">
-											<p style="font-size: 18px;">Go PRO+</p>
+											<p style="font-size: 18px;
+										    padding-left: 0px;
+										    padding-right: 0px;
+										    padding-top: 20px;
+										    padding-bottom: 0px;">Go PRO+</p>
 										</div>
 									</div>
 									<div class="col-sm-4">
 										<div class="box">
-											<p style="font-size: 18px;">Top Up</p>
+											<p style="    font-size: 18px;
+										    padding-left: 0px;
+										    padding-right: 0px;
+										    padding-top: 20px;
+										    padding-bottom: 0px;">Top Up</p>
 										</div>
 									</div>
 								</div>

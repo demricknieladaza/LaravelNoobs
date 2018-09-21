@@ -57,8 +57,9 @@
 		border-top: 5px solid orange;
 	}
 </style>
-<div class="container below-header">
-	<h1 class="project-title bid-page-title centerh">Project Dashboard</small></h1>
+<div class="container below-header flip animated hinge">
+	<h1 id="logo" class="project-title bid-page-title centerh" style="margin-left: 5%;
+    margin-right: 5%;">Project Dashboard</small></h1>
 </div>
 <div class="container">
  <div class="modal fade" id="myModal2" role="dialog" tabindex="-1">
@@ -146,16 +147,16 @@
 		    	<div class="below-header project-img-collection text-center projhead">
 		    		<h1>{{ $project->project_title }}</h1>
 		    		<div class="project-image popup-gallery">
-		    			<a href="../images/demo1.jpg"><img src="../images/demo1.jpg"/></a>
+		    			<a href="../images/demo1.jpg"><img src="../../images/demo1.jpg"/></a>
 		    		</div>
 		    		<div class="project-image popup-gallery">
-		    			<a href="../images/demo2.jpg"><img src="../images/demo2.jpg"/></a>
+		    			<a href="../images/demo2.jpg"><img src="../../images/demo2.jpg"/></a>
 		    		</div>
 		    		<div class="project-image popup-gallery">
-		    			<a href="../images/demo3.jpg"><img src="../images/demo3.jpg"/></a>
+		    			<a href="../images/demo3.jpg"><img src="../../images/demo3.jpg"/></a>
 		    		</div>
 		    		<div class="project-image popup-gallery">
-		    			<a href="../images/demo4.jpg"../images/demo1.jpg><img src="../images/demo4.jpg"/></a>
+		    			<a href="../images/demo4.jpg"../images/demo1.jpg><img src="../../images/demo4.jpg"/></a>
 		    		</div>
 		    	</div>
 		    </div>
