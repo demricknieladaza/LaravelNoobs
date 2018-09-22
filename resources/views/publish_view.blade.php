@@ -1465,11 +1465,21 @@
 		    											<div class="form-group">
 															<select name="insurance" class="form-control" onchange='Insurance(this.value);'>
 															    <option value="" disabled selected>Select insurance</option>  
-															    <option value="professional">Professional</option>
-															    <option value="indemnity">Indemnity</option>
-															    <option value="public liability">Public liability</option>
-															    <option value="products liability">Products liability</option>
-															    <option value="employers liability">Employers liability</option>
+															    <?php 
+														$insurance = array(
+														"Professional",
+														"Indemnity",
+														"Public liability",
+														"Products liability",
+														"Employers liability"
+														);
+														sort($insurance, SORT_NATURAL | SORT_FLAG_CASE);
+														foreach ($insurance as $key ) {
+														    echo "<option value='".$key."'>".$key."</option>";
+														}
+
+													 ?>
+															   		
 															    <option value="others">Others</option>
 															</select>
 														</div>
