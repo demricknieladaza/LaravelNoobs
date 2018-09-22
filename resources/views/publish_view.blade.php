@@ -98,6 +98,13 @@
 	});
 </script>
 
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- <script type="text/javascript">
+	function modal_shower(){
+		$('#selectServe').toggle();
+	}
+</script>
+ -->
 
 <!-- ========================================================================== -->
 <div class="container below-header flip animated hinge">
@@ -725,7 +732,8 @@
 		    			<div class="col-sm-3">
 		    				<div class="tender-container" id="mama">
 		    					<ul class="nav bid-form-nav">
-		    						<h3 id="serveprojtitle"></h3>
+		    						<h3 data-toggle="modal" data-target="#selectServe" style="margin-bottom: 10px; margin-top: 0;padding: 15px;border: 3px solid grey;border-radius: 6px;text-align: center;" id="serveprojtitle" class="header-title animate-pop-in">
+		    						</h3>
 		    						<li class="active"><a data-toggle="tab" href="#section01">Pre-Qualification Questionnaire</a></li>
 		    						<li ><a data-toggle="tab" href="#section11">Scope</a></li>
 		    						<li><a data-toggle="tab" href="#section21">Appointment</a></li>
