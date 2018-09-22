@@ -64,20 +64,31 @@
 			// $('#selectServe').toggle();
 			$('#serveprojtitle').html(serv);
 		});
+
+		$('#addother').click(function(){
+			var insura = $('#ins').val();
+			insura = insura.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+			    return letter.toUpperCase();
+			});
+			$('#drpinsu option:last').before('<option value="'+insura+'">'+insura+'</option>');
+			var element = document.getElementById('showother');
+			element.style.display='none';
+		});
 	});
 </script>
 <script type="text/javascript">
 	$(document).ready(function() {
 	    var max_fields      = 10; //maximum input boxes allowed
-	    var wrapper         = $("#addeddegree"); //Fields wrapper
-	    var add_button      = $("#adddegree"); //Add button ID
+	    var wrapper         = $("#addedinsurance"); //Fields wrapper
+	    var add_button      = $("#addanotherinsu"); //Add button ID
+	    var insus      = "<?php $insurance = array("Professional","Indemnity","Public liability","Products liability","Employers liability");sort($insurance, SORT_NATURAL | SORT_FLAG_CASE);foreach ($insurance as $key ) {echo "<option value='".$key."'>".$key."</option>";}?>";
 	    
 	    var x = 1; //initlal text box count
 	    $(add_button).click(function(e){ //on add input button click
 	        e.preventDefault();
 	        if(x < max_fields){ //max input box allowed
 	            x++; //text box increment
-	            $(wrapper).append('<div><a href="#" class="remove_field">Remove</a></div>'); //add input box
+	            $(wrapper).append('<div><div class="form-group"><select name="insurance" class="form-control" onchange="Insurance(this.value);"><option value="" disabled selected>Select insurance</option>'+insus+'<option value="others">Others</option></select></div><div class="form-group"><div id="showother" style="display:none;"/><input type="text" name="bonds" id="ins" class="form-control" id="insurance" placeholder="Other insurance..." ><button type="button" class="btn btn-primary" id="addother" >Add to list</button></div></div><div class="form-group"><input type="number" placeholder="Insurance Level" name="insurance_level" class="form-control"></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
 	        }
 	    });
 	    
@@ -1447,7 +1458,7 @@
 		    										</div>
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
-															<select name="insurance" class="form-control" onchange='Insurance(this.value);'>
+															<select name="insurance" id="drpinsu" class="form-control" onchange="Insurance(this.value);">
 															    <option value="" disabled selected>Select insurance</option>  
 															    <?php 
 																	$insurance = array(
@@ -1468,16 +1479,19 @@
 															</select>
 														</div>
 														<div class="form-group">
-															<input type="text" name="bonds" class="form-control" id="insurance" placeholder="Other insurance..." style='display:none;'/>
+															<div id="showother" style="display:none;"/>
+																<input type="text" name="bonds" id="ins" class="form-control" id="insurance" placeholder="Other insurance..." ><button type="button" class="btn btn-primary" id="addother" >Add to list</button>
+															</div>
 														</div>
 														<div class="form-group">
-																<input type="number" placeholder="Insurance Level" name="insurance_level" class="form-control">
+															<input type="number" placeholder="Insurance Level" name="insurance_level" class="form-control">
+														</div>
+														<div id="addedinsurance"></div>
+														<div class="form-group">
+															<div class="cnt_insurance">
+															    <button class="btn btn-primary" id="addanotherinsu" >Add Another Insurance</button>
 															</div>
-															<div class="form-group">
-																<div class="cnt_insurance">
-																    <button class="btn btn-primary" id="cnt_insurance" >Add Another Insurance</button>
-																</div>
-															</div>
+														</div>
 		    										</div>
 		    									</div>
 		    									<div class="row">
@@ -1928,11 +1942,11 @@
 </script>
 <script type="text/javascript">
 	function Insurance(val){
- var element=document.getElementById('insurance');
- if(val=='Select Insurance'||val=='others')
-   element.style.display='block';
- else  
-   element.style.display='none';
+		var element=document.getElementById('showother');
+		if(val=='Select Insurance'||val=='others')
+		  element.style.display = 'block';
+		else  
+		  element.style.display = 'none';
 	}
 </script>
 <script type="text/javascript">
