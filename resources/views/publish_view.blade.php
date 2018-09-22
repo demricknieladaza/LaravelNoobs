@@ -142,37 +142,21 @@
 			</p>
 		          <p>Feedback date<div class="form-group">
 				<select name="days" class="form-control" onchange='Days(this.value);'> 
-					<option value="" disabled selected>Select Days</option> 
-					<option>1 days</option>
-					<option>2 days</option>
-					<option>3 days</option>
-					<option>4 days</option>
-					<option>5 days</option>
-					<option>6 days</option>
-					<option>7 days</option>
-					<option>8 days</option>
-					<option>9 days</option>
-					<option>10 days</option>
-					<option>11 days</option>
-					<option>12 days</option>
-					<option>13 days</option>
-					<option>14 days</option>
-					<option>15 days</option>
-					<option>16 days</option>
-					<option>17 days</option>
-					<option>18 days</option>
-					<option>19 days</option>
-					<option>20 days</option>
-					<option>21 days</option>
-					<option>22 days</option>
-					<option>23 days</option>
-					<option>24 days</option>
-					<option>25 days</option>
-					<option>26 days</option>
-					<option>27 days</option>
-					<option>28 days</option>
-					<option>29 days</option>
-					<option>30 days</option>
+					<option value="" disabled selected>Select days</option> 
+					<?php 
+														$days = array(
+															"1 days",
+															"2 days","3 days","4 days","5 days","6 days","7 days","8 days",
+															"9 days","10 days","11 days","12 days","13 days","14 days",
+															"15 days","16 days","17 days","18 days","19 days","20 days","21 days","22 days",
+															"23 days","24 days","25 days","26 days","27 days","28 days","29 days","30 days"
+														);
+														sort($days, SORT_NATURAL | SORT_FLAG_CASE);
+														foreach ($days as $key ) {
+														    echo "<option value='".$key."'>".$key."</option>";
+														}
+
+													 ?>
 				</select>
 								</div></p>
 		          <input type="text" placeholder="Search.." name="search">
@@ -1466,19 +1450,19 @@
 															<select name="insurance" class="form-control" onchange='Insurance(this.value);'>
 															    <option value="" disabled selected>Select insurance</option>  
 															    <?php 
-														$insurance = array(
-														"Professional",
-														"Indemnity",
-														"Public liability",
-														"Products liability",
-														"Employers liability"
-														);
-														sort($insurance, SORT_NATURAL | SORT_FLAG_CASE);
-														foreach ($insurance as $key ) {
-														    echo "<option value='".$key."'>".$key."</option>";
-														}
+																	$insurance = array(
+																	"Professional",
+																	"Indemnity",
+																	"Public liability",
+																	"Products liability",
+																	"Employers liability"
+																	);
+																	sort($insurance, SORT_NATURAL | SORT_FLAG_CASE);
+																	foreach ($insurance as $key ) {
+																	    echo "<option value='".$key."'>".$key."</option>";
+																	}
 
-													 ?>
+																 ?>
 															   		
 															    <option value="others">Others</option>
 															</select>
@@ -1505,12 +1489,22 @@
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
 															<select name="bonds" class="form-control" onchange='Bonds(this.value);'> 
-														    <option value="" disabled selected>Select Bonds </option>  
-														    <option value="performance bond">Performance Bond</option>
-														    <option value="parent company guarantee">Parent Company Guarantee</option>
-														    <option value="tender/bid bond">Tender/Bid Bond</option>
-														    <option value="on demand bond">On Demand Bond</option>
-														    <option value="conditional/on  default bond">Conditional/On  Default Bond</option>
+														    <option value="" disabled selected>Select Bonds </option> 
+														    <?php 
+																	$bonds = array(
+																	"Performance Bond",
+																	"Parent Company Guarantee",
+																	"Tender/Bid Bond",
+																	"On Demand Bond",
+																	"Conditional/On  Default Bond"
+																	);
+																	sort($bonds, SORT_NATURAL | SORT_FLAG_CASE);
+																	foreach ($bonds as $key ) {
+																	    echo "<option value='".$key."'>".$key."</option>";
+																	}
+
+																 ?> 
+														   
 														    <option value="others">Others</option>
 														  </select>
 														  <input type="text" name="bonds" id="bonds" style='display:none;'/>
