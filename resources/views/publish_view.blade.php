@@ -56,6 +56,16 @@
 	.btop td{
 		border-top: 5px solid orange;
 	}
+	ul.bondlist {
+	  columns: 2;
+	  -webkit-columns: 2;
+	  -moz-columns: 2;
+	  padding: 0;
+	  list-style: none;
+	}
+	.hid.bond {
+		display: none;
+	}
 </style>
 <script type="text/javascript">
 	$(document).ready(function (){
@@ -96,6 +106,25 @@
 	        e.preventDefault(); $(this).parent('div').remove(); x--;
 	    });
 	});
+	function showaddbond(){
+		$('.hid.bond').css('display','block');
+		$('.notherbut').css('display','none');
+	};
+	function addbond()
+	{
+		var ival = $.trim($('.bond').val());
+		if( ival.length != "" ){
+			ival = ival.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+			    return letter.toUpperCase();
+			});
+			var out = "<li><div class='form-check'><label><input type='checkbox' checked name='offeredservices[]' value='"+ival+"'><span class='label-text'>"+ival+"</span></label></div></li>";
+			$('ul#bondlist').append(out);
+		}
+
+		$('.hid.bond').css('display','none');
+		$('.notherbut').css('display','block');
+		$('.bond').val('');
+	}
 </script>
 
 <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
@@ -1495,11 +1524,11 @@
 															<input type="number" placeholder="Insurance Level" name="insurance_level" class="form-control">
 														</div>
 														<div id="addedinsurance"></div>
-														<div class="form-group">
+														{{-- <div class="form-group">
 															<div class="cnt_insurance">
 															    <button class="btn btn-primary" id="addanotherinsu" >Add Another Insurance</button>
 															</div>
-														</div>
+														</div> --}}
 		    										</div>
 		    									</div>
 		    									<div class="row">
@@ -1510,31 +1539,34 @@
 		    										</div>
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
-															<select name="bonds" class="form-control" onchange='Bonds(this.value);'> 
-														    <option value="" disabled selected>Select Bonds </option> 
-														    <?php 
-																	$bonds = array(
+		    												<ul id="bondlist" class="bondlist">
+		    												<?php
+		    												$Service = array(
 																	"Performance Bond",
 																	"Parent Company Guarantee",
 																	"Tender/Bid Bond",
 																	"On Demand Bond",
 																	"Conditional/On  Default Bond"
 																	);
-																	sort($bonds, SORT_NATURAL | SORT_FLAG_CASE);
-																	foreach ($bonds as $key ) {
-																	    echo "<option value='".$key."'>".$key."</option>";
-																	}
+		    												sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
+		    												foreach ($Service as $key ) {
+		    												    echo "<li><div class='form-check'>
+		    															<label>
+		    																<input type='checkbox' name='cntbonds[]' value='".$key."'><span class='label-text'>".$key."</span>
+		    															</label>
+		    														</div></li>";
+		    												}
 
-																 ?> 
-														   
-														    <option value="others">Others</option>
-														  </select>
-														  <input type="text" name="bonds" id="bonds" style='display:none;'/>
+		    												?>
+		    												</ul>
 															</div>
 															<div class="form-group">
 																<div class="cnt_bond">
-																    <button class="btn btn-primary" id="cnt_bond" >Add Another Bond</button>
-																    <div></div>
+																	<input type="text" class="form-control hid bond" name="bond">
+																    <button type="button" class="btn btn-primary notherbut" onclick="showaddbond()">Add another bond</button>
+																    <button type="button" class="btn btn-primary hid bond" id="addservicebut" onclick="addbond()">Add bond</button>
+																    {{-- <button class="btn btn-primary" id="addbondcnt" >Add Another Bond</button>
+																    <div></div> --}}
 																</div>
 															</div>
 		    										</div>
