@@ -52,7 +52,7 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-6 lounge-action" style="background: transparent;">
-						<div class="shadow-wrapper shadow-wrappernigids latest_article_preview fade_in_and_bounce_from_left_left">
+						<div class="shadow-wrapper shadow-wrappernigids " style="border-radius: 6px;">
 							<div class="panel-group" id="accordioned">
 								<div class="panel">
 									<div class="panel-heading">
@@ -79,7 +79,7 @@
 														<td class="centerAlign">01 January 2018</td>
 														<td class="centerAlign">07 January 2018</td>
 														<td class="centerAlign"><a style="white-space: normal;" href="{{ url('/publish/project_dashboard') }}" class="btn btn-warning">
-															Deal now
+															Deal with it now
 														</a></td>
 													</tr>
 													<tr>
@@ -88,7 +88,7 @@
 														<td class="centerAlign">01 January 2018</td>
 														<td class="centerAlign">03 January 2018</td>
 														<td class="centerAlign"><a style="white-space: normal;" href="#" class="btn btn-warning">
-															Deal now
+															Deal with it now
 														</a></td>
 													</tr>
 													<tr>
@@ -97,7 +97,7 @@
 														<td class="centerAlign">01 January 2018</td>
 														<td class="centerAlign">07 January 2018</td>
 														<td class="centerAlign"><a style="white-space: normal;" href="{{ url('/publish/project_dashboard') }}" class="btn btn-warning">
-															Deal now
+															Deal with it now
 														</a></td>
 													</tr>
 													<tr>
@@ -106,7 +106,7 @@
 														<td class="centerAlign">01 January 2018</td>
 														<td class="centerAlign">03 January 2018</td>
 														<td class="centerAlign"><a style="white-space: normal;" href="#" class="btn btn-warning">
-															Deal now
+															Deal with it now
 														</a></td>
 													</tr>
 													<tr>
@@ -115,7 +115,7 @@
 														<td class="centerAlign">01 January 2018</td>
 														<td class="centerAlign">07 January 2018</td>
 														<td class="centerAlign"><a style="white-space: normal;" href="{{ url('/publish/project_dashboard') }}" class="btn btn-warning">
-															Deal now
+															Deal with it now
 														</a></td>
 													</tr>
 													<tr>
@@ -124,7 +124,7 @@
 														<td class="centerAlign">01 January 2018</td>
 														<td class="centerAlign">03 January 2018</td>
 														<td class="centerAlign"><a style="white-space: normal;" href="#" class="btn btn-warning">
-															Deal now
+															Deal with it now
 														</a></td>
 													</tr>
 												</tbody>
@@ -136,7 +136,7 @@
 						</div>	
 					</div>
 					<div class="col-sm-6 lounge-action">
-						<div class="shadow-wrapper col-cont shadow-wrappernigids latest_article_preview fade_in_and_bounce_from_left_right">
+						<div class="shadow-wrapper col-cont shadow-wrappernigids " style="border-radius: 6px; ">
 							<article>
 							<div class="col-sm-8 berna ">
 								<div class="row">

@@ -87,7 +87,66 @@
 		background: white;
 	}
 	.datepicker{z-index:9999 !important}
+
+	/*+++++++++++++++++++++++++++++++++++++++*/
+	.imageThumb {
+	  max-height: 75px;
+	  border: 2px solid;
+	  padding: 1px;
+	  cursor: pointer;
+	}
+	.pip {
+	  display: inline-block;
+	  margin: 10px 10px 0 0;
+	}
+	.remove {
+	  display: block;
+	  background: #444;
+	  border: 1px solid black;
+	  color: white;
+	  text-align: center;
+	  cursor: pointer;
+	}
+	.remove:hover {
+	  background: white;
+	  color: black;
+	}
 </style>
+<script type="text/javascript">
+	$(document).ready(function() {
+	  if (window.File && window.FileList && window.FileReader) {
+	    $("#files").on("change", function(e) {
+	      var files = e.target.files,
+	        filesLength = files.length;
+	      for (var i = 0; i < filesLength; i++) {
+	        var f = files[i]
+	        var fileReader = new FileReader();
+	        fileReader.onload = (function(e) {
+	          var file = e.target;
+	          $("<span class=\"pip\">" +
+	            "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
+	            "<br/><span class=\"remove\">Remove image</span>" +
+	            "</span>").insertAfter("#files");
+	          $(".remove").click(function(){
+	            $(this).parent(".pip").remove();
+	          });
+	          
+	          // Old code here
+	          /*$("<img></img>", {
+	            class: "imageThumb",
+	            src: e.target.result,
+	            title: file.name + " | Click to remove"
+	          }).insertAfter("#files").click(function(){$(this).remove();});*/
+	          
+	        });
+	        fileReader.readAsDataURL(f);
+	      }
+	    });
+	  } else {
+	    alert("Your browser doesn't support to File API")
+	  }
+	});
+</script>
 <script type="text/javascript">
 	$(document).ready(function() {
 	    var max_fields      = 10; //maximum input boxes allowed
@@ -232,6 +291,9 @@
         $(this).find('#inputName').focus();
     });
 </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 <div class="modal fade" id="awards" role="dialog">
 	  <div class="modal-dialog">
 	  
@@ -448,7 +510,7 @@
 											<ul id="servicelist" class="servicelist">
 											<?php
 											$Service = array(
-												"Architect", "Structural Engineer", "Service engineer",
+												"Architect", "Structural engineer", "Service engineer",
 												"Fire engineer", "Acoustic engineer", "Principal designer","Facade engineer" , "Building control", "Lighting consultant", "Security consultant", "Planning consultant" , "Sustainability consultant", "BIM consultant", "Quantity surveyor", "Project manager"
 											);
 											sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
@@ -484,7 +546,22 @@
 											<input type="text" name="" class="form-control" placeholder="Enter name of award">
 										</div>
 										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-											<input type="text" name="" class="form-control" placeholder="Awarded by">
+											
+											<div class="form-group">
+												<select name="awards_year" class="form-control">
+													<option value="">Year awarded</option>
+												<?php 
+													$cur_year = date('Y');
+													$years = [];
+												    for ($i=0; $i<=50; $i++) {
+												        array_push($years,$cur_year--);
+												    }
+												    foreach ($years as $year ) {
+												    	echo "<option value='".$year."'>".$year."</option>";
+												    }
+												?>
+												</select>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -493,19 +570,7 @@
 								<div class="col-sm-4"></div>
 								<div class="col-sm-8">
 									<div class="form-group">
-										<select name="awards_year" class="form-control">
-														<option value="">Year awarded</option>
-													<?php 
-														$cur_year = date('Y');
-														$years = [];
-													    for ($i=0; $i<=50; $i++) {
-													        array_push($years,$cur_year--);
-													    }
-													    foreach ($years as $year ) {
-													    	echo "<option value='".$year."'>".$year."</option>";
-													    }
-													?>
-													</select>
+									<input type="text" name="" class="form-control" placeholder="Awarded by">
 									</div>
 								</div>
 							</div>
@@ -547,7 +612,7 @@
 											<ul id="typeofuse" class="typeofuse">
 											<?php
 											$Service = array(
-												"Residential","Commercial ","Retail","Leisure","Sports and Venues","Hotel","Industrial","Education","Healthcare","Defence","Aviation","Highways","Bridges","Rail","Water","Oil,Gas and Chemical"
+												"Residential","Commercial ","Retail","Leisure","Sports and venues","Hotel","Industrial","Education","Healthcare","Defence","Aviation","Highways","Bridges","Rail","Water","Oil,gas and chemical"
 											);
 											sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
 											foreach ($Service as $key ) {
@@ -645,10 +710,11 @@
 												     <label id="count-label">3000</label>/3000 words
 												</div>
 											</div>
-											<div class="form-group">													
-												
-												<label for="uploadImage7s"><strong>Upload Images</strong></label>
-												<input id="uploadImage7s" type="file" name="upimages[]" multiple accept='image/*'name="myPhoto" />
+											<div class="form-group">	
+												<div class="field" align="left">
+												  <strong>Upload your images</strong>
+												  <input type="file" id="files" name="files[]" multiple />
+												</div>
 						                    </div>
 						                    <div class="form-group">
 												<select name="Sel"  class="form-control" >
@@ -699,13 +765,13 @@
 												    <button class="btn btn-primary" id="addprojmember">Add another project team member</button>
 												    <div></div>
 												</div>
-											</div><br>
+											</div>
 											<div class="form-group">
 												<div class="input_fields_project">
 												    <button type="button" class="btn btn-primary" id="" >Add another project</button>
 												    <div></div>
 												</div>
-											</div><br>
+											</div>
 											{{-- <div class="form-group">
 												<div class="input_fields_project">
 												    <button class="btn btn-primary" id="add_field_project">Add another XXX</button>

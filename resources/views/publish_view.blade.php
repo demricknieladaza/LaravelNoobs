@@ -136,7 +136,7 @@
  -->
 
 <!-- ========================================================================== -->
-<div class="container below-header flip animated hinge">
+<div class="container below-header">
 	<h1 id="logo" class="project-title bid-page-title centerh" style="margin-left: 5%;
     margin-right: 5%;">Project Dashboard</small></h1>
 </div>
