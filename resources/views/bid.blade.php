@@ -398,12 +398,12 @@
 					</div>
 					{{-- <input type="button" id="next" value="Next" onclick="validateFormSection()" /> --}}
 					<div id="section2" class="tab-pane fade tender-container">
-						<div class="form-group" style="text-align: right;">
+						<!-- <div class="form-group" style="text-align: right;">
 							<div class="input_fields_team">
 								<button class="btn" id="button1 ">Complete Page using Profile Information</button>
 							</div>
-						</div>
-						<h3 class="bid-form-title">Organisation</h3>
+						</div> -->
+						<h3 class="bid-form-title">Organisation<button class="btn" id="button1 " style="margin-left: 48%; background: #FE7235;">Complete Page using Profile Information</button></h3>
 						<div class="kuwestion">
 							<div class="inputscheck">
 							<div class="row">
@@ -448,8 +448,8 @@
 											<ul id="servicelist" class="servicelist">
 											<?php
 											$Service = array(
-												"Architect", "Structural Engineer", "Service Engineer",
-												"Fire Engineer", "Acoustic Engineer", "Principal Designer","Facade Engineer" , "Building Control", "Lighting Consultant", "Security Consultant", "Planning Consultant" , "Sustainability Consultant", "BIM Consultant", "Quantity Surveyor", "Project Manager"
+												"Architect", "Structural Engineer", "Service engineer",
+												"Fire engineer", "Acoustic engineer", "Principal designer","Facade engineer" , "Building control", "Lighting consultant", "Security consultant", "Planning consultant" , "Sustainability consultant", "BIM consultant", "Quantity surveyor", "Project manager"
 											);
 											sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
 											foreach ($Service as $key ) {
@@ -474,25 +474,26 @@
 											</div>
 										</div>
 									</div>
-									<div class="row">
-										<div class="col-sm-4">
-											<div class="form-group">
-												Awards
-											</div>
+							<div class="row" style="padding-bottom:10px;">
+								<div class="col-sm-4">
+								Awards
+								</div>
+								<div class="col-sm-8">
+									<div class="form-group">
+										<div class="col-sm-6" style="padding:0;">
+											<input type="text" name="" class="form-control" placeholder="Enter name of award">
 										</div>
-										<div class="col-sm-8">
-											<div id="Awards">
-												<div class="form-group">
-													<input type="text" name="" class="form-control" placeholder="Enter name of award">
-												</div>
-												<div class="form-group">
-													<input type="text" name="" class="form-control" placeholder="Enter details">
-												</div>
-												<div class="form-group">
-													<input type="text" name="" class="form-control" placeholder="Awarded by">
-												</div>
-												<div class="form-group">
-													<select name="awards_year" class="form-control">
+										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+											<input type="text" name="" class="form-control" placeholder="Awarded by">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4"></div>
+								<div class="col-sm-8">
+									<div class="form-group">
+										<select name="awards_year" class="form-control">
 														<option value="">Year awarded</option>
 													<?php 
 														$cur_year = date('Y');
@@ -505,18 +506,28 @@
 													    }
 													?>
 													</select>
-												</div>
-											</div>
-											<ul class="addeditem" style="list-style: none;padding: 0;">
-													
-												</ul>
-											<div class="form-group">
-												<div class="input_fields_piste">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4"></div>
+								<div class="col-sm-8">
+									<div class="form-group">
+									<textarea cols="4" rows="5" id="textareaap" maxlength="3000" placeholder="Enter details"></textarea>
+  												<p style="color: grey;"><span id="rchars1" >3000</span>/3000 words remaining</p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4"></div>
+								<div class="col-sm-8">
+									<div class="form-group">
+									<div class="input_fields_piste">
 												    <button type="button" class="btn btn-primary" id="add_award" >Add another award</button>
 												</div>
-											</div>
-										</div>
 									</div>
+								</div>
+							</div>
 									<div class="row">
 										<div class="col-sm-4">
 											<div class="form-group">
@@ -531,10 +542,7 @@
 												<input type="number" name="" id="consvalue" class="form-control" placeholder="Construction value ">
 											</div>
 
-										<div class="form-group">
-								               <input type="checkbox" name="" value="cheked" class="filled-in" id="valconfi" ><label for="valconfi">Value Confidential </label>
-							              </div>
-							              
+										
 						                    <label for="typeofuse"><strong>Type of use</strong></label>
 											<ul id="typeofuse" class="typeofuse">
 											<?php
@@ -567,7 +575,7 @@
 													<option value="" disabled selected>Select service</option>
 													<?php 
 														$Services = array(
-															"Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Facade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager"
+															"Architect","Structural engineer","Service engineer","Fire engineer","Acoustic engineer","Principal designer","Facade engineer","Building control","Lighting consultant","Security consultant","Planning consultant","Sustainability consultant","BIM consultant","Quantity surveyor","Project manager"
 														);
 														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
 														foreach ($Services as $key ) {
@@ -579,22 +587,29 @@
 													<option>Other</option>
 												</select>
 											</div>
-											<div class="form-group">
-												<div class="input-group date" id="datepicker2" data-date="02-2012" 
+							<div class="row" style="padding-bottom:10px;">
+								<div class="col-sm-12">
+									<div class="form-group">
+										<div class="col-sm-6" style="padding:0;">
+											<div class="input-group date" id="datepicker7" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
 													 <input class="form-control" type="text" placeholder="Provided this service from" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
-											</div>
-											<div class="form-group">
-												<div class="input-group date" id="datepicker3" data-date="02-2012" 
+										</div>
+										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+											<div class="input-group date" id="datepicker8" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
 													 <input class="form-control" type="text" placeholder="Provided this service until" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
-											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
 											<div id="addedservices">
 												
 											</div>
@@ -604,11 +619,11 @@
 												    <div></div>
 												</div>
 											</div>
-											<label for="typeofdev"><strong>Select Type of Development</strong></label>
+											<label for="typeofdev"><strong>Select type of development</strong></label>
 											<ul id="typeofdev" class="typeofdev">
 											<?php
 											$Service = array(
-												"New Built","Refurbishment ","Demolition"
+												"New built","Refurbishment ","Demolition"
 											);
 											sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
 											foreach ($Service as $key ) {
@@ -621,15 +636,14 @@
 
 											?>
 											</ul>
-											<div class="form-group divaddservtypeofdev">
-												<input type="text" class="form-control hid adtypeofdev" name="addev">
-											    <button type="button" class="btn btn-primary notherbuttypeofdev" onclick="showaddtypedev()">Add another type of development</button>
-											    <button type="button" class="btn btn-primary hid adtypeofdev" id="adddevbut" onclick="addtypeofdev()">Add type of development</button>
-											</div>
+										
 													
 											<div class="form-group">
-												<textarea cols="4" rows="5" id="textarea" maxlength="2000" placeholder="Enter description of the project  "></textarea>
-  												<p style="color: grey;"><span id="rchars" >3000</span>/3000 words remaining</p>
+												
+												<textarea id="text-input" cols="25" rows="3" placeholder="Enter the project description"></textarea>
+												<div class="word-counter">
+												     <label id="count-label">3000</label>/3000 words
+												</div>
 											</div>
 											<div class="form-group">													
 												
@@ -641,7 +655,7 @@
 													<option value="" disabled selected>Select project team member</option>
 													<?php 
 														$members = array(
-															"Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Facade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager"
+															"Architect","Structural engineer","Service engineer","Fire engineer","Acoustic engineer","Principal designer","Facade engineer","Building control","Lighting consultant","Security consultant","Planning consultant","Sustainability consultant","BIM consultant","Quantity surveyor","Project manager"
 														);
 														sort($members, SORT_NATURAL | SORT_FLAG_CASE);
 														foreach ($members as $key ) {
@@ -742,58 +756,55 @@
 											<input id="uploadImage7s" type="file" name="upimages[]" multiple accept='image/*'name="myPhoto" />
 								        </div>
 						            </div>
-						            <div class="row">
-										<div class="col-sm-4">
-											<div class="form-group">
-												Accreditations
-											</div>
-										</div>
-										<div class="col-sm-8">
-											<div class="form-group">
-												<select name='ddlSelectYear' class="form-control">
-										            <option value="">Select Accreditation</option>
-										         <?php 
+						           <div class="row" style="padding-bottom:10px;">
+													<div class="col-sm-4">
+													Accredation</div>
+													<div class="col-sm-8">
+													<div class="form-group">
+													<div class="col-sm-6" style="padding:0;">
+													<select name='ddlSelectYear' class="form-control">
+													<option value="">Select accreditation</option>
+													<?php 
 
 													$Accre = array("MCIOD",
-																	"AssocRICS",
-																	"MRICS",
-																	"FRICS",
-																	"HonRICS",
-																	"BREEAM AP",
-																	"RIBA"
-																);
+													"AssocRICS",
+													"MRICS",
+													"FRICS",
+													"HonRICS",
+													"BREEAM AP",
+													"RIBA"
+													);
 
 													sort($Accre,SORT_NATURAL | SORT_FLAG_CASE);
 
 													foreach ($Accre as $key) {
-													  echo "<option value='".$key."'>".$key."</option>";
+													echo "<option value='".$key."'>".$key."</option>";
 													}
 
-													 ?>
-													 <option>Others</option>
-										        </select>
-											</div>
-										</div>
-									</div>
-
-									<div class="row">
-										<div class="col-sm-4"></div>
-										<div class="col-sm-8">
-											<select name='degree_year' class="form-control">
-											    <option value="">Year awarded</option>
-											    <?php 
+													?>
+													<option>Others</option>
+													</select>
+													</div>
+													<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+													<select name='degree_year' class="form-control">
+													<option value="">Year awarded</option>
+													<?php 
 													$cur_year = date('Y');
 													$years = [];
-												    for ($i=0; $i<=50; $i++) {
-												        array_push($years,$cur_year--);
-												    }
-												    foreach ($years as $year ) {
-												    	echo "<option value='".$year."'>".$year."</option>";
-												    }
-												?>
-											</select>
-										</div>
-									</div><br>
+													for ($i=0; $i<=50; $i++) {
+													array_push($years,$cur_year--);
+													}
+													foreach ($years as $year ) {
+													echo "<option value='".$year."'>".$year."</option>";
+													}
+													?>
+													</select>
+													</div>
+													</div>
+													</div>
+													</div>
+
+									
 									<div class="row">
 										<div class="col-sm-4">
 											
@@ -898,46 +909,60 @@
 											</div>
 										</div>
 									</div>
-									<div class="row">
-										<div class="col-sm-4">
-											Awards
+																<div class="row" style="padding-bottom:10px;">
+								<div class="col-sm-4">
+								Awards
+								</div>
+								<div class="col-sm-8">
+									<div class="form-group">
+										<div class="col-sm-6" style="padding:0;">
+											<input type="text" name="" class="form-control" placeholder="Enter name of award">
 										</div>
-										<div class="col-sm-8">
-
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter name of award">
-											</div>
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Awarded by">
-											</div>
-											
-											<div class="form-group">
-												<textarea cols="4" rows="5" id="textareaap" maxlength="3000" placeholder="Enter details"></textarea>
-  												<p style="color: grey;"><span id="rchars1" >3000</span>/3000 words remaining</p>
-											</div>
-											<div class="form-group">
-											<select name='yeard_awards' class="form-control">
-											    <option value="">Year awarded</option>
-											    <?php 
-													$cur_year = date('Y');
-													$years = [];
-												    for ($i=0; $i<=50; $i++) {
-												        array_push($years,$cur_year--);
-												    }
-												    foreach ($years as $year ) {
-												    	echo "<option value='".$year."'>".$year."</option>";
-												    }
-												?>
-											</select>
-											</div>
-											<div id="indiaddedaward"></div>
-											<div class="form-group">
-											    <button class="btn btn-primary" id="indiaddaward">Add another award</button>
-											    <div></div>
-											</div>
-											
+										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+											<input type="text" name="" class="form-control" placeholder="Awarded by">
 										</div>
 									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4"></div>
+								<div class="col-sm-8">
+									<div class="form-group">
+										<select name="awards_year" class="form-control">
+														<option value="">Year awarded</option>
+													<?php 
+														$cur_year = date('Y');
+														$years = [];
+													    for ($i=0; $i<=50; $i++) {
+													        array_push($years,$cur_year--);
+													    }
+													    foreach ($years as $year ) {
+													    	echo "<option value='".$year."'>".$year."</option>";
+													    }
+													?>
+													</select>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4"></div>
+								<div class="col-sm-8">
+									<div class="form-group">
+									<textarea cols="4" rows="5" id="textareaap" maxlength="3000" placeholder="Enter details"></textarea>
+  												<p style="color: grey;"><span id="rchars1" >3000</span>/3000 words remaining</p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4"></div>
+								<div class="col-sm-8">
+									<div class="form-group">
+									<div class="input_fields_piste">
+												    <button type="button" class="btn btn-primary" id="add_award" >Add another award</button>
+												</div>
+									</div>
+								</div>
+							</div>
 									<div class="row">
 										<div class="col-sm-4">
 											<div class="form-group">
@@ -949,8 +974,8 @@
 												<ul id="servicelistindi" class="servicelist">
 												<?php
 												$Service = array(
-													"Architect", "Structural Engineer", "Service Engineer",
-													"Fire Engineer", "Acoustic Engineer", "Principal Designer","Facade Engineer" , "Building Control", "Lighting Consultant", "Security Consultant", "Planning Consultant" , "Sustainability Consultant", "BIM Consultant", "Quantity Surveyor", "Project Manager"
+													"Architect", "Structural engineer", "Service engineer",
+													"Fire engineer", "Acoustic engineer", "Principal designer","Facade engineer" , "Building control", "Lighting consultant", "Security consultant", "Planning consultant" , "Sustainability consultant", "BIM consultant", "Quantity surveyor", "Project manager"
 												);
 												sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
 												foreach ($Service as $key ) {
@@ -967,7 +992,7 @@
 											<div class="form-group divaddservbid">
 												<input type="text" class="form-control hid adservindi" name="adserv">
 											    <button type="button" class="btn btn-primary notherbutindi" onclick="showaddserindi()">Add another service</button>
-											    <button type="button" class="btn btn-primary hid adservindi" id="addservicebutindi" onclick="addserviceindi()">Add Service</button>
+											    <button type="button" class="btn btn-primary hid adservindi" id="addservicebutindi" onclick="addserviceindi()">Add service</button>
 											</div>
 										</div>
 									</div>
@@ -981,7 +1006,7 @@
 											</div>
 
 										<div class="form-group">
-								               <input type="checkbox" name="" value="cheked" class="filled-in" id="valconfi1" ><label for="valconfi1">Value Confidential </label>
+								               <input type="checkbox" name="" value="cheked" class="filled-in" id="valconfi1" ><label for="valconfi1">Value confidential </label>
 							              </div>
 										</div>
 									</div><br>
@@ -1052,7 +1077,7 @@
 													<option value="" disabled selected>Select service</option>
 													<?php 
 														$Services = array(
-															"Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Facade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager"
+															"Architect","Structural engineer","Service engineer","Fire engineer","Acoustic engineer","Principal Designer","Facade engineer","Building control","Lighting consultant","Security consultant","Planning consultant","Sustainability consultant","BIM consultant","Quantity Surveyor","Project manager"
 														);
 														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
 														foreach ($Services as $key ) {
@@ -1065,34 +1090,32 @@
 											</div>
 										</div>
 									</div>
-									<div class="row">
-										<div class="col-sm-4">
-											
-										</div>
-											<div class="col-sm-8">
-												<div class="input-group date" id="datepicker7" data-date="02-2012" 
+																<div class="row" style="padding-bottom:10px;">
+								<div class="col-sm-4">
+							
+								</div>
+								<div class="col-sm-8">
+									<div class="form-group">
+										<div class="col-sm-6" style="padding:0;">
+											<div class="input-group date" id="datepicker7" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
 													 <input class="form-control" type="text" placeholder="Provided this service from" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
-											</div>
-
-									</div><br>
-									<div class="row">
-										<div class="col-sm-4">
-											
 										</div>
-											<div class="col-sm-8">
-												<div class="input-group date" id="datepicker8" data-date="02-2012" 
+										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+											<div class="input-group date" id="datepicker8" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
 													 <input class="form-control" type="text" placeholder="Provided this service until" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
-											</div>
-
-									</div><br>
+										</div>
+									</div>
+								</div>
+							</div>
+							
 									<div class="row">
 										<div class="col-sm-4">
 											
@@ -1115,7 +1138,7 @@
 												<select name="" class="form-control">
 													<option value="" disabled selected>Select type of development</option>
 													<?php 
-														$Services = array("New Built","Refurbishment","Demolition"
+														$Services = array("New built","Refurbishment","Demolition"
 															
 														);
 														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
@@ -1144,7 +1167,7 @@
 									<div class="row">
 										<div class="col-sm-4"></div>
 										<div class="col-sm-8">
-												<textarea cols="4" rows="5" id="textareaap" maxlength="3000" placeholder="Enter Description of the project ....... "></textarea>
+												<textarea cols="4" rows="5" id="textareaap" maxlength="3000" placeholder="Enter description of the project ....... "></textarea>
   												<p style="color: grey;"><span id="rchars1" >3000</span>/3000 words remaining</p>
 										</div>
 									</div>
@@ -1171,7 +1194,7 @@
 										            <option value="">Select project team member</option>
 										       <?php 
 														$Services = array(
-															"Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Facade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager"
+															"Architect","Structural engineer","Service engineer","Fire engineer","Acoustic engineer","Principal designer","Facade engineer","Building Control","Lighting consultant","Security consultant","Planning consultant","Sustainability consultant","BIM consultant","Quantity surveyor","Project manager"
 														);
 														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
 														foreach ($Services as $key ) {
@@ -2031,7 +2054,7 @@
 										<div class="col-sm-8">
 											<div class="form-group">
 												{{-- <img id="uploadPreview4" style="width: 100px; height: 100px;" /> --}}
-												<label for="uploadImage7s"><strong>Upload Insurance Certificate</strong></label>
+												<label for="uploadImage7s"><strong>Upload insurance certificate</strong></label>
 												<input id="uploadImage4" type="file" name="myPhoto" onchange="PreviewImage4();" />
 											</div>
 										</div>
@@ -2162,7 +2185,7 @@
 							             </div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-4">Net  Contribution  Clause </div>
+										<div class="col-sm-4">Net  contribution  clause </div>
 										<div class="col-sm-8">
 												<p >Yes</p>
 										</div>
@@ -2880,7 +2903,23 @@ $('textarea').keyup(function() {
 
 	});
 </script>
-
+<script type="text/javascript">
+	var limitWord = 3000;
+$("#text-input").keyup(function () {
+    $this = $(this);
+    var regex = /\s+/gi;
+    var wordcount = jQuery.trim($this.val()).replace(regex, ' ').split(' ').length;
+    if (wordcount <= limitWord) {
+        chars = $this.val().length;
+    } else {
+        var text = $(this).val();
+        var new_text = text.substr(0, chars);
+        $(this).val(new_text);
+        wordcount--;
+    }
+    $("#count-label").html(limitWord - wordcount);
+});
+</script>
 @endsection
 
 
