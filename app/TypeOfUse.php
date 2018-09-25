@@ -11,18 +11,10 @@ class TypeOfUse extends Model
     public $primaryKey = 'use_id';
     public $timestamps = false;
     protected $fillable = [
-        'use_area_one',
-        'use_units_one',
-        'use_type_one',
-        'use_area_two',
-        'use_units_two',
-        'use_type_two',
-        'use_area_three',
-        'use_units_three',
-        'use_type_three',        
-        'use_area_four',
-        'use_units_four',
-        'use_type_four',
+        'use_name[]',
+        'use_area[]',
+        'use_units[]',
+        'use_type[]',
         'project_record_id'
     ];
 

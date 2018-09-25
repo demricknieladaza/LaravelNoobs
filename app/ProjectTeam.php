@@ -11,8 +11,8 @@ class ProjectTeam extends Model
     public $primaryKey = 'project_team_id';
     public $timestamps = false;
     protected $fillable = [
-        'position',
-        'name',
+        'member_position[]',
+        'member_name[]',
         'project_record_id'
     ];
 

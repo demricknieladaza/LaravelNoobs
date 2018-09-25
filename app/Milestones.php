@@ -11,10 +11,8 @@ class Milestones extends Model
     public $primaryKey = 'milestone_id';
     public $timestamps = false;
     protected $fillable = [
-        'riba_stage_one',
-        'riba_stage_two',
-        'riba_stage_three',
-        'riba_stage_four',
+        'riba_stage[]',
+        'date[]',
         'project_record_id'
     ];
 

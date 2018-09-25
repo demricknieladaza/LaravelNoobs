@@ -61,7 +61,7 @@ class ProjectInformationController extends Controller
         //This is the main model
         $project = new ProjectInformations;
         $project->project_title = $request->input('project_title');
-        $project->project_id = $request->input('project_id');
+        //$project->project_id = $request->input('project_id');
         $project->location = $request->input('location');
         $project->type_of_development = $request->input('type_of_development');
         $project->construction_value = $request->input('construction_value');
@@ -87,39 +87,49 @@ class ProjectInformationController extends Controller
         $area->project_record_id = $id;
         $area->save();
 
-        $constraints = new Constraints;
-        $constraints->constraint_one = $request->input('constraint_one');
-        $constraints->constraint_two = $request->input('constraint_two');
-        $constraints->constraint_three = $request->input('constraint_three');
-        $constraints->project_record_id = $id;
-        $constraints->save();
+        
+        //Dynamic Field
+        $const = $request->constraint;
+        for($counter = 0; $counter < count($const); $counter++){
+            $constraints = new Constraints;
+            $constraints->constraint = $const[$counter];
+            $constraints->project_record_id = $project->project_record_id;
+            $constraints->save();
 
-        
-        $type = new TypeOfUse;
+        }
 
-        $type->use_area_one = $request->input('use_area_one');
-        $type->use_units_one = $request->input('use_units_one');
-        $type->use_type_one = $request->input('use_types_one');
-        $type->use_area_two = $request->input('use_area_two');
-        $type->use_units_two = $request->input('use_units_two');
-        $type->use_type_two = $request->input('use_types_two');
-        $type->use_area_three = $request->input('use_area_three');
-        $type->use_units_three = $request->input('use_units_three');
-        $type->use_type_three = $request->input('use_types_three');
-        $type->use_area_four = $request->input('use_area_four');
-        $type->use_units_four = $request->input('use_units_four');
-        $type->use_type_four = $request->input('use_types_four');
-        $type->project_record_id = $id;
-        $type->save();
+        $use_name = $request->use_name;
+        $use_area = $request->use_area;
+        $use_units = $request->use_units;
+        $use_type = $request->use_type;
+        for($counter = 0; $counter < count($use_name); $counter++){
+            $type = new TypeOfUse;
+            $type->use_name = $use_name[$counter];
+            $type->use_area = $use_area[$counter];
+            $type->use_units = $use_units[$counter];
+            $type->use_type = $use_type[$counter];
+            $type->project_record_id = $project->project_record_id;
+            $type->save();
+        }
         
         
-        $milestones = new Milestones;
+        /*$milestones = new Milestones;
         $milestones->riba_stage_one = $request->input('riba_stage_one');
         $milestones->riba_stage_two = $request->input('riba_stage_two');
         $milestones->riba_stage_three = $request->input('riba_stage_three');
         $milestones->riba_stage_four = $request->input('riba_stage_four');
         $milestones->project_record_id = $id;
-        $milestones->save();
+        $milestones->save();*/
+
+        $riba = $request->riba_stage;
+        $date = $request->date;
+        for($counter = 0; $counter < count($riba); $counter++){
+            $milestones = new Milestones;
+            $milestones->riba_stage = $riba[$counter];
+            $milestones->date = $date[$counter];
+            $milestones->project_record_id = $project->project_record_id;
+            $milestones->save();
+        }
 
         $meetings = new Meetings;
         $meetings->design_team_meeting = $request->input('design_team_meeting');
@@ -127,11 +137,17 @@ class ProjectInformationController extends Controller
         $meetings->project_record_id = $id;
         $meetings->save();
 
-        $team = new ProjectTeam;
-        $team->position = $request->input('position');
-        $team->name = $request->input('name');
-        $team->project_record_id = $id;
-        $team->save();
+        
+        $position = $request->member_position;
+        $name = $request->member_name;
+        for($counter = 0; $counter < count($position); $counter++){
+            $team = new ProjectTeam;
+            $team->member_position = $position[$counter];
+            $team->member_name = $name[$counter];
+            $team->project_record_id = $project->project_record_id;
+            $team->save();
+        }
+
         
 
         //return response()->json(array('success' => true, 'insert_id' => $project->project_record_id), 200);
@@ -184,15 +200,15 @@ class ProjectInformationController extends Controller
         //$area = AreaSpecificInformation::where('project_record_id', $id)->get();
         $area = AreaSpecificInformation::where('project_record_id', $id)->first();
 
-        $constraints = Constraints::where('project_record_id', $id)->first();
+        $constraints = Constraints::where('project_record_id', $id)->get();
 
-        $type = TypeOfUse::where('project_record_id', $id)->first();
+        $type = TypeOfUse::where('project_record_id', $id)->get();
 
-        $milestones = Milestones::where('project_record_id', $id)->first();
+        $milestones = Milestones::where('project_record_id', $id)->get();
 
         $meetings = Meetings::where('project_record_id', $id)->first();
 
-        $team = ProjectTeam::where('project_record_id', $id)->first();
+        $team = ProjectTeam::where('project_record_id', $id)->get();
 
         return view('publish_view')->with([
             'project' => $project,
@@ -205,7 +221,6 @@ class ProjectInformationController extends Controller
             'team' => $team
         ]);
 
-        return view('publish_view');
     }
 
     /**
@@ -217,6 +232,8 @@ class ProjectInformationController extends Controller
      */
     public function update(Request $request, $id)
     {
+                
+                //$id = $request->get('project_record_id');
                 //This is the main model
                 $project = ProjectInformations::find($id);
                 $project->project_title = $request->input('project_title');
@@ -247,58 +264,55 @@ class ProjectInformationController extends Controller
                     'adjacent_uses' => $area->adjacent_uses = $request->input('adjacent_uses'),
                     'history' => $area->history = $request->input('history')
                 ]);
-        
+                
+                $const = $request->constraint;
                 $constraints = Constraints::where('project_record_id', $id);
-                $constraints->update([
-                    'constraint_one' => $constraints->constraint_one = $request->input('constraint_one'),
-                    'constraint_two' => $constraints->constraint_two = $request->input('constraint_two'),
-                    'constraint_three' => $constraints->constraint_three = $request->input('constraint_three')    
-                ]);
-        
-                
-                $type = TypeOfUse::where('project_record_id', $id);
-                $type->update([
-                            
-                    'use_area_one' => $type->use_area_one = $request->input('use_area_one'),
-                    'use_units_one' => $type->use_units_one = $request->input('use_units_one'),
-                    'use_type_one' => $type->use_type_one = $request->input('use_type_one'),
-            
-                    'use_area_two' => $type->use_area_two = $request->input('use_area_two'),
-                    'use_units_two' => $type->use_units_two = $request->input('use_units_two'),
-                    'use_type_two' => $type->use_type_two = $request->input('use_type_two'),
-            
-                    'use_area_three' => $type->use_area_three = $request->input('use_area_three'),
-                    'use_units_three' => $type->use_units_three = $request->input('use_units_three'),
-                    'use_type_three' => $type->use_type_three = $request->input('use_type_three'),
-            
-                    'use_area_four' => $type->use_area_four = $request->input('use_area_four'),
-                    'use_units_four' => $type->use_units_four = $request->input('use_units_four'),
-                    'use_type_four' => $type->use_type_four = $request->input('use_type_four'),
-                            
-                ]);
-                
-                
-                $milestones = Milestones::where('project_record_id', $id);
-                $milestones->update([
-                    'riba_stage_one' => $milestones->riba_stage_one = $request->input('riba_stage_one'),
-                    'riba_stage_two' => $milestones->riba_stage_two = $request->input('riba_stage_two'),
-                    'riba_stage_three' => $milestones->riba_stage_three = $request->input('riba_stage_three'),
-                    'riba_stage_four' => $milestones->riba_stage_four = $request->input('riba_stage_four')
-                ]);
-        
-                $meetings = Meetings::where('project_record_id', $id);
-                $meetings->update([
-                    'design_team_meeting' => $meetings->design_team_meeting = $request->input('design_team_meeting'),
-                    'project_progress_meeting' => $meetings->project_progress_meeting = $request->input('project_progress_meeting')
-                ]);
-        
-                $team = ProjectTeam::where('project_record_id', $id);
-                $team->update([
-                    'position' => $team->position = $request->input('position'),
-                    'name' => $team->name = $request->input('name')
-                ]);
+                for($counter = 0 ; $counter < count($const); $counter++){
+                    $constraints->update([
+                        'constraint' => $constraints->constraint = $const[$counter],  
+                    ]);
+                }
 
-                return redirect('/project_info'.'/'.$id.'/edit');
+        
+                $use_name = $request->use_name;
+                $use_area = $request->use_area;
+                $use_units = $request->use_units;
+                $use_type = $request->use_type;
+                $type = TypeOfUse::where('project_record_id', $id);
+                for($counter = 0 ; $counter < count($use_area); $counter++){
+                    $type->update([
+                        'use_name' => $type->use_name = $use_name[$counter],
+                        'use_area' => $type->use_area = $use_area[$counter],
+                        'use_units' => $type->use_units = $use_units[$counter],
+                        'use_type' => $type->use_type = $use_type[$counter]                                
+                    ]);
+                }
+
+                
+                $riba = $request->riba_stage;
+                $date = $request->date;
+                $milestones = Milestones::where('project_record_id', $id);
+                for($counter = 0; $counter < count($riba); $counter++){
+                    $milestones->update([
+                        'riba_stage' => $milestones->riba_stage = $riba[$counter],
+                        'date' => $milestones->date = $request->$date[$counter]
+                    ]);
+                }
+
+                $position = $request->member_position;
+                $name = $request->member_name;
+                $team = ProjectTeam::where('project_record_id', $id);
+                for($counter = 0; $counter < count($position); $counter++){
+                    $team->update([
+                        'member_position' => $team->member_position = $position[$counter],
+                        'member_name' => $team->member_name = $name[$counter]
+                    ]);
+                }
+
+
+                //return redirect('/project_info'.'/'.$id.'/edit');
+                //return 'asdasd';
+                //return response()->json(array('success' => true, 'insert_id' => $constraints), 200);
     }
 
     /**
@@ -310,5 +324,13 @@ class ProjectInformationController extends Controller
     public function destroy(ProjectInformation $projectInformation)
     {
         //
+    }
+
+    public function tenderStore(Request $request, $id){
+
+        // $id = $request->input('project_record_id');
+        // return $id;
+        // return redirect('/project_info'.'/'.$id.'/edit');
+        return $id;
     }
 }

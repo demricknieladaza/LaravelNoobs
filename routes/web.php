@@ -68,10 +68,8 @@ Route::get('/dashboard/individuals', 'UsersController@individuals_controller');
 Route::get('/dashboard/individuals', 'UsersController@individuals_controller');
 
 
+
+Route::put('project_info/{id}', 'ProjectInformationController@Update');
 Route::resource('project_info','ProjectInformationController');
-Route::resource('project_info_view','Project_Info_Controller');
-//Route::get('project_info_view/{id}', 'Project_Info_Controller@show');
+Route::resource('project_info_tender','TenderController');
 
-//Route::get('project_info_view/{id}','Project_Info_Controller@update');
-
-//Route::post('project_info','ProjectInformationController@store');

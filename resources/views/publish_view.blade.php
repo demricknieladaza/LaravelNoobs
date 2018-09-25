@@ -67,13 +67,74 @@
 		display: none;
 	}
 </style>
+<!--Project Record AJAX-->
+<script type="text/javascript">
+</script>
+<!--Tender AJAX-->
 <script type="text/javascript">
 	$(document).ready(function (){
 		$('#createservproj').click(function(){
 			var serv = $('select[name="servicechoice"]').val();
 			// $('#selectServe').toggle();
 			$('#serveprojtitle').html(serv);
+			$('#tendserve').val(serv);
+			jQuery.ajax({
+				url: "{{ url('project_info_tender') }}",
+				method: 'post',
+				data: {
+					services: jQuery('#tendserve').val(),
+					id: {{ $project->project_record_id }}
+				},
+				success: function(result){
+					jQuery('.alert').show();
+					jQuery('.alert').html(result.success);
+				}});
 		});
+
+		$('.upd').click(function(){
+			var constr = [];
+			var idni = {{ $project->project_record_id }};
+			jQuery("input[name='constraint']").each(function()
+				{
+					constr.push($(this).val());
+				}
+			);
+			constr = JSON.stringify(constr);
+			saveFunction();
+			alert(idni);
+			jQuery.ajax({
+				url: "{{ url('project_info/'.$project->project_record_id.'') }}",
+				method: 'put',
+				data: {
+					project_title: jQuery("input[name='project_title']").val(),
+					location: jQuery("input[name='location']").val(),
+					type_of_development: jQuery("input[name='type_of_development']").val(),
+					construction_value: jQuery("input[name='construction_value']").val(),
+					procurement_route: jQuery("input[name='procurement_route']").val(),
+					main_road: jQuery("input[name='main_road']").val(),
+					tube_station_one: jQuery("input[name='tube_station_one']").val(),
+					tube_station_two: jQuery("input[name='tube_station_two']").val(),
+					bus_lines: jQuery("input[name='bus_lines']").val(),
+					adjacent_uses: jQuery("input[name='adjacent_uses']").val(),
+					history: jQuery("input[name='history']").val(),
+					constraint: constr,
+					use_name: jQuery("input[name='use_name']").val(),
+					use_area: jQuery("input[name='use_area']").val(),
+					use_units: jQuery("input[name='use_units']").val(),
+					use_type: jQuery("input[name='use_type']").val(),
+					riba_stage: jQuery("input[name='riba_stage']").val(),
+					date: jQuery("input[name='date']").val(),
+					design_team_meeting: jQuery("input[name='design_team_meeting']").val(),
+					project_progress_meeting: jQuery("input[name='project_progress_meeting']").val(),
+					member_position: jQuery("input[name='member_position']").val(),
+					member_name: jQuery("input[name='member_name']").val()
+				},
+				success: function(result){
+					jQuery('.alert').show();
+					jQuery('.alert').html(result.success);
+				}});
+			});
+		
 
 		$('#addother').click(function(){
 			var insura = $('#ins').val();
@@ -154,7 +215,7 @@
 	        <div class="modal-body">
 	            <p>Offered Services:
 	            	<div class="form-group">
-		          		<select name="servicechoice" class="form-control" onchange='Days(this.value);'> 
+		          		<select name="servicechoice" class="form-control"> 
 		          			<option value="" disabled selected>Select service</option> 
 		          			<?php $members = array("Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Facade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager");sort($members, SORT_NATURAL | SORT_FLAG_CASE);foreach ($members as $key ) {echo "<option value='".$key."'>".$key."</option>";}?>
 		          		</select>
@@ -188,7 +249,7 @@
 				</div>
 			</p>
 		          <p>Feedback date<div class="form-group">
-				<select name="days" class="form-control" onchange='Days(this.value);'> 
+				<select name="days" class="form-control" onchange="Days(this.value);"> 
 					<option value="" disabled selected>Select days</option> 
 					<?php 
 														$days = array(
@@ -263,14 +324,14 @@
 		    			<div class="row">
 		    				<div class="col-sm-12 active-tenders" id="cprofile">
 		    						<h3>Project Information
-		    						<button class="btn buts save_proj" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction()"><i class="fa fa-save" style="font-size:15px" href=""></i>Save</button>
+		    						<button type="button" class="btn buts save_proj upd" style="display: none; float:right;margin-top:-14px;"><i class="fa fa-save" style="font-size:15px" id="project_record_save"></i>Save</button>
 		    						<button class="btn buts" id="edit_proj" onclick="myFunction()" style="float:right;margin-top:-14px;" ><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
 		    				</div>			
 		    				<div class="col-sm-12">
 		    					<!--<form id="projform" action="{{ url('project_info')}}" method="POST">-->
-		    						@csrf
 									{!! Form::open(['action' => ['ProjectInformationController@update',  $project->project_record_id ], 'id' => 'projform', 'method' => 'POST'])!!}
-		    					<table class="table table-striped table-hover">
+									{!! Form::hidden('project_record_id', $project->project_record_id) !!}
+								<table class="table table-striped table-hover">
 		    						<tr>
 		    							<td>Project Title
   											
@@ -349,16 +410,17 @@
 		    						<tr>
 		    							<td>Constraints
 		    								
-		    							</td>
-		    							<td>                               
-		    								<input type="text" name="constraint_one" class="form-control proje" placeholder="Adjacent Tube Tunnel" value="{{ $constraints->constraint_one }}" readonly>
-		    								<input type="text" name="constraint_two" class="form-control proje" placeholder="Existing Buildings" value="{{ $constraints->constraint_two }}" readonly>
-		    								<input type="text" name="constraint_three" class="form-control proje" placeholder="Weak Ground Conditions" value="{{ $constraints->constraint_three }}" readonly>
-		    							</td>
+										</td>
+										<td> 
+										@foreach ($constraints as $const)
+										                              
+		    								<input type="text" name="constraint" class="form-control proje" placeholder="Adjacent Tube Tunnel" value="{{ $const->constraint }}" readonly>
+		    							
+										@endforeach
+										</td>
 		    						</tr>
 		    						<tr>
-		    							<td>Type of Development
-		    								
+		    							<td>Type of Development	
 		    							</td>
 		    							<td><input type="text" name="type_of_development" class="form-control proje" placeholder="New Built" value="{{ $project->type_of_development }}" readonly></td>
 		    						</tr>
@@ -374,36 +436,14 @@
 		    							</td>
 		    							<td>
 		    								<table width="100%">
-		    									<tr>
-		    										<td>Residential</td>&nbsp
-		    										<td><input type="text" name="use_area_one" class="form-control proje" placeholder="30,000m2" value="{{ $type->use_area_one }}"  readonly></td>
-		    										<td><input type="text" name="use_units_one" class="form-control proje" placeholder="200 units" value="{{ $type->use_units_one }}" readonly></td>
-		    										<td><input type="text" name="use_types_one" class="form-control proje" placeholder="High-End" value="{{ $type->use_type_one }}" readonly></td>
-												</tr>
+												@foreach ($type as $use)
 												<tr>
-		    										<td>Residential</td>&nbsp
-		    										<td><input type="text" name="use_area_two" class="form-control proje" placeholder="30,000m2" value="{{ $type->use_area_two }}" readonly></td>
-		    										<td><input type="text" name="use_units_two" class="form-control proje" placeholder="200 units" value="{{ $type->use_units_two }}" readonly></td>
-		    										<td><input type="text" name="use_types_two" class="form-control proje" placeholder="High-End" value="{{ $type->use_type_two }}" readonly></td>
+													<td>{{ $use->use_name }}</td>&nbsp
+													<td><input type="text" name="use_area[]" class="form-control proje" placeholder="30,000m2" value="{{ $use->use_area }}"  readonly></td>
+													<td><input type="text" name="use_units[]" class="form-control proje" placeholder="200 units" value="{{ $use->use_units }}" readonly></td>
+													<td><input type="text" name="use_type[]" class="form-control proje" placeholder="High-End" value="{{ $use->use_type }}" readonly></td>
 												</tr>
-												<tr>
-		    										<td>Office</td>&nbsp
-		    										<td><input type="text" name="use_area_three" class="form-control proje" placeholder="30,000m2" value="{{ $type->use_area_three }}" readonly></td>
-		    										<td><input type="text" name="use_units_three" class="form-control proje" placeholder="200 units" value="{{ $type->use_units_three }}" readonly></td>
-		    										<td><input type="text" name="use_types_three" class="form-control proje" placeholder="High-End" value="{{ $type->use_type_three }}" readonly></td>
-												</tr>
-												<tr>
-		    										<td>Retail</td>&nbsp
-		    										<td><input type="text" name="use_area_four" class="form-control proje" placeholder="30,000m2" value="{{ $type->use_area_four }}" readonly></td>
-		    										<td><input type="text" name="use_units_four" class="form-control proje" placeholder="200 units" value="{{ $type->use_units_four }}" readonly></td>
-		    										<td><input type="text" name="use_types_four" class="form-control proje" placeholder="High-End" value="{{ $type->use_type_four }}" readonly></td>
-		    									</tr>
-		    									<tr>
-		    										<td>Total</td>
-		    										<td id="total">57,000m2</td>
-		    										<td></td>
-		    										<td></td>
-		    									</tr>
+												@endforeach
 		    								</table>
 		    							</td>
 		    						</tr>
@@ -413,22 +453,12 @@
 		    							</td>
 		    							<td>
 		    								<table width="100%">
-		    									<tr>
-		    										<td>RIBA Stage 1 Completion</td>
-		    										<td><input type="text" name="riba_stage_one" class="form-control proje" placeholder="01/03/2019" value="{{ $milestones->riba_stage_one }}" readonly></td>
-		    									</tr>
-		    									<tr>
-		    										<td>RIBA Stage 2 Completion</td>
-		    										<td><input type="text" name="riba_stage_two" class="form-control proje" placeholder="01/07/2019" value="{{ $milestones->riba_stage_two }}" readonly></td>
-		    									</tr>
-		    									<tr>
-		    										<td>RIBA Stage 3 Completion</td>
-		    										<td><input type="text" name="riba_stage_three" class="form-control proje" placeholder="01/10/2019" value="{{ $milestones->riba_stage_three }}" readonly></td>
-		    									</tr>
-		    									<tr>
-		    										<td>RIBA Stage 4 Completion</td>
-		    										<td><input type="text" name="riba_stage_four" class="form-control proje" placeholder="01/12/2019" value="{{ $milestones->riba_stage_four }}" readonly></td>
-		    									</tr>
+												@foreach ($milestones as $mile)
+												<tr>
+													<td>{{ $mile->riba_stage }}</td>
+													<td><input type="text" name="date[]" class="form-control proje" placeholder="01/03/2019" value="{{ $mile->date }}" readonly></td>
+												</tr>
+												@endforeach
 		    								</table>
 		    							</td>								
 		    						</tr>
@@ -461,19 +491,13 @@
 		    							</td>
 		    							<td>
 		    								<table width="100%">
-		    									<tr>
-		    										<td>Architect</td>
-		    										<td><input type="text" name="name" class="form-control proje" placeholder="Allies and Morrison" value="{{ $team->name }}" readonly></td>
-		    									</tr>
-		    									<tr>
-		    										<td>Structural Engineer</td>
-		    										<td><input type="text" name="structural" class="form-control proje" placeholder="AKT II" readonly></td>
-		    									</tr>
-		    									<tr>
-		    										<td>Services Engineer</td>
-		    										<td><input type="text" name="services" class="form-control proje" placeholder="Sweco" readonly></td>
-		    									</tr>
-		    									<tr>
+												@foreach ($team as $team)
+												<tr>
+													<td>{{ $team->member_position }}</td>
+													<td><input type="text" name="name" class="form-control proje" placeholder="Allies and Morrison" value="{{ $team->member_name }}" readonly></td>
+												</tr>
+												@endforeach
+												<tr>
 		    										<td>Fire Engineer </td>
 		    										<td><a href="#">Active Tender</a></td>
 		    									</tr>
@@ -762,7 +786,8 @@
 		    				<div class="tender-container" id="mama">
 		    					<ul class="nav bid-form-nav">
 		    						<h3 data-toggle="modal" data-target="#selectServe" style="margin-bottom: 10px; margin-top: 0;padding: 15px;border: 3px solid grey;border-radius: 6px;text-align: center;" id="serveprojtitle" class="header-title animate-pop-in">
-		    						</h3>
+									</h3>
+									<input type="hidden" name="" id="">
 		    						<li class="active"><a data-toggle="tab" href="#section01">Pre-Qualification Questionnaire</a></li>
 		    						<li ><a data-toggle="tab" href="#section11">Scope</a></li>
 		    						<li><a data-toggle="tab" href="#section21">Appointment</a></li>
@@ -846,645 +871,13 @@
 							</div>
 
 		    						</div><br> 
-
-
-		    						{{-- <div class="row" style="margin: 0;">	
-		    						
-								<div class="col-sm-12">
-									<table id="Riba2">
-											  <tr>
-											    <th>Deliverable</th>
-											    <th>Details / Contents</th>
-											    <th style="border-left:3px solid #fe7235;border-top: ">R</th>
-											    <th>A</th>
-											    <th>C</th>
-											    <th style="border-right:3px solid #fe7235; ">I</th>
-											    <th>0</th>
-											    <th>1</th>
-											    <th>2</th>
-											    <th>3</th>
-											    <th>4</th>
-											    <th>5</th>
-											    <th>6</th>
-											    <th>7</th>
-
-
-											  </tr>
-											  <tr>
-											    <td>Strategic Brief</td>
-											  <td contenteditable='true'></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    											
-											  </tr>
-											  <tr>
-											    <td>Project Programme (Lead)</td>
-											    
-											    <td contenteditable='true'></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											    <td>Feasibility Study</td>
-											    <td contenteditable='true'></td>
-											   
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											    <td>Design Responsibility Matrix</td>
-											     <td contenteditable='true'></td>
-											   
-											   
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											   <td>Site Information Report</td>
-											     <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											     <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											     <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											     <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											    <td>Information Exchange Strategy</td>
-											     <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											    <td>Project Brief</td>
-											     <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											   
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											    <td>Risk Assessment (Lead)</td>
-											     <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											   
-
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											    <td>Handover Strategy (Lead)</td>
-											     <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    
-
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											    <td>Project Execution Plan</td>
-											     <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											   
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											    <td>Design Proposals from Design Team members</td>
-											     <td contenteditable='true'></td>
-											   <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											   <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											   <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											   <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											</table><br>
-											 <button type="button" class="btn btn-info">Add another Lines</button>
-								</div>
-							</div><br>
-							<div class="row">
-								<div class="col-sm-12">
-									<table id="Riba">
-											  <tr>
-											    <th> Meetings</th>
-											    <th>Purpose</th>
-											    <th>Attendees</th>
-											    <th>Assumed Duration (hours)</th>
-											    <th>Reoccurence / Number of Meetings</th>
-											    <th>Arrange</th>
-											    <th>Attend</th>
-											    <th>1</th>
-											    <th>2</th>
-											    <th>3</th>
-											    <th>4</th>
-											    <th>5</th>
-											    <th>6</th>
-											    <th>7</th>
-											  </tr>
-											  <tr>
-											    <td >Pre-Application Meetings</td>
-											   <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											   <td><div class="mama" onmouseup="mUp(this)"></div></td>    
-											  </tr>
-											  <tr>
-											    <td>Site Visits</td>
-											     <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											   <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											    <td>Site / Project Meetings (RIBA Stage 4/5)</td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											   <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											   <td>SC / PC Site Inspection</td>
-											   <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											   <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-										</table><br>
-										<button type="button" class="btn btn-primary">Add another Lines</button>
-								</div>
-							</div><br>
-							<div class="row">
-								<div class="col-sm-12">
-									<table id="Content">
-											  <tr>
-											    <th> Design Considerations</th>
-											    <th>Applies to</th>
-											  </tr>
-											 
-											  <tr>
-											   <td>Cost, programme, quality, health & safety during construction and operation, functionality, buildability, operation and maintenance.</td>
-											    <td contenteditable='true'></td>
-											  
-											  </tr>
-											   <tr>
-											   <td>All information provided by other members of the Project Team.</td>
-											      <td contenteditable='true'></td>
-											  </tr>
-											   <tr>
-											   <td>Good Practice in the Selection of Construction Materials 2011 (British Council of Offices Publication.</td>
-											     <td contenteditable='true'></td>
-											  </tr>
-											   <tr>
-											   <td>Statutory standards</td>
-											     <td contenteditable='true'></td>
-											  </tr>
-											   <tr>
-											   <td>Co-ordination with structural and building services</td>
-											     <td contenteditable='true'></td>
-											  </tr>
-										</table><br>
-										<button type="button" class="btn btn-info">Add another Lines</button>
-								</div>
-							</div><br>
-								<div class="row">
-								<div class="col-sm-12">
-									<table id="Stages">
-											  <tr>
-											    <th>Advise on</th>
-											    <th>0</th>
-											    <th>1</th>
-											    <th>2</th>
-											    <th>3</th>
-											    <th>4</th>
-											    <th>5</th>
-											    <th>6</th>
-											    <th>7</th>
-											  </tr>
-											  
-										      <tr>
-											  <td>Any products or materials, specified within the guidelines named in Item ???, that are relevant to the project and have been found to be deleterious or hazardous to health and safety.</td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											     <tr>
-											  <td>Assembly of Project Team. (Lead)</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											   <tr>
-											  <td>Need for and the scope of services by consultants, specialists, sub-contractors or suppliers. (Lead)</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-
-											   <tr>
-											  <td>Form and content of design outputs, their interfaces and a verification procedure. (Lead)</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-
-											   <tr>
-											  <td>Resolution of defects.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											  <td>Form and content of design outputs, their interfaces and a verification procedure. (Lead)</td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-
-											   <tr>
-											  <td>Relevant experience from previous projects.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											    <th>Monitor</th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											  </tr>
-
-											  <tr>
-											  <td>Work of the Designers Designers regarding…. [WHAT?]</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-
-											  <tr>
-											  <td>Performance of Design Team.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-												</div></td>
-											  </tr>										    
-											 
-											 <tr>
-											  <td>Compliance with statutory and contract requirements.</td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											    <th>Collaborate / Consult with</th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											  </tr>
-											  <tr>
-											  <td>Relevant Third Parties as required.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											  <td>Planning authority to discuss the project</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>	
-											  <tr>
-											  <td>Statutory authorities on developing design.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>	
-                                               <tr>
-											  <td>Project Manager & Employer on significant design issues. (Lead).</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>	
-											  <tr>
-											    <th>Co-ordinate</th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											  </tr>
-											  <tr>
-											  <td>Collation of all planning submission documents.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-
-											  <tr>
-											  <td>Reviewing design information provided by contractors or specialists to establish whether that information can be co-ordinated and integrated with other project information.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											   <tr>
-											    <th>Other</th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											  </tr>
-                                              
-                                              <tr>
-											  <td>Submit the [detailed / outline] planning application.</td>
-                                              <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-
-											   <tr>
-											  <td>Assisting building user during initial occupation period.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-
-											  <tr>
-											  <td>Review all instructions and information about the Project, provided by the Employer.</td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-
-											  <tr>
-											  <td>preparing and making submissions under building acts and/or regulations or other statutory requirements.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-
-
-										</table><br>
-										<button type="button" class="btn btn-success">Add another Lines</button>
-								</div>
-							</div><br> --}}
 		    					</div>
 		    					<div id="section21" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Appointment</h3>
-		    						<form method="post">
+		    						<!--<form method="post">-->
+									{!! Form::open(['action' => 'TenderController@store', 'method' => 'POST'])!!}
+										{!! Form::hidden('project_record_id', $project->project_record_id) !!}
+										<input type="hidden" id="tendserve" name="services">
 		    							<div class="row">
 		    								<div class="col-sm-12">
 		    									<div class="row">
@@ -1495,8 +888,8 @@
 		    										</div>
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
-															<select name="insurance" id="drpinsu" class="form-control" onchange="Insurance(this.value);">
-															    <option value="" disabled selected>Select insurance</option>  
+															<select name="insurance_name" id="drpinsu" class="form-control" onchange="Insurance(this.value);">
+															    <option name="" value="" disabled selected>Select insurance</option>  
 															    <?php 
 																	$insurance = array(
 																	"Professional",
@@ -1516,7 +909,7 @@
 															</select>
 														</div>
 														<div class="form-group">
-															<div id="showother" style="display:none;"/>
+															<div id="showother" style="display:none;">
 																<input type="text" name="bonds" id="ins" class="form-control" id="insurance" placeholder="Other insurance..." ><button type="button" class="btn btn-primary" id="addother" >Add to list</button>
 															</div>
 														</div>
@@ -1579,8 +972,8 @@
 		    										</div>
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
-															<select name="bonds[]"  class="form-control" >
-																<option value="" disabled selected>Select</option>
+															<select name="collateral_warranties"  class="form-control" >
+																<option  value="" disabled selected>Select</option>
 																<?php
 																$Service = array(
 																	"Collateral Warranties", "Third Party Rights", "Both"
@@ -1609,7 +1002,7 @@
 		    										</div>
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
-															<input type="number" placeholder="Insert Limit of Liability " name="limit_of_liability" class="form-control">
+															<input type="number" name="limit_of_liability" placeholder="Insert Limit of Liability " name="limit_of_liability" class="form-control">
 															</div>
 		    										</div>
 		    									</div>
@@ -1646,11 +1039,17 @@
 		    										</div>
 		    										<div class="form-group butcent">
 														<input id="sec2" type="submit" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
+														<input type="submit" name="Submit" value="Save" class="btn btn-primary butsize" href="{{ url('project_info_tender') }}">
 													</div>
+													<!--<div class="form-group butcent">
+															<input id="proj_form" type="submit" name="save" value="Save" class="btn btn-primary butsize"><a href="project_info/{{ $project->project_record_id }}/edit/tender">
+													</div>-->
+						
 		    									</div>
 		    								</div>
-		    							</div>
-		    						</form>
+										</div>
+									{!! Form::close() !!}
+		    						<!--</form>-->
 		    					</div>
 		    					<div id="section31" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Evaluation Settings</h3>
@@ -1733,14 +1132,14 @@
 		    										</div>
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
-															<input type="text" class="form-control" name="proj_fname" placeholder="First Name">
+															<input  type="text" class="form-control" name="created_by_fname" placeholder="First Name">
 															</div>
 															<div class="form-group">
-															<input type="text" class="form-control" name="proj_lname"
+															<input type="text" class="form-control" name="created_by_lname"
 															placeholder="Last Name">
 															</div>
 															<div class="input-group date form-group" id="datepicker2" data-date="02-2012" data-date-format="mm-yyyy">
-																 <input class="form-control" type="text" readonly="readonly" name="date" >	  
+																 <input class="form-control" type="text" readonly="readonly" name="date_created" >	  
 																 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 															</div>
 		    										</div>
@@ -1757,14 +1156,14 @@
 		    										</div>
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
-															<input type="text" class="form-control" name="proj_cfname" placeholder="First Name">
+															<input type="text" class="form-control" name="checked_by_fname" placeholder="First Name">
 														</div>
 														<div class="form-group">
-														<input type="text" class="form-control" name="proj_clname"
+														<input type="text" class="form-control" name="checked_by_lname"
 														placeholder="Last Name">
 														</div>
 														<div class="input-group date form-group" id="datepicker2" data-date="02-2012" data-date-format="mm-yyyy">
-															 <input class="form-control" type="text" readonly="readonly" name="date" >	  
+															 <input class="form-control" type="text" readonly="readonly" name="date_checked" >	  
 															 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 														</div>
 		    										</div>
@@ -1781,14 +1180,14 @@
 		    										</div>
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
-															<input type="text" class="form-control" name="proj_afname" placeholder="First Name">
+															<input type="text" class="form-control" name="approved_by_fname" placeholder="First Name">
 															</div>
 															<div class="form-group">
-															<input type="text" class="form-control" name="proj_alname"
+															<input type="text" class="form-control" name="approved_by_lname"
 															placeholder="Last Name">
 															</div>
 															<div class="input-group date form-group" id="datepicker2" data-date="02-2012" data-date-format="mm-yyyy">
-																 <input class="form-control" type="text" readonly="readonly" name="date" >	  
+																 <input class="form-control" type="text" readonly="readonly" name="date_approved" >	  
 																 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 															</div>
 		    										</div>
@@ -1803,7 +1202,7 @@
     										</div>
     										<div class="col-sm-6">
     											<div class="form-group">
-													<select name="statements[]"  class="form-control" >
+													<select name="statement[]"  class="form-control" >
 														<option value="" disabled selected>Select</option>
 														<?php
 														$Service = array(
@@ -2008,7 +1407,7 @@ var element=document.getElementById('bonds');
 	   $('#projform input.proje').attr('readonly',true);
 	   $('.save_proj').css('display', 'none');
 	   $('#edit_proj').css('display', 'block');
-	   $('#projform').submit();
+	//    $('#projform').submit();
 
 
 	}
@@ -2037,6 +1436,7 @@ var element=document.getElementById('bonds');
 	   $('#edit_proj2').css('display', 'block');
 	}
 </script>
+
 
 
 <script>

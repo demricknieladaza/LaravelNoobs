@@ -4,15 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use App\ProjectInformations;
-use App\TransportLink;
-use App\AreaSpecificInformation;
-use App\Constraints;
-use App\TypeOfUse;
-use App\Milestones;
-use App\Meetings;
-use App\UserAccountsModel;
-use App\ProjectTeam;
 
 class UsersController extends Controller
 {
@@ -32,7 +23,7 @@ class UsersController extends Controller
                     //Order By GIDO!!!!!!!!!@!!@
                     ->orderBy('created_at','DESC')
                     ->get();
-           return view('publish')->with('projects', $data);
+           return view('publish')->with('projects', $data);   
         }
         else
         {
