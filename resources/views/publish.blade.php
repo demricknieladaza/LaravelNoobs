@@ -60,7 +60,7 @@
 					<div class="hover-container-holder">
 						<div class="danpads tender-tile-single ">
 							<a href="{{ url('/publish/project_dashboard') }}" class="fill-div">
-							<div class="scaslerni tender-tiles new-project-tile hover-tile">
+							<div class="scaslerni tender-tiles new-project-tile hover-tile" style="background: #4b4b4e;">
 								<h2>Publish<br> New<br> Project</h2>
 							</div>
 							</a>
