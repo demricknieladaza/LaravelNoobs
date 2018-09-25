@@ -192,7 +192,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-12 search_result_row">
+					<div class="col-sm-12 search_result_row">
 							<div class="search_data">
 								<div class="row">
 									<div class="col-sm-3 project_image">
@@ -201,7 +201,7 @@
 									<div class="col-sm-9 project-excerpt">
 										<div class="row">
 											<div class="col-sm-12">
-												<h3 sty>Canada Water Masterplan<small> - 9 days left</small></h3>
+												<h3>Canada Water Masterplan<small> - 9 days left</small></h3>
 											</div>			
 											<div class="col-sm-6">
 												<h5>Fire Engineer and 9 Other Services</h5>
@@ -217,9 +217,9 @@
 											</div>				
 										</div>
 									</div>							
-								</div>							
+								</div>						
 							</div>
-							<figcaption>
+							<figcaption class="figcaption1">
 								<a href="{{ url('/winwork/pds') }}"><h3 style="color:white; ">Canada Water Masterplan</h3></a>
 								<p>
 									<a href="#" data-toggle="tooltip" title="Add to Favourites"><i class="fa fa-fw fa-star-o"></i></a>
@@ -254,43 +254,8 @@
 									</div>							
 								</div>						
 							</div>
-							<figcaption>
-								<a href="#"><h3 style="color:white; ">Canada Water Masterplan</h3></a>
-								<p>
-									<a href="#" data-toggle="tooltip" title="Add to Favourites"><i class="fa fa-fw fa-star-o"></i></a>
-									<a href="#" data-toggle="tooltip" title="Send Via Email"><i class="fa fa-fw fa-envelope-o"></i></a>
-								</p>
-							</figcaption>	
-						</div>	
-						<div class="col-sm-12 search_result_row">
-							<div class="search_data">
-								<div class="row">
-									<div class="col-sm-3 project_image">
-										<img src="{{asset('images/construction.jpg')}}" width="100%">
-									</div>
-									<div class="col-sm-9 project-excerpt">
-										<div class="row">
-											<div class="col-sm-12">
-												<h3>Canada Water Masterplan<small> - 9 days left</small></h3>
-											</div>			
-											<div class="col-sm-6">
-												<h5>Fire Engineer and 9 Other Services</h5>
-												<p>New-built located in Canada Water, London<br> 33,000 m2 office space, 5,500 m2 retail space</p>
-											</div>
-											<div class="col-sm-3 bid_section text-center">
-												<p>Construction Value</p>
-												<h3>£ 510K</h3>
-											</div>
-											<div class="col-sm-3 bid_section text-center">
-												<p>Avg Bid</p>
-												<h3>£ 310K</h3>
-											</div>				
-										</div>
-									</div>							
-								</div>						
-							</div>
-							<figcaption>
-								<a href="#"><h3 style="color:white; ">Canada Water Masterplan</h3></a>
+							<figcaption class="figcaption1">
+								<a href="{{ url('/winwork/pds') }}"><h3 style="color:white; ">Canada Water Masterplan</h3></a>
 								<p>
 									<a href="#" data-toggle="tooltip" title="Add to Favourites"><i class="fa fa-fw fa-star-o"></i></a>
 									<a href="#" data-toggle="tooltip" title="Send Via Email"><i class="fa fa-fw fa-envelope-o"></i></a>
@@ -325,7 +290,42 @@
 								</div>						
 							</div>
 							<figcaption class="figcaption1">
-								<a href="#"><h3 style="color: white;">Canada Water Masterplan</h3></a>
+								<a href="{{ url('/winwork/pds') }}"><h3 style="color:white; ">Canada Water Masterplan</h3></a>
+								<p>
+									<a href="#" data-toggle="tooltip" title="Add to Favourites"><i class="fa fa-fw fa-star-o"></i></a>
+									<a href="#" data-toggle="tooltip" title="Send Via Email"><i class="fa fa-fw fa-envelope-o"></i></a>
+								</p>
+							</figcaption>	
+						</div>	
+						<div class="col-sm-12 search_result_row">
+							<div class="search_data">
+								<div class="row">
+									<div class="col-sm-3 project_image">
+										<img src="{{asset('images/construction.jpg')}}" width="100%">
+									</div>
+									<div class="col-sm-9 project-excerpt">
+										<div class="row">
+											<div class="col-sm-12">
+												<h3>Canada Water Masterplan<small> - 9 days left</small></h3>
+											</div>			
+											<div class="col-sm-6">
+												<h5>Fire Engineer and 9 Other Services</h5>
+												<p>New-built located in Canada Water, London<br> 33,000 m2 office space, 5,500 m2 retail space</p>
+											</div>
+											<div class="col-sm-3 bid_section text-center">
+												<p>Construction Value</p>
+												<h3>£ 510K</h3>
+											</div>
+											<div class="col-sm-3 bid_section text-center">
+												<p>Avg Bid</p>
+												<h3>£ 310K</h3>
+											</div>				
+										</div>
+									</div>							
+								</div>						
+							</div>
+							<figcaption class="figcaption1">
+								<a href="{{ url('/winwork/pds') }}"><h3 style="color:white; ">Canada Water Masterplan</h3></a>
 								<p>
 									<a href="#" data-toggle="tooltip" title="Add to Favourites"><i class="fa fa-fw fa-star-o"></i></a>
 									<a href="#" data-toggle="tooltip" title="Send Via Email"><i class="fa fa-fw fa-envelope-o"></i></a>

@@ -87,7 +87,66 @@
 		background: white;
 	}
 	.datepicker{z-index:9999 !important}
+
+	/*+++++++++++++++++++++++++++++++++++++++*/
+	.imageThumb {
+	  max-height: 75px;
+	  border: 2px solid;
+	  padding: 1px;
+	  cursor: pointer;
+	}
+	.pip {
+	  display: inline-block;
+	  margin: 10px 10px 0 0;
+	}
+	.remove {
+	  display: block;
+	  background: #444;
+	  border: 1px solid black;
+	  color: white;
+	  text-align: center;
+	  cursor: pointer;
+	}
+	.remove:hover {
+	  background: white;
+	  color: black;
+	}
 </style>
+<script type="text/javascript">
+	$(document).ready(function() {
+	  if (window.File && window.FileList && window.FileReader) {
+	    $("#files").on("change", function(e) {
+	      var files = e.target.files,
+	        filesLength = files.length;
+	      for (var i = 0; i < filesLength; i++) {
+	        var f = files[i]
+	        var fileReader = new FileReader();
+	        fileReader.onload = (function(e) {
+	          var file = e.target;
+	          $("<span class=\"pip\">" +
+	            "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
+	            "<br/><span class=\"remove\">Remove image</span>" +
+	            "</span>").insertAfter("#files");
+	          $(".remove").click(function(){
+	            $(this).parent(".pip").remove();
+	          });
+	          
+	          // Old code here
+	          /*$("<img></img>", {
+	            class: "imageThumb",
+	            src: e.target.result,
+	            title: file.name + " | Click to remove"
+	          }).insertAfter("#files").click(function(){$(this).remove();});*/
+	          
+	        });
+	        fileReader.readAsDataURL(f);
+	      }
+	    });
+	  } else {
+	    alert("Your browser doesn't support to File API")
+	  }
+	});
+</script>
 <script type="text/javascript">
 	$(document).ready(function() {
 	    var max_fields      = 10; //maximum input boxes allowed
@@ -232,6 +291,9 @@
         $(this).find('#inputName').focus();
     });
 </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 <div class="modal fade" id="awards" role="dialog">
 	  <div class="modal-dialog">
 	  
@@ -398,12 +460,12 @@
 					</div>
 					{{-- <input type="button" id="next" value="Next" onclick="validateFormSection()" /> --}}
 					<div id="section2" class="tab-pane fade tender-container">
-						<div class="form-group" style="text-align: right;">
+						<!-- <div class="form-group" style="text-align: right;">
 							<div class="input_fields_team">
 								<button class="btn" id="button1 ">Complete Page using Profile Information</button>
 							</div>
-						</div>
-						<h3 class="bid-form-title">Organisation</h3>
+						</div> -->
+						<h3 class="bid-form-title">Organisation<button class="btn" id="button1 " style="margin-left: 48%; background: #FE7235;">Complete Page using Profile Information</button></h3>
 						<div class="kuwestion">
 							<div class="inputscheck">
 							<div class="row">
@@ -448,8 +510,8 @@
 											<ul id="servicelist" class="servicelist">
 											<?php
 											$Service = array(
-												"Architect", "Structural Engineer", "Service Engineer",
-												"Fire Engineer", "Acoustic Engineer", "Principal Designer","Facade Engineer" , "Building Control", "Lighting Consultant", "Security Consultant", "Planning Consultant" , "Sustainability Consultant", "BIM Consultant", "Quantity Surveyor", "Project Manager"
+												"Architect", "Structural engineer", "Service engineer",
+												"Fire engineer", "Acoustic engineer", "Principal designer","Facade engineer" , "Building control", "Lighting consultant", "Security consultant", "Planning consultant" , "Sustainability consultant", "BIM consultant", "Quantity surveyor", "Project manager"
 											);
 											sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
 											foreach ($Service as $key ) {
@@ -474,49 +536,65 @@
 											</div>
 										</div>
 									</div>
-									<div class="row">
-										<div class="col-sm-4">
-											<div class="form-group">
-												Awards
-											</div>
+							<div class="row" style="padding-bottom:10px;">
+								<div class="col-sm-4">
+								Awards
+								</div>
+								<div class="col-sm-8">
+									<div class="form-group">
+										<div class="col-sm-6" style="padding:0;">
+											<input type="text" name="" class="form-control" placeholder="Enter name of award">
 										</div>
-										<div class="col-sm-8">
-											<div id="Awards">
-												<div class="form-group">
-													<input type="text" name="" class="form-control" placeholder="Enter name of award">
-												</div>
-												<div class="form-group">
-													<input type="text" name="" class="form-control" placeholder="Enter details">
-												</div>
-												<div class="form-group">
-													<input type="text" name="" class="form-control" placeholder="Awarded by">
-												</div>
-												<div class="form-group">
-													<select name="awards_year" class="form-control">
-														<option value="">Year awarded</option>
-													<?php 
-														$cur_year = date('Y');
-														$years = [];
-													    for ($i=0; $i<=50; $i++) {
-													        array_push($years,$cur_year--);
-													    }
-													    foreach ($years as $year ) {
-													    	echo "<option value='".$year."'>".$year."</option>";
-													    }
-													?>
-													</select>
-												</div>
-											</div>
-											<ul class="addeditem" style="list-style: none;padding: 0;">
-													
-												</ul>
+										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+											
 											<div class="form-group">
-												<div class="input_fields_piste">
-												    <button type="button" class="btn btn-primary" id="add_award" >Add another award</button>
-												</div>
+												<select name="awards_year" class="form-control">
+													<option value="">Year awarded</option>
+												<?php 
+													$cur_year = date('Y');
+													$years = [];
+												    for ($i=0; $i<=50; $i++) {
+												        array_push($years,$cur_year--);
+												    }
+												    foreach ($years as $year ) {
+												    	echo "<option value='".$year."'>".$year."</option>";
+												    }
+												?>
+												</select>
 											</div>
 										</div>
 									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4"></div>
+								<div class="col-sm-8">
+									<div class="form-group">
+									<input type="text" name="" class="form-control" placeholder="Awarded by">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4"></div>
+								<div class="col-sm-8">
+									<div class="form-group">
+										<textarea id="text-input" cols="25" rows="3" placeholder="Enter details"></textarea>
+												<div class="word-counter">
+												     <label id="count-label">3000</label>/3000 words
+												</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4"></div>
+								<div class="col-sm-8">
+									<div class="form-group">
+									<div class="input_fields_piste">
+												    <button type="button" class="btn btn-primary" id="add_award" >Add another award</button>
+												</div>
+									</div>
+								</div>
+							</div>
 									<div class="row">
 										<div class="col-sm-4">
 											<div class="form-group">
@@ -531,15 +609,12 @@
 												<input type="number" name="" id="consvalue" class="form-control" placeholder="Construction value ">
 											</div>
 
-										<div class="form-group">
-								               <input type="checkbox" name="" value="cheked" class="filled-in" id="valconfi" ><label for="valconfi">Value Confidential </label>
-							              </div>
-							              
+										
 						                    <label for="typeofuse"><strong>Type of use</strong></label>
 											<ul id="typeofuse" class="typeofuse">
 											<?php
 											$Service = array(
-												"Residential","Commercial ","Retail","Leisure","Sports and Venues","Hotel","Industrial","Education","Healthcare","Defence","Aviation","Highways","Bridges","Rail","Water","Oil,Gas and Chemical"
+												"Residential","Commercial ","Retail","Leisure","Sports and venues","Hotel","Industrial","Education","Healthcare","Defence","Aviation","Highways","Bridges","Rail","Water","Oil,gas and chemical"
 											);
 											sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
 											foreach ($Service as $key ) {
@@ -552,11 +627,7 @@
 
 											?>
 											</ul>
-											{{-- <div class="form-check">
-												<label>
-													<input type="checkbox" name="other"> <span class="label-text">Other</span>
-												</label>
-											</div> --}}
+											
 											<div class="form-group divaddservtypeofuse">
 												<input type="text" class="form-control hid adtypeofuse" name="adserv">
 											    <button type="button" class="btn btn-primary notherbuttypeofuse" onclick="showaddtype()">Add another type of use</button>
@@ -567,7 +638,7 @@
 													<option value="" disabled selected>Select service</option>
 													<?php 
 														$Services = array(
-															"Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Facade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager"
+															"Architect","Structural engineer","Service engineer","Fire engineer","Acoustic engineer","Principal designer","Facade engineer","Building control","Lighting consultant","Security consultant","Planning consultant","Sustainability consultant","BIM consultant","Quantity surveyor","Project manager"
 														);
 														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
 														foreach ($Services as $key ) {
@@ -579,22 +650,29 @@
 													<option>Other</option>
 												</select>
 											</div>
-											<div class="form-group">
-												<div class="input-group date" id="datepicker2" data-date="02-2012" 
+							<div class="row" style="padding-bottom:10px;">
+								<div class="col-sm-12">
+									<div class="form-group">
+										<div class="col-sm-6" style="padding:0;">
+											<div class="input-group date" id="datepicker7" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
 													 <input class="form-control" type="text" placeholder="Provided this service from" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
-											</div>
-											<div class="form-group">
-												<div class="input-group date" id="datepicker3" data-date="02-2012" 
+										</div>
+										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+											<div class="input-group date" id="datepicker8" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
 													 <input class="form-control" type="text" placeholder="Provided this service until" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
-											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
 											<div id="addedservices">
 												
 											</div>
@@ -604,11 +682,11 @@
 												    <div></div>
 												</div>
 											</div>
-											<label for="typeofdev"><strong>Select Type of Development</strong></label>
+											<label for="typeofdev"><strong>Select type of development</strong></label>
 											<ul id="typeofdev" class="typeofdev">
 											<?php
 											$Service = array(
-												"New Built","Refurbishment ","Demolition"
+												"New built","Refurbishment ","Demolition"
 											);
 											sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
 											foreach ($Service as $key ) {
@@ -621,27 +699,28 @@
 
 											?>
 											</ul>
-											<div class="form-group divaddservtypeofdev">
-												<input type="text" class="form-control hid adtypeofdev" name="addev">
-											    <button type="button" class="btn btn-primary notherbuttypeofdev" onclick="showaddtypedev()">Add another type of development</button>
-											    <button type="button" class="btn btn-primary hid adtypeofdev" id="adddevbut" onclick="addtypeofdev()">Add type of development</button>
-											</div>
+										
 													
 											<div class="form-group">
-												<textarea cols="4" rows="5" id="textarea" maxlength="2000" placeholder="Enter description of the project  "></textarea>
-  												<p style="color: grey;"><span id="rchars" >3000</span>/3000 words remaining</p>
-											</div>
-											<div class="form-group">													
 												
-												<label for="uploadImage7s"><strong>Upload Images</strong></label>
-												<input id="uploadImage7s" type="file" name="upimages[]" multiple accept='image/*'name="myPhoto" />
+												<textarea id="text-input1" cols="25" rows="3" placeholder="Enter details"></textarea>
+												<div class="word-counter">
+												     <label id="count-label1">3000</label>/3000 words
+												</div>
+												
+											</div>
+											<div class="form-group">	
+												<div class="field" align="left">
+												  <strong>Upload your images</strong>
+												  <input type="file" id="files" name="files[]" multiple />
+												</div>
 						                    </div>
 						                    <div class="form-group">
 												<select name="Sel"  class="form-control" >
 													<option value="" disabled selected>Select project team member</option>
 													<?php 
 														$members = array(
-															"Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Facade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager"
+															"Architect","Structural engineer","Service engineer","Fire engineer","Acoustic engineer","Principal designer","Facade engineer","Building control","Lighting consultant","Security consultant","Planning consultant","Sustainability consultant","BIM consultant","Quantity surveyor","Project manager"
 														);
 														sort($members, SORT_NATURAL | SORT_FLAG_CASE);
 														foreach ($members as $key ) {
@@ -685,13 +764,13 @@
 												    <button class="btn btn-primary" id="addprojmember">Add another project team member</button>
 												    <div></div>
 												</div>
-											</div><br>
+											</div>
 											<div class="form-group">
 												<div class="input_fields_project">
 												    <button type="button" class="btn btn-primary" id="" >Add another project</button>
 												    <div></div>
 												</div>
-											</div><br>
+											</div>
 											{{-- <div class="form-group">
 												<div class="input_fields_project">
 												    <button class="btn btn-primary" id="add_field_project">Add another XXX</button>
@@ -742,58 +821,37 @@
 											<input id="uploadImage7s" type="file" name="upimages[]" multiple accept='image/*'name="myPhoto" />
 								        </div>
 						            </div>
-						            <div class="row">
-										<div class="col-sm-4">
-											<div class="form-group">
-												Accreditations
-											</div>
-										</div>
-										<div class="col-sm-8">
-											<div class="form-group">
-												<select name='ddlSelectYear' class="form-control">
-										            <option value="">Select Accreditation</option>
-										         <?php 
+						           <div class="row" style="padding-bottom:10px;">
+													<div class="col-sm-4">
+													Accredation</div>
+													<div class="col-sm-8">
+													<div class="form-group">
+													<div class="col-sm-6" style="padding:0;">
+													<div class="autocomplete" >
+    													<input id="myInput" class="form-control" type="text" name="accredation" placeholder="Accredation">
+ 													 </div>
 
-													$Accre = array("MCIOD",
-																	"AssocRICS",
-																	"MRICS",
-																	"FRICS",
-																	"HonRICS",
-																	"BREEAM AP",
-																	"RIBA"
-																);
-
-													sort($Accre,SORT_NATURAL | SORT_FLAG_CASE);
-
-													foreach ($Accre as $key) {
-													  echo "<option value='".$key."'>".$key."</option>";
-													}
-
-													 ?>
-													 <option>Others</option>
-										        </select>
-											</div>
-										</div>
-									</div>
-
-									<div class="row">
-										<div class="col-sm-4"></div>
-										<div class="col-sm-8">
-											<select name='degree_year' class="form-control">
-											    <option value="">Year awarded</option>
-											    <?php 
+													</div>
+													<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+													<select name='degree_year' class="form-control">
+													<option value="">Year awarded</option>
+													<?php 
 													$cur_year = date('Y');
 													$years = [];
-												    for ($i=0; $i<=50; $i++) {
-												        array_push($years,$cur_year--);
-												    }
-												    foreach ($years as $year ) {
-												    	echo "<option value='".$year."'>".$year."</option>";
-												    }
-												?>
-											</select>
-										</div>
-									</div><br>
+													for ($i=0; $i<=50; $i++) {
+													array_push($years,$cur_year--);
+													}
+													foreach ($years as $year ) {
+													echo "<option value='".$year."'>".$year."</option>";
+													}
+													?>
+													</select>
+													</div>
+													</div>
+													</div>
+													</div>
+
+									
 									<div class="row">
 										<div class="col-sm-4">
 											
@@ -808,40 +866,25 @@
 											</div>
 										</div>
 									</div><br>
-									<div class="row">
-										<div class="col-sm-4">
-											<div class="form-group">
-												Degrees
-											</div>
-										</div>
-										<div class="col-sm-8">
-											<div class="form-group">
-												<select name="" class="form-control">
-													<option value="" disabled selected>Select degree</option>
-													<?php 
+									 <div class="row" style="padding-bottom:10px;">
+													<div class="col-sm-4">
+													Degree</div>
+													<div class="col-sm-8">
+													<div class="form-group">
+													<div class="col-sm-6" style="padding:0;">
+													<div class="autocomplete1" >
+    													<input id="myInput1" class="form-control" type="text" name="degree" placeholder="Degree">
+ 													 </div>
 
-													$degree = array("BA",
-															"BSA","BAcy","BAcc","B.A.Sc.","BArch ","BBA",
-															"BCE","BCom","BCA","BDes","B.Des.Corp","B.Des.Arch",
-															"BEng","BEC","BEE","BFA","B.Hlth.Sci.","BIT","BIGS",
-															"LLB","BLAS","BMath","BME","B.P.E.S.S","B.Res.Ec","BSc",
-															"BS.EOH","BSLS","BTech","BVA","MA","MBA","MCom","BCA","MEM",
-															"MEDM","MFA","MIS","LLM","MLA","MPS","MPA","MPH","MSc","MSF",
-															"MTech","DLP","Dr.mph.","PhD","PsyD","DrPH","DSc"
-																);
+													</div>
+													<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+													<input type="text" name="" class="form-control" placeholder="Name of degree">
+													</div>
+													</div>
+													</div>
+													</div>
 
-													sort($degree,SORT_NATURAL | SORT_FLAG_CASE);
 
-													foreach ($degree as $key) {
-													  echo "<option value='".$key."'>".$key."</option>";
-													}
-
-													 ?>
-													<option>Other</option>
-												</select>
-											</div>
-										</div>
-									</div>
                                        <div class="row">
 										<div class="col-sm-4">
 											
@@ -898,50 +941,66 @@
 											</div>
 										</div>
 									</div>
-									<div class="row">
-										<div class="col-sm-4">
-											Awards
+																<div class="row" style="padding-bottom:10px;">
+								<div class="col-sm-4">
+								Awards
+								</div>
+								<div class="col-sm-8">
+									<div class="form-group">
+										<div class="col-sm-6" style="padding:0;">
+											<input type="text" name="" class="form-control" placeholder="Enter name of award">
 										</div>
-										<div class="col-sm-8">
-
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter name of award">
-											</div>
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Awarded by">
-											</div>
-											
-											<div class="form-group">
-												<textarea cols="4" rows="5" id="textareaap" maxlength="3000" placeholder="Enter details"></textarea>
-  												<p style="color: grey;"><span id="rchars1" >3000</span>/3000 words remaining</p>
-											</div>
-											<div class="form-group">
-											<select name='yeard_awards' class="form-control">
-											    <option value="">Year awarded</option>
-											    <?php 
-													$cur_year = date('Y');
-													$years = [];
-												    for ($i=0; $i<=50; $i++) {
-												        array_push($years,$cur_year--);
-												    }
-												    foreach ($years as $year ) {
-												    	echo "<option value='".$year."'>".$year."</option>";
-												    }
-												?>
-											</select>
-											</div>
-											<div id="indiaddedaward"></div>
-											<div class="form-group">
-											    <button class="btn btn-primary" id="indiaddaward">Add another award</button>
-											    <div></div>
-											</div>
-											
+										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+											<input type="text" name="" class="form-control" placeholder="Awarded by">
 										</div>
 									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4"></div>
+								<div class="col-sm-8">
+									<div class="form-group">
+										<select name="awards_year" class="form-control">
+														<option value="">Year awarded</option>
+													<?php 
+														$cur_year = date('Y');
+														$years = [];
+													    for ($i=0; $i<=50; $i++) {
+													        array_push($years,$cur_year--);
+													    }
+													    foreach ($years as $year ) {
+													    	echo "<option value='".$year."'>".$year."</option>";
+													    }
+													?>
+													</select>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4"></div>
+								<div class="col-sm-8">
+									<div class="form-group">
+										<textarea id="text-input2" cols="25" rows="3" placeholder="Enter the details"></textarea>
+												<div class="word-counter">
+												     <label id="count-label2">3000</label>/3000 words
+												</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4"></div>
+								<div class="col-sm-8">
+									<div class="form-group">
+									<div class="input_fields_piste">
+												    <button type="button" class="btn btn-primary" id="add_award" >Add another award</button>
+												</div>
+									</div>
+								</div>
+							</div>
 									<div class="row">
 										<div class="col-sm-4">
 											<div class="form-group">
-											 Service
+											 Services offered
 											</div>
 										</div>
 										<div class="col-sm-8">
@@ -949,8 +1008,8 @@
 												<ul id="servicelistindi" class="servicelist">
 												<?php
 												$Service = array(
-													"Architect", "Structural Engineer", "Service Engineer",
-													"Fire Engineer", "Acoustic Engineer", "Principal Designer","Facade Engineer" , "Building Control", "Lighting Consultant", "Security Consultant", "Planning Consultant" , "Sustainability Consultant", "BIM Consultant", "Quantity Surveyor", "Project Manager"
+													"Architect", "Structural engineer", "Service engineer",
+													"Fire engineer", "Acoustic engineer", "Principal designer","Facade engineer" , "Building control", "Lighting consultant", "Security consultant", "Planning consultant" , "Sustainability consultant", "BIM consultant", "Quantity surveyor", "Project manager"
 												);
 												sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
 												foreach ($Service as $key ) {
@@ -967,7 +1026,7 @@
 											<div class="form-group divaddservbid">
 												<input type="text" class="form-control hid adservindi" name="adserv">
 											    <button type="button" class="btn btn-primary notherbutindi" onclick="showaddserindi()">Add another service</button>
-											    <button type="button" class="btn btn-primary hid adservindi" id="addservicebutindi" onclick="addserviceindi()">Add Service</button>
+											    <button type="button" class="btn btn-primary hid adservindi" id="addservicebutindi" onclick="addserviceindi()">Add service</button>
 											</div>
 										</div>
 									</div>
@@ -981,7 +1040,7 @@
 											</div>
 
 										<div class="form-group">
-								               <input type="checkbox" name="" value="cheked" class="filled-in" id="valconfi1" ><label for="valconfi1">Value Confidential </label>
+								               <input type="checkbox" name="" value="cheked" class="filled-in" id="valconfi1" ><label for="valconfi1">Value confidential </label>
 							              </div>
 										</div>
 									</div><br>
@@ -1052,7 +1111,7 @@
 													<option value="" disabled selected>Select service</option>
 													<?php 
 														$Services = array(
-															"Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Facade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager"
+															"Architect","Structural engineer","Service engineer","Fire engineer","Acoustic engineer","Principal Designer","Facade engineer","Building control","Lighting consultant","Security consultant","Planning consultant","Sustainability consultant","BIM consultant","Quantity Surveyor","Project manager"
 														);
 														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
 														foreach ($Services as $key ) {
@@ -1065,34 +1124,32 @@
 											</div>
 										</div>
 									</div>
-									<div class="row">
-										<div class="col-sm-4">
-											
-										</div>
-											<div class="col-sm-8">
-												<div class="input-group date" id="datepicker7" data-date="02-2012" 
+																<div class="row" style="padding-bottom:10px;">
+								<div class="col-sm-4">
+							
+								</div>
+								<div class="col-sm-8">
+									<div class="form-group">
+										<div class="col-sm-6" style="padding:0;">
+											<div class="input-group date" id="datepicker7" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
 													 <input class="form-control" type="text" placeholder="Provided this service from" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
-											</div>
-
-									</div><br>
-									<div class="row">
-										<div class="col-sm-4">
-											
 										</div>
-											<div class="col-sm-8">
-												<div class="input-group date" id="datepicker8" data-date="02-2012" 
+										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+											<div class="input-group date" id="datepicker8" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
 													 <input class="form-control" type="text" placeholder="Provided this service until" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
-											</div>
-
-									</div><br>
+										</div>
+									</div>
+								</div>
+							</div>
+							
 									<div class="row">
 										<div class="col-sm-4">
 											
@@ -1115,7 +1172,7 @@
 												<select name="" class="form-control">
 													<option value="" disabled selected>Select type of development</option>
 													<?php 
-														$Services = array("New Built","Refurbishment","Demolition"
+														$Services = array("New built","Refurbishment","Demolition"
 															
 														);
 														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
@@ -1144,8 +1201,10 @@
 									<div class="row">
 										<div class="col-sm-4"></div>
 										<div class="col-sm-8">
-												<textarea cols="4" rows="5" id="textareaap" maxlength="3000" placeholder="Enter Description of the project ....... "></textarea>
-  												<p style="color: grey;"><span id="rchars1" >3000</span>/3000 words remaining</p>
+													<textarea id="text-input3" cols="25" rows="3" placeholder="Enter project description"></textarea>
+												<div class="word-counter">
+												     <label id="count-label3">3000</label>/3000 words
+												</div>
 										</div>
 									</div>
 									<div class="row">
@@ -1171,7 +1230,7 @@
 										            <option value="">Select project team member</option>
 										       <?php 
 														$Services = array(
-															"Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Facade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager"
+															"Architect","Structural engineer","Service engineer","Fire engineer","Acoustic engineer","Principal designer","Facade engineer","Building Control","Lighting consultant","Security consultant","Planning consultant","Sustainability consultant","BIM consultant","Quantity surveyor","Project manager"
 														);
 														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
 														foreach ($Services as $key ) {
@@ -1244,8 +1303,10 @@
 										</div>
 										<div class="col-sm-8">
 											<div class="form-group">
-												<textarea cols="4" rows="5" id="textareaap" maxlength="3000" placeholder="Enter here  "></textarea>
-  												<p style="color: grey;"><span id="rchars1" >3000</span>/3000 words remaining</p>
+													<textarea id="text-input4" cols="25" rows="3" placeholder="Enter here.."></textarea>
+												<div class="word-counter">
+												     <label id="count-label4">3000</label>/3000 words
+												</div>
 											</div>
 										</div>
 									</div>
@@ -1275,8 +1336,10 @@
 										</div>
 										<div class="col-sm-8">
 											<div class="form-group">
-												<textarea id="textarea2" placeholder="Enter text here"></textarea>
-												<p style="color: grey;"><span id="rchars2" >3000</span>/3000 words remaining</p>
+													<textarea id="text-input5" cols="25" rows="3" placeholder="Enter text here"></textarea>
+												<div class="word-counter">
+												     <label id="count-label5">3000</label>/3000 words
+												</div>
 											</div>
 										</div>
 									</div>
@@ -2031,7 +2094,7 @@
 										<div class="col-sm-8">
 											<div class="form-group">
 												{{-- <img id="uploadPreview4" style="width: 100px; height: 100px;" /> --}}
-												<label for="uploadImage7s"><strong>Upload Insurance Certificate</strong></label>
+												<label for="uploadImage7s"><strong>Upload insurance certificate</strong></label>
 												<input id="uploadImage4" type="file" name="myPhoto" onchange="PreviewImage4();" />
 											</div>
 										</div>
@@ -2087,8 +2150,10 @@
 										<div class="col-sm-4"></div>
 										
 										<div class="col-sm-8">
-								            <textarea id="textarea3" placeholder="Comments"></textarea>
-							             	<p style="color: grey;"><span id="rchars3" >3000</span>/3000 words remaining</p>	
+								           	<textarea id="text-input6" cols="25" rows="3" placeholder="Enter text here"></textarea>
+												<div class="word-counter">
+												     <label id="count-label6">3000</label>/3000 words
+												</div>
 										</div>
 									</div><br>
 									<div class="row">
@@ -2115,8 +2180,10 @@
 										<div class="col-sm-4"></div>
 										
 										<div class="col-sm-8">
-								             <textarea id="textarea6" placeholder="Comments"></textarea>
-								             <p style="color: grey;"><span id="rchars6" >3000</span>/3000 words remaining</p>
+								            	<textarea id="text-input7" cols="25" rows="3" placeholder="Comments"></textarea>
+												<div class="word-counter">
+												     <label id="count-label7">3000</label>/3000 words
+												</div>
 							             
 										</div>
 									</div><br>
@@ -2144,8 +2211,10 @@
 										<div class="col-sm-4"></div>
 										
 										<div class="col-sm-8">
-								             <textarea id="textarea4" placeholder="Comments"></textarea>
-								             <p style="color: grey;"><span id="rchars4" >3000</span>/3000 words remaining</p>
+								            	<textarea id="text-input8" cols="25" rows="3" placeholder="Comments"></textarea>
+												<div class="word-counter">
+												     <label id="count-label8">3000</label>/3000 words
+												</div>
 							             
 										</div>
 									</div><br>
@@ -2162,7 +2231,7 @@
 							             </div>
 									</div><br>
 									<div class="row">
-										<div class="col-sm-4">Net  Contribution  Clause </div>
+										<div class="col-sm-4">Net  contribution  clause </div>
 										<div class="col-sm-8">
 												<p >Yes</p>
 										</div>
@@ -2205,8 +2274,10 @@
 											
 										</div>
 										<div class="col-sm-8">
-												<textarea id="textarea5" placeholder="Comments"></textarea>
-												<p style="color: grey;"><span id="rchars5" >3000</span>/3000 words remaining</p>
+												<textarea id="text-input9" cols="25" rows="3" placeholder="Comments"></textarea>
+												<div class="word-counter">
+												     <label id="count-label9">3000</label>/3000 words
+												</div>
 										</div>
 									</div><br>
 									 <div class="row">
@@ -2528,7 +2599,7 @@ $('textarea').keyup(function() {
 				$("li.active").next('li').addClass("active");
 				list.removeClass("active");
 
-				// $(".tender-container.active.in").find('.inputscheck').addClass("disd");
+				// $(".tender-container.active.in").find('.inputscheck').addClass("");
 
 				
 
@@ -2549,7 +2620,7 @@ $('textarea').keyup(function() {
 				$("li.active").next('li').addClass("active");
 				list.removeClass("active");
 
-				// $(".tender-container.active.in").find('.inputscheck').addClass("disd");
+				// $(".tender-container.active.in").find('.inputscheck').addClass("");
 
 				var divi = $(".tender-container.active.in");
 				$(".tender-container.active.in").next().addClass("active");
@@ -2566,7 +2637,7 @@ $('textarea').keyup(function() {
 				$("li.active").next('li').addClass("active");
 				list.removeClass("active");
 
-				// $(".tender-container.active.in").find('.inputscheck').addClass("disd");
+				// $(".tender-container.active.in").find('.inputscheck').addClass("");
 
 				var divi = $(".tender-container.active.in");
 				$(".tender-container.active.in").next().addClass("active");
@@ -2584,7 +2655,7 @@ $('textarea').keyup(function() {
 			$("li.active").next('li').addClass("active");
 			list.removeClass("active");
 
-			// $(".tender-container.active.in").find('.inputscheck').addClass("disd");
+			// $(".tender-container.active.in").find('.inputscheck').addClass("");
 
 			var divi = $(".tender-container.active.in");
 			$(".tender-container.active.in").next().addClass("active");
@@ -2601,7 +2672,7 @@ $('textarea').keyup(function() {
 				$("li.active").next('li').addClass("active");
 				list.removeClass("active");
 
-				// $(".tender-container.active.in").find('.inputscheck').addClass("disd");
+				// $(".tender-container.active.in").find('.inputscheck').addClass("");
 
 				var divi = $(".tender-container.active.in");
 				$(".tender-container.active.in").next().addClass("active");
@@ -2683,7 +2754,7 @@ $('textarea').keyup(function() {
 
         }
         else if(valid){
-        	$("li.active").next().removeClass("disd");
+        	$("li.active").next().removeClass("");
         }
         jQuery('html,body').animate({scrollTop:0},0);
         return valid;
@@ -2879,6 +2950,431 @@ $('textarea').keyup(function() {
 
 
 	});
+</script>
+<script type="text/javascript">
+	var limitWord = 3000;
+$("#text-input").keyup(function () {
+    $this = $(this);
+    var regex = /\s+/gi;
+    var wordcount = jQuery.trim($this.val()).replace(regex, ' ').split(' ').length;
+    if (wordcount <= limitWord) {
+        chars = $this.val().length;
+    } else {
+        var text = $(this).val();
+        var new_text = text.substr(0, chars);
+        $(this).val(new_text);
+        wordcount--;
+    }
+    $("#count-label").html(limitWord - wordcount);
+});
+</script>
+<script type="text/javascript">
+	var limitWord = 3000;
+$("#text-input1").keyup(function () {
+    $this = $(this);
+    var regex = /\s+/gi;
+    var wordcount = jQuery.trim($this.val()).replace(regex, ' ').split(' ').length;
+    if (wordcount <= limitWord) {
+        chars = $this.val().length;
+    } else {
+        var text = $(this).val();
+        var new_text = text.substr(0, chars);
+        $(this).val(new_text);
+        wordcount--;
+    }
+    $("#count-label1").html(limitWord - wordcount);
+});
+</script>
+<script type="text/javascript">
+	var limitWord = 3000;
+$("#text-input2").keyup(function () {
+    $this = $(this);
+    var regex = /\s+/gi;
+    var wordcount = jQuery.trim($this.val()).replace(regex, ' ').split(' ').length;
+    if (wordcount <= limitWord) {
+        chars = $this.val().length;
+    } else {
+        var text = $(this).val();
+        var new_text = text.substr(0, chars);
+        $(this).val(new_text);
+        wordcount--;
+    }
+    $("#count-label2").html(limitWord - wordcount);
+});
+</script>
+<script type="text/javascript">
+	var limitWord = 3000;
+$("#text-input3").keyup(function () {
+    $this = $(this);
+    var regex = /\s+/gi;
+    var wordcount = jQuery.trim($this.val()).replace(regex, ' ').split(' ').length;
+    if (wordcount <= limitWord) {
+        chars = $this.val().length;
+    } else {
+        var text = $(this).val();
+        var new_text = text.substr(0, chars);
+        $(this).val(new_text);
+        wordcount--;
+    }
+    $("#count-label3").html(limitWord - wordcount);
+});
+</script>
+<script type="text/javascript">
+	var limitWord = 3000;
+$("#text-input4").keyup(function () {
+    $this = $(this);
+    var regex = /\s+/gi;
+    var wordcount = jQuery.trim($this.val()).replace(regex, ' ').split(' ').length;
+    if (wordcount <= limitWord) {
+        chars = $this.val().length;
+    } else {
+        var text = $(this).val();
+        var new_text = text.substr(0, chars);
+        $(this).val(new_text);
+        wordcount--;
+    }
+    $("#count-label4").html(limitWord - wordcount);
+});
+</script>
+<script type="text/javascript">
+	var limitWord = 3000;
+$("#text-input5").keyup(function () {
+    $this = $(this);
+    var regex = /\s+/gi;
+    var wordcount = jQuery.trim($this.val()).replace(regex, ' ').split(' ').length;
+    if (wordcount <= limitWord) {
+        chars = $this.val().length;
+    } else {
+        var text = $(this).val();
+        var new_text = text.substr(0, chars);
+        $(this).val(new_text);
+        wordcount--;
+    }
+    $("#count-label5").html(limitWord - wordcount);
+});
+</script>
+<script type="text/javascript">
+	var limitWord = 3000;
+$("#text-input5").keyup(function () {
+    $this = $(this);
+    var regex = /\s+/gi;
+    var wordcount = jQuery.trim($this.val()).replace(regex, ' ').split(' ').length;
+    if (wordcount <= limitWord) {
+        chars = $this.val().length;
+    } else {
+        var text = $(this).val();
+        var new_text = text.substr(0, chars);
+        $(this).val(new_text);
+        wordcount--;
+    }
+    $("#count-label5").html(limitWord - wordcount);
+});
+</script>
+<script type="text/javascript">
+	var limitWord = 3000;
+$("#text-input6").keyup(function () {
+    $this = $(this);
+    var regex = /\s+/gi;
+    var wordcount = jQuery.trim($this.val()).replace(regex, ' ').split(' ').length;
+    if (wordcount <= limitWord) {
+        chars = $this.val().length;
+    } else {
+        var text = $(this).val();
+        var new_text = text.substr(0, chars);
+        $(this).val(new_text);
+        wordcount--;
+    }
+    $("#count-label6").html(limitWord - wordcount);
+});
+</script>
+<script type="text/javascript">
+	var limitWord = 3000;
+$("#text-input7").keyup(function () {
+    $this = $(this);
+    var regex = /\s+/gi;
+    var wordcount = jQuery.trim($this.val()).replace(regex, ' ').split(' ').length;
+    if (wordcount <= limitWord) {
+        chars = $this.val().length;
+    } else {
+        var text = $(this).val();
+        var new_text = text.substr(0, chars);
+        $(this).val(new_text);
+        wordcount--;
+    }
+    $("#count-label7").html(limitWord - wordcount);
+});
+</script>
+<script type="text/javascript">
+	var limitWord = 3000;
+$("#text-input5").keyup(function () {
+    $this = $(this);
+    var regex = /\s+/gi;
+    var wordcount = jQuery.trim($this.val()).replace(regex, ' ').split(' ').length;
+    if (wordcount <= limitWord) {
+        chars = $this.val().length;
+    } else {
+        var text = $(this).val();
+        var new_text = text.substr(0, chars);
+        $(this).val(new_text);
+        wordcount--;
+    }
+    $("#count-label5").html(limitWord - wordcount);
+});
+</script>
+<script type="text/javascript">
+	var limitWord = 3000;
+$("#text-input8").keyup(function () {
+    $this = $(this);
+    var regex = /\s+/gi;
+    var wordcount = jQuery.trim($this.val()).replace(regex, ' ').split(' ').length;
+    if (wordcount <= limitWord) {
+        chars = $this.val().length;
+    } else {
+        var text = $(this).val();
+        var new_text = text.substr(0, chars);
+        $(this).val(new_text);
+        wordcount--;
+    }
+    $("#count-label8").html(limitWord - wordcount);
+});
+</script>
+<script type="text/javascript">
+	var limitWord = 3000;
+$("#text-input9").keyup(function () {
+    $this = $(this);
+    var regex = /\s+/gi;
+    var wordcount = jQuery.trim($this.val()).replace(regex, ' ').split(' ').length;
+    if (wordcount <= limitWord) {
+        chars = $this.val().length;
+    } else {
+        var text = $(this).val();
+        var new_text = text.substr(0, chars);
+        $(this).val(new_text);
+        wordcount--;
+    }
+    $("#count-label9").html(limitWord - wordcount);
+});
+</script>
+<script>
+function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+          b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+  });
+}
+
+/*An array containing all the country names in the world:*/
+var countries = ["MCIOD",
+													"AssocRICS",
+													"MRICS",
+													"FRICS",
+													"HonRICS",
+													"BREEAM AP",
+													"RIBA"];
+
+/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+autocomplete(document.getElementById("myInput"), countries);
+</script>
+<script>
+function autocomplete1(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+          b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+  });
+}
+
+/*An array containing all the country names in the world:*/
+var countries = ["BA",
+															"BSA","BAcy","BAcc","B.A.Sc.","BArch ","BBA",
+															"BCE","BCom","BCA","BDes","B.Des.Corp","B.Des.Arch",
+															"BEng","BEC","BEE","BFA","B.Hlth.Sci.","BIT","BIGS",
+															"LLB","BLAS","BMath","BME","B.P.E.S.S","B.Res.Ec","BSc",
+															"BS.EOH","BSLS","BTech","BVA","MA","MBA","MCom","BCA","MEM",
+															"MEDM","MFA","MIS","LLM","MLA","MPS","MPA","MPH","MSc","MSF",
+															"MTech","DLP","Dr.mph.","PhD","PsyD","DrPH","DSc"];
+
+/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+autocomplete1(document.getElementById("myInput1"), countries);
 </script>
 
 @endsection
