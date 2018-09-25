@@ -56,6 +56,9 @@
 	.btop td{
 		border-top: 5px solid orange;
 	}
+	.form-control {
+		display: inline-block;
+	}
 </style>
 <div class="container below-header flip animated hinge">
 	<h1 id="logo" class="project-title bid-page-title centerh" style="margin-left: 5%;
@@ -259,10 +262,16 @@
 		    							<td>Constraints
 		    								
 		    							</td>
-		    							<td>                               
-		    								<input type="text" name="constraint_one" class="form-control proje" placeholder="Adjacent Tube Tunnel" readonly>
-		    								<input type="text" name="constraint_two" class="form-control proje" placeholder="Existing Buildings" readonly>
-		    								<input type="text" name="constraint_three" class="form-control proje" placeholder="Weak Ground Conditions" readonly>
+		    							<td>
+		    								<div class="form-group">                               
+		    									<input type="text" name="constraint[]" class="form-control proje" placeholder="Adjacent Tube Tunnel" readonly>
+		    								</div>
+		    								<div class="addedcons"></div>
+		    								<div class="form-group">
+		    									<input type="button" id="addconstraint" class="addbbutn btn form-control pull-right" style="width: 90px;background-color: #fe7235;color:white;" value="Add" disabled />
+		    								</div>
+		    								{{-- <input type="text" name="constraint_two" class="form-control proje" placeholder="Existing Buildings" readonly>
+		    								<input type="text" name="constraint_three" class="form-control proje" placeholder="Weak Ground Conditions" readonly> --}}
 		    							</td>
 		    						</tr>
 		    						<tr>
@@ -282,14 +291,14 @@
 		    								
 		    							</td>
 		    							<td>
-		    								<table width="100%">
-		    									<tr>
-		    										<td>Residential</td>&nbsp
+		    								<table width="100%" id="addedtypeofuse">
+		    									<tr class="lastitem">
+		    										<td><input type="text" name="use_area_one" class="form-control proje" placeholder="Residential" readonly></td>&nbsp
 		    										<td><input type="text" name="use_area_one" class="form-control proje" placeholder="30,000m2" readonly></td>
 		    										<td><input type="text" name="use_units_one" class="form-control proje" placeholder="200 units" readonly></td>
 		    										<td><input type="text" name="use_types_one" class="form-control proje" placeholder="High-End" readonly></td>
 												</tr>
-												<tr>
+												{{-- <tr>
 		    										<td>Residential</td>&nbsp
 		    										<td><input type="text" name="use_area_two" class="form-control proje" placeholder="30,000m2" readonly></td>
 		    										<td><input type="text" name="use_units_two" class="form-control proje" placeholder="200 units" readonly></td>
@@ -306,12 +315,14 @@
 		    										<td><input type="text" name="use_area_four" class="form-control proje" placeholder="30,000m2" readonly></td>
 		    										<td><input type="text" name="use_units_four" class="form-control proje" placeholder="200 units" readonly></td>
 		    										<td><input type="text" name="use_types_four" class="form-control proje" placeholder="High-End" readonly></td>
-		    									</tr>
+		    									</tr> --}}
 		    									<tr>
 		    										<td>Total</td>
 		    										<td id="total">57,000m2</td>
 		    										<td></td>
-		    										<td></td>
+		    										<td><div class="form-group">
+		    									<input type="button" id="addtypeofuse" class="addbbutn btn form-control pull-right" style="background-color: #fe7235;color:white;width: 90px;" value="Add" disabled />
+		    								</div></td>	
 		    									</tr>
 		    								</table>
 		    							</td>
@@ -322,11 +333,11 @@
 		    							</td>
 		    							<td>
 		    								<table width="100%">
-		    									<tr>
-		    										<td>RIBA Stage 1 Completion</td>
-		    										<td><input type="text" name="riba_stage_one" class="form-control proje" placeholder="01/03/2019" readonly></td>
+		    									<tr class="lastitemiba">
+		    										<td><input type="text" name="riba_stage_name[]" class="form-control proje" placeholder="RIBA Stage 1 Completion" readonly></td>
+		    										<td><input type="text" name="riba_stage_date[]" class="form-control proje" placeholder="01/03/2019" readonly></td>
 		    									</tr>
-		    									<tr>
+		    									{{-- <tr>
 		    										<td>RIBA Stage 2 Completion</td>
 		    										<td><input type="text" name="riba_stage_two" class="form-control proje" placeholder="01/07/2019" readonly></td>
 		    									</tr>
@@ -337,6 +348,12 @@
 		    									<tr>
 		    										<td>RIBA Stage 4 Completion</td>
 		    										<td><input type="text" name="riba_stage_four" class="form-control proje" placeholder="01/12/2019" readonly></td>
+		    									</tr> --}}
+
+		    									<tr>
+		    										<td colspan="2"><div class="form-group">
+		    									<input type="button" id="addriba" class="addbbutn btn form-control pull-right" style="background-color: #fe7235;color:white;width: 90px;" value="Add" disabled />
+		    								</div></td>
 		    									</tr>
 		    								</table>
 		    							</td>								
@@ -370,11 +387,11 @@
 		    							</td>
 		    							<td>
 		    								<table width="100%">
-		    									<tr>
-		    										<td>Architect</td>
-		    										<td><input type="text" name="architect" class="form-control proje" placeholder="Allies and Morrison" readonly></td>
+		    									<tr class="lastitemproj">
+		    										<td><input type="text" name="projteam_pos[]" class="form-control proje" placeholder="Architect" readonly></td>
+		    										<td><input type="text" name="projteam_name[]" class="form-control proje" placeholder="Allies and Morrison" readonly></td>
 		    									</tr>
-		    									<tr>
+		    									{{-- <tr>
 		    										<td>Structural Engineer</td>
 		    										<td><input type="text" name="structural" class="form-control proje" placeholder="AKT II" readonly></td>
 		    									</tr>
@@ -385,10 +402,11 @@
 		    									<tr>
 		    										<td>Fire Engineer </td>
 		    										<td><a href="#">Active Tender</a></td>
-		    									</tr>
+		    									</tr> --}}
 		    									<tr>
-		    										<td>Acoustic Engineer</td>
-		    										<td><a href="#">Active Tender</a></td>
+		    										<td colspan="2"><div class="form-group">
+		    										<input type="button" id="addprojteam" class="addbbutn btn form-control pull-right" style="background-color: #fe7235;color:white;width: 90px;" value="Add" disabled />
+		    										</div></td>
 		    									</tr>
 		    								</table>
 		    							</td>
@@ -1879,11 +1897,13 @@ var element=document.getElementById('bonds');
 <script>
 	function myFunction() {
 	   $('#projform input.proje').attr('readonly',false);
+	   $('#projform input.addbbutn').attr('disabled',false);
 	   $('.save_proj').css('display', 'block');
 	   $('#edit_proj').css('display', 'none');
 	}
 	function saveFunction() {
 	   $('#projform input.proje').attr('readonly',true);
+	   $('#projform input.addbbutn').attr('disabled',true);
 	   $('.save_proj').css('display', 'none');
 	   $('#edit_proj').css('display', 'block');
 	   $('#projform').submit();
@@ -1938,10 +1958,17 @@ $('a[href^="#"]').on('click', function(event) {
 
 });
 </script>
-
+<style type="text/css">
+	.clearBtn {
+	  position: absolute;
+	  top: 0;
+	  right: 5px;
+	  transition: right 0.2s;
+	}
+</style>
 <script type="text/javascript">
 	$(document).ready(function(){ 
-	    $(window).scroll(function(){ 
+	    $(window).scroll(function(){
 	        if ($(this).scrollTop() > 100) { 
 	            $('#scroll').fadeIn(); 
 	        } else { 
@@ -1952,7 +1979,45 @@ $('a[href^="#"]').on('click', function(event) {
 	        $("html, body").animate({ scrollTop: 0 }, 600); 
 	        return false; 
 	    }); 
+
+	    $('#addconstraint').click(function(e){
+	    	// e.preventDefault();
+	    	$('.addedcons').append('<div class="form-group"><input type="text" name="constraint[]" class="form-control proje" style="display:inline-block;width:95%;"><a href="#" class="remove_field">x</a></div>');
+	    });
+
+	    $('.addedcons').on("click",".remove_field", function(e){ //user click on remove text
+	        e.preventDefault(); $(this).parent('div').remove(); x--;
+	    });
+
+	    $('#addtypeofuse').click(function(e){
+	    	// e.preventDefault();
+	    	$('<a href="#" class="remove_field">x</a><tr><td><input type="text" name="use_name[]" class="form-control proje" placeholder="Residential" ></td>&nbsp<td><input type="text" name="use_area[]" class="form-control proje" placeholder="30,000m2" ></td><td><input type="text" name="use_units[]" class="form-control proje" placeholder="200 units" ></td><td><input type="text" name="use_types[]" class="form-control proje" placeholder="High-End" ></td></tr>').insertAfter('.lastitem');
+	    });
+
+	    $('#addedtypeofuse').on("click",".remove_field", function(e){ //user click on remove text
+	        e.preventDefault(); $(this).parent('div').remove(); x--;
+	    });
+			
+		$('#addriba').click(function(e){
+	    	// e.preventDefault();
+	    	$('<a href="#" class="remove_field">x</a><tr class="lastitemriba"><td><input type="text" name="riba_stage_name[]" class="form-control proje" placeholder="RIBA Stage 1 Completion" ></td><td><input type="text" name="riba_stage_date[]" class="form-control proje" placeholder="01/03/2019" ></td></tr>').insertAfter('.lastitemiba');
+	    });
+
+	    $('#addedriba').on("click",".remove_field", function(e){ //user click on remove text
+	        e.preventDefault(); $(this).parent('div').remove(); x--;
+	    }); 
+
+		$('#addprojteam').click(function(e){
+	    	// e.preventDefault();
+	    	$('<a href="#" class="remove_field">x</a><tr class="lastitemproj"><td><input type="text" name="projteam_pos[]" class="form-control proje" placeholder="Architect"></td><td><input type="text" name="projteam_name[]" class="form-control proje" placeholder="Allies and Morrison" ></td></tr>').insertAfter('.lastitemproj');
+	    });
+
+	    $('#addedriba').on("click",".remove_field", function(e){ //user click on remove text
+	        e.preventDefault(); $(this).parent('div').remove(); x--;
+	    });
+
 	});
+
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
