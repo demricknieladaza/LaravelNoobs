@@ -59,14 +59,17 @@
 				<div class="row">
 					<div class="hover-container-holder">
 						<div class="danpads tender-tile-single ">
+							<a href="{{ url('/publish/project_dashboard') }}" class="fill-div">
 							<div class="scaslerni tender-tiles new-project-tile hover-tile">
-								<h2><a href="{{ url('/publish/project_dashboard') }}" style="">Publish<br> New<br> Project</a></h2>
+								<h2>Publish<br> New<br> Project</h2>
 							</div>
+							</a>
 						</div>
 						@foreach ($projects as $proj)
 						<div class=" danpads tender-tile-single fixes">
+							<a href="/project_info/{{ $proj->project_record_id }}/edit" class="fill-div">
 							<div class="scaslerni tender-tiles fixes1">
-								<h2><a href="/project_info/{{ $proj->project_record_id }}/edit">{{ $proj->project_title }}</a></h2>
+								<h2>{{ $proj->project_title }}</h2>
 								<!-- <div class="row table-tender-details">
 									<div class="col-sm-6 table-left">
 										<table class="table table-hover table-striped">
@@ -110,6 +113,7 @@
 									</div>
 								</div> -->
 							</div>
+							</a>
 						</div>
 						@endforeach
 					</div>

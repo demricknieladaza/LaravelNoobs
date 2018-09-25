@@ -38,11 +38,13 @@
 									</h1>
 								</div>
 								<div class="col-sm-6">
+									<a href="{{ url('/winwork') }}" style="color: #fff; text-decoration: none;">
 									<div class="overlay-ribbon">
 										<div class="ribbon-content">
-											<h2 style="transform: rotate(270deg); font-size: 28px; margin-top: 70px;"><a href="{{ url('/winwork') }}" style="color: #fff; text-decoration: none;">Win Work</a></h2>
+											<h2 style="transform: rotate(270deg); font-size: 28px; margin-top: 70px;">Win Work</h2>
 										</div>
 									</div>
+									</a>
 								</div>
 							</div>
 							<div class="col-sm-6 tab1">

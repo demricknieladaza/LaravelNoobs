@@ -257,6 +257,941 @@
 							</tbody>
 						</table>
 					</div>
+				</div>
+				<!-- <div class="clearfix"></div> -->
+				<div class="benchmark-dashboard">
+					<div class="col-sm-12" style="padding-top: 15px;">
+						<div class="row" style="background: #FE7235;color: #fff;padding: 5px;text-align: center;">
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad bordright">
+									Factors
+								</div>
+								<div class="col-sm-6 waspad bordright">
+									Importance
+								</div>
+								</div>
+							</div>		
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad bordright">
+									Factors
+								</div>
+								<div class="col-sm-6 waspad bordright">
+									Importance
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad bordright">
+									Factors
+								</div>
+								<div class="col-sm-6 waspad">
+									Importance
+								</div>
+								</div>
+							</div>
+						</div>	
+						<div class="row" style="text-align: left; padding: 5px;">
+							<div class="col-sm-12" style="border-bottom: 1px solid #FE7235; white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235;">
+							<div class="col-sm-4 bordsatanan">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Qualitative
+								</div>
+								<div class="col-sm-6 waspad backni ">
+									<input type="text" name="qualitative" class="inputni" placeholder="30%">
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 bordsatanan">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Organisation
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="orga" class="inputni" placeholder="30%">
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 bordsatanan">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Project experience
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="proj_experience" class="inputni">
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235;">
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 lefty">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+								
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 bordsatanan">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Variety of services
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="variety_service" class="inputni">
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235;">
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 lefty">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+								
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 bordsatanan">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Awards
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="awardst" class="inputni">
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235;">
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 lefty">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+								
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 bordsatanan">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Accreditaions
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="accredit" class="inputni">
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235;">
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 lefty">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+								
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 bordsatanan">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Relationship to employer
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="relation_emp" class="inputni">
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235;">
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>
+							</div>	 
+							<div class="col-sm-4 lefty">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+								
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 bordsatanan">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									<strong>Total</strong>
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<strong><input type="text" name="total1" class="inputni" placeholder="100%"></strong>
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235;">
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 bordsatanan lefty" style="border-bottom: 1px solid #FE7235;">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Individuals
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="individuals" class="inputni" placeholder="70%">
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 bordsatanan">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Project experience
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="proj_experience2" class="inputni">
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235;">
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 lefty">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+								
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 bordsatanan">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Years of relevant experience
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="years_experience" class="inputni">
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235;">
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 lefty">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+								
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 bordsatanan">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Industry experience
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="industry_experience" class="inputni">
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235;">
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 lefty">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+								
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 bordsatanan">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Awards
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="awardst2" class="inputni">
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235;">
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 lefty">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+								
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 bordsatanan">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Accreditations
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="accredit2" class="inputni">
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235;">
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 lefty">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+								
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 bordsatanan">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Relationship to employer
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="relation_emp2" class="inputni">
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235;">
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 lefty">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+								
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 bordsatanan">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Communication Skills
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="com_skills" class="inputni">
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235;">
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 lefty">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+								
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 bordsatanan">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									People management
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="people_manage" class="inputni">
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235;">
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 lefty">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+								
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 bordsatanan">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Time management
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="time_manage" class="inputni">
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235;">
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 lefty">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+								
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 bordsatanan">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Pro-active
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="pro_active" class="inputni">
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235;">
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 lefty">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+								
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 bordsatanan">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Social Behaviour
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="social_behaviour" class="inputni">
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235;">
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 lefty">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+								
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 bordsatanan">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Technical "hard" skills
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="tech_skill" class="inputni">
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235;">
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 lefty">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+								
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 bordsatanan" style="border-bottom: 1px solid #FE7235;">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									<strong>Total</strong>
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<strong><input type="text" name="total2" class="inputni" placeholder="100%"></strong>
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235; border-right: 1px solid #FE7235;">
+							<div class="col-sm-4 ">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 lefty bordsatanan" style="border-bottom: 1px solid #FE7235;">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									<strong>Total</strong>
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<strong><input type="text" name="total3" class="inputni" placeholder="100%"></strong>
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 lefty">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad">
+									
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235; border-right: 1px solid #FE7235;">
+							<div class="col-sm-4" style="border: 1px solid #FE7235;margin-left: 1px;border-left: none; border-bottom: none;">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Quantitative
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="qualitative" class="inputni" placeholder="40%">
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 ">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+								
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 ">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+								
+								</div>
+								<div class="col-sm-6 waspad">
+								
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235; border-right: 1px solid #FE7235;">
+							<div class="col-sm-4" style="border: 1px solid #FE7235;margin-left: 1px;border-left: none;">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Risk
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="risk" class="inputni" placeholder="30%">
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 bordsatanan" style="border-left: none;">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Insurances
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="insurance" class="inputni">
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 ">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+								
+								</div>
+								<div class="col-sm-6 waspad">
+									
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235; border-right: 1px solid #FE7235;">
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 bordsatanan">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Bonds
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="bonds" class="inputni">
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 ">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad">
+								
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235; border-right: 1px solid #FE7235;">
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 bordsatanan">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									3rd Parties
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="third_parties" class="inputni">
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 ">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad">
+									
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235; border-right: 1px solid #FE7235;">
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 bordsatanan">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Limit of liability
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="limit_liability" class="inputni">
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 ">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+								
+								</div>
+								<div class="col-sm-6 waspad">
+								
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235; border-right: 1px solid #FE7235;">
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 bordsatanan">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									Net contribution clause
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<input type="text" name="net_clause" class="inputni">
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 ">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+								
+								</div>
+								<div class="col-sm-6 waspad">
+								
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235; border-right: 1px solid #FE7235;">
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4 bordsatanan" style="border-bottom: 1px solid #FE7235;">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									<strong>Total</strong>
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<strong><input type="text" name="total4" class="inputni" placeholder="100%"></strong>
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 ">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad">
+									
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-sm-12" style="white-space: nowrap;box-shadow: none;padding: 0px 0px; border-left: 1px solid #FE7235; border-right: 1px solid #FE7235; border-bottom: 1px solid #FE7235;">
+							<div class="col-sm-4" style="border: 1px solid #FE7235;margin-left: 1px;border-left: none; border-bottom: none;">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									<strong>Total</strong>
+								</div>
+								<div class="col-sm-6 waspad backni">
+									<strong><input type="text" name="total5" class="inputni" placeholder="30%"></strong>
+								</div>
+								</div>
+							</div>	
+							<div class="col-sm-4">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								</div>						
+							</div>	
+							<div class="col-sm-4 ">
+								<div class="row">
+								<div class="col-sm-6 waspad ">
+									
+								</div>
+								<div class="col-sm-6 waspad">
+									
+								</div>
+								</div>
+							</div>
+							</div>
+						</div>			
+					</div>
 				</div>		
 			</div>
 		</div>

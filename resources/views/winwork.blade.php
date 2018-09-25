@@ -159,7 +159,7 @@
 								<div class="form-group">
 									<input type="text" name="location" class="form-control" placeholder="Enter your location">
 								</div>								
-								<div class="form-group">
+								<div class="form-group" style="padding-top: 15px;">
 								 	{{-- <input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="101" data-slider-step="1" data-slider-value="0"/> --}}
 								 	<input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="101" data-slider-step="1" data-slider-value="0" />
 								</div>

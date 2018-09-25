@@ -287,11 +287,11 @@
 								</td>
 							</tr>
 							<tr>
-								<td>Supporting Documents</td>
+								<td >Supporting Documents</td>
 								<td>
-									<p><a href="#">Site Plan <i class="fa fa-download"></i></a></p>
+									<p ><a href="#">Site Plan <i class="fa fa-download"></i></a></p>
 									<p><a href="#">Programme <i class="fa fa-download"></i></a></p>        
-									<p><a href="#">H&S Policy <i class="fa fa-download"></i></a></p>
+									<p id="tender-queries"><a href="#">H&S Policy <i class="fa fa-download"></i></a></p>
 								</td>
 							</tr>
 						</table>						
@@ -299,7 +299,7 @@
 				</div>
 			</div>
 			
-			<div class="tender-container" id="tender-queries">
+			<div class="tender-container" >
 				<div class="row">
 					<div class="col-sm-12 active-tenders">
 						<h3>Tender Queries</h3>
@@ -330,13 +330,18 @@
 								</table>
 							</div>
 						</div>
-						<div class="toactive pull-right">
-							To submit a tender query, please scroll up to <a href="#actTinder" style="color:#fe7235; text-decoration: none;">Active Tenders</a> and choose one of the services to submit a bid
+						<div class="col-sm-6">
+							
+						</div>
+						<div class="col-sm-6"  style="padding: 15px;border: 1px solid #fe7235;border-radius: 6px;">
+							<div id="employers"  class="toactive pull-right">
+								To submit a tender query, please scroll up to <a href="#actTinder" style="color:#fe7235; text-decoration: none;">Active Tenders</a> and choose one of the services to submit a bid.
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="tender-container" id="employers">
+			<div class="tender-container" >
 				<div class="row">
 					<div class="col-sm-12 active-tenders">
 						<h3 >Employer Details</h3>
