@@ -578,8 +578,10 @@
 								<div class="col-sm-4"></div>
 								<div class="col-sm-8">
 									<div class="form-group">
-									<textarea cols="4" rows="5" id="textareaap" maxlength="3000" placeholder="Enter details"></textarea>
-  												<p style="color: grey;"><span id="rchars1" >3000</span>/3000 words remaining</p>
+										<textarea id="text-input" cols="25" rows="3" placeholder="Enter details"></textarea>
+												<div class="word-counter">
+												     <label id="count-label">3000</label>/3000 words
+												</div>
 									</div>
 								</div>
 							</div>
@@ -625,11 +627,7 @@
 
 											?>
 											</ul>
-											{{-- <div class="form-check">
-												<label>
-													<input type="checkbox" name="other"> <span class="label-text">Other</span>
-												</label>
-											</div> --}}
+											
 											<div class="form-group divaddservtypeofuse">
 												<input type="text" class="form-control hid adtypeofuse" name="adserv">
 											    <button type="button" class="btn btn-primary notherbuttypeofuse" onclick="showaddtype()">Add another type of use</button>
@@ -705,10 +703,11 @@
 													
 											<div class="form-group">
 												
-												<textarea id="text-input" cols="25" rows="3" placeholder="Enter the project description"></textarea>
+												<textarea id="text-input1" cols="25" rows="3" placeholder="Enter details"></textarea>
 												<div class="word-counter">
-												     <label id="count-label">3000</label>/3000 words
+												     <label id="count-label1">3000</label>/3000 words
 												</div>
+												
 											</div>
 											<div class="form-group">	
 												<div class="field" align="left">
@@ -828,28 +827,10 @@
 													<div class="col-sm-8">
 													<div class="form-group">
 													<div class="col-sm-6" style="padding:0;">
-													<select name='ddlSelectYear' class="form-control">
-													<option value="">Select accreditation</option>
-													<?php 
+													<div class="autocomplete" >
+    													<input id="myInput" class="form-control" type="text" name="accredation" placeholder="Accredation">
+ 													 </div>
 
-													$Accre = array("MCIOD",
-													"AssocRICS",
-													"MRICS",
-													"FRICS",
-													"HonRICS",
-													"BREEAM AP",
-													"RIBA"
-													);
-
-													sort($Accre,SORT_NATURAL | SORT_FLAG_CASE);
-
-													foreach ($Accre as $key) {
-													echo "<option value='".$key."'>".$key."</option>";
-													}
-
-													?>
-													<option>Others</option>
-													</select>
 													</div>
 													<div class="col-sm-6" style="padding:0;padding-left: 15px;">
 													<select name='degree_year' class="form-control">
@@ -885,40 +866,25 @@
 											</div>
 										</div>
 									</div><br>
-									<div class="row">
-										<div class="col-sm-4">
-											<div class="form-group">
-												Degrees
-											</div>
-										</div>
-										<div class="col-sm-8">
-											<div class="form-group">
-												<select name="" class="form-control">
-													<option value="" disabled selected>Select degree</option>
-													<?php 
+									 <div class="row" style="padding-bottom:10px;">
+													<div class="col-sm-4">
+													Degree</div>
+													<div class="col-sm-8">
+													<div class="form-group">
+													<div class="col-sm-6" style="padding:0;">
+													<div class="autocomplete1" >
+    													<input id="myInput1" class="form-control" type="text" name="degree" placeholder="Degree">
+ 													 </div>
 
-													$degree = array("BA",
-															"BSA","BAcy","BAcc","B.A.Sc.","BArch ","BBA",
-															"BCE","BCom","BCA","BDes","B.Des.Corp","B.Des.Arch",
-															"BEng","BEC","BEE","BFA","B.Hlth.Sci.","BIT","BIGS",
-															"LLB","BLAS","BMath","BME","B.P.E.S.S","B.Res.Ec","BSc",
-															"BS.EOH","BSLS","BTech","BVA","MA","MBA","MCom","BCA","MEM",
-															"MEDM","MFA","MIS","LLM","MLA","MPS","MPA","MPH","MSc","MSF",
-															"MTech","DLP","Dr.mph.","PhD","PsyD","DrPH","DSc"
-																);
+													</div>
+													<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+													<input type="text" name="" class="form-control" placeholder="Name of degree">
+													</div>
+													</div>
+													</div>
+													</div>
 
-													sort($degree,SORT_NATURAL | SORT_FLAG_CASE);
 
-													foreach ($degree as $key) {
-													  echo "<option value='".$key."'>".$key."</option>";
-													}
-
-													 ?>
-													<option>Other</option>
-												</select>
-											</div>
-										</div>
-									</div>
                                        <div class="row">
 										<div class="col-sm-4">
 											
@@ -1014,8 +980,10 @@
 								<div class="col-sm-4"></div>
 								<div class="col-sm-8">
 									<div class="form-group">
-									<textarea cols="4" rows="5" id="textareaap" maxlength="3000" placeholder="Enter details"></textarea>
-  												<p style="color: grey;"><span id="rchars1" >3000</span>/3000 words remaining</p>
+										<textarea id="text-input2" cols="25" rows="3" placeholder="Enter the details"></textarea>
+												<div class="word-counter">
+												     <label id="count-label2">3000</label>/3000 words
+												</div>
 									</div>
 								</div>
 							</div>
@@ -1032,7 +1000,7 @@
 									<div class="row">
 										<div class="col-sm-4">
 											<div class="form-group">
-											 Service
+											 Services offered
 											</div>
 										</div>
 										<div class="col-sm-8">
@@ -1233,8 +1201,10 @@
 									<div class="row">
 										<div class="col-sm-4"></div>
 										<div class="col-sm-8">
-												<textarea cols="4" rows="5" id="textareaap" maxlength="3000" placeholder="Enter description of the project ....... "></textarea>
-  												<p style="color: grey;"><span id="rchars1" >3000</span>/3000 words remaining</p>
+													<textarea id="text-input3" cols="25" rows="3" placeholder="Enter project description"></textarea>
+												<div class="word-counter">
+												     <label id="count-label3">3000</label>/3000 words
+												</div>
 										</div>
 									</div>
 									<div class="row">
@@ -1333,8 +1303,10 @@
 										</div>
 										<div class="col-sm-8">
 											<div class="form-group">
-												<textarea cols="4" rows="5" id="textareaap" maxlength="3000" placeholder="Enter here  "></textarea>
-  												<p style="color: grey;"><span id="rchars1" >3000</span>/3000 words remaining</p>
+													<textarea id="text-input4" cols="25" rows="3" placeholder="Enter here.."></textarea>
+												<div class="word-counter">
+												     <label id="count-label4">3000</label>/3000 words
+												</div>
 											</div>
 										</div>
 									</div>
@@ -1364,8 +1336,10 @@
 										</div>
 										<div class="col-sm-8">
 											<div class="form-group">
-												<textarea id="textarea2" placeholder="Enter text here"></textarea>
-												<p style="color: grey;"><span id="rchars2" >3000</span>/3000 words remaining</p>
+													<textarea id="text-input5" cols="25" rows="3" placeholder="Enter text here"></textarea>
+												<div class="word-counter">
+												     <label id="count-label5">3000</label>/3000 words
+												</div>
 											</div>
 										</div>
 									</div>
@@ -2176,8 +2150,10 @@
 										<div class="col-sm-4"></div>
 										
 										<div class="col-sm-8">
-								            <textarea id="textarea3" placeholder="Comments"></textarea>
-							             	<p style="color: grey;"><span id="rchars3" >3000</span>/3000 words remaining</p>	
+								           	<textarea id="text-input6" cols="25" rows="3" placeholder="Enter text here"></textarea>
+												<div class="word-counter">
+												     <label id="count-label6">3000</label>/3000 words
+												</div>
 										</div>
 									</div><br>
 									<div class="row">
@@ -2204,8 +2180,10 @@
 										<div class="col-sm-4"></div>
 										
 										<div class="col-sm-8">
-								             <textarea id="textarea6" placeholder="Comments"></textarea>
-								             <p style="color: grey;"><span id="rchars6" >3000</span>/3000 words remaining</p>
+								            	<textarea id="text-input7" cols="25" rows="3" placeholder="Comments"></textarea>
+												<div class="word-counter">
+												     <label id="count-label7">3000</label>/3000 words
+												</div>
 							             
 										</div>
 									</div><br>
@@ -2233,8 +2211,10 @@
 										<div class="col-sm-4"></div>
 										
 										<div class="col-sm-8">
-								             <textarea id="textarea4" placeholder="Comments"></textarea>
-								             <p style="color: grey;"><span id="rchars4" >3000</span>/3000 words remaining</p>
+								            	<textarea id="text-input8" cols="25" rows="3" placeholder="Comments"></textarea>
+												<div class="word-counter">
+												     <label id="count-label8">3000</label>/3000 words
+												</div>
 							             
 										</div>
 									</div><br>
@@ -2294,8 +2274,10 @@
 											
 										</div>
 										<div class="col-sm-8">
-												<textarea id="textarea5" placeholder="Comments"></textarea>
-												<p style="color: grey;"><span id="rchars5" >3000</span>/3000 words remaining</p>
+												<textarea id="text-input9" cols="25" rows="3" placeholder="Comments"></textarea>
+												<div class="word-counter">
+												     <label id="count-label9">3000</label>/3000 words
+												</div>
 										</div>
 									</div><br>
 									 <div class="row">
@@ -2617,7 +2599,7 @@ $('textarea').keyup(function() {
 				$("li.active").next('li').addClass("active");
 				list.removeClass("active");
 
-				// $(".tender-container.active.in").find('.inputscheck').addClass("disd");
+				// $(".tender-container.active.in").find('.inputscheck').addClass("");
 
 				
 
@@ -2638,7 +2620,7 @@ $('textarea').keyup(function() {
 				$("li.active").next('li').addClass("active");
 				list.removeClass("active");
 
-				// $(".tender-container.active.in").find('.inputscheck').addClass("disd");
+				// $(".tender-container.active.in").find('.inputscheck').addClass("");
 
 				var divi = $(".tender-container.active.in");
 				$(".tender-container.active.in").next().addClass("active");
@@ -2655,7 +2637,7 @@ $('textarea').keyup(function() {
 				$("li.active").next('li').addClass("active");
 				list.removeClass("active");
 
-				// $(".tender-container.active.in").find('.inputscheck').addClass("disd");
+				// $(".tender-container.active.in").find('.inputscheck').addClass("");
 
 				var divi = $(".tender-container.active.in");
 				$(".tender-container.active.in").next().addClass("active");
@@ -2673,7 +2655,7 @@ $('textarea').keyup(function() {
 			$("li.active").next('li').addClass("active");
 			list.removeClass("active");
 
-			// $(".tender-container.active.in").find('.inputscheck').addClass("disd");
+			// $(".tender-container.active.in").find('.inputscheck').addClass("");
 
 			var divi = $(".tender-container.active.in");
 			$(".tender-container.active.in").next().addClass("active");
@@ -2690,7 +2672,7 @@ $('textarea').keyup(function() {
 				$("li.active").next('li').addClass("active");
 				list.removeClass("active");
 
-				// $(".tender-container.active.in").find('.inputscheck').addClass("disd");
+				// $(".tender-container.active.in").find('.inputscheck').addClass("");
 
 				var divi = $(".tender-container.active.in");
 				$(".tender-container.active.in").next().addClass("active");
@@ -2772,7 +2754,7 @@ $('textarea').keyup(function() {
 
         }
         else if(valid){
-        	$("li.active").next().removeClass("disd");
+        	$("li.active").next().removeClass("");
         }
         jQuery('html,body').animate({scrollTop:0},0);
         return valid;
@@ -2986,6 +2968,415 @@ $("#text-input").keyup(function () {
     $("#count-label").html(limitWord - wordcount);
 });
 </script>
+<script type="text/javascript">
+	var limitWord = 3000;
+$("#text-input1").keyup(function () {
+    $this = $(this);
+    var regex = /\s+/gi;
+    var wordcount = jQuery.trim($this.val()).replace(regex, ' ').split(' ').length;
+    if (wordcount <= limitWord) {
+        chars = $this.val().length;
+    } else {
+        var text = $(this).val();
+        var new_text = text.substr(0, chars);
+        $(this).val(new_text);
+        wordcount--;
+    }
+    $("#count-label1").html(limitWord - wordcount);
+});
+</script>
+<script type="text/javascript">
+	var limitWord = 3000;
+$("#text-input2").keyup(function () {
+    $this = $(this);
+    var regex = /\s+/gi;
+    var wordcount = jQuery.trim($this.val()).replace(regex, ' ').split(' ').length;
+    if (wordcount <= limitWord) {
+        chars = $this.val().length;
+    } else {
+        var text = $(this).val();
+        var new_text = text.substr(0, chars);
+        $(this).val(new_text);
+        wordcount--;
+    }
+    $("#count-label2").html(limitWord - wordcount);
+});
+</script>
+<script type="text/javascript">
+	var limitWord = 3000;
+$("#text-input3").keyup(function () {
+    $this = $(this);
+    var regex = /\s+/gi;
+    var wordcount = jQuery.trim($this.val()).replace(regex, ' ').split(' ').length;
+    if (wordcount <= limitWord) {
+        chars = $this.val().length;
+    } else {
+        var text = $(this).val();
+        var new_text = text.substr(0, chars);
+        $(this).val(new_text);
+        wordcount--;
+    }
+    $("#count-label3").html(limitWord - wordcount);
+});
+</script>
+<script type="text/javascript">
+	var limitWord = 3000;
+$("#text-input4").keyup(function () {
+    $this = $(this);
+    var regex = /\s+/gi;
+    var wordcount = jQuery.trim($this.val()).replace(regex, ' ').split(' ').length;
+    if (wordcount <= limitWord) {
+        chars = $this.val().length;
+    } else {
+        var text = $(this).val();
+        var new_text = text.substr(0, chars);
+        $(this).val(new_text);
+        wordcount--;
+    }
+    $("#count-label4").html(limitWord - wordcount);
+});
+</script>
+<script type="text/javascript">
+	var limitWord = 3000;
+$("#text-input5").keyup(function () {
+    $this = $(this);
+    var regex = /\s+/gi;
+    var wordcount = jQuery.trim($this.val()).replace(regex, ' ').split(' ').length;
+    if (wordcount <= limitWord) {
+        chars = $this.val().length;
+    } else {
+        var text = $(this).val();
+        var new_text = text.substr(0, chars);
+        $(this).val(new_text);
+        wordcount--;
+    }
+    $("#count-label5").html(limitWord - wordcount);
+});
+</script>
+<script type="text/javascript">
+	var limitWord = 3000;
+$("#text-input5").keyup(function () {
+    $this = $(this);
+    var regex = /\s+/gi;
+    var wordcount = jQuery.trim($this.val()).replace(regex, ' ').split(' ').length;
+    if (wordcount <= limitWord) {
+        chars = $this.val().length;
+    } else {
+        var text = $(this).val();
+        var new_text = text.substr(0, chars);
+        $(this).val(new_text);
+        wordcount--;
+    }
+    $("#count-label5").html(limitWord - wordcount);
+});
+</script>
+<script type="text/javascript">
+	var limitWord = 3000;
+$("#text-input6").keyup(function () {
+    $this = $(this);
+    var regex = /\s+/gi;
+    var wordcount = jQuery.trim($this.val()).replace(regex, ' ').split(' ').length;
+    if (wordcount <= limitWord) {
+        chars = $this.val().length;
+    } else {
+        var text = $(this).val();
+        var new_text = text.substr(0, chars);
+        $(this).val(new_text);
+        wordcount--;
+    }
+    $("#count-label6").html(limitWord - wordcount);
+});
+</script>
+<script type="text/javascript">
+	var limitWord = 3000;
+$("#text-input7").keyup(function () {
+    $this = $(this);
+    var regex = /\s+/gi;
+    var wordcount = jQuery.trim($this.val()).replace(regex, ' ').split(' ').length;
+    if (wordcount <= limitWord) {
+        chars = $this.val().length;
+    } else {
+        var text = $(this).val();
+        var new_text = text.substr(0, chars);
+        $(this).val(new_text);
+        wordcount--;
+    }
+    $("#count-label7").html(limitWord - wordcount);
+});
+</script>
+<script type="text/javascript">
+	var limitWord = 3000;
+$("#text-input5").keyup(function () {
+    $this = $(this);
+    var regex = /\s+/gi;
+    var wordcount = jQuery.trim($this.val()).replace(regex, ' ').split(' ').length;
+    if (wordcount <= limitWord) {
+        chars = $this.val().length;
+    } else {
+        var text = $(this).val();
+        var new_text = text.substr(0, chars);
+        $(this).val(new_text);
+        wordcount--;
+    }
+    $("#count-label5").html(limitWord - wordcount);
+});
+</script>
+<script type="text/javascript">
+	var limitWord = 3000;
+$("#text-input8").keyup(function () {
+    $this = $(this);
+    var regex = /\s+/gi;
+    var wordcount = jQuery.trim($this.val()).replace(regex, ' ').split(' ').length;
+    if (wordcount <= limitWord) {
+        chars = $this.val().length;
+    } else {
+        var text = $(this).val();
+        var new_text = text.substr(0, chars);
+        $(this).val(new_text);
+        wordcount--;
+    }
+    $("#count-label8").html(limitWord - wordcount);
+});
+</script>
+<script type="text/javascript">
+	var limitWord = 3000;
+$("#text-input9").keyup(function () {
+    $this = $(this);
+    var regex = /\s+/gi;
+    var wordcount = jQuery.trim($this.val()).replace(regex, ' ').split(' ').length;
+    if (wordcount <= limitWord) {
+        chars = $this.val().length;
+    } else {
+        var text = $(this).val();
+        var new_text = text.substr(0, chars);
+        $(this).val(new_text);
+        wordcount--;
+    }
+    $("#count-label9").html(limitWord - wordcount);
+});
+</script>
+<script>
+function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+          b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+  });
+}
+
+/*An array containing all the country names in the world:*/
+var countries = ["MCIOD",
+													"AssocRICS",
+													"MRICS",
+													"FRICS",
+													"HonRICS",
+													"BREEAM AP",
+													"RIBA"];
+
+/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+autocomplete(document.getElementById("myInput"), countries);
+</script>
+<script>
+function autocomplete1(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+          b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+  });
+}
+
+/*An array containing all the country names in the world:*/
+var countries = ["BA",
+															"BSA","BAcy","BAcc","B.A.Sc.","BArch ","BBA",
+															"BCE","BCom","BCA","BDes","B.Des.Corp","B.Des.Arch",
+															"BEng","BEC","BEE","BFA","B.Hlth.Sci.","BIT","BIGS",
+															"LLB","BLAS","BMath","BME","B.P.E.S.S","B.Res.Ec","BSc",
+															"BS.EOH","BSLS","BTech","BVA","MA","MBA","MCom","BCA","MEM",
+															"MEDM","MFA","MIS","LLM","MLA","MPS","MPA","MPH","MSc","MSF",
+															"MTech","DLP","Dr.mph.","PhD","PsyD","DrPH","DSc"];
+
+/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+autocomplete1(document.getElementById("myInput1"), countries);
+</script>
+
 @endsection
 
 

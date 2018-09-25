@@ -12,12 +12,14 @@ use App\Meetings;
 use App\UserAccountsModel;
 use App\ProjectTeam;
 use App\TenderQuery;
+use App\Tender;
 
 
 class ProjectInformations extends Model
 {
     protected $table = 'project_information_tbl';
     public $primaryKey = 'project_record_id';
+    public $timestamps = true;
     protected $fillable = [
         'project_title', 
         'project_id',
@@ -28,39 +30,39 @@ class ProjectInformations extends Model
     ];
 
     public function tranportLink(){
-        return $this->belongsTo('App\TransportLink');
+        return $this->hasOne('App\TransportLink');
     }
 
     public function areaSpecificInformation(){
-        return $this->belongsTo('App\AreaSpecificInformation');
+        return $this->hasOne('App\AreaSpecificInformation');
     }
 
     public function constraints(){
-        return $this->belongsTo('App\Constraints');
+        return $this->hasOne('App\Constraints');
     }
 
     public function typeOfUse(){
-        return $this->belongsTo('App\TypeOfUse');
+        return $this->hasOne('App\TypeOfUse');
     }
 
     public function milestones(){
-        return $this->belongsTo('App\Milestones');
+        return $this->hasOne('App\Milestones');
     }
 
     public function meetings(){
-        return $this->belongsTo('App\Meetings');
+        return $this->hasOne('App\Meetings');
     }
 
     public function projectTeam(){
-        return $this->belongsTo('App\ProjectTeam');
+        return $this->hasOne('App\ProjectTeam');
     }
 
     public function user(){
-        return $this->belongsTo('App\UserAccountsModel');
+        return $this->hasOne('App\UserAccountsModel');
     }
 
     public function tenderQuery(){
-        return $this->belongsTo('App\TenderQuery');
+        return $this->hasOne('App\TenderQuery');
     }
 
 }

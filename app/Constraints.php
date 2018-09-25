@@ -11,9 +11,7 @@ class Constraints extends Model
     public $primaryKey = 'constraint_id';
     public $timestamps = false;
     protected $fillable = [
-        'constraint_one',
-        'constraint_two',
-        'constraint_three',
+        'constraint[]',
         'project_record_id'
     ];
 

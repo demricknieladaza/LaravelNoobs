@@ -293,29 +293,12 @@
 		    							<td>
 		    								<table width="100%" id="addedtypeofuse" class="addedtype">
 		    									<tr class="lastitem">
-		    										<td><input type="text" name="use_area_one" class="form-control proje" placeholder="Residential" readonly></td>&nbsp
-		    										<td><input type="text" name="use_area_one" class="form-control proje" placeholder="30,000m2" readonly></td>
-		    										<td><input type="text" name="use_units_one" class="form-control proje" placeholder="200 units" readonly></td>
-		    										<td><input type="text" name="use_types_one" class="form-control proje" placeholder="High-End" readonly></td>
+		    										<td><input type="text" name="use_name[]" class="form-control proje" placeholder="Residential" readonly></td>&nbsp
+		    										<td><input type="text" name="use_area[]" class="form-control proje" placeholder="30,000m2" readonly></td>
+		    										<td><input type="text" name="use_units[]" class="form-control proje" placeholder="200 units" readonly></td>
+		    										<td><input type="text" name="use_type[]" class="form-control proje" placeholder="High-End" readonly></td>
 												</tr>
-												{{-- <tr>
-		    										<td>Residential</td>&nbsp
-		    										<td><input type="text" name="use_area_two" class="form-control proje" placeholder="30,000m2" readonly></td>
-		    										<td><input type="text" name="use_units_two" class="form-control proje" placeholder="200 units" readonly></td>
-		    										<td><input type="text" name="use_types_two" class="form-control proje" placeholder="High-End" readonly></td>
-												</tr>
-												<tr>
-		    										<td>Office</td>&nbsp
-		    										<td><input type="text" name="use_area_three" class="form-control proje" placeholder="30,000m2" readonly></td>
-		    										<td><input type="text" name="use_units_three" class="form-control proje" placeholder="200 units" readonly></td>
-		    										<td><input type="text" name="use_types_three" class="form-control proje" placeholder="High-End" readonly></td>
-												</tr>
-												<tr>
-		    										<td>Retail</td>&nbsp
-		    										<td><input type="text" name="use_area_four" class="form-control proje" placeholder="30,000m2" readonly></td>
-		    										<td><input type="text" name="use_units_four" class="form-control proje" placeholder="200 units" readonly></td>
-		    										<td><input type="text" name="use_types_four" class="form-control proje" placeholder="High-End" readonly></td>
-		    									</tr> --}}
+
 		    									<tr>
 		    										<td>Total</td>
 		    										<td id="total">57,000m2</td>
@@ -334,8 +317,8 @@
 		    							<td>
 		    								<table width="100%" class="addedriba">
 		    									<tr class="lastitemiba">
-		    										<td><input type="text" name="riba_stage_name[]" class="form-control proje" placeholder="RIBA Stage 1 Completion" readonly></td>
-		    										<td><input type="text" name="riba_stage_date[]" class="form-control proje" placeholder="01/03/2019" readonly></td>
+		    										<td><input type="text" name="riba_stage[]" class="form-control proje" placeholder="RIBA Stage 1 Completion" readonly></td>
+		    										<td><input type="text" name="date[]" class="form-control proje" placeholder="01/03/2019" readonly></td>
 		    									</tr>
 		    									{{-- <tr>
 		    										<td>RIBA Stage 2 Completion</td>
@@ -388,8 +371,8 @@
 		    							<td>
 		    								<table width="100%" class="addedproj">
 		    									<tr class="lastitemproj">
-		    										<td><input type="text" name="projteam_pos[]" class="form-control proje" placeholder="Architect" readonly></td>
-		    										<td><input type="text" name="projteam_name[]" class="form-control proje" placeholder="Allies and Morrison" readonly></td>
+		    										<td><input type="text" name="member_position[]" class="form-control proje" placeholder="Architect" readonly></td>
+		    										<td><input type="text" name="member_name[]" class="form-control proje" placeholder="Allies and Morrison" readonly></td>
 		    									</tr>
 		    									{{-- <tr>
 		    										<td>Structural Engineer</td>
@@ -1991,7 +1974,7 @@ $('a[href^="#"]').on('click', function(event) {
 
 	    $('#addtypeofuse').click(function(e){
 	    	// e.preventDefault();
-	    	$('.addedtype tr:last').before('<a href="#" class="remove_field">x</a><tr><td><input type="text" name="use_name[]" class="form-control proje" placeholder="Residential" ></td>&nbsp<td><input type="text" name="use_area[]" class="form-control proje" placeholder="30,000m2" ></td><td><input type="text" name="use_units[]" class="form-control proje" placeholder="200 units" ></td><td><input type="text" name="use_types[]" class="form-control proje" placeholder="High-End" ></td></tr>');
+	    	$('.addedtype tr:last').before('<a href="#" class="remove_field">x</a><tr><td><input type="text" name="use_name[]" class="form-control proje" placeholder="Residential" ></td>&nbsp<td><input type="text" name="use_area[]" class="form-control proje" placeholder="30,000m2" ></td><td><input type="text" name="use_units[]" class="form-control proje" placeholder="200 units" ></td><td><input type="text" name="use_type[]" class="form-control proje" placeholder="High-End" ></td></tr>');
 	    });
 
 	    $('.addedtype').on("click",".remove_field", function(e){ //user click on remove text
