@@ -88,6 +88,9 @@
 	}
 	.datepicker{z-index:9999 !important}
 
+	/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+
 	/*+++++++++++++++++++++++++++++++++++++++*/
 	.imageThumb {
 	  max-height: 75px;
@@ -112,6 +115,151 @@
 	  color: black;
 	}
 </style>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+  if (window.File && window.FileList && window.FileReader) {
+    $("#file4").on("change", function(e) {
+      var file4 = e.target.files,
+        filesLength = file4.length;
+      for (var i = 0; i < filesLength; i++) {
+        var f = file4[i]
+        var fileReader = new FileReader();
+        fileReader.onload = (function(e) {
+          var file = e.target;
+          $("<span class=\"pip\">" +
+            "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
+            "<br/><span class=\"remove\">Remove image</span>" +
+            "</span>").insertAfter("#file4");
+          $(".remove").click(function(){
+            $(this).parent(".pip").remove();
+          });
+          
+          // Old code here
+          /*$("<img></img>", {
+            class: "imageThumb",
+            src: e.target.result,
+            title: file.name + " | Click to remove"
+          }).insertAfter("#files").click(function(){$(this).remove();});*/
+          
+        });
+        fileReader.readAsDataURL(f);
+      }
+    });
+  } else {
+    alert("Your browser doesn't support to File API")
+  }
+});
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+  if (window.File && window.FileList && window.FileReader) {
+    $("#file3").on("change", function(e) {
+      var file3 = e.target.files,
+        filesLength = file3.length;
+      for (var i = 0; i < filesLength; i++) {
+        var f = file3[i]
+        var fileReader = new FileReader();
+        fileReader.onload = (function(e) {
+          var file = e.target;
+          $("<span class=\"pip\">" +
+            "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
+            "<br/><span class=\"remove\">Remove image</span>" +
+            "</span>").insertAfter("#file3");
+          $(".remove").click(function(){
+            $(this).parent(".pip").remove();
+          });
+          
+          // Old code here
+          /*$("<img></img>", {
+            class: "imageThumb",
+            src: e.target.result,
+            title: file.name + " | Click to remove"
+          }).insertAfter("#files").click(function(){$(this).remove();});*/
+          
+        });
+        fileReader.readAsDataURL(f);
+      }
+    });
+  } else {
+    alert("Your browser doesn't support to File API")
+  }
+});
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+  if (window.File && window.FileList && window.FileReader) {
+    $("#file2").on("change", function(e) {
+      var file2 = e.target.files,
+        filesLength = file2.length;
+      for (var i = 0; i < filesLength; i++) {
+        var f = file2[i]
+        var fileReader = new FileReader();
+        fileReader.onload = (function(e) {
+          var file = e.target;
+          $("<span class=\"pip\">" +
+            "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
+            "<br/><span class=\"remove\">Remove image</span>" +
+            "</span>").insertAfter("#file2");
+          $(".remove").click(function(){
+            $(this).parent(".pip").remove();
+          });
+          
+          // Old code here
+          /*$("<img></img>", {
+            class: "imageThumb",
+            src: e.target.result,
+            title: file.name + " | Click to remove"
+          }).insertAfter("#files").click(function(){$(this).remove();});*/
+          
+        });
+        fileReader.readAsDataURL(f);
+      }
+    });
+  } else {
+    alert("Your browser doesn't support to File API")
+  }
+});
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+	  if (window.File && window.FileList && window.FileReader) {
+	    $("#file1").on("change", function(e) {
+	      var file1 = e.target.files,
+	        filesLength = file1.length;
+	      for (var i = 0; i < filesLength; i++) {
+	        var f = file1[i]
+	        var fileReader = new FileReader();
+	        fileReader.onload = (function(e) {
+	          var file = e.target;
+	          $("<span class=\"pip\">" +
+	            "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
+	            "<br/><span class=\"remove\">Remove image</span>" +
+	            "</span>").insertAfter("#file1");
+	          $(".remove").click(function(){
+	            $(this).parent(".pip").remove();
+	          });
+	          
+	          // Old code here
+	          /*$("<img></img>", {
+	            class: "imageThumb",
+	            src: e.target.result,
+	            title: file.name + " | Click to remove"
+	          }).insertAfter("#files").click(function(){$(this).remove();});*/
+	          
+	        });
+	        fileReader.readAsDataURL(f);
+	      }
+	    });
+	  } else {
+	    alert("Your browser doesn't support to File API")
+	  }
+	});
+</script>
+
 <script type="text/javascript">
 	$(document).ready(function() {
 	  if (window.File && window.FileList && window.FileReader) {
@@ -403,12 +551,12 @@
 				<div class="tender-container" style="border-radius: 6px;">
 					<ul class="nav bid-form-nav">
 						<li class="active totop"><a data-toggle="tab" href="#section1">Pre-Qualification Questionnaire<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disd totop" ><a data-toggle="tab" href="#section2">Organisation<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disd totop"><a data-toggle="tab" href="#section3">Individuals<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disd totop"><a data-toggle="tab" href="#section4">Approach<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disd totop"><a data-toggle="tab" href="#section5">Scope<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disd totop"><a data-toggle="tab" href="#section6">Appointment<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disd totop"><a data-toggle="tab" href="#section7">Quality Assurance<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disda totop" ><a data-toggle="tab" href="#section2">Organisation<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disda totop"><a data-toggle="tab" href="#section3">Individuals<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disda totop"><a data-toggle="tab" href="#section4">Approach<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disda totop"><a data-toggle="tab" href="#section5">Scope<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disda totop"><a data-toggle="tab" href="#section6">Appointment<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disda totop"><a data-toggle="tab" href="#section7">Quality Assurance<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
 					</ul><br>
 				</div>
 				<div class="form-group">
@@ -817,8 +965,12 @@
 											</div>
 										</div>
 										<div class="col-sm-8" >						
-											<label for="uploadImage7s"><strong>Upload Images</strong></label>
-											<input id="uploadImage7s" type="file" name="upimages[]" multiple accept='image/*'name="myPhoto" />
+											<div class="form-group">	
+												<div class="field" align="left">
+												  <strong>Upload your images</strong>
+												  <input type="file" id="file1" name="file1[]" multiple />
+												</div>
+						                    </div>
 								        </div>
 						            </div>
 						           <div class="row" style="padding-bottom:10px;">
@@ -1209,15 +1361,17 @@
 									</div>
 									<div class="row">
 										<div class="col-sm-4">
-											<div class="form-group">
-												
-											</div>
+
 										</div>
-										<div class="col-sm-8" >						
-											<label for="uploadImage7s"><strong>Upload Images</strong></label>
-											<input id="uploadImage7s" type="file" name="upimages[]" multiple accept='image/*'name="myPhoto" />
+										<div class="col-sm-8" >	
+											<div class="form-group">	
+												<div class="field" align="left">
+												  <strong>Upload your images</strong>
+												  <input type="file" id="file2" name="file2[]" multiple />
+												</div>
+						                    </div>
 								        </div>
-						            </div><br>
+						            </div>
 						            <div class="row">
 										<div class="col-sm-4">
 											<div class="form-group">
@@ -1313,8 +1467,12 @@
 									<div class="row">
 										<div class=" col-sm-4"></div>
 										<div class="col-sm-8">
-											<img id="uploadPreview2" style="width:100px; height: 100px;" />
-											<input id="uploadImage2" type="file" name="myPhoto" onchange="PreviewImage2();" />
+											<div class="form-group">	
+												<div class="field" align="left">
+												  <strong>Upload your images</strong>
+												  <input type="file" id="file4" name="file4[]" multiple />
+												</div>
+						                    </div>
 						                </div>
 									</div><br>
                                     <div class="row">
@@ -1346,8 +1504,12 @@
 									<div class="row">
 										<div class=" col-sm-4"></div>
 										<div class="col-sm-8">
-											<img id="uploadPreview3" style="width: 100px; height: 100px;" />
-											<input id="uploadImage3" type="file" name="myPhoto" onchange="PreviewImage3();" />
+											<div class="form-group">	
+												<div class="field" align="left">
+												  <strong>Upload your images</strong>
+												  <input type="file" id="file3" name="file3[]" multiple />
+												</div>
+						                    </div>
 						                </div>
 									</div><br>
 									 <div class="row">

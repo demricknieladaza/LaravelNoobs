@@ -718,7 +718,7 @@
     			            </thead>
     			            <tbody>
     			                <tr>
-    			                    <td class="zui-sticky-col">Fire Engineer</td>
+    			                    <td class="zui-sticky-col" style="text-align: left; font-weight: bolder;">Fire Engineer</td>
     			                    <td class="td">£1,000.00</td>
     			                    <td class="td">£1,000.00</td>
     			                    <td class="td">£1,000.00</td>
@@ -736,7 +736,7 @@
     			                    <td class="td">£1,000.00</td>
     			                </tr>
     			                <tr>
-    			                    <td class="zui-sticky-col">Architect</td>
+    			                    <td class="zui-sticky-col" style="text-align: left; font-weight: bolder;">Architect</td>
     			                    <td class="td">£1,000.00</td>
     			                    <td class="td">£1,000.00</td>
     			                    <td class="td">£1,000.00</td>
@@ -754,7 +754,7 @@
     			                    <td class="td">£1,000.00</td>
     			                </tr>
     			                <tr class="btop">
-    			                    <td class="zui-sticky-col"><strong>Total</strong></td>
+    			                    <td class="zui-sticky-col" style="text-align: left; font-weight: bolder;">Total</td>
     			                    <td class="td"><b>£2,000.00</b></td>
     			                    <td class="td"><b>£2,000.00</b></td>
     			                    <td class="td"><b>£2,000.00</b></td>
@@ -914,7 +914,7 @@
 															</div>
 														</div>
 														<div class="form-group">
-															<input type="number" placeholder="Insurance Level" name="insurance_level" class="form-control">
+															<input type="number" placeholder="Insurance level" name="insurance_level" class="form-control">
 														</div>
 														<div id="addedinsurance"></div>
 														{{-- <div class="form-group">
@@ -935,11 +935,11 @@
 		    												<ul id="bondlist" class="bondlist">
 		    												<?php
 		    												$Service = array(
-																	"Performance Bond",
-																	"Parent Company Guarantee",
-																	"Tender/Bid Bond",
-																	"On Demand Bond",
-																	"Conditional/On  Default Bond"
+																	"Performance bond",
+																	"Parent company guarantee",
+																	"Tender/Bid bond",
+																	"On demand bond",
+																	"Conditional/On  default bond"
 																	);
 		    												sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
 		    												foreach ($Service as $key ) {
@@ -976,7 +976,7 @@
 																<option  value="" disabled selected>Select</option>
 																<?php
 																$Service = array(
-																	"Collateral Warranties", "Third Party Rights", "Both"
+																	"Collateral warranties", "Third party rights", "Both"
 																);
 																sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
 																foreach ($Service as $key ) {
@@ -1002,7 +1002,7 @@
 		    										</div>
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
-															<input type="number" name="limit_of_liability" placeholder="Insert Limit of Liability " name="limit_of_liability" class="form-control">
+															<input type="number" name="limit_of_liability" placeholder="Insert limit of liability " name="limit_of_liability" class="form-control">
 															</div>
 		    										</div>
 		    									</div>
@@ -1015,7 +1015,8 @@
 		    										</div>
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
-															<input style="box-shadow: none;border: none;" type="file" class="form-control" name="net_contribution_clause">
+															 <strong>Upload your file</strong>
+												 			 <input type="file" id="files" name="files[]" multiple />
 														</div>
 		    										</div>
 		    									</div>
@@ -1027,10 +1028,11 @@
 		    										</div>
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
-															<input type="text" placeholder="Enter Document Title" class="form-control" name="net_contribution_clause">
+															<input type="text" placeholder="Enter document title" class="form-control" name="net_contribution_clause">
 															</div>
 															<div class="form-group">
-															<input style="box-shadow: none;border: none;" type="file" class="form-control" name="documents_for_signature">
+																 <strong>Upload your file</strong>
+													 			 <input type="file" id="files" name="files[]" multiple />
 															</div>
 															<div class="form-group">
 																<button type="button" class="btn btn-danger">Add another document </button>
