@@ -175,7 +175,7 @@
 		    		<div class="tender-container">
 		    			<div class="row">
 		    				<div class="col-sm-12 active-tenders" id="cprofile">
-		    						<h3>Employer Information
+		    						<h3>Project Information
 		    						<button class="btn buts save_proj" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction()"><i class="fa fa-save" style="font-size:15px" href=""></i>Save</button>
 		    						<button class="btn buts" id="edit_proj" onclick="myFunction()" style="float:right;margin-top:-14px;" ><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
 		    				</div>			
@@ -458,7 +458,7 @@
 					<div class="tender-container">
 						<div class="row">
 							<div class="col-sm-12 active-tenders">
-								<h3>Project Information
+								<h3>Employer Information
 		    						<button class="btn buts save_proj2" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction2()"><i class="fa fa-save" style="font-size:15px"></i>Save</button>
 		    						<button class="btn buts" id="edit_proj2" onclick="myFunction2()" style="float:right;margin-top:-14px;" ><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
 								<div class="row">	
@@ -1707,7 +1707,7 @@
 
     											<button type="button" class="btn btn-primary butsize" s data-toggle="modal"data-target="#myModal2">Start Tender Process</button>
 
-											<input id="sec2" type="button" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
+											<input id="sec2" type="button" data-toggle="tab"name="Next" value="Save" class="btn btn-primary butsize">
 										</div>
     										
     									</div>
