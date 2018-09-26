@@ -416,21 +416,36 @@
 	        e.preventDefault();
 	        if(x < max_fields){ //max input box allowed
 	            x++; //text box increment
-	            $(wrapper).append('<div><div class="form-group"><select name="Sel"  class="form-control" ><option value="" disabled selected>Select Service</option>'+adddiv+'<option value="other">Other</option></select></div><div class="form-group"><div class="input-group date" id="datepickernichuy" data-date="02-2012" data-date-format="mm-yyyy"><input class="form-control" type="text" placeholder="Provided this Service from" readonly="readonly" name="date" > <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span></div></div><div class="form-group"><div class="input-group date" id="datepickernichuy" data-date="02-2012" data-date-format="mm-yyyy"><input class="form-control" type="text" placeholder="Provided this Service until" readonly="readonly" name="date" ><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span></div></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
+	            $(wrapper).append('<div><div class="form-group"><select name="Sel"  class="form-control" ><option value="" disabled selected>Select Service</option>'+adddiv+'<option value="other">Other</option></select></div><div class="row" style="padding-bottom:10px;"><div class="col-sm-12"><div class="form-group"><div class="col-sm-6" style="padding:0;"><div class="input-group date" id="datepickernichuy" data-date="02-2012"  data-date-format="mm-yyyy"><input class="form-control" disabled type="text" id="datepickernichuy" placeholder="Provided this service from" readonly="readonly" name="servefrom" ><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span></div></div><div class="col-sm-6" style="padding:0;padding-left: 15px;"><div class="input-group date" disabled id="datepicker8" data-date="02-2012" data-date-format="mm-yyyy"><input class="form-control" type="text" placeholder="Provided this service until" readonly="readonly" name="serveuntil" ><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span></div></div></div></div></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
 	        }
+	        rundate();
 	    });
 	    
 	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
 	        e.preventDefault(); $(this).parent('div').remove(); x--;
 	    });
 
-	    $('body').on('click',"#datepickernichuy", function(){
-	        $(this).datepicker( {
-			    format: "mm-yyyy",
-			    viewMode: "months", 
-			    minViewMode: "months"
-			});
+	    $('.date').datepicker({
+	    	format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
 	    });
+
+	    function rundate(){
+    	    $('.date').datepicker({
+    	    	format: "mm-yyyy",
+    		    viewMode: "months", 
+    		    minViewMode: "months"
+    	    });
+	    }
+
+	  //   $('body').on('click',"#datepickernichuy", function(){
+	  //       $(this).datepicker( {
+			//     format: "mm-yyyy",
+			//     viewMode: "months", 
+			//     minViewMode: "months"
+			// });
+	  //   });
 	});
 </script>
 <script type="text/javascript">
@@ -440,7 +455,7 @@
     });
 </script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> --}}
 
 <div class="modal fade" id="awards" role="dialog">
 	  <div class="modal-dialog">
@@ -781,7 +796,51 @@
 											    <button type="button" class="btn btn-primary notherbuttypeofuse" onclick="showaddtype()">Add another type of use</button>
 											    <button type="button" class="btn btn-primary hid adtypeofuse" id="addservicebut" onclick="addtypeofuse()">Add type of use</button>
 											</div>
-										
+											<div class="form-group">
+												<select name="Sel"  class="form-control" >
+													<option value="" disabled selected>Select service</option>
+													<?php 
+														$Services = array(
+															"Architect","Structural engineer","Service engineer","Fire engineer","Acoustic engineer","Principal designer","Facade engineer","Building control","Lighting consultant","Security consultant","Planning consultant","Sustainability consultant","BIM consultant","Quantity surveyor","Project manager"
+														);
+														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
+														foreach ($Services as $key ) {
+														    echo "<option value='".$key."'>".$key."</option>";
+														}
+
+													 ?>
+
+													<option>Other</option>
+												</select>
+											</div>
+							<div class="row" style="padding-bottom:10px;">
+								<div class="col-sm-12">
+									<div class="form-group">
+										<div class="col-sm-6" style="padding:0;">
+											<div class="input-group date" id="datepickernichuy" data-date="02-2012"  data-date-format="mm-yyyy">
+												<input class="form-control" disabled type="text" id="datepickernichuy" placeholder="Provided this service from" readonly="readonly" name="date" >	  
+												<span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+											</div>
+										</div>
+										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+											<div class="input-group date" disabled id="datepicker8" data-date="02-2012" data-date-format="mm-yyyy">
+													<input class="form-control" type="text" placeholder="Provided this service until" readonly="readonly" name="date" >	  
+													<span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+												</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+											<div id="addedservices">
+												
+											</div>
+											<div class="form-group">
+												<div class="input_fields_serve">
+												    <button type="button" class="btn btn-primary" id="addservices">Add another service</button>
+												    <div></div>
+												</div>
+											</div>
 											<label for="typeofdev"><strong>Select type of development</strong></label>
 											<ul id="typeofdev" class="typeofdev">
 											<?php
@@ -862,55 +921,6 @@
 											<div class="form-group">
 												<div class="input_fields_team">
 												    <button class="btn btn-primary" id="addprojmember">Add another project team member</button>
-												    <div></div>
-												</div>
-											</div>
-												<div class="form-group">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select service</option>
-													<?php 
-														$Services = array(
-															"Architect","Structural engineer","Service engineer","Fire engineer","Acoustic engineer","Principal designer","Facade engineer","Building control","Lighting consultant","Security consultant","Planning consultant","Sustainability consultant","BIM consultant","Quantity surveyor","Project manager"
-														);
-														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
-														foreach ($Services as $key ) {
-														    echo "<option value='".$key."'>".$key."</option>";
-														}
-
-													 ?>
-
-													<option>Other</option>
-												</select>
-											</div>
-							<div class="row" style="padding-bottom:10px;">
-								<div class="col-sm-12">
-									<div class="form-group">
-										<div class="col-sm-6" style="padding:0;">
-											<div class="input-group date" id="datepicker7" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
-
-													 <input class="form-control" type="text" placeholder="Provided this service from" readonly="readonly" name="date" >	  
-													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-												</div>
-										</div>
-										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-											<div class="input-group date" id="datepicker8" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
-
-													 <input class="form-control" type="text" placeholder="Provided this service until" readonly="readonly" name="date" >	  
-													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-												</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-											<div id="addedservices">
-												
-											</div>
-											<div class="form-group">
-												<div class="input_fields_serve">
-												    <button type="button" class="btn btn-primary" id="addservices">Add another service</button>
 												    <div></div>
 												</div>
 											</div>
@@ -1423,6 +1433,16 @@
 											</div>
 										</div>
 									</div>
+									<div class="row">
+										<div class="col-sm-4">
+											
+										</div>
+										<div class="col-sm-8">
+											<div class="form-group">
+												<input type="text" name="" id="" class="form-control" placeholder="Enter new company name ">
+											</div>
+										</div>
+									</div><br>
 									
 									<div class="form-group butcent">
 										<button type="button" data-toggle="tab" href="#section4" id="checkinpbut" name="Next" class="btn btn-primary butsize ">Next</button>

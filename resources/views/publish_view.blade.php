@@ -279,7 +279,7 @@
 					<li class="active"><a class="abut" data-toggle="tab" href="#section1">Project</a></li>
 					<li class=""><a class="abut" data-toggle="tab" href="#section2">Scope</a></li>
 					<li class=""><a class="abut" data-toggle="tab" href="#section3">Tenders</a></li>
-					<li class=""><<a class="abut" data-toggle="modal" data-target="#selectServe" href="#section4">Create New Tender</a></li>
+					<li class=""><a class="abut" data-toggle="modal" data-target="#selectServe"><span data-toggle="tab" href="#section4">Create New Tender</span></a></li>
 				</ul><br>
 			</div>
 		</div>
@@ -702,11 +702,8 @@
 						@endforeach
 					@else
 						<tr>
-							<td style="text-align: left;font-weight:bolder; " class="td">No Results<a><p>Edit Tender</p></a></td>
-							<td class="td">No Results</td>
-							<td class="td">No Results</td>
-							<td class="td">No Results</td>
-							<td class="td">No Results</td>
+							{{-- <td style="text-align: left;font-weight:bolder; " class="td">No Results<a><p>Edit Tender</p></a></td> --}}
+							<td class="td" colspan="8">No Results</td>
 						</tr>
 					@endif
 
