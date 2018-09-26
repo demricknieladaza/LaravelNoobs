@@ -2575,7 +2575,6 @@ $('textarea').keyup(function() {
 					// display sa modal
 					// $("#pngnext").modal('toggle');
 				}
-				jQuery('html,body').animate({scrollTop:0},0);
 			}
 		);
 		$('#sec2').click(function(){
