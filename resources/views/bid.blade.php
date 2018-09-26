@@ -2578,14 +2578,14 @@ $('textarea').keyup(function() {
 			}
 		);
 		$('#sec2').click(function(){
-			$("li.").next().removeClass("");
+			$("li.disd").next().removeClass("disd");
 			var list = $("li.active");
 			$("li.active a i.checkerg").removeClass("hidecheck");
 			$("li.active").next('li').addClass("active");
-			$("li.active").next().removeClass("");
+			$("li.active").next().removeClass("disd");
 			list.removeClass("active");
 
-			$(".tender-container.active.in").find('.inputscheck').addClass("");
+			$(".tender-container.active.in").find('.inputscheck').addClass("disd");
 			
 
 		});
@@ -2650,7 +2650,7 @@ $('textarea').keyup(function() {
 		$('#checkinpbut4').click(function()
 		{
 			var list = $("li.active");
-			$("li.active").next().removeClass("");
+			$("li.active").next().removeClass("disd");
 			// $("li.active a i.checkerg").removeClass("hidecheck");
 			$("li.active").next('li').addClass("active");
 			list.removeClass("active");
