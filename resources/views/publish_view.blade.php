@@ -63,10 +63,9 @@
 <script type="text/javascript">
 	$(document).ready(function (){
 		$('#createservproj').click(function(){
-			alert('adsad');
+			//alert('adsad');
 			var serv = $('select[name="servicechoice"]').val();
-			// $('#selectServe').toggle();
-			
+			// $('#selectServe').toggle();	
 			$('#serveprojtitle').html(serv);
 			$('#tendserve').val(serv);
 			jQuery.ajax({
@@ -315,7 +314,7 @@
 		    			<div class="row">
 		    				<div class="col-sm-12 active-tenders" id="cprofile">
 		    						<h3>Project Information
-		    						<button class="btn buts save_proj" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction()"><i class="fa fa-save" style="font-size:15px" href=""></i>Save</button>
+		    						<button class="btn buts save_proj upd" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction()"><i class="fa fa-save" style="font-size:15px" href=""></i>Save</button>
 		    						<button class="btn buts" id="edit_proj" onclick="myFunction()" style="float:right;margin-top:-14px;" ><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
 		    				</div>			
 		    				<div class="col-sm-12">
@@ -329,19 +328,19 @@
 		    							<td>Project Title
   											
 										</td>
-		    							<td><input id="water" type="text" name="project_title" class="form-control proje" placeholder="Canada Water Masterplan" readonly></td>
+		    							<td><input id="water" type="text" name="project_title" class="form-control proje" value="{{ $project->project_title }}" placeholder="Canada Water Masterplan" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Project ID
 			    							
 		    							</td>
-		    							<td><input type="number" name="project_id" class="form-control proje" placeholder="123456789" readonly></td>
+		    							<td><input type="number" name="project_id" class="form-control proje" value="{{ $project->project_id }}" placeholder="123456789" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Location
 		    								
 		    							</td>
-		    							<td><input type="text" name="location" class="form-control proje" placeholder="Canada Water, London, SE16, United Kingdom" readonly></td>
+		    							<td><input type="text" name="location" class="form-control proje" value="{{ $project->location }}" placeholder="Canada Water, London, SE16, United Kingdom" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td colspan="2">
@@ -359,7 +358,7 @@
 		    											<p><b>Main Roads</b></p>
 		    										</td>
 		    										<td>
-		    											<input type="text" name="main_road" class="form-control proje" placeholder="Surrey Quays Road" readonly>
+		    											<input type="text" name="main_road" class="form-control proje" value="{{ $transport->main_road }}" placeholder="Surrey Quays Road" readonly>
 		    										</td>
 		    									</tr>
 		    									<tr>
@@ -367,8 +366,8 @@
 		    											<p><b>Tube Stations</b></p>
 		    										</td>
 		    										<td>
-		    											<input type="text" name="tube_station_one" class="form-control proje" placeholder="Canada Water 0.5km" readonly>
-		    											<input type="text" name="tube_station_two" class="form-control proje" placeholder="Surrey Quays 1.5km" readonly>
+		    											<input type="text" name="tube_station_one" class="form-control proje" value="{{ $transport->tube_station_one }}" placeholder="Canada Water 0.5km" readonly>
+		    											<input type="text" name="tube_station_two" class="form-control proje" value="{{ $transport->tube_station_two }}" placeholder="Surrey Quays 1.5km" readonly>
 		    										</td>
 		    									</tr>
 		    									<tr>
@@ -376,7 +375,7 @@
 		    											<p><b>Bus Lines</b> </p>
 		    										</td>
 		    										<td>
-		    											<input type="text" name="bus_lines" class="form-control proje" placeholder="701, 702, 851, 930" readonly>
+		    											<input type="text" name="bus_lines" class="form-control proje" value="{{ $transport->bus_lines }}" placeholder="701, 702, 851, 930" readonly>
 		    										</td>
 		    									</tr>
 		    								</table>
@@ -390,11 +389,11 @@
 		    								<table width="100%">
 		    									<tr>
 		    										<td>Adjacent Uses</td>
-		    										<td><input type="text" name="adjacent_uses" class="form-control proje" placeholder="Residential (High-End), Regeneration Space, Retail" readonly></td>
+		    										<td><input type="text" name="adjacent_uses" class="form-control proje" value="{{ $area->adjacent_uses }}" placeholder="Residential (High-End), Regeneration Space, Retail" readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>History</td>
-		    										<td><input type="text" name="history" class="form-control proje" placeholder="Residential (High-End), Former Docks and Warehouses" readonly></td>
+		    										<td><input type="text" name="history" class="form-control proje" value="{{ $area->history }}" placeholder="Residential (High-End), Former Docks and Warehouses" readonly></td>
 		    									</tr>
 		    								</table>
 		    							</td>
@@ -404,9 +403,11 @@
 		    								
 		    							</td>
 		    							<td>
+											@foreach($constraints as $const)
 		    								<div class="form-group">                               
-		    									<input type="text" name="constraint[]" class="form-control proje" placeholder="Adjacent Tube Tunnel" readonly>
-		    								</div>
+		    									<input type="text" name="constraint[]" class="form-control proje" value="{{ $const->constraint }}" placeholder="Adjacent Tube Tunnel" readonly>
+											</div>
+											@endforeach
 		    								<div class="addedcons"></div>
 		    								<div class="form-group">
 		    									<input type="button" id="addconstraint" class="addbbutn btn form-control pull-right" style="width: 90px;background-color: #fe7235;color:white;" value="Add" disabled />
@@ -419,13 +420,13 @@
 		    							<td>Type of Development
 		    								
 		    							</td>
-		    							<td><input type="text" name="type_of_development" class="form-control proje" placeholder="New Built" readonly></td>
+		    							<td><input type="text" name="type_of_development" class="form-control proje" value="{{ $project->type_of_development }}" placeholder="New Built" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Construction Value
 		    								
 		    							</td>
-		    							<td><input type="text" name="construction_value" class="form-control proje" placeholder="£ 300,000,000" readonly></td>
+		    							<td><input type="text" name="construction_value" class="form-control proje" value="{{ $project->construction_value }}" placeholder="£ 300,000,000" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Types of Use
@@ -433,12 +434,14 @@
 		    							</td>
 		    							<td>
 		    								<table width="100%" id="addedtypeofuse" class="addedtype">
+												@foreach($type as $use)
 		    									<tr class="lastitem">
-		    										<td><input type="text" name="use_name[]" class="form-control proje" placeholder="Residential" readonly></td>&nbsp
-		    										<td><input type="text" name="use_area[]" class="form-control proje" placeholder="30,000m2" readonly></td>
-		    										<td><input type="text" name="use_units[]" class="form-control proje" placeholder="200 units" readonly></td>
-		    										<td><input type="text" name="use_type[]" class="form-control proje" placeholder="High-End" readonly></td>
+		    										<td><input type="text" name="use_name[]" class="form-control proje" value="{{ $use->use_name }}" placeholder="Residential" readonly></td>&nbsp
+		    										<td><input type="text" name="use_area[]" class="form-control proje" value="{{ $use->use_area }}" placeholder="30,000m2" readonly></td>
+		    										<td><input type="text" name="use_units[]" class="form-control proje" value="{{ $use->use_units }}" placeholder="200 units" readonly></td>
+		    										<td><input type="text" name="use_type[]" class="form-control proje" value="{{ $use->use_type }}" placeholder="High-End" readonly></td>
 												</tr>
+												@endforeach
 
 		    									<tr>
 		    										<td>Total</td>
@@ -457,10 +460,12 @@
 		    							</td>
 		    							<td>
 		    								<table width="100%" class="addedriba">
+												@foreach($milestones as $mile)
 		    									<tr class="lastitemiba">
-		    										<td><input type="text" name="riba_stage[]" class="form-control proje" placeholder="RIBA Stage 1 Completion" readonly></td>
-		    										<td><input type="text" name="date[]" class="form-control proje" placeholder="01/03/2019" readonly></td>
-		    									</tr>
+		    										<td><input type="text" name="riba_stage[]" class="form-control proje" value="{{ $mile->riba_stage }}" placeholder="RIBA Stage 1 Completion" readonly></td>
+		    										<td><input type="text" name="date[]" class="form-control proje" value="{{ $mile->date }}" placeholder="01/03/2019" readonly></td>
+												</tr>
+												@endforeach
 		    									{{-- <tr>
 		    										<td>RIBA Stage 2 Completion</td>
 		    										<td><input type="text" name="riba_stage_two" class="form-control proje" placeholder="01/07/2019" readonly></td>
@@ -490,11 +495,11 @@
 		    								<table width="100%">
 		    									<tr>
 		    										<td>Design Team Meeting</td>
-		    										<td><input type="text" name="design_team_meeting" class="form-control proje" placeholder="Tuesday, 14:00 – 15:30, Weekly" readonly></td>
+		    										<td><input type="text" name="design_team_meeting" class="form-control proje" value="{{ $meetings->design_team_meeting }}" placeholder="Tuesday, 14:00 – 15:30, Weekly" readonly></td>
 		    									</tr>
 		    									<tr>
 		    										<td>Project Progress Meeting</td>
-		    										<td><input type="text" name="project_progress_meeting" class="form-control proje" placeholder="Tuesday, 15:30 – 16:30, Fortnightly" readonly></td>
+		    										<td><input type="text" name="project_progress_meeting" class="form-control proje" value="{{ $meetings->project_progress_meeting }}" placeholder="Tuesday, 15:30 – 16:30, Fortnightly" readonly></td>
 		    									</tr>
 		    								</table>
 		    							</td>
@@ -503,7 +508,7 @@
 		    							<td>Procurement Route
 		    								
 		    							</td>
-		    							<td><input type="text" name="procurement_route" class="form-control proje" placeholder="Design & Build" readonly></td>
+		    							<td><input type="text" name="procurement_route" class="form-control proje" value="{{ $project->procurement_route }}" placeholder="Design & Build" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Project Team
@@ -511,10 +516,12 @@
 		    							</td>
 		    							<td>
 		    								<table width="100%" class="addedproj">
+												@foreach($team as $team)
 		    									<tr class="lastitemproj">
-		    										<td><input type="text" name="member_position[]" class="form-control proje" placeholder="Architect" readonly></td>
-		    										<td><input type="text" name="member_name[]" class="form-control proje" placeholder="Allies and Morrison" readonly></td>
-		    									</tr>
+		    										<td><input type="text" name="member_position[]" class="form-control proje" value="{{ $team->member_position }}" placeholder="Architect" readonly></td>
+		    										<td><input type="text" name="member_name[]" class="form-control proje" value="{{ $team->member_name }}" placeholder="Allies and Morrison" readonly></td>
+												</tr>
+												@endforeach
 		    									{{-- <tr>
 		    										<td>Structural Engineer</td>
 		    										<td><input type="text" name="structural" class="form-control proje" placeholder="AKT II" readonly></td>
@@ -679,17 +686,29 @@
   			        </tr>
     			    </thead>
     			    <tbody>
-  			        <tr>
-			            <td style="text-align: left;font-weight:bolder; " class="td">Fire Engineer <a><p>Edit Tender</p></a></td>
-			            <td class="td">Active</td>
-			            <td class="td">1/1/2018</td>
-			            <td class="td">1/9/2018</td>
-			            <td class="td">5 days</td>
-			            <td class="td"><strong style="font-size: 25px;">3</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewBid"><p>View Bids</p></a></td>
-			            <td class="td"><strong style="font-size: 25px;">7</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewQueries"><p>View Answer/ Queries</p></a></td>
-			            <td class="td"></button><button style="width: 135px;" class="btn btn-success">Complete Tender  <br>Process</button></td>
-  			        </tr>
-  			        <tr>
+					@if(count($tender) > 0)
+						@foreach($tender as $ten)
+						<tr>
+							<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a><p>Edit Tender</p></a></td>
+							<td class="td">{{ $ten->status }}</td>
+							<td class="td">{{ $ten->created_at }}</td>
+							<td class="td">TBC</td>
+							<td class="td">{{ $ten->time_remaining }}</td>
+							<td class="td"><strong style="font-size: 25px;">{{ $ten->bids_received }}</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewBid"><p>View Bids</p></a></td>
+							<td class="td"><strong style="font-size: 25px;">{{ $ten->queries_received }}</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewQueries"><p>View Answer/ Queries</p></a></td>
+						</tr>
+						@endforeach
+					@else
+						<tr>
+							<td style="text-align: left;font-weight:bolder; " class="td">No Results<a><p>Edit Tender</p></a></td>
+							<td class="td">No Results</td>
+							<td class="td">No Results</td>
+							<td class="td">No Results</td>
+							<td class="td">No Results</td>
+						</tr>
+					@endif
+
+  			        {{-- <tr>
 			            <td style="text-align: left;font-weight:bolder; " class="td">Service Engineer <a><p>Edit Tender</p></a></td>
 			            <td class="td">Drafted</td>
 			            <td class="td">TBC</td>
@@ -711,7 +730,31 @@
 			              </button><button class="btn btn-primary" style="margin-bottom:10px;    width: 135px;">Dowload Evalution<br>Report</button>
 			            </button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td>
 			            
-  			        </tr>
+  			        </tr>  			        <tr>
+			            <td style="text-align: left;font-weight:bolder; " class="td">Structural Engineer</td>
+			            <td class="td">Closed</td>
+			            <td class="td">1/1/2018</td>
+			            <td class="td">1/9/2018</td>
+			            <td class="td">5 days</td>
+			            <td class="td"><strong style="font-size: 25px;">3</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewBid"><p>View Bids</p></a></td>
+			            <td class="td"><strong style="font-size: 25px;">7</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewQueries"><p>View Answer/<br>Queries</p></a></td>
+			            <td class="td">
+			              </button><button class="btn btn-primary" style="margin-bottom:10px;    width: 135px;">Dowload Evalution<br>Report</button>
+			            </button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td>
+			            
+  			        </tr>  			        <tr>
+			            <td style="text-align: left;font-weight:bolder; " class="td">Structural Engineer</td>
+			            <td class="td">Closed</td>
+			            <td class="td">1/1/2018</td>
+			            <td class="td">1/9/2018</td>
+			            <td class="td">5 days</td>
+			            <td class="td"><strong style="font-size: 25px;">3</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewBid"><p>View Bids</p></a></td>
+			            <td class="td"><strong style="font-size: 25px;">7</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewQueries"><p>View Answer/<br>Queries</p></a></td>
+			            <td class="td">
+			              </button><button class="btn btn-primary" style="margin-bottom:10px;    width: 135px;">Dowload Evalution<br>Report</button>
+			            </button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td>
+			            
+  			        </tr> --}}
     			    </tbody>
 	    			</table>
 	    			<button class="btn">Print Report</button>

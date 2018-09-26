@@ -11,6 +11,7 @@ use App\Milestones;
 use App\Meetings;
 use App\UserAccountsModel;
 use App\ProjectTeam;
+use App\Tender;
 use Illuminate\Http\Request;
 
 
@@ -210,6 +211,8 @@ class ProjectInformationController extends Controller
 
         $team = ProjectTeam::where('project_record_id', $id)->get();
 
+        $tender = Tender::where('project_record_id', $id)->get();
+
         return view('publish_view')->with([
             'project' => $project,
             'transport' => $transport,
@@ -218,7 +221,8 @@ class ProjectInformationController extends Controller
             'type' => $type,
             'milestones' => $milestones,
             'meetings' => $meetings,
-            'team' => $team
+            'team' => $team,
+            'tender' => $tender
         ]);
 
     }
