@@ -327,7 +327,28 @@
 	    </div>
 	  </div>
 	</div>
-
+	<div id="mode" class="modal fade" tabindex="-1" style="padding-left: 0;	z-index: 9999999;">
+		<div class="modal-confirm">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-head">
+						<div class="icon-box" style="color:#1ce62b;">
+							<i class="material-icons" style="color:#1ce62b;">done</i>
+						</div>				
+						<h4 class="modal-title">Are  you  sure  you  want  to  submit  this  tender  query? </h4>	
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						<p>Your  query  will  be  sent  to  the  Employer  and  published  on  the  project  page,  visible  for  everyone,  once  you  have  received  a  response. This process cannot be undone.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-info" data-dismiss="modal">Go Back</button>
+						<button type="button" class="btn btn-success" style="color: #fff;background-color: #fe7235;">Submit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="modal fade" id="Modal" tabindex="-1" role="dialog">
 	    <div class="modal-dialog">
 	    
@@ -345,28 +366,7 @@
 				<div style="text-align:center;">
 					<button type="button" style="color: #fff;background-color: #fe7235;border-radius: 6px;" href="#mode"  class="btn" data-backdrop="false" data-toggle="modal">Submit Tender Query</button>
 				</div>
-	          	<div id="mode" class="modal fade" style="padding-left: 0;">
-					<div class="modal-confirm">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-head">
-									<div class="icon-box" style="color:#1ce62b;">
-										<i class="material-icons" style="color:#1ce62b;">done</i>
-									</div>				
-									<h4 class="modal-title">Are  you  sure  you  want  to  submit  this  tender  query? </h4>	
-					                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-								</div>
-								<div class="modal-body">
-									<p>Your  query  will  be  sent  to  the  Employer  and  published  on  the  project  page,  visible  for  everyone,  once  you  have  received  a  response. This process cannot be undone.</p>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-info" data-dismiss="modal">Go Back</button>
-									<button type="button" class="btn btn-success" style="color: #fff;background-color: #fe7235;">Submit</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+	          	
 	        </div>
 	      </div>
 	      
@@ -402,13 +402,13 @@
 			<div id="d" class="col-sm-4" style="position: fixed; width:355px;">
 				<div class="tender-container" style="border-radius: 6px;">
 					<ul class="nav bid-form-nav">
-						<li class="active"><a data-toggle="tab" href="#section1">Pre-Qualification Questionnaire<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disd" ><a data-toggle="tab" href="#section2">Organisation<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disd"><a data-toggle="tab" href="#section3">Individuals<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disd"><a data-toggle="tab" href="#section4">Approach<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disd"><a data-toggle="tab" href="#section5">Scope<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disd"><a data-toggle="tab" href="#section6">Appointment<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disd"><a data-toggle="tab" href="#section7">Quality Assurance<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="active totop"><a data-toggle="tab" href="#section1">Pre-Qualification Questionnaire<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disd totop" ><a data-toggle="tab" href="#section2">Organisation<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disd totop"><a data-toggle="tab" href="#section3">Individuals<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disd totop"><a data-toggle="tab" href="#section4">Approach<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disd totop"><a data-toggle="tab" href="#section5">Scope<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disd totop"><a data-toggle="tab" href="#section6">Appointment<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disd totop"><a data-toggle="tab" href="#section7">Quality Assurance<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
 					</ul><br>
 				</div>
 				<div class="form-group">
@@ -2575,6 +2575,7 @@ $('textarea').keyup(function() {
 					// display sa modal
 					// $("#pngnext").modal('toggle');
 				}
+				jQuery('html,body').animate({scrollTop:0},0);
 			}
 		);
 		$('#sec2').click(function(){
@@ -2586,6 +2587,7 @@ $('textarea').keyup(function() {
 			list.removeClass("active");
 
 			$(".tender-container.active.in").find('.inputscheck').addClass("disd");
+			jQuery('html,body').animate({scrollTop:0},0);
 			
 
 		});
@@ -2608,6 +2610,7 @@ $('textarea').keyup(function() {
 				$(".tender-container.active.in").next().addClass("in");
 				divi.removeClass("active");
 				divi.removeClass("in");
+				jQuery('html,body').animate({scrollTop:0},0);
 
 
 			// }
@@ -2627,6 +2630,7 @@ $('textarea').keyup(function() {
 				$(".tender-container.active.in").next().addClass("in");
 				divi.removeClass("active");
 				divi.removeClass("in");
+				jQuery('html,body').animate({scrollTop:0},0);
 
 		});
 
@@ -2644,6 +2648,7 @@ $('textarea').keyup(function() {
 				$(".tender-container.active.in").next().addClass("in");
 				divi.removeClass("active");
 				divi.removeClass("in");
+				jQuery('html,body').animate({scrollTop:0},0);
 
 		});
 
@@ -2679,7 +2684,13 @@ $('textarea').keyup(function() {
 				$(".tender-container.active.in").next().addClass("in");
 				divi.removeClass("active");
 				divi.removeClass("in");
+				jQuery('html,body').animate({scrollTop:0},0);
 
+		});
+
+		$('.totop').click(function(e)
+		{
+			jQuery('html,body').animate({scrollTop:0},0);
 		});
 
 		$('#valconfi').click(function(e)

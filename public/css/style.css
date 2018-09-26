@@ -990,7 +990,7 @@ input[type=range]::-ms-thumb {
     background: #fff;
     box-shadow: 0 0 3px #999;
     position: absolute;
-    right: -35px;
+    right: -54px;
     top: 40%;
     padding: 10px 15px;
     color: #fe7235;

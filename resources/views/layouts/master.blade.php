@@ -284,11 +284,17 @@
         }
         .dropdown-content a {
             color: black;
-            padding: 30px 9px !important;
+            padding: 25px 9px !important;
             text-decoration: none;
             display: block;
             height: 10px !important;
+            line-height: 0;
         }  
+
+        .dropdown-content a:hover{
+            color: #fe7235 !important;
+            transform: scale(1.05);
+        }
         .dropdown:hover .dropdown-content {display: block;}
 
         input[type="checkbox"] + .label-text:before{
@@ -342,8 +348,8 @@
                             <li><a href="{{ url('/publish') }}" class="highlight">Publish Projects</a></li>    
                             <li><a href="{{ url('/winwork') }}" class="highlight">Win Work</a></li>
                         @else
-                            <li><a data-toggle="modal" href="#myModal" data-backdrop="static"  data-id="pub" class="highlight open-log">Publish Projects</a></li>    
-                            <li><a data-toggle="modal" href="#myModal" data-backdrop="static" data-id="win" class="highlight open-log" >Win Work</a></li>
+                            <li><a data-toggle="modal" href="#myModal"  data-id="pub" class="highlight open-log">Publish Projects</a></li>    
+                            <li><a data-toggle="modal" href="#myModal" data-id="win" class="highlight open-log" >Win Work</a></li>
                         @endif
                         
                         @if(Route::currentRouteName()=='Landing' )
@@ -370,11 +376,11 @@
                                   <a href="{{ url('/dashboard/users') }}">Users</a>
                                   <a href="{{ url('/dashboard/membership') }}">Membership</a>
                                   <a href="{{ url('/dashboard/policies') }}">Policies</a>
-                                  <a href="{{ url('logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
+                                  <a href="{{ url('logout') }}"><i class="fa fa-sign-out" aria-hidden="true" style="line-height: 0;"></i>Logout</a>
                                 </div>
                             </li>
                         @else
-                            <li><a data-toggle="modal" href="#myModal" data-backdrop="static" class="highlight">Login/register</a></li>
+                            <li><a data-toggle="modal" href="#myModal" class="highlight">Login/register</a></li>
                         @endif
                     </ul>
                 </div>
@@ -396,17 +402,44 @@
                     </ul>
                     <div class="tab-content">
                         <div id="login" class="tab-pane fade in active">
-                            <div id="aconex" style="padding: 25px;">
+                            <div id="aconex" style="padding: 25px; padding-top: 0;">
                             <div class="row">
                                 <div class="col-sm-9">
                                     <div class="form-group">
-                                        <select class="form-control">
-                                            <option value="Location">Location</option>
-                                            <option value="Department">Department</option>
+                                        <label for="location"><strong>Location</strong></label>
+                                        <select id="location" name="location" class="form-control">
+                                            <option disabled selected>Select location</option>
+                                            <?php
+                                            $location = array(
+                                                'Canada', 'US & Latin America', 'Europe', 'Saudi Arabia','Africa','Rest of Middle East', 'Australia'
+                                            );
+                                            sort($location, SORT_NATURAL | SORT_FLAG_CASE);
+                                            foreach ($location as $key ) {
+                                                echo "<option value='".$key."'>".$key."</option>";
+                                            }
+
+                                            ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="location"><strong>Department</strong></label>
+                                        <select id="location" name="location" class="form-control">
+                                            <option disabled selected>Select department</option>
+                                            <?php
+                                            $location = array(
+                                                'Production', 'Research and Development (often abbreviated to R&D)
+', 'Purchasing', 'Marketing','Human Resource Management','Accounting and Finance'
+                                            );
+                                            sort($location, SORT_NATURAL | SORT_FLAG_CASE);
+                                            foreach ($location as $key ) {
+                                                echo "<option value='".$key."'>".$key."</option>";
+                                            }
+
+                                            ?>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-sm-3">
+                                <div class="col-sm-3" style="top: 60px;">
                                     <div class="form-group">
                                         <button type="button" class="btn" onclick="hideaconex()" style="width: 70%;background-color: #fe7235;color: white;">Go</button>
                                     </div>

@@ -192,7 +192,9 @@
 								</div>
 							</div>
 						</div>
+						
 					<div class="col-sm-12 search_result_row">
+						<a href="{{ url('/winwork/pds') }}" style="color: inherit;">
 							<div class="search_data">
 								<div class="row">
 									<div class="col-sm-3 project_image">
@@ -220,12 +222,13 @@
 								</div>						
 							</div>
 							<figcaption class="figcaption1">
-								<a href="{{ url('/winwork/pds') }}"><h3 style="color:white; ">Canada Water Masterplan</h3></a>
+								<h3 style="color:white; ">Canada Water Masterplan</h3>
 								<p>
-									<a href="#" data-toggle="tooltip" title="Add to Favourites"><i class="fa fa-fw fa-star-o"></i></a>
-									<a href="#" data-toggle="tooltip" title="Send Via Email"><i class="fa fa-fw fa-envelope-o"></i></a>
+									<object><a href="#" data-toggle="tooltip" title="Add to Favourites"><i class="fa fa-fw fa-star-o"></i></a></object>
+									<object><a href="#" data-toggle="tooltip" title="Send Via Email"><i class="fa fa-fw fa-envelope-o"></i></a></object>
 								</p>
 							</figcaption>	
+							</a>
 						</div>	
 						<div class="col-sm-12 search_result_row">
 							<div class="search_data">
