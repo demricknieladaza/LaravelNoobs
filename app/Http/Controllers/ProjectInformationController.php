@@ -222,7 +222,7 @@ class ProjectInformationController extends Controller
             'milestones' => $milestones,
             'meetings' => $meetings,
             'team' => $team,
-            'tender' => $tender
+            'tender' => $tender,
         ]);
 
     }

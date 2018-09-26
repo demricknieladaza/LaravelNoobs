@@ -76,8 +76,9 @@
 					id: {{ $project->project_record_id }}
 				},
 				success: function(result){
-					jQuery('.alert').show();
-					jQuery('.alert').html(result.success);
+					// jQuery('.alert').show();
+					// jQuery('.alert').html(result.services);
+					alert(result.services);
 				}
 			});
 		});
@@ -211,7 +212,8 @@
 		          			<?php $members = array("Architect","Structural Engineer","Service Engineer","Fire Engineer","Acoustic Engineer","Principal Designer","Facade Engineer","Building Control","Lighting Consultant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager");sort($members, SORT_NATURAL | SORT_FLAG_CASE);foreach ($members as $key ) {echo "<option value='".$key."'>".$key."</option>";}?>
 		          		</select>
 	          		</div>
-	          	</p>
+				  </p>
+				  <input type="text" name="" id="idd" value="0">
 	        </div>
 	        <div class="modal-footer" style="text-align: center;">
 	          <button type="button" class="btn btn-primary" data-toggle="tab" data-backdrop="false" data-dismiss="modal" href="#section4" id="createservproj" >Create</button>
@@ -854,7 +856,7 @@
 		    			<div class="col-sm-3">
 		    				<div class="tender-container" id="mama">
 		    					<ul class="nav bid-form-nav">
-									<h3 data-toggle="modal" data-target="#selectServe" style="margin-bottom: 10px; margin-top: 0;padding: 15px;border: 3px solid grey;border-radius: 6px;text-align: center;" id="serveprojtitle" class="header-title animate-pop-in">
+									<h3 data-toggle="modal" data-target="#selectServe" data-id="" style="margin-bottom: 10px; margin-top: 0;padding: 15px;border: 3px solid grey;border-radius: 6px;text-align: center;" id="serveprojtitle" class="header-title animate-pop-in">
 									</h3>
 									<input type="hidden" name="" id="">
 		    						<li class="active"><a data-toggle="tab" href="#section01">Pre-Qualification Questionnaire</a></li>
@@ -1590,7 +1592,7 @@
 		    										</div>
 		    										<div class="col-sm-6">
 		    											<div class="form-group">
-															<select name="insurance" class="form-control" onchange='Insurance(this.value);'> 
+															<select name="insurance_name" class="form-control" onchange='Insurance(this.value);'> 
 																    <option value="" disabled selected>Select Insurance</option>  
 																    <option value="professional">Professional</option>
 																    <option value="indemnity">Indemnity</option>
@@ -1629,15 +1631,15 @@
 														    <option value="others">Others</option>
 														  </select>
 														  <input type="text" name="bonds" id="bonds" style='display:none;'/>
+														</div>
+														<div class="form-group">
+															<div class="cnt_bond">
+																<button class="btn btn-primary" id="cnt_bond" >Add Another Bond</button>
+																<div></div>
 															</div>
-															<div class="form-group">
-																<div class="cnt_bond">
-																    <button class="btn btn-primary" id="cnt_bond" >Add Another Bond</button>
-																    <div></div>
-																</div>
-															</div>
-		    										</div>
-		    									</div>
+														</div>
+													</div>
+												</div>
 		    									<div class="row">
 		    										<div class="col-sm-6">
 		    											<div class="form-group">

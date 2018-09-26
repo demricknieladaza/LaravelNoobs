@@ -50,11 +50,13 @@ class TenderController extends Controller
      */
     public function store(Request $request)
     {
+
         $id = $request->get('id');
         $tender = new Tender;
         $tender->project_record_id = $id;
         $tender->services = $request->get('services');
         $tender->save();
+
 
 
         $bonds = $request->get('cntbonds');
@@ -74,10 +76,12 @@ class TenderController extends Controller
         $appointment->save();
 
 
-        $tender = Tender::where('project_record_id', $id)->get();
+        // $tender = Tender::where('project_record_id', $id)->get();
 
-        return redirect('/project_info'.'/'.$id.'/edit')->with($tender);
-        //return response()->json(array('success' => true, 'services' => $services), 200);
+        $tenderid = $tender->tender_id;
+
+        // return redirect('/project_info'.'/'.$id.'/edit');//->with($tenderid);
+        return response()->json(array('success' => true, 'services' => $tenderid), 200);
     }
 
     /**
