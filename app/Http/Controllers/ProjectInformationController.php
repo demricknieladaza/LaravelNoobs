@@ -255,7 +255,7 @@ class ProjectInformationController extends Controller
                 $transport->update([
                     'main_road' => $main_road,
                     'tube_station_one' => $tube_station_one,
-                    'tube_station_two' => $tube_station_two,
+                    'tube_station_two' => $tube_station_two
                 ]);
                 
 
@@ -265,50 +265,119 @@ class ProjectInformationController extends Controller
                     'history' => $area->history = $request->input('history')
                 ]);
                 
+                // $const = $request->constraint;
+                // //$constraint_id = Constraints::where('project_record_id', $id)->pluck('constraint_id')->toArray();
+               
+                // for($counter = 0 ; $counter < count($const); $counter++){ 
+                //     // $constraint_id = DB::table('constraints_tbl')
+                //     //                         ->where('project_record_id', $id)
+                //     //                         ->pluck('constraint_id')
+                //     //                         ->get();
+                //     $constraints = Constraints::whereIn('project_record_id', $id);
+                //     $constraints->update([
+                //         //'constraint_id' => $constraint_id[$counter],
+                //         'constraint' => $constraints->constraint = $const[$counter]  
+                //     ]);
+                // }
+
+                //$const = $request->constraint;
+                Constraints::where('project_record_id', $id)->delete();
                 $const = $request->constraint;
-                $constraints = Constraints::where('project_record_id', $id);
-                for($counter = 0 ; $counter < count($const); $counter++){
-                    $constraints->update([
-                        'constraint' => $constraints->constraint = $const[$counter],  
-                    ]);
+                for($counter = 0; $counter < count($const); $counter++){
+                    $constraints = new Constraints;
+                    $constraints->constraint = $const[$counter];
+                    $constraints->project_record_id = $project->project_record_id;
+                    $constraints->save();
+        
                 }
 
+                // $const = ['a','b'];
+                // $constraints = Constraints::where('project_record_id', $id);
+                // foreach($const as $cons){
+                //     $constraints->update([
+                //         'constraint' => $constraints->constraint = $cons,  
+                //     ]);
+                // }
+
         
+                // $use_name = $request->use_name;
+                // $use_area = $request->use_area;
+                // $use_units = $request->use_units;
+                // $use_type = $request->use_type;
+                // $type = TypeOfUse::where('project_record_id', $id);
+                // for($counter = 0 ; $counter < count($use_area); $counter++){
+                //     $type->update([
+                //         'use_name' => $type->use_name = $use_name[$counter],
+                //         'use_area' => $type->use_area = $use_area[$counter],
+                //         'use_units' => $type->use_units = $use_units[$counter],
+                //         'use_type' => $type->use_type = $use_type[$counter]                                
+                //     ]);
+                // }
+                
+                TypeOfUse::where('project_record_id', $id)->delete();
                 $use_name = $request->use_name;
                 $use_area = $request->use_area;
                 $use_units = $request->use_units;
                 $use_type = $request->use_type;
-                $type = TypeOfUse::where('project_record_id', $id);
-                for($counter = 0 ; $counter < count($use_area); $counter++){
-                    $type->update([
-                        'use_name' => $type->use_name = $use_name[$counter],
-                        'use_area' => $type->use_area = $use_area[$counter],
-                        'use_units' => $type->use_units = $use_units[$counter],
-                        'use_type' => $type->use_type = $use_type[$counter]                                
-                    ]);
+                for($counter = 0; $counter < count($use_name); $counter++){
+                    $type = new TypeOfUse;
+                    $type->use_name = $use_name[$counter];
+                    $type->use_area = $use_area[$counter];
+                    $type->use_units = $use_units[$counter];
+                    $type->use_type = $use_type[$counter];
+                    $type->project_record_id = $project->project_record_id;
+                    $type->save();
                 }
 
                 
+                // $riba = $request->riba_stage;
+                // $date = $request->date;
+                // $milestones = Milestones::where('project_record_id', $id);
+                // for($counter = 0; $counter < count($riba); $counter++){
+                //     $milestones->update([
+                //         'riba_stage' => $milestones->riba_stage = $riba[$counter],
+                //         'date' => $milestones->date = $request->$date[$counter]
+                //     ]);
+                // }
+                Milestones::where('project_record_id', $id)->delete();
                 $riba = $request->riba_stage;
                 $date = $request->date;
-                $milestones = Milestones::where('project_record_id', $id);
                 for($counter = 0; $counter < count($riba); $counter++){
-                    $milestones->update([
-                        'riba_stage' => $milestones->riba_stage = $riba[$counter],
-                        'date' => $milestones->date = $request->$date[$counter]
-                    ]);
+                    $milestones = new Milestones;
+                    $milestones->riba_stage = $riba[$counter];
+                    $milestones->date = $date[$counter];
+                    $milestones->project_record_id = $project->project_record_id;
+                    $milestones->save();
                 }
 
+
+                $meetings = Meetings::where('project_record_id', $id);
+                $meetings->update([
+                    'design_team_meeting' => $meetings->design_team_meeting = $request->input('design_team_meeting'),
+                    'project_progress_meeting' => $meetings->project_progress_meeting = $request->input('project_progress_meeting')
+                ]);
+
+
+                // $position = $request->member_position;
+                // $name = $request->member_name;
+                // $team = ProjectTeam::where('project_record_id', $id);
+                // for($counter = 0; $counter < count($position); $counter++){
+                //     $team->update([
+                //         'member_position' => $team->member_position = $position[$counter],
+                //         'member_name' => $team->member_name = $name[$counter]
+                //     ]);
+                // }
+
+                ProjectTeam::where('project_record_id', $id)->delete();
                 $position = $request->member_position;
                 $name = $request->member_name;
-                $team = ProjectTeam::where('project_record_id', $id);
                 for($counter = 0; $counter < count($position); $counter++){
-                    $team->update([
-                        'member_position' => $team->member_position = $position[$counter],
-                        'member_name' => $team->member_name = $name[$counter]
-                    ]);
+                    $team = new ProjectTeam;
+                    $team->member_position = $position[$counter];
+                    $team->member_name = $name[$counter];
+                    $team->project_record_id = $project->project_record_id;
+                    $team->save();
                 }
-
 
                 //return redirect('/project_info'.'/'.$id.'/edit');
                 //return 'asdasd';
