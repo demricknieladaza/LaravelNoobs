@@ -258,8 +258,7 @@
 						</table>
 					</div>
 				</div>
-				<!-- <div class="clearfix"></div> -->
-				<div class="benchmark-dashboard">
+				{{--< div class="benchmark-dashboard">
 					<div class="col-sm-12" style="padding-top: 15px;">
 						<div class="row" style="background: #FE7235;color: #fff;padding: 5px;text-align: center;">
 							<div class="col-sm-4">
@@ -1192,7 +1191,7 @@
 							</div>
 						</div>			
 					</div>
-				</div>		
+				</div>		 --}}
 			</div>
 		</div>
 	</div>

@@ -79,7 +79,8 @@
 				success: function(result){
 					jQuery('.alert').show();
 					jQuery('.alert').html(result.success);
-				}});
+				}
+			});
 		});
 
 		$('.upd').click(function(){
@@ -160,7 +161,7 @@
 					constraint: constr,
 					use_name: use_n,
 					use_area: use_a,
-					use_units: use_u),
+					use_units: use_u,
 					use_type: use_t,
 					riba_stage: riba_s,
 					date: date,
@@ -172,8 +173,9 @@
 				success: function(result){
 					jQuery('.alert').show();
 					jQuery('.alert').html(result.success);
-				}});
+				}
 			});
+		});
 		
 
 		$('#addother').click(function(){
