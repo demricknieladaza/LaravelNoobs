@@ -78,9 +78,18 @@
 				success: function(result){
 					// jQuery('.alert').show();
 					// jQuery('.alert').html(result.services);
-					alert(result.services);
+					$('h3#serveprojtitle').attr('data-id',result.services);
+					// alert(result.services);
 				}
 			});
+		});
+
+		$('h3#serveprojtitle').click(function(){
+			$('#idd').val($(this).attr('data-id'));
+		});
+
+		$('#cret').click(function(){
+			$('#idd').val(0);
 		});
 
 		$('.upd').click(function(){
@@ -279,7 +288,7 @@
 					<li class="active"><a class="abut" data-toggle="tab" href="#section1">Project</a></li>
 					<li class=""><a class="abut" data-toggle="tab" href="#section2">Scope</a></li>
 					<li class=""><a class="abut" data-toggle="tab" href="#section3">Tenders</a></li>
-					<li class=""><a class="abut" data-toggle="modal" data-target="#selectServe"><span data-toggle="tab" href="#section4">Create New Tender</span></a></li>
+					<li class="" id="cret" ><a class="abut" data-toggle="modal" data-target="#selectServe"><span data-toggle="tab" href="#section4">Create New Tender</span></a></li>
 				</ul><br>
 			</div>
 		</div>
@@ -853,7 +862,7 @@
 		    			<div class="col-sm-3">
 		    				<div class="tender-container" id="mama">
 		    					<ul class="nav bid-form-nav">
-									<h3 data-toggle="modal" data-target="#selectServe" data-id="" style="margin-bottom: 10px; margin-top: 0;padding: 15px;border: 3px solid grey;border-radius: 6px;text-align: center;" id="serveprojtitle" class="header-title animate-pop-in">
+									<h3 data-toggle="modal" data-target="#selectServe" data-id="0" style="margin-bottom: 10px; margin-top: 0;padding: 15px;border: 3px solid grey;border-radius: 6px;text-align: center;" id="serveprojtitle" class="header-title animate-pop-in">
 									</h3>
 									<input type="hidden" name="" id="">
 		    						<li class="active"><a data-toggle="tab" href="#section01">Pre-Qualification Questionnaire</a></li>
