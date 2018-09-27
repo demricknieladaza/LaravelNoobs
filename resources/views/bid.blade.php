@@ -448,6 +448,28 @@
 	  //   });
 	});
 </script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+	    var max_fields      = 10; //maximum input boxes allowed
+	    var wrapper         = $("#indiaddedawards"); //Fields wrapper
+	    var add_button      = $("#indiaddawards"); //Add button ID
+	    var yir 			= "<?php $cur_year = date('Y');$years = [];for ($i=0; $i<=50; $i++) {array_push($years,$cur_year--);}foreach ($years as $year ) {echo "<option value='".$year."'>".$year."</option>";}?>";
+	    
+	    var x = 1; //initlal text box count
+	    $(add_button).click(function(e){ //on add input button click
+	        e.preventDefault();
+	        if(x < max_fields){ //max input box allowed
+	            x++; //text box increment
+	            $(wrapper).append('<div><div class="row" style=""><div class="col-sm-4"></div><div class="col-sm-8"><div class="form-group"><div class="col-sm-6" style="padding:0;"><input type="text" name="" class="form-control" placeholder="Enter name of award"></div><div class="col-sm-6" style="padding:0;padding-left: 15px;"><div class="form-group"><select name="awards_year" class="form-control"><option value="">Year awarded</option>'+yir+'</select></div></div></div></div></div><div class="row"><div class="col-sm-4"></div><div class="col-sm-8"><div class="form-group"><input type="text" name="" class="form-control" placeholder="Awarded by"></div></div></div><div class="row"><div class="col-sm-4"></div><div class="col-sm-8"><div class="form-group"><textarea id="text-input" cols="25" rows="3" placeholder="Enter details"></textarea><div class="word-counter"><label id="count-label">3000</label>/3000 words</div></div></div></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
+	        }
+	    });
+	    
+	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+	        e.preventDefault(); $(this).parent('div').remove(); x--;
+	    });
+	});
+</script>
 <script type="text/javascript">
 	$(document).ready(function(){
     $("#Modal").on('shown.bs.modal', function(){
@@ -699,7 +721,7 @@
 											</div>
 										</div>
 									</div>
-							<div class="row" style="padding-bottom:10px;">
+							<div class="row" style="">
 								<div class="col-sm-4">
 								Awards
 								</div>
@@ -742,19 +764,20 @@
 								<div class="col-sm-8">
 									<div class="form-group">
 										<textarea id="text-input" cols="25" rows="3" placeholder="Enter details"></textarea>
-												<div class="word-counter">
-												     <label id="count-label">3000</label>/3000 words
-												</div>
+										<div class="word-counter">
+										    <label id="count-label">3000</label>/3000 words
+										</div>
 									</div>
 								</div>
 							</div>
+							<div id="indiaddedawards"></div>
 							<div class="row">
 								<div class="col-sm-4"></div>
 								<div class="col-sm-8">
 									<div class="form-group">
-									<div class="input_fields_piste">
-												    <button type="button" class="btn btn-primary" id="add_award" >Add another award</button>
-												</div>
+										<div class="input_fields_piste">
+											<button type="button" class="btn btn-primary" id="indiaddawards" >Add another award</button>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -772,7 +795,8 @@
 											<input type="text" name="" class="form-control" placeholder="Enter profile title">
 										</div>
 										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-											<input type="number" name="" id="consvalue" class="form-control" placeholder="Construction value ">  
+											<span style="position: absolute;line-height: 2.5;left: 24px;">£ </span>
+											<input style="padding-left: 20px;" type="number" name="" id="consvalue" class="form-control" placeholder="Construction value ">  
 										</div>
 										</div>
 									</div>

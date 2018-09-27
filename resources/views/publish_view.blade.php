@@ -59,7 +59,38 @@
 	.form-control {
 		display: inline-block;
 	}
+	ul.bondslist {
+	  columns: 2;
+	  -webkit-columns: 2;
+	  -moz-columns: 2;
+	  padding: 0;
+	  list-style: none;
+	}
+	.hid.adbondslist {
+		display: none;
+	}
 </style>
+<script type="text/javascript">
+	function showaddbondslist(){
+		$('.hid.adbondslist').css('display','block');
+		$('.notherbutindi').css('display','none');
+	};
+	function addbondslist()
+	{
+		var ival = $.trim($('.adbondslist').val());
+		if( ival.length != "" ){
+			ival = ival.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+			    return letter.toUpperCase();
+			});
+			var out = "<li><div class='form-check'><label><input type='checkbox' checked name='bonds[]' value='"+ival+"'><span class='label-text'>"+ival+"</span></label></div></li>";
+			$('ul#bondslist').append(out);
+		}
+
+		$('.hid.adbondslist').css('display','none');
+		$('.notherbutindi').css('display','block');
+		$('.adbondslist').val('');
+	}
+</script>
 <script type="text/javascript">
 	$(document).ready(function (){
 		$('#createservproj').click(function(){
@@ -211,12 +242,62 @@
 			var element = document.getElementById('showother');
 			element.style.display='none';
 		});
+
+		$('#insurdrpdwn').change(function() {
+		    if($(this).val()==="other"){ 
+		        $(this).parent().append('<div class="form-group" ><input type="text" name="insurancename[]" class="form-control"></div>');    
+		    }
+		});
+	});
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+	    var max_fields      = 10; //maximum input boxes allowed
+	    var wrapper         = $("#addedinsur"); //Fields wrapper
+	    var add_button      = $("#addinsur"); //Add button ID
+	    var yir 			= "<?php $insurance = array("Professional","Indemnity","Public Liability","Products Liability","Employers Liability");sort($insurance,SORT_NATURAL | SORT_FLAG_CASE);foreach ($insurance as $key) {echo "<option value='".$key."'>".$key."</option>";}?>";
+	    
+	    var x = 1; //initlal text box count
+	    $(add_button).click(function(e){ //on add input button click
+	        e.preventDefault();
+	        if(x < max_fields){ //max input box allowed
+	            x++; //text box increment
+	            $(wrapper).append('<div><div class="row" style="padding-bottom:10px;"><div class="col-sm-4"></div><div class="col-sm-8"><div class="form-group"><div class="col-sm-6" style="padding:0;"><select name="insurancename[]" id="insurdrpdwn" class="form-control" ><option value="" disabled selected>Select insurance</option>'+yir+'</select></div><div class="col-sm-6" style="padding:0;padding-left: 15px;"><input type="number" placeholder="Insurance Level" name="insurance_level[]" class="form-control"></div></div></div></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
+	        }
+	    });
+	    
+	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+	        e.preventDefault(); $(this).parent('div').remove(); x--;
+	    });
+	});
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+	    var max_fields      = 10; //maximum input boxes allowed
+	    var wrapper         = $("#addedsig"); //Fields wrapper
+	    var add_button      = $("#addsig"); //Add button ID
+	    
+	    var x = 1; //initlal text box count
+	    $(add_button).click(function(e){ //on add input button click
+	        e.preventDefault();
+	        if(x < max_fields){ //max input box allowed
+	            x++; //text box increment
+	            $(wrapper).append('<div><div class="form-group"><input type="text" placeholder="Enter Document Title" class="form-control" name="net_contribution_clause[]"></div><div class="form-group"><input type="file" class="form-control" name="documents_for_signature[]"></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
+	        }
+	    });
+	    
+	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+	        e.preventDefault(); $(this).parent('div').remove(); x--;
+	    });
 	});
 </script>
 <div class="container below-header ">
 	<h1 id="logo" class="project-title bid-page-title centerh" style="margin-left: 5%;
     margin-right: 5%;">Project Dashboard</small></h1>
 </div>
+
 <div class="container">
 	<div class="modal fade" id="selectServe" role="dialog" tabindex="-1">
 	    <div class="modal-dialog">
@@ -978,641 +1059,6 @@
 							</div>
 
 		    						</div><br> 
-
-
-		    						{{-- <div class="row" style="margin: 0;">	
-		    						
-								<div class="col-sm-12">
-									<table id="Riba2">
-											  <tr>
-											    <th>Deliverable</th>
-											    <th>Details / Contents</th>
-											    <th style="border-left:3px solid #fe7235;border-top: ">R</th>
-											    <th>A</th>
-											    <th>C</th>
-											    <th style="border-right:3px solid #fe7235; ">I</th>
-											    <th>0</th>
-											    <th>1</th>
-											    <th>2</th>
-											    <th>3</th>
-											    <th>4</th>
-											    <th>5</th>
-											    <th>6</th>
-											    <th>7</th>
-
-
-											  </tr>
-											  <tr>
-											    <td>Strategic Brief</td>
-											  <td contenteditable='true'></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    											
-											  </tr>
-											  <tr>
-											    <td>Project Programme (Lead)</td>
-											    
-											    <td contenteditable='true'></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											    <td>Feasibility Study</td>
-											    <td contenteditable='true'></td>
-											   
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											    <td>Design Responsibility Matrix</td>
-											     <td contenteditable='true'></td>
-											   
-											   
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											   <td>Site Information Report</td>
-											     <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											     <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											     <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											     <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											    <td>Information Exchange Strategy</td>
-											     <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											    <td>Project Brief</td>
-											     <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											   
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											    <td>Risk Assessment (Lead)</td>
-											     <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											   
-
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											    <td>Handover Strategy (Lead)</td>
-											     <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    
-
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											    <td>Project Execution Plan</td>
-											     <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											    <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											   
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											    <td>Design Proposals from Design Team members</td>
-											     <td contenteditable='true'></td>
-											   <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											   <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											   <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											   <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											</table><br>
-											 <button type="button" class="btn btn-info">Add another Lines</button>
-								</div>
-							</div><br>
-							<div class="row">
-								<div class="col-sm-12">
-									<table id="Riba">
-											  <tr>
-											    <th> Meetings</th>
-											    <th>Purpose</th>
-											    <th>Attendees</th>
-											    <th>Assumed Duration (hours)</th>
-											    <th>Reoccurence / Number of Meetings</th>
-											    <th>Arrange</th>
-											    <th>Attend</th>
-											    <th>1</th>
-											    <th>2</th>
-											    <th>3</th>
-											    <th>4</th>
-											    <th>5</th>
-											    <th>6</th>
-											    <th>7</th>
-											  </tr>
-											  <tr>
-											    <td >Pre-Application Meetings</td>
-											   <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											   <td><div class="mama" onmouseup="mUp(this)"></div></td>    
-											  </tr>
-											  <tr>
-											    <td>Site Visits</td>
-											     <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											   <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											    <td>Site / Project Meetings (RIBA Stage 4/5)</td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											   <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											   <td>SC / PC Site Inspection</td>
-											   <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											   <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-										</table><br>
-										<button type="button" class="btn btn-primary">Add another Lines</button>
-								</div>
-							</div><br>
-							<div class="row">
-								<div class="col-sm-12">
-									<table id="Content">
-											  <tr>
-											    <th> Design Considerations</th>
-											    <th>Applies to</th>
-											  </tr>
-											 
-											  <tr>
-											   <td>Cost, programme, quality, health & safety during construction and operation, functionality, buildability, operation and maintenance.</td>
-											    <td contenteditable='true'></td>
-											  
-											  </tr>
-											   <tr>
-											   <td>All information provided by other members of the Project Team.</td>
-											      <td contenteditable='true'></td>
-											  </tr>
-											   <tr>
-											   <td>Good Practice in the Selection of Construction Materials 2011 (British Council of Offices Publication.</td>
-											     <td contenteditable='true'></td>
-											  </tr>
-											   <tr>
-											   <td>Statutory standards</td>
-											     <td contenteditable='true'></td>
-											  </tr>
-											   <tr>
-											   <td>Co-ordination with structural and building services</td>
-											     <td contenteditable='true'></td>
-											  </tr>
-										</table><br>
-										<button type="button" class="btn btn-info">Add another Lines</button>
-								</div>
-							</div><br>
-								<div class="row">
-								<div class="col-sm-12">
-									<table id="Stages">
-											  <tr>
-											    <th>Advise on</th>
-											    <th>0</th>
-											    <th>1</th>
-											    <th>2</th>
-											    <th>3</th>
-											    <th>4</th>
-											    <th>5</th>
-											    <th>6</th>
-											    <th>7</th>
-											  </tr>
-											  
-										      <tr>
-											  <td>Any products or materials, specified within the guidelines named in Item ???, that are relevant to the project and have been found to be deleterious or hazardous to health and safety.</td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											     <tr>
-											  <td>Assembly of Project Team. (Lead)</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											   <tr>
-											  <td>Need for and the scope of services by consultants, specialists, sub-contractors or suppliers. (Lead)</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-
-											   <tr>
-											  <td>Form and content of design outputs, their interfaces and a verification procedure. (Lead)</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-
-											   <tr>
-											  <td>Resolution of defects.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											  <td>Form and content of design outputs, their interfaces and a verification procedure. (Lead)</td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-
-											   <tr>
-											  <td>Relevant experience from previous projects.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											    <th>Monitor</th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											  </tr>
-
-											  <tr>
-											  <td>Work of the Designers Designers regarding…. [WHAT?]</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-
-											  <tr>
-											  <td>Performance of Design Team.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-												</div></td>
-											  </tr>										    
-											 
-											 <tr>
-											  <td>Compliance with statutory and contract requirements.</td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											    <th>Collaborate / Consult with</th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											  </tr>
-											  <tr>
-											  <td>Relevant Third Parties as required.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											  <tr>
-											  <td>Planning authority to discuss the project</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>	
-											  <tr>
-											  <td>Statutory authorities on developing design.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>	
-                                               <tr>
-											  <td>Project Manager & Employer on significant design issues. (Lead).</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>	
-											  <tr>
-											    <th>Co-ordinate</th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											  </tr>
-											  <tr>
-											  <td>Collation of all planning submission documents.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-
-											  <tr>
-											  <td>Reviewing design information provided by contractors or specialists to establish whether that information can be co-ordinated and integrated with other project information.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-											   <tr>
-											    <th>Other</th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											  </tr>
-                                              
-                                              <tr>
-											  <td>Submit the [detailed / outline] planning application.</td>
-                                              <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-
-											   <tr>
-											  <td>Assisting building user during initial occupation period.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-
-											  <tr>
-											  <td>Review all instructions and information about the Project, provided by the Employer.</td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-
-											  <tr>
-											  <td>preparing and making submissions under building acts and/or regulations or other statutory requirements.</td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											  </tr>
-
-
-										</table><br>
-										<button type="button" class="btn btn-success">Add another Lines</button>
-								</div>
-							</div><br> --}}
 		    					</div>
 		    					<div id="section21" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Appointment</h3>
@@ -1620,69 +1066,92 @@
 										<input type="hidden" id="tendserve" name="services">
 		    							<div class="row">
 		    								<div class="col-sm-12">
-		    									<div class="row">
-		    										<div class="col-sm-6">
-		    											<div class="form-group">
-		    												Insurances
-		    											</div>
-		    										</div>
-		    										<div class="col-sm-6">
-		    											<div class="form-group">
-															<select name="insurance_name" class="form-control" onchange='Insurance(this.value);'> 
-																    <option value="" disabled selected>Select Insurance</option>  
-																    <option value="professional">Professional</option>
-																    <option value="indemnity">Indemnity</option>
-																    <option value="public liability">Public Liability</option>
-																    <option value="products liability">Products Liability</option>
-																    <option value="employers liability">Employers Liability</option>
-																    <option value="others">Others</option>
-																  </select>
-																  <input type="text" name="bonds" id="insurance" style='display:none;'/>
+		    									<div class="row" style="padding-bottom:10px;">
+													<div class="col-sm-4">	Insurances</div>
+													<div class="col-sm-8">
+														<div class="form-group">
+															<div class="col-sm-6" style="padding:0;">
+																<select name="insurancename[]" id="insurdrpdwn" class="form-control" >
+																		<option value="" disabled selected>Select insurance</option>
+																		<?php 
+
+																		$insurance = array(
+																						"Professional",
+																						"Indemnity",
+																						"Public Liability",
+																						"Products Liability",
+																						"Employers Liability");
+
+																		sort($insurance,SORT_NATURAL | SORT_FLAG_CASE);
+
+																		foreach ($insurance as $key) {
+																		  echo "<option value='".$key."'>".$key."</option>";
+																		}
+
+																		 ?>
+																	
+																		<option value="other" >Other</option>
+																	</select>
 															</div>
-															<div class="form-group">
-																<input type="number" placeholder="Insurance Level" name="insurance_level" class="form-control">
+															<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+															<input type="number" placeholder="Insurance Level" name="insurance_level[]" class="form-control">
 															</div>
+															</div>
+														</div>
+													</div>
+													<div id="addedinsur"></div>
+		    									<div class="row" style="padding-bottom:10px;">
+													<div class="col-sm-4">	</div>
+														<div class="col-sm-8">
 															<div class="form-group">
-																<div class="cnt_insurance">
-																    <button class="btn btn-primary" id="cnt_insurance" >Add Another Insurance</button>
+																<div class="col-sm-6" style="padding:0;">
+																	<div class="form-group">
+																		<div class="cnt_insurance">
+																		    <button class="btn btn-primary" id="addinsur" >Add Another Insurance</button>
+																		</div>
+																	</div>
+																</div>
+															
 																</div>
 															</div>
-		    										</div>
-		    									</div>
+														</div>
 		    									<div class="row">
-		    										<div class="col-sm-6">
+		    										<div class="col-sm-4">
 		    											<div class="form-group">
 		    												Bonds
 		    											</div>
 		    										</div>
-		    										<div class="col-sm-6">
+		    										<div class="col-sm-8">
 		    											<div class="form-group">
-															<select name="bonds" class="form-control" onchange='Bonds(this.value);'> 
-														    <option value="" disabled selected>Select Bonds </option>  
-														    <option value="performance bond">Performance Bond</option>
-														    <option value="parent company guarantee">Parent Company Guarantee</option>
-														    <option value="tender/bid bond">Tender/Bid Bond</option>
-														    <option value="on demand bond">On Demand Bond</option>
-														    <option value="conditional/on  default bond">Conditional/On  Default Bond</option>
-														    <option value="others">Others</option>
-														  </select>
-														  <input type="text" name="bonds" id="bonds" style='display:none;'/>
+		    												<ul id="bondslist" class="bondslist">
+		    												<?php
+		    												$Service = array("Select Bonds ","Performance Bond","Parent Company Guarantee","Tender/Bid Bond","On Demand Bond","Conditional/On  Default Bond");
+		    												sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
+		    												foreach ($Service as $key ) {
+		    												    echo "<li><div class='form-check'>
+		    															<label>
+		    																<input type='checkbox' name='bonds[]' value='".$key."'><span class='label-text'>".$key."</span>
+		    															</label>
+		    														</div></li>";
+		    												}
+
+		    												?>
+		    												</ul>
 														</div>
-														<div class="form-group">
-															<div class="cnt_bond">
-																<button class="btn btn-primary" id="cnt_bond" >Add Another Bond</button>
-																<div></div>
-															</div>
+														<div class="form-group divaddservbid">
+															<input type="text" class="form-control hid adbondslist" name="adserv">
+														    <button type="button" class="btn btn-primary notherbutindi" onclick="showaddbondslist()">Add another bond</button>
+														    <button type="button" class="btn btn-primary hid adbondslist" id="adbondslist" onclick="addbondslist()">Add bond</button>
 														</div>
 													</div>
 												</div>
 		    									<div class="row">
-		    										<div class="col-sm-6">
+		    										<div class="col-sm-4">
 		    											<div class="form-group">
 		    												Collateral Warranties / Third Parties 
 		    											</div>
 		    										</div>
-		    										<div class="col-sm-6">
+		    										<div class="col-sm-8">
 		    											<div class="form-group">
 															<select name="collateral_warranties[]"  class="form-control" >
 																<option value="" disabled selected>Select</option>
@@ -1707,12 +1176,12 @@
 		    										</div>
 		    									</div>
 		    									<div class="row">
-		    										<div class="col-sm-6">
+		    										<div class="col-sm-4">
 		    											<div class="form-group">
 		    												Limit of Liability 
 		    											</div>
 		    										</div>
-		    										<div class="col-sm-6">
+		    										<div class="col-sm-8">
 		    											<div class="form-group">
 															<input type="number" placeholder="Insert Limit of Liability " name="limit_of_liability" class="form-control">
 															</div>
@@ -1720,33 +1189,42 @@
 		    									</div>
 		    									
 		    									<div class="row">
-		    										<div class="col-sm-6">
+		    										<div class="col-sm-4">
 		    											<div class="form-group">
 		    												Form of Appointment 
 		    											</div>
 		    										</div>
-		    										<div class="col-sm-6">
+		    										<div class="col-sm-8">
 		    											<div class="form-group">
 															<input type="file" class="form-control" name="net_contribution_clause">
 															</div>
 		    										</div>
 		    									</div>
 		    									<div class="row">
-		    										<div class="col-sm-6">
+		    										<div class="col-sm-4">
 		    											<div class="form-group">
 		    												Documents for Signature 
 		    											</div>
 		    										</div>
-		    										<div class="col-sm-6">
+		    										<div class="col-sm-8">
 		    											<div class="form-group">
-															<input type="text" placeholder="Enter Document Title" class="form-control" name="net_contribution_clause">
-															</div>
-															<div class="form-group">
-															<input type="file" class="form-control" name="documents_for_signature">
-															</div>
-															<div class="form-group">
-																<button type="button" class="btn btn-danger">Add another document </button>
-															</div>
+															<input type="text" placeholder="Enter Document Title" class="form-control" name="net_contribution_clause[]">
+														</div>
+														<div class="form-group">
+															<input type="file" class="form-control" name="documents_for_signature[]">
+														</div>
+		    										</div>
+		    										<div class="col-sm-4">
+		    											<div class="form-group">
+		    											</div>
+		    										</div>
+		    										<div class="col-sm-8">
+		    											<div id="addedsig">
+		    												
+		    											</div>
+														<div class="form-group">
+															<button type="button" id="addsig" class="btn btn-primary">Add another document </button>
+														</div>
 
 		    										</div>
 		    										<div class="form-group butcent">
@@ -1828,85 +1306,97 @@
 		    					<div id="section41" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Quality Assurance</h3>
 		    						<form method="post">
-		    							<div class="row">
-		    								<div class="col-sm-12">
-		    									<div class="row">
-		    										<div class="col-sm-6">
-		    											<div class="form-group">
-		    												Created by 
-		    											</div>
-		    										</div>
-		    										<div class="col-sm-6">
-		    											<div class="form-group">
-															<input type="text" class="form-control" name="proj_fname" placeholder="First Name">
-															</div>
-															<div class="form-group">
-															<input type="text" class="form-control" name="proj_lname"
-															placeholder="Last Name">
-															</div>
-															<div class="input-group date form-group" id="datepicker2" data-date="02-2012" data-date-format="mm-yyyy">
+		    					<div class="row" style="padding-bottom:10px;">
+								 	<div class="col-sm-4">	Created by</div>
+										<div class="col-sm-8">
+											<div class="form-group">
+												<div class="col-sm-6" style="padding:0;">
+													<input type="text" class="form-control" name="proj_fname" placeholder="First Name">
+											</div>
+										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+										<input type="text" class="form-control" name="proj_lname"placeholder="Last Name">
+										</div>
+										</div>
+									</div>
+								</div>
+								<div class="row" style="padding-bottom:10px;">
+	<div class="col-sm-4">	</div>
+								<div class="col-sm-8">
+									<div class="form-group">
+										<div class="col-sm-12" style="padding:0;">
+												<div class="input-group date form-group" id="datepicker2" data-date="02-2012" data-date-format="mm-yyyy">
 																 <input class="form-control" type="text" readonly="readonly" name="date" >	  
 																 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 															</div>
-		    										</div>
-		    									</div>
-		    								</div>
-		    							</div>
-		    							<div class="row">
-		    								<div class="col-sm-12">
-		    									<div class="row">
-		    										<div class="col-sm-6">
-		    											<div class="form-group">
-		    												Checked by 
-		    											</div>
-		    										</div>
-		    										<div class="col-sm-6">
-		    											<div class="form-group">
-															<input type="text" class="form-control" name="proj_cfname" placeholder="First Name">
-														</div>
-														<div class="form-group">
-														<input type="text" class="form-control" name="proj_clname"
-														placeholder="Last Name">
-														</div>
-														<div class="input-group date form-group" id="datepicker2" data-date="02-2012" data-date-format="mm-yyyy">
-															 <input class="form-control" type="text" readonly="readonly" name="date" >	  
-															 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-														</div>
-		    										</div>
-		    									</div>
-		    								</div>
-		    							</div>
-		    							<div class="row">
-		    								<div class="col-sm-12">
-		    									<div class="row">
-		    										<div class="col-sm-6">
-		    											<div class="form-group">
-		    												Approved by 
-		    											</div>
-		    										</div>
-		    										<div class="col-sm-6">
-		    											<div class="form-group">
-															<input type="text" class="form-control" name="proj_afname" placeholder="First Name">
-															</div>
-															<div class="form-group">
-															<input type="text" class="form-control" name="proj_alname"
-															placeholder="Last Name">
-															</div>
-															<div class="input-group date form-group" id="datepicker2" data-date="02-2012" data-date-format="mm-yyyy">
+										</div>
+									
+										</div>
+									</div>
+								</div>
+								<div class="row" style="padding-bottom:10px;">
+								 	<div class="col-sm-4">	Checked by</div>
+										<div class="col-sm-8">
+											<div class="form-group">
+												<div class="col-sm-6" style="padding:0;">
+													<input type="text" class="form-control" name="proj_fname" placeholder="First Name">
+											</div>
+										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+										<input type="text" class="form-control" name="proj_lname"placeholder="Last Name">
+										</div>
+										</div>
+									</div>
+								</div>
+								<div class="row" style="padding-bottom:10px;">
+									<div class="col-sm-4">	</div>
+								<div class="col-sm-8">
+									<div class="form-group">
+										<div class="col-sm-12" style="padding:0;">
+												<div class="input-group date form-group" id="datepicker2" data-date="02-2012" data-date-format="mm-yyyy">
 																 <input class="form-control" type="text" readonly="readonly" name="date" >	  
 																 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 															</div>
-		    										</div>
-		    									</div>
-		    								</div>
-		    							</div>
+										</div>
+									
+										</div>
+									</div>
+								</div>
+
+		    							
+		    						<div class="row" style="padding-bottom:10px;">
+								 	<div class="col-sm-4">	Approved by</div>
+										<div class="col-sm-8">
+											<div class="form-group">
+												<div class="col-sm-6" style="padding:0;">
+													<input type="text" class="form-control" name="proj_fname" placeholder="First Name">
+											</div>
+										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+										<input type="text" class="form-control" name="proj_lname"placeholder="Last Name">
+										</div>
+										</div>
+									</div>
+								</div>
+								<div class="row" style="padding-bottom:10px;">
+									<div class="col-sm-4">	</div>
+								<div class="col-sm-8">
+									<div class="form-group">
+										<div class="col-sm-12" style="padding:0;">
+												<div class="input-group date form-group" id="datepicker2" data-date="02-2012" data-date-format="mm-yyyy">
+																 <input class="form-control" type="text" readonly="readonly" name="date" >	  
+																 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+															</div>
+										</div>
+									
+										</div>
+									</div>
+								</div>
+
 		    							<div class="row">
-    										<div class="col-sm-6">
+    										<div class="col-sm-4">
     											<div class="form-group">
     												Statements 
     											</div>
     										</div>
-    										<div class="col-sm-6">
+    										<div class="col-sm-8">
     											<div class="form-group">
 													<select name="statements[]"  class="form-control" >
 														<option value="" disabled selected>Select</option>
