@@ -224,6 +224,7 @@ class ProjectInformationController extends Controller
             'team' => $team,
             'tender' => $tender,
         ]);
+       // return json($tender);
 
     }
 

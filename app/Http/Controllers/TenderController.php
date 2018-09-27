@@ -29,7 +29,7 @@ class TenderController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -52,11 +52,27 @@ class TenderController extends Controller
     {
 
         $id = $request->get('id');
-        $tender = new Tender;
-        $tender->project_record_id = $id;
-        $tender->services = $request->get('services');
-        $tender->save();
+        $idd = $request->input('idd');
+        $check = Tender::where('tender_id', $idd)->first();
+        if($check){
+            // Tender::where('tender_id', $idd)->delete();
+            // $tender = new Tender;
+            // $tender->project_record_id = $id;
+            // $tender->services = $request->get('services');
+            // $tender->save();
 
+            $tender = Tender::where('tender_id', $idd);
+            $tender->update([
+                'project_record_id' => $tender->project_record_id = $id,
+                'services' => $tender->services = $request->get('services')
+            ]);
+        }
+        if(!$check){
+            $tender = new Tender;
+            $tender->project_record_id = $id;
+            $tender->services = $request->get('services');
+            $tender->save();
+        }
 
 
         $bonds = $request->get('cntbonds');
@@ -78,10 +94,13 @@ class TenderController extends Controller
 
         // $tender = Tender::where('project_record_id', $id)->get();
 
-        $tenderid = $tender->tender_id;
+        $tenderid = $check;
+
 
         // return redirect('/project_info'.'/'.$id.'/edit');//->with($tenderid);
         return response()->json(array('success' => true, 'services' => $tenderid), 200);
+        //$data = Tender::where('project_record_id', $id)->get();
+        //return response()->json($data);
     }
 
     /**

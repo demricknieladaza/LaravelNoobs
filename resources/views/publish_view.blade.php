@@ -63,7 +63,7 @@
 <script type="text/javascript">
 	$(document).ready(function (){
 		$('#createservproj').click(function(){
-			//alert('adsad');
+			// alert('adsad');
 			var serv = $('select[name="servicechoice"]').val();
 			// $('#selectServe').toggle();	
 			$('#serveprojtitle').html(serv);
@@ -73,7 +73,9 @@
 				method: 'post',
 				data: {
 					services: jQuery('#tendserve').val(),
-					id: {{ $project->project_record_id }}
+					id: {{ $project->project_record_id }},
+					idd: jQuery('#idd').val()
+
 				},
 				success: function(result){
 					// jQuery('.alert').show();
@@ -91,6 +93,17 @@
 		$('#cret').click(function(){
 			$('#idd').val(0);
 		});
+
+		// $('#tender_load').click(function(){
+		// 	jQuery.ajax({
+		// 		url: "{{ url('project_info_tender') }}",
+		// 		method: 'get',
+		// 		success:function(response){
+		// 			var tender = [];
+		// 			tender = response.tender;
+		// 		}
+		// 	});
+		// });
 
 		$('.upd').click(function(){
 			var constr = [];
@@ -222,7 +235,8 @@
 		          		</select>
 	          		</div>
 				  </p>
-				  <input type="text" name="" id="idd" value="0">
+				  {{-- TENDER ID --}}
+				  <input type="hidden" name="tender_id" id="idd" value="0">
 	        </div>
 	        <div class="modal-footer" style="text-align: center;">
 	          <button type="button" class="btn btn-primary" data-toggle="tab" data-backdrop="false" data-dismiss="modal" href="#section4" id="createservproj" >Create</button>
@@ -287,7 +301,7 @@
 				<ul class="nav navs bid-form-nav">
 					<li class="active"><a class="abut" data-toggle="tab" href="#section1">Project</a></li>
 					<li class=""><a class="abut" data-toggle="tab" href="#section2">Scope</a></li>
-					<li class=""><a class="abut" data-toggle="tab" href="#section3">Tenders</a></li>
+					<li class=""><a class="abut" data-toggle="tab" href="#section3" id="tender_load">Tenders</a></li>
 					<li class="" id="cret" ><a class="abut" data-toggle="modal" data-target="#selectServe"><span data-toggle="tab" href="#section4">Create New Tender</span></a></li>
 				</ul><br>
 			</div>
