@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/bxslider.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/proj_dash.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/datepicker.css')}}">
     <link rel="shortcut icon" href="{{asset('images/logo.jpg')}}">
     {{-- @if(Route::currentRouteName() != 'winwork') --}}
         <script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
@@ -27,14 +28,15 @@
     <script type="text/javascript" src="{{asset('js/owl.carousel.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/functions.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/bxslider.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/bootstrap-datepicker.js')}}"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css"> -->
-	<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/bootstrap.datepicker/0.1/css/datepicker.css">
+	{{-- <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/bootstrap.datepicker/0.1/css/datepicker.css"> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.0/bootstrap-slider.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.0/bootstrap-slider.js"></script>
 	<link rel="stylesheet" type="text/css" href="{{asset('css/animate.min.css')}}">
 	<!-- <link rel="shortcut icon" href="{{asset('logo.jpg')}}"> -->
-	<script type="text/javascript" src="http://cdn.jsdelivr.net/bootstrap.datepicker/0.1/js/bootstrap-datepicker.js"></script>
+	{{-- <script type="text/javascript" src="http://cdn.jsdelivr.net/bootstrap.datepicker/0.1/js/bootstrap-datepicker.js"></script> --}}
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link id="themecss" rel="stylesheet" type="text/css" href="//www.shieldui.com/shared/components/latest/css/light/all.min.css" />
 	<!-- <script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/jquery-1.11.1.min.js"></script> -->
@@ -955,7 +957,7 @@
 
 
 	<!-- BID -->
-    <script>
+    {{-- <script>
 	$("#datepicker").datepicker( {
 		    format: "mm-yyyy",
 		    viewMode: "months", 
@@ -1038,7 +1040,7 @@
 			    viewMode: "months", 
 			    minViewMode: "months"
 			});
-	</script>
+	</script> --}}
 	<script type="text/javascript">
 		$(document).ready(function() {
 	    var max_fields      = 10; //maximum input boxes allowed

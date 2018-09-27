@@ -416,21 +416,36 @@
 	        e.preventDefault();
 	        if(x < max_fields){ //max input box allowed
 	            x++; //text box increment
-	            $(wrapper).append('<div><div class="form-group"><select name="Sel"  class="form-control" ><option value="" disabled selected>Select Service</option>'+adddiv+'<option value="other">Other</option></select></div><div class="form-group"><div class="input-group date" id="datepickernichuy" data-date="02-2012" data-date-format="mm-yyyy"><input class="form-control" type="text" placeholder="Provided this Service from" readonly="readonly" name="date" > <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span></div></div><div class="form-group"><div class="input-group date" id="datepickernichuy" data-date="02-2012" data-date-format="mm-yyyy"><input class="form-control" type="text" placeholder="Provided this Service until" readonly="readonly" name="date" ><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span></div></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
+	            $(wrapper).append('<div><div class="form-group"><select name="Sel"  class="form-control" ><option value="" disabled selected>Select Service</option>'+adddiv+'<option value="other">Other</option></select></div><div class="row" style="padding-bottom:10px;"><div class="col-sm-12"><div class="form-group"><div class="col-sm-6" style="padding:0;"><div class="input-group date" id="datepickernichuy" data-date="02-2012"  data-date-format="mm-yyyy"><input class="form-control" disabled type="text" id="datepickernichuy" placeholder="Provided this service from" readonly="readonly" name="servefrom" ><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span></div></div><div class="col-sm-6" style="padding:0;padding-left: 15px;"><div class="input-group date" disabled id="datepicker8" data-date="02-2012" data-date-format="mm-yyyy"><input class="form-control" type="text" placeholder="Provided this service until" readonly="readonly" name="serveuntil" ><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span></div></div></div></div></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
 	        }
+	        rundate();
 	    });
 	    
 	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
 	        e.preventDefault(); $(this).parent('div').remove(); x--;
 	    });
 
-	    $('body').on('click',"#datepickernichuy", function(){
-	        $(this).datepicker( {
-			    format: "mm-yyyy",
-			    viewMode: "months", 
-			    minViewMode: "months"
-			});
+	    $('.date').datepicker({
+	    	format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
 	    });
+
+	    function rundate(){
+    	    $('.date').datepicker({
+    	    	format: "mm-yyyy",
+    		    viewMode: "months", 
+    		    minViewMode: "months"
+    	    });
+	    }
+
+	  //   $('body').on('click',"#datepickernichuy", function(){
+	  //       $(this).datepicker( {
+			//     format: "mm-yyyy",
+			//     viewMode: "months", 
+			//     minViewMode: "months"
+			// });
+	  //   });
 	});
 </script>
 <script type="text/javascript">
@@ -440,7 +455,7 @@
     });
 </script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> --}}
 
 <div class="modal fade" id="awards" role="dialog">
 	  <div class="modal-dialog">
@@ -551,12 +566,12 @@
 				<div class="tender-container" style="border-radius: 6px;">
 					<ul class="nav bid-form-nav">
 						<li class="active totop"><a data-toggle="tab" href="#section1">Pre-Qualification Questionnaire<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disda totop" ><a data-toggle="tab" href="#section2">Organisation<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disda totop"><a data-toggle="tab" href="#section3">Individuals<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disda totop"><a data-toggle="tab" href="#section4">Approach<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disda totop"><a data-toggle="tab" href="#section5">Scope<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disda totop"><a data-toggle="tab" href="#section6">Appointment<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disda totop"><a data-toggle="tab" href="#section7">Quality Assurance<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disd totop" ><a data-toggle="tab" href="#section2">Organisation<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disd totop"><a data-toggle="tab" href="#section3">Individuals<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disd totop"><a data-toggle="tab" href="#section4">Approach<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disd totop"><a data-toggle="tab" href="#section5">Scope<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disd totop"><a data-toggle="tab" href="#section6">Appointment<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disd totop"><a data-toggle="tab" href="#section7">Quality Assurance<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
 					</ul><br>
 				</div>
 				<div class="form-group">
@@ -802,19 +817,15 @@
 								<div class="col-sm-12">
 									<div class="form-group">
 										<div class="col-sm-6" style="padding:0;">
-											<div class="input-group date" id="datepicker7" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
-
-													 <input class="form-control" type="text" placeholder="Provided this service from" readonly="readonly" name="date" >	  
-													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-												</div>
+											<div class="input-group date" id="datepickernichuy" data-date="02-2012"  data-date-format="mm-yyyy">
+												<input class="form-control" disabled type="text" id="datepickernichuy" placeholder="Provided this service from" readonly="readonly" name="date" >	  
+												<span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+											</div>
 										</div>
 										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-											<div class="input-group date" id="datepicker8" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
-
-													 <input class="form-control" type="text" placeholder="Provided this service until" readonly="readonly" name="date" >	  
-													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+											<div class="input-group date" disabled id="datepicker8" data-date="02-2012" data-date-format="mm-yyyy">
+													<input class="form-control" type="text" placeholder="Provided this service until" readonly="readonly" name="date" >	  
+													<span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
 										</div>
 									</div>
