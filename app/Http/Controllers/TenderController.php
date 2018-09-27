@@ -74,37 +74,9 @@ class TenderController extends Controller
         $appointment->save();
 
 
-        $project = ProjectInformations::find($id);
+        $tender = Tender::where('project_record_id', $id)->get();
 
-        //This the sub models
-        $transport = TransportLink::where('project_record_id', $id)->first();
-        
-        //$area = AreaSpecificInformation::where('project_record_id', $id)->get();
-        $area = AreaSpecificInformation::where('project_record_id', $id)->first();
-
-        $constraints = Constraints::where('project_record_id', $id)->get();
-
-        $type = TypeOfUse::where('project_record_id', $id)->get();
-
-        $milestones = Milestones::where('project_record_id', $id)->get();
-
-        $meetings = Meetings::where('project_record_id', $id)->first();
-
-        $team = ProjectTeam::where('project_record_id', $id)->get();
-
-        return redirect('/project_info'.'/'.$id.'/edit')->with([
-            'project' => $project,
-            'transport' => $transport,
-            'area' => $area,
-            'constraints' => $constraints,
-            'type' => $type,
-            'milestones' => $milestones,
-            'meetings' => $meetings,
-            'team' => $team
-        ]);
-
-
-        //return redirect('/project_info'.'/'.$id.'/edit');
+        return redirect('/project_info'.'/'.$id.'/edit')->with($tender);
         //return response()->json(array('success' => true, 'services' => $services), 200);
     }
 

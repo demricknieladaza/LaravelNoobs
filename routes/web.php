@@ -69,7 +69,7 @@ Route::get('/dashboard/individuals', 'UsersController@individuals_controller');
 
 
 
-Route::put('project_info/{id}', 'ProjectInformationController@Update');
+//Route::put('project_info/{id}', 'ProjectInformationController@Update');
 Route::resource('project_info','ProjectInformationController');
 Route::resource('project_info_tender','TenderController');
 
