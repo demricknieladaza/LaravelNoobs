@@ -69,6 +69,13 @@
 	.hid.adbondslist {
 		display: none;
 	}
+	.tdpad > tr > td{
+		padding: 0 !important;
+	}
+	#section31 > table > tbody > tr > td > div > div > div > p {
+	    line-height: 2.2;
+	    font-size: small;
+	}
 </style>
 <script type="text/javascript">
 	function showaddbondslist(){
@@ -1224,13 +1231,9 @@
 		    					<div id="section31" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Evaluation Settings</h3>
 		    						
-		    						<p style="padding: 18px; border: 1px solid grey;border-radius: 6px;">
+		    						{{-- <p style="padding: 18px; border: 1px solid grey;border-radius: 6px;">
 		    						<b>Note: Read first!</b> <br>
 		    						In order to complete this section, you have to download the excel file below. Afterwards, you have to fill out all the important information or fields needed. Please be informed that all the data you have  inputted will remain confidential.</p>
-		    						{{-- 
-		    						<div class="down">
-		    							<a download="Book-Scope.xlsx" href="{{asset('css/scopexl/Book-Scope.xlsx')}} "><i class="fa fa-download"> Download</i></a>
-		    						</div> --}}
 
 		    						<div class="row downloader" style="    display: flex;     padding: 25px;">
 		    						  <img
@@ -1253,10 +1256,6 @@
 		    						Already done filling up the fields? Well you're almost done! Once, you have completed it. Kindly, submit or drag the excel file below. You are good to proceed now. Thank you!</p>
 
 		    						<div class="row" style="padding: 30px;">
-		    							{{-- <form method="POSt" enctype="multipart/form-data" action="upload.php">
-		    								<input type="file" name="file" value="Upload">
-		    								<input type="submit" value="Upload">
-		    							</form> --}}
 
 		    							<form id="upload" action="index.html" method="POST" enctype="multipart/form-data">
 
@@ -1271,18 +1270,174 @@
 		    								<div id="filedrag">or drop file here</div>
 		    							</div>
 
-		    							{{-- <div id="submitbutton">
-		    								<button type="submit">Upload Files</button>
-		    							</div> --}}
-
 		    							</fieldset>
 
 		    							</form>
 
 		    							<div id="messages">
 		    							<p>Status Messages</p>
-		    							</div><br>
-
+		    							</div><br> --}}
+		    							<table class="table">
+		    								<thead>
+			    								<tr>
+			    									<td width="21.33%">Factors</td>
+			    									<td width="12%">Importance</td>
+			    									<td width="21.33%">Factors</td>
+			    									<td width="12%">Importance</td>
+			    									<td width="21.33%">Factors</td>
+			    									<td width="12%">Importance</td>
+			    								</tr>
+			    							</thead>
+			    							<tbody class="tdpad">
+			    								<tr>
+				    								<td colspan="2" >
+				    									<div class="evalwquali" style="border: 1px solid red;">
+				    										<div class="">
+					    										<span>Qualitative</span>
+					    										<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>Quantitative</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+					    										<span>Risk</span>
+					    										<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>Total</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    									</div>
+				    								</td>
+				    								<td colspan="2">
+				    									<div class="evalorga" style="border: 1px solid red;">
+				    										<div class="">
+				    											<span>Organisation</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>Individual</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>Total</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    									</div>
+				    									<div class="evalinsu" style="border: 1px solid red;">
+				    										<div class="">
+				    											<span>Insurances</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>Bonds</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>3rd Parties</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>Limit of liability</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>Net contribution clause</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>Total</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    									</div>
+				    								</td>
+				    								<td colspan="2">
+				    									<div class="evalorgaproj" style="border: 1px solid red;">
+				    										<div class="">
+				    											<span>Project Experience</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>Variety of Services</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>Awards</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>Accreditations</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>Relationship to Employer</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<p>Total</p>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    									</div>
+				    									<div class="evalindiproj" style="border: 1px solid red;">
+				    										<div class="">
+				    											<span>Project Experience</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>Years of relevant Experience</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>Industry Experience</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>Awards</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>Accreditaions</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>Relationship to Employer</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>Communication Skills</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>People Management</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>Time Management</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>Pro-Active</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>Social Behaviour</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>Technical 'Hard' Skills</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    										<div class="">
+				    											<span>Total</span>
+				    											<input type="text" name="" class="form-control">
+				    										</div>
+				    									</div>
+				    								</td>
+			    								</tr>
+			    							</tbody>
+		    							</table>
+		    							
 		    							<div class="form-group butcent">
 											<input id="sec2" type="submit" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
 										</div>
