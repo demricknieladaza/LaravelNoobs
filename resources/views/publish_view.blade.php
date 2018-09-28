@@ -80,7 +80,9 @@
 				success: function(result){
 					// jQuery('.alert').show();
 					// jQuery('.alert').html(result.services);
-					$('h3#serveprojtitle').attr('data-id',result.services);
+					// $('h3#serveprojtitle').attr('data-id',result.services);
+					$('tbody#tenderload').append('<tr><td style="text-align: left;font-weight:bolder; " calss="td">'+result.services['services']+'<a data-tender-id="'+result.services['tender_id']+'"><p>Edit Tender</p></a></td><td class="td">Drafted</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td"></td><tr>');
+					console.log(result.services);
 					// alert(result.services);
 				}
 			});
@@ -710,7 +712,7 @@
 			            <th class="kilid" style="width: 130px;">Actions</th>
   			        </tr>
     			    </thead>
-    			    <tbody>
+    			    <tbody id="tenderload">
 					@if(count($tender) > 0)
 						@foreach($tender as $ten)
 						<tr>

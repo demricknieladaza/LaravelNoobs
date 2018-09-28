@@ -54,6 +54,7 @@ class TenderController extends Controller
         $id = $request->get('id');
         $idd = $request->input('idd');
         $check = Tender::where('tender_id', $idd)->first();
+        $newtend = [];
         if($check){
             // Tender::where('tender_id', $idd)->delete();
             // $tender = new Tender;
@@ -72,6 +73,7 @@ class TenderController extends Controller
             $tender->project_record_id = $id;
             $tender->services = $request->get('services');
             $tender->save();
+            $newtend = $tender;
         }
 
 
@@ -94,7 +96,8 @@ class TenderController extends Controller
 
         // $tender = Tender::where('project_record_id', $id)->get();
 
-        $tenderid = $check;
+        $tenderid = $newtend;
+        // $tenderid = ['a','b'];
 
 
         // return redirect('/project_info'.'/'.$id.'/edit');//->with($tenderid);
