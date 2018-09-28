@@ -374,7 +374,7 @@
 	        e.preventDefault();
 	        if(x < max_fields){ //max input box allowed
 	            x++; //text box increment
-	            $(wrapper).append('<div><div class="row"><div class="col-sm-6" style="padding-right: 0;"><div class="form-group"><select name="Sel"  class="form-control" ><option value="" disabled selected>Select project team member</option>'+mem+'</select></div></div><div class="col-sm-6"><div class="form-group"><input type="text" name="compname" class="form-control" placeholder="Company name"></div></div></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
+	            $(wrapper).append('<div><div class="form-group"><select name="Sel"  class="form-control" ><option value="" disabled selected>Select project team member</option>'+mem+'</select></div><div class="form-group"><select name="Sel"  class="form-control" ><option value="" disabled selected>Select company</option>'+comp+'<option>Other</option></select></div><div class="form-group"><div class="form-group"><input type="text" name="" class="form-control" placeholder="Enter new company name"></div></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
 	        }
 	    });
 	    
@@ -566,12 +566,12 @@
 				<div class="tender-container" style="border-radius: 6px;">
 					<ul class="nav bid-form-nav">
 						<li class="active totop"><a data-toggle="tab" href="#section1">Pre-Qualification Questionnaire<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disd totop" ><a data-toggle="tab" href="#section2">Organisation<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disd totop"><a data-toggle="tab" href="#section3">Individuals<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disd totop"><a data-toggle="tab" href="#section4">Approach<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disd totop"><a data-toggle="tab" href="#section5">Scope<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disd totop"><a data-toggle="tab" href="#section6">Appointment<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disd totop"><a data-toggle="tab" href="#section7">Quality Assurance<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disda totop" ><a data-toggle="tab" href="#section2">Organisation<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disda totop"><a data-toggle="tab" href="#section3">Individuals<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disda totop"><a data-toggle="tab" href="#section4">Approach<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disda totop"><a data-toggle="tab" href="#section5">Scope<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disda totop"><a data-toggle="tab" href="#section6">Appointment<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disda totop"><a data-toggle="tab" href="#section7">Quality Assurance<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
 					</ul><br>
 				</div>
 				<div class="form-group">
@@ -765,13 +765,19 @@
 											</div>
 										</div>
 										<div class="col-sm-8">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter profile title">
-											</div>
-											<div class="form-group">
-												<span style="position: absolute;left: 24px;line-height: 2.5;font-weight: 700;">£ </span>
-												<input type="number" style="padding-left: 24px;" name="" id="consvalue" class="form-control" placeholder="Construction value ">
-											</div>
+											<div class="row" style="padding-bottom:10px;">
+								<div class="col-sm-12">
+									<div class="form-group">
+										<div class="col-sm-6" style="padding:0;">
+											<input type="text" name="" class="form-control" placeholder="Enter profile title">
+										</div>
+										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+											<input type="number" name="" id="consvalue" class="form-control" placeholder="Construction value ">  
+										</div>
+										</div>
+									</div>
+								</div>
+							
 
 										
 						                    <label for="typeofuse"><strong>Type of use</strong></label>
@@ -796,73 +802,6 @@
 												<input type="text" class="form-control hid adtypeofuse" name="adserv">
 											    <button type="button" class="btn btn-primary notherbuttypeofuse" onclick="showaddtype()">Add another type of use</button>
 											    <button type="button" class="btn btn-primary hid adtypeofuse" id="addservicebut" onclick="addtypeofuse()">Add type of use</button>
-											</div>
-											
-											<label for="typeofdev"><strong>Select type of development</strong></label>
-											<ul id="typeofdev" class="typeofdev">
-											<?php
-											$Service = array(
-												"New built","Refurbishment ","Demolition"
-											);
-											sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
-											foreach ($Service as $key ) {
-											    echo "<li><div class='form-check'>
-														<label>
-															<input type='checkbox' name='typeofdev[]' value='".$key."'><span class='label-text'>".$key."</span>
-														</label>
-													</div></li>";
-											}
-
-											?>
-											</ul>
-										
-													
-											<div class="form-group">
-												
-												<textarea id="text-input1" cols="25" rows="3" placeholder="Enter details"></textarea>
-												<div class="word-counter">
-												     <label id="count-label1">3000</label>/3000 words
-												</div>
-												
-											</div>
-											<div class="form-group">	
-												<div class="field" align="left">
-												  <strong>Upload your images</strong>
-												  <input type="file" id="files" name="files[]" multiple />
-												</div>
-						                    </div>
-						                    <div class="row">
-						                    	<div class="col-sm-6" style="padding-right: 0;">
-						                    <div class="form-group">
-												<select name="Sel"  class="form-control" >
-													<option value="" disabled selected>Select project team member</option>
-													<?php 
-														$members = array(
-															"Architect","Structural engineer","Service engineer","Fire engineer","Acoustic engineer","Principal designer","Facade engineer","Building control","Lighting consultant","Security consultant","Planning consultant","Sustainability consultant","BIM consultant","Quantity surveyor","Project manager"
-														);
-														sort($members, SORT_NATURAL | SORT_FLAG_CASE);
-														foreach ($members as $key ) {
-														    echo "<option value='".$key."'>".$key."</option>";
-														}
-													 ?>
-												</select>
-											</div>
-											</div>
-											<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="compname" class="form-control" placeholder="Company name">
-											
-											</div>
-											</div>
-											</div>
-											<div id="newprojmem">
-												
-											</div>
-											<div class="form-group">
-												<div class="input_fields_team">
-												    <button class="btn btn-primary" id="addprojmember">Add another project team member</button>
-												    <div></div>
-												</div>
 											</div>
 											<div class="form-group">
 												<select name="Sel"  class="form-control" >
@@ -906,6 +845,97 @@
 											<div class="form-group">
 												<div class="input_fields_serve">
 												    <button type="button" class="btn btn-primary" id="addservices">Add another service</button>
+												    <div></div>
+												</div>
+											</div>
+											<label for="typeofdev"><strong>Select type of development</strong></label>
+											<ul id="typeofdev" class="typeofdev">
+											<?php
+											$Service = array(
+												"New built","Refurbishment ","Demolition"
+											);
+											sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
+											foreach ($Service as $key ) {
+											    echo "<li><div class='form-check'>
+														<label>
+															<input type='checkbox' name='typeofdev[]' value='".$key."'><span class='label-text'>".$key."</span>
+														</label>
+													</div></li>";
+											}
+
+											?>
+											</ul>
+										
+													
+											<div class="form-group">
+												
+												<textarea id="text-input1" cols="25" rows="3" placeholder="Enter details"></textarea>
+												<div class="word-counter">
+												     <label id="count-label1">3000</label>/3000 words
+												</div>
+												
+											</div>
+											<div class="form-group">	
+												<div class="field" align="left">
+												  <strong>Upload your images</strong>
+												  <input type="file" id="files" name="files[]" multiple />
+												</div>
+						                    </div>
+						                    
+											<div class="row" style="padding-bottom:10px;">
+								<div class="col-sm-12">
+									<div class="form-group">
+										<div class="col-sm-6" style="padding:0;">
+										
+												<select name="Sel"  class="form-control" >
+													<option value="" disabled selected>Select project team member</option>
+													<?php 
+														$members = array(
+															"Architect","Structural engineer","Service engineer","Fire engineer","Acoustic engineer","Principal designer","Facade engineer","Building control","Lighting consultant","Security consultant","Planning consultant","Sustainability consultant","BIM consultant","Quantity surveyor","Project manager"
+														);
+														sort($members, SORT_NATURAL | SORT_FLAG_CASE);
+														foreach ($members as $key ) {
+														    echo "<option value='".$key."'>".$key."</option>";
+														}
+
+													 ?>
+												</select>
+										</div>
+										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+											
+												<select name="Sel"  class="form-control" >
+													<option value="" disabled selected>Select company</option>
+													<?php 
+
+													$company = array(
+																	"Architect",
+																"Structural Engineer",
+																"Service Engineer");
+
+													sort($company,SORT_NATURAL | SORT_FLAG_CASE);
+
+													foreach ($company as $key) {
+													  echo "<option value='".$key."'>".$key."</option>";
+													}
+
+													 ?>
+												
+													<option>Other</option>
+												</select>
+											 
+										</div>
+										</div>
+									</div>
+								</div>
+						
+
+										
+											<div id="newprojmem">
+												
+											</div>
+											<div class="form-group">
+												<div class="input_fields_team">
+												    <button class="btn btn-primary" id="addprojmember">Add another project team member</button>
 												    <div></div>
 												</div>
 											</div>
@@ -1026,29 +1056,7 @@
 
 													</div>
 													<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-													<input type="text" name="" class="form-control" placeholder="Name of degree">
-													</div>
-													</div>
-													</div>
-													</div>
-
-
-                                       <div class="row">
-										<div class="col-sm-4">
-											
-										</div>
-										<div class="col-sm-8">
-
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Name of Degree">
-											</div>
-
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-4"></div>
-										<div class="col-sm-8">
-											<select name='degree_year' class="form-control">
+														<select name='degree_year' class="form-control">
 											    <option value="">Year awarded</option>
 											    <?php 
 													$cur_year = date('Y');
@@ -1061,6 +1069,18 @@
 												    }
 												?>
 											</select>
+													
+													</div>
+													</div>
+													</div>
+													</div>
+
+
+                                     
+									<div class="row">
+										<div class="col-sm-4"></div>
+										<div class="col-sm-8">
+											<input type="text" name="" class="form-control" placeholder="Name of degree">
 										</div>
 									</div>
 									<br>
@@ -1187,11 +1207,11 @@
 												<input type="text" name="" id="consvalue1" class="form-control" placeholder="Enter project title ">
 											</div>
 
-										{{-- <div class="form-group">
+										<div class="form-group">
 								               <input type="checkbox" name="" value="cheked" class="filled-in" id="valconfi1" ><label for="valconfi1">Value confidential </label>
-							              </div> --}}
+							              </div>
 										</div>
-									</div>
+									</div><br>
 									<div class="row">
 										<div class="col-sm-4">
 											<div class="form-group">
@@ -1368,15 +1388,12 @@
 						                    </div>
 								        </div>
 						            </div>
-						            <div class="row">
-										<div class="col-sm-4">
-											<div class="form-group">
-												
-											</div>
-										</div>
-										<div class="col-sm-8">
-											<div class="form-group">
-												<select name='ddlSelectYear' class="form-control">
+						           <div class="row" style="padding-bottom:10px;">
+						           	<div class="col-sm-4"></div>
+								<div class="col-sm-8">
+									<div class="form-group">
+										<div class="col-sm-6" style="padding:0;">
+											<select name='ddlSelectYear' class="form-control">
 										            <option value="">Select project team member</option>
 										       <?php 
 														$Services = array(
@@ -1390,17 +1407,8 @@
 													 ?>
 													 <option>Others</option>
 										        </select>
-											</div>
 										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-4">
-											<div class="form-group">
-												
-											</div>
-										</div>
-										<div class="col-sm-8">
-											<div class="form-group">
+										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
 												<select name='ddlSelectYear' class="form-control">
 										            <option value="">Company name</option>
 										       <?php 
@@ -1415,19 +1423,12 @@
 													 ?>
 													 <option>Others</option>
 										        </select>
-											</div>
+										</div>
 										</div>
 									</div>
-									<div class="row">
-										<div class="col-sm-4">
-											
-										</div>
-										<div class="col-sm-8">
-											<div class="form-group">
-												<input type="text" name="" id="" class="form-control" placeholder="Enter new company name ">
-											</div>
-										</div>
-									</div><br>
+								</div>
+							
+
 									
 									<div class="form-group butcent">
 										<button type="button" data-toggle="tab" href="#section4" id="checkinpbut" name="Next" class="btn btn-primary butsize ">Next</button>
