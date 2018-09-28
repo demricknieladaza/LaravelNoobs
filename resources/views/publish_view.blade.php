@@ -59,7 +59,38 @@
 	.form-control {
 		display: inline-block;
 	}
+	ul.bondslist {
+	  columns: 2;
+	  -webkit-columns: 2;
+	  -moz-columns: 2;
+	  padding: 0;
+	  list-style: none;
+	}
+	.hid.adbondslist {
+		display: none;
+	}
 </style>
+<script type="text/javascript">
+	function showaddbondslist(){
+		$('.hid.adbondslist').css('display','block');
+		$('.notherbutindi').css('display','none');
+	};
+	function addbondslist()
+	{
+		var ival = $.trim($('.adbondslist').val());
+		if( ival.length != "" ){
+			ival = ival.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+			    return letter.toUpperCase();
+			});
+			var out = "<li><div class='form-check'><label><input type='checkbox' checked name='bonds[]' value='"+ival+"'><span class='label-text'>"+ival+"</span></label></div></li>";
+			$('ul#bondslist').append(out);
+		}
+
+		$('.hid.adbondslist').css('display','none');
+		$('.notherbutindi').css('display','block');
+		$('.adbondslist').val('');
+	}
+</script>
 <script type="text/javascript">
 	$(document).ready(function (){
 		$('#createservproj').click(function(){
@@ -211,12 +242,62 @@
 			var element = document.getElementById('showother');
 			element.style.display='none';
 		});
+
+		$('#insurdrpdwn').change(function() {
+		    if($(this).val()==="other"){ 
+		        $(this).parent().append('<div class="form-group" ><input type="text" name="insurancename[]" class="form-control"></div>');    
+		    }
+		});
+	});
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+	    var max_fields      = 10; //maximum input boxes allowed
+	    var wrapper         = $("#addedinsur"); //Fields wrapper
+	    var add_button      = $("#addinsur"); //Add button ID
+	    var yir 			= "<?php $insurance = array("Professional","Indemnity","Public Liability","Products Liability","Employers Liability");sort($insurance,SORT_NATURAL | SORT_FLAG_CASE);foreach ($insurance as $key) {echo "<option value='".$key."'>".$key."</option>";}?>";
+	    
+	    var x = 1; //initlal text box count
+	    $(add_button).click(function(e){ //on add input button click
+	        e.preventDefault();
+	        if(x < max_fields){ //max input box allowed
+	            x++; //text box increment
+	            $(wrapper).append('<div><div class="row" style="padding-bottom:10px;"><div class="col-sm-4"></div><div class="col-sm-8"><div class="form-group"><div class="col-sm-6" style="padding:0;"><select name="insurancename[]" id="insurdrpdwn" class="form-control" ><option value="" disabled selected>Select insurance</option>'+yir+'</select></div><div class="col-sm-6" style="padding:0;padding-left: 15px;"><input type="number" placeholder="Insurance Level" name="insurance_level[]" class="form-control"></div></div></div></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
+	        }
+	    });
+	    
+	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+	        e.preventDefault(); $(this).parent('div').remove(); x--;
+	    });
+	});
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+	    var max_fields      = 10; //maximum input boxes allowed
+	    var wrapper         = $("#addedsig"); //Fields wrapper
+	    var add_button      = $("#addsig"); //Add button ID
+	    
+	    var x = 1; //initlal text box count
+	    $(add_button).click(function(e){ //on add input button click
+	        e.preventDefault();
+	        if(x < max_fields){ //max input box allowed
+	            x++; //text box increment
+	            $(wrapper).append('<div><div class="form-group"><input type="text" placeholder="Enter Document Title" class="form-control" name="net_contribution_clause[]"></div><div class="form-group"><input type="file" class="form-control" name="documents_for_signature[]"></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
+	        }
+	    });
+	    
+	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+	        e.preventDefault(); $(this).parent('div').remove(); x--;
+	    });
 	});
 </script>
 <div class="container below-header ">
 	<h1 id="logo" class="project-title bid-page-title centerh" style="margin-left: 5%;
     margin-right: 5%;">Project Dashboard</small></h1>
 </div>
+
 <div class="container">
 	<div class="modal fade" id="selectServe" role="dialog" tabindex="-1">
 	    <div class="modal-dialog">
@@ -976,7 +1057,7 @@
 													<div class="col-sm-8">
 														<div class="form-group">
 															<div class="col-sm-6" style="padding:0;">
-																<select name="Sel"  class="form-control" >
+																<select name="insurancename[]" id="insurdrpdwn" class="form-control" >
 																		<option value="" disabled selected>Select insurance</option>
 																		<?php 
 
@@ -995,25 +1076,26 @@
 
 																		 ?>
 																	
-																		<option>Other</option>
+																		<option value="other" >Other</option>
 																	</select>
 															</div>
 															<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-															<input type="number" placeholder="Insurance Level" name="insurance_level" class="form-control">
+															<input type="number" placeholder="Insurance Level" name="insurance_level[]" class="form-control">
 															</div>
 															</div>
 														</div>
 													</div>
+													<div id="addedinsur"></div>
 		    									<div class="row" style="padding-bottom:10px;">
 													<div class="col-sm-4">	</div>
 														<div class="col-sm-8">
 															<div class="form-group">
 																<div class="col-sm-6" style="padding:0;">
 																	<div class="form-group">
-																						<div class="cnt_insurance">
-																						    <button class="btn btn-primary" id="cnt_insurance" >Add Another Insurance</button>
-																						</div>
-																					</div>
+																		<div class="cnt_insurance">
+																		    <button class="btn btn-primary" id="addinsur" >Add Another Insurance</button>
+																		</div>
+																	</div>
 																</div>
 															
 																</div>
@@ -1027,35 +1109,25 @@
 		    										</div>
 		    										<div class="col-sm-8">
 		    											<div class="form-group">
-															<select name="Sel"  class="form-control" >
-																		<option value="" disabled selected>Select bonds</option>
-																		<?php 
+		    												<ul id="bondslist" class="bondslist">
+		    												<?php
+		    												$Service = array("Select Bonds ","Performance Bond","Parent Company Guarantee","Tender/Bid Bond","On Demand Bond","Conditional/On  Default Bond");
+		    												sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
+		    												foreach ($Service as $key ) {
+		    												    echo "<li><div class='form-check'>
+		    															<label>
+		    																<input type='checkbox' name='bonds[]' value='".$key."'><span class='label-text'>".$key."</span>
+		    															</label>
+		    														</div></li>";
+		    												}
 
-																		$bonds = array(
-																						"Select Bonds ",  
-																						"Performance Bond",
-																						"Parent Company Guarantee",
-																						"Tender/Bid Bond",
-																						"On Demand Bond",
-																						"Conditional/On  Default Bond"
-																						);
-
-																		sort($bonds,SORT_NATURAL | SORT_FLAG_CASE);
-
-																		foreach ($bonds as $key) {
-																		  echo "<option value='".$key."'>".$key."</option>";
-																		}
-
-																		 ?>
-																	
-																		<option>Other</option>
-																	</select>
+		    												?>
+		    												</ul>
 														</div>
-														<div class="form-group">
-															<div class="cnt_bond">
-																<button class="btn btn-primary" id="cnt_bond" >Add Another Bond</button>
-																<div></div>
-															</div>
+														<div class="form-group divaddservbid">
+															<input type="text" class="form-control hid adbondslist" name="adserv">
+														    <button type="button" class="btn btn-primary notherbutindi" onclick="showaddbondslist()">Add another bond</button>
+														    <button type="button" class="btn btn-primary hid adbondslist" id="adbondslist" onclick="addbondslist()">Add bond</button>
 														</div>
 													</div>
 												</div>
@@ -1122,14 +1194,23 @@
 		    										</div>
 		    										<div class="col-sm-8">
 		    											<div class="form-group">
-															<input type="text" placeholder="Enter Document Title" class="form-control" name="net_contribution_clause">
-															</div>
-															<div class="form-group">
-															<input type="file" class="form-control" name="documents_for_signature">
-															</div>
-															<div class="form-group">
-																<button type="button" class="btn btn-danger">Add another document </button>
-															</div>
+															<input type="text" placeholder="Enter Document Title" class="form-control" name="net_contribution_clause[]">
+														</div>
+														<div class="form-group">
+															<input type="file" class="form-control" name="documents_for_signature[]">
+														</div>
+		    										</div>
+		    										<div class="col-sm-4">
+		    											<div class="form-group">
+		    											</div>
+		    										</div>
+		    										<div class="col-sm-8">
+		    											<div id="addedsig">
+		    												
+		    											</div>
+														<div class="form-group">
+															<button type="button" id="addsig" class="btn btn-primary">Add another document </button>
+														</div>
 
 		    										</div>
 		    										<div class="form-group butcent">
