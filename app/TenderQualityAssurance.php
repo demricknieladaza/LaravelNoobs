@@ -22,7 +22,7 @@ class TenderQualityAssurance extends Model
         'approved_by_fname',
         'approved_by_lname',
         'date_approved',
-        'statement_id'
+        'statement'
     ];
 
     public function tender(){

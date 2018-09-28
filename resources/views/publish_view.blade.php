@@ -118,14 +118,38 @@
 				success: function(result){
 					// jQuery('.alert').show();
 					// jQuery('.alert').html(result.services);
-					// $('h3#serveprojtitle').attr('data-id',result.services);
+					$('h3#serveprojtitle').attr('data-id',result.services['tender_id']);	
+					// $('#tendid').val(result.services['tender_id']);
 					$('tbody#tenderload').append('<tr><td style="text-align: left;font-weight:bolder; " calss="td">'+result.services['services']+'<a data-tender-id="'+result.services['tender_id']+'"><p>Edit Tender</p></a></td><td class="td">Drafted</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td"></td><tr>');
 					console.log(result.services);
 					// alert(result.services);
 				}
 			});
 		});
+		$('.edit_tender').click(function(){
+			var tender_id = $(this).attr('data-tender-id');
+			// $('#idd').val($(this).attr('data-id'));
+			jQuery.ajax({
+				url: "{{ url('tenderget') }}",
+				method: 'get',
+				data: {
+					tendid: tender_id
+				},
+				success: function(result){
+					$('#serveprojtitle').html(result.tender['services']);
+					// jQuery('.alert').show();
+					// jQuery('.alert').html(result.services);
+					// $('h3#serveprojtitle').attr('data-id',result.services);
+					// $('tbody#tenderload').append('<tr><td style="text-align: left;font-weight:bolder; " calss="td">'+result.services['services']+'<a data-tender-id="'+result.services['tender_id']+'"><p>Edit Tender</p></a></td><td class="td">Drafted</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td"></td><tr>');
+					console.log(result);
+					// alert(result.services);
+				}
+			});
+
+		});
 		$('#appointment_save').click(function(){
+			var idd = $('#serveprojtitle').attr('data-id');
+			// alert($('#idd').val());
 			var insurance_n = [];
 			var insurance_l = [];
 			var bond = [];
@@ -136,7 +160,7 @@
 					insurance_n.push($(this).val());
 				}
 			);
-			jQuery("select[name='insurance_level[]']").each(function()
+			jQuery("input[name='insurance_level[]']").each(function()
 				{
 					insurance_l.push($(this).val());
 				}
@@ -147,21 +171,24 @@
 				}
 			);
 			jQuery.ajax({
-				url:"{{ url('project_info_tender') }}",
+				url:"{{ url('project_info_tender_appointment') }}",
 				method: 'post',
 				data: {
+					//id: {{ $project->project_record_id }},
 					insurance_name: insurance_n,
 					insurance_level: insurance_l,
+					current_tend: idd,
 					bonds: bond,
-					collateral_warranties: jQuery("input[name='collateral_warranties']").val(),
+					collateral_warranties: jQuery("select[name='collateral_warranties']").val(),
 					limit_of_liability: jQuery("input[name='limit_of_liability']").val(),
 					// net_contribution_clause:jQuery("input[name='net_contribution_clause']").val(),
 					// documents_for_signature:  jQuery("input[name='documents_for_signature']").val(),
 					// signature_files: jQuery("input[name='signature_files']").val()
 				},
 				success: function(result){
-					jQuery('.alert').show();
-					jQuery('.alert').html(result.success);
+					// jQuery('.alert').show();
+					// jQuery('.alert').html(result.success);
+					console.log(result);
 				}
 			});
 		});
@@ -366,7 +393,7 @@
 	          		</div>
 				  </p>
 				  {{-- TENDER ID --}}
-				  <input type="hidden" name="tender_id" id="idd" value="0">
+				  <input type="input" name="" id="idd" value="0">
 	        </div>
 	        <div class="modal-footer" style="text-align: center;">
 	          <button type="button" class="btn btn-primary" data-toggle="tab" data-backdrop="false" data-dismiss="modal" href="#section4" id="createservproj" >Create</button>
@@ -862,7 +889,7 @@
 								</button><button class="btn btn-primary" style="margin-bottom:10px;    width: 135px;">Dowload Evalution<br>Report</button>
 							 	</button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td>
 							@else
-								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a><p>Edit Tender</p></a></td>
+								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a class="edit_tender" data-tender-id="{{ $ten->tender_id }}" data-toggle="tab" href="#section4"><p>Edit Tender</p></a></td>
 								<td class="td">{{ $ten->status }}</td>
 								<td class="td">TBC</td>
 								<td class="td">TBC</td>
@@ -1022,7 +1049,7 @@
 		    					<ul class="nav bid-form-nav">
 									<h3 data-toggle="modal" data-target="#selectServe" data-id="0" style="margin-bottom: 10px; margin-top: 0;padding: 15px;border: 3px solid grey;border-radius: 6px;text-align: center;" id="serveprojtitle" class="header-title animate-pop-in">
 									</h3>
-									<input type="hidden" name="" id="">
+									<input type="hidden" name="" id="tendid">
 		    						<li class="active"><a data-toggle="tab" href="#section01">Pre-Qualification Questionnaire</a></li>
 		    						<li ><a data-toggle="tab" href="#section11">Scope</a></li>
 		    						<li><a data-toggle="tab" href="#section21">Appointment</a></li>
@@ -1109,8 +1136,8 @@
 		    					</div>
 		    					<div id="section21" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Appointment</h3>
-		    						{{-- <form method="post"> --}}
-									{!! Form::open(['action' => 'TenderController@store', 'method' => 'POST'])!!}
+		    						<form method="post">
+									{{-- {!! Form::open(['action' => 'TenderController@store', 'method' => 'POST'])!!} --}}
 										<input type="hidden" id="tendserve" name="services">
 		    							<div class="row">
 		    								<div class="col-sm-12">
@@ -1282,8 +1309,8 @@
 		    									</div>
 		    								</div>
 		    							</div>
-									{{-- </form> --}}
-									{!! Form::close() !!}
+									</form>
+									{{-- {!! Form::close() !!} --}}
 		    					</div>
 		    					<div id="section31" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Evaluation Settings</h3>

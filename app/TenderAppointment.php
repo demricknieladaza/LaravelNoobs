@@ -12,12 +12,14 @@ class TenderAppointment extends Model
     public $primaryKey = 'tender_appointment_id';
     public $timestamps = false;
     protected $fillable = [
-        'tender_id',
+        
         'insurance_name',
         'insurance_level',
+        'tender_id',
         'bonds_id',
         'collateral_warranties',
         'limit_of_liability'
+        
     ];
 
     public function tender(){

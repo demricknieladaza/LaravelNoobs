@@ -56,17 +56,17 @@ class TenderController extends Controller
         $check = Tender::where('tender_id', $idd)->first();
         $newtend = [];
         if($check){
-            // Tender::where('tender_id', $idd)->delete();
-            // $tender = new Tender;
-            // $tender->project_record_id = $id;
-            // $tender->services = $request->get('services');
-            // $tender->save();
+            Tender::where('tender_id', $idd)->delete();
+            $tender = new Tender;
+            $tender->project_record_id = $id;
+            $tender->services = $request->get('services');
+            $tender->save();
 
-            $tender = Tender::where('tender_id', $idd);
-            $tender->update([
-                'project_record_id' => $tender->project_record_id = $id,
-                'services' => $tender->services = $request->get('services')
-            ]);
+            // $tender = Tender::where('tender_id', $idd);
+            // $tender->update([
+            //     'project_record_id' => $tender->project_record_id = $id,
+            //     'services' => $tender->services = $request->get('services')
+            // ]);
         }
         if(!$check){
             $tender = new Tender;
@@ -75,30 +75,6 @@ class TenderController extends Controller
             $tender->save();
             $newtend = $tender;
         }
-
-        
-
-        $bonds = $request->bonds;
-        for($counter = 0; $counter < count($bonds); $counter++){
-            $bonds = new TenderBonds;
-            $bonds->tender_id = $tender->tender_id;
-            $bonds->bond_name = $bonds[$counter];
-            $bonds->save();
-        }
-
-        $insurance_n = $request->insurance_name;
-        $insurance_l = $request->insurance_level;
-        for($counter = 0; $counter < count($insurance_n); $counter++){
-            $appointment = new TenderAppointment;
-            $appointment->insurance_name = $insurance_n[$counter];
-            $appointment->insurance_level = $insurance_l[$counter];
-            $appointment->tender_id = $tender->tender_id;
-            $appointment->collateral_warranties = $request->input('collateral_warranties');
-            $appointment->limit_of_liability = $request->input('limit_of_liability');
-            $appointment->save();
-        }
-
-
 
         // $tender = Tender::where('project_record_id', $id)->get();
 
@@ -110,6 +86,50 @@ class TenderController extends Controller
         return response()->json(array('success' => true, 'services' => $tenderid), 200);
         //$data = Tender::where('project_record_id', $id)->get();
         //return response()->json($data);
+    }
+
+    public function appointmentStore(Request $request){
+
+        $idd = $request->get('current_tend');
+
+        $bond = $request->bonds;
+        for($counter = 0; $counter < count($bond); $counter++){
+            $bonds = new TenderBonds;
+            $bonds->tender_id = $idd;
+            $bonds->bond_name = $bond[$counter];
+            $bonds->save();
+        }
+
+        $name = $request->insurance_name;
+        $level = $request->insurance_level;
+        for($counter = 0; $counter < count($name); $counter++){
+            $appointment = new TenderAppointment;
+            $appointment->insurance_name = $name[$counter];
+            $appointment->insurance_level = $level[$counter];
+            $appointment->tender_id = $idd;
+            $appointment->collateral_warranties = $request->get('collateral_warranties');
+            $appointment->limit_of_liability = $request->get('limit_of_liability');
+            $appointment->save();
+        }
+
+        return response()->json(array('success' => true, 'test' => $idd), 200);
+    }
+
+    public function gettend(Request $request)
+    {
+        $tenid = $request->get('tendid');
+        $tender = Tender::where('tender_id', $tenid)->first();
+        $bonds = TenderBonds::where('tender_id', $tenid)->get();
+        $appointment = TenderAppointment::where('tender_id', $tenid)->get();
+
+
+        return response()->json(array(
+            'tender' => $tender,
+            'bonds' => $bonds,
+            'appointment' => $appointment
+        ));
+    
+
     }
 
     /**
