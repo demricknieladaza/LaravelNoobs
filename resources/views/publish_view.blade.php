@@ -118,6 +118,46 @@
 				}
 			});
 		});
+		$('#appointment_save').click(function(){
+			var insurance_n = [];
+			var insurance_l = [];
+			var bond = [];
+			var dummy = 'Test';
+			//alert('dasdad');
+			jQuery("select[name='insurance_name[]']").each(function()
+				{
+					insurance_n.push($(this).val());
+				}
+			);
+			jQuery("select[name='insurance_level[]']").each(function()
+				{
+					insurance_l.push($(this).val());
+				}
+			);
+			jQuery("input[name='bonds[]']").each(function()
+				{
+					bond.push($(this).val());
+				}
+			);
+			jQuery.ajax({
+				url:"{{ url('project_info_tender') }}",
+				method: 'post',
+				data: {
+					insurance_name: insurance_n,
+					insurance_level: insurance_l,
+					bonds: bond,
+					collateral_warranties: jQuery("input[name='collateral_warranties']").val(),
+					limit_of_liability: jQuery("input[name='limit_of_liability']").val(),
+					// net_contribution_clause:jQuery("input[name='net_contribution_clause']").val(),
+					// documents_for_signature:  jQuery("input[name='documents_for_signature']").val(),
+					// signature_files: jQuery("input[name='signature_files']").val()
+				},
+				success: function(result){
+					jQuery('.alert').show();
+					jQuery('.alert').html(result.success);
+				}
+			});
+		});
 
 		$('h3#serveprojtitle').click(function(){
 			$('#idd').val($(this).attr('data-id'));
@@ -245,7 +285,7 @@
 
 		$('#insurdrpdwn').change(function() {
 		    if($(this).val()==="other"){ 
-		        $(this).parent().append('<div class="form-group" ><input type="text" name="insurancename[]" class="form-control"></div>');    
+		        $(this).parent().append('<div class="form-group" ><input type="text" name="insurance_name[]" class="form-control"></div>');    
 		    }
 		});
 	});
@@ -263,7 +303,7 @@
 	        e.preventDefault();
 	        if(x < max_fields){ //max input box allowed
 	            x++; //text box increment
-	            $(wrapper).append('<div><div class="row" style="padding-bottom:10px;"><div class="col-sm-4"></div><div class="col-sm-8"><div class="form-group"><div class="col-sm-6" style="padding:0;"><select name="insurancename[]" id="insurdrpdwn" class="form-control" ><option value="" disabled selected>Select insurance</option>'+yir+'</select></div><div class="col-sm-6" style="padding:0;padding-left: 15px;"><input type="number" placeholder="Insurance Level" name="insurance_level[]" class="form-control"></div></div></div></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
+	            $(wrapper).append('<div><div class="row" style="padding-bottom:10px;"><div class="col-sm-4"></div><div class="col-sm-8"><div class="form-group"><div class="col-sm-6" style="padding:0;"><select name="insurance_name[]" id="insurdrpdwn" class="form-control" ><option value="" disabled selected>Select insurance</option>'+yir+'</select></div><div class="col-sm-6" style="padding:0;padding-left: 15px;"><input type="number" placeholder="Insurance Level" name="insurance_level[]" class="form-control"></div></div></div></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
 	        }
 	    });
 	    
@@ -284,7 +324,7 @@
 	        e.preventDefault();
 	        if(x < max_fields){ //max input box allowed
 	            x++; //text box increment
-	            $(wrapper).append('<div><div class="form-group"><input type="text" placeholder="Enter Document Title" class="form-control" name="net_contribution_clause[]"></div><div class="form-group"><input type="file" class="form-control" name="documents_for_signature[]"></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
+	            $(wrapper).append('<div><div class="form-group"><input type="text" placeholder="Enter Document Title" class="form-control" name="documents_for_signature[]"></div><div class="form-group"><input type="file" class="form-control" name="signature_files[]"></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
 	        }
 	    });
 	    
@@ -1062,7 +1102,8 @@
 		    					</div>
 		    					<div id="section21" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Appointment</h3>
-		    						<form method="post">
+		    						{{-- <form method="post"> --}}
+									{!! Form::open(['action' => 'TenderController@store', 'method' => 'POST'])!!}
 										<input type="hidden" id="tendserve" name="services">
 		    							<div class="row">
 		    								<div class="col-sm-12">
@@ -1071,7 +1112,7 @@
 													<div class="col-sm-8">
 														<div class="form-group">
 															<div class="col-sm-6" style="padding:0;">
-																<select name="insurancename[]" id="insurdrpdwn" class="form-control" >
+																<select name="insurance_name[]" id="insurdrpdwn" class="form-control" >
 																		<option value="" disabled selected>Select insurance</option>
 																		<?php 
 
@@ -1094,7 +1135,7 @@
 																	</select>
 															</div>
 															<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-															<input type="number" placeholder="Insurance Level" name="insurance_level[]" class="form-control">
+															<input type="number" placeholder="Insurance Level" name="insurance_level[]" id="ins_level" class="form-control">
 															</div>
 															</div>
 														</div>
@@ -1153,7 +1194,7 @@
 		    										</div>
 		    										<div class="col-sm-8">
 		    											<div class="form-group">
-															<select name="collateral_warranties[]"  class="form-control" >
+															<select name="collateral_warranties"  class="form-control" >
 																<option value="" disabled selected>Select</option>
 																<?php
 																$Service = array(
@@ -1208,10 +1249,10 @@
 		    										</div>
 		    										<div class="col-sm-8">
 		    											<div class="form-group">
-															<input type="text" placeholder="Enter Document Title" class="form-control" name="net_contribution_clause[]">
+															<input type="text" placeholder="Enter Document Title" class="form-control" name="documents_for_signature[]">
 														</div>
 														<div class="form-group">
-															<input type="file" class="form-control" name="documents_for_signature[]">
+															<input type="file" class="form-control" name="signature_files[]">
 														</div>
 		    										</div>
 		    										<div class="col-sm-4">
@@ -1228,12 +1269,14 @@
 
 		    										</div>
 		    										<div class="form-group butcent">
-														<input id="sec2" type="submit" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
+														<input id="sec2" type="button" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
+														<input id="appointment_save" type="button" name="Save" value="Save" class="btn btn-primary butsize">
 													</div>
 		    									</div>
 		    								</div>
 		    							</div>
-		    						</form>
+									{{-- </form> --}}
+									{!! Form::close() !!}
 		    					</div>
 		    					<div id="section31" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Evaluation Settings</h3>

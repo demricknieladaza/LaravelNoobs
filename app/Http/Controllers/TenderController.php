@@ -76,8 +76,9 @@ class TenderController extends Controller
             $newtend = $tender;
         }
 
+        
 
-        $bonds = $request->get('cntbonds');
+        $bonds = $request->bonds;
         for($counter = 0; $counter < count($bonds); $counter++){
             $bonds = new TenderBonds;
             $bonds->tender_id = $tender->tender_id;
@@ -85,13 +86,18 @@ class TenderController extends Controller
             $bonds->save();
         }
 
-        $appointment = new TenderAppointment;
-        $appointment->insurance_name = $request->insurance_name;
-        $appointment->insurance_level = $request->insurance_level;
-        $appointment->bonds_id = $tender->tender_id;
-        $appointment->collateral_warranties = $request->input('collateral_warranties');
-        $appointment->limit_of_liability = $request->input('limit_of_liability');
-        $appointment->save();
+        $insurance_n = $request->insurance_name;
+        $insurance_l = $request->insurance_level;
+        for($counter = 0; $counter < count($insurance_n); $counter++){
+            $appointment = new TenderAppointment;
+            $appointment->insurance_name = $insurance_n[$counter];
+            $appointment->insurance_level = $insurance_l[$counter];
+            $appointment->tender_id = $tender->tender_id;
+            $appointment->collateral_warranties = $request->input('collateral_warranties');
+            $appointment->limit_of_liability = $request->input('limit_of_liability');
+            $appointment->save();
+        }
+
 
 
         // $tender = Tender::where('project_record_id', $id)->get();
