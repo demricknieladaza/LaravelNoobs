@@ -801,24 +801,38 @@
   			        </tr>
     			    </thead>
     			    <tbody id="tenderload">
-					@if(count($tender) > 0)
 						@foreach($tender as $ten)
 						<tr>
-							<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a><p>Edit Tender</p></a></td>
+							{{-- <td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a><p>Edit Tender</p></a></td>
 							<td class="td">{{ $ten->status }}</td>
-							<td class="td">{{ $ten->created_at }}</td>
+							<td class="td">TBC</td>
 							<td class="td">TBC</td>
 							<td class="td">{{ $ten->time_remaining }}</td>
-							<td class="td"><strong style="font-size: 25px;">{{ $ten->bids_received }}</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewBid"><p>View Bids</p></a></td>
-							<td class="td"><strong style="font-size: 25px;">{{ $ten->queries_received }}</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewQueries"><p>View Answer/ Queries</p></a></td>
+							<td class="td">TBC</td>
+							<td class="td">TBC</td> --}}
+							@if($ten->status == "Closed")
+								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a><p></p></a></td>
+								<td class="td">{{ $ten->status }}</td>
+								<td class="td">TBC</td>
+								<td class="td">TBC</td>
+								<td class="td">{{ $ten->time_remaining }}</td>
+								<td class="td">TBC</td>
+								<td class="td">TBC</td>
+								<td class="td">
+								</button><button class="btn btn-primary" style="margin-bottom:10px;    width: 135px;">Dowload Evalution<br>Report</button>
+							 	</button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td>
+							@else
+								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a><p>Edit Tender</p></a></td>
+								<td class="td">{{ $ten->status }}</td>
+								<td class="td">TBC</td>
+								<td class="td">TBC</td>
+								<td class="td">{{ $ten->time_remaining }}</td>
+								<td class="td">TBC</td>
+								<td class="td">TBC</td>
+							@endif
+
 						</tr>
 						@endforeach
-					@else
-						<tr>
-							{{-- <td style="text-align: left;font-weight:bolder; " class="td">No Results<a><p>Edit Tender</p></a></td> --}}
-							<td class="td" colspan="8">No Results</td>
-						</tr>
-					@endif
 
   			        {{-- <tr>
 			            <td style="text-align: left;font-weight:bolder; " class="td">Service Engineer <a><p>Edit Tender</p></a></td>
@@ -1146,7 +1160,7 @@
 		    										</div>
 		    										<div class="col-sm-8">
 		    											<div class="form-group">
-															<select name="bonds[]"  class="form-control" >
+															<select name="collateral_warranties[]"  class="form-control" >
 																<option value="" disabled selected>Select</option>
 																<?php
 																$Service = array(

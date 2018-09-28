@@ -89,7 +89,7 @@ class TenderController extends Controller
         $appointment->insurance_name = $request->insurance_name;
         $appointment->insurance_level = $request->insurance_level;
         $appointment->bonds_id = $tender->tender_id;
-        $appointment->collateral_warranties = $request->input('colaterla_warranties');
+        $appointment->collateral_warranties = $request->input('collateral_warranties');
         $appointment->limit_of_liability = $request->input('limit_of_liability');
         $appointment->save();
 
