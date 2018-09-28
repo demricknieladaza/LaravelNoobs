@@ -222,7 +222,7 @@
 		          		</select>
 	          		</div>
 				  </p>
-				  <input type="text" name="" id="idd" value="0">
+				  <input type="hidden" name="" id="idd" value="0">
 	        </div>
 	        <div class="modal-footer" style="text-align: center;">
 	          <button type="button" class="btn btn-primary" data-toggle="tab" data-backdrop="false" data-dismiss="modal" href="#section4" id="createservproj" >Create</button>
