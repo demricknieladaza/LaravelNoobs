@@ -128,6 +128,9 @@
 		});
 		$('.edit_tender').click(function(){
 			var tender_id = $(this).attr('data-tender-id');
+			var counter_name = 0;
+			var counter_level = 0;
+			var couner_col = 0
 			// $('#idd').val($(this).attr('data-id'));
 			jQuery.ajax({
 				url: "{{ url('tenderget') }}",
@@ -136,11 +139,24 @@
 					tendid: tender_id
 				},
 				success: function(result){
+					alert(result.tender['services']);
 					$('#serveprojtitle').html(result.tender['services']);
 					// jQuery('.alert').show();
 					// jQuery('.alert').html(result.services);
 					// $('h3#serveprojtitle').attr('data-id',result.services);
 					// $('tbody#tenderload').append('<tr><td style="text-align: left;font-weight:bolder; " calss="td">'+result.services['services']+'<a data-tender-id="'+result.services['tender_id']+'"><p>Edit Tender</p></a></td><td class="td">Drafted</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td"></td><tr>');
+					$("div#added_insurance_name").each(function(){
+						$(this).append('<input class="form-control" type="text" value="'+result.appointment[counter_name]['insurance_name']+'" disabled/>');
+						//$("#added_insurance_level").append('<input class="form-control" type="text" value="'+result.appointment['insurance_level']+'" disabled/>');
+						counter_name += 1;
+					});
+					$("div#added_insurance_level").each(function(){
+						$(this).append('<input class="form-control" type="text" value="'+result.appointment[counter_level]['insurance_level']+'" disabled/>');
+						counter_level += 1;
+					});
+					$("div#added_collateral").append('<input class="form-control" type="text" value="'+result.appointment[0]['collateral_warranties']+'" disabled/>');
+					$("div#added_limit").append('<input class="form-control" type="text" value="'+result.appointment[0]['limit_of_liability']+'" disabled/>');
+					
 					console.log(result);
 					// alert(result.services);
 				}
@@ -1144,6 +1160,13 @@
 		    									<div class="row" style="padding-bottom:10px;">
 													<div class="col-sm-4">	Insurances</div>
 													<div class="col-sm-8">
+														{{-- Edit Information --}}
+														<div id="added_insurance_name" class="col-sm-6" style="padding:0;">
+															{{-- <input class="form-control" type="text" value="Test Values" disabled/> --}}
+														</div>
+														<div id="added_insurance_level" class="col-sm-6" style="padding:0;padding-left: 15px;">
+															{{-- <input class="form-control" type="text" value="Test Values" disabled/> --}}
+														</div>
 														<div class="form-group">
 															<div class="col-sm-6" style="padding:0;">
 																<select name="insurance_name[]" id="insurdrpdwn" class="form-control" >
@@ -1225,7 +1248,10 @@
 		    											<div class="form-group">
 		    												Collateral Warranties / Third Parties 
 		    											</div>
-		    										</div>
+													</div>
+													<div id="added_collateral" class="col-sm-8">
+														{{-- <input class="form-control" type="text" value="Test values" disabled/> --}}
+													</div>
 		    										<div class="col-sm-8">
 		    											<div class="form-group">
 															<select name="collateral_warranties"  class="form-control" >
@@ -1255,7 +1281,10 @@
 		    											<div class="form-group">
 		    												Limit of Liability 
 		    											</div>
-		    										</div>
+													</div>
+													<div id="added_limit" class="col-sm-8">
+														{{-- <input class="form-control" type="text" value="Test values" disabled/> --}}
+													</div>
 		    										<div class="col-sm-8">
 		    											<div class="form-group">
 															<input type="number" placeholder="Insert Limit of Liability " name="limit_of_liability" class="form-control">
