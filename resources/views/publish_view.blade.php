@@ -76,6 +76,33 @@
 	    line-height: 2.2;
 	    font-size: small;
 	}
+	.tdpad input{
+		border-top: 1px solid #fe7235;
+		border-bottom: 1px solid #fe7235;
+	}
+	.spanliner span {
+		position: absolute;
+	    line-height: 2.3;
+	    background: #fae1d6;
+	    z-index: 0;
+	    width: 188px;
+	    margin-top: 1px;
+	    padding-left: 4px;
+	}
+	.spanliner input:first-line:{
+		background: gray;
+	}
+	.spanliner input {
+		padding-left: 176px;
+		text-align: right;
+	}
+	.hovertable:hover{
+		transform: scale(1.02);
+		box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;
+	}
+	.hovertable{
+		background: white;
+	}
 </style>
 <script type="text/javascript">
 	function showaddbondslist(){
@@ -191,6 +218,51 @@
 					console.log(result);
 				}
 			});
+		});
+
+		$('input[type="number"]').on('input', function(){
+			var quali = parseInt($('#quali').val());
+			var quanti = parseInt($('#quanti').val());
+			var risk = parseInt($('#risk').val());
+
+			$('#total1').val(quali + quanti + risk+"%");
+
+			var a1 = parseInt($('#a1').val());
+			var a2 = parseInt($('#a2').val());
+
+			$('#atotal').val(a1 + a2 +"%");
+
+			var b1 = parseInt($('#b1').val());
+			var b2 = parseInt($('#b2').val());
+			var b3 = parseInt($('#b3').val());
+			var b4 = parseInt($('#b4').val());
+			var b5 = parseInt($('#b5').val());
+
+			$('#btotal').val(b1 + b2 + b3 + b4 + b5 +"%");
+
+			var c1 = parseInt($('#c1').val());
+			var c2 = parseInt($('#c2').val());
+			var c3 = parseInt($('#c3').val());
+			var c4 = parseInt($('#c4').val());
+			var c5 = parseInt($('#c5').val());
+
+			$('#ctotal').val(c1 + c2 + c3 + c4 + c5 +"%");
+
+			var d1 = parseInt($('#d1').val());
+			var d2 = parseInt($('#d2').val());
+			var d3 = parseInt($('#d3').val());
+			var d4 = parseInt($('#d4').val());
+			var d5 = parseInt($('#d5').val());
+			var d6 = parseInt($('#d6').val());
+			var d7 = parseInt($('#d7').val());
+			var d8 = parseInt($('#d8').val());
+			var d9 = parseInt($('#d9').val());
+			var d10 = parseInt($('#d10').val());
+			var d11 = parseInt($('#d11').val());
+			var d12 = parseInt($('#d12').val());
+
+			$('#dtotal').val(d1 + d2 + d3 + d4 + d5 + d6 + d7 + d8 + d9 + d10 + d11 + d12 + "%");
+
 		});
 
 		$('h3#serveprojtitle').click(function(){
@@ -457,9 +529,9 @@
 			<div class="tender-container tendnew">
 				<ul class="nav navs bid-form-nav">
 					<li class="active"><a class="abut" data-toggle="tab" href="#section1">Project</a></li>
-					<li class=""><a class="abut" data-toggle="tab" href="#section2">Scope</a></li>
-					<li class=""><a class="abut" data-toggle="tab" href="#section3" id="tender_load">Tenders</a></li>
-					<li class="" id="cret" ><a class="abut" data-toggle="modal" data-target="#selectServe"><span data-toggle="tab" href="#section4">Create New Tender</span></a></li>
+					<li class="123"><a class="abut" data-toggle="tab" href="#section2">Scope</a></li>
+					<li class="123"><a class="abut" data-toggle="tab" href="#section3" id="tender_load">Tenders</a></li>
+					<li class="123" id="cret" ><a class="abut" data-toggle="modal" data-target="#selectServe"><span data-toggle="tab" href="#section4">Create New Tender</span></a></li>
 				</ul><br>
 			</div>
 		</div>
@@ -484,7 +556,7 @@
 		    	</div>
 		    </div>
 		    <div class="row">
-		    	<div class="">
+		    	<div class="123">
 		    		<div class="row">
 		    			<div class="col-sm-12 project-anchor">
 		    				<a href="#">Project Details</a>
@@ -1042,7 +1114,7 @@
 				</div>	
 				<div id="section4" class="tab-pane fade tender-container" style="padding-top:0;margin-left:auto;margin-right:auto;">
 					<div class="row" style="margin: 25px;">
-		    	<div class="">
+		    	<div class="123">
 		    		<div class="row">
 		    			<div class="col-sm-3">
 		    				<div class="tender-container" id="mama">
@@ -1314,53 +1386,6 @@
 		    					</div>
 		    					<div id="section31" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Evaluation Settings</h3>
-		    						
-		    						{{-- <p style="padding: 18px; border: 1px solid grey;border-radius: 6px;">
-		    						<b>Note: Read first!</b> <br>
-		    						In order to complete this section, you have to download the excel file below. Afterwards, you have to fill out all the important information or fields needed. Please be informed that all the data you have  inputted will remain confidential.</p>
-
-		    						<div class="row downloader" style="    display: flex;     padding: 25px;">
-		    						  <img
-		    						  	style="width: 150px;height: 150px;"
-		    						    alt="excel-logo"
-		    						    class="excel"
-		    						    src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Microsoft_Excel_2013_logo.svg/2000px-Microsoft_Excel_2013_logo.svg.png" />
-		    						  <div class="download_icon">
-		    						    <p>
-		    						     <a download="Evaluation Setting.xlsx" href="{{asset('css/scopexl/Evaluation Setting.xlsx')}} "><i class="fa fa-download"> Download</i></a>
-		    						    </p>
-		    						    <p class="download_para">
-		    						      <small>Lorem <abbr title="Download">DL</abbr>.  It has survived not only five centuries, but also the leap into electronic typesetting</small>
-		    						    </p>
-		    						  </div>
-		    						</div><br>
-
-		    						<p style="padding: 18px; border: 1px solid grey;border-radius: 6px;">
-		    						<b>Note: Almost there!</b> <br>
-		    						Already done filling up the fields? Well you're almost done! Once, you have completed it. Kindly, submit or drag the excel file below. You are good to proceed now. Thank you!</p>
-
-		    						<div class="row" style="padding: 30px;">
-
-		    							<form id="upload" action="index.html" method="POST" enctype="multipart/form-data">
-
-		    							<fieldset>
-		    							<legend>Upload Excel File</legend>
-
-		    							<input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
-
-		    							<div>
-		    								<label for="fileselect">File to upload:</label>
-		    								<input type="file" id="fileselect" name="fileselect[]" />
-		    								<div id="filedrag">or drop file here</div>
-		    							</div>
-
-		    							</fieldset>
-
-		    							</form>
-
-		    							<div id="messages">
-		    							<p>Status Messages</p>
-		    							</div><br> --}}
 		    							<table class="table">
 		    								<thead>
 			    								<tr>
@@ -1375,146 +1400,146 @@
 			    							<tbody class="tdpad">
 			    								<tr>
 				    								<td colspan="2" >
-				    									<div class="evalwquali" style="border: 1px solid red;">
-				    										<div class="">
+				    									<div class="evalwquali hovertable" style="border: 1px solid #fe7235;">
+				    										<div class="spanliner" style="margin-bottom: 650px;">
 					    										<span>Qualitative</span>
-					    										<input type="text" name="" class="form-control">
+					    										<input id="quali" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner">
 				    											<span>Quantitative</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="quanti" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner" style="margin-bottom: 172px;margin-top: 1px;">
 					    										<span>Risk</span>
-					    										<input type="text" name="" class="form-control">
+					    										<input id="risk" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner">
 				    											<span>Total</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="total1" readonly placeholder="%" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="text" maxlength="3" class="form-control">
 				    										</div>
 				    									</div>
 				    								</td>
 				    								<td colspan="2">
-				    									<div class="evalorga" style="border: 1px solid red;">
-				    										<div class="">
+				    									<div class="evalorga hovertable" style="border: 1px solid #fe7235;">
+				    										<div class="spanliner" style="margin-bottom: 172px;">
 				    											<span>Organisation</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="a1" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner" style="margin-bottom: 408px;">
 				    											<span>Individual</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="a2" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner">
 				    											<span>Total</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="atotal" readonly placeholder="%" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="text" maxlength="3" class="form-control">
 				    										</div>
 				    									</div>
-				    									<div class="evalinsu" style="border: 1px solid red;">
-				    										<div class="">
+				    									<div class="evalinsu hovertable" style="border: 1px solid #fe7235;margin-top: 35px;">
+				    										<div class="spanliner">
 				    											<span>Insurances</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="b1" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner">
 				    											<span>Bonds</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="b2" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner">
 				    											<span>3rd Parties</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="b3" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner">
 				    											<span>Limit of liability</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="b4" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner">
 				    											<span>Net contribution clause</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="b5" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner">
 				    											<span>Total</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="btotal" readonly placeholder="%" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="text" maxlength="3" class="form-control">
 				    										</div>
 				    									</div>
 				    								</td>
 				    								<td colspan="2">
-				    									<div class="evalorgaproj" style="border: 1px solid red;">
-				    										<div class="">
+				    									<div class="evalorgaproj hovertable" style="border: 1px solid #fe7235;">
+				    										<div class="spanliner">
 				    											<span>Project Experience</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="c1" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner">
 				    											<span>Variety of Services</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="c2" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner">
 				    											<span>Awards</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="c3" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner">
 				    											<span>Accreditations</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="c4" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner">
 				    											<span>Relationship to Employer</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="c5" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
-				    											<p>Total</p>
-				    											<input type="text" name="" class="form-control">
+				    										<div class="spanliner">
+				    											<span>Total</span>
+				    											<input id="ctotal" readonly placeholder="%" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="text" maxlength="3" class="form-control">
 				    										</div>
 				    									</div>
-				    									<div class="evalindiproj" style="border: 1px solid red;">
-				    										<div class="">
+				    									<div class="evalindiproj hovertable" style="border: 1px solid #fe7235;">
+				    										<div class="spanliner">
 				    											<span>Project Experience</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="d1" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner">
 				    											<span>Years of relevant Experience</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="d2" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner">
 				    											<span>Industry Experience</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="d3" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner">
 				    											<span>Awards</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="d4" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner">
 				    											<span>Accreditaions</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="d5" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner">
 				    											<span>Relationship to Employer</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="d6" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner">
 				    											<span>Communication Skills</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="d7" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner">
 				    											<span>People Management</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="d8" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner">
 				    											<span>Time Management</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="d9" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner">
 				    											<span>Pro-Active</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="d10" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner">
 				    											<span>Social Behaviour</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="d11" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner">
 				    											<span>Technical 'Hard' Skills</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="d12" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
-				    										<div class="">
+				    										<div class="spanliner">
 				    											<span>Total</span>
-				    											<input type="text" name="" class="form-control">
+				    											<input id="dtotal" readonly placeholder="%" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="text" maxlength="3" class="form-control">
 				    										</div>
 				    									</div>
 				    								</td>
@@ -1526,8 +1551,6 @@
 											<input id="sec2" type="submit" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
 										</div>
 		    						</div><br> 
-
-		    					</div>
 		    					<div id="section41" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Quality Assurance</h3>
 		    						<form method="post">
