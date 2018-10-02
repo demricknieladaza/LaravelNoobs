@@ -157,7 +157,7 @@
 			var tender_id = $(this).attr('data-tender-id');
 			var counter_name = 0;
 			var counter_level = 0;
-			var couner_col = 0
+			var counter_col = 0
 			// $('#idd').val($(this).attr('data-id'));
 			jQuery.ajax({
 				url: "{{ url('tenderget') }}",
@@ -181,9 +181,13 @@
 						$(this).append('<input class="form-control" type="text" value="'+result.appointment[counter_level]['insurance_level']+'" disabled/>');
 						counter_level += 1;
 					});
-					$("div#added_collateral").append('<input class="form-control" type="text" value="'+result.appointment[0]['collateral_warranties']+'" disabled/>');
-					$("div#added_limit").append('<input class="form-control" type="text" value="'+result.appointment[0]['limit_of_liability']+'" disabled/>');
-					
+					$(result.bonds).each(function(){
+						$("input[id='"+result.bonds[counter_col]['bond_name']+"']").prop('checked', true);
+						counter_col += 1;
+					});
+					//$("div#added_collateral").append('<input class="form-control" type="text" value="'+result.appointment[0]['collateral_warranties']+'" disabled/>');
+					//$("div#added_limit").append('<input class="form-control" type="text" value="'+result.appointment[0]['limit_of_liability']+'" disabled/>');
+					$("select[name='collateral_warranties']").val(result.appointment[0]['collateral_warranties']);
 					console.log(result);
 					// alert(result.services);
 				}
@@ -209,8 +213,11 @@
 				}
 			);
 			jQuery("input[name='bonds[]']").each(function()
-				{
-					bond.push($(this).val());
+				{	
+					if($(this).prop('checked')){
+						bond.push($(this).val());
+					}
+					
 				}
 			);
 			jQuery.ajax({
@@ -558,16 +565,16 @@
 		    	<div class="below-header project-img-collection text-center projhead">
 		    		<h1>Canada Water Masterplan</h1>
 		    		<div class="project-image popup-gallery">
-		    			<a href="../images/demo1.jpg"><img src="../images/demo1.jpg"/></a>
+		    			<a href="../images/demo1.jpg"><img src="../../images/demo1.jpg"/></a>
 		    		</div>
 		    		<div class="project-image popup-gallery">
-		    			<a href="../images/demo2.jpg"><img src="../images/demo2.jpg"/></a>
+		    			<a href="../images/demo2.jpg"><img src="../../images/demo2.jpg"/></a>
 		    		</div>
 		    		<div class="project-image popup-gallery">
-		    			<a href="../images/demo3.jpg"><img src="../images/demo3.jpg"/></a>
+		    			<a href="../images/demo3.jpg"><img src="../../images/demo3.jpg"/></a>
 		    		</div>
 		    		<div class="project-image popup-gallery">
-		    			<a href="../images/demo4.jpg"../images/demo1.jpg><img src="../images/demo4.jpg"/></a>
+		    			<a href="../images/demo4.jpg"><img src="../../images/demo4.jpg"/></a>
 		    		</div>
 		    	</div>
 		    </div>
@@ -758,9 +765,7 @@
 		    							</td>								
 		    						</tr>
 		    						<tr>
-		    							<td>Meetings
-		    								
-		    							</td>
+		    							<td>Meetings</td>
 		    							<td>
 		    								<table width="100%">
 		    									<tr>
@@ -916,11 +921,9 @@
 									</div>
 
 									<div class="col-sm-3 company-quick-details">
-										<p><img src="../images/logo-british.jpg"></p>
+										<p><img src="../../images/logo-british.jpg"></p>
 										<p>Active Projects <span class="project1">4</span></p>
 										<p>Active Tenders <span class="project1">9</span></p>
-									
-
 									</div>
 								</div>
 							</div>
@@ -928,9 +931,7 @@
 					</div>
 
 		    	</div>
-
 		    </div>
-
 				</div>
 				<div id="section2" class="tab-pane fade tender-container" style="padding-top:0;margin-left:auto;margin-right:auto;width:1040px;">
 					<div class="row">
@@ -968,22 +969,23 @@
 							@if($ten->status == "Closed")
 								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a><p></p></a></td>
 								<td class="td">{{ $ten->status }}</td>
-								<td class="td">TBC</td>
-								<td class="td">TBC</td>
+								<td class="td">{{ $ten->start }}</td>
+								<td class="td">{{ $ten->end }}</td>
 								<td class="td">{{ $ten->time_remaining }}</td>
-								<td class="td">TBC</td>
-								<td class="td">TBC</td>
+								<td class="td">{{ $ten->bids_received }}</td>
+								<td class="td">{{ $ten->queries_received }}</td>
 								<td class="td">
 								</button><button class="btn btn-primary" style="margin-bottom:10px;    width: 135px;">Dowload Evalution<br>Report</button>
 							 	</button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td>
 							@else
 								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a class="edit_tender" data-tender-id="{{ $ten->tender_id }}" data-toggle="tab" href="#section4"><p>Edit Tender</p></a></td>
 								<td class="td">{{ $ten->status }}</td>
-								<td class="td">TBC</td>
-								<td class="td">TBC</td>
+								<td class="td">{{ $ten->start }}</td>
+								<td class="td">{{ $ten->end }}</td>
 								<td class="td">{{ $ten->time_remaining }}</td>
-								<td class="td">TBC</td>
-								<td class="td">TBC</td>
+								<td class="td">{{ $ten->bids_received }}</td>
+								<td class="td">{{ $ten->queries_received }}</td>
+								<td class="td">No Default Action!</td>
 							@endif
 
 						</tr>
@@ -1295,12 +1297,12 @@
 		    											<div class="form-group">
 		    												<ul id="bondslist" class="bondslist">
 		    												<?php
-		    												$Service = array("Select Bonds ","Performance Bond","Parent Company Guarantee","Tender/Bid Bond","On Demand Bond","Conditional/On  Default Bond");
+		    												$Service = array("Select Bonds ","Performance Bond","Parent Company Guarantee","Tender/Bid Bond","On Demand Bond","Conditional/On Default Bond");
 		    												sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
 		    												foreach ($Service as $key ) {
 		    												    echo "<li><div class='form-check'>
 		    															<label>
-		    																<input type='checkbox' name='bonds[]' value='".$key."'><span class='label-text'>".$key."</span>
+		    																<input type='checkbox' id='".$key."' name='bonds[]' value='".$key."'><span class='label-text'>".$key."</span>
 		    															</label>
 		    														</div></li>";
 		    												}
@@ -1334,7 +1336,7 @@
 																);
 																sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
 																foreach ($Service as $key ) {
-																    echo "<option value='".$key."'>".$key."</option>";
+																    echo "<option id='".$key."' value='".$key."'>".$key."</option>";
 																}
 
 																?>
