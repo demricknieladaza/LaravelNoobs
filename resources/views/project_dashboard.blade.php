@@ -59,7 +59,9 @@
 	.form-control {
 		display: inline-block;
 	}
+
 </style>
+
 <div class="container below-header ">
 	<h1 id="logo" class="project-title bid-page-title centerh" style="margin-left: 5%;
     margin-right: 5%;">Project Dashboard</small></h1>
@@ -398,9 +400,24 @@
 		    								
 		    							</td>
 		    							<td>
-		    								<p><a href="#">Site Plan <i class="fa fa-download"></i></a></p>
-		    								<p><a href="#">Programme <i class="fa fa-download"></i></a></p>        
-		    								<p><a href="#">H&S Policy <i class="fa fa-download"></i></a></p>
+		    								<div class="form-group">	
+												<div class="field" align="left">
+												  <strong style="color: #fe7235">Site Plan</strong>
+												  <input type="file" id="file5" name="file5" multiple />
+												</div>
+						                    </div>
+						                    <div class="form-group">	
+												<div class="field" align="left">
+												  <strong style="color: #fe7235">Programme</strong>
+												  <input type="file" id="file6" name="file6" multiple />
+												</div>
+						                    </div>
+						                    <div class="form-group">	
+												<div class="field" align="left">
+												  <strong style="color: #fe7235">H&S Policy</strong>
+												  <input type="file" id="file7" name="file7" multiple />
+												</div>
+						                    </div>
 		    							</td>
 		    						</tr>
 		    					</table>
