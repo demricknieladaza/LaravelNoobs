@@ -77,3 +77,8 @@ Route::post('project_info_tender_appointment', 'TenderController@appointmentStor
 Route::resource('project_info','ProjectInformationController');
 Route::resource('project_info_tender','TenderController');
 
+Route::get('/publish/publish_view/scopey', 'UsersController@scopey_controller');
+Route::get('/publish/publish_view/tenderey', 'UsersController@tenderey_controller');
+Route::get('/publish/publish_view/createy', 'UsersController@createy_controller');
+
+

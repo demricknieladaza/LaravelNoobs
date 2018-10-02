@@ -144,4 +144,16 @@ class UsersController extends Controller
     {
         return view('individuals');
     }
+     public function scopey_controller()
+    {
+        return view('scopey');
+    }
+     public function tenderey_controller()
+    {
+        return view('tenderey');
+    }
+     public function createy_controller()
+    {
+        return view('createy');
+    }
 }
