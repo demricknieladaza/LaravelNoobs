@@ -10,7 +10,6 @@
 	}
 	.zui-table {
 	    border: none;
-	    border-right: solid 1px #DDEFEF;
 	    border-collapse: separate;
 	    border-spacing: 0;
 	}
@@ -61,12 +60,12 @@
 }
 .zui-table2 {
 	    border: none;
-	    border-right: solid 1px #DDEFEF;
+	    border-right: solid 1px #00B0F0;
 	    border-collapse: separate;
 	    border-spacing: 0;
 	}
 	.zui-table2 thead th {
-	    background-color: #fe7235;
+	    background-color: #00B0F0;
 	    border: none;
 	    color: white;
 	    padding: 10px;
@@ -82,25 +81,201 @@
 	}
 	.zui-wrapper2 {
 	    position: relative;
+	    height: 600px;
+	    max-height: 600px;
+	    min-height: 600px;
+	    overflow-x: visible;
+	    overflow-y: scroll;
+	    padding-right: 5px;
 	}
 	.zui-scroller2 {
-	    margin-left: 310px;
+	    margin-left: 175px;
 	    overflow-x: scroll;
 	    overflow-y: visible;
 	    padding-bottom: 5px;
-	    border-left: 2px solid orange;
+	    border-left: 2px solid #00B0F0;
 	}
 	.zui-table2 .zui-sticky-col2 {
 	    left: 0;
 	    position: absolute;
 	    top: auto;
-	    width: 310px;
+	    width: 175px;
 	    text-align:center; 
 	}
 	table.zui-table2 tbody tr:nth-child(even){
 		background: #fff8f3;
 	}
 	table.zui-table2 tbody tr:hover {
+	    background-color: #ffc2a7 !important;
+	}
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+.hayt3{
+	border-radius: 6px;
+	height: 90px;
+}
+.zui-table3 {
+	    border: none;
+	    border-collapse: separate;
+	    border-spacing: 0;
+	}
+	.zui-table3 thead th {
+	    background-color: #7030A0;
+	    border: none;
+	    color: white;
+	    padding: 10px;
+	    text-align: left;
+	    white-space: nowrap;
+	    text-align: center;
+	}
+	.zui-table3 tbody td {
+	    color: #333;
+	    padding: 10px;
+	    text-shadow: 1px 1px 1px #fff;
+	    white-space: nowrap;
+	}
+	.zui-wrapper3 {
+	    position: relative;
+	    height: 300px;
+	    max-height: 300px;
+	    min-height: 300px;
+	    overflow-x: visible;
+	    overflow-y: scroll;
+	    padding-right: 5px;
+	}
+	.zui-scroller3 {
+	    margin-left: 270px;
+	    overflow-x: scroll;
+	    overflow-y: visible;
+	    padding-bottom: 5px;
+	    border-left: 2px solid #7030A0;
+	}
+	.zui-table3 .zui-sticky-col3 {
+	    left: 0;
+	    position: absolute;
+	    top: auto;
+	    width: 270px;
+	    text-align:center; 
+	    height: 60px;
+	}
+	table.zui-table3 tbody tr:nth-child(even){
+		background: #fff8f3;
+	}
+	table.zui-table3 tbody tr:hover {
+	    background-color: #ffc2a7 !important;
+	}
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+.hayt4{
+	border-radius: 6px;
+	height: 90px;
+}
+.zui-table4 {
+	    border: none;
+	    border-collapse: separate;
+	    border-spacing: 0;
+	}
+	.zui-table4 thead th {
+	    background-color: #00B050;
+	    border: none;
+	    color: white;
+	    padding: 10px;
+	    text-align: left;
+	    white-space: nowrap;
+	    text-align: center;
+	}
+	.zui-table4 tbody td {
+	    color: #333;
+	    padding: 10px;
+	    text-shadow: 1px 1px 1px #fff;
+	    white-space: nowrap;
+	}
+	.zui-wrapper4 {
+	    position: relative;
+	    height: 330px;
+	    max-height: 330px;
+	    min-height: 330px;
+	    overflow-x: visible;
+	    overflow-y: scroll;
+	    padding-right: 5px;
+	}
+	.zui-scroller4 {
+	    margin-left: 460px;
+	    overflow-x: scroll;
+	    overflow-y: visible;
+	    padding-bottom: 5px;
+	    border-left: 2px solid #00B050;
+	}
+	.zui-table4 .zui-sticky-col4 {
+	    left: 0;
+	    position: absolute;
+	    top: auto;
+	    width: 460px;
+	    text-align:left; 
+	}
+	table.zui-table4 tbody tr:nth-child(even){
+		background: #fff8f3;
+	}
+	table.zui-table4 tbody tr:hover {
+	    background-color: #ffc2a7 !important;
+	}
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+.zui-table5 {
+	    border: none;
+	    border-collapse: separate;
+	    border-spacing: 0;
+	    width: 612px;
+	}
+	.zui-table5 thead th {
+	    background-color: #FFC000;
+	    border: none;
+	    color: white;
+	    padding: 10px;
+	    text-align: left;
+	    white-space: nowrap;
+	    text-align: center;
+	}
+	.zui-table5 tbody td {
+	    color: #333;
+	    padding: 10px;
+	    text-shadow: 1px 1px 1px #fff;
+	    white-space: nowrap;
+	    height: 80px;
+	}
+	.zui-wrapper5 {
+	    position: relative;
+	    height: 500px;
+	    max-height: 500px;
+	    min-height: 500px;
+	    overflow-x: visible;
+	    overflow-y: scroll;
+	    padding-right: 5px;
+	}
+	.zui-scroller5 {
+	    margin-left: 460px;
+	    overflow-x: scroll;
+	    overflow-y: visible;
+	    padding-bottom: 5px;
+	    border-left: 2px solid #FFC000;
+	}
+	.zui-table5 .zui-sticky-col5 {
+	    left: 0;
+	    position: absolute;
+	    top: auto;
+	    width: 460px;
+	    text-align:left; 
+	}
+	table.zui-table5 tbody tr:nth-child(even){
+		background: #fff8f3;
+	}
+	table.zui-table5 tbody tr:hover {
 	    background-color: #ffc2a7 !important;
 	}
 
@@ -1484,7 +1659,7 @@
 		    						                    </td>
 		    						                </tr>
 		    						                <tr>
-		    						                    <td class="zui-sticky-col2">Design Responsibility Matrix</td>
+		    						                    <td class="zui-sticky-col2">Design Responsibility<br> Matrix</td>
 		    						                    <td class="td "><textarea class="hayt" placeholder="Enter details here"></textarea></td>
 		    						                    <td class="td">
 		    						                    	<div class="col-sm-12">
@@ -1652,7 +1827,7 @@
 		    						                    </td>
 		    						                </tr>
 		    						                <tr>
-		    						                    <td class="zui-sticky-col2">Information Exchange Strategy</td>
+		    						                    <td class="zui-sticky-col2">Information Exchange<br> Strategy</td>
 		    						                    <td class="td "><textarea class="hayt" placeholder="Enter details here"></textarea></td>
 		    						                    <td class="td">
 		    						                    	<div class="col-sm-12">
@@ -2072,7 +2247,7 @@
 		    						                    </td>
 		    						                </tr>
 		    						                <tr>
-		    						                    <td class="zui-sticky-col2">Design Proposals from Design Team Members</td>
+		    						                    <td class="zui-sticky-col2">Design Proposals from<br> Design Team Members</td>
 		    						                    <td class="td "><textarea class="hayt" placeholder="Enter details here"></textarea></td>
 		    						                    <td class="td">
 		    						                    	<div class="col-sm-12">
@@ -2159,6 +2334,1614 @@
 		    						        </table>
 		    						    </div>
 		    						</div>
+		    						<br>
+		    						<br>
+		    						<!-- <div class="col-sm-12">
+		    							<div class="col-sm-2"></div>
+		    							<div class="col-sm-2"></div>
+		    							<div class="col-sm-2"></div>
+		    							<div class="col-sm-2"></div>
+		    							<div class="col-sm-2"></div>
+		    							<div class="col-sm-2">
+						            		<h4>RIBA Stages</h4>
+						            	</div>
+		    						</div> -->
+		    						<div class="zui-wrapper3">
+		    						    <div class="zui-scroller3">
+		    						        <table class="zui-table3">
+		    						            <thead>
+		    						                <tr>
+		    						                    <th class="zui-sticky-col3"><center>Meetings</center></th>
+		    						                    <th style="width: 300px;max-width: 300px;min-width: 300px;">
+		    						                    Purpose</th>
+		    						                    <th style="width: 250px;max-width: 250px;min-width: 250px;">Attendees</th>
+		    						                    <th style="width: 250px;max-width: 250px;min-width: 250px;">Assumed Duration<br>(hours)</th>
+		    						                    <th>Reoccurence/Number of<br>Meetings</th>
+		    						                    <th>Arrange</th>
+		    						                    <th>Attend</th>
+		    						                    <th>Minute</th>
+		    						                    <th>0</th>
+		    						                    <th>1</th>
+		    						                    <th>2</th>
+		    						                    <th>3</th>
+		    						                    <th>4</th>
+		    						                    <th>5</th>
+		    						                    <th>6</th>
+		    						                    <th>7</th>
+		    						                </tr>
+		    						            </thead>
+		    						            <tbody>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col3">Pre-Application<br> Mettings</td>
+		    						                    <td class="td "><textarea class="hayt3" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td"><textarea class="hayt3" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name=""></td>
+		    						                    <td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name=""></td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col3">Site Visits</td>
+		    						                    <td class="td "><textarea class="hayt3" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td"><textarea class="hayt3" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name=""></td>
+		    						                    <td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name=""></td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col3">Site/Project Meetings<br>(RIBA Stage 4/5)</td>
+		    						                    <td class="td "><textarea class="hayt3" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td"><textarea class="hayt3" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name=""></td>
+		    						                    <td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name=""></td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col3">SC / PC Site<br> Inspection</td>
+		    						                    <td class="td "><textarea class="hayt3" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td"><textarea class="hayt3" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name=""></td>
+		    						                    <td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name=""></td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						            </tbody>
+		    						        </table>
+		    						    </div>
+		    						</div>
+
+		    						<br>
+		    						<br>
+
+		    						<div class="zui-wrapper4">
+		    						    <div class="zui-scroller4">
+		    						        <table class="zui-table4">
+		    						            <thead>
+		    						                <tr>
+		    						                    <th class="zui-sticky-col4"><center>Design Considerations</center></th>
+		    						                    <th style="width: 500px; max-width: 500px; min-width: 500px;">Applies to</th>
+		    						                </tr>
+		    						            </thead>
+		    						            <tbody>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col4">Cost, programme, quality, health & safety during construction and<br> operation, functionality, buildability, operation and maintenance.</td>
+		    						                    <td class="td "><textarea class="hayt4" placeholder="Enter details here"></textarea></td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col4">All information provided by other members of the Project Team.</td>
+		    						                    <td class="td "><textarea class="hayt4" placeholder="Enter details here"></textarea></td> 
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col4">Good Practice in the Selection of Construction Materials 2011<br> (British Council of Offices Publication).</td>
+		    						                    <td class="td "><textarea class="hayt4" placeholder="Enter details here"></textarea></td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col4">Statutory standards</td>
+		    						                    <td class="td "><textarea class="hayt4" placeholder="Enter details here"></textarea></td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col4">Co-ordination with structural and building services</td>
+		    						                    <td class="td "><textarea class="hayt4" placeholder="Enter details here"></textarea></td>
+		    						                </tr>
+		    						            </tbody>
+		    						        </table>
+		    						    </div>
+		    						</div>
+
+		    						<br><br>
+
+		    						<br>
+		    						<br>
+
+		    						<div class="zui-wrapper5">
+		    						    <div class="zui-scroller5">
+		    						        <table class="zui-table5">
+		    						            <thead>
+		    						                <tr>
+		    						                    <th class="zui-sticky-col5"><center>Advise on</center></th>
+		    						                    <th>0</th>
+		    						                    <th>1</th>
+		    						                    <th>2</th>
+		    						                    <th>3</th>
+		    						                    <th>4</th>
+		    						                    <th>5</th>
+		    						                    <th>6</th>
+		    						                    <th>7</th>
+		    						                </tr>
+		    						            </thead>
+		    						            <tbody>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Any products or materials, specified within the guidelines<br> named in Item<span style="color: red;">???</span> , that are relevant to the project and have been found<br> to be deleterious or hazardous to health and safety.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Assembly of Project Team. (Lead)</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td> 
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Need for and the scope of services by consultants, specialists,<br> sub-contractors or suppliers. (Lead)</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Resolution of defects.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Form and content of design outputs, their interfaces<br> and a verification procedure. (Lead)</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Relevant experience from previous projects.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr style="background: #FFC000;">
+		    						                    <td style="background: #FFC000; font-weight: bold; color: #fff;" class="zui-sticky-col5"><center>Monitor</center></td> <!-- background/bold -->
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Work of the Designers. <br><span style="color: red;">Designers regarding…. [WHAT?]</span></td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Performance of Design Team.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Compliance with statutory and contract requirements.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr style="background: #FFC000;">
+		    						                    <td style="background: #FFC000; font-weight: bold; color: #fff;" class="zui-sticky-col5"><center>Collaborate / Consult with</center></td> <!-- background/bold -->
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Relevant Third Parties as required.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Planning authority to discuss the project</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Statutory authorities on developing design.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Project Manager & Employer on significant design issues. (Lead)</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr style="background: #FFC000;">
+		    						                    <td style="background: #FFC000; font-weight: bold; color: #fff;" class="zui-sticky-col5"><center>Co-ordinate</center></td> <!-- background/bold -->
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Collation of all planning submission documents.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Reviewing design information provided by contractors <br>or specialists to establish whether that information <br>can be co-ordinated and integrated with other project information.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr style="background: #FFC000">
+		    						                    <td style="background: #FFC000; font-weight: bold; color: #fff;" class="zui-sticky-col5"><center>Other</center></td> <!-- background/bold -->
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Submit the [detailed / outline] planning application.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Assisting building user during initial occupation period.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Review all instructions and information about the Project,<br> provided by the Employer.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">preparing and making submissions under building acts<br> and/or regulations or other statutory requirements.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						            </tbody>
+		    						        </table>
+		    						    </div>
+		    						</div>
+
 		    						 
 		    					</div>
 		    					<div id="section21" class="tab-pane fade tender-container">
