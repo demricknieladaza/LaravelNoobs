@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\ProjectInformations;
 use App\TenderAppointment;
 use App\TenderQualityAssurance;
+use App\TenderEvaluation;
 
 class Tender extends Model
 {
@@ -32,5 +33,9 @@ class Tender extends Model
 
     public function tenderQualityAssurance(){
         return $this->hasOne('App\TenderQualityAssurance');
+    }
+
+    public function tenderEvaluation(){
+        return $this->hasOne('App\TenderEvaluation');
     }
 }

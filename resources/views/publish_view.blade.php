@@ -143,11 +143,23 @@
 
 				},
 				success: function(result){
+					$("div#added_insurance_name").remove();
+					$("div#added_insurance_level").remove();
+					jQuery("input[name='bonds[]']").each(function()
+						{	
+							if($(this).prop('checked')){
+								$(this).prop('checked', false);
+							}
+							
+						}
+					);
+					$("select[name='collateral_warranties']").val(0);
+
 					// jQuery('.alert').show();
 					// jQuery('.alert').html(result.services);
 					$('h3#serveprojtitle').attr('data-id',result.services['tender_id']);	
 					// $('#tendid').val(result.services['tender_id']);
-					$('tbody#tenderload').append('<tr><td style="text-align: left;font-weight:bolder; " calss="td">'+result.services['services']+'<a data-tender-id="'+result.services['tender_id']+'"><p>Edit Tender</p></a></td><td class="td">Drafted</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td"></td><tr>');
+					$('tbody#tenderload').append('<tr><td style="text-align: left;font-weight:bolder; " class="td">'+result.services['services']+'<a data-toggle="tab" href="#section4" aria-expanded="true" class="edit_tender" data-tender-id="'+result.services['tender_id']+'"><p>Edit Tender</p></a></td><td class="td">Drafted</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td"></td><tr>');
 					console.log(result.services);
 					// alert(result.services);
 				}
@@ -172,19 +184,20 @@
 					// jQuery('.alert').html(result.services);
 					// $('h3#serveprojtitle').attr('data-id',result.services);
 					// $('tbody#tenderload').append('<tr><td style="text-align: left;font-weight:bolder; " calss="td">'+result.services['services']+'<a data-tender-id="'+result.services['tender_id']+'"><p>Edit Tender</p></a></td><td class="td">Drafted</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td"></td><tr>');
-					$("div#added_insurance_name").each(function(){
-						$(this).append('<input class="form-control" type="text" value="'+result.appointment[counter_name]['insurance_name']+'" disabled/>');
+					$(result.appointment).each(function(){
+						$("div#added_insurance_name").append('<input class="form-control" type="text" value="'+result.appointment[counter_name]['insurance_name']+'" disabled/>');
 						//$("#added_insurance_level").append('<input class="form-control" type="text" value="'+result.appointment['insurance_level']+'" disabled/>');
 						counter_name += 1;
 					});
-					$("div#added_insurance_level").each(function(){
-						$(this).append('<input class="form-control" type="text" value="'+result.appointment[counter_level]['insurance_level']+'" disabled/>');
+					$(result.appointment).each(function(){
+						$("div#added_insurance_level").append('<input class="form-control" type="text" value="'+result.appointment[counter_level]['insurance_level']+'" disabled/>');
 						counter_level += 1;
 					});
 					$(result.bonds).each(function(){
 						$("input[id='"+result.bonds[counter_col]['bond_name']+"']").prop('checked', true);
 						counter_col += 1;
 					});
+					
 					//$("div#added_collateral").append('<input class="form-control" type="text" value="'+result.appointment[0]['collateral_warranties']+'" disabled/>');
 					//$("div#added_limit").append('<input class="form-control" type="text" value="'+result.appointment[0]['limit_of_liability']+'" disabled/>');
 					$("select[name='collateral_warranties']").val(result.appointment[0]['collateral_warranties']);
@@ -194,6 +207,142 @@
 			});
 
 		});
+		// $('#tender_evaluation').click(function(){
+		// 	var idd = $('#serveprojtitle').attr('data-id');
+		// 	jQuery.ajax({
+		// 		url: "{{ url('tender_evaluation') }}",
+		// 		method: 'post',
+		// 		data: {
+		// 			current_tend: idd,
+		// 			qualitative: jQuery("input[name='qualitative']").val(),
+		// 			quantitative: jQuery("input[name='quantitative']").val(),
+		// 			risk: jQuery("input[name='risk']").val(),
+		// 			organisation: jQuery("input[name='organisation']").val(),
+		// 			organisation_project_exp: jQuery("input[name='organisation_project_exp']").val(),
+		// 			organisation_variety_of_services: jQuery("input[name='organisation_variety_of_services']").val(),
+		// 			organisation_awards: jQuery("input[name='organisation_awards']").val(),
+		// 			organisation_accreditations: jQuery("input[name='organisation_accreditations']").val(),
+		// 			orgranisation_relationship: jQuery("input[name='orgranisation_relationship']").val(),
+		// 			individual: jQuery("input[name='individual']").val(),
+		// 			individual_project_exp: jQuery("input[name='individual_project_exp']").val(),
+		// 			individual_years_exp: jQuery("input[name='individual_years_exp']").val(),
+		// 			individual_industry_exp: jQuery("input[name='individual_industry_exp']").val(),
+		// 			individual_awards: jQuery("input[name='individual_awards']").val(),
+		// 			individual_accrediations: jQuery("input[name='individual_accrediations']").val(),
+		// 			individual_relationship: jQuery("input[name='individual_relationship']").val(),
+		// 			individual_communication_skills: jQuery("input[name='individual_communication_skills']").val(),
+		// 			individual_people_management: jQuery("input[name='individual_people_management']").val(),
+		// 			individual_time_management: jQuery("input[name='individual_time_management']").val(),
+		// 			individual_pro_active: jQuery("input[name='individual_pro_active']").val(),
+		// 			individual_social_behavior: jQuery("input[name='individual_social_behavior']").val(),
+		// 			individual_hard_skills: jQuery("input[name='individual_hard_skills']").val(),
+		// 			insurances: jQuery("input[name='insurances']").val(),
+		// 			bonds: jQuery("input[name='bonds']").val(),
+		// 			third_parties: jQuery("input[name='third_parties']").val(),
+		// 			limit_of_liability: jQuery("input[name='eval_limit_of_liability']").val(),
+		// 			net_contribution_clause: jQuery("input[name='eval_net_contribution_clause']").val()
+		// 		},
+		// 		success: function(result){
+		// 			console.log(result);
+		// 		}
+		// 	});
+		// });
+		// $('.upd').click(function(){
+		// 	var constr = [];
+		// 	var use_n = [];
+		// 	var use_a = [];
+		// 	var use_u = [];
+		// 	var use_t = [];
+		// 	var riba_s = [];
+		// 	var date = [];
+		// 	var member_p = [];
+		// 	var member_n = [];
+		// 	var idni = {{ $project->project_record_id }};
+		// 	jQuery("input[name='constraint[]']").each(function()
+		// 		{
+		// 			constr.push($(this).val());
+		// 		}
+		// 	);
+		// 	jQuery("input[name='use_name[]']").each(function()
+		// 		{
+		// 			use_n.push($(this).val());
+		// 		}
+		// 	);
+		// 	jQuery("input[name='use_area[]']").each(function()
+		// 		{
+		// 			use_a.push($(this).val());
+		// 		}
+		// 	);
+		// 	jQuery("input[name='use_u[]']").each(function()
+		// 		{
+		// 			use_u.push($(this).val());
+		// 		}
+		// 	);
+		// 	jQuery("input[name='use_t[]']").each(function()
+		// 		{
+		// 			use_t.push($(this).val());
+		// 		}
+		// 	);
+		// 	jQuery("input[name='riba_stage[]']").each(function()
+		// 		{
+		// 			riba_s.push($(this).val());
+		// 		}
+		// 	);
+		// 	jQuery("input[name='date[]']").each(function()
+		// 		{
+		// 			date.push($(this).val());
+		// 		}
+		// 	);
+		// 	jQuery("input[name='member_position[]']").each(function()
+		// 		{
+		// 			member_p.push($(this).val());
+		// 		}
+		// 	);
+		// 	jQuery("input[name='member_name[]']").each(function()
+		// 		{
+		// 			member_n.push($(this).val());
+		// 		}
+		// 	);
+		// 	//constr = JSON.stringify(constr);
+		// 	console.log(constr);
+		// 	saveFunction();
+		// 	alert(idni);
+		// 	jQuery.ajax({
+		// 		async: false;
+		// 		url: "{{ url('project_info/'.$project->project_record_id.'') }}",
+		// 		method: 'put',
+		// 		data: {
+		// 			project_title: jQuery("input[name='project_title']").val(),
+		// 			location: jQuery("input[name='location']").val(),
+		// 			type_of_development: jQuery("input[name='type_of_development']").val(),
+		// 			construction_value: jQuery("input[name='construction_value']").val(),
+		// 			procurement_route: jQuery("input[name='procurement_route']").val(),
+		// 			main_road: jQuery("input[name='main_road']").val(),
+		// 			tube_station_one: jQuery("input[name='tube_station_one']").val(),
+		// 			tube_station_two: jQuery("input[name='tube_station_two']").val(),
+		// 			bus_lines: jQuery("input[name='bus_lines']").val(),
+		// 			adjacent_uses: jQuery("input[name='adjacent_uses']").val(),
+		// 			history: jQuery("input[name='history']").val(),
+		// 			constraint: constr,
+		// 			use_name: use_n,
+		// 			use_area: use_a,
+		// 			use_units: use_u,
+		// 			use_type: use_t,
+		// 			riba_stage: riba_s,
+		// 			date: date,
+		// 			design_team_meeting: jQuery("input[name='design_team_meeting']").val(),
+		// 			project_progress_meeting: jQuery("input[name='project_progress_meeting']").val(),
+		// 			member_position: member_p,
+		// 			member_name: member_n,
+		// 			site_plan: jQuery("input[name='new_site_plan']").val()
+		// 		},
+		// 		success: function(result){
+		// 			jQuery('.alert').show();
+		// 			jQuery('.alert').html(result.success);
+		// 		}
+		// 	});
+		// });
+
 		$('#appointment_save').click(function(){
 			var idd = $('#serveprojtitle').attr('data-id');
 			// alert($('#idd').val());
@@ -306,101 +455,6 @@
 		// 		}
 		// 	});
 		// });
-
-		$('.upd').click(function(){
-			var constr = [];
-			var use_n = [];
-			var use_a = [];
-			var use_u = [];
-			var use_t = [];
-			var riba_s = [];
-			var date = [];
-			var member_p = [];
-			var member_n = [];
-			var idni = {{ $project->project_record_id }};
-			jQuery("input[name='constraint[]']").each(function()
-				{
-					constr.push($(this).val());
-				}
-			);
-			jQuery("input[name='use_name[]']").each(function()
-				{
-					use_n.push($(this).val());
-				}
-			);
-			jQuery("input[name='use_area[]']").each(function()
-				{
-					use_a.push($(this).val());
-				}
-			);
-			jQuery("input[name='use_u[]']").each(function()
-				{
-					use_u.push($(this).val());
-				}
-			);
-			jQuery("input[name='use_t[]']").each(function()
-				{
-					use_t.push($(this).val());
-				}
-			);
-			jQuery("input[name='riba_stage[]']").each(function()
-				{
-					riba_s.push($(this).val());
-				}
-			);
-			jQuery("input[name='date[]']").each(function()
-				{
-					date.push($(this).val());
-				}
-			);
-			jQuery("input[name='member_position[]']").each(function()
-				{
-					member_p.push($(this).val());
-				}
-			);
-			jQuery("input[name='member_name[]']").each(function()
-				{
-					member_n.push($(this).val());
-				}
-			);
-			//constr = JSON.stringify(constr);
-			console.log(constr);
-			saveFunction();
-			alert(idni);
-			jQuery.ajax({
-				url: "{{ url('project_info/'.$project->project_record_id.'') }}",
-				method: 'put',
-				data: {
-					project_title: jQuery("input[name='project_title']").val(),
-					location: jQuery("input[name='location']").val(),
-					type_of_development: jQuery("input[name='type_of_development']").val(),
-					construction_value: jQuery("input[name='construction_value']").val(),
-					procurement_route: jQuery("input[name='procurement_route']").val(),
-					main_road: jQuery("input[name='main_road']").val(),
-					tube_station_one: jQuery("input[name='tube_station_one']").val(),
-					tube_station_two: jQuery("input[name='tube_station_two']").val(),
-					bus_lines: jQuery("input[name='bus_lines']").val(),
-					adjacent_uses: jQuery("input[name='adjacent_uses']").val(),
-					history: jQuery("input[name='history']").val(),
-					constraint: constr,
-					use_name: use_n,
-					use_area: use_a,
-					use_units: use_u,
-					use_type: use_t,
-					riba_stage: riba_s,
-					date: date,
-					design_team_meeting: jQuery("input[name='design_team_meeting']").val(),
-					project_progress_meeting: jQuery("input[name='project_progress_meeting']").val(),
-					member_position: member_p,
-					member_name: member_n
-				},
-				success: function(result){
-					jQuery('.alert').show();
-					jQuery('.alert').html(result.success);
-				}
-			});
-		});
-		
 
 		$('#addother').click(function(){
 			var insura = $('#ins').val();
@@ -520,23 +574,26 @@
 				<select name="days" class="form-control" onchange="Days(this.value);"> 
 					<option value="" disabled selected>Select days</option> 
 					<?php 
-														$days = array(
-															"1 days",
-															"2 days","3 days","4 days","5 days","6 days","7 days","8 days",
-															"9 days","10 days","11 days","12 days","13 days","14 days",
-															"15 days","16 days","17 days","18 days","19 days","20 days","21 days","22 days",
-															"23 days","24 days","25 days","26 days","27 days","28 days","29 days","30 days"
-														);
-														sort($days, SORT_NATURAL | SORT_FLAG_CASE);
-														foreach ($days as $key ) {
-														    echo "<option value='".$key."'>".$key."</option>";
-														}
+						$days = array(
+							"1 days",
+							"2 days","3 days","4 days","5 days","6 days","7 days","8 days",
+							"9 days","10 days","11 days","12 days","13 days","14 days",
+							"15 days","16 days","17 days","18 days","19 days","20 days","21 days","22 days",
+							"23 days","24 days","25 days","26 days","27 days","28 days","29 days","30 days"
+						);
+						sort($days, SORT_NATURAL | SORT_FLAG_CASE);
+						foreach ($days as $key ) {
+							echo "<option value='".$key."'>".$key."</option>";
+						}
 
-													 ?>
+					?>
 				</select>
-								</div></p>
-		          <input type="text" placeholder="Search.." name="search">
-		      <button type="submit">Add</button>
+			</div></p>
+		          <input type="text" id="compname" placeholder="Search.." name="search">
+			  <button type="button" id="addcompname" >Add</button>
+			  <div class="row">
+				  <ul id="addedcompname"></ul>
+			  </div>
 		        </div>
 		        <div class="modal-footer" style="text-align: center;">
 		          <button type="button" class="btn btn-primary">Start Tender Process</button>
@@ -591,13 +648,13 @@
 		    			<div class="row">
 		    				<div class="col-sm-12 active-tenders" id="cprofile">
 		    						<h3>Project Information
-		    						<button class="btn buts save_proj upd" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction()"><i class="fa fa-save" style="font-size:15px" href=""></i>Save</button>
+									<button class="btn buts save_proj" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction()"><i class="fa fa-save" style="font-size:15px" href=""></i>Save</button>
 		    						<button class="btn buts" id="edit_proj" onclick="myFunction()" style="float:right;margin-top:-14px;" ><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
 		    				</div>			
 		    				<div class="col-sm-12">
 		    					<!--<form id="projform" action="{{ url('project_info')}}" method="POST">-->
 		    						@csrf
-								{!! Form::open(['action' => ['ProjectInformationController@update',  $project->project_record_id ], 'id' => 'projform', 'method' => 'POST'])!!}
+								{!! Form::open(['action' => ['ProjectInformationController@update',  $project->project_record_id ], 'id' => 'projform', 'method' => 'POST', 'enctype' => 'multipart/form-data'])!!}
 								{!! Form::hidden('project_record_id', $project->project_record_id) !!}
 								{{ Form::hidden('_method', 'PUT') }}
 								<table class="table table-striped table-hover">
@@ -676,9 +733,7 @@
 		    							</td>
 		    						</tr>
 		    						<tr>
-		    							<td>Constraints
-		    								
-		    							</td>
+		    							<td>Constraints</td>
 		    							<td>
 											@foreach($constraints as $const)
 		    								<div class="form-group">                               
@@ -797,18 +852,6 @@
 		    										<td><input type="text" name="member_name[]" class="form-control proje" value="{{ $team->member_name }}" placeholder="Allies and Morrison" readonly></td>
 												</tr>
 												@endforeach
-		    									{{-- <tr>
-		    										<td>Structural Engineer</td>
-		    										<td><input type="text" name="structural" class="form-control proje" placeholder="AKT II" readonly></td>
-		    									</tr>
-		    									<tr>
-		    										<td>Services Engineer</td>
-		    										<td><input type="text" name="services" class="form-control proje" placeholder="Sweco" readonly></td>
-		    									</tr>
-		    									<tr>
-		    										<td>Fire Engineer </td>
-		    										<td><a href="#">Active Tender</a></td>
-		    									</tr> --}}
 		    									<tr>
 		    										<td colspan="2"><div class="form-group">
 		    										<input type="button" id="addprojteam" class="addbbutn btn form-control pull-right" style="background-color: #fe7235;color:white;width: 90px;" value="Add" disabled />
@@ -818,14 +861,41 @@
 		    							</td>
 		    						</tr>
 		    						<tr>
-		    							<td>Supporting Documents
-		    								
-		    							</td>
+		    							<td>Supporting Documents</td>
 		    							<td>
-		    								<p><a href="#">Site Plan <i class="fa fa-download"></i></a></p>
-		    								<p><a href="#">Programme <i class="fa fa-download"></i></a></p>        
-		    								<p><a href="#">H&S Policy <i class="fa fa-download"></i></a></p>
-		    							</td>
+											@if($project->site_plan == "No File Uploaded")
+											<div class="form-group">	
+													<div class="field" align="left">
+													  <strong style="color: #fe7235">Site Plan</strong>
+													  <input type="file" id="file5" name="site_plan"  />
+													</div>
+											</div>
+											@else
+											<p><a style="color: white;" href="{{asset('storage/site_plan/'.$project->site_plan )}}" name="download" class="btn btn-primary">{{ $project->site_plan }} <i class="fa fa-download"></i></a><input type="hidden" name="site_plan_name" value="{{ $project->site_plan }}"><button type="button" id="delete_site_plan" class="btn btn-primary" name="delete" value="Delete">Delete</button><input type="file" name="new_site_plan"></p>
+											@endif
+
+											@if($project->programme == "No File Uploaded")
+											<div class="form-group">	
+													<div class="field" align="left">
+													  <strong style="color: #fe7235">Programme</strong>
+													  <input type="file" id="file6" name="programme"  />
+													</div>
+											</div>
+											@else
+											<p><a style="color: white;" href="{{asset('storage/programme/'.$project->programme )}}" name="download" class="btn btn-primary">{{ $project->programme }} <i class="fa fa-download"></i></a><input type="hidden" name="programme_name" value="{{ $project->programme }}"><button type="button" id="delete_programme" class="btn btn-primary" name="delete" value="Delete">Delete</button><input type="file" name="new_programme"></p>        
+											@endif
+
+											@if($project->policy == 'No File Uploaded')
+											<div class="form-group">	
+													<div class="field" align="left">
+													  <strong style="color: #fe7235">H&S Policy</strong>
+													  <input type="file" id="file7" name="policy"  />
+													</div>
+											</div>
+											@else
+											<p><a style="color: white;" href="{{asset('storage/policy/'.$project->policy )}}" name="download" class="btn btn-primary">{{ $project->policy }} <i class="fa fa-download"></i></a><input type="hidden" name="policy_name" value="{{ $project->policy }}"><button type="button" id="delete_policy" class="btn btn-primary" name="delete" value="Delete">Delete</button><input type="file" name="new_policy"/></a></p>
+											@endif
+										</td>
 		    						</tr>
 		    					</table>
 		    					<section id="tend">
@@ -888,9 +958,7 @@
 									<div class="col-sm-9">				
 										<table class="table table-striped table-hover emp_details">
 											<tr>
-												<td>Employer
-													
-												</td >
+												<td>Employer</td >
 												<td><input id="emp1" type="text" name="emp1" class="form-control proje" placeholder="British Land" readonly></td>
 											</tr>
 											<tr>
@@ -900,21 +968,15 @@
 												<td><input id="emp2" type="text" name="emp2" class="form-control proje" placeholder="100 Sample Road, London, W1 23Y, United Kingdom" readonly></td>
 											</tr>
 											<tr>
-												<td>Industry
-													
-												</td>
+												<td>Industry</td>
 												<td><input id="emp3" type="text" name="emp3" class="form-control proje" placeholder="Developer" readonly></td>
 											</tr>
 											<tr>
-												<td>Year Established
-													
-												</td>
+												<td>Year Established</td>
 												<td><input id="emp4" type="text" name="emp4" class="form-control proje" placeholder="1955" readonly></td>
 											</tr>
 											<tr>
-												<td>Number of Employees
-													
-												</td>
+												<td>Number of Employees</td>
 												<td><input id="emp5" type="text" name="emp5" class="form-control proje" placeholder="10-50" readonly></td>
 											</tr>
 										</table>
@@ -959,13 +1021,6 @@
     			    <tbody id="tenderload">
 						@foreach($tender as $ten)
 						<tr>
-							{{-- <td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a><p>Edit Tender</p></a></td>
-							<td class="td">{{ $ten->status }}</td>
-							<td class="td">TBC</td>
-							<td class="td">TBC</td>
-							<td class="td">{{ $ten->time_remaining }}</td>
-							<td class="td">TBC</td>
-							<td class="td">TBC</td> --}}
 							@if($ten->status == "Closed")
 								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a><p></p></a></td>
 								<td class="td">{{ $ten->status }}</td>
@@ -1125,7 +1180,7 @@
     			                </tr>
     			            </tbody>
     			        </table>
-    			    </div>
+					</div>
     			</div><br>
 	    			<button class="btn">Export to MS Excel</button>
 					</div>
@@ -1175,7 +1230,7 @@
 		    						    src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Microsoft_Excel_2013_logo.svg/2000px-Microsoft_Excel_2013_logo.svg.png" />
 		    						  <div class="download_icon">
 		    						    <p>
-		    						     <a download="Emp_Book-Scope.xlsx" href="{{asset('css/scopexl/Emp_Book-Scope.xlsx')}} "><i class="fa fa-download"> Download</i></a>
+		    						     <a download="Emp_Book-Scope.xlsx" href="{{asset('css/scopexl/Emp_Book-Scope.xlsx')}}"><i class="fa fa-download"> Download</i></a>
 		    						    </p>
 		    						    <p class="download_para">
 		    						      <small>Lorem <abbr title="Download">DL</abbr>.  It has survived not only five centuries, but also the leap into electronic typesetting</small>
@@ -1205,11 +1260,6 @@
 		    								<input type="file" id="fileselect" name="fileselect[]" />
 		    								<div id="filedrag">or drop file here</div>
 		    							</div>
-
-		    							{{-- <div id="submitbutton">
-		    								<button type="submit">Upload Files</button>
-		    							</div> --}}
-
 		    							</fieldset>
 
 		    							</form>
@@ -1284,9 +1334,10 @@
 																	</div>
 																</div>
 															
-																</div>
 															</div>
 														</div>
+													</div>
+												</div>
 		    									<div class="row">
 		    										<div class="col-sm-4">
 		    											<div class="form-group">
@@ -1375,7 +1426,7 @@
 		    										<div class="col-sm-8">
 		    											<div class="form-group">
 															<input type="file" class="form-control" name="net_contribution_clause">
-															</div>
+														</div>
 		    										</div>
 		    									</div>
 		    									<div class="row">
@@ -1385,11 +1436,11 @@
 		    											</div>
 		    										</div>
 		    										<div class="col-sm-8">
-		    											<div class="form-group">
+		    											{{-- <div class="form-group">
 															<input type="text" placeholder="Enter Document Title" class="form-control" name="documents_for_signature[]">
-														</div>
+														</div> --}}
 														<div class="form-group">
-															<input type="file" class="form-control" name="signature_files[]">
+															<input type="file" class="form-control" name="signature_files[]" multiple/>
 														</div>
 		    										</div>
 		    										<div class="col-sm-4">
@@ -1434,15 +1485,15 @@
 				    									<div class="evalwquali hovertable" style="border: 1px solid #fe7235;">
 				    										<div class="spanliner" style="margin-bottom: 650px;">
 					    										<span>Qualitative</span>
-					    										<input id="quali" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+					    										<input id="quali" placeholder="%" value="0" name="qualitative" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Quantitative</span>
-				    											<input id="quanti" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="quanti" placeholder="%" name="quantitative" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner" style="margin-bottom: 172px;margin-top: 1px;">
 					    										<span>Risk</span>
-					    										<input id="risk" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+					    										<input id="risk" placeholder="%" value="0" name="risk" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Total</span>
@@ -1454,11 +1505,11 @@
 				    									<div class="evalorga hovertable" style="border: 1px solid #fe7235;">
 				    										<div class="spanliner" style="margin-bottom: 172px;">
 				    											<span>Organisation</span>
-				    											<input id="a1" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="a1" placeholder="%" value="0" name="orginasation" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner" style="margin-bottom: 408px;">
 				    											<span>Individual</span>
-				    											<input id="a2" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="a2" placeholder="%" value="0" name="individual" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Total</span>
@@ -1468,23 +1519,23 @@
 				    									<div class="evalinsu hovertable" style="border: 1px solid #fe7235;margin-top: 35px;">
 				    										<div class="spanliner">
 				    											<span>Insurances</span>
-				    											<input id="b1" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="b1" placeholder="%" value="0" name="insurances" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Bonds</span>
-				    											<input id="b2" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="b2" placeholder="%" value="0" name="bonds" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>3rd Parties</span>
-				    											<input id="b3" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="b3" placeholder="%" value="0" name="third_parties" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Limit of liability</span>
-				    											<input id="b4" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="b4" placeholder="%" value="0" name="eval_limit_of_liability" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Net contribution clause</span>
-				    											<input id="b5" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="b5" placeholder="%" value="0" name="eval_net_contribution_clause" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Total</span>
@@ -1496,23 +1547,23 @@
 				    									<div class="evalorgaproj hovertable" style="border: 1px solid #fe7235;">
 				    										<div class="spanliner">
 				    											<span>Project Experience</span>
-				    											<input id="c1" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="c1" placeholder="%" value="0" name="organisation_project_exp" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Variety of Services</span>
-				    											<input id="c2" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="c2" placeholder="%" value="0" name="organisation_variety_of_services" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Awards</span>
-				    											<input id="c3" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="c3" placeholder="%" value="0" name="organisation_awards" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Accreditations</span>
-				    											<input id="c4" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="c4" placeholder="%" value="0" name="organisation_accreditations" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Relationship to Employer</span>
-				    											<input id="c5" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="c5" placeholder="%" value="0" name="orgranisation_relationship" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Total</span>
@@ -1522,51 +1573,51 @@
 				    									<div class="evalindiproj hovertable" style="border: 1px solid #fe7235;">
 				    										<div class="spanliner">
 				    											<span>Project Experience</span>
-				    											<input id="d1" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d1" placeholder="%" value="0" name="individual_project_exp" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Years of relevant Experience</span>
-				    											<input id="d2" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d2" placeholder="%" value="0" name="individual_years_exp" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Industry Experience</span>
-				    											<input id="d3" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d3" placeholder="%" value="0" name="individual_industry_exp" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Awards</span>
-				    											<input id="d4" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d4" placeholder="%" value="0" name="individual_awards" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Accreditaions</span>
-				    											<input id="d5" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d5" placeholder="%" value="0" name="individual_accrediations" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Relationship to Employer</span>
-				    											<input id="d6" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d6" placeholder="%" value="0" name="individual_relationship" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Communication Skills</span>
-				    											<input id="d7" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d7" placeholder="%" value="0" name="individual_communication_skills" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>People Management</span>
-				    											<input id="d8" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d8" placeholder="%" value="0" name="individual_people_management" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Time Management</span>
-				    											<input id="d9" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d9" placeholder="%" value="0" name="individual_time_management" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Pro-Active</span>
-				    											<input id="d10" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d10" placeholder="%" value="0" name="individual_pro_active" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Social Behaviour</span>
-				    											<input id="d11" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d11" placeholder="%" value="0" name="individual_social_behavior" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Technical 'Hard' Skills</span>
-				    											<input id="d12" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d12" placeholder="%" value="0" name="individual_hard_skills" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Total</span>
@@ -1580,6 +1631,7 @@
 		    							
 		    							<div class="form-group butcent">
 											<input id="sec2" type="submit" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
+											<input id="tender_evaluation" type="button" name="Save" value="Save" class="btn btn-primary butsize">
 										</div>
 		    						</div><br> 
 		    					<div id="section41" class="tab-pane fade tender-container">
@@ -1884,7 +1936,7 @@ var element=document.getElementById('bonds');
 	   $('#projform input.addbbutn').attr('disabled',true);
 	   $('.save_proj').css('display', 'none');
 	   $('#edit_proj').css('display', 'block');
-	   //$('#projform').submit();
+	   $('#projform').submit();
 
 
 	}

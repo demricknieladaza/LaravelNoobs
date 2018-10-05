@@ -59,7 +59,9 @@
 	.form-control {
 		display: inline-block;
 	}
+
 </style>
+
 <div class="container below-header ">
 	<h1 id="logo" class="project-title bid-page-title centerh" style="margin-left: 5%;
     margin-right: 5%;">Project Dashboard</small></h1>
@@ -181,7 +183,7 @@
 		    				<div class="col-sm-12">
 		    					<!--<form id="projform" action="{{ url('project_info')}}" method="POST">-->
 		    						@csrf
-								{!! Form::open(['action' => 'ProjectInformationController@store', 'id' => 'projform', 'method' => 'POST'])!!}
+								{!! Form::open(['action' => 'ProjectInformationController@store', 'id' => 'projform', 'method' => 'POST', 'enctype' => 'multipart/form-data'])!!}
 		    					<table class="table table-striped table-hover">
 		    						<tr>
 		    							<td>Project Title
@@ -398,9 +400,24 @@
 		    								
 		    							</td>
 		    							<td>
-		    								<p><a href="#">Site Plan <i class="fa fa-download"></i></a></p>
-		    								<p><a href="#">Programme <i class="fa fa-download"></i></a></p>        
-		    								<p><a href="#">H&S Policy <i class="fa fa-download"></i></a></p>
+		    								<div class="form-group">	
+												<div class="field" align="left">
+												  <strong style="color: #fe7235">Site Plan</strong>
+												  <input type="file" id="file5" name="site_plan"  />
+												</div>
+						                    </div>
+						                    <div class="form-group">	
+												<div class="field" align="left">
+												  <strong style="color: #fe7235">Programme</strong>
+												  <input type="file" id="file6" name="programme"  />
+												</div>
+						                    </div>
+						                    <div class="form-group">	
+												<div class="field" align="left">
+												  <strong style="color: #fe7235">H&S Policy</strong>
+												  <input type="file" id="file7" name="policy"  />
+												</div>
+						                    </div>
 		    							</td>
 		    						</tr>
 		    					</table>

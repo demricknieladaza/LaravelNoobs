@@ -18,6 +18,7 @@ use App\TenderAppointment;
 use App\TenderBonds;
 use App\TenderQaStatements;
 use App\TenderQualityAssurance;
+use App\TenderEvaluation;
 
 
 class TenderController extends Controller
@@ -115,18 +116,58 @@ class TenderController extends Controller
         return response()->json(array('success' => true, 'test' => $idd), 200);
     }
 
+    public function tenderEvalStore(Request $request){
+
+        $idd = $request->get('current_tend');
+        $eval = new TenderEvaluation;
+        $eval->tender_id = $idd;
+        $eval->qualitative = $request->get('qualitative');
+        $eval->quantitative = $request->get('quantitative');
+        $eval->risk = $request->get('risk');
+        $eval->orginasation = $request->get('orginasation');
+        $eval->organisation_project_exp = $request->get('organisation_project_exp');
+        $eval->organisation_variety_of_services = $request->get('organisation_variety_of_services');
+        $eval->organisation_awards = $request->get('organisation_awards');
+        $eval->organisation_accreditations = $request->get('organisation_accreditations');
+        $eval->orgranisation_relationship = $request->get('orgranisation_relationship');
+        $eval->individual = $request->get('individual');
+        $eval->individual_project_exp = $request->get('individual_project_exp');
+        $eval->individual_years_exp = $request->get('individual_industry_exp');
+        $eval->individual_awards = $request->get('individual_awards');
+        $eval->individual_accrediations = $request->get('individual_accrediations');
+        $eval->individual_relationship = $request->get('individual_relationship');
+        $eval->individual_communication_skills = $request->get('individual_communication_skills');
+        $eval->individual_people_management = $request->get('individual_people_management');
+        $eval->individual_time_management = $request->get('individual_time_management');
+        $eval->individual_pro_active = $request->get('individual_pro_active');
+        $eval->individual_social_behavior = $request->get('individual_social_behavior');
+        $eval->individual_hard_skills = $request->get('individual_hard_skills');
+        $eval->insurances = $request->get('insurances');
+        $eval->bonds = $request->get('bonds');
+        $eval->third_parties = $request->get('third_parties');
+        $eval->limit_of_liability = $request->get('limit_of_liability');
+        $eval->net_contribution_clause = $request->get('net_contribution_clause');
+        $eval->save();
+
+        return response()->json($eval);
+
+
+    }
+
     public function gettend(Request $request)
     {
         $tenid = $request->get('tendid');
         $tender = Tender::where('tender_id', $tenid)->first();
         $bonds = TenderBonds::where('tender_id', $tenid)->get();
         $appointment = TenderAppointment::where('tender_id', $tenid)->get();
+        $eval = TenderEvaluation::where('tender_id', $tenid)->get();
 
 
         return response()->json(array(
             'tender' => $tender,
             'bonds' => $bonds,
-            'appointment' => $appointment
+            'appointment' => $appointment,
+            'eval' => $eval
         ));
     
 
