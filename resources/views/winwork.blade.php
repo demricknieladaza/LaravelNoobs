@@ -192,7 +192,7 @@
 								</div>
 							</div>
 						</div>
-						
+					@foreach($project as $proj)
 					<div class="col-sm-12 search_result_row">
 						<a href="{{ url('/winwork/pds') }}" style="color: inherit;">
 							<div class="search_data">
@@ -202,18 +202,18 @@
 									</div>
 									<div class="col-sm-9 project-excerpt">
 										<div class="row">
-											@foreach($project as $proj)
+											
 											<div class="col-sm-12">
 												<h3>{{ $proj->project_title }}<small> - 9 days left</small></h3>
 											</div>
-											@endforeach			
+														
 											<div class="col-sm-6">
 												<h5>Fire Engineer and 9 Other Services</h5>
 												<p>New-built located in Canada Water, London<br> 33,000 m2 office space, 5,500 m2 retail space</p>
 											</div>
 											<div class="col-sm-3 bid_section text-center">
 												<p>Construction Value</p>
-												<h3>£ 510K</h3>
+												<h3>{{ $proj->construction_value }}</h3>
 											</div>
 											<div class="col-sm-3 bid_section text-center">
 												<p>Avg Bid</p>
@@ -231,8 +231,9 @@
 								</p>
 							</figcaption>	
 							</a>
-						</div>	
-						<div class="col-sm-12 search_result_row">
+						</div>
+						@endforeach	
+						{{-- <div class="col-sm-12 search_result_row">
 							<div class="search_data">
 								<div class="row">
 									<div class="col-sm-3 project_image">
@@ -569,7 +570,7 @@
 								</div>
 							</div>
 						</div>	
-					</div>
+					</div> --}}
 				</div>
 			</div>
 		</div>

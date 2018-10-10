@@ -1232,7 +1232,7 @@
 				<div id="section1" class="tab-pane fade in active tender-container" style="    background:transparent;border: none;padding-top:0;margin-left:auto;margin-right:auto;width:1040px;">
 					<div class="row">
 		    	<div class="below-header project-img-collection text-center projhead">
-		    		<h1>Canada Water Masterplan</h1>
+		    		<h1>{{ $project->project_title }}</h1>
 		    		<div class="project-image popup-gallery">
 		    			<a href="../images/demo1.jpg"><img src="../../images/demo1.jpg"/></a>
 		    		</div>
