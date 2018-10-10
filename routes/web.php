@@ -76,9 +76,15 @@ Route::post('project_info_tender_appointment', 'TenderController@appointmentStor
 //Route::put('project_info/{id}', 'ProjectInformationController@Update');
 Route::resource('project_info','ProjectInformationController');
 Route::resource('project_info_tender','TenderController');
+Route::resource('winwork', 'WinWorkController');
 
 Route::post('tender_evaluation', 'TenderController@tenderEvalStore');
-Route::put('delete_site_plan_url', 'ProjectInformationController@deleteSitePlan');
+Route::post('tender_deliverables_save', 'TenderController@tenderScopeStore');
+Route::post('tender_quality_assurance', 'TenderController@tenderQualityStore');
+Route::post('start_tender_process', 'TenderController@updateTenderProcess');
+
+
+//Route::put('delete_site_plan_url', 'ProjectInformationController@deleteSitePlan');
 
 //Route::get('site_plan_download', 'ProjectInformationController@downloadSitePlan');
 // Route::get('project_info/{id}/edit/download', 'ProjectInformationController@downloadSitePlan');

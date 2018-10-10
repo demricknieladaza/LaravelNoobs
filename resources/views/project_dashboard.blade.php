@@ -426,6 +426,8 @@
 		    					</section>		
 		    					<div style="text-align: center;">
 								</div>
+								{{-- <button class="btn buts save_proj" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction()"><i class="fa fa-save" style="font-size:15px" href=""></i>Save</button> --}}
+								<button type="submit" class="btn btn-primary">Save</button>
 								{!! Form::close() !!}			
 		    				</div>
 		    			</div>

@@ -306,6 +306,58 @@ class ProjectInformationController extends Controller
             $path = $request->file('new_site_plan')->storeAs('public/site_plan/', $filenameToStore); 
             $project->site_plan = $filenameToStore;
         }
+        if($request->hasFile('programme')){
+            $filenameWithExt = $request->file('programme')->getClientOriginalName();
+        
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        
+            $extension = $request->file('programme')->getClientOriginalExtension();
+        
+            $filenameToStore = $filename.'_'.time().'_'.'.'.$extension;
+            
+            $path = $request->file('programme')->storeAs('public/programme/', $filenameToStore); 
+            $project->site_plan = $filenameToStore;
+        }
+        if($request->hasFile('new_programme')){
+            
+            Storage::delete('public/programme/'. $project->site_plan);
+            $filenameWithExt = $request->file('new_programme')->getClientOriginalName();
+        
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        
+            $extension = $request->file('new_programme')->getClientOriginalExtension();
+        
+            $filenameToStore = $filename.'_'.time().'_'.'.'.$extension;
+            
+            $path = $request->file('new_programme')->storeAs('public/programme/', $filenameToStore); 
+            $project->site_plan = $filenameToStore;
+        }
+        if($request->hasFile('policy')){
+            $filenameWithExt = $request->file('policy')->getClientOriginalName();
+        
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        
+            $extension = $request->file('policy')->getClientOriginalExtension();
+        
+            $filenameToStore = $filename.'_'.time().'_'.'.'.$extension;
+            
+            $path = $request->file('policy')->storeAs('public/policy/', $filenameToStore); 
+            $project->site_plan = $filenameToStore;
+        }
+        if($request->hasFile('new_policy')){
+            
+            Storage::delete('public/policy/'. $project->site_plan);
+            $filenameWithExt = $request->file('new_policy')->getClientOriginalName();
+        
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        
+            $extension = $request->file('new_policy')->getClientOriginalExtension();
+        
+            $filenameToStore = $filename.'_'.time().'_'.'.'.$extension;
+            
+            $path = $request->file('new_policy')->storeAs('public/policy/', $filenameToStore); 
+            $project->site_plan = $filenameToStore;
+        }
 
 
         $project->save();

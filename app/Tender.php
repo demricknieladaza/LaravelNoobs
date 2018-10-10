@@ -7,6 +7,9 @@ use App\ProjectInformations;
 use App\TenderAppointment;
 use App\TenderQualityAssurance;
 use App\TenderEvaluation;
+use App\TenderScopeDeliverables;
+use App\TenderDesignConsiderations;
+use App\TenderScopeAdvise;
 
 class Tender extends Model
 {
@@ -37,5 +40,17 @@ class Tender extends Model
 
     public function tenderEvaluation(){
         return $this->hasOne('App\TenderEvaluation');
+    }
+
+    public function tenderScopeDeliverables(){
+        return $this->hasOne('App\TenderScopeDeliverables');
+    }
+
+    public function tenderDesignConsiderations(){
+        return $this->hasOne('App\TenderDesignConsiderations');
+    }
+
+    public function tenderScopeAdvise(){
+        return $this->hasOne('App\TenderScopeAdvise');
     }
 }

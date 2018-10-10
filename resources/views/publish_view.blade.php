@@ -10,7 +10,6 @@
 	}
 	.zui-table {
 	    border: none;
-	    border-right: solid 1px #DDEFEF;
 	    border-collapse: separate;
 	    border-spacing: 0;
 	}
@@ -53,6 +52,235 @@
 	table.zui-table tbody tr:hover {
 	    background-color: #ffc2a7 !important;
 	}
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+.hayt{
+	border-radius: 6px;
+	height: 90px;
+}
+.zui-table2 {
+	    border: none;
+	    border-right: solid 1px #00B0F0;
+	    border-collapse: separate;
+	    border-spacing: 0;
+	}
+	.zui-table2 thead th {
+	    background-color: #00B0F0;
+	    border: none;
+	    color: white;
+	    padding: 10px;
+	    text-align: left;
+	    white-space: nowrap;
+	    text-align: center;
+	}
+	.zui-table2 tbody td {
+	    color: #333;
+	    padding: 10px;
+	    text-shadow: 1px 1px 1px #fff;
+	    white-space: nowrap;
+	}
+	.zui-wrapper2 {
+	    position: relative;
+	    height: 600px;
+	    max-height: 600px;
+	    min-height: 600px;
+	    overflow-x: scroll;
+	    overflow-y: scroll;
+	    padding-right: 5px;
+	}
+	.zui-scroller2 {
+	    margin-left: 270px;
+	    overflow-x: visible;
+	    overflow-y: visible;
+	    padding-bottom: 5px;
+	    border-left: 2px solid #00B0F0;
+	}
+	.zui-table2 .zui-sticky-col2 {
+	    left: 0;
+	    position: absolute;
+	    top: auto;
+	    width: 270px;
+	    text-align:center; 
+	}
+	table.zui-table2 tbody tr:nth-child(even){
+		background: #fff8f3;
+	}
+	table.zui-table2 tbody tr:hover {
+	    background-color: #ffc2a7 !important;
+	}
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+.hayt3{
+	border-radius: 6px;
+	height: 90px;
+}
+.zui-table3 {
+	    border: none;
+	    border-collapse: separate;
+	    border-spacing: 0;
+	}
+	.zui-table3 thead th {
+	    background-color: #7030A0;
+	    border: none;
+	    color: white;
+	    padding: 10px;
+	    text-align: left;
+	    white-space: nowrap;
+	    text-align: center;
+	}
+	.zui-table3 tbody td {
+	    color: #333;
+	    padding: 10px;
+	    text-shadow: 1px 1px 1px #fff;
+	    white-space: nowrap;
+	}
+	.zui-wrapper3 {
+	    position: relative;
+	    height: 300px;
+	    max-height: 300px;
+	    min-height: 300px;
+	    overflow-x: scroll;
+	    overflow-y: scroll;
+	    padding-right: 5px;
+	}
+	.zui-scroller3 {
+	    margin-left: 270px;
+	    overflow-x: visible;
+	    overflow-y: visible;
+	    padding-bottom: 5px;
+	    border-left: 2px solid #7030A0;
+	}
+	.zui-table3 .zui-sticky-col3 {
+	    left: 0;
+	    position: absolute;
+	    top: auto;
+	    width: 270px;
+	    text-align:center; 
+	    height: 60px;
+	}
+	table.zui-table3 tbody tr:nth-child(even){
+		background: #fff8f3;
+	}
+	table.zui-table3 tbody tr:hover {
+	    background-color: #ffc2a7 !important;
+	}
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+.hayt4{
+	border-radius: 6px;
+	height: 90px;
+}
+.zui-table4 {
+	    border: none;
+	    border-collapse: separate;
+	    border-spacing: 0;
+	}
+	.zui-table4 thead th {
+	    background-color: #00B050;
+	    border: none;
+	    color: white;
+	    padding: 10px;
+	    text-align: left;
+	    white-space: nowrap;
+	    text-align: center;
+	}
+	.zui-table4 tbody td {
+	    color: #333;
+	    padding: 10px;
+	    text-shadow: 1px 1px 1px #fff;
+	    white-space: nowrap;
+	}
+	.zui-wrapper4 {
+	    position: relative;
+	    height: 330px;
+	    max-height: 330px;
+	    min-height: 330px;
+	    overflow-x: scroll;
+	    overflow-y: scroll;
+	    padding-right: 5px;
+	}
+	.zui-scroller4 {
+	    margin-left: 460px;
+	    overflow-x: visible;
+	    overflow-y: visible;
+	    padding-bottom: 5px;
+	    border-left: 2px solid #00B050;
+	}
+	.zui-table4 .zui-sticky-col4 {
+	    left: 0;
+	    position: absolute;
+	    top: auto;
+	    width: 460px;
+	    text-align:left; 
+	}
+	table.zui-table4 tbody tr:nth-child(even){
+		background: #fff8f3;
+	}
+	table.zui-table4 tbody tr:hover {
+	    background-color: #ffc2a7 !important;
+	}
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+.zui-table5 {
+	    border: none;
+	    border-collapse: separate;
+	    border-spacing: 0;
+	    width: 612px;
+	}
+	.zui-table5 thead th {
+	    background-color: #FFC000;
+	    border: none;
+	    color: white;
+	    padding: 10px;
+	    text-align: left;
+	    white-space: nowrap;
+	    text-align: center;
+	}
+	.zui-table5 tbody td {
+	    color: #333;
+	    padding: 10px;
+	    text-shadow: 1px 1px 1px #fff;
+	    white-space: nowrap;
+	    height: 80px;
+	}
+	.zui-wrapper5 {
+	    position: relative;
+	    height: 500px;
+	    max-height: 500px;
+	    min-height: 500px;
+	    overflow-x: scroll;
+	    overflow-y: scroll;
+	    padding-right: 5px;
+	}
+	.zui-scroller5 {
+	    margin-left: 460px;
+	    overflow-x: visible;
+	    overflow-y: visible;
+	    padding-bottom: 5px;
+	    border-left: 2px solid #FFC000;
+	}
+	.zui-table5 .zui-sticky-col5 {
+	    left: 0;
+	    position: absolute;
+	    top: auto;
+	    width: 460px;
+	    text-align:left; 
+	}
+	table.zui-table5 tbody tr:nth-child(even){
+		background: #fff8f3;
+	}
+	table.zui-table5 tbody tr:hover {
+	    background-color: #ffc2a7 !important;
+	}
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
 	.btop td{
 		border-top: 5px solid orange;
 	}
@@ -143,23 +371,12 @@
 
 				},
 				success: function(result){
-					$("div#added_insurance_name").remove();
-					$("div#added_insurance_level").remove();
-					jQuery("input[name='bonds[]']").each(function()
-						{	
-							if($(this).prop('checked')){
-								$(this).prop('checked', false);
-							}
-							
-						}
-					);
-					$("select[name='collateral_warranties']").val(0);
-
+					alert(result.services['tender_id']);
 					// jQuery('.alert').show();
 					// jQuery('.alert').html(result.services);
 					$('h3#serveprojtitle').attr('data-id',result.services['tender_id']);	
 					// $('#tendid').val(result.services['tender_id']);
-					$('tbody#tenderload').append('<tr><td style="text-align: left;font-weight:bolder; " class="td">'+result.services['services']+'<a data-toggle="tab" href="#section4" aria-expanded="true" class="edit_tender" data-tender-id="'+result.services['tender_id']+'"><p>Edit Tender</p></a></td><td class="td">Drafted</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td"></td><tr>');
+					$('tbody#tenderload').append('<tr><td style="text-align: left;font-weight:bolder; " calss="td">'+result.services['services']+'<a class="edit_tender" data-toggle="tab" href="#section4" aria-expanded="true" data-tender-id="'+result.services['tender_id']+'"><p>Edit Tender</p></a></td><td class="td">Drafted</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td"></td><tr>');
 					console.log(result.services);
 					// alert(result.services);
 				}
@@ -182,22 +399,21 @@
 					$('#serveprojtitle').html(result.tender['services']);
 					// jQuery('.alert').show();
 					// jQuery('.alert').html(result.services);
-					// $('h3#serveprojtitle').attr('data-id',result.services);
+					$('h3#serveprojtitle').attr('data-id',result.tender['tender_id']);
 					// $('tbody#tenderload').append('<tr><td style="text-align: left;font-weight:bolder; " calss="td">'+result.services['services']+'<a data-tender-id="'+result.services['tender_id']+'"><p>Edit Tender</p></a></td><td class="td">Drafted</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td"></td><tr>');
-					$(result.appointment).each(function(){
-						$("div#added_insurance_name").append('<input class="form-control" type="text" value="'+result.appointment[counter_name]['insurance_name']+'" disabled/>');
+					$("div#added_insurance_name").each(function(){
+						$(this).append('<input class="form-control" type="text" value="'+result.appointment[counter_name]['insurance_name']+'" disabled/>');
 						//$("#added_insurance_level").append('<input class="form-control" type="text" value="'+result.appointment['insurance_level']+'" disabled/>');
 						counter_name += 1;
 					});
-					$(result.appointment).each(function(){
-						$("div#added_insurance_level").append('<input class="form-control" type="text" value="'+result.appointment[counter_level]['insurance_level']+'" disabled/>');
+					$("div#added_insurance_level").each(function(){
+						$(this).append('<input class="form-control" type="text" value="'+result.appointment[counter_level]['insurance_level']+'" disabled/>');
 						counter_level += 1;
 					});
 					$(result.bonds).each(function(){
 						$("input[id='"+result.bonds[counter_col]['bond_name']+"']").prop('checked', true);
 						counter_col += 1;
 					});
-					
 					//$("div#added_collateral").append('<input class="form-control" type="text" value="'+result.appointment[0]['collateral_warranties']+'" disabled/>');
 					//$("div#added_limit").append('<input class="form-control" type="text" value="'+result.appointment[0]['limit_of_liability']+'" disabled/>');
 					$("select[name='collateral_warranties']").val(result.appointment[0]['collateral_warranties']);
@@ -205,151 +421,33 @@
 					// alert(result.services);
 				}
 			});
-
 		});
-		// $('#tender_evaluation').click(function(){
-		// 	var idd = $('#serveprojtitle').attr('data-id');
-		// 	jQuery.ajax({
-		// 		url: "{{ url('tender_evaluation') }}",
-		// 		method: 'post',
-		// 		data: {
-		// 			current_tend: idd,
-		// 			qualitative: jQuery("input[name='qualitative']").val(),
-		// 			quantitative: jQuery("input[name='quantitative']").val(),
-		// 			risk: jQuery("input[name='risk']").val(),
-		// 			organisation: jQuery("input[name='organisation']").val(),
-		// 			organisation_project_exp: jQuery("input[name='organisation_project_exp']").val(),
-		// 			organisation_variety_of_services: jQuery("input[name='organisation_variety_of_services']").val(),
-		// 			organisation_awards: jQuery("input[name='organisation_awards']").val(),
-		// 			organisation_accreditations: jQuery("input[name='organisation_accreditations']").val(),
-		// 			orgranisation_relationship: jQuery("input[name='orgranisation_relationship']").val(),
-		// 			individual: jQuery("input[name='individual']").val(),
-		// 			individual_project_exp: jQuery("input[name='individual_project_exp']").val(),
-		// 			individual_years_exp: jQuery("input[name='individual_years_exp']").val(),
-		// 			individual_industry_exp: jQuery("input[name='individual_industry_exp']").val(),
-		// 			individual_awards: jQuery("input[name='individual_awards']").val(),
-		// 			individual_accrediations: jQuery("input[name='individual_accrediations']").val(),
-		// 			individual_relationship: jQuery("input[name='individual_relationship']").val(),
-		// 			individual_communication_skills: jQuery("input[name='individual_communication_skills']").val(),
-		// 			individual_people_management: jQuery("input[name='individual_people_management']").val(),
-		// 			individual_time_management: jQuery("input[name='individual_time_management']").val(),
-		// 			individual_pro_active: jQuery("input[name='individual_pro_active']").val(),
-		// 			individual_social_behavior: jQuery("input[name='individual_social_behavior']").val(),
-		// 			individual_hard_skills: jQuery("input[name='individual_hard_skills']").val(),
-		// 			insurances: jQuery("input[name='insurances']").val(),
-		// 			bonds: jQuery("input[name='bonds']").val(),
-		// 			third_parties: jQuery("input[name='third_parties']").val(),
-		// 			limit_of_liability: jQuery("input[name='eval_limit_of_liability']").val(),
-		// 			net_contribution_clause: jQuery("input[name='eval_net_contribution_clause']").val()
-		// 		},
-		// 		success: function(result){
-		// 			console.log(result);
-		// 		}
-		// 	});
-		// });
-		// $('.upd').click(function(){
-		// 	var constr = [];
-		// 	var use_n = [];
-		// 	var use_a = [];
-		// 	var use_u = [];
-		// 	var use_t = [];
-		// 	var riba_s = [];
-		// 	var date = [];
-		// 	var member_p = [];
-		// 	var member_n = [];
-		// 	var idni = {{ $project->project_record_id }};
-		// 	jQuery("input[name='constraint[]']").each(function()
-		// 		{
-		// 			constr.push($(this).val());
-		// 		}
-		// 	);
-		// 	jQuery("input[name='use_name[]']").each(function()
-		// 		{
-		// 			use_n.push($(this).val());
-		// 		}
-		// 	);
-		// 	jQuery("input[name='use_area[]']").each(function()
-		// 		{
-		// 			use_a.push($(this).val());
-		// 		}
-		// 	);
-		// 	jQuery("input[name='use_u[]']").each(function()
-		// 		{
-		// 			use_u.push($(this).val());
-		// 		}
-		// 	);
-		// 	jQuery("input[name='use_t[]']").each(function()
-		// 		{
-		// 			use_t.push($(this).val());
-		// 		}
-		// 	);
-		// 	jQuery("input[name='riba_stage[]']").each(function()
-		// 		{
-		// 			riba_s.push($(this).val());
-		// 		}
-		// 	);
-		// 	jQuery("input[name='date[]']").each(function()
-		// 		{
-		// 			date.push($(this).val());
-		// 		}
-		// 	);
-		// 	jQuery("input[name='member_position[]']").each(function()
-		// 		{
-		// 			member_p.push($(this).val());
-		// 		}
-		// 	);
-		// 	jQuery("input[name='member_name[]']").each(function()
-		// 		{
-		// 			member_n.push($(this).val());
-		// 		}
-		// 	);
-		// 	//constr = JSON.stringify(constr);
-		// 	console.log(constr);
-		// 	saveFunction();
-		// 	alert(idni);
-		// 	jQuery.ajax({
-		// 		async: false;
-		// 		url: "{{ url('project_info/'.$project->project_record_id.'') }}",
-		// 		method: 'put',
-		// 		data: {
-		// 			project_title: jQuery("input[name='project_title']").val(),
-		// 			location: jQuery("input[name='location']").val(),
-		// 			type_of_development: jQuery("input[name='type_of_development']").val(),
-		// 			construction_value: jQuery("input[name='construction_value']").val(),
-		// 			procurement_route: jQuery("input[name='procurement_route']").val(),
-		// 			main_road: jQuery("input[name='main_road']").val(),
-		// 			tube_station_one: jQuery("input[name='tube_station_one']").val(),
-		// 			tube_station_two: jQuery("input[name='tube_station_two']").val(),
-		// 			bus_lines: jQuery("input[name='bus_lines']").val(),
-		// 			adjacent_uses: jQuery("input[name='adjacent_uses']").val(),
-		// 			history: jQuery("input[name='history']").val(),
-		// 			constraint: constr,
-		// 			use_name: use_n,
-		// 			use_area: use_a,
-		// 			use_units: use_u,
-		// 			use_type: use_t,
-		// 			riba_stage: riba_s,
-		// 			date: date,
-		// 			design_team_meeting: jQuery("input[name='design_team_meeting']").val(),
-		// 			project_progress_meeting: jQuery("input[name='project_progress_meeting']").val(),
-		// 			member_position: member_p,
-		// 			member_name: member_n,
-		// 			site_plan: jQuery("input[name='new_site_plan']").val()
-		// 		},
-		// 		success: function(result){
-		// 			jQuery('.alert').show();
-		// 			jQuery('.alert').html(result.success);
-		// 		}
-		// 	});
-		// });
+		$('#quality_save').click(function(){
+			var idd = $('#serveprojtitle').attr('data-id');
+			jQuery.ajax({
+				url:"{{ url('tender_quality_assurance') }}",
+				method: 'post',
+				data: {
+					created_fname: jQuery("input[name='created_fname']").val(),
+					created_lname: jQuery("input[name='created_lname']").val(),
+					checked_fname: jQuery("input[name='checked_fname']").val(),
+					checked_lname: jQuery("input[name='checked_lname']").val(),
+					approved_fname: jQuery("input[name='approved_fname']").val(),
+					approved_lname: jQuery("input[name='approved_lname']").val()
+				},
+				success: function(result){
 
+					console.log(result);
+				}
+			});
+		});
 		$('#appointment_save').click(function(){
 			var idd = $('#serveprojtitle').attr('data-id');
 			// alert($('#idd').val());
 			var insurance_n = [];
 			var insurance_l = [];
 			var bond = [];
-			var dummy = 'Test';
+			// var dummy = 'Test';
 			//alert('dasdad');
 			jQuery("select[name='insurance_name[]']").each(function()
 				{
@@ -379,7 +477,7 @@
 					current_tend: idd,
 					bonds: bond,
 					collateral_warranties: jQuery("select[name='collateral_warranties']").val(),
-					limit_of_liability: jQuery("input[name='limit_of_liability']").val(),
+					limit_of_liability: jQuery("input[name='limit_of_liability']").val()
 					// net_contribution_clause:jQuery("input[name='net_contribution_clause']").val(),
 					// documents_for_signature:  jQuery("input[name='documents_for_signature']").val(),
 					// signature_files: jQuery("input[name='signature_files']").val()
@@ -390,6 +488,428 @@
 					console.log(result);
 				}
 			});
+		});
+		$('#start_tender').click(function(){
+			alert('START!!!');
+			var idd = $('#serveprojtitle').attr('data-id');
+			var status = "Active"
+			var end = "N/A";
+			jQuery.ajax({
+				url: "{{ url('start_tender_process') }}",
+				method: 'post',
+				data: {
+					idd: idd,
+					status: status,
+					end: end,
+					time_remaining: jQuery("select[name='days']").val()
+				},
+				success: function(result){
+					console.log(result);
+				}
+			});
+
+		});
+		// $('#quality_save').click(function(){
+		// 	jQuery.ajax({
+		// 		url: "{{ url('tender_quality_assurance') }}",
+		// 		method: 'post';
+		// 		data: {
+
+		// 		},
+		// 		success: function(result){
+		// 			console.log(result);
+		// 		}
+		// 	});
+		// });
+		$('#deliverables_save').click(function(){
+			var idd = $('#serveprojtitle').attr('data-id');
+			var strat_raci = [];
+			var strat_num = [];
+			var programme_raci = [];
+			var programme_num = [];
+			var feas_raci = [];
+			var feas_num = [];
+			var des_raci = [];
+			var des_num = [];
+			var site_raci = [];
+			var site_num = [];
+			var inf_raci = [];
+			var inf_num = [];
+			var proj_raci = [];
+			var proj_num = [];
+			var ris_raci = [];
+			var ris_num = [];
+			var han_raci = [];
+			var han_num = [];
+			var exec_raci = [];
+			var exec_num = [];
+			var prop_raci = [];
+			var prop_num = [];
+			var pre_choice = [];
+			var pre_num = [];
+			var site_v_choice = [];
+			var site_v_num = [];
+			var riba_choice = [];
+			var riba_num = [];
+			var ins_choice = [];
+			var ins_num = [];
+			var a_one = [];
+			var a_two = [];
+			var a_three = [];
+			var a_four = [];
+			var a_five = [];
+			var a_six = [];
+
+			jQuery("input[name='strategic_raci[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						strat_raci.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='strategic_num[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						strat_num.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='pprogramme_raci[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						programme_raci.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='pprogramme_num[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						programme_num.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='feasibility_raci[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						feas_raci.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='feasibility_num[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						feas_num.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='design_raci[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						des_raci.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='design_num[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						des_num.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='site_raci[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						site_raci.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='site_num[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						site_num.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='info_raci[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						inf_raci.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='info_num[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						inf_num.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='project_raci[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						proj_raci.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='project_num[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						proj_num.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='risk_raci[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						ris_raci.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='risk_num[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						ris_num.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='execution_raci[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						exec_raci.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='execution_num[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						exec_num.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='proposal_raci[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						prop_raci.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='proposal_num[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						prop_num.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='pre_app_choice[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						pre_choice.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='pre_app_num[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						pre_num.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='site_visits_choice[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						site_v_choice.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='site_visits_num[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						site_v_num.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='riba_choice[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						riba_choice.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='riba_num[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						riba_num.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='inspection_choice[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						ins_choice.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='inspection_num[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						ins_num.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='advise_one[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						a_one.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='advise_two[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						a_two.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='advise_three[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						a_three.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='advise_four[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						a_four.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='advise_five[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						a_five.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='advise_six[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						a_six.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery.ajax({
+				url:"{{ url('tender_deliverables_save') }}",
+				method: 'post',
+				data: {
+					idd: idd,
+					strategic_details: jQuery("textarea[name='strategic_details']").val(),
+					pprogramme_details: jQuery("textarea[name='pprogramme_details']").val(),
+					feasibility_details: jQuery("textarea[name='feasibility_details']").val(),
+					design_details: jQuery("textarea[name='design_details']").val(),
+					site_details: jQuery("textarea[name='site_details']").val(),
+					info_details: jQuery("textarea[name='info_details']").val(),
+					project_details: jQuery("textarea[name='project_details']").val(),
+					risk_details: jQuery("textarea[name='risk_details']").val(),
+					hand_details: jQuery("textarea[name='hand_details']").val(),
+					execution_details: jQuery("textarea[name='execution_details']").val(),
+					proposal_details: jQuery("textarea[name='proposal_details']").val(),
+					strategic_raci: strat_raci,
+					strategic_num: strat_num,
+					pprogramme_raci: programme_raci,
+					pprogramme_num: programme_num,
+					feasibility_raci: feas_raci,
+					feasibility_num: feas_num,
+					design_raci: des_raci,
+					design_num: des_num,
+					site_raci: site_raci,
+					site_num: site_num,
+					info_raci: inf_raci,
+					info_num: inf_num,
+					project_raci: proj_raci,
+					project_num: proj_num,
+					risk_raci: ris_raci,
+					risk_num: ris_num,
+					handover_raci: han_raci,
+					handover_num: han_num,
+					execution_raci: exec_raci,
+					execution_num: exec_num,
+					proposal_raci: prop_raci,
+					proposal_numn: prop_num,
+					pre_app_purpose: jQuery("textarea[name='pre_app_purpose']").val(),
+					pre_app_attendees: jQuery("textarea[name='pre_app_attendees']").val(),
+					pre_app_assumed: jQuery("textarea[name='pre_app_assumed_duration']").val(),
+					pre_app_reoccurence: jQuery("textarea[name='pre_app_reoccurence']").val(),
+					site_visits_purpose: jQuery("textarea[name='site_visits_purpose']").val(),
+					site_visists_attendees: jQuery("textarea[name='site_visits_attendees']").val(),
+					site_visits_assumed: jQuery("textarea[name='site_visits_assumed_duration']").val(),
+					site_visits_reoccurence: jQuery("textarea[name='site_visits_reoccurence']").val(),
+					riba_purpose: jQuery("textarea[name='riba_purpose']").val(),
+					riba_attendees: jQuery("textarea[name='riba_attendees']").val(),
+					riba_assumed: jQuery("textarea[name='riba_assumed_duration']").val(),
+					riba_reoccurence: jQuery("textarea[name='riba_reoccurence']").val(),
+					inspection_purpose: jQuery("textarea[name='inspection_purpose']").val(),
+					inspection_attendees: jQuery("textarea[name='inspection_attendees']").val(),
+					inspection_assumed: jQuery("textarea[name='inspection_assumed_duration']").val(),
+					inspection_reoccurence: jQuery("textarea[name='inspection_reoccurence']").val(),
+					pre_app_choice: pre_choice,
+					pre_app_num: pre_num,
+					site_visits_choice: site_v_choice,
+					site_visits_num: site_v_num,
+					riba_choice: riba_choice,
+					riba_num: riba_num,
+					inspection_choice: ins_choice,
+					inspection_num: ins_num,
+					question_one: jQuery("textarea[name='question_one']").val(),
+					question_two: jQuery("textarea[name='question_two']").val(),
+					question_three: jQuery("textarea[name='question_three']").val(),
+					question_four: jQuery("textarea[name='question_four']").val(),
+					question_five: jQuery("textarea[name='question_five']").val(),
+					advise_one: a_one,
+					advise_two: a_two,
+					advise_three: a_three,
+					advise_four: a_four,
+					advise_five: a_five,
+					advise_six: a_six
+				},
+				success: function(result){
+					console.log(result);
+				}
+			})
 		});
 
 		$('input[type="number"]').on('input', function(){
@@ -455,6 +975,101 @@
 		// 		}
 		// 	});
 		// });
+
+		/*$('.upd').click(function(){
+			var constr = [];
+			var use_n = [];
+			var use_a = [];
+			var use_u = [];
+			var use_t = [];
+			var riba_s = [];
+			var date = [];
+			var member_p = [];
+			var member_n = [];
+			var idni = {{ $project->project_record_id }};
+			jQuery("input[name='constraint[]']").each(function()
+				{
+					constr.push($(this).val());
+				}
+			);
+			jQuery("input[name='use_name[]']").each(function()
+				{
+					use_n.push($(this).val());
+				}
+			);
+			jQuery("input[name='use_area[]']").each(function()
+				{
+					use_a.push($(this).val());
+				}
+			);
+			jQuery("input[name='use_u[]']").each(function()
+				{
+					use_u.push($(this).val());
+				}
+			);
+			jQuery("input[name='use_t[]']").each(function()
+				{
+					use_t.push($(this).val());
+				}
+			);
+			jQuery("input[name='riba_stage[]']").each(function()
+				{
+					riba_s.push($(this).val());
+				}
+			);
+			jQuery("input[name='date[]']").each(function()
+				{
+					date.push($(this).val());
+				}
+			);
+			jQuery("input[name='member_position[]']").each(function()
+				{
+					member_p.push($(this).val());
+				}
+			);
+			jQuery("input[name='member_name[]']").each(function()
+				{
+					member_n.push($(this).val());
+				}
+			);
+			//constr = JSON.stringify(constr);
+			console.log(constr);
+			saveFunction();
+			alert(idni);
+			jQuery.ajax({
+				url: "{{ url('project_info/'.$project->project_record_id.'') }}",
+				method: 'put',
+				data: {
+					project_title: jQuery("input[name='project_title']").val(),
+					location: jQuery("input[name='location']").val(),
+					type_of_development: jQuery("input[name='type_of_development']").val(),
+					construction_value: jQuery("input[name='construction_value']").val(),
+					procurement_route: jQuery("input[name='procurement_route']").val(),
+					main_road: jQuery("input[name='main_road']").val(),
+					tube_station_one: jQuery("input[name='tube_station_one']").val(),
+					tube_station_two: jQuery("input[name='tube_station_two']").val(),
+					bus_lines: jQuery("input[name='bus_lines']").val(),
+					adjacent_uses: jQuery("input[name='adjacent_uses']").val(),
+					history: jQuery("input[name='history']").val(),
+					constraint: constr,
+					use_name: use_n,
+					use_area: use_a,
+					use_units: use_u,
+					use_type: use_t,
+					riba_stage: riba_s,
+					date: date,
+					design_team_meeting: jQuery("input[name='design_team_meeting']").val(),
+					project_progress_meeting: jQuery("input[name='project_progress_meeting']").val(),
+					member_position: member_p,
+					member_name: member_n
+				},
+				success: function(result){
+					jQuery('.alert').show();
+					jQuery('.alert').html(result.success);
+				}
+			});
+		});*/
+		
 
 		$('#addother').click(function(){
 			var insura = $('#ins').val();
@@ -574,29 +1189,26 @@
 				<select name="days" class="form-control" onchange="Days(this.value);"> 
 					<option value="" disabled selected>Select days</option> 
 					<?php 
-						$days = array(
-							"1 days",
-							"2 days","3 days","4 days","5 days","6 days","7 days","8 days",
-							"9 days","10 days","11 days","12 days","13 days","14 days",
-							"15 days","16 days","17 days","18 days","19 days","20 days","21 days","22 days",
-							"23 days","24 days","25 days","26 days","27 days","28 days","29 days","30 days"
-						);
-						sort($days, SORT_NATURAL | SORT_FLAG_CASE);
-						foreach ($days as $key ) {
-							echo "<option value='".$key."'>".$key."</option>";
-						}
+														$days = array(
+															"1 days",
+															"2 days","3 days","4 days","5 days","6 days","7 days","8 days",
+															"9 days","10 days","11 days","12 days","13 days","14 days",
+															"15 days","16 days","17 days","18 days","19 days","20 days","21 days","22 days",
+															"23 days","24 days","25 days","26 days","27 days","28 days","29 days","30 days"
+														);
+														sort($days, SORT_NATURAL | SORT_FLAG_CASE);
+														foreach ($days as $key ) {
+														    echo "<option value='".$key."'>".$key."</option>";
+														}
 
-					?>
+													 ?>
 				</select>
-			</div></p>
-		          <input type="text" id="compname" placeholder="Search.." name="search">
-			  <button type="button" id="addcompname" >Add</button>
-			  <div class="row">
-				  <ul id="addedcompname"></ul>
-			  </div>
+								</div></p>
+		          <input type="text" placeholder="Search.." name="search">
+		      <button type="submit">Add</button>
 		        </div>
 		        <div class="modal-footer" style="text-align: center;">
-		          <button type="button" class="btn btn-primary">Start Tender Process</button>
+		          <button type="button" id="start_tender" class="btn btn-primary">Start Tender Process</button>
 		          <button type="button" class="btn btn-primary butgrey">Go Back</button>
 		        </div>
 		      </div>   
@@ -648,7 +1260,7 @@
 		    			<div class="row">
 		    				<div class="col-sm-12 active-tenders" id="cprofile">
 		    						<h3>Project Information
-									<button class="btn buts save_proj" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction()"><i class="fa fa-save" style="font-size:15px" href=""></i>Save</button>
+		    						<button class="btn buts save_proj upd" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction()"><i class="fa fa-save" style="font-size:15px" href=""></i>Save</button>
 		    						<button class="btn buts" id="edit_proj" onclick="myFunction()" style="float:right;margin-top:-14px;" ><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
 		    				</div>			
 		    				<div class="col-sm-12">
@@ -733,7 +1345,9 @@
 		    							</td>
 		    						</tr>
 		    						<tr>
-		    							<td>Constraints</td>
+		    							<td>Constraints
+		    								
+		    							</td>
 		    							<td>
 											@foreach($constraints as $const)
 		    								<div class="form-group">                               
@@ -852,6 +1466,18 @@
 		    										<td><input type="text" name="member_name[]" class="form-control proje" value="{{ $team->member_name }}" placeholder="Allies and Morrison" readonly></td>
 												</tr>
 												@endforeach
+		    									{{-- <tr>
+		    										<td>Structural Engineer</td>
+		    										<td><input type="text" name="structural" class="form-control proje" placeholder="AKT II" readonly></td>
+		    									</tr>
+		    									<tr>
+		    										<td>Services Engineer</td>
+		    										<td><input type="text" name="services" class="form-control proje" placeholder="Sweco" readonly></td>
+		    									</tr>
+		    									<tr>
+		    										<td>Fire Engineer </td>
+		    										<td><a href="#">Active Tender</a></td>
+		    									</tr> --}}
 		    									<tr>
 		    										<td colspan="2"><div class="form-group">
 		    										<input type="button" id="addprojteam" class="addbbutn btn form-control pull-right" style="background-color: #fe7235;color:white;width: 90px;" value="Add" disabled />
@@ -861,7 +1487,9 @@
 		    							</td>
 		    						</tr>
 		    						<tr>
-		    							<td>Supporting Documents</td>
+		    							<td>Supporting Documents
+		    								
+		    							</td>
 		    							<td>
 											@if($project->site_plan == "No File Uploaded")
 											<div class="form-group">	
@@ -958,7 +1586,9 @@
 									<div class="col-sm-9">				
 										<table class="table table-striped table-hover emp_details">
 											<tr>
-												<td>Employer</td >
+												<td>Employer
+													
+												</td >
 												<td><input id="emp1" type="text" name="emp1" class="form-control proje" placeholder="British Land" readonly></td>
 											</tr>
 											<tr>
@@ -968,15 +1598,21 @@
 												<td><input id="emp2" type="text" name="emp2" class="form-control proje" placeholder="100 Sample Road, London, W1 23Y, United Kingdom" readonly></td>
 											</tr>
 											<tr>
-												<td>Industry</td>
+												<td>Industry
+													
+												</td>
 												<td><input id="emp3" type="text" name="emp3" class="form-control proje" placeholder="Developer" readonly></td>
 											</tr>
 											<tr>
-												<td>Year Established</td>
+												<td>Year Established
+													
+												</td>
 												<td><input id="emp4" type="text" name="emp4" class="form-control proje" placeholder="1955" readonly></td>
 											</tr>
 											<tr>
-												<td>Number of Employees</td>
+												<td>Number of Employees
+													
+												</td>
 												<td><input id="emp5" type="text" name="emp5" class="form-control proje" placeholder="10-50" readonly></td>
 											</tr>
 										</table>
@@ -1021,6 +1657,13 @@
     			    <tbody id="tenderload">
 						@foreach($tender as $ten)
 						<tr>
+							{{-- <td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a><p>Edit Tender</p></a></td>
+							<td class="td">{{ $ten->status }}</td>
+							<td class="td">TBC</td>
+							<td class="td">TBC</td>
+							<td class="td">{{ $ten->time_remaining }}</td>
+							<td class="td">TBC</td>
+							<td class="td">TBC</td> --}}
 							@if($ten->status == "Closed")
 								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a><p></p></a></td>
 								<td class="td">{{ $ten->status }}</td>
@@ -1032,14 +1675,25 @@
 								<td class="td">
 								</button><button class="btn btn-primary" style="margin-bottom:10px;    width: 135px;">Dowload Evalution<br>Report</button>
 							 	</button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td>
-							@else
-								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a class="edit_tender" data-tender-id="{{ $ten->tender_id }}" data-toggle="tab" href="#section4"><p>Edit Tender</p></a></td>
+							@elseif($ten->status == "Active")
+								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a><p></p></a></td>
 								<td class="td">{{ $ten->status }}</td>
 								<td class="td">{{ $ten->start }}</td>
 								<td class="td">{{ $ten->end }}</td>
 								<td class="td">{{ $ten->time_remaining }}</td>
 								<td class="td">{{ $ten->bids_received }}</td>
 								<td class="td">{{ $ten->queries_received }}</td>
+								<td class="td">
+								</button><button class="btn btn-success" style="margin-bottom:10px;">Complete Tender Process</button>
+								{{-- </button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td> --}}
+							@else
+								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a class="edit_tender" data-tender-id="{{ $ten->tender_id }}" data-toggle="tab" href="#section4"><p>Edit Tender<br></p></a></td>
+								<td class="td">{{ $ten->status }}</td>
+								<td class="td">TBC</td>
+								<td class="td">TBC</td>
+								<td class="td">TBC</td>
+								<td class="td">TBC</td>
+								<td class="td">TBC</td>
 								<td class="td">No Default Action!</td>
 							@endif
 
@@ -1180,7 +1834,7 @@
     			                </tr>
     			            </tbody>
     			        </table>
-					</div>
+    			    </div>
     			</div><br>
 	    			<button class="btn">Export to MS Excel</button>
 					</div>
@@ -1211,68 +1865,2566 @@
 		    						
 		    					</div>
 
+
 		    					<div id="section11" class="tab-pane tender-container">
 		    						<h3 class="bid-form-title">Scope</h3>
+		    						<div class="zui-wrapper2">
+		    						    <div class="zui-scroller2">
+		    						        <table class="zui-table2">
+		    						            <thead>
+		    						                <tr>
+		    						                    <th class="zui-sticky-col2"><center>Deliverables</center></th>
+		    						                    <th style="width: 300px;max-width: 300px;min-width: 300px;">
+		    						                    Details/Contents</th>
+		    						                    <th style="width: 250px;max-width: 250px;min-width: 250px;">RACI</th>
+		    						                    <th>0</th>
+		    						                    <th>1</th>
+		    						                    <th>2</th>
+		    						                    <th>3</th>
+		    						                    <th>4</th>
+		    						                    <th>5</th>
+		    						                    <th>6</th>
+		    						                    <th>7</th>
+		    						                </tr>
+		    						            </thead>
+		    						            <tbody>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col2">Strategic Brief</td>
+		    						                    <td class="td "><textarea class="hayt" name="strategic_details" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td">
+		    						                    	<div class="col-sm-12">
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="strategic_raci[]" value="R"><span class="label-text">R</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="strategic_raci[]" value="A"><span class="label-text">A</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="strategic_raci[]" value="C"><span class="label-text">C</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="strategic_raci[]" value="I"><span class="label-text">I</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="strategic_num[]" value="0"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="strategic_num[]" value="1"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="strategic_num[]" value="2"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="strategic_num[]" value="3"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="strategic_num[]" value="4"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="strategic_num[]" value="5"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="strategic_num[]" value="6"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="strategic_num[]" value="7"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col2">Project Programme(Lead)</td>
+		    						                    <td class="td "><textarea class="hayt" name="pprogramme_details" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td">
+		    						                    	<div class="col-sm-12">
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="pprogramme_raci[]" value="R"><span class="label-text">R</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="pprogramme_raci[]" value="A"><span class="label-text">A</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="pprogramme_raci[]" value="C"><span class="label-text">C</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="pprogramme_raci[]" value="I"><span class="label-text">I</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="pprogramme_num[]" value="0"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="pprogramme_num[]" value="1"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="pprogramme_num[]" value="2"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="pprogramme_num[]" value="3"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="pprogramme_num[]" value="4"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="pprogramme_num[]" value="5"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="pprogramme_num[]" value="6"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="pprogramme_num[]" value="7"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col2">Feasibility Study</td>
+		    						                    <td class="td "><textarea class="hayt" name="feasibility_details" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td">
+		    						                    	<div class="col-sm-12">
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="feasibility_raci[]" value="R"><span class="label-text">R</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="feasibility_raci[]" value="A"><span class="label-text">A</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="feasibility_raci[]" value="C"><span class="label-text">C</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="feasibility_raci[]" value="I"><span class="label-text">I</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="0"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="feasibility_num[]" value="1"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="feasibility_num[]" value="2"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="feasibility_num[]" value="3"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="feasibility_num[]" value="4"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="feasibility_num[]" value="5"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="feasibility_num[]" value="6"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="feasibility_num[]" value="7"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col2">Design Responsibility<br> Matrix</td>
+		    						                    <td class="td "><textarea class="hayt" name="design_details" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td">
+		    						                    	<div class="col-sm-12">
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="design_raci[]" value="R"><span class="label-text">R</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="design_raci[]" value="A"><span class="label-text">A</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="design_raci[]" value="C"><span class="label-text">C</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="design_raci[]" value="I"><span class="label-text">I</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="design_num[]" value="0"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="design_num[]" value="1"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="design_num[]" value="2"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="design_num[]" value="3"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="design_num[]" value="4"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="design_num[]" value="5"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="design_num[]" value="6"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="design_num[]" value="7"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col2">Site Information Report</td>
+		    						                    <td class="td "><textarea class="hayt" name="site_details" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td">
+		    						                    	<div class="col-sm-12">
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="site_raci[]" value="R"><span class="label-text">R</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="site_raci[]" value="A"><span class="label-text">A</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="site_raci[]" value="C"><span class="label-text">C</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="site_raci[]" value="I"><span class="label-text">I</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="site_num[]" value="0"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="site_num[]" value="1"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="site_num[]" value="2"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="site_num[]" value="3"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="site_num[]" value="4"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="site_num[]" value="5"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="site_num[]" value="6"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="site_num[]" value="7"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col2">Information Exchange<br> Strategy</td>
+		    						                    <td class="td "><textarea class="hayt" name="info_details" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td">
+		    						                    	<div class="col-sm-12">
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="info_raci[]" value="R"><span class="label-text">R</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="info_raci[]" value="A"><span class="label-text">A</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="info_raci[]" value="C"><span class="label-text">C</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="info_raci[]" value="I"><span class="label-text">I</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="info_num[]" value="0"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="info_num[]" value="1"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="info_num[]" value="2"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="info_num[]" value="3"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="info_num[]" value="4"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="info_num[]" value="5"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="info_num[]" value="6"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="info_num[]" value="7"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col2">Project Brief</td>
+		    						                    <td class="td "><textarea class="hayt" name="project_details" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td">
+		    						                    	<div class="col-sm-12">
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="project_raci[]" value="R"><span class="label-text">R</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="project_raci[]" value="A"><span class="label-text">A</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="project_raci[]" value="C"><span class="label-text">C</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="project_raci[]" value="I"><span class="label-text">I</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="project_num[]" value="0"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="project_num[]" value="1"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="project_num[]" value="2"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="project_num[]" value="3"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="project_num[]" value="4"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="project_num[]" value="5"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="project_num[]" value="6"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="project_num[]" value="7"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col2">Risk Assessment(Lead)</td>
+		    						                    <td class="td "><textarea class="hayt" name="risk_details" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td">
+		    						                    	<div class="col-sm-12">
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="risk_raci[]" value="R"><span class="label-text">R</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="risk_raci[]" value="A"><span class="label-text">A</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="risk_raci[]" value="C"><span class="label-text">C</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="risk_raci[]" value="I"><span class="label-text">I</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="risk_num[]" value="0"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="risk_num[]" value="1"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="risk_num[]" value="2"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="risk_num[]" value="3"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="risk_num[]" value="4"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="risk_num[]" value="5"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="risk_num[]" value="6"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="risk_num[]" value="7"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                 <tr>
+		    						                    <td class="zui-sticky-col2">Handover Strategy(Lead)</td>
+		    						                    <td class="td "><textarea class="hayt" name="hand_details" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td">
+		    						                    	<div class="col-sm-12">
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="hand_raci[]" value="R"><span class="label-text">R</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="hand_raci[]" value="A"><span class="label-text">A</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="hand_raci[]" value="C"><span class="label-text">C</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="hand_raci[]" value="I"><span class="label-text">I</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="hand_num[]" value="0"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="hand_num[]" value="1"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="hand_num[]" value="2"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="hand_num[]" value="3"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="hand_num[]" value="4"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="hand_num[]" value="5"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="hand_num[]" value="6"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="hand_num[]" value="7"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                 <tr>
+		    						                    <td class="zui-sticky-col2">Project Execution Plan</td>
+		    						                    <td class="td "><textarea class="hayt" name="execution_details" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td">
+		    						                    	<div class="col-sm-12">
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="execution_raci[]" value="R"><span class="label-text">R</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="execution_raci[]" value="A"><span class="label-text">A</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="execution_raci[]" value="C"><span class="label-text">C</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="execution_raci[]" value="I"><span class="label-text">I</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="execution_num[]" value="0"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="execution_num[]" value="1"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="execution_num[]" value="2"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="execution_num[]" value="3"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="execution_num[]" value="4"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="execution_num[]" value="5"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="execution_num[]" value="6"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="execution_num[]" value="7"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col2">Design Proposals from<br> Design Team Members</td>
+		    						                    <td class="td "><textarea class="hayt" name="proposal_details" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td">
+		    						                    	<div class="col-sm-12">
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="proposal_raci[]" value="R"><span class="label-text">R</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="proposal_raci[]" value="A"><span class="label-text">A</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="proposal_raci[]" value="C"><span class="label-text">C</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    		<div class="col-sm-3 form-check">
+		    						                    			<label>
+		    						                    				<input type="checkbox" name="proposal_raci[]" value="I"><span class="label-text">I</span>
+		    						                    			</label>
+		    						                    		</div>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="proposal_num[]" value="0"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="proposal_num[]" value="1"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="proposal_num[]" value="2"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="proposal_num[]" value="3"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="proposal_num[]" value="4"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="proposal_num[]" value="5"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="proposal_num[]" value="6"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="proposal_num[]" value="7"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						            </tbody>
+		    						        </table>
+		    						    </div>
+		    						</div>
+		    						<br>
+		    						<br>
+		    						<!-- <div class="col-sm-12">
+		    							<div class="col-sm-2"></div>
+		    							<div class="col-sm-2"></div>
+		    							<div class="col-sm-2"></div>
+		    							<div class="col-sm-2"></div>
+		    							<div class="col-sm-2"></div>
+		    							<div class="col-sm-2">
+						            		<h4>RIBA Stages</h4>
+						            	</div>
+		    						</div> -->
+		    						<div class="zui-wrapper3">
+		    						    <div class="zui-scroller3">
+		    						        <table class="zui-table3">
+		    						            <thead>
+		    						                <tr>
+		    						                    <th class="zui-sticky-col3"><center>Meetings</center></th>
+		    						                    <th style="width: 300px;max-width: 300px;min-width: 300px;">
+		    						                    Purpose</th>
+		    						                    <th style="width: 250px;max-width: 250px;min-width: 250px;">Attendees</th>
+		    						                    <th style="width: 250px;max-width: 250px;min-width: 250px;">Assumed Duration<br>(hours)</th>
+		    						                    <th>Reoccurence/Number of<br>Meetings</th>
+		    						                    <th>Arrange</th>
+		    						                    <th>Attend</th>
+		    						                    <th>Minute</th>
+		    						                    <th>0</th>
+		    						                    <th>1</th>
+		    						                    <th>2</th>
+		    						                    <th>3</th>
+		    						                    <th>4</th>
+		    						                    <th>5</th>
+		    						                    <th>6</th>
+		    						                    <th>7</th>
+		    						                </tr>
+		    						            </thead>
+		    						            <tbody>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col3">Pre-Application<br> Meetings</td>
+		    						                    <td class="td "><textarea class="hayt3" name="pre_app_purpose" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td"><textarea class="hayt3" name="pre_app_attendees" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name="pre_app_assumed_duration"></td>
+		    						                    <td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name="pre_app_reoccurence"></td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="pre_app_choice[]" value="Arrange"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="pre_app_choice[]" value="Attend"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="pre_app_choice[]" value="Minute"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="pre_app_num[]" value="0"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="pre_app_num[]" value="1"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="pre_app_num[]" value="2"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="pre_app_num[]" value="3"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="pre_app_num[]" value="4"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="pre_app_num[]" value="5"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="pre_app_num[]" value="6"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="pre_app_num[]" value="7"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col3">Site Visits</td>
+		    						                    <td class="td "><textarea class="hayt3" name="site_visits_purpose" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td"><textarea class="hayt3" name="site_visits_attendees" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name="site_visits_assumed_duration"></td>
+		    						                    <td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name="site_visits_reoccurence"></td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="site_visits_choice[]" value="Arrange"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="site_visits_choice[]" value="Attend"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="site_visits_choice[]" value="Minute"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="site_visits_num[]" value="0"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="site_visits_num[]" value="1"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="site_visits_num[]" value="2"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="site_visits_num[]" value="3"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="site_visits_num[]" value="4"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="site_visits_num[]" value="5"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="site_visits_num[]" value="6"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="site_visits_num[]" value="7"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col3">Site/Project Meetings<br>(RIBA Stage 4/5)</td>
+		    						                    <td class="td "><textarea class="hayt3" name="riba_purpose" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td"><textarea class="hayt3" name="riba_attendees" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name="riba_assumed_duration"></td>
+		    						                    <td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name="riba_reoccurence"></td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="riba_choice[]" value="Arrange"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="riba_choice[]" value="Attend"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="riba_choice[]" value="Minute"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="riba_num[]" value="0"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="riba_num[]" value="1"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="riba_num[]" value="2"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="riba_num[]" value="3"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="riba_num[]" value="4"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="riba_num[]" value="5"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="riba_num[]" value="6"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="riba_num[]" value="7"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col3">SC / PC Site<br> Inspection</td>
+		    						                    <td class="td "><textarea class="hayt3" name="inspection_purpose" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td"><textarea class="hayt3" name="inspection_attendees" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name="inspection_assumed_duration"></td>
+		    						                    <td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name="inspection_reoccurence"></td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="inspection_choice[]" value="Arrange"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="inspection_choice[]" value="Attend"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="inspection_choice[]" value="Minute"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="inspection_num[]" value="0"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="inspection_num[]" value="1"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="inspection_num[]" value="2"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="inspection_num[]" value="3"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="inspection_num[]" value="4"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="inspection_num[]" value="5"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="inspection_num[]" value="6"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="inspection_num[]" value="7"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						            </tbody>
+		    						        </table>
+		    						    </div>
+		    						</div>
 
-		    						<p style="padding: 18px; border: 1px solid grey;border-radius: 6px;">
-		    						<b>Note: Read first!</b> <br>
-		    						In order to complete this section, you have to download the excel file below. Afterwards, you have to fill out all the important information or fields needed. Please be informed that all the data you have  inputted will remain confidential.</p>
-		    						{{-- 
-		    						<div class="down">
-		    							<a download="Book-Scope.xlsx" href="{{asset('css/scopexl/Book-Scope.xlsx')}} "><i class="fa fa-download"> Download</i></a>
-		    						</div> --}}
+		    						<br>
+		    						<br>
 
-		    						<div class="row downloader" style="    display: flex;     padding: 25px;">
-		    						  <img
-		    						  	style="width: 150px;height: 150px;"
-		    						    alt="excel-logo"
-		    						    class="excel"
-		    						    src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Microsoft_Excel_2013_logo.svg/2000px-Microsoft_Excel_2013_logo.svg.png" />
-		    						  <div class="download_icon">
-		    						    <p>
-		    						     <a download="Emp_Book-Scope.xlsx" href="{{asset('css/scopexl/Emp_Book-Scope.xlsx')}}"><i class="fa fa-download"> Download</i></a>
-		    						    </p>
-		    						    <p class="download_para">
-		    						      <small>Lorem <abbr title="Download">DL</abbr>.  It has survived not only five centuries, but also the leap into electronic typesetting</small>
-		    						    </p>
-		    						  </div>
-		    						</div><br>
+		    						<div class="zui-wrapper4">
+		    						    <div class="zui-scroller4">
+		    						        <table class="zui-table4">
+		    						            <thead>
+		    						                <tr>
+		    						                    <th class="zui-sticky-col4"><center>Design Considerations</center></th>
+		    						                    <th style="width: 500px; max-width: 500px; min-width: 500px;">Applies to</th>
+		    						                </tr>
+		    						            </thead>
+		    						            <tbody>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col4">Cost, programme, quality, health & safety during construction and<br> operation, functionality, buildability, operation and maintenance.</td>
+		    						                    <td class="td "><textarea class="hayt4" name="question_one" placeholder="Enter details here"></textarea></td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col4">All information provided by other members of the Project Team.</td>
+		    						                    <td class="td "><textarea class="hayt4" name="question_two" placeholder="Enter details here"></textarea></td> 
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col4">Good Practice in the Selection of Construction Materials 2011<br> (British Council of Offices Publication).</td>
+		    						                    <td class="td "><textarea class="hayt4" name="question_three" placeholder="Enter details here"></textarea></td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col4">Statutory standards</td>
+		    						                    <td class="td "><textarea class="hayt4" name="question_four" placeholder="Enter details here"></textarea></td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col4">Co-ordination with structural and building services</td>
+		    						                    <td class="td "><textarea class="hayt4" name="question_five" placeholder="Enter details here"></textarea></td>
+		    						                </tr>
+		    						            </tbody>
+		    						        </table>
+		    						    </div>
+		    						</div>
 
-		    						<p style="padding: 18px; border: 1px solid grey;border-radius: 6px;">
-		    						<b>Note: Almost there!</b> <br>
-		    						Already done filling up the fields? Well you're almost done! Once, you have completed it. Kindly, submit or drag the excel file below. You are good to proceed now. Thank you!</p>
+		    						<br><br>
 
-		    						<div class="row" style="padding: 30px; ">
-		    							{{-- <form method="POSt" enctype="multipart/form-data" action="upload.php">
-		    								<input type="file" name="file" value="Upload">
-		    								<input type="submit" value="Upload">
-		    							</form> --}}
+		    						<br>
+		    						<br>
 
-		    							<form id="upload" action="index.html" method="POST" enctype="multipart/form-data">
-
-		    							<fieldset>
-		    							<legend>Upload Excel File</legend>
-
-		    							<input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
-
-		    							<div>
-		    								<label for="fileselect">File to upload:</label>
-		    								<input type="file" id="fileselect" name="fileselect[]" />
-		    								<div id="filedrag">or drop file here</div>
-		    							</div>
-		    							</fieldset>
-
-		    							</form>
-
-		    							<div id="messages">
-		    							<p>Status Messages</p>
-		    							</div>
-
-		    							<div class="form-group butcent">
-								<input id="sec2" type="submit" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
-							</div>
-
-		    						</div><br> 
+		    						<div class="zui-wrapper5">
+		    						    <div class="zui-scroller5">
+		    						        <table class="zui-table5">
+		    						            <thead>
+		    						                <tr>
+		    						                    <th class="zui-sticky-col5"><center>Advise on</center></th>
+		    						                    <th>0</th>
+		    						                    <th>1</th>
+		    						                    <th>2</th>
+		    						                    <th>3</th>
+		    						                    <th>4</th>
+		    						                    <th>5</th>
+		    						                    <th>6</th>
+		    						                    <th>7</th>
+		    						                </tr>
+		    						            </thead>
+		    						            <tbody>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Any products or materials, specified within the guidelines<br> named in Item<span style="color: red;">???</span> , that are relevant to the project and have been found<br> to be deleterious or hazardous to health and safety.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_one[]" value="0"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_one[]" value="1"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_one[]" value="2"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_one[]" value="3"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_one[]" value="4"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_one[]" value="5"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_one[]" value="6"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_one[]" value="7"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Assembly of Project Team. (Lead)</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_two[]" value="0"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_two[]" value="1"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_two[]" value="2"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_two[]" value="3"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_two[]" value="4"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_two[]" value="5"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_two[]" value="6"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_two[]" value="7"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td> 
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Need for and the scope of services by consultants, specialists,<br> sub-contractors or suppliers. (Lead)</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_three[]" value="0"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_three[]" value="1"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_three[]" value="2"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_three[]" value="3"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_three[]" value="4"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_three[]" value="5"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_three[]" value="6"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_three[]" value="7"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Resolution of defects.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_four[]" value="0"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_four[]" value="1"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_four[]" value="2"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_four[]" value="3"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_four[]" value="4"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_four[]" value="5"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_four[]" value="6"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_four[]" value="7"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Form and content of design outputs, their interfaces<br> and a verification procedure. (Lead)</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_five[]" value="0"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_five[]" value="1"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_five[]" value="2"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_five[]" value="3"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_five[]" value="4"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_five[]" value="5"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_five[]" value="6"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_five[]" value="7"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Relevant experience from previous projects.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_six[]" value="0"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_six[]" value="1"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_six[]" value="2"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_six[]" value="3"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_six[]" value="4"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_six[]" value="5"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_six[]" value="6"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="advise_six[]" value="7"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr style="background: #FFC000;">
+		    						                    <td style="background: #FFC000; font-weight: bold; color: #fff;" class="zui-sticky-col5"><center>Monitor</center></td> <!-- background/bold -->
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Work of the Designers. <br><span style="color: red;">Designers regarding…. [WHAT?]</span></td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Performance of Design Team.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Compliance with statutory and contract requirements.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr style="background: #FFC000;">
+		    						                    <td style="background: #FFC000; font-weight: bold; color: #fff;" class="zui-sticky-col5"><center>Collaborate / Consult with</center></td> <!-- background/bold -->
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Relevant Third Parties as required.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Planning authority to discuss the project</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Statutory authorities on developing design.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Project Manager & Employer on significant design issues. (Lead)</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr style="background: #FFC000;">
+		    						                    <td style="background: #FFC000; font-weight: bold; color: #fff;" class="zui-sticky-col5"><center>Co-ordinate</center></td> <!-- background/bold -->
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Collation of all planning submission documents.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Reviewing design information provided by contractors <br>or specialists to establish whether that information <br>can be co-ordinated and integrated with other project information.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr style="background: #FFC000">
+		    						                    <td style="background: #FFC000; font-weight: bold; color: #fff;" class="zui-sticky-col5"><center>Other</center></td> <!-- background/bold -->
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                    <td></td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Submit the [detailed / outline] planning application.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Assisting building user during initial occupation period.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">Review all instructions and information about the Project,<br> provided by the Employer.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						                <tr>
+		    						                    <td class="zui-sticky-col5">preparing and making submissions under building acts<br> and/or regulations or other statutory requirements.</td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                    <td class="td">
+		    						                    	<div class="form-check">
+		    						                    		<label>
+		    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+		    						                    		</label>
+		    						                    	</div>
+		    						                    </td>
+		    						                </tr>
+		    						            </tbody>
+		    						        </table>
+		    						    </div>
+		    						</div>
+									<button type="button" class="btn btn-primary" id="deliverables_save">Save</button>
 		    					</div>
 		    					<div id="section21" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Appointment</h3>
@@ -1334,10 +4486,9 @@
 																	</div>
 																</div>
 															
+																</div>
 															</div>
 														</div>
-													</div>
-												</div>
 		    									<div class="row">
 		    										<div class="col-sm-4">
 		    											<div class="form-group">
@@ -1426,7 +4577,7 @@
 		    										<div class="col-sm-8">
 		    											<div class="form-group">
 															<input type="file" class="form-control" name="net_contribution_clause">
-														</div>
+															</div>
 		    										</div>
 		    									</div>
 		    									<div class="row">
@@ -1436,11 +4587,11 @@
 		    											</div>
 		    										</div>
 		    										<div class="col-sm-8">
-		    											{{-- <div class="form-group">
+		    											<div class="form-group">
 															<input type="text" placeholder="Enter Document Title" class="form-control" name="documents_for_signature[]">
-														</div> --}}
+														</div>
 														<div class="form-group">
-															<input type="file" class="form-control" name="signature_files[]" multiple/>
+															<input type="file" class="form-control" name="signature_files[]">
 														</div>
 		    										</div>
 		    										<div class="col-sm-4">
@@ -1485,15 +4636,15 @@
 				    									<div class="evalwquali hovertable" style="border: 1px solid #fe7235;">
 				    										<div class="spanliner" style="margin-bottom: 650px;">
 					    										<span>Qualitative</span>
-					    										<input id="quali" placeholder="%" value="0" name="qualitative" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+					    										<input id="quali" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Quantitative</span>
-				    											<input id="quanti" placeholder="%" name="quantitative" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="quanti" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner" style="margin-bottom: 172px;margin-top: 1px;">
 					    										<span>Risk</span>
-					    										<input id="risk" placeholder="%" value="0" name="risk" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+					    										<input id="risk" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Total</span>
@@ -1505,11 +4656,11 @@
 				    									<div class="evalorga hovertable" style="border: 1px solid #fe7235;">
 				    										<div class="spanliner" style="margin-bottom: 172px;">
 				    											<span>Organisation</span>
-				    											<input id="a1" placeholder="%" value="0" name="orginasation" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="a1" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner" style="margin-bottom: 408px;">
 				    											<span>Individual</span>
-				    											<input id="a2" placeholder="%" value="0" name="individual" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="a2" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Total</span>
@@ -1519,23 +4670,23 @@
 				    									<div class="evalinsu hovertable" style="border: 1px solid #fe7235;margin-top: 35px;">
 				    										<div class="spanliner">
 				    											<span>Insurances</span>
-				    											<input id="b1" placeholder="%" value="0" name="insurances" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="b1" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Bonds</span>
-				    											<input id="b2" placeholder="%" value="0" name="bonds" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="b2" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>3rd Parties</span>
-				    											<input id="b3" placeholder="%" value="0" name="third_parties" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="b3" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Limit of liability</span>
-				    											<input id="b4" placeholder="%" value="0" name="eval_limit_of_liability" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="b4" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Net contribution clause</span>
-				    											<input id="b5" placeholder="%" value="0" name="eval_net_contribution_clause" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="b5" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Total</span>
@@ -1547,23 +4698,23 @@
 				    									<div class="evalorgaproj hovertable" style="border: 1px solid #fe7235;">
 				    										<div class="spanliner">
 				    											<span>Project Experience</span>
-				    											<input id="c1" placeholder="%" value="0" name="organisation_project_exp" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="c1" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Variety of Services</span>
-				    											<input id="c2" placeholder="%" value="0" name="organisation_variety_of_services" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="c2" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Awards</span>
-				    											<input id="c3" placeholder="%" value="0" name="organisation_awards" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="c3" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Accreditations</span>
-				    											<input id="c4" placeholder="%" value="0" name="organisation_accreditations" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="c4" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Relationship to Employer</span>
-				    											<input id="c5" placeholder="%" value="0" name="orgranisation_relationship" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="c5" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Total</span>
@@ -1573,51 +4724,51 @@
 				    									<div class="evalindiproj hovertable" style="border: 1px solid #fe7235;">
 				    										<div class="spanliner">
 				    											<span>Project Experience</span>
-				    											<input id="d1" placeholder="%" value="0" name="individual_project_exp" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d1" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Years of relevant Experience</span>
-				    											<input id="d2" placeholder="%" value="0" name="individual_years_exp" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d2" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Industry Experience</span>
-				    											<input id="d3" placeholder="%" value="0" name="individual_industry_exp" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d3" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Awards</span>
-				    											<input id="d4" placeholder="%" value="0" name="individual_awards" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d4" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Accreditaions</span>
-				    											<input id="d5" placeholder="%" value="0" name="individual_accrediations" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d5" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Relationship to Employer</span>
-				    											<input id="d6" placeholder="%" value="0" name="individual_relationship" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d6" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Communication Skills</span>
-				    											<input id="d7" placeholder="%" value="0" name="individual_communication_skills" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d7" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>People Management</span>
-				    											<input id="d8" placeholder="%" value="0" name="individual_people_management" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d8" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Time Management</span>
-				    											<input id="d9" placeholder="%" value="0" name="individual_time_management" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d9" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Pro-Active</span>
-				    											<input id="d10" placeholder="%" value="0" name="individual_pro_active" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d10" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Social Behaviour</span>
-				    											<input id="d11" placeholder="%" value="0" name="individual_social_behavior" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d11" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Technical 'Hard' Skills</span>
-				    											<input id="d12" placeholder="%" value="0" name="individual_hard_skills" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d12" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Total</span>
@@ -1631,7 +4782,6 @@
 		    							
 		    							<div class="form-group butcent">
 											<input id="sec2" type="submit" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
-											<input id="tender_evaluation" type="button" name="Save" value="Save" class="btn btn-primary butsize">
 										</div>
 		    						</div><br> 
 		    					<div id="section41" class="tab-pane fade tender-container">
@@ -1642,10 +4792,10 @@
 										<div class="col-sm-8">
 											<div class="form-group">
 												<div class="col-sm-6" style="padding:0;">
-													<input type="text" class="form-control" name="proj_fname" placeholder="First Name">
+													<input type="text" class="form-control" name="created_fname" placeholder="First Name">
 											</div>
 										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-										<input type="text" class="form-control" name="proj_lname"placeholder="Last Name">
+										<input type="text" class="form-control" name="created_lname"placeholder="Last Name">
 										</div>
 										</div>
 									</div>
@@ -1669,10 +4819,10 @@
 										<div class="col-sm-8">
 											<div class="form-group">
 												<div class="col-sm-6" style="padding:0;">
-													<input type="text" class="form-control" name="proj_fname" placeholder="First Name">
+													<input type="text" class="form-control" name="checked_fname" placeholder="First Name">
 											</div>
 										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-										<input type="text" class="form-control" name="proj_lname"placeholder="Last Name">
+										<input type="text" class="form-control" name="checked_lname"placeholder="Last Name">
 										</div>
 										</div>
 									</div>
@@ -1698,10 +4848,10 @@
 										<div class="col-sm-8">
 											<div class="form-group">
 												<div class="col-sm-6" style="padding:0;">
-													<input type="text" class="form-control" name="proj_fname" placeholder="First Name">
+													<input type="text" class="form-control" name="approved_fname" placeholder="First Name">
 											</div>
 										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-										<input type="text" class="form-control" name="proj_lname"placeholder="Last Name">
+										<input type="text" class="form-control" name="approved_lname"placeholder="Last Name">
 										</div>
 										</div>
 									</div>
@@ -1755,6 +4905,7 @@
     											<button type="button" class="btn btn-primary butsize" s data-toggle="modal"data-target="#myModal2">Start Tender Process</button>
 
 											<input id="sec2" type="button" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
+											<button type="button" id="quality_save" class="btn btn-primary butsize">Save</button>
 										</div>
     										
     									</div>
@@ -1936,7 +5087,7 @@ var element=document.getElementById('bonds');
 	   $('#projform input.addbbutn').attr('disabled',true);
 	   $('.save_proj').css('display', 'none');
 	   $('#edit_proj').css('display', 'block');
-	   $('#projform').submit();
+	   //$('#projform').submit();
 
 
 	}

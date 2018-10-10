@@ -202,9 +202,11 @@
 									</div>
 									<div class="col-sm-9 project-excerpt">
 										<div class="row">
+											@foreach($project as $proj)
 											<div class="col-sm-12">
-												<h3>Canada Water Masterplan<small> - 9 days left</small></h3>
-											</div>			
+												<h3>{{ $proj->project_title }}<small> - 9 days left</small></h3>
+											</div>
+											@endforeach			
 											<div class="col-sm-6">
 												<h5>Fire Engineer and 9 Other Services</h5>
 												<p>New-built located in Canada Water, London<br> 33,000 m2 office space, 5,500 m2 retail space</p>
