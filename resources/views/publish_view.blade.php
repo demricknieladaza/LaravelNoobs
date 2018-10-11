@@ -5,6 +5,11 @@
 	thead.thead tr th {
 	  vertical-align: middle;
 	}
+
+	.datepicker {
+		background: white;
+	}
+
 	.widt th {
 		width: 80px;
 	}
@@ -965,6 +970,7 @@
 			$('#idd').val(0);
 		});
 
+
 		// $('#tender_load').click(function(){
 		// 	jQuery.ajax({
 		// 		url: "{{ url('project_info_tender') }}",
@@ -1088,6 +1094,16 @@
 		});
 	});
 </script>
+<script>
+	$(document).ready(function(){
+		$(".date").datepicker( {
+			    format: "mm-yyyy",
+			    viewMode: "months", 
+			    minViewMode: "months"
+			});
+	});
+		
+	</script>
 
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -4895,7 +4911,7 @@
 													</div>
 													<div class="form-group">
 														<div class="cnt_statement">
-													    <button class="btn btn-primary" id="cnt_statement" >Add another statement</button>
+													   {{--  <button class="btn btn-primary" id="cnt_statement" >Add another statement</button> --}}
 													    
 														</div>
 													</div>
@@ -4904,7 +4920,7 @@
 
     											<button type="button" class="btn btn-primary butsize" s data-toggle="modal"data-target="#myModal2">Start Tender Process</button>
 
-											<input id="sec2" type="button" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
+											
 											<button type="button" id="quality_save" class="btn btn-primary butsize">Save</button>
 										</div>
     										
@@ -5201,7 +5217,7 @@ $('a[href^="#"]').on('click', function(event) {
 
 </script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 
 <!-- Testing lang ni -->
 
