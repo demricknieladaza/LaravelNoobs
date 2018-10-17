@@ -44,20 +44,20 @@ class WinWorkController extends Controller
                 //     $join->on('tender_tbl.project_record_id', '=', 'ty.project_record_id')
                 //     ->where('tender_tbl.status', '=', 'Active');
                 // })
-                // ->rightJoin('tender_tbl as ten', 'type_of_use_tbl.project_record_id', '=', 'ten.project_record_id')
+                ->leftJoin('type_of_use_tbl as tb', 'project_information_tbl.project_record_id', '=', 'tb.project_record_id')
                 // ->where('status', '=', 'Active')
                 // ->where('services', '=', 'Fire Engineer', 'Sustainability Consultant')
                 // ->whereIn('services',['Fire Engineer', '', '' , '' ])
                 // ->rightJoin('winwork_data_tbl as wd', 'project_information_tbl.project_record_id', '=', 'wd.project_record_id')
                 // ->whereBetween('project_information_tbl.construction_value', array(10000, 30000))
                 ->orderBy('project_information_tbl.created_at', 'desc')
-                ->get();
-                // ->paginate(5);
+                // ->get();
+                ->paginate(5);
                 // ->unique('project_record_id');
         $type = array();
         foreach($work as $wo){
-            $use = TypeOfUse::where('project_record_id', $wo->project_record_id)->get();
-            array_push($type, $use->use_name);
+            $use = TypeOfUse::where('project_record_id', $wo->project_record_id)->first();
+            array_push($type,$use);
         }
 
         $user = $request->session()->get('id');
@@ -68,16 +68,22 @@ class WinWorkController extends Controller
         }
         
         // $new = json_encode($type);
-        return $type; 
+        // return $type;
+        // return $work; 
         // return count($type);         
         // return $work;
         // return $sub;
-        // return view('winwork')->with([
-        //     'project' => $work,
-        //     'type'    => $type,
-        //     'saved'   => $saved
-        // ]);
+        return view('winwork')->with([
+            'project' => $work,
+            'type'    => $type,
+            'saved'   => $saved
+        ]);
 
+        // return $saved;
+
+        
+
+        // return $work;
     }
 
     /**
@@ -117,30 +123,42 @@ class WinWorkController extends Controller
     }
 
     public function searchFilters(Request $request){
-        $filters = $request->service_filter;
+        $s_filters = $request->service_filter;
+        $u_filters = "Office";
+        $from_filter = $request->from;
+        $to_filer = $request->to;
+        $loc_filter = $request->location;
+
 
         $work = DB::table('project_information_tbl')
-                    ->rightJoin('tender_tbl as td', 'project_information_tbl.project_record_id', '=', 'td.project_record_id')
-                    ->where('status', '=', 'Active')
-                    // ->rightJoin('type_of_use_tbl as ty', 'td.project_record_id', '=', 'ty.project_record_id')
-                    // ->where('td.project_record_id', '=', 'ty.project_record_id')
-                    // ->rightJoin('tender_tbl', function($join){
-                    //     $join->on('tender_tbl.project_record_id', '=', 'ty.project_record_id')
-                    //     ->where('tender_tbl.status', '=', 'Active');
-                    // })
-                    // ->rightJoin('tender_tbl as ten', 'type_of_use_tbl.project_record_id', '=', 'ten.project_record_id')
-                    // ->where('status', '=', 'Active')
-                    ->whereIn('services',$filters)
-                    
-                    // ->whereIn('services',['Fire Engineer', '', '' , '' ])
-                    // ->rightJoin('winwork_data_tbl as wd', 'project_information_tbl.project_record_id', '=', 'wd.project_record_id')
-                    //->groupBy('project_information_tbl.project_record_id', 'distinct')
-                    ->orderBy('project_information_tbl.created_at', 'desc')
-                    // ->get();
-                    ->paginate(5);
+        ->rightJoin('tender_tbl as td', 'project_information_tbl.project_record_id', '=', 'td.project_record_id')
+        ->where('status', '=', 'Active')
+        ->leftJoin('type_of_use_tbl as tb', 'project_information_tbl.project_record_id', '=', 'tb.project_record_id')
+        ->Where(function($query) use($u_filters){
+            for($i = 0; $i < count($u_filters); $i++){
+                $query->orwhere('use_name', 'like', '%' . $u_filters[$i] . '%');
+            }
+        })
+        ->whereIn('services',$s_filters)
+        ->where('location', $loc_filter)
+        ->whereBetween('project_information_tbl.construction_value', array($from_filter, $to_filer))
+        ->orderBy('project_information_tbl.created_at', 'desc')
+        // ->get();
+        ->paginate(5);
 
-        return view('winwork')->with('project', $work);
-            // return $filters;
+        $user = $request->session()->get('id');
+        $liked = SavedTenders::where('user_id', $user)->get();
+        $saved = array();
+        foreach($liked as $wo){
+            array_push($saved,$wo->tender_id);
+        }
+
+        return view('winwork')->with([
+            'project' => $work,
+            'saved'   => $saved
+        ]);
+    
+        
 
     }
 

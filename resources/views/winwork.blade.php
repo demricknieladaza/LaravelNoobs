@@ -170,7 +170,7 @@
 								);
 								sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
 								foreach ($Service as $key ) {
-								    echo "<p><input type='checkbox' class='filled-in' name='".$key."' value='".$key."' id='".$key."'> <label for='".$key."'>".$key."</label></p>";
+								    echo "<p><input type='checkbox' class='filled-in' name='use_filter[]' value='".$key."' id='".$key."'> <label for='".$key."'>".$key."</label></p>";
 								}
 
 								?>
@@ -206,14 +206,14 @@
 								<div class="form-group">
 									<input type="text" name="location" class="form-control" placeholder="Enter your location">
 								</div>								
-								<div class="form-group" style="padding-top: 15px;">
-								 	{{-- <input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="101" data-slider-step="1" data-slider-value="0"/> --}}
+								{{-- <div class="form-group" style="padding-top: 15px;">
+								 	{{-- <input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="101" data-slider-step="1" data-slider-value="0"/>
 								 	<input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="101" data-slider-step="1" data-slider-value="0" />
-								</div>
+								</div> --}}
 								<div class="formm-group">
 									<p><button type="submit" name="apply_filter" value="Apply Filter" class="btn btn-lg btn-primary" style="border-radius:6px; ">Apply Filter</button></p>
 								</div>	
-							</form>
+							{{-- </form> --}}
 							{!! Form::close() !!}
 						</div>
 					</div>
@@ -271,7 +271,27 @@
 															@endforeach --}}
 
 																{{-- <p>{{ $type[$count][$counter]->use_area }} m2 {{ $type[$count][$counter]->use_name }}</p> --}}
-
+															{{-- @if(in_array($proj->project_record_id, $project)) --}}
+															{{-- <p>{{ explode(',', $proj->use_name) }} {{ $proj->use_area }} m2</p> --}}
+															<?php 
+																$strr = explode(",",$proj->use_name);
+																$strr1 = explode(",",$proj->use_area);
+																// echo count($strr);
+																$counter = 0;
+																if(count($strr) <= 3){
+																	$counter = 2;
+																}
+																else{
+																	$counter = count($strr);
+																}
+																for($x=0;$x < $counter;$x++)
+																{
+																	echo ' '.$strr[$x].' '.$strr1[$x].' m2';
+																}
+															
+															?>
+																
+																
 														</div>
 														<div class="col-sm-3 bid_section text-center">
 															<p>Construction Value</p>
