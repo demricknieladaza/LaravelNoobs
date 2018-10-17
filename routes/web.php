@@ -76,7 +76,14 @@ Route::post('project_info_tender_appointment', 'TenderController@appointmentStor
 //Route::put('project_info/{id}', 'ProjectInformationController@Update');
 Route::resource('project_info','ProjectInformationController');
 Route::resource('project_info_tender','TenderController');
+Route::resource('tenders', 'TenderDisplayController', [
+    'names' =>[
+        'index' => 'Tenders'
+    ]
+]);
 Route::resource('winwork', 'WinWorkController');
+Route::post('move_to_saved', 'WinWorkController@moveToSavedOps');
+Route::post('winwork/filtered_results', 'WinWorkController@searchFilters');
 
 Route::post('tender_evaluation', 'TenderController@tenderEvalStore');
 Route::post('tender_deliverables_save', 'TenderController@tenderScopeStore');

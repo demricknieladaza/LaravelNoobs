@@ -67,7 +67,7 @@
 						</div>
 						@foreach ($projects as $proj)
 						<div class=" danpads tender-tile-single fixes">
-							<a href="/project_info/{{ $proj->project_record_id }}/edit" class="fill-div">
+						<a href="/project_info/{{ $proj->project_record_id }}/edit" class="fill-div">
 							<div class="scaslerni tender-tiles fixes1">
 								<h2>{{ $proj->project_title }}</h2>
 								<!-- <div class="row table-tender-details">

@@ -51,10 +51,56 @@
 				return value + ' miles';
 			}
 			// return 'Current value: ';
-		}
-	});
+		};
+
+		});
+
+		
 	});
 	
+</script>
+<script>
+	$(document).ready(function()
+	{
+		// alert('SZDFASd');
+		$('.star_save').click(function(){
+			// alert($(this).attr('data-proj-id'));
+			jQuery.ajax({
+				url: "{{ url('move_to_saved') }}",
+				type: 'post',
+				data: {
+					idd: $(this).attr('data-proj-id'),
+					tenid: $(this).attr('data-tend-id')
+
+				},
+				success: function(result){
+					console.log(result);
+				}
+			});
+		});
+		// $('.apply_filter').click(function(){
+		// 	alert('NAA!');
+		// 	var filter = [];
+		// 	jQuery("input[name='service_filter[]']").each(function()
+		// 		{	
+		// 			if($(this).prop('checked')){
+		// 				filter.push($(this).val());
+		// 			}
+					
+		// 		}
+		// 	);
+		// 	// jQuery.ajax({
+		// 	// 	url: "{{ url('filtered_results') }}",
+		// 	// 	type: 'get',
+		// 	// 	data: {
+		// 	// 		filter: filter
+		// 	// 	},
+		// 	// 	success: function(result){
+		// 	// 		//console.log(result);
+		// 	// 	}
+
+		// 	// })
+	});
 </script>
 	<div class="container search_filter wow fadeInDown" data-wow-duration="1s" data-wow-delay="200ms">
 		<div class="row top-row">
@@ -94,7 +140,8 @@
 				<div class="row">
 					<div class="col-sm-3">
 						<div class="more-search-filter">
-							<form method="post">
+							{!! Form::open(['action' => 'WinWorkController@searchFilters', 'method' => 'POST'])!!}
+							{{-- <form method="post" action="{{ url('winwork/searchFilters') }}"> --}}
 								<h3>Filter By</h3>
 								<div class="textcont">
 								<p><b>Service</b></p>
@@ -105,13 +152,13 @@
 								);
 								sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
 								foreach ($Service as $key ) {
-								    echo "<p><input type='checkbox' class='filled-in' name='".$key."' value='".$key."' id='".$key."'> <label for='".$key."'>".$key."</label></p>";
+								    echo "<p><input type='checkbox' class='filled-in' name='service_filter[]' value='".$key."' id='".$key."'> <label for='".$key."'>".$key."</label></p>";
 								}
 
 								?>
 								</div>
 								<div class="show-more">
-								    <a href="#" style="color: #FE7235;">Show more</a>
+								    <a  style="color: #FE7235;">Show more</a>
 								 </div><br>
 								</div>
 								<div class="textcont">
@@ -130,7 +177,7 @@
 								<p><input type="checkbox" class="filled-in" name="other" value="other" id="other"> <label for="other">Other</label></p>
 								</div>
 								<div class="show-more">
-								    <a href="#" style="color: #FE7235;">Show more</a>
+								    <a  style="color: #FE7235;">Show more</a>
 								 </div><br>
 								 </div>
 								
@@ -164,9 +211,10 @@
 								 	<input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="101" data-slider-step="1" data-slider-value="0" />
 								</div>
 								<div class="formm-group">
-									<p><input type="submit" name="submit" value="Apply Filter" class="btn btn-lg btn-primary" style="border-radius:6px; "></p>
+									<p><button type="submit" name="apply_filter" value="Apply Filter" class="btn btn-lg btn-primary" style="border-radius:6px; ">Apply Filter</button></p>
 								</div>	
 							</form>
+							{!! Form::close() !!}
 						</div>
 					</div>
 					<div class="col-sm-9">
@@ -181,58 +229,83 @@
 								</div>
 								<div class="col-sm-6">
 									<ul class="pagination navbar-right">
-										<li><a href="#">&laquo;</a></li>
+										{{-- <li><a href="#">&laquo;</a></li>
 										<li class="active"><a href="#">1</a></li>
 										<li><a href="#">2</a></li>
 										<li><a href="#">3</a></li>
 										<li><a href="#">4</a></li>
 										<li><a href="#">5</a></li>
-										<li><a href="#">&raquo;</a></li>
+										<li><a href="#">&raquo;</a></li> --}}
+										{{-- {{ $project->render() }} --}}
 									</ul>
 								</div>
 							</div>
 						</div>
-					@foreach($project as $proj)
-					<div class="col-sm-12 search_result_row">
-						<a href="{{ url('/winwork/pds') }}" style="color: inherit;">
-							<div class="search_data">
-								<div class="row">
-									<div class="col-sm-3 project_image">
-										<img src="{{asset('images/construction.jpg')}}" width="100%">
-									</div>
-									<div class="col-sm-9 project-excerpt">
-										<div class="row">
-											
-											<div class="col-sm-12">
-												<h3>{{ $proj->project_title }}<small> - 9 days left</small></h3>
-											</div>
+						{{-- @for($count = 0; $count < count($type); $count++) --}}
+							@foreach($project as $proj)
+								{{-- @for($counter = 0; $counter < count($type[]); $counter++) --}}
+								<div class="col-sm-12 search_result_row">
+										<div class="search_data">
+											<div class="row">
+												<div class="col-sm-3 project_image">
+													<img src="{{asset('images/construction.jpg')}}" width="100%">
+													<input type="hidden" data-project-id="{{ $proj->project_record_id }}" class="proj_id" name="idd" value="{{ $proj->project_record_id }}"/>
+													<input type="hidden" class="tend_id" name="tenid" value="{{ $proj->tender_id }}"/>
+												</div>
+												<div class="col-sm-9 project-excerpt">
+													<div class="row">
 														
-											<div class="col-sm-6">
-												<h5>Fire Engineer and 9 Other Services</h5>
-												<p>New-built located in Canada Water, London<br> 33,000 m2 office space, 5,500 m2 retail space</p>
-											</div>
-											<div class="col-sm-3 bid_section text-center">
-												<p>Construction Value</p>
-												<h3>{{ $proj->construction_value }}</h3>
-											</div>
-											<div class="col-sm-3 bid_section text-center">
-												<p>Avg Bid</p>
-												<h3>£ 310K</h3>
-											</div>				
+														<div class="col-sm-12">
+															<h3>{{ $proj->project_title }}</h3>
+														</div>
+																	
+														<div class="col-sm-6">
+															@if(count($proj->tender_count) < 0)
+															<h5>{{ $proj->services }} and {{ $proj->tender_count }} Other Services</h5>
+															@else
+															<h5>{{ $proj->services }}</h5>
+															@endif
+															<p>{{ $proj->type_of_development }} located in {{ $proj->location }}</p>
+															{{-- @foreach ($type as $u)
+																<p>{{ $type['use_area'] }} m2 {{ $type[0]['use_name'] }}</p>
+															@endforeach --}}
+
+																{{-- <p>{{ $type[$count][$counter]->use_area }} m2 {{ $type[$count][$counter]->use_name }}</p> --}}
+
+														</div>
+														<div class="col-sm-3 bid_section text-center">
+															<p>Construction Value</p>
+															<h3>{{ $proj->construction_value }}</h3>
+														</div>
+														<div class="col-sm-3 bid_section text-center">
+															<p>Avg Bid</p>
+															<h3>£ 310K</h3>
+														</div>				
+													</div>
+												</div>							
+											</div>						
 										</div>
-									</div>							
-								</div>						
-							</div>
-							<figcaption class="figcaption1">
-								<h3 style="color:white; ">Canada Water Masterplan</h3>
-								<p>
-									<object><a href="#" data-toggle="tooltip" title="Add to Favourites"><i class="fa fa-fw fa-star-o"></i></a></object>
-									<object><a href="#" data-toggle="tooltip" title="Send Via Email"><i class="fa fa-fw fa-envelope-o"></i></a></object>
-								</p>
-							</figcaption>	
-							</a>
-						</div>
-						@endforeach	
+										<figcaption class="figcaption1">
+											<a href="{{ url('/winwork'.'/'.$proj->project_record_id.'/'.'edit') }}" style="color: inherit;">
+											<h3 style="color:white; ">{{ $proj->project_title }}</h3>
+											</a>
+											<p>
+													@if(in_array($proj->tender_id, $saved))
+														<object><a href="#" data-toggle="tooltip" title="Add to Favourites"><i style="color: white;" class="fa fa-fw fa-star"></i></a></object>
+														<object><a href="#" data-toggle="tooltip" title="Send Via Email"><i class="fa fa-fw fa-envelope-o"></i></a></object>
+													@else
+														<object><a class="star_save" data-proj-id="{{ $proj->project_record_id }}" data-tend-id="{{ $proj->tender_id }}" id="save_project" title="Add to Favourites"><i class="fa fa-fw fa-star-o"></i></a></object>
+														<object><a href="#" data-toggle="tooltip" title="Send Via Email"><i class="fa fa-fw fa-envelope-o"></i></a></object>
+													@endif
+													
+											</p>
+										</figcaption>	
+									</div>
+									{{-- <a class="star_save" id="save_project" title="Add to Favourites">sdasdasds<i style="color: orange;" class="fa fa-fw fa-star-o"></i></a> --}}
+								{{-- @endfor --}}
+							@endforeach	
+						{{-- @endfor --}}
+
 						{{-- <div class="col-sm-12 search_result_row">
 							<div class="search_data">
 								<div class="row">

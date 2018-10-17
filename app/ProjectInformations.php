@@ -13,6 +13,7 @@ use App\UserAccountsModel;
 use App\ProjectTeam;
 use App\TenderQuery;
 use App\Tender;
+use App\WinWorkData;
 
 
 class ProjectInformations extends Model
@@ -42,7 +43,7 @@ class ProjectInformations extends Model
     }
 
     public function typeOfUse(){
-        return $this->hasOne('App\TypeOfUse');
+        return $this->hasOne('App\TypeOfUse', 'project_record_id');
     }
 
     public function milestones(){
@@ -63,6 +64,14 @@ class ProjectInformations extends Model
 
     public function tenderQuery(){
         return $this->hasOne('App\TenderQuery');
+    }
+
+    public function tender(){
+        return $this->hasMany('App\Tender', 'project_record_id');
+    }
+
+    public function winWorkData(){
+        return $this->hasMany('App\WinWorkData', 'project_record_id');
     }
 
 }

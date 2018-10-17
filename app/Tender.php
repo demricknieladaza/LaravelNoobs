@@ -27,7 +27,7 @@ class Tender extends Model
     ];
 
     public function projectInformations(){
-        return $this->belongsTo('App\ProjectInformations');
+        return $this->belongsTo('App\ProjectInformations', 'project_record_id');
     }
 
     public function tenderAppointment(){

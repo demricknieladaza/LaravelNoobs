@@ -19,6 +19,6 @@ class TypeOfUse extends Model
     ];
 
     public function projectInformations(){
-        return $this->belongTo('App\ProjectInformations');
+        return $this->belongTo('App\ProjectInformations', 'project_record_id');
     }
 }

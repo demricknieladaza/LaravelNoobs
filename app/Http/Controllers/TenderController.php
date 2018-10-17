@@ -27,6 +27,7 @@ use App\TenderMeetingsChoice;
 use App\TenderMeetingsNum;
 use App\TenderDesignConsiderations;
 use App\TenderScopeAdvise;
+use App\WinWorkData;
 
 
 class TenderController extends Controller
@@ -38,7 +39,7 @@ class TenderController extends Controller
      */
     public function index()
     {
-
+        //return view('create_tender');
     }
 
     /**
@@ -93,6 +94,7 @@ class TenderController extends Controller
 
         // return redirect('/project_info'.'/'.$id.'/edit');//->with($tenderid);
         return response()->json(array('success' => true, 'services' => $tenderid), 200);
+    
         //$data = Tender::where('project_record_id', $id)->get();
         //return response()->json($data);
     }
@@ -677,6 +679,17 @@ class TenderController extends Controller
                         "end" => $request->get('end'),
                         "time_remaining" => $request->get('time_remaining')
                     ]);
+
+        $count = Tender::where('project_record_id', $request->project_record_id)->get()->count();
+        $first_tender = Tender::where('project_record_id', $request->project_record_id)
+                                ->whereIn('status', 'Active')
+                                ->first();
+        $winwork = new WinWorkData;
+        $winwork->project_record_id = $request->project_record_id;
+        $winwork->first_tender = $first_tender;
+        $winwork->tender_count = $count-1;
+        $winwork->save();
+        
         // $tender->status = $request->get('status');
         // $tender->end = $request->get('end');
         // $tender->time_remaining = $request->get('selected_days');
