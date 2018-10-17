@@ -4604,11 +4604,11 @@
 		    											</div>
 		    										</div>
 		    										<div class="col-sm-8">
-		    											<div class="form-group">
+		    											{{-- <div class="form-group">
 															<input type="text" placeholder="Enter Document Title" class="form-control" name="documents_for_signature[]">
-														</div>
+														</div> --}}
 														<div class="form-group">
-															<input type="file" class="form-control" name="signature_files[]">
+															<input type="file" class="form-control" name="signature_files[]" multiple>
 														</div>
 		    										</div>
 		    										<div class="col-sm-4">
@@ -4619,16 +4619,17 @@
 		    											<div id="addedsig">
 		    												
 		    											</div>
-														<div class="form-group">
+														{{-- <div class="form-group">
 															<button type="button" id="addsig" class="btn btn-primary">Add another document </button>
-														</div>
+														</div> --}}
 
 		    										</div>
-		    										<div class="form-group butcent">
+		    										
+		    									</div>
+		    									<div class="form-group butcent">
 														<input id="sec2" type="button" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
 														<input id="appointment_save" type="button" name="Save" value="Save" class="btn btn-primary butsize">
 													</div>
-		    									</div>
 		    								</div>
 		    							</div>
 									</form>
