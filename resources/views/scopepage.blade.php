@@ -383,7 +383,6 @@
 					// $('#tendid').val(result.services['tender_id']);
 					$('tbody#tenderload').append('<tr><td style="text-align: left;font-weight:bolder; " calss="td">'+result.services['services']+'<a class="edit_tender" data-toggle="tab" href="#section4" aria-expanded="true" data-tender-id="'+result.services['tender_id']+'"><p>Edit Tender</p></a></td><td class="td">Drafted</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td"></td><tr>');
 					console.log(result.services);
-					 window.location.href = "{{ url('project_info_tender') }}";
 					// alert(result.services);
 				}
 			});
@@ -1177,7 +1176,7 @@
 				  <input type="input" name="" id="idd" value="0">
 	        </div>
 	        <div class="modal-footer" style="text-align: center;">
-	          <button type="button" class="btn btn-primary" data-dismiss="modal"  id="createservproj" >Create</button>
+	          <button type="button" class="btn btn-primary" data-toggle="tab" data-backdrop="false" data-dismiss="modal" href="#section4" id="createservproj" >Create</button>
 	          <button type="button" class="btn btn-primary butgrey">Go Back</button>
 	        </div>
 	      </div>   
@@ -1237,10 +1236,10 @@
 		<div class="col-sm-12">
 			<div class="tender-container tendnew">
 				<ul class="nav navs bid-form-nav">
-					<li class="active"><a class="abut" href="#section1">Project</a></li> 
-					<li class="123"><a class="abut" data-toggle="tab" href="#section2">Scope</a></li>
-					<li class="123"><a class="abut" href="{{ url('tenders/'.$project->project_record_id.'/edit') }}" >Tenders</a></li>
-					<li class="123" id="cret" ><a class="abut" data-toggle="modal" data-target="#selectServe"><span data-toggle="tab" href="#section4">Create New Tender</span></a></li>
+					<li class=""><a class="abut" >Project</a></li>
+					<li class="active"><a class="abut" >Scope</a></li>
+					<li class="123"><a class="abut" >Tenders</a></li>
+					<li class="123" id="cret" ><a class="abut" ><span>Create New Tender</span></a></li>
 				</ul><br>
 			</div>
 		</div>
@@ -1277,7 +1276,7 @@
 		    			<div class="row">
 		    				<div class="col-sm-12 active-tenders" id="cprofile">
 		    						<h3>Project Information
-		    						<button class="btn buts save_proj" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction()"><i class="fa fa-save" style="font-size:15px" href=""></i>Save</button>
+		    						<button class="btn buts save_proj upd" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction()"><i class="fa fa-save" style="font-size:15px" href=""></i>Save</button>
 		    						<button class="btn buts" id="edit_proj" onclick="myFunction()" style="float:right;margin-top:-14px;" ><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
 		    				</div>			
 		    				<div class="col-sm-12">
@@ -4604,11 +4603,11 @@
 		    											</div>
 		    										</div>
 		    										<div class="col-sm-8">
-		    											{{-- <div class="form-group">
+		    											<div class="form-group">
 															<input type="text" placeholder="Enter Document Title" class="form-control" name="documents_for_signature[]">
-														</div> --}}
+														</div>
 														<div class="form-group">
-															<input type="file" class="form-control" name="signature_files[]" multiple>
+															<input type="file" class="form-control" name="signature_files[]">
 														</div>
 		    										</div>
 		    										<div class="col-sm-4">
@@ -4619,17 +4618,16 @@
 		    											<div id="addedsig">
 		    												
 		    											</div>
-														{{-- <div class="form-group">
+														<div class="form-group">
 															<button type="button" id="addsig" class="btn btn-primary">Add another document </button>
-														</div> --}}
+														</div>
 
 		    										</div>
-		    										
-		    									</div>
-		    									<div class="form-group butcent">
+		    										<div class="form-group butcent">
 														<input id="sec2" type="button" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
 														<input id="appointment_save" type="button" name="Save" value="Save" class="btn btn-primary butsize">
 													</div>
+		    									</div>
 		    								</div>
 		    							</div>
 									</form>
@@ -5105,7 +5103,7 @@ var element=document.getElementById('bonds');
 	   $('#projform input.addbbutn').attr('disabled',true);
 	   $('.save_proj').css('display', 'none');
 	   $('#edit_proj').css('display', 'block');
-	   $('#projform').submit();
+	   //$('#projform').submit();
 
 
 	}

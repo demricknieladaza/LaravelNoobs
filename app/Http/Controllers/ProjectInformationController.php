@@ -27,7 +27,7 @@ class ProjectInformationController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -37,7 +37,7 @@ class ProjectInformationController extends Controller
      */
     public function create()
     {
-        return view('');
+
     }
 
     /**

@@ -371,7 +371,6 @@
 				method: 'post',
 				data: {
 					services: jQuery('#tendserve').val(),
-					id: {{ $project->project_record_id }},
 					idd: jQuery('#idd').val()
 
 				},
@@ -383,7 +382,6 @@
 					// $('#tendid').val(result.services['tender_id']);
 					$('tbody#tenderload').append('<tr><td style="text-align: left;font-weight:bolder; " calss="td">'+result.services['services']+'<a class="edit_tender" data-toggle="tab" href="#section4" aria-expanded="true" data-tender-id="'+result.services['tender_id']+'"><p>Edit Tender</p></a></td><td class="td">Drafted</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td"></td><tr>');
 					console.log(result.services);
-					 window.location.href = "{{ url('project_info_tender') }}";
 					// alert(result.services);
 				}
 			});
@@ -477,7 +475,6 @@
 				url:"{{ url('project_info_tender_appointment') }}",
 				method: 'post',
 				data: {
-					//id: {{ $project->project_record_id }},
 					insurance_name: insurance_n,
 					insurance_level: insurance_l,
 					current_tend: idd,
@@ -971,113 +968,6 @@
 			$('#idd').val(0);
 		});
 
-
-		// $('#tender_load').click(function(){
-		// 	jQuery.ajax({
-		// 		url: "{{ url('project_info_tender') }}",
-		// 		method: 'get',
-		// 		success:function(response){
-		// 			var tender = [];
-		// 			tender = response.tender;
-		// 		}
-		// 	});
-		// });
-
-		/*$('.upd').click(function(){
-			var constr = [];
-			var use_n = [];
-			var use_a = [];
-			var use_u = [];
-			var use_t = [];
-			var riba_s = [];
-			var date = [];
-			var member_p = [];
-			var member_n = [];
-			var idni = {{ $project->project_record_id }};
-			jQuery("input[name='constraint[]']").each(function()
-				{
-					constr.push($(this).val());
-				}
-			);
-			jQuery("input[name='use_name[]']").each(function()
-				{
-					use_n.push($(this).val());
-				}
-			);
-			jQuery("input[name='use_area[]']").each(function()
-				{
-					use_a.push($(this).val());
-				}
-			);
-			jQuery("input[name='use_u[]']").each(function()
-				{
-					use_u.push($(this).val());
-				}
-			);
-			jQuery("input[name='use_t[]']").each(function()
-				{
-					use_t.push($(this).val());
-				}
-			);
-			jQuery("input[name='riba_stage[]']").each(function()
-				{
-					riba_s.push($(this).val());
-				}
-			);
-			jQuery("input[name='date[]']").each(function()
-				{
-					date.push($(this).val());
-				}
-			);
-			jQuery("input[name='member_position[]']").each(function()
-				{
-					member_p.push($(this).val());
-				}
-			);
-			jQuery("input[name='member_name[]']").each(function()
-				{
-					member_n.push($(this).val());
-				}
-			);
-			//constr = JSON.stringify(constr);
-			console.log(constr);
-			saveFunction();
-			alert(idni);
-			jQuery.ajax({
-				url: "{{ url('project_info/'.$project->project_record_id.'') }}",
-				method: 'put',
-				data: {
-					project_title: jQuery("input[name='project_title']").val(),
-					location: jQuery("input[name='location']").val(),
-					type_of_development: jQuery("input[name='type_of_development']").val(),
-					construction_value: jQuery("input[name='construction_value']").val(),
-					procurement_route: jQuery("input[name='procurement_route']").val(),
-					main_road: jQuery("input[name='main_road']").val(),
-					tube_station_one: jQuery("input[name='tube_station_one']").val(),
-					tube_station_two: jQuery("input[name='tube_station_two']").val(),
-					bus_lines: jQuery("input[name='bus_lines']").val(),
-					adjacent_uses: jQuery("input[name='adjacent_uses']").val(),
-					history: jQuery("input[name='history']").val(),
-					constraint: constr,
-					use_name: use_n,
-					use_area: use_a,
-					use_units: use_u,
-					use_type: use_t,
-					riba_stage: riba_s,
-					date: date,
-					design_team_meeting: jQuery("input[name='design_team_meeting']").val(),
-					project_progress_meeting: jQuery("input[name='project_progress_meeting']").val(),
-					member_position: member_p,
-					member_name: member_n
-				},
-				success: function(result){
-					jQuery('.alert').show();
-					jQuery('.alert').html(result.success);
-				}
-			});
-		});*/
-		
-
 		$('#addother').click(function(){
 			var insura = $('#ins').val();
 			insura = insura.toLowerCase().replace(/\b[a-z]/g, function(letter) {
@@ -1156,7 +1046,8 @@
 <div class="container">
 	<div class="modal fade" id="selectServe" role="dialog" tabindex="-1">
 	    <div class="modal-dialog">
-	      <!-- Modal content-->
+		  <!-- Modal content-->
+		  {!! Form::open(['action' => 'TenderController@store', 'method' => 'POST'])!!}
 	      <div class="modal-content" style="top: 83px;">
 	        <div class="modal-header" style="border-top-left-radius: 6px;border-top-right-radius: 6px;">
 	          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1177,10 +1068,11 @@
 				  <input type="input" name="" id="idd" value="0">
 	        </div>
 	        <div class="modal-footer" style="text-align: center;">
-	          <button type="button" class="btn btn-primary" data-dismiss="modal"  id="createservproj" >Create</button>
+	          <button type="button" class="btn btn-primary" data-toggle="tab" data-backdrop="false" data-dismiss="modal" href="#section4" id="createservproj" >Create</button>
 	          <button type="button" class="btn btn-primary butgrey">Go Back</button>
 	        </div>
-	      </div>   
+		  </div>
+		  {!! Form::close() !!}   
 	    </div>
 	</div>
  <div class="modal fade" id="myModal2" role="dialog" tabindex="-1">
@@ -1237,626 +1129,15 @@
 		<div class="col-sm-12">
 			<div class="tender-container tendnew">
 				<ul class="nav navs bid-form-nav">
-					<li class="active"><a class="abut" href="#section1">Project</a></li> 
-					<li class="123"><a class="abut" data-toggle="tab" href="#section2">Scope</a></li>
-					<li class="123"><a class="abut" href="{{ url('tenders/'.$project->project_record_id.'/edit') }}" >Tenders</a></li>
-					<li class="123" id="cret" ><a class="abut" data-toggle="modal" data-target="#selectServe"><span data-toggle="tab" href="#section4">Create New Tender</span></a></li>
+					<li class=""><a class="abut" >Project</a></li>
+					<li class="123"><a class="abut" >Scope</a></li>
+					<li class=""><a class="abut" >Tenders</a></li>
+					<li class="active" id="cret" ><a class="abut" ><span >Create New Tender</span></a></li>
 				</ul><br>
 			</div>
 		</div>
 		<div class="col-sm-12 questionnaire-section">
-			<div class="tab-content tabmargin" >
-				<div id="section1" class="tab-pane fade in active tender-container" style="    background:transparent;border: none;padding-top:0;margin-left:auto;margin-right:auto;width:1040px;">
-					<div class="row">
-		    	<div class="below-header project-img-collection text-center projhead">
-		    		<h1>{{ $project->project_title }}</h1>
-		    		<div class="project-image popup-gallery">
-		    			<a href="../images/demo1.jpg"><img src="../../images/demo1.jpg"/></a>
-		    		</div>
-		    		<div class="project-image popup-gallery">
-		    			<a href="../images/demo2.jpg"><img src="../../images/demo2.jpg"/></a>
-		    		</div>
-		    		<div class="project-image popup-gallery">
-		    			<a href="../images/demo3.jpg"><img src="../../images/demo3.jpg"/></a>
-		    		</div>
-		    		<div class="project-image popup-gallery">
-		    			<a href="../images/demo4.jpg"><img src="../../images/demo4.jpg"/></a>
-		    		</div>
-		    	</div>
-		    </div>
-		    <div class="row">
-		    	<div class="123">
-		    		<div class="row">
-		    			<div class="col-sm-12 project-anchor">
-		    				<a href="#">Project Details</a>
-		    				<a href="#tend">Tender Queries</a>
-		    				<a href="#emptab">Employer Details</a>
-		    			</div>
-		    		</div>
-		    		<div class="tender-container">
-		    			<div class="row">
-		    				<div class="col-sm-12 active-tenders" id="cprofile">
-		    						<h3>Project Information
-		    						<button class="btn buts save_proj" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction()"><i class="fa fa-save" style="font-size:15px" href=""></i>Save</button>
-		    						<button class="btn buts" id="edit_proj" onclick="myFunction()" style="float:right;margin-top:-14px;" ><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
-		    				</div>			
-		    				<div class="col-sm-12">
-		    					<!--<form id="projform" action="{{ url('project_info')}}" method="POST">-->
-		    						@csrf
-								{!! Form::open(['action' => ['ProjectInformationController@update',  $project->project_record_id ], 'id' => 'projform', 'method' => 'POST', 'enctype' => 'multipart/form-data'])!!}
-								{!! Form::hidden('project_record_id', $project->project_record_id) !!}
-								{{ Form::hidden('_method', 'PUT') }}
-								<table class="table table-striped table-hover">
-		    						<tr>
-		    							<td>Project Title
-  											
-										</td>
-		    							<td><input id="water" type="text" name="project_title" class="form-control proje" value="{{ $project->project_title }}" placeholder="Canada Water Masterplan" readonly></td>
-		    						</tr>
-		    						<tr>
-		    							<td>Project ID
-			    							
-		    							</td>
-		    							<td><input type="number" name="project_id" class="form-control proje" value="{{ $project->project_id }}" placeholder="123456789" readonly></td>
-		    						</tr>
-		    						<tr>
-		    							<td>Location
-		    								
-		    							</td>
-		    							<td><input type="text" name="location" class="form-control proje" value="{{ $project->location }}" placeholder="Canada Water, London, SE16, United Kingdom" readonly></td>
-		    						</tr>
-		    						<tr>
-		    							<td colspan="2">
-		    								<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9935.319359803168!2d-0.04969!3d51.49799!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3ae4946b67b18de7!2sCanada+Water!5e0!3m2!1sen!2snp!4v1525743556788" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-		    							</td>
-		    						</tr>
-		    						<tr>
-		    							<td>Transport Links
-		    								
-		    							</td>
-		    							<td>
-		    								<table width="100%">
-		    									<tr>
-		    										<td>
-		    											<p><b>Main Roads</b></p>
-		    										</td>
-		    										<td>
-		    											<input type="text" name="main_road" class="form-control proje" value="{{ $transport->main_road }}" placeholder="Surrey Quays Road" readonly>
-		    										</td>
-		    									</tr>
-		    									<tr>
-		    										<td>
-		    											<p><b>Tube Stations</b></p>
-		    										</td>
-		    										<td>
-		    											<input type="text" name="tube_station_one" class="form-control proje" value="{{ $transport->tube_station_one }}" placeholder="Canada Water 0.5km" readonly>
-		    											<input type="text" name="tube_station_two" class="form-control proje" value="{{ $transport->tube_station_two }}" placeholder="Surrey Quays 1.5km" readonly>
-		    										</td>
-		    									</tr>
-		    									<tr>
-		    										<td>
-		    											<p><b>Bus Lines</b> </p>
-		    										</td>
-		    										<td>
-		    											<input type="text" name="bus_lines" class="form-control proje" value="{{ $transport->bus_lines }}" placeholder="701, 702, 851, 930" readonly>
-		    										</td>
-		    									</tr>
-		    								</table>
-		    							</td>
-		    						</tr>
-		    						<tr>
-		    							<td>Area Specific Information
-		    								
-		    							</td>
-		    							<td>
-		    								<table width="100%">
-		    									<tr>
-		    										<td>Adjacent Uses</td>
-		    										<td><input type="text" name="adjacent_uses" class="form-control proje" value="{{ $area->adjacent_uses }}" placeholder="Residential (High-End), Regeneration Space, Retail" readonly></td>
-		    									</tr>
-		    									<tr>
-		    										<td>History</td>
-		    										<td><input type="text" name="history" class="form-control proje" value="{{ $area->history }}" placeholder="Residential (High-End), Former Docks and Warehouses" readonly></td>
-		    									</tr>
-		    								</table>
-		    							</td>
-		    						</tr>
-		    						<tr>
-		    							<td>Constraints
-		    								
-		    							</td>
-		    							<td>
-											@foreach($constraints as $const)
-		    								<div class="form-group">                               
-		    									<input type="text" name="constraint[]" class="form-control proje" value="{{ $const->constraint }}" placeholder="Adjacent Tube Tunnel" readonly>
-											</div>
-											@endforeach
-		    								<div class="addedcons"></div>
-		    								<div class="form-group">
-		    									<input type="button" id="addconstraint" class="addbbutn btn form-control pull-right" style="width: 90px;background-color: #fe7235;color:white;" value="Add" disabled />
-		    								</div>
-		    								{{-- <input type="text" name="constraint_two" class="form-control proje" placeholder="Existing Buildings" readonly>
-		    								<input type="text" name="constraint_three" class="form-control proje" placeholder="Weak Ground Conditions" readonly> --}}
-		    							</td>
-		    						</tr>
-		    						<tr>
-		    							<td>Type of Development
-		    								
-		    							</td>
-		    							<td><input type="text" name="type_of_development" class="form-control proje" value="{{ $project->type_of_development }}" placeholder="New Built" readonly></td>
-		    						</tr>
-		    						<tr>
-		    							<td>Construction Value
-		    								
-		    							</td>
-		    							<td><input type="text" name="construction_value" class="form-control proje" value="{{ $project->construction_value }}" placeholder="£ 300,000,000" readonly></td>
-		    						</tr>
-		    						<tr>
-		    							<td>Types of Use
-		    								
-		    							</td>
-		    							<td>
-		    								<table width="100%" id="addedtypeofuse" class="addedtype">
-												@foreach($type as $use)
-		    									<tr class="lastitem">
-		    										<td><input type="text" name="use_name[]" class="form-control proje" value="{{ $use->use_name }}" placeholder="Residential" readonly></td>&nbsp
-		    										<td><input type="text" name="use_area[]" class="form-control proje" value="{{ $use->use_area }}" placeholder="30,000m2" readonly></td>
-		    										<td><input type="text" name="use_units[]" class="form-control proje" value="{{ $use->use_units }}" placeholder="200 units" readonly></td>
-		    										<td><input type="text" name="use_type[]" class="form-control proje" value="{{ $use->use_type }}" placeholder="High-End" readonly></td>
-												</tr>
-												@endforeach
-
-		    									<tr>
-		    										<td>Total</td>
-		    										<td id="total">57,000m2</td>
-		    										<td></td>
-		    										<td><div class="form-group">
-		    									<input type="button" id="addtypeofuse" class="addbbutn btn form-control pull-right" style="background-color: #fe7235;color:white;width: 90px;" value="Add" disabled />
-		    								</div></td>	
-		    									</tr>
-		    								</table>
-		    							</td>
-		    						</tr>
-		    						<tr>
-		    							<td>Milestones
-		    								
-		    							</td>
-		    							<td>
-		    								<table width="100%" class="addedriba">
-												@foreach($milestones as $mile)
-		    									<tr class="lastitemiba">
-		    										<td><input type="text" name="riba_stage[]" class="form-control proje" value="{{ $mile->riba_stage }}" placeholder="RIBA Stage 1 Completion" readonly></td>
-		    										<td><input type="text" name="date[]" class="form-control proje" value="{{ $mile->date }}" placeholder="01/03/2019" readonly></td>
-												</tr>
-												@endforeach
-		    									{{-- <tr>
-		    										<td>RIBA Stage 2 Completion</td>
-		    										<td><input type="text" name="riba_stage_two" class="form-control proje" placeholder="01/07/2019" readonly></td>
-		    									</tr>
-		    									<tr>
-		    										<td>RIBA Stage 3 Completion</td>
-		    										<td><input type="text" name="riba_stage_three" class="form-control proje" placeholder="01/10/2019" readonly></td>
-		    									</tr>
-		    									<tr>
-		    										<td>RIBA Stage 4 Completion</td>
-		    										<td><input type="text" name="riba_stage_four" class="form-control proje" placeholder="01/12/2019" readonly></td>
-		    									</tr> --}}
-
-		    									<tr>
-		    										<td colspan="2"><div class="form-group">
-		    									<input type="button" id="addriba" class="addbbutn btn form-control pull-right" style="background-color: #fe7235;color:white;width: 90px;" value="Add" disabled />
-		    								</div></td>
-		    									</tr>
-		    								</table>
-		    							</td>								
-		    						</tr>
-		    						<tr>
-		    							<td>Meetings</td>
-		    							<td>
-		    								<table width="100%">
-		    									<tr>
-		    										<td>Design Team Meeting</td>
-		    										<td><input type="text" name="design_team_meeting" class="form-control proje" value="{{ $meetings->design_team_meeting }}" placeholder="Tuesday, 14:00 – 15:30, Weekly" readonly></td>
-		    									</tr>
-		    									<tr>
-		    										<td>Project Progress Meeting</td>
-		    										<td><input type="text" name="project_progress_meeting" class="form-control proje" value="{{ $meetings->project_progress_meeting }}" placeholder="Tuesday, 15:30 – 16:30, Fortnightly" readonly></td>
-		    									</tr>
-		    								</table>
-		    							</td>
-		    						</tr>
-		    						<tr>
-		    							<td>Procurement Route
-		    								
-		    							</td>
-		    							<td><input type="text" name="procurement_route" class="form-control proje" value="{{ $project->procurement_route }}" placeholder="Design & Build" readonly></td>
-		    						</tr>
-		    						<tr>
-		    							<td>Project Team
-		    								
-		    							</td>
-		    							<td>
-		    								<table width="100%" class="addedproj">
-												@foreach($team as $team)
-		    									<tr class="lastitemproj">
-		    										<td><input type="text" name="member_position[]" class="form-control proje" value="{{ $team->member_position }}" placeholder="Architect" readonly></td>
-		    										<td><input type="text" name="member_name[]" class="form-control proje" value="{{ $team->member_name }}" placeholder="Allies and Morrison" readonly></td>
-												</tr>
-												@endforeach
-		    									{{-- <tr>
-		    										<td>Structural Engineer</td>
-		    										<td><input type="text" name="structural" class="form-control proje" placeholder="AKT II" readonly></td>
-		    									</tr>
-		    									<tr>
-		    										<td>Services Engineer</td>
-		    										<td><input type="text" name="services" class="form-control proje" placeholder="Sweco" readonly></td>
-		    									</tr>
-		    									<tr>
-		    										<td>Fire Engineer </td>
-		    										<td><a href="#">Active Tender</a></td>
-		    									</tr> --}}
-		    									<tr>
-		    										<td colspan="2"><div class="form-group">
-		    										<input type="button" id="addprojteam" class="addbbutn btn form-control pull-right" style="background-color: #fe7235;color:white;width: 90px;" value="Add" disabled />
-		    										</div></td>
-		    									</tr>
-		    								</table>
-		    							</td>
-		    						</tr>
-		    						<tr>
-		    							<td>Supporting Documents
-		    								
-		    							</td>
-		    							<td>
-											@if($project->site_plan == "No File Uploaded")
-											<div class="form-group">	
-													<div class="field" align="left">
-													  <strong style="color: #fe7235">Site Plan</strong>
-													  <input type="file" id="file5" name="site_plan"  />
-													</div>
-											</div>
-											@else
-											<p><a style="color: white;" href="{{asset('storage/site_plan/'.$project->site_plan )}}" name="download" class="btn btn-primary">{{ $project->site_plan }} <i class="fa fa-download"></i></a><input type="hidden" name="site_plan_name" value="{{ $project->site_plan }}"><button type="button" id="delete_site_plan" class="btn btn-primary" name="delete" value="Delete">Delete</button><input type="file" name="new_site_plan"></p>
-											@endif
-
-											@if($project->programme == "No File Uploaded")
-											<div class="form-group">	
-													<div class="field" align="left">
-													  <strong style="color: #fe7235">Programme</strong>
-													  <input type="file" id="file6" name="programme"  />
-													</div>
-											</div>
-											@else
-											<p><a style="color: white;" href="{{asset('storage/programme/'.$project->programme )}}" name="download" class="btn btn-primary">{{ $project->programme }} <i class="fa fa-download"></i></a><input type="hidden" name="programme_name" value="{{ $project->programme }}"><button type="button" id="delete_programme" class="btn btn-primary" name="delete" value="Delete">Delete</button><input type="file" name="new_programme"></p>        
-											@endif
-
-											@if($project->policy == 'No File Uploaded')
-											<div class="form-group">	
-													<div class="field" align="left">
-													  <strong style="color: #fe7235">H&S Policy</strong>
-													  <input type="file" id="file7" name="policy"  />
-													</div>
-											</div>
-											@else
-											<p><a style="color: white;" href="{{asset('storage/policy/'.$project->policy )}}" name="download" class="btn btn-primary">{{ $project->policy }} <i class="fa fa-download"></i></a><input type="hidden" name="policy_name" value="{{ $project->policy }}"><button type="button" id="delete_policy" class="btn btn-primary" name="delete" value="Delete">Delete</button><input type="file" name="new_policy"/></a></p>
-											@endif
-										</td>
-		    						</tr>
-		    					</table>
-		    					<section id="tend">
-		    						
-		    					</section>		
-		    					<div style="text-align: center;">
-								</div>
-								{!! Form::close() !!}			
-		    				</div>
-		    			</div>
-		    		</div>
-		    		<div class="tender-container" >
-		    			<div class="row">
-		    				<div class="col-sm-12 active-tenders">
-		    					<h3 >Tender Queries
-		    					<button class="btn buts save_proj1" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction1()"><i class="fa fa-save" style="font-size:15px"></i>Save</button>
-		    					<button class="btn buts" id="edit_proj1" onclick="myFunction1()" style="float: right;margin-top:-14px;"><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
-		    					<div class="row">	
-		    						<div class="col-sm-12">	
-		    							<table class="table table-striped table-hover tender_queries" id="a">
-		    								<tr>
-		    									<td width="10%" style="font-weight: 600;">#</td>
-		    									<td style="font-weight: 600;">Query</td>
-		    									<td style="font-weight: 600;">Responses</td>
-
-		    								</tr>
-		    								<tr>
-		    									<td>1</td>
-		    									<td>TextTextTextTextTextTextTextTextText</td>
-		    									<td><input id="respo1" type="text" name="respo1" class="form-control proje" placeholder="TextTextTextTextTextTextTextTextTextTextTextText" readonly></td>
-		    								</tr>
-		    								<tr>
-		    									<td>2</td>
-		    									<td>TextTextTextTextTextTextTextTextText</td>
-		    									<td><input id="respo2" type="text" name="respo2" class="form-control proje" placeholder="TextTextTextTextTextTextTextTextTextTextTextText" readonly></td>
-		    								</tr>
-		    								<tr>
-		    									<td>3</td>
-		    									<td>TextTextTextTextTextTextTextTextText</td>
-		    									<td><input id="respo3" type="text" name="respo3" class="form-control proje" placeholder="TextTextTextTextTextTextTextTextTextTextTextText" readonly></td>
-		    								</tr>
-		    							</table>
-		    						</div>
-		    					</div>
-		    					<section id="emptab">
-		    						
-		    					</section>
-		    					<div style="text-align: center;">
-		    					</div>
-		    				</div>
-		    			</div>
-		    		</div>
-					<div class="tender-container">
-						<div class="row">
-							<div class="col-sm-12 active-tenders">
-								<h3>Project Information
-		    						<button class="btn buts save_proj2" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction2()"><i class="fa fa-save" style="font-size:15px"></i>Save</button>
-		    						<button class="btn buts" id="edit_proj2" onclick="myFunction2()" style="float:right;margin-top:-14px;" ><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
-								<div class="row">	
-									<div class="col-sm-9">				
-										<table class="table table-striped table-hover emp_details">
-											<tr>
-												<td>Employer
-													
-												</td >
-												<td><input id="emp1" type="text" name="emp1" class="form-control proje" placeholder="British Land" readonly></td>
-											</tr>
-											<tr>
-												<td>Registered Office Address
-													
-												</td>
-												<td><input id="emp2" type="text" name="emp2" class="form-control proje" placeholder="100 Sample Road, London, W1 23Y, United Kingdom" readonly></td>
-											</tr>
-											<tr>
-												<td>Industry
-													
-												</td>
-												<td><input id="emp3" type="text" name="emp3" class="form-control proje" placeholder="Developer" readonly></td>
-											</tr>
-											<tr>
-												<td>Year Established
-													
-												</td>
-												<td><input id="emp4" type="text" name="emp4" class="form-control proje" placeholder="1955" readonly></td>
-											</tr>
-											<tr>
-												<td>Number of Employees
-													
-												</td>
-												<td><input id="emp5" type="text" name="emp5" class="form-control proje" placeholder="10-50" readonly></td>
-											</tr>
-										</table>
-									</div>
-
-									<div class="col-sm-3 company-quick-details">
-										<p><img src="../../images/logo-british.jpg"></p>
-										<p>Active Projects <span class="project1">4</span></p>
-										<p>Active Tenders <span class="project1">9</span></p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-		    	</div>
-		    </div>
-				</div>
-				<div id="section2" class="tab-pane fade tender-container" style="padding-top:0;margin-left:auto;margin-right:auto;width:1040px;">
-					<div class="row">
-						<div class="container">
-							<h1 class="project-title bid-page-title">Design Responsibility Matrix</h1>
-						</div>
-					</div>
-				</div>
-
-				<div id="section3" class="tab-pane fade tender-container" style="padding-top:0;margin-left:auto;margin-right:auto;width:1040px;">
-					<div class="row" style="margin: 25px;">
-	    			<table class="table table-bordered">
-    			    <thead class="thead">
-  			        <tr>
-  			        	<th class="kilid" style="width: 95px;">Services</th>
-			            <th class="kilid" style="width: 95px;">Status</th>
-			            <th class="kilid" style="width: 95px;">Start</th>
-			            <th class="kilid" style="width: 95px;">End</th>
-			            <th class="kilid" style="width: 95px;">Time Remaining</th>
-			            <th class="kilid" style="width: 95px;">Bids received</th>
-			            <th class="kilid" style="width: 95px;">Queries received (outstanding)</th>
-			            <th class="kilid" style="width: 130px;">Actions</th>
-  			        </tr>
-    			    </thead>
-    			    <tbody id="tenderload">
-						@foreach($tender as $ten)
-						<tr>
-							{{-- <td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a><p>Edit Tender</p></a></td>
-							<td class="td">{{ $ten->status }}</td>
-							<td class="td">TBC</td>
-							<td class="td">TBC</td>
-							<td class="td">{{ $ten->time_remaining }}</td>
-							<td class="td">TBC</td>
-							<td class="td">TBC</td> --}}
-							@if($ten->status == "Closed")
-								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a><p></p></a></td>
-								<td class="td">{{ $ten->status }}</td>
-								<td class="td">{{ $ten->start }}</td>
-								<td class="td">{{ $ten->end }}</td>
-								<td class="td">{{ $ten->time_remaining }}</td>
-								<td class="td">{{ $ten->bids_received }}</td>
-								<td class="td">{{ $ten->queries_received }}</td>
-								<td class="td">
-								</button><button class="btn btn-primary" style="margin-bottom:10px;    width: 135px;">Dowload Evalution<br>Report</button>
-							 	</button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td>
-							@elseif($ten->status == "Active")
-								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a><p></p></a></td>
-								<td class="td">{{ $ten->status }}</td>
-								<td class="td">{{ $ten->start }}</td>
-								<td class="td">{{ $ten->end }}</td>
-								<td class="td">{{ $ten->time_remaining }}</td>
-								<td class="td">{{ $ten->bids_received }}</td>
-								<td class="td">{{ $ten->queries_received }}</td>
-								<td class="td">
-								</button><button class="btn btn-success" style="margin-bottom:10px;">Complete Tender Process</button>
-								{{-- </button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td> --}}
-							@else
-								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a class="edit_tender" data-tender-id="{{ $ten->tender_id }}" data-toggle="tab" href="#section4"><p>Edit Tender<br></p></a></td>
-								<td class="td">{{ $ten->status }}</td>
-								<td class="td">TBC</td>
-								<td class="td">TBC</td>
-								<td class="td">TBC</td>
-								<td class="td">TBC</td>
-								<td class="td">TBC</td>
-								<td class="td">No Default Action!</td>
-							@endif
-
-						</tr>
-						@endforeach
-
-  			        {{-- <tr>
-			            <td style="text-align: left;font-weight:bolder; " class="td">Service Engineer <a><p>Edit Tender</p></a></td>
-			            <td class="td">Drafted</td>
-			            <td class="td">TBC</td>
-			            <td class="td">TBC</td>
-			            <td class="td">TBC</td>
-			            <td class="td">TBC</td>
-			            <td class="td">TBC</td>
-			            <td class="td"></td>
-  			        </tr>
-  			        <tr>
-			            <td style="text-align: left;font-weight:bolder; " class="td">Structural Engineer</td>
-			            <td class="td">Closed</td>
-			            <td class="td">1/1/2018</td>
-			            <td class="td">1/9/2018</td>
-			            <td class="td">5 days</td>
-			            <td class="td"><strong style="font-size: 25px;">3</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewBid"><p>View Bids</p></a></td>
-			            <td class="td"><strong style="font-size: 25px;">7</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewQueries"><p>View Answer/<br>Queries</p></a></td>
-			            <td class="td">
-			              </button><button class="btn btn-primary" style="margin-bottom:10px;    width: 135px;">Dowload Evalution<br>Report</button>
-			            </button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td>
-			            
-  			        </tr>  			        <tr>
-			            <td style="text-align: left;font-weight:bolder; " class="td">Structural Engineer</td>
-			            <td class="td">Closed</td>
-			            <td class="td">1/1/2018</td>
-			            <td class="td">1/9/2018</td>
-			            <td class="td">5 days</td>
-			            <td class="td"><strong style="font-size: 25px;">3</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewBid"><p>View Bids</p></a></td>
-			            <td class="td"><strong style="font-size: 25px;">7</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewQueries"><p>View Answer/<br>Queries</p></a></td>
-			            <td class="td">
-			              </button><button class="btn btn-primary" style="margin-bottom:10px;    width: 135px;">Dowload Evalution<br>Report</button>
-			            </button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td>
-			            
-  			        </tr>  			        <tr>
-			            <td style="text-align: left;font-weight:bolder; " class="td">Structural Engineer</td>
-			            <td class="td">Closed</td>
-			            <td class="td">1/1/2018</td>
-			            <td class="td">1/9/2018</td>
-			            <td class="td">5 days</td>
-			            <td class="td"><strong style="font-size: 25px;">3</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewBid"><p>View Bids</p></a></td>
-			            <td class="td"><strong style="font-size: 25px;">7</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewQueries"><p>View Answer/<br>Queries</p></a></td>
-			            <td class="td">
-			              </button><button class="btn btn-primary" style="margin-bottom:10px;    width: 135px;">Dowload Evalution<br>Report</button>
-			            </button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td>
-			            
-  			        </tr> --}}
-    			    </tbody>
-	    			</table>
-	    			<button class="btn">Print Report</button>
-					</div>
-					<div class="row" style="margin: 25px;">
-						<h4 style="font-weight:bolder; ">Cashflow of selected tenderers</h4>
-						
-    			<div class="zui-wrapper">
-    			    <div class="zui-scroller">
-    			        <table class="zui-table">
-    			            <thead>
-    			                <tr>
-    			                    <th class="zui-sticky-col">Services</th>
-    			                    <th>Jan-18</th>
-    			                    <th>Feb-18</th>
-    			                    <th>Mar-18</th>
-    			                    <th>Apr-18</th>
-    			                    <th>May-18</th>
-    			                    <th>Jun-18</th>
-    			                    <th>Jul-18</th>
-    			                    <th>Aug-18</th>
-    			                    <th>Sep-18</th>
-    			                    <th>Oct-18</th>
-    			                    <th>Nov-18</th>
-    			                    <th>Dec-18</th>
-    			                    <th>Jan-19</th>
-    			                    <th>Feb-19</th>
-    			                    <th>Mar-19</th>
-    			                </tr>
-    			            </thead>
-    			            <tbody>
-    			                <tr>
-    			                    <td class="zui-sticky-col">Fire Engineer</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                </tr>
-    			                <tr>
-    			                    <td class="zui-sticky-col">Architect</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                    <td class="td">£1,000.00</td>
-    			                </tr>
-    			                <tr class="btop">
-    			                    <td class="zui-sticky-col"><strong>Total</strong></td>
-    			                    <td class="td"><b>£2,000.00</b></td>
-    			                    <td class="td"><b>£2,000.00</b></td>
-    			                    <td class="td"><b>£2,000.00</b></td>
-    			                    <td class="td"><b>£2,000.00</b></td>
-    			                    <td class="td"><b>£2,000.00</b></td>
-    			                    <td class="td"><b>£2,000.00</b></td>
-    			                    <td class="td"><b>£2,000.00</b></td>
-    			                    <td class="td"><b>£2,000.00</b></td>
-    			                    <td class="td"><b>£2,000.00</b></td>
-    			                    <td class="td"><b>£2,000.00</b></td>
-    			                    <td class="td"><b>£2,000.00</b></td>
-    			                    <td class="td"><b>£2,000.00</b></td>
-    			                    <td class="td"><b>£2,000.00</b></td>
-    			                    <td class="td"><b>£2,000.00</b></td>
-    			                    <td class="td"><b>£2,000.00</b></td>
-    			                </tr>
-    			            </tbody>
-    			        </table>
-    			    </div>
-    			</div><br>
-	    			<button class="btn">Export to MS Excel</button>
-					</div>
-				</div>	
-				<div id="section4" class="tab-pane fade tender-container" style="padding-top:0;margin-left:auto;margin-right:auto;">
+				<div id="section4" class="tab-pane fade in active tender-container" style="padding-top:0;margin-left:auto;margin-right:auto;">
 					<div class="row" style="margin: 25px;">
 		    	<div class="123">
 		    		<div class="row">
@@ -4604,11 +3885,11 @@
 		    											</div>
 		    										</div>
 		    										<div class="col-sm-8">
-		    											{{-- <div class="form-group">
+		    											<div class="form-group">
 															<input type="text" placeholder="Enter Document Title" class="form-control" name="documents_for_signature[]">
-														</div> --}}
+														</div>
 														<div class="form-group">
-															<input type="file" class="form-control" name="signature_files[]" multiple>
+															<input type="file" class="form-control" name="signature_files[]">
 														</div>
 		    										</div>
 		    										<div class="col-sm-4">
@@ -4619,17 +3900,16 @@
 		    											<div id="addedsig">
 		    												
 		    											</div>
-														{{-- <div class="form-group">
+														<div class="form-group">
 															<button type="button" id="addsig" class="btn btn-primary">Add another document </button>
-														</div> --}}
+														</div>
 
 		    										</div>
-		    										
-		    									</div>
-		    									<div class="form-group butcent">
+		    										<div class="form-group butcent">
 														<input id="sec2" type="button" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
 														<input id="appointment_save" type="button" name="Save" value="Save" class="btn btn-primary butsize">
 													</div>
+		    									</div>
 		    								</div>
 		    							</div>
 									</form>
@@ -5105,7 +4385,7 @@ var element=document.getElementById('bonds');
 	   $('#projform input.addbbutn').attr('disabled',true);
 	   $('.save_proj').css('display', 'none');
 	   $('#edit_proj').css('display', 'block');
-	   $('#projform').submit();
+	   //$('#projform').submit();
 
 
 	}

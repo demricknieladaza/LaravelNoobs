@@ -3,18 +3,18 @@
 @section('content')
 
 	<div id="actTinder" class="container-fluid below-header project-img-collection text-center">
-		<h1>Canada Water Masterplan</h1>
+		<h1>{{ $project->project_title }}</h1>
 		<div class="project-image popup-gallery">
-			<a href="../images/demo1.jpg"><img src="../images/demo1.jpg"/></a>
+			<a href="../../../images/demo1.jpg"><img src="../../images/demo1.jpg"/></a>
 		</div>
 		<div class="project-image popup-gallery">
-			<a href="../images/demo2.jpg"><img src="../images/demo2.jpg"/></a>
+			<a href="../../../images/demo2.jpg"><img src="../../images/demo2.jpg"/></a>
 		</div>
 		<div class="project-image popup-gallery">
-			<a href="../images/demo3.jpg"><img src="../images/demo3.jpg"/></a>
+			<a href="../../../images/demo3.jpg"><img src="../../images/demo3.jpg"/></a>
 		</div>
 		<div class="project-image popup-gallery">
-			<a href="../images/demo4.jpg"../images/demo1.jpg><img src="../images/demo4.jpg"/></a>
+			<a href="../../images/demo4.jpg"><img src="../../images/demo4.jpg"/></a>
 		</div>
 	</div>	
 
@@ -26,14 +26,15 @@
 					<div class="col-sm-12 active-tenders">
 						<h3 style="font-weight: 900;">Active Tenders</h3>
 					</div>
+					@foreach($tenders as $ten)
 					<div class="col-sm-3">
 						<a href="{{ url('/winwork/pds/bid') }}">
 						  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 						    <div class="flipper">
 						      <div class="front">
 						      	<i class="fa fa-fire-extinguisher fa-4x" style="color: #FE7235;"></i>
-						      	<h1 style="color: #000; font-size: 20px;">Fire Engineer</h1>
-						      	<p> 9 days left</p>	
+						      	<h1 style="color: #000; font-size: 20px;">{{ $ten->services }}</h1>
+						      	<p> {{ $ten->time_remaining }}</p>	
 						      </div>
 						      <div class="back">
 						      	<h1>Submit Bid<br>-<br>Win Work</h1>
@@ -42,7 +43,8 @@
 						  </div>
 						</a>
 					</div>
-					<div class="col-sm-3">
+					@endforeach
+					{{-- <div class="col-sm-3">
 						<a href="#">
 						  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 							<div class="flipper">
@@ -73,7 +75,7 @@
 						    </div>
 						  </div>
 						</a>
-					</div>
+					</div> --}}
 				</div>				
 			</div>
 			<div class="tender-container">				
@@ -102,15 +104,15 @@
 						<table class="table table-striped table-hover">
 							<tr>
 								<td>Project Title</td>
-								<td>Canada Water Masterplan</td>
+								<td>{{ $project->project_title }}</td>
 							</tr>
 							<tr>
 								<td>Project ID</td>
-								<td>1234567890</td>
+								<td>{{ $project->project_record_id }}</td>
 							</tr>
 							<tr>
 								<td>Location</td>
-								<td>Canada Water, London, SE16, United Kingdom</td>
+								<td>{{ $project->location }}</td>
 							</tr>
 							<tr>
 								<td colspan="2">
@@ -126,7 +128,7 @@
 												<p><b>Main Roads</b></p>
 											</td>
 											<td>
-												<p>Surrey Quays Road</p>
+												<p>{{ $transport->main_road }}</p>
 											</td>
 										</tr>
 										<tr>
@@ -134,8 +136,8 @@
 												<p><b>Tube Stations</b></p>
 											</td>
 											<td>
-												<p>Canada Water 0.5km</p>
-												<p>Surrey Quays 1.5km</p>
+												<p>{{ $transport->tube_station_one }}</p>
+												<p>{{ $transport->tube_station_two }}</p>
 											</td>
 										</tr>
 										<tr>
@@ -143,7 +145,7 @@
 												<p><b>Bus Lines</b> </p>
 											</td>
 											<td>
-												<p>701, 702, 851, 930</p>
+												<p>{{ $transport->bus_lines }}</p>
 											</td>
 										</tr>
 									</table>
@@ -155,42 +157,44 @@
 									<table width="100%">
 										<tr>
 											<td>Adjacent Uses</td>
-											<td>Residential (High-End), Regeneration Space, Retail</td>
+											<td>{{ $area->adjacent_uses }}</td>
 										</tr>
 										<tr>
 											<td>History</td>
-											<td>Former Docks and Warehouses</td>
+											<td>{{ $area->history }}</td>
 										</tr>
 									</table>
 								</td>
 							</tr>
 							<tr>
 								<td>Constraints</td>
-								<td>                               
-									<p>Adjacent Tube Tunnel</p>
-									<p>Existing Buildings</p>
-									<p>Weak Ground Conditions</p>
+								<td>
+									@foreach($constraints as $cons)                               
+									<p>{{ $cons->constraint }}</p>
+									@endforeach
 								</td>
 							</tr>
 							<tr>
 								<td>Type of Development</td>
-								<td>New Built</td>
+								<td>{{ $project->type_of_development }}</td>
 							</tr>
 							<tr>
 								<td>Construction Value</td>
-								<td>£300,000,000</td>
+								<td>{{ $project->construction_value }}</td>
 							</tr>
 							<tr>
 								<td>Types of Use</td>
 								<td>
 									<table width="100%">
 										<tr>
-											<td>Residential</td>
-											<td>30,000m2</td>
-											<td>200 units</td>
-											<td>High-End</td>
+											@foreach($type as $u)
+											<td>{{ $u->use_name }}</td>
+											<td>{{ $u->use_area }}</td>
+											<td>{{ $u->use_units }}</td>
+											<td>{{ $u->use_type }}</td>
+											@endforeach
 										</tr>
-										<tr>
+										{{-- <tr>
 											<td>Residential</td>
 											<td>10,000m2</td>
 											<td>70 units</td>
@@ -212,7 +216,7 @@
 											<td>Total</td>
 											<td>57,000m2</td>
 											<td></td>
-											<td></td>
+											<td></td> --}}
 										</tr>
 									</table>
 								</td>
@@ -222,10 +226,12 @@
 								<td>
 									<table width="100%">
 										<tr>
-											<td>RIBA Stage 1 Completion</td>
-											<td>01/03/2019</td>
+											@foreach($milestones as $mile)
+											<td>{{ $mile->riba_stage }}</td>
+											<td>{{ $mile->date }}</td>
+											@endforeach
 										</tr>
-										<tr>
+										{{-- <tr>
 											<td>RIBA Stage 2 Completion</td>
 											<td>01/07/2019</td>
 										</tr>
@@ -236,7 +242,7 @@
 										<tr>
 											<td>RIBA Stage 4 Completion</td>
 											<td>01/12/2019</td>
-										</tr>
+										</tr> --}}
 									</table>
 								</td>								
 							</tr>
@@ -246,11 +252,11 @@
 									<table width="100%">
 										<tr>
 											<td>Design Team Meeting</td>
-											<td>Tuesday, 14:00 – 15:30, Weekly</td>
+											<td>{{ $meetings->design_team_meeting }}</td>
 										</tr>
 										<tr>
 											<td>Project Progress Meeting</td>
-											<td>Tuesday, 15:30 – 16:30, Fortnightly</td>
+											<td>{{ $meetings->project_progress_meeting }}</td>
 										</tr>
 									</table>
 								</td>
@@ -264,24 +270,10 @@
 								<td>
 									<table width="100%">
 										<tr>
-											<td>Architect</td>
-											<td>Allies and Morrison</td>
-										</tr>
-										<tr>
-											<td>Structural Engineer</td>
-											<td>AKT II</td>
-										</tr>
-										<tr>
-											<td>Services Engineer</td>
-											<td>Sweco</td>
-										</tr>
-										<tr>
-											<td>Fire Engineer </td>
-											<td><a href="#">Active Tender</a></td>
-										</tr>
-										<tr>
-											<td>Acoustic Engineer</td>
-											<td><a href="#">Active Tender</a></td>
+											@foreach($team as $t)
+											<td>{{ $t->member_position }}</td>
+											<td>{{ $t->member_name }}</td>
+											@endforeach
 										</tr>
 									</table>
 								</td>
@@ -289,9 +281,9 @@
 							<tr>
 								<td >Supporting Documents</td>
 								<td>
-									<p ><a href="#">Site Plan <i class="fa fa-download"></i></a></p>
-									<p><a href="#">Programme <i class="fa fa-download"></i></a></p>        
-									<p id="tender-queries"><a href="#">H&S Policy <i class="fa fa-download"></i></a></p>
+									<p><a style="color: white;" href="{{asset('storage/site_plan/'.$project->site_plan )}}" name="download" class="btn btn-primary">{{ $project->site_plan }} <i class="fa fa-download"></i></a><input type="hidden" name="site_plan_name" value="{{ $project->site_plan }}"><button type="button" id="delete_site_plan" class="btn btn-primary" name="delete" value="Delete">Delete</button><input type="file" name="new_site_plan"></p>
+									<p><a style="color: white;" href="{{asset('storage/programme/'.$project->programme )}}" name="download" class="btn btn-primary">{{ $project->programme }} <i class="fa fa-download"></i></a><input type="hidden" name="programme_name" value="{{ $project->programme }}"><button type="button" id="delete_programme" class="btn btn-primary" name="delete" value="Delete">Delete</button><input type="file" name="new_programme"></p>         
+									<p><a style="color: white;" href="{{asset('storage/policy/'.$project->policy )}}" name="download" class="btn btn-primary">{{ $project->policy }} <i class="fa fa-download"></i></a><input type="hidden" name="policy_name" value="{{ $project->policy }}"><button type="button" id="delete_policy" class="btn btn-primary" name="delete" value="Delete">Delete</button><input type="file" name="new_policy"/></a></p>
 								</td>
 							</tr>
 						</table>						
