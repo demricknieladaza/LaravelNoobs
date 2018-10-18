@@ -13,6 +13,18 @@ class UsersController extends Controller
     public function welcome_controller()
     {
     	return view('welcome');
+        // $user = DB::table('project_information_tbl')
+        //     ->join('type_of_use_tbl', 'type_of_use_tbl.project_record_id', '=', 'project_information_tbl.project_record_id')
+        //     ->join('tender_tbl', 'tender_tbl.project_record_id', '=', 'project_information_tbl.project_record_id')
+        //     ->where('status','=','Active')
+            
+        //     ->get();
+
+        // var_dump($user) ;
+        // echo count($user);
+        // $user = DB::table('tender_deliverables_raci_tbl')->get();
+
+        // echo $user[1]->raci;
     }
 
     public function publish_controller(Request $request)
