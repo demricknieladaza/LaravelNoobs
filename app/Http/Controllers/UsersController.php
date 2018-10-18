@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\ProjectInformation;
+use App\Tender;
+use App\SavedTenders;
 
 class UsersController extends Controller
 {
@@ -29,6 +32,21 @@ class UsersController extends Controller
         {
            return redirect('log_reg');
         }
+    }
+
+    public function searchProjects(Request $request){
+
+        $title = $request->get('search');
+        $user = $request->session()->get('id');
+        // $projects = ProjectInformation::where('project_title', $title)->get();
+        $projects = DB::table('project_information_tbl')
+                        ->where('user_id', $user)
+                        ->where('project_title', $title)
+                        ->get();
+
+        return view('publish')->with('projects', $projects);
+        // return $projects;
+        
     }
 
     public function winwork_controller(Request $request)
@@ -78,9 +96,22 @@ class UsersController extends Controller
         }
     }
 
-    public function tend_dashboard_controller()
-    {
-        return view('tend_dashboard');
+    public function tend_dashboard_controller(Request $request)
+    {   
+        $user = $request->session()->get('id');
+        $oppur = Tender::where('status', 'Active')->get();
+        $saved = DB::table('saved_tenders_tbl')
+                    ->where('saved_tenders_tbl.user_id', $user)
+                    ->join('tender_tbl as te', 'saved_tenders_tbl.tender_id', '=', 'te.tender_id' )
+                    ->join('project_information_tbl as pj', 'saved_tenders_tbl.project_record_id', '=', 'pj.project_record_id')
+                    ->get();
+    
+        
+        return view('tend_dashboard')->with([
+            'saved' => $saved,
+            'oppur' => $oppur
+        ]);
+        // return $saved;
     }  
 
     public function benchmark_dashboard_controller()

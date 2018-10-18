@@ -124,40 +124,449 @@ class WinWorkController extends Controller
 
     public function searchFilters(Request $request){
         $s_filters = $request->service_filter;
-        $u_filters = "Office";
+        $u_filters = $request->use_filter;
         $from_filter = $request->from;
-        $to_filer = $request->to;
+        $to_filter = $request->to;
         $loc_filter = $request->location;
 
-
-        $work = DB::table('project_information_tbl')
-        ->rightJoin('tender_tbl as td', 'project_information_tbl.project_record_id', '=', 'td.project_record_id')
-        ->where('status', '=', 'Active')
-        ->leftJoin('type_of_use_tbl as tb', 'project_information_tbl.project_record_id', '=', 'tb.project_record_id')
-        ->Where(function($query) use($u_filters){
-            for($i = 0; $i < count($u_filters); $i++){
-                $query->orwhere('use_name', 'like', '%' . $u_filters[$i] . '%');
+        if(count($s_filters) != 0 AND count($u_filters) != 0 AND count($from_filter) != 0 AND count($to_filter) != 0 AND count($loc_filter) != 0){
+            $work = DB::table('project_information_tbl')
+            ->rightJoin('tender_tbl as td', 'project_information_tbl.project_record_id', '=', 'td.project_record_id')
+            ->where('status', '=', 'Active')
+            ->leftJoin('type_of_use_tbl as tb', 'project_information_tbl.project_record_id', '=', 'tb.project_record_id')
+            ->Where(function($query) use($u_filters){
+                for($i = 0; $i < count($u_filters); $i++){
+                    $query->orwhere('use_name', 'like', '%' . $u_filters[$i] . '%');
+                }
+            })
+            ->whereIn('services',$s_filters)
+            ->where('location', $loc_filter)
+            ->whereBetween('project_information_tbl.construction_value', array($from_filter, $to_filter))
+            ->orderBy('project_information_tbl.created_at', 'desc')
+            // ->get();
+            ->paginate(5);
+    
+            $user = $request->session()->get('id');
+            $liked = SavedTenders::where('user_id', $user)->get();
+            $saved = array();
+            foreach($liked as $wo){
+                array_push($saved,$wo->tender_id);
             }
-        })
-        ->whereIn('services',$s_filters)
-        ->where('location', $loc_filter)
-        ->whereBetween('project_information_tbl.construction_value', array($from_filter, $to_filer))
-        ->orderBy('project_information_tbl.created_at', 'desc')
-        // ->get();
-        ->paginate(5);
-
-        $user = $request->session()->get('id');
-        $liked = SavedTenders::where('user_id', $user)->get();
-        $saved = array();
-        foreach($liked as $wo){
-            array_push($saved,$wo->tender_id);
+    
+            return view('winwork')->with([
+                'project' => $work,
+                'saved'   => $saved
+            ]);
+        }
+        elseif(count($s_filters) != 0 AND count($u_filters) != 0 AND count($from_filter) != 0 AND count($to_filter) != 0 AND count($loc_filter) == 0){
+            $work = DB::table('project_information_tbl')
+            ->rightJoin('tender_tbl as td', 'project_information_tbl.project_record_id', '=', 'td.project_record_id')
+            ->where('status', '=', 'Active')
+            ->leftJoin('type_of_use_tbl as tb', 'project_information_tbl.project_record_id', '=', 'tb.project_record_id')
+            ->Where(function($query) use($u_filters){
+                for($i = 0; $i < count($u_filters); $i++){
+                    $query->orwhere('use_name', 'like', '%' . $u_filters[$i] . '%');
+                }
+            })
+            ->whereIn('services',$s_filters)
+            // ->where('location', $loc_filter)
+            ->whereBetween('project_information_tbl.construction_value', array($from_filter, $to_filter))
+            ->orderBy('project_information_tbl.created_at', 'desc')
+            // ->get();
+            ->paginate(5);
+    
+            $user = $request->session()->get('id');
+            $liked = SavedTenders::where('user_id', $user)->get();
+            $saved = array();
+            foreach($liked as $wo){
+                array_push($saved,$wo->tender_id);
+            }
+    
+            return view('winwork')->with([
+                'project' => $work,
+                'saved'   => $saved
+            ]);
+        }
+        elseif(count($s_filters) != 0 AND count($u_filters) != 0 AND count($from_filter) == 0 AND count($to_filter) == 0 AND count($loc_filter) == 0){
+            $work = DB::table('project_information_tbl')
+            ->rightJoin('tender_tbl as td', 'project_information_tbl.project_record_id', '=', 'td.project_record_id')
+            ->where('status', '=', 'Active')
+            ->leftJoin('type_of_use_tbl as tb', 'project_information_tbl.project_record_id', '=', 'tb.project_record_id')
+            ->Where(function($query) use($u_filters){
+                for($i = 0; $i < count($u_filters); $i++){
+                    $query->orwhere('use_name', 'like', '%' . $u_filters[$i] . '%');
+                }
+            })
+            ->whereIn('services',$s_filters)
+            // ->where('location', $loc_filter)
+            // ->whereBetween('project_information_tbl.construction_value', array($from_filter, $to_filter))
+            ->orderBy('project_information_tbl.created_at', 'desc')
+            // ->get();
+            ->paginate(5);
+    
+            $user = $request->session()->get('id');
+            $liked = SavedTenders::where('user_id', $user)->get();
+            $saved = array();
+            foreach($liked as $wo){
+                array_push($saved,$wo->tender_id);
+            }
+    
+            return view('winwork')->with([
+                'project' => $work,
+                'saved'   => $saved
+            ]);
+        }
+        elseif(count($s_filters) != 0 AND count($u_filters) == 0 AND count($from_filter) == 0 AND count($to_filter) == 0 AND count($loc_filter) == 0){
+            $work = DB::table('project_information_tbl')
+            ->rightJoin('tender_tbl as td', 'project_information_tbl.project_record_id', '=', 'td.project_record_id')
+            ->where('status', '=', 'Active')
+            ->leftJoin('type_of_use_tbl as tb', 'project_information_tbl.project_record_id', '=', 'tb.project_record_id')
+            // ->Where(function($query) use($u_filters){
+            //     for($i = 0; $i < count($u_filters); $i++){
+            //         $query->orwhere('use_name', 'like', '%' . $u_filters[$i] . '%');
+            //     }
+            // })
+            ->whereIn('services',$s_filters)
+            // ->where('location', $loc_filter)
+            // ->whereBetween('project_information_tbl.construction_value', array($from_filter, $to_filter))
+            ->orderBy('project_information_tbl.created_at', 'desc')
+            // ->get();
+            ->paginate(5);
+    
+            $user = $request->session()->get('id');
+            $liked = SavedTenders::where('user_id', $user)->get();
+            $saved = array();
+            foreach($liked as $wo){
+                array_push($saved,$wo->tender_id);
+            }
+    
+            return view('winwork')->with([
+                'project' => $work,
+                'saved'   => $saved
+            ]);
+        }
+        elseif(count($s_filters) != 0 AND count($u_filters) == 0 AND count($from_filter) == 0 AND count($to_filter) == 0 AND count($loc_filter) != 0){
+            $work = DB::table('project_information_tbl')
+            ->rightJoin('tender_tbl as td', 'project_information_tbl.project_record_id', '=', 'td.project_record_id')
+            ->where('status', '=', 'Active')
+            ->leftJoin('type_of_use_tbl as tb', 'project_information_tbl.project_record_id', '=', 'tb.project_record_id')
+            // ->Where(function($query) use($u_filters){
+            //     for($i = 0; $i < count($u_filters); $i++){
+            //         $query->orwhere('use_name', 'like', '%' . $u_filters[$i] . '%');
+            //     }
+            // })
+            ->whereIn('services',$s_filters)
+            ->where('location', $loc_filter)
+            // ->whereBetween('project_information_tbl.construction_value', array($from_filter, $to_filter))
+            ->orderBy('project_information_tbl.created_at', 'desc')
+            // ->get();
+            ->paginate(5);
+    
+            $user = $request->session()->get('id');
+            $liked = SavedTenders::where('user_id', $user)->get();
+            $saved = array();
+            foreach($liked as $wo){
+                array_push($saved,$wo->tender_id);
+            }
+    
+            return view('winwork')->with([
+                'project' => $work,
+                'saved'   => $saved
+            ]);
+        }
+        elseif(count($s_filters) != 0 AND count($u_filters) == 0 AND count($from_filter) != 0 AND count($to_filter) != 0 AND count($loc_filter) != 0){
+            $work = DB::table('project_information_tbl')
+            ->rightJoin('tender_tbl as td', 'project_information_tbl.project_record_id', '=', 'td.project_record_id')
+            ->where('status', '=', 'Active')
+            ->leftJoin('type_of_use_tbl as tb', 'project_information_tbl.project_record_id', '=', 'tb.project_record_id')
+            // ->Where(function($query) use($u_filters){
+            //     for($i = 0; $i < count($u_filters); $i++){
+            //         $query->orwhere('use_name', 'like', '%' . $u_filters[$i] . '%');
+            //     }
+            // })
+            ->whereIn('services',$s_filters)
+            ->where('location', $loc_filter)
+            ->whereBetween('project_information_tbl.construction_value', array($from_filter, $to_filter))
+            ->orderBy('project_information_tbl.created_at', 'desc')
+            // ->get();
+            ->paginate(5);
+    
+            $user = $request->session()->get('id');
+            $liked = SavedTenders::where('user_id', $user)->get();
+            $saved = array();
+            foreach($liked as $wo){
+                array_push($saved,$wo->tender_id);
+            }
+    
+            return view('winwork')->with([
+                'project' => $work,
+                'saved'   => $saved
+            ]);
+        }
+        elseif(count($s_filters) != 0 AND count($u_filters) == 0 AND count($from_filter) != 0 AND count($to_filter) != 0 AND count($loc_filter) == 0){
+            $work = DB::table('project_information_tbl')
+            ->rightJoin('tender_tbl as td', 'project_information_tbl.project_record_id', '=', 'td.project_record_id')
+            ->where('status', '=', 'Active')
+            ->leftJoin('type_of_use_tbl as tb', 'project_information_tbl.project_record_id', '=', 'tb.project_record_id')
+            // ->Where(function($query) use($u_filters){
+            //     for($i = 0; $i < count($u_filters); $i++){
+            //         $query->orwhere('use_name', 'like', '%' . $u_filters[$i] . '%');
+            //     }
+            // })
+            ->whereIn('services',$s_filters)
+            // ->where('location', $loc_filter)
+            ->whereBetween('project_information_tbl.construction_value', array($from_filter, $to_filter))
+            ->orderBy('project_information_tbl.created_at', 'desc')
+            // ->get();
+            ->paginate(5);
+    
+            $user = $request->session()->get('id');
+            $liked = SavedTenders::where('user_id', $user)->get();
+            $saved = array();
+            foreach($liked as $wo){
+                array_push($saved,$wo->tender_id);
+            }
+    
+            return view('winwork')->with([
+                'project' => $work,
+                'saved'   => $saved
+            ]);
+        }
+        elseif(count($s_filters) == 0 AND count($u_filters) != 0 AND count($from_filter) != 0 AND count($to_filter) != 0 AND count($loc_filter) != 0){
+            $work = DB::table('project_information_tbl')
+            ->rightJoin('tender_tbl as td', 'project_information_tbl.project_record_id', '=', 'td.project_record_id')
+            ->where('status', '=', 'Active')
+            ->leftJoin('type_of_use_tbl as tb', 'project_information_tbl.project_record_id', '=', 'tb.project_record_id')
+            ->Where(function($query) use($u_filters){
+                for($i = 0; $i < count($u_filters); $i++){
+                    $query->orwhere('use_name', 'like', '%' . $u_filters[$i] . '%');
+                }
+            })
+            // ->whereIn('services',$s_filters)
+            ->where('location', $loc_filter)
+            ->whereBetween('project_information_tbl.construction_value', array($from_filter, $to_filter))
+            ->orderBy('project_information_tbl.created_at', 'desc')
+            // ->get();
+            ->paginate(5);
+    
+            $user = $request->session()->get('id');
+            $liked = SavedTenders::where('user_id', $user)->get();
+            $saved = array();
+            foreach($liked as $wo){
+                array_push($saved,$wo->tender_id);
+            }
+    
+            return view('winwork')->with([
+                'project' => $work,
+                'saved'   => $saved
+            ]);
+        }
+        elseif(count($s_filters) == 0 AND count($u_filters) != 0 AND count($from_filter) == 0 AND count($to_filter) == 0 AND count($loc_filter) != 0){
+            $work = DB::table('project_information_tbl')
+            ->rightJoin('tender_tbl as td', 'project_information_tbl.project_record_id', '=', 'td.project_record_id')
+            ->where('status', '=', 'Active')
+            ->leftJoin('type_of_use_tbl as tb', 'project_information_tbl.project_record_id', '=', 'tb.project_record_id')
+            ->Where(function($query) use($u_filters){
+                for($i = 0; $i < count($u_filters); $i++){
+                    $query->orwhere('use_name', 'like', '%' . $u_filters[$i] . '%');
+                }
+            })
+            // ->whereIn('services',$s_filters)
+            ->where('location', $loc_filter)
+            // ->whereBetween('project_information_tbl.construction_value', array($from_filter, $to_filter))
+            ->orderBy('project_information_tbl.created_at', 'desc')
+            // ->get();
+            ->paginate(5);
+    
+            $user = $request->session()->get('id');
+            $liked = SavedTenders::where('user_id', $user)->get();
+            $saved = array();
+            foreach($liked as $wo){
+                array_push($saved,$wo->tender_id);
+            }
+    
+            return view('winwork')->with([
+                'project' => $work,
+                'saved'   => $saved
+            ]);
+        }
+        elseif(count($s_filters) == 0 AND count($u_filters) != 0 AND count($from_filter) == 0 AND count($to_filter) == 0 AND count($loc_filter) == 0){
+            $work = DB::table('project_information_tbl')
+            ->rightJoin('tender_tbl as td', 'project_information_tbl.project_record_id', '=', 'td.project_record_id')
+            ->where('status', '=', 'Active')
+            ->leftJoin('type_of_use_tbl as tb', 'project_information_tbl.project_record_id', '=', 'tb.project_record_id')
+            ->Where(function($query) use($u_filters){
+                for($i = 0; $i < count($u_filters); $i++){
+                    $query->orwhere('use_name', 'like', '%' . $u_filters[$i] . '%');
+                }
+            })
+            // ->whereIn('services',$s_filters)
+            // ->where('location', $loc_filter)
+            // ->whereBetween('project_information_tbl.construction_value', array($from_filter, $to_filter))
+            ->orderBy('project_information_tbl.created_at', 'desc')
+            // ->get();
+            ->paginate(5);
+    
+            $user = $request->session()->get('id');
+            $liked = SavedTenders::where('user_id', $user)->get();
+            $saved = array();
+            foreach($liked as $wo){
+                array_push($saved,$wo->tender_id);
+            }
+    
+            return view('winwork')->with([
+                'project' => $work,
+                'saved'   => $saved
+            ]);
+        }
+        elseif(count($s_filters) == 0 AND count($u_filters) != 0 AND count($from_filter) != 0 AND count($to_filter) != 0 AND count($loc_filter) == 0){
+            $work = DB::table('project_information_tbl')
+            ->rightJoin('tender_tbl as td', 'project_information_tbl.project_record_id', '=', 'td.project_record_id')
+            ->where('status', '=', 'Active')
+            ->leftJoin('type_of_use_tbl as tb', 'project_information_tbl.project_record_id', '=', 'tb.project_record_id')
+            ->Where(function($query) use($u_filters){
+                for($i = 0; $i < count($u_filters); $i++){
+                    $query->orwhere('use_name', 'like', '%' . $u_filters[$i] . '%');
+                }
+            })
+            // ->whereIn('services',$s_filters)
+            // ->where('location', $loc_filter)
+            ->whereBetween('project_information_tbl.construction_value', array($from_filter, $to_filter))
+            ->orderBy('project_information_tbl.created_at', 'desc')
+            // ->get();
+            ->paginate(5);
+    
+            $user = $request->session()->get('id');
+            $liked = SavedTenders::where('user_id', $user)->get();
+            $saved = array();
+            foreach($liked as $wo){
+                array_push($saved,$wo->tender_id);
+            }
+    
+            return view('winwork')->with([
+                'project' => $work,
+                'saved'   => $saved
+            ]);
+        }
+        elseif(count($s_filters) == 0 AND count($u_filters) == 0 AND count($from_filter) != 0 AND count($to_filter) != 0 AND count($loc_filter) != 0){
+            $work = DB::table('project_information_tbl')
+            ->rightJoin('tender_tbl as td', 'project_information_tbl.project_record_id', '=', 'td.project_record_id')
+            ->where('status', '=', 'Active')
+            ->leftJoin('type_of_use_tbl as tb', 'project_information_tbl.project_record_id', '=', 'tb.project_record_id')
+            // ->Where(function($query) use($u_filters){
+            //     for($i = 0; $i < count($u_filters); $i++){
+            //         $query->orwhere('use_name', 'like', '%' . $u_filters[$i] . '%');
+            //     }
+            // })
+            // ->whereIn('services',$s_filters)
+            ->where('location', $loc_filter)
+            ->whereBetween('project_information_tbl.construction_value', array($from_filter, $to_filter))
+            ->orderBy('project_information_tbl.created_at', 'desc')
+            // ->get();
+            ->paginate(5);
+    
+            $user = $request->session()->get('id');
+            $liked = SavedTenders::where('user_id', $user)->get();
+            $saved = array();
+            foreach($liked as $wo){
+                array_push($saved,$wo->tender_id);
+            }
+    
+            return view('winwork')->with([
+                'project' => $work,
+                'saved'   => $saved
+            ]);
+        }
+        elseif(count($s_filters) == 0 AND count($u_filters) == 0 AND count($from_filter) != 0 AND count($to_filter) != 0 AND count($loc_filter) == 0){
+            $work = DB::table('project_information_tbl')
+            ->rightJoin('tender_tbl as td', 'project_information_tbl.project_record_id', '=', 'td.project_record_id')
+            ->where('status', '=', 'Active')
+            ->leftJoin('type_of_use_tbl as tb', 'project_information_tbl.project_record_id', '=', 'tb.project_record_id')
+            // ->Where(function($query) use($u_filters){
+            //     for($i = 0; $i < count($u_filters); $i++){
+            //         $query->orwhere('use_name', 'like', '%' . $u_filters[$i] . '%');
+            //     }
+            // })
+            // ->whereIn('services',$s_filters)
+            // ->where('location', $loc_filter)
+            ->whereBetween('project_information_tbl.construction_value', array($from_filter, $to_filter))
+            ->orderBy('project_information_tbl.created_at', 'desc')
+            // ->get();
+            ->paginate(5);
+    
+            $user = $request->session()->get('id');
+            $liked = SavedTenders::where('user_id', $user)->get();
+            $saved = array();
+            foreach($liked as $wo){
+                array_push($saved,$wo->tender_id);
+            }
+    
+            return view('winwork')->with([
+                'project' => $work,
+                'saved'   => $saved
+            ]);
+        }
+        elseif(count($s_filters) == 0 AND count($u_filters) == 0 AND count($from_filter) == 0 AND count($to_filter) == 0 AND count($loc_filter) != 0){
+            $work = DB::table('project_information_tbl')
+            ->rightJoin('tender_tbl as td', 'project_information_tbl.project_record_id', '=', 'td.project_record_id')
+            ->where('status', '=', 'Active')
+            ->leftJoin('type_of_use_tbl as tb', 'project_information_tbl.project_record_id', '=', 'tb.project_record_id')
+            // ->Where(function($query) use($u_filters){
+            //     for($i = 0; $i < count($u_filters); $i++){
+            //         $query->orwhere('use_name', 'like', '%' . $u_filters[$i] . '%');
+            //     }
+            // })
+            // ->whereIn('services',$s_filters)
+            ->where('location', $loc_filter)
+            // ->whereBetween('project_information_tbl.construction_value', array($from_filter, $to_filter))
+            ->orderBy('project_information_tbl.created_at', 'desc')
+            // ->get();
+            ->paginate(5);
+    
+            $user = $request->session()->get('id');
+            $liked = SavedTenders::where('user_id', $user)->get();
+            $saved = array();
+            foreach($liked as $wo){
+                array_push($saved,$wo->tender_id);
+            }
+    
+            return view('winwork')->with([
+                'project' => $work,
+                'saved'   => $saved
+            ]);
+        }
+        elseif(count($s_filters) == 0 AND count($u_filters) != 0 AND count($from_filter) == 0 AND count($to_filter) == 0 AND count($loc_filter) != 0){
+            $work = DB::table('project_information_tbl')
+            ->rightJoin('tender_tbl as td', 'project_information_tbl.project_record_id', '=', 'td.project_record_id')
+            ->where('status', '=', 'Active')
+            ->leftJoin('type_of_use_tbl as tb', 'project_information_tbl.project_record_id', '=', 'tb.project_record_id')
+            ->Where(function($query) use($u_filters){
+                for($i = 0; $i < count($u_filters); $i++){
+                    $query->orwhere('use_name', 'like', '%' . $u_filters[$i] . '%');
+                }
+            })
+            // ->whereIn('services',$s_filters)
+            ->where('location', $loc_filter)
+            // ->whereBetween('project_information_tbl.construction_value', array($from_filter, $to_filter))
+            ->orderBy('project_information_tbl.created_at', 'desc')
+            // ->get();
+            ->paginate(5);
+    
+            $user = $request->session()->get('id');
+            $liked = SavedTenders::where('user_id', $user)->get();
+            $saved = array();
+            foreach($liked as $wo){
+                array_push($saved,$wo->tender_id);
+            }
+    
+            return view('winwork')->with([
+                'project' => $work,
+                'saved'   => $saved
+            ]);
         }
 
-        return view('winwork')->with([
-            'project' => $work,
-            'saved'   => $saved
-        ]);
-    
+
+
         
 
     }
@@ -184,6 +593,7 @@ class WinWorkController extends Controller
         $tenders = Tender::where('project_record_id', $id)
                          ->where('status', 'Active')
                          ->get();
+                         
         $project = ProjectInformations::find($id);
         //This the sub models
         $transport = TransportLink::where('project_record_id', $id)->first();

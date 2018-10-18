@@ -983,101 +983,6 @@
 		// 	});
 		// });
 
-		/*$('.upd').click(function(){
-			var constr = [];
-			var use_n = [];
-			var use_a = [];
-			var use_u = [];
-			var use_t = [];
-			var riba_s = [];
-			var date = [];
-			var member_p = [];
-			var member_n = [];
-			var idni = {{ $project->project_record_id }};
-			jQuery("input[name='constraint[]']").each(function()
-				{
-					constr.push($(this).val());
-				}
-			);
-			jQuery("input[name='use_name[]']").each(function()
-				{
-					use_n.push($(this).val());
-				}
-			);
-			jQuery("input[name='use_area[]']").each(function()
-				{
-					use_a.push($(this).val());
-				}
-			);
-			jQuery("input[name='use_u[]']").each(function()
-				{
-					use_u.push($(this).val());
-				}
-			);
-			jQuery("input[name='use_t[]']").each(function()
-				{
-					use_t.push($(this).val());
-				}
-			);
-			jQuery("input[name='riba_stage[]']").each(function()
-				{
-					riba_s.push($(this).val());
-				}
-			);
-			jQuery("input[name='date[]']").each(function()
-				{
-					date.push($(this).val());
-				}
-			);
-			jQuery("input[name='member_position[]']").each(function()
-				{
-					member_p.push($(this).val());
-				}
-			);
-			jQuery("input[name='member_name[]']").each(function()
-				{
-					member_n.push($(this).val());
-				}
-			);
-			//constr = JSON.stringify(constr);
-			console.log(constr);
-			saveFunction();
-			alert(idni);
-			jQuery.ajax({
-				url: "{{ url('project_info/'.$project->project_record_id.'') }}",
-				method: 'put',
-				data: {
-					project_title: jQuery("input[name='project_title']").val(),
-					location: jQuery("input[name='location']").val(),
-					type_of_development: jQuery("input[name='type_of_development']").val(),
-					construction_value: jQuery("input[name='construction_value']").val(),
-					procurement_route: jQuery("input[name='procurement_route']").val(),
-					main_road: jQuery("input[name='main_road']").val(),
-					tube_station_one: jQuery("input[name='tube_station_one']").val(),
-					tube_station_two: jQuery("input[name='tube_station_two']").val(),
-					bus_lines: jQuery("input[name='bus_lines']").val(),
-					adjacent_uses: jQuery("input[name='adjacent_uses']").val(),
-					history: jQuery("input[name='history']").val(),
-					constraint: constr,
-					use_name: use_n,
-					use_area: use_a,
-					use_units: use_u,
-					use_type: use_t,
-					riba_stage: riba_s,
-					date: date,
-					design_team_meeting: jQuery("input[name='design_team_meeting']").val(),
-					project_progress_meeting: jQuery("input[name='project_progress_meeting']").val(),
-					member_position: member_p,
-					member_name: member_n
-				},
-				success: function(result){
-					jQuery('.alert').show();
-					jQuery('.alert').html(result.success);
-				}
-			});
-		});*/
-		
-
 		$('#addother').click(function(){
 			var insura = $('#ins').val();
 			insura = insura.toLowerCase().replace(/\b[a-z]/g, function(letter) {
@@ -4604,11 +4509,11 @@
 		    											</div>
 		    										</div>
 		    										<div class="col-sm-8">
-		    											{{-- <div class="form-group">
+		    											<div class="form-group">
 															<input type="text" placeholder="Enter Document Title" class="form-control" name="documents_for_signature[]">
-														</div> --}}
+														</div>
 														<div class="form-group">
-															<input type="file" class="form-control" name="signature_files[]" multiple>
+															<input type="file" class="form-control" name="signature_files[]">
 														</div>
 		    										</div>
 		    										<div class="col-sm-4">
@@ -4619,17 +4524,16 @@
 		    											<div id="addedsig">
 		    												
 		    											</div>
-														{{-- <div class="form-group">
+														<div class="form-group">
 															<button type="button" id="addsig" class="btn btn-primary">Add another document </button>
-														</div> --}}
+														</div>
 
 		    										</div>
-		    										
-		    									</div>
-		    									<div class="form-group butcent">
+		    										<div class="form-group butcent">
 														<input id="sec2" type="button" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
 														<input id="appointment_save" type="button" name="Save" value="Save" class="btn btn-primary butsize">
 													</div>
+		    									</div>
 		    								</div>
 		    							</div>
 									</form>

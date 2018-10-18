@@ -23,7 +23,7 @@
 </style>
 	<div class="container search_filter wow fadeInDown" data-wow-duration="1s" data-wow-delay="200ms">
 		<div class="row top-row">
-			<form method="post">
+			<form method="get" action="{{ url('/publish/searchProjects') }}">
 				<div class="col-sm-10">
 					<div class="row">
 						<div class="col-sm-8">
@@ -47,7 +47,7 @@
 					</div>
 				</div>
 				<div class="col-sm-2">
-					<button style="background-color: #FE7235;border-color:#FE7235;border-radius:6px; " class="btn btn-lg btn-primary">Search</button>
+					<button type="submit" style="background-color: #FE7235;border-color:#FE7235;border-radius:6px; " class="btn btn-lg btn-primary">Search</button>
 				</div>
 			</form>
 		</div>

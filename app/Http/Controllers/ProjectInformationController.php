@@ -267,6 +267,9 @@ class ProjectInformationController extends Controller
      * @param  \App\ProjectInformation  $projectInformation
      * @return \Illuminate\Http\Response
      */
+
+
+
     public function update(Request $request, $id)
     {
                 

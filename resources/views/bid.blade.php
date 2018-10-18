@@ -579,7 +579,7 @@
 	</div>
 
 	<div class="container below-header" style="padding-right: 0;">
-		<h1 class="project-title bid-page-title" style="margin-right:0;margin-left:0;width: 100%;">Canada Water Masterplan - <small>Structural Engineer</small></h1>			
+		<h1 class="project-title bid-page-title" style="margin-right:0;margin-left:0;width: 100%;">{{ $project->project_title }} - <small>{{ $tender->services }}</small></h1>			
 	</div> 
 
 	<div class="container">

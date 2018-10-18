@@ -18,6 +18,7 @@ Route::get('/winwork', 'UsersController@winwork_controller')->name('winwork');
 Route::get('/winwork/pds', 'UsersController@pds_controller');
 
 Route::get('/publish', 'UsersController@publish_controller');
+Route::get('/publish/searchProjects', 'UsersController@searchProjects');
 
 Route::get('/winwork/pds/bid', 'UsersController@bid_controller');
 
@@ -70,8 +71,9 @@ Route::get('/dashboard/individuals', 'UsersController@individuals_controller');
 Route::get('tenderget','TenderController@gettend');
 
 Route::post('project_info_tender_appointment', 'TenderController@appointmentStore');
-// Route::post('')
 
+// Route::post('')
+Route::get('winwork/bid/{id}', 'BidController@getCredentials');
 
 //Route::put('project_info/{id}', 'ProjectInformationController@Update');
 Route::resource('project_info','ProjectInformationController');

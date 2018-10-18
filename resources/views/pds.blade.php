@@ -28,7 +28,7 @@
 					</div>
 					@foreach($tenders as $ten)
 					<div class="col-sm-3">
-						<a href="{{ url('/winwork/pds/bid') }}">
+						<a href="{{ url('/winwork/bid/'.$ten->tender_id) }}">
 						  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 						    <div class="flipper">
 						      <div class="front">
