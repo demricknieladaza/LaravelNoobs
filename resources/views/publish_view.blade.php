@@ -383,7 +383,7 @@
 					// $('#tendid').val(result.services['tender_id']);
 					$('tbody#tenderload').append('<tr><td style="text-align: left;font-weight:bolder; " calss="td">'+result.services['services']+'<a class="edit_tender" data-toggle="tab" href="#section4" aria-expanded="true" data-tender-id="'+result.services['tender_id']+'"><p>Edit Tender</p></a></td><td class="td">Drafted</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td"></td><tr>');
 					console.log(result.services);
-					 window.location.href = "{{ url('project_info_tender') }}";
+					 
 					// alert(result.services);
 				}
 			});
@@ -1240,7 +1240,7 @@
 					<li class="active"><a class="abut" href="#section1">Project</a></li> 
 					<li class="123"><a class="abut" data-toggle="tab" href="#section2">Scope</a></li>
 					<li class="123"><a class="abut" href="{{ url('tenders/'.$project->project_record_id.'/edit') }}" >Tenders</a></li>
-					<li class="123" id="cret" ><a class="abut" data-toggle="modal" data-target="#selectServe"><span data-toggle="tab" href="#section4">Create New Tender</span></a></li>
+					<li class="123" id="cret" ><a class="abut" data-toggle="modal" data-target="#selectServe"><span>Create New Tender</span></a></li>
 				</ul><br>
 			</div>
 		</div>

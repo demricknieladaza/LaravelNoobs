@@ -67,7 +67,7 @@ Route::get('/dashboard/individuals', 'UsersController@individuals_controller');
 
 Route::get('/dashboard/individuals', 'UsersController@individuals_controller');
 
-Route::get('tenderget','TenderController@gettend');
+Route::get('tenderget/{id}','TenderController@gettend');
 
 Route::post('project_info_tender_appointment', 'TenderController@appointmentStore');
 // Route::post('')

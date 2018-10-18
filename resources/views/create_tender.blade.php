@@ -336,6 +336,9 @@
 	.hovertable{
 		background: white;
 	}
+	.datepicker {
+	    z-index: 9999999;
+	}
 </style>
 <script type="text/javascript">
 	function showaddbondslist(){
@@ -356,6 +359,20 @@
 		$('.hid.adbondslist').css('display','none');
 		$('.notherbutindi').css('display','block');
 		$('.adbondslist').val('');
+	}
+
+	function addprequest()
+	{
+		var ival = $.trim($('input[name="quest"]').val());
+		if( ival.length != "" ){
+			ival = ival.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+			    return letter.toUpperCase();
+			});
+			var out = "<li><div class='form-check'><label><input disabled type='checkbox' checked name='prequest[]' value='"+ival+"'><span class='label-text'>"+ival+"</span></label></div></li>";
+			$('ul#prequest').append(out);
+
+			$('input[name="quest"]').val('');
+		}
 	}
 </script>
 <script type="text/javascript">
@@ -1098,19 +1115,19 @@
 				<select name="days" class="form-control" onchange="Days(this.value);"> 
 					<option value="" disabled selected>Select days</option> 
 					<?php 
-														$days = array(
-															"1 days",
-															"2 days","3 days","4 days","5 days","6 days","7 days","8 days",
-															"9 days","10 days","11 days","12 days","13 days","14 days",
-															"15 days","16 days","17 days","18 days","19 days","20 days","21 days","22 days",
-															"23 days","24 days","25 days","26 days","27 days","28 days","29 days","30 days"
-														);
-														sort($days, SORT_NATURAL | SORT_FLAG_CASE);
-														foreach ($days as $key ) {
-														    echo "<option value='".$key."'>".$key."</option>";
-														}
+						$days = array(
+							"1 days",
+							"2 days","3 days","4 days","5 days","6 days","7 days","8 days",
+							"9 days","10 days","11 days","12 days","13 days","14 days",
+							"15 days","16 days","17 days","18 days","19 days","20 days","21 days","22 days",
+							"23 days","24 days","25 days","26 days","27 days","28 days","29 days","30 days"
+						);
+						sort($days, SORT_NATURAL | SORT_FLAG_CASE);
+						foreach ($days as $key ) {
+						    echo "<option value='".$key."'>".$key."</option>";
+						}
 
-													 ?>
+					 ?>
 				</select>
 								</div></p>
 		          <input type="text" placeholder="Search.." name="search">
@@ -1129,7 +1146,7 @@
 		<div class="col-sm-12">
 			<div class="tender-container tendnew">
 				<ul class="nav navs bid-form-nav">
-					<li class=""><a class="abut" >Project</a></li>
+					<li class=""><a class="abut" href="{{ url('project_info/'. $tender[0]['project_record_id'] . '/edit') }}" >Project</a></li>
 					<li class="123"><a class="abut" >Scope</a></li>
 					<li class=""><a class="abut" >Tenders</a></li>
 					<li class="active" id="cret" ><a class="abut" ><span >Create New Tender</span></a></li>
@@ -1137,6 +1154,7 @@
 			</div>
 		</div>
 		<div class="col-sm-12 questionnaire-section">
+			<div class="tab-content tabmargin" >
 				<div id="section4" class="tab-pane fade in active tender-container" style="padding-top:0;margin-left:auto;margin-right:auto;">
 					<div class="row" style="margin: 25px;">
 		    	<div class="123">
@@ -1160,10 +1178,22 @@
 		    				<div class="tab-content">
 		    					<div id="section01" class="tab-pane fade in active tender-container">
 		    						<h3 class="bid-form-title">Pre-Qualification Questionnaire</h3>
+		    						<div class="row">
+		    							<div class="col-sm-12">
+		    								<ul id="prequest" style="list-style: none;padding-left: 0;">	
+		    									
+		    								</ul>
+		    								<div class="form-group">
+		    									<input class="form-control" type="" name="quest">
+		    								</div>
+		    								<div class="form-group">
+		    									<button class="btn" onclick="addprequest()" style="background: rgba(254,114,53,1);color: white;width: 100px;">Add</button>
+		    								</div>
+		    							</div>
+		    							
+		    						</div>	
 		    						
 		    					</div>
-
-
 		    					<div id="section11" class="tab-pane tender-container">
 		    						<h3 class="bid-form-title">Scope</h3>
 		    						<div class="zui-wrapper2">

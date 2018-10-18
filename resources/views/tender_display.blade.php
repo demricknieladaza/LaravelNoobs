@@ -428,7 +428,6 @@
 		        $(this).parent().append('<div class="form-group" ><input type="text" name="insurance_name[]" class="form-control"></div>');    
 		    }
 		});
-	});
 </script>
 <script>
 	$(document).ready(function(){
@@ -437,6 +436,35 @@
 			    viewMode: "months", 
 			    minViewMode: "months"
 			});
+		$('#createservproj').click(function(){
+			// alert('adsad');
+			var serv = $('select[name="servicechoice"]').val();
+			// $('#selectServe').toggle();	
+			$('#serveprojtitle').html(serv);
+			$('#tendserve').val(serv);
+			jQuery.ajax({
+				url: "{{ url('project_info_tender') }}",
+				method: 'post',
+				data: {
+					services: jQuery('#tendserve').val(),
+					id: {{ $tenders[0]['project_record_id'] }},
+					idd: jQuery('#idd').val()
+				},
+				success: function(result){
+					// alert(result.services['tender_id']);
+					var tid = '{{ url('tenderget') }}'+'/'+result.services['tender_id'];
+					// alert(tid);
+					// jQuery('.alert').show();
+					// jQuery('.alert').html(result.services);
+					// $('h3#serveprojtitle').attr('data-id',result.services['tender_id']);	
+					// $('#tendid').val(result.services['tender_id']);
+					// $('tbody#tenderload').append('<tr><td style="text-align: left;font-weight:bolder; " calss="td">'+result.services['services']+'<a class="edit_tender" data-toggle="tab" href="#section4" aria-expanded="true" data-tender-id="'+result.services['tender_id']+'"><p>Edit Tender</p></a></td><td class="td">Drafted</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td"></td><tr>');
+					console.log(result.services);
+					window.location.href = tid;
+					// alert(result.services);
+				}
+			});
+		});
 	});
 		
 </script>
@@ -489,7 +517,7 @@
 </div>
 
 <div class="container">
-	<div class="modal fade" id="selectServe" role="dialog" tabindex="-1">
+	<div class="modal fade" id="selectServe" role="dialog" tabindex="-1" >
 	    <div class="modal-dialog">
 	      <!-- Modal content-->
 	      <div class="modal-content" style="top: 83px;">
@@ -512,7 +540,7 @@
 				  <input type="input" name="" id="idd" value="0">
 	        </div>
 	        <div class="modal-footer" style="text-align: center;">
-	          <button type="button" class="btn btn-primary" data-toggle="tab" data-backdrop="false" data-dismiss="modal" href="#section4" id="createservproj" >Create</button>
+	          <button type="button" class="btn btn-primary" data-backdrop="false" data-dismiss="modal"  id="createservproj" >Create</button>
 	          <button type="button" class="btn btn-primary butgrey">Go Back</button>
 	        </div>
 	      </div>   
@@ -541,19 +569,19 @@
 				<select name="days" class="form-control" onchange="Days(this.value);"> 
 					<option value="" disabled selected>Select days</option> 
 					<?php 
-														$days = array(
-															"1 days",
-															"2 days","3 days","4 days","5 days","6 days","7 days","8 days",
-															"9 days","10 days","11 days","12 days","13 days","14 days",
-															"15 days","16 days","17 days","18 days","19 days","20 days","21 days","22 days",
-															"23 days","24 days","25 days","26 days","27 days","28 days","29 days","30 days"
-														);
-														sort($days, SORT_NATURAL | SORT_FLAG_CASE);
-														foreach ($days as $key ) {
-														    echo "<option value='".$key."'>".$key."</option>";
-														}
+						$days = array(
+							"1 days",
+							"2 days","3 days","4 days","5 days","6 days","7 days","8 days",
+							"9 days","10 days","11 days","12 days","13 days","14 days",
+							"15 days","16 days","17 days","18 days","19 days","20 days","21 days","22 days",
+							"23 days","24 days","25 days","26 days","27 days","28 days","29 days","30 days"
+						);
+						sort($days, SORT_NATURAL | SORT_FLAG_CASE);
+						foreach ($days as $key ) {
+						    echo "<option value='".$key."'>".$key."</option>";
+						}
 
-													 ?>
+					 ?>
 				</select>
 								</div></p>
 		          <input type="text" placeholder="Search.." name="search">
@@ -575,10 +603,12 @@
 					<li class=""><a class="abut" href="{{ url('project_info/'. $tenders[0]['project_record_id'] . '/edit') }}" >Project</a></li>
 					<li class="123"><a class="abut" >Scope</a></li>
 					<li class="active"><a class="abut" >Tenders</a></li>
-					<li class="123" id="cret" ><a class="abut" data-toggle="modal" data-target="#selectServe"><span data-toggle="tab" href="#section4">Create New Tender</span></a></li>
+					<li class="123" id="cret" ><a class="abut" data-toggle="modal" data-target="#selectServe"><span>Create New Tender</span></a></li>
 				</ul><br>
 			</div>
 		</div>
+		<div class="col-sm-12 questionnaire-section">
+			<div class="tab-content tabmargin" >
 				<div id="section3" class="tab-pane fade in active tender-container" style="padding-top:0;margin-left:auto;margin-right:auto;width:1040px;">
 					<div class="row" style="margin: 25px;">
 	    			<table class="table table-bordered">
@@ -632,54 +662,6 @@
 
 						</tr>
 						@endforeach
-
-  			        {{-- <tr>
-			            <td style="text-align: left;font-weight:bolder; " class="td">Service Engineer <a><p>Edit Tender</p></a></td>
-			            <td class="td">Drafted</td>
-			            <td class="td">TBC</td>
-			            <td class="td">TBC</td>
-			            <td class="td">TBC</td>
-			            <td class="td">TBC</td>
-			            <td class="td">TBC</td>
-			            <td class="td"></td>
-  			        </tr>
-  			        <tr>
-			            <td style="text-align: left;font-weight:bolder; " class="td">Structural Engineer</td>
-			            <td class="td">Closed</td>
-			            <td class="td">1/1/2018</td>
-			            <td class="td">1/9/2018</td>
-			            <td class="td">5 days</td>
-			            <td class="td"><strong style="font-size: 25px;">3</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewBid"><p>View Bids</p></a></td>
-			            <td class="td"><strong style="font-size: 25px;">7</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewQueries"><p>View Answer/<br>Queries</p></a></td>
-			            <td class="td">
-			              </button><button class="btn btn-primary" style="margin-bottom:10px;    width: 135px;">Dowload Evalution<br>Report</button>
-			            </button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td>
-			            
-  			        </tr>  			        <tr>
-			            <td style="text-align: left;font-weight:bolder; " class="td">Structural Engineer</td>
-			            <td class="td">Closed</td>
-			            <td class="td">1/1/2018</td>
-			            <td class="td">1/9/2018</td>
-			            <td class="td">5 days</td>
-			            <td class="td"><strong style="font-size: 25px;">3</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewBid"><p>View Bids</p></a></td>
-			            <td class="td"><strong style="font-size: 25px;">7</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewQueries"><p>View Answer/<br>Queries</p></a></td>
-			            <td class="td">
-			              </button><button class="btn btn-primary" style="margin-bottom:10px;    width: 135px;">Dowload Evalution<br>Report</button>
-			            </button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td>
-			            
-  			        </tr>  			        <tr>
-			            <td style="text-align: left;font-weight:bolder; " class="td">Structural Engineer</td>
-			            <td class="td">Closed</td>
-			            <td class="td">1/1/2018</td>
-			            <td class="td">1/9/2018</td>
-			            <td class="td">5 days</td>
-			            <td class="td"><strong style="font-size: 25px;">3</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewBid"><p>View Bids</p></a></td>
-			            <td class="td"><strong style="font-size: 25px;">7</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewQueries"><p>View Answer/<br>Queries</p></a></td>
-			            <td class="td">
-			              </button><button class="btn btn-primary" style="margin-bottom:10px;    width: 135px;">Dowload Evalution<br>Report</button>
-			            </button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td>
-			            
-  			        </tr> --}}
     			    </tbody>
 	    			</table>
 	    			<button class="btn">Print Report</button>

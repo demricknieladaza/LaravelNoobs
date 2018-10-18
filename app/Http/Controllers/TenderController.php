@@ -701,21 +701,26 @@ class TenderController extends Controller
         return "UPDATED!!!";
     }
 
-    public function gettend(Request $request)
+    public function gettend($id)
     {
-        $tenid = $request->get('tendid');
+        $tenid = $id;
         $tender = Tender::where('tender_id', $tenid)->first();
         $bonds = TenderBonds::where('tender_id', $tenid)->get();
         $appointment = TenderAppointment::where('tender_id', $tenid)->get();
         $eval = TenderEvaluation::where('tender_id', $tenid)->get();
 
-
-        return response()->json(array(
+        // return response()->json(array(
+        //     'tender' => $tender,
+        //     'bonds' => $bonds,
+        //     'appointment' => $appointment,
+        //     'eval' => $eval
+        // ));
+        return view('create_tender')->with([
             'tender' => $tender,
             'bonds' => $bonds,
             'appointment' => $appointment,
             'eval' => $eval
-        ));
+        ]);
     
 
     }
