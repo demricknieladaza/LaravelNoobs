@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
 use App\ProjectInformation;
 use App\Tender;
 use App\SavedTenders;
+use App\SubmittedTenders;
 
 class UsersController extends Controller
 {
@@ -37,7 +42,7 @@ class UsersController extends Controller
                     ->where('user_id', $user)
                     //Order By GIDO!!!!!!!!!@!!@
                     ->orderBy('created_at','DESC')
-                    ->get();
+                    ->paginate(14);
            return view('publish')->with('projects', $data);   
         }
         else
@@ -54,7 +59,7 @@ class UsersController extends Controller
         $projects = DB::table('project_information_tbl')
                         ->where('user_id', $user)
                         ->where('project_title', $title)
-                        ->get();
+                        ->paginate(14);
 
         return view('publish')->with('projects', $projects);
         // return $projects;
@@ -118,10 +123,24 @@ class UsersController extends Controller
                     ->join('project_information_tbl as pj', 'saved_tenders_tbl.project_record_id', '=', 'pj.project_record_id')
                     ->get();
     
-        
+        $active = DB::table('submitted_tenders_tbl')
+                    ->where('submitted_tenders_tbl.user_id', $user)
+                    ->join('tender_tbl as te', 'submitted_tenders_tbl.tender_id', '=', 'te.tender_id' )
+                    ->join('project_information_tbl as pj', 'submitted_tenders_tbl.project_record_id', '=', 'pj.project_record_id')
+                    ->get();
+
+        $drafted = DB::table('drafted_tenders_tbl')
+                    ->where('drafted_tenders_tbl.user_id', $user)
+                    ->join('tender_tbl as te', 'drafted_tenders_tbl.tender_id', '=', 'te.tender_id' )
+                    ->join('project_information_tbl as pj', 'drafted_tenders_tbl.project_record_id', '=', 'pj.project_record_id')
+                    ->get();
+
         return view('tend_dashboard')->with([
+            'oppur' => $oppur,
             'saved' => $saved,
-            'oppur' => $oppur
+            'active' => $active,
+            'drafted' => $drafted
+
         ]);
         // return $saved;
     }  

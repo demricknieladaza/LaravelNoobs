@@ -54,11 +54,12 @@ class WinWorkController extends Controller
                 // ->get();
                 ->paginate(5);
                 // ->unique('project_record_id');
-        $type = array();
-        foreach($work as $wo){
-            $use = TypeOfUse::where('project_record_id', $wo->project_record_id)->first();
-            array_push($type,$use);
-        }
+
+        // $type = array();
+        // foreach($work as $wo){
+        //     $use = TypeOfUse::where('project_record_id', $wo->project_record_id)->first();
+        //     array_push($type,$use);
+        // }
 
         $user = $request->session()->get('id');
         $liked = SavedTenders::where('user_id', $user)->get();
@@ -75,7 +76,6 @@ class WinWorkController extends Controller
         // return $sub;
         return view('winwork')->with([
             'project' => $work,
-            'type'    => $type,
             'saved'   => $saved
         ]);
 

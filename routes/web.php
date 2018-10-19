@@ -74,6 +74,9 @@ Route::post('project_info_tender_appointment', 'TenderController@appointmentStor
 
 // Route::post('')
 Route::get('winwork/bid/{id}', 'BidController@getCredentials');
+Route::post('submit_bid', 'BidController@submitBid');
+// Route::resource('winwork/bid', 'BidController');
+Route::post('winwork/bid/{id}/save', 'BidController@saveBid');
 
 //Route::put('project_info/{id}', 'ProjectInformationController@Update');
 Route::resource('project_info','ProjectInformationController');

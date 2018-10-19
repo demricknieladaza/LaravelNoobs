@@ -477,7 +477,6 @@
     });
 </script>
 
-{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> --}}
 
 <div class="modal fade" id="awards" role="dialog">
 	  <div class="modal-dialog">
@@ -577,7 +576,6 @@
 			</div>
 		</div>
 	</div>
-
 	<div class="container below-header" style="padding-right: 0;">
 		<h1 class="project-title bid-page-title" style="margin-right:0;margin-left:0;width: 100%;">{{ $project->project_title }} - <small>{{ $tender->services }}</small></h1>			
 	</div> 
@@ -602,7 +600,8 @@
 				</div>
 			</div>
 			<div class="col-sm-8 questionnaire-section" style="margin-left: 338px; width: 845px;">
-				<form>
+				<form method="POST" action="{{ url('winwork/bid/'.$tender->tender_id.'/save') }}">
+					@csrf
 				<div class="tab-content">
 					<div id="section1" class="tab-pane fade in active tender-container" style="border-radius: 6px;">
 						<h3 class="bid-form-title">Pre-Qualification Questionnaire</h3>
@@ -2632,7 +2631,9 @@
 												         data-date-format="mm-yyyy">
 
 													 <input class="form-control" type="text" placeholder="Select year" readonly="readonly" name="date" >	  
-													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	
+													 <input type="hidden" name="project_record_id" value="{{ $project->project_record_id }}" id=""/>
+													 <input type="hidden" name="tender_id" value="{{ $tender->tender_id }}" id=""/>  
 												</div>
 												
 											</div>
@@ -2647,8 +2648,8 @@
 							              </div>
 									</div>
 									<div class="form-group butcent">
-										<button id="submitfrm" type="submit" name="submit" class="btn btn-primary butsize ">Submit</button>
-										<button name="Save" value="Save" class="btn  butsize color">Save</button>
+										<button id="submitfrm" type="button" name="submit" class="btn btn-primary butsize ">Submit</button>
+										<button type="submit" name="Save" value="Save" class="btn  butsize color">Save</button>
 									</div>
 								</div>
 							</div>
@@ -2909,6 +2910,17 @@ $('textarea').keyup(function() {
 		$('#submitfrm').click(function()
 		{
 			$("#pngsubmit").modal('toggle');
+			jQuery.ajax({
+				url: "{{ url('submit_bid') }}",
+				method: 'post',
+				data: {
+					project_id: jQuery("input[name='project_record_id']").val(),
+					tender_id: jQuery("input[name='tender_id']").val()
+				},
+				success: function(result){
+					console.log(result);
+				}
+			});
 		});
 	
 	function validateFormSection() {

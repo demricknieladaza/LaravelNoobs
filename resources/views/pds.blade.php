@@ -188,10 +188,28 @@
 									<table width="100%">
 										<tr>
 											@foreach($type as $u)
-											<td>{{ $u->use_name }}</td>
+											<?php 
+											$strr = explode(",",$u->use_name);
+											$strr1 = explode(",",$u->use_area);
+											// echo count($strr);
+											// var_dump($strr);
+											$counter = count($strr);
+											// if(count($strr) <= ){
+											// 	$counter = 2;
+											// }
+											// else{
+											// 	$counter = count($strr);
+											// }
+											for($x=0;$x < $counter;$x++)
+											{
+												echo '<td>'.' '.$strr[$x].' '.$strr1[$x].' m2'.'</td>';
+											}
+										
+											?>
+											{{-- <td>{{ $u->use_name }}</td>
 											<td>{{ $u->use_area }}</td>
 											<td>{{ $u->use_units }}</td>
-											<td>{{ $u->use_type }}</td>
+											<td>{{ $u->use_type }}</td> --}}
 											@endforeach
 										</tr>
 										{{-- <tr>

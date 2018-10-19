@@ -23,7 +23,6 @@ class ProjectInformations extends Model
     public $timestamps = true;
     protected $fillable = [
         'project_title', 
-        'project_id',
         'type_of_development',
         'construction_value',
         'procurement_route',

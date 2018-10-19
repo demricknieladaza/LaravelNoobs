@@ -52,7 +52,7 @@ class ProjectInformationController extends Controller
         //This is the main model
         $project = new ProjectInformations;
         $project->project_title = $request->input('project_title');
-        //$project->project_id = $request->input('project_id');
+        // $project->project_id = $request->input('project_id');
         $project->location = $request->input('location');
         $project->type_of_development = $request->input('type_of_development');
         $project->construction_value = $request->input('construction_value');
@@ -277,7 +277,7 @@ class ProjectInformationController extends Controller
         //This is the main model
         $project = ProjectInformations::find($id);
         $project->project_title = $request->input('project_title');
-        $project->project_id = $request->input('project_id');
+        // $project->project_id = $request->input('project_id');
         $project->location = $request->input('location');
         $project->type_of_development = $request->input('type_of_development');
         $project->construction_value = $request->input('construction_value');

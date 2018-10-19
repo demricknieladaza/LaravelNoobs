@@ -1421,7 +1421,7 @@
 													</div>
 											</div>
 											@else
-											<p><a style="color: white;" href="{{asset('storage/site_plan/'.$project->site_plan )}}" name="download" class="btn btn-primary">{{ $project->site_plan }} <i class="fa fa-download"></i></a><input type="hidden" name="site_plan_name" value="{{ $project->site_plan }}"><button type="button" id="delete_site_plan" class="btn btn-primary" name="delete" value="Delete">Delete</button><input type="file" name="new_site_plan"></p>
+											<p><a style="color: white;" href="{{asset('storage/site_plan/'.$project->site_plan )}}" name="download" class="btn btn-primary">{{ $project->site_plan }} <i class="fa fa-download"></i></a><input type="hidden" name="site_plan_name" value="{{ $project->site_plan }}"><input type="file" name="new_site_plan"></p>
 											@endif
 
 											@if($project->programme == "No File Uploaded")
@@ -1432,7 +1432,7 @@
 													</div>
 											</div>
 											@else
-											<p><a style="color: white;" href="{{asset('storage/programme/'.$project->programme )}}" name="download" class="btn btn-primary">{{ $project->programme }} <i class="fa fa-download"></i></a><input type="hidden" name="programme_name" value="{{ $project->programme }}"><button type="button" id="delete_programme" class="btn btn-primary" name="delete" value="Delete">Delete</button><input type="file" name="new_programme"></p>        
+											<p><a style="color: white;" href="{{asset('storage/programme/'.$project->programme )}}" name="download" class="btn btn-primary">{{ $project->programme }} <i class="fa fa-download"></i></a><input type="hidden" name="programme_name" value="{{ $project->programme }}"><input type="file" name="new_programme"></p>        
 											@endif
 
 											@if($project->policy == 'No File Uploaded')
@@ -1443,7 +1443,7 @@
 													</div>
 											</div>
 											@else
-											<p><a style="color: white;" href="{{asset('storage/policy/'.$project->policy )}}" name="download" class="btn btn-primary">{{ $project->policy }} <i class="fa fa-download"></i></a><input type="hidden" name="policy_name" value="{{ $project->policy }}"><button type="button" id="delete_policy" class="btn btn-primary" name="delete" value="Delete">Delete</button><input type="file" name="new_policy"/></a></p>
+											<p><a style="color: white;" href="{{asset('storage/policy/'.$project->policy )}}" name="download" class="btn btn-primary">{{ $project->policy }} <i class="fa fa-download"></i></a><input type="hidden" name="policy_name" value="{{ $project->policy }}"><input type="file" name="new_policy"/></a></p>
 											@endif
 										</td>
 		    						</tr>

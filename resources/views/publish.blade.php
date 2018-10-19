@@ -57,6 +57,11 @@
 		<div class="row">			
 			<div class="form-group">
 				<div class="row">
+						<div class="col-sm-12">
+								<ul style="float: left;"class=" pagination navbar-right">
+									{{ $projects->render() }}
+								</ul>
+						</div>
 					<div class="hover-container-holder">
 						<div class="danpads tender-tile-single ">
 							<a href="{{ url('/publish/project_dashboard') }}" class="fill-div">

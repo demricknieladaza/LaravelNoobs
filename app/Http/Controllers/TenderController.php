@@ -28,6 +28,7 @@ use App\TenderMeetingsNum;
 use App\TenderDesignConsiderations;
 use App\TenderScopeAdvise;
 use App\WinWorkData;
+use App\AddedDeliverables;
 
 
 class TenderController extends Controller
@@ -652,6 +653,32 @@ class TenderController extends Controller
         $ad->advise_six = $a_six;
         $ad->save();
 
+
+        $added_row_name = $request->added_row_name;
+        $added_details = $request->added_details;
+        $added_raci = $request->added_raci;
+        $added_num = $request->added_num;
+        $add_raci = "";
+        $add_num = "";
+        for($counter = 0; $counter < count($added_raci); $counter++){
+            $add_raci .= $added_raci[$counter] . ",";
+        }
+        $add_raci = substr($add_raci, 0, -1);
+        for($counter = 0; $counter < count($added_num); $counter++){
+            $add_num .= $added_num[$counter] . ",";
+        }
+        $add_num = substr($add_num, 0, -1);
+
+        for($counter = 0; $counter < count($added_row_name); $counter++){
+            $added = new AddedDeliverables;
+            $added->tender_id = $request->get('idd');
+            $added->row_name = $added_row_name;
+            $added->details = $added_details;
+            $added->raci = $add_raci;
+            $added->num = $add_num;
+            $added->save();
+        }
+
         return('SUCCESS!');
 
     }
@@ -679,16 +706,6 @@ class TenderController extends Controller
                         "end" => $request->get('end'),
                         "time_remaining" => $request->get('time_remaining')
                     ]);
-
-        $count = Tender::where('project_record_id', $request->project_record_id)->get()->count();
-        $first_tender = Tender::where('project_record_id', $request->project_record_id)
-                                ->whereIn('status', 'Active')
-                                ->first();
-        $winwork = new WinWorkData;
-        $winwork->project_record_id = $request->project_record_id;
-        $winwork->first_tender = $first_tender;
-        $winwork->tender_count = $count-1;
-        $winwork->save();
         
         // $tender->status = $request->get('status');
         // $tender->end = $request->get('end');

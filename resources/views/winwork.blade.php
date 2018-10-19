@@ -236,7 +236,7 @@
 										<li><a href="#">4</a></li>
 										<li><a href="#">5</a></li>
 										<li><a href="#">&raquo;</a></li> --}}
-										{{-- {{ $project->render() }} --}}
+										{{ $project->render() }}
 									</ul>
 								</div>
 							</div>
