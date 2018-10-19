@@ -1302,15 +1302,16 @@
 		    							</td>
 		    							<td>
 		    								<table width="100%" id="addedtypeofuse" class="addedtype">
-		    									<tr class="lastitem">
-													@foreach($type as $use)
-			    										<td><input type="text" name="use_name[]" class="form-control proje" value="{{ $use->use_name }}" placeholder="Residential" readonly></td>&nbsp
-			    										<td><input type="text" name="use_area[]" class="form-control proje" value="{{ $use->use_area }}" placeholder="30,000m2" readonly></td>
-			    										<td><input type="text" name="use_units[]" class="form-control proje" value="{{ $use->use_units }}" placeholder="200 units" readonly></td>
-			    										<td><input type="text" name="use_type[]" class="form-control proje" value="{{ $use->use_type }}" placeholder="High-End" readonly></td>
-													@endforeach
+												@foreach($type as $use)
+												<tr>
+		    										<td><input type="text" name="use_name[]" class="form-control proje" value="{{ $use->use_name }}" placeholder="Residential" readonly></td>&nbsp
+		    										<td><input type="text" name="use_area[]" class="form-control proje" value="{{ $use->use_area }}" placeholder="30,000m2" readonly></td>
+		    										<td><input type="text" name="use_units[]" class="form-control proje" value="{{ $use->use_units }}" placeholder="200 units" readonly></td>
+		    										<td><input type="text" name="use_type[]" class="form-control proje" value="{{ $use->use_type }}" placeholder="High-End" readonly></td>
+		    									</tr>
+												@endforeach
+												<tr class="lastitem" >
 												</tr>
-
 		    									<tr>
 		    										<td>Total</td>
 		    										<td id="total">57,000m2</td>
@@ -5094,7 +5095,7 @@ $('a[href^="#"]').on('click', function(event) {
 
 	    $('#addtypeofuse').click(function(e){ 
 	    	// e.preventDefault();
-	    	$('.addedtype tr:last').before('<a href="#" class="remove_field">x</a><tr><td><input type="text" name="use_name[]" class="form-control proje" placeholder="Residential" ></td>&nbsp<td><input type="text" name="use_area[]" class="form-control proje" placeholder="30,000m2" ></td><td><input type="text" name="use_units[]" class="form-control proje" placeholder="200 units" ></td><td><input type="text" name="use_type[]" class="form-control proje" placeholder="High-End" ></td></tr>');
+	    	$('.addedtype tr:last').before('<tr><td><input type="text" name="use_name[]" class="form-control proje" placeholder="Residential" ></td>&nbsp<td><input type="text" name="use_area[]" class="form-control proje" placeholder="30,000m2" ></td><td><input type="text" name="use_units[]" class="form-control proje" placeholder="200 units" ></td><td><input type="text" name="use_type[]" class="form-control proje" placeholder="High-End" ></td></tr>');
 	    });
 
 	    $('.addedtype').on("click",".remove_field", function(e){ //user click on remove text
@@ -5103,7 +5104,7 @@ $('a[href^="#"]').on('click', function(event) {
 			
 		$('#addriba').click(function(e){
 	    	// e.preventDefault();
-	    	$('.addedriba tr:last').before('<a href="#" class="remove_field">x</a><tr class="lastitemriba"><td><input type="text" name="riba_stage_name[]" class="form-control proje" placeholder="RIBA Stage 1 Completion" ></td><td><input type="text" name="riba_stage_date[]" class="form-control proje" placeholder="01/03/2019" ></td></tr>');
+	    	$('.addedriba tr:last').before('<tr class="lastitemriba"><a href="#" class="remove_field">x</a><td><input type="text" name="riba_stage_name[]" class="form-control proje" placeholder="RIBA Stage 1 Completion" ></td><td><input type="text" name="riba_stage_date[]" class="form-control proje" placeholder="01/03/2019" ></td></tr>');
 	    });
 
 	    $('.addedriba').on("click",".remove_field", function(e){ //user click on remove text
@@ -5112,7 +5113,7 @@ $('a[href^="#"]').on('click', function(event) {
 
 		$('#addprojteam').click(function(e){
 	    	// e.preventDefault();
-	    	$('.addedproj tr:last').before('<a href="#" class="remove_field">x</a><tr class="lastitemproj"><td><input type="text" name="projteam_pos[]" class="form-control proje" placeholder="Architect"></td><td><input type="text" name="projteam_name[]" class="form-control proje" placeholder="Allies and Morrison" ></td></tr>');
+	    	$('.addedproj tr:last').before('<tr class="lastitemproj"><a href="#" class="remove_field">x</a><td><input type="text" name="projteam_pos[]" class="form-control proje" placeholder="Architect"></td><td><input type="text" name="projteam_name[]" class="form-control proje" placeholder="Allies and Morrison" ></td></tr>');
 	    });
 
 	    $('.addedproj').on("click",".remove_field", function(e){ //user click on remove text

@@ -1010,9 +1010,9 @@
 		    minViewMode: "months"
 		});
 
-		$('.addbutton').click(function(){
-			$('#addDeliverables').modal('toggle');
-		});
+		// $('.addbutton').click(function(){
+		// 	$('#addDeliverables').modal('toggle');
+		// });
 		$('.addbuttonMeet').click(function(){
 			$('#addMeetings').modal('toggle');
 		});
@@ -1074,15 +1074,25 @@
 	    
 	    
 	    var x = 1; //initlal text box count
-	    $('#addDeliv').click(function(){ //on add input button click
+	    $('.addbutton').click(function(){ //on add input button click
 	        // e.preventDefault();
-	        var named = $("input[name='deliverable']").val();
-	        if(x < max_fields){ //max input box allowed
-	            x++; //text box increment
-	            $('#addDeliverables').modal('toggle');
-	            $("#addedDeliv").append('<tr><td class="zui-sticky-col2"><input type="text" name="addname" value="'+named+'"></td><td class="td "><textarea class="hayt" name="details" placeholder="Enter details here"></textarea></td><td class="td"><div class="col-sm-12"><div class="col-sm-3 form-check"><label><input type="checkbox" name="raci[]" value="R"><span class="label-text">R</span></label></div><div class="col-sm-3 form-check"><label><input type="checkbox" name="raci[]" value="A"><span class="label-text">A</span></label></div><div class="col-sm-3 form-check"><label><input type="checkbox" name="raci[]" value="C"><span class="label-text">C</span></label></div><div class="col-sm-3 form-check"><label><input type="checkbox" name="raci[]" value="I"><span class="label-text">I</span></label></div></div></td><td class="td"><div c=lass="form-check"><label><input type="checkbox" name="num[]" value="0"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="num[]" value="1"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="num[]" value="2"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="num[]" value="3"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="num[]" value="4"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="num[]" value="5"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="num[]" value="6"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="num[]" value="7"><span class="label-text"></span></label></div></td></tr>'); //add input box
-	        }
-	    });
+	        // var named = $("input[name='deliverable']").val();
+	        $("#deliv").clone().insertAfter("tbody#addedDelivs tr:last");
+
+	        // if(x < max_fields){ //max input box allowed
+	        //     x++; //text box increment
+	        //     $('#addDeliverables').modal('toggle');
+	        //     $("#addedDeliv").append(''); //add input box
+	        // }
+	          var $this = $(this),
+	              $toElement      = $this.attr('data-scroll-to'),
+	              $focusElement   = $this.attr('data-scroll-focus'),
+	              $offset         = $this.attr('data-scroll-offset') * 1 || 0,
+	              $speed          = $this.attr('data-scroll-speed') * 1 || 500;
+
+	          var objDiv = document.getElementById("myscrol");
+	               objDiv.scrollTop = objDiv.scrollHeight;
+	    		});
 
 	    $('#addMeet').click(function(){ //on add input button click
 	        // e.preventDefault();
@@ -1090,7 +1100,7 @@
 	        if(x < max_fields){ //max input box allowed
 	            x++; //text box increment
 	            $('#addMeetings').modal('toggle');
-	            $("#addedmeet").append('<tr><td class="zui-sticky-col3"><input type="text" name="pre_app_name[]" value="'+named+'"></td><td class="td "><textarea class="hayt3" name="purpose[]" placeholder="Enter details here"></textarea></td><td class="td"><textarea class="hayt3" name="attendees[]" placeholder="Enter details here"></textarea></td><td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name="assumed_duration[]"></td><td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name="reoccurence[]"></td><td class="td"><div class="form-check"><label><input type="checkbox" name="arrange[]" value="Arrange"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="attend[]" value="Attend"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="minute[]" value="Minute"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="0"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="1"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="2"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="3"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="4"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="5"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="6"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="7"><span class="label-text"></span></label></div></td></tr>'); //add input box
+	            $("#addedmeet").append(''); //add input box
 	        }
 	    });
 
@@ -1103,6 +1113,7 @@
 	            $("#addedDesign").append('<tr><td class="zui-sticky-col4"><textarea class="hayt4" name="questionname[]">'+details+'</textarea></td><td class="td "><textarea class="hayt4" name="question[]" placeholder="Enter details here"></textarea></td></tr>'); //add input box
 	        }
 	    });
+
 
 
 	    
@@ -1159,8 +1170,110 @@
 	        </div>
 	        <div class="modal-body">
 	        	<div class="form-group">
-	        		<label>Deliverable</label>
-	        		<input type="text" class="form-control deliverable" name="deliverable">
+        			<table class="zui-table2">
+			            <thead>
+			                <tr>
+			                    <th class="zui-sticky-col2"><center>Deliverables</center></th>
+			                    <th style="width: 300px;max-width: 300px;min-width: 300px;">
+			                    Details/Contents</th>
+			                    <th style="width: 250px;max-width: 250px;min-width: 250px;">RACI</th>
+			                    <th>0</th>
+			                    <th>1</th>
+			                    <th>2</th>
+			                    <th>3</th>
+			                    <th>4</th>
+			                    <th>5</th>
+			                    <th>6</th>
+			                    <th>7</th>
+			                </tr>
+			            </thead>
+				        <tbody>
+			                <tr id="deliv">
+			                    <td class="zui-sticky-col2"><textarea id="delivname" class="hayt named" name="named" placeholder="Enter details here"></textarea></td>
+			                    <td class="td "><textarea class="hayt details" name="strategic_details" placeholder="Enter details here"></textarea></td>
+			                    <td class="td">
+			                    	<div class="col-sm-12">
+			                    		<div class="col-sm-3 form-check">
+			                    			<label>
+			                    				<input type="checkbox" name="strategic_raci[]" value="R" class="rac"><span class="label-text">R</span>
+			                    			</label>
+			                    		</div>
+			                    		<div class="col-sm-3 form-check">
+			                    			<label>
+			                    				<input type="checkbox" name="strategic_raci[]" value="A" class="rac"><span class="label-text">A</span>
+			                    			</label>
+			                    		</div>
+			                    		<div class="col-sm-3 form-check">
+			                    			<label>
+			                    				<input type="checkbox" name="strategic_raci[]" value="C" class="rac"><span class="label-text">C</span>
+			                    			</label>
+			                    		</div>
+			                    		<div class="col-sm-3 form-check">
+			                    			<label>
+			                    				<input type="checkbox" name="strategic_raci[]" value="I" class="rac"><span class="label-text">I</span>
+			                    			</label>
+			                    		</div>
+			                    	</div>
+			                    </td>
+			                    <td class="td">
+			                    	<div class="form-check">
+			                    		<label>
+			                    			<input type="checkbox" name="strategic_num[]" value="0" class="ribanum"><span class="label-text"></span>
+			                    		</label>
+			                    	</div>
+			                    </td>
+			                    <td class="td">
+			                    	<div class="form-check">
+			                    		<label>
+			                    			<input type="checkbox" name="strategic_num[]" value="1" class="ribanum"><span class="label-text"></span>
+			                    		</label>
+			                    	</div>
+			                    </td>
+			                    <td class="td">
+			                    	<div class="form-check">
+			                    		<label>
+			                    			<input type="checkbox" name="strategic_num[]" value="2" class="ribanum"><span class="label-text"></span>
+			                    		</label>
+			                    	</div>
+			                    </td>
+			                    <td class="td">
+			                    	<div class="form-check">
+			                    		<label>
+			                    			<input type="checkbox" name="strategic_num[]" value="3" class="ribanum"><span class="label-text"></span>
+			                    		</label>
+			                    	</div>
+			                    </td>
+			                    <td class="td">
+			                    	<div class="form-check">
+			                    		<label>
+			                    			<input type="checkbox" name="strategic_num[]" value="4" class="ribanum"><span class="label-text"></span>
+			                    		</label>
+			                    	</div>
+			                    </td>
+			                    <td class="td">
+			                    	<div class="form-check">
+			                    		<label>
+			                    			<input type="checkbox" name="strategic_num[]" value="5" class="ribanum"><span class="label-text"></span>
+			                    		</label>
+			                    	</div>
+			                    </td>
+			                    <td class="td">
+			                    	<div class="form-check">
+			                    		<label>
+			                    			<input type="checkbox" name="strategic_num[]" value="6" class="ribanum"><span class="label-text"></span>
+			                    		</label>
+			                    	</div>
+			                    </td>
+			                    <td class="td">
+			                    	<div class="form-check">
+			                    		<label>
+			                    			<input type="checkbox" name="strategic_num[]" value="7" class="ribanum"><span class="label-text"></span>
+			                    		</label>
+			                    	</div>
+			                    </td>
+			                </tr>
+	        			</tbody>
+	        		</table>
 	        	</div>
 	        </div>
 	        <div class="modal-footer" style="text-align: center;">
@@ -1182,6 +1295,9 @@
 	        	<div class="form-group">
 	        		<label>Meeting</label>
 	        		<input type="text" class="form-control" name="meeting">
+	        		<div id="meetclone">
+	        			<tr><td class="zui-sticky-col3"><input type="text" name="pre_app_name" value="'+named+'"></td><td class="td "><textarea class="hayt3" name="purpose" placeholder="Enter details here"></textarea></td><td class="td"><textarea class="hayt3" name="attendees" placeholder="Enter details here"></textarea></td><td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name="assumed_duration[]"></td><td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name="reoccurence[]"></td><td class="td"><div class="form-check"><label><input type="checkbox" name="arrange[]" value="Arrange"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="attend[]" value="Attend"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="minute[]" value="Minute"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="0"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="1"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="2"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="3"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="4"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="5"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="6"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="7"><span class="label-text"></span></label></div></td></tr>
+	        		</div>
 	        	</div>
 	        </div>
 	        <div class="modal-footer" style="text-align: center;">
@@ -1315,7 +1431,7 @@
 		    					</div>
 		    					<div id="section11" class="tab-pane tender-container">
 		    						<h3 class="bid-form-title">Scope</h3>
-		    						<div class="zui-wrapper2">
+		    						<div class="zui-wrapper2" id="myscrol">
 		    						    <div class="zui-scroller2">
 		    						        <table class="zui-table2">
 		    						            <thead>
@@ -1334,8 +1450,8 @@
 		    						                    <th>7</th>
 		    						                </tr>
 		    						            </thead>
-		    						            <tbody id="addedDeliv">
-		    						                <tr>
+		    						            <tbody id="addedDelivs" >
+		    						                <tr class="addedDeliv">
 		    						                    <td class="zui-sticky-col2">Strategic Brief</td>
 		    						                    <td class="td "><textarea class="hayt" name="strategic_details" placeholder="Enter details here"></textarea></td>
 		    						                    <td class="td">
@@ -1420,7 +1536,7 @@
 		    						                    </td>
 		    						                    
 		    						                </tr>
-		    						                <tr>
+		    						                <tr class="addedDeliv">
 		    						                    <td class="zui-sticky-col2">Project Programme(Lead)</td>
 		    						                    <td class="td "><textarea class="hayt" name="pprogramme_details" placeholder="Enter details here"></textarea></td>
 		    						                    <td class="td">
@@ -1504,7 +1620,7 @@
 		    						                    	</div>
 		    						                    </td>
 		    						                </tr>
-		    						                <tr>
+		    						                <tr class="addedDeliv">
 		    						                    <td class="zui-sticky-col2">Feasibility Study</td>
 		    						                    <td class="td "><textarea class="hayt" name="feasibility_details" placeholder="Enter details here"></textarea></td>
 		    						                    <td class="td">
@@ -1588,7 +1704,7 @@
 		    						                    	</div>
 		    						                    </td>
 		    						                </tr>
-		    						                <tr>
+		    						                <tr class="addedDeliv">
 		    						                    <td class="zui-sticky-col2">Design Responsibility<br> Matrix</td>
 		    						                    <td class="td "><textarea class="hayt" name="design_details" placeholder="Enter details here"></textarea></td>
 		    						                    <td class="td">
@@ -1672,7 +1788,7 @@
 		    						                    	</div>
 		    						                    </td>
 		    						                </tr>
-		    						                <tr>
+		    						                <tr class="addedDeliv">
 		    						                    <td class="zui-sticky-col2">Site Information Report</td>
 		    						                    <td class="td "><textarea class="hayt" name="site_details" placeholder="Enter details here"></textarea></td>
 		    						                    <td class="td">
@@ -1756,7 +1872,7 @@
 		    						                    	</div>
 		    						                    </td>
 		    						                </tr>
-		    						                <tr>
+		    						                <tr class="addedDeliv">
 		    						                    <td class="zui-sticky-col2">Information Exchange<br> Strategy</td>
 		    						                    <td class="td "><textarea class="hayt" name="info_details" placeholder="Enter details here"></textarea></td>
 		    						                    <td class="td">
@@ -1840,7 +1956,7 @@
 		    						                    	</div>
 		    						                    </td>
 		    						                </tr>
-		    						                <tr>
+		    						                <tr class="addedDeliv">
 		    						                    <td class="zui-sticky-col2">Project Brief</td>
 		    						                    <td class="td "><textarea class="hayt" name="project_details" placeholder="Enter details here"></textarea></td>
 		    						                    <td class="td">
@@ -1924,7 +2040,7 @@
 		    						                    	</div>
 		    						                    </td>
 		    						                </tr>
-		    						                <tr>
+		    						                <tr class="addedDeliv">
 		    						                    <td class="zui-sticky-col2">Risk Assessment(Lead)</td>
 		    						                    <td class="td "><textarea class="hayt" name="risk_details" placeholder="Enter details here"></textarea></td>
 		    						                    <td class="td">
@@ -2008,7 +2124,7 @@
 		    						                    	</div>
 		    						                    </td>
 		    						                </tr>
-		    						                 <tr>
+		    						                 <tr class="addedDeliv">
 		    						                    <td class="zui-sticky-col2">Handover Strategy(Lead)</td>
 		    						                    <td class="td "><textarea class="hayt" name="hand_details" placeholder="Enter details here"></textarea></td>
 		    						                    <td class="td">
@@ -2092,7 +2208,7 @@
 		    						                    	</div>
 		    						                    </td>
 		    						                </tr>
-		    						                 <tr>
+		    						                 <tr class="addedDeliv">
 		    						                    <td class="zui-sticky-col2">Project Execution Plan</td>
 		    						                    <td class="td "><textarea class="hayt" name="execution_details" placeholder="Enter details here"></textarea></td>
 		    						                    <td class="td">
@@ -2176,7 +2292,7 @@
 		    						                    	</div>
 		    						                    </td>
 		    						                </tr>
-		    						                <tr>
+		    						                <tr class="addedDeliv">
 		    						                    <td class="zui-sticky-col2">Design Proposals from<br> Design Team Members</td>
 		    						                    <td class="td "><textarea class="hayt" name="proposal_details" placeholder="Enter details here"></textarea></td>
 		    						                    <td class="td">
@@ -2267,7 +2383,10 @@
 		    						<div class="col-sm-12">
 		    							<div class="row">
 		    								<div class="form-group">
-		    									<button class="btn addbutton" >Add</button>
+		    									<button class="btn addbutton" data-scroll-to="#deliv"
+        data-scroll-focus="#delivname"
+        data-scroll-speed="700"
+        data-scroll-offset="200" >Add</button>
 		    								</div>
 		    							</div>
 		    						</div>
@@ -2283,8 +2402,8 @@
 						            		<h4>RIBA Stages</h4>
 						            	</div>
 		    						</div> -->
-		    						<div class="zui-wrapper3">
-		    						    <div class="zui-scroller3">
+		    						<div class="zui-wrapper3" >
+		    						    <div class="zui-scroller3" id="myscrol2">
 		    						        <table class="zui-table3">
 		    						            <thead>
 		    						                <tr>
@@ -4668,7 +4787,6 @@ $('a[href^="#"]').on('click', function(event) {
 	});
 
 </script>
-
 
 
 <!-- Testing lang ni -->
