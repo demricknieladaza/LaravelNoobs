@@ -567,10 +567,10 @@
 																	<div class="col-sm-8">
 																		<div class="form-group">
 																			<div class="col-sm-6" style="padding:0;">
-																				<input type="text" name="" class="form-control" placeholder="First name">
+																				<input type="text" name="first_name" class="form-control" placeholder="First name">
 																			</div>
 																			<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-																				<input type="text" name="" class="form-control" placeholder="Surname">
+																				<input type="text" name="last_name" class="form-control" placeholder="Surname">
 																			</div>
 																		</div>
 																	</div>

@@ -511,6 +511,57 @@
 	    });
 	});
 </script>
+<div class="modal fade" id="viewBid" role="dialog" tabindex="-1">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #fe7235;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">View Bids</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered">
+        	<thead class="thead">
+        		<tr>
+        			<th width="40%">Tenderer</th>
+        			<th width="15%">Qualitative Score</th>
+        			<th width="15%">Quantitative Score</th>
+        			<th width="15%">Risk Score</th>
+        			<th width="15%"></th>
+        		</tr>
+        	</thead>
+        	<tbody>
+        		<tr>
+        			<td>Company 1</td>
+        			<td>5</td>
+        			<td>9</td>
+        			<td>2</td>
+        			<td><a>View Bid</a></td>
+        		</tr>
+        		<tr>
+        			<td>Company 2</td>
+        			<td>2</td>
+        			<td>4</td>
+        			<td>5</td>
+        			<td><a>View Bid</a></td>
+        		</tr>
+        		<tr>
+        			<td>Company 3</td>
+        			<td>7</td>
+        			<td>8</td>
+        			<td>7</td>
+        			<td><a>View Bid</a></td>
+        		</tr>
+        	</tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container below-header ">
 	<h1 id="logo" class="project-title bid-page-title centerh" style="margin-left: 5%;
     margin-right: 5%;">Project Dashboard</small></h1>
@@ -641,13 +692,12 @@
 							@elseif($ten->status == "Active")
 								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a><p></p></a></td>
 								<td class="td">{{ $ten->status }}</td>
-								<td class="td">{{ $ten->start }}</td>
+								<td class="td">{{ \Carbon\Carbon::parse($ten->start)->format('m/d/Y')}}</td>
 								<td class="td">{{ $ten->end }}</td>
 								<td class="td">{{ $ten->time_remaining }}</td>
-								<td class="td">{{ $ten->bids_received }}</td>
+								<td class="td"><strong style="font-size: 25px;">{{ $ten->bids_received }}</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewBid"><p>View Bids</p></a></td>
 								<td class="td">{{ $ten->queries_received }}</td>
-								<td class="td">
-								</button><button class="btn btn-success" style="margin-bottom:10px;">Complete Tender Process</button>
+								<td class="td"></button><button style="width: 135px;" class="btn btn-success">Complete Tender  <br>Process</button></td>
 								{{-- </button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td> --}}
 							@else
 								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a class="edit_tender" data-tender-id="{{ $ten->tender_id }}" data-toggle="tab" href="#section4"><p>Edit Tender<br></p></a></td>

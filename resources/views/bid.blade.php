@@ -570,7 +570,7 @@
 					<p>Your  query  will  be  sent  to  the  Employer  and  published  on  the  project  page,  visible  for  everyone,  once  you  have  received  a  response. This process cannot be undone.</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-info" data-dismiss="modal">Go Back</button>
+					<button type="button" id="submitBid" class="btn btn-info" data-dismiss="modal">Go Back</button>
 					<button type="button" class="btn btn-success">Submit</button>
 				</div>
 			</div>
@@ -2910,6 +2910,21 @@ $('textarea').keyup(function() {
 		$('#submitfrm').click(function()
 		{
 			$("#pngsubmit").modal('toggle');
+			jQuery.ajax({
+				url: "{{ url('submit_bid') }}",
+				method: 'post',
+				data: {
+					project_id: jQuery("input[name='project_record_id']").val(),
+					tender_id: jQuery("input[name='tender_id']").val()
+				},
+				success: function(result){
+					console.log(result);
+				}
+			});
+		});
+
+		$('#submitBid').click(function()
+		{
 			jQuery.ajax({
 				url: "{{ url('submit_bid') }}",
 				method: 'post',

@@ -100,6 +100,7 @@ class BidController extends Controller
     }
 
     public function submitBid(Request $request){
+        
         $sub = new SubmittedTenders;
         $sub->user_id = $request->session()->get('id');
         $sub->project_record_id = $request->get('project_id');

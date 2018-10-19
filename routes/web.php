@@ -80,10 +80,12 @@ Route::post('winwork/bid/{id}/save', 'BidController@saveBid');
 
 //Route::put('project_info/{id}', 'ProjectInformationController@Update');
 Route::resource('project_info','ProjectInformationController');
+Route::resource('scope', 'ScopeController');
 Route::resource('project_info_tender','TenderController');
 Route::resource('tenders', 'TenderDisplayController', [
     'names' =>[
-        'index' => 'Tenders'
+        'index' => 'Tenders',
+        'edit' => 'Tenders Table'
     ]
 ]);
 Route::resource('winwork', 'WinWorkController');
@@ -95,14 +97,5 @@ Route::post('tender_deliverables_save', 'TenderController@tenderScopeStore');
 Route::post('tender_quality_assurance', 'TenderController@tenderQualityStore');
 Route::post('start_tender_process', 'TenderController@updateTenderProcess');
 
-
-//Route::put('delete_site_plan_url', 'ProjectInformationController@deleteSitePlan');
-
-//Route::get('site_plan_download', 'ProjectInformationController@downloadSitePlan');
-// Route::get('project_info/{id}/edit/download', 'ProjectInformationController@downloadSitePlan');
-
-// Route::get('/publish/publish_view/scopey', 'UsersController@scopey_controller');
-// Route::get('/publish/publish_view/tenderey', 'UsersController@tenderey_controller');
-// Route::get('/publish/publish_view/createy', 'UsersController@createy_controller');
 
 
