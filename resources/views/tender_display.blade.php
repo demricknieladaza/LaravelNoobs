@@ -690,7 +690,7 @@
 								</button><button class="btn btn-primary" style="margin-bottom:10px;    width: 135px;">Dowload Evalution<br>Report</button>
 							 	</button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td>
 							@elseif($ten->status == "Active")
-								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a><p></p></a></td>
+								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a class="edit_tender" data-tender-id="{{ $ten->tender_id }}" data-toggle="tab" href="#section4"><p>Edit Tender<br></p></a></td>
 								<td class="td">{{ $ten->status }}</td>
 								<td class="td">{{ \Carbon\Carbon::parse($ten->start)->format('m/d/Y')}}</td>
 								<td class="td">{{ $ten->end }}</td>
