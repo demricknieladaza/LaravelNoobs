@@ -1013,9 +1013,9 @@
 		// $('.addbutton').click(function(){
 		// 	$('#addDeliverables').modal('toggle');
 		// });
-		$('.addbuttonMeet').click(function(){
-			$('#addMeetings').modal('toggle');
-		});
+		// $('.addbuttonMeet').click(function(){
+		// 	$('#addMeetings').modal('toggle');
+		// });
 		$('.addbuttonDes').click(function(){
 			$('#addDesign').modal('toggle');
 		});
@@ -1084,24 +1084,34 @@
 	        //     $('#addDeliverables').modal('toggle');
 	        //     $("#addedDeliv").append(''); //add input box
 	        // }
-	          var $this = $(this),
-	              $toElement      = $this.attr('data-scroll-to'),
-	              $focusElement   = $this.attr('data-scroll-focus'),
-	              $offset         = $this.attr('data-scroll-offset') * 1 || 0,
-	              $speed          = $this.attr('data-scroll-speed') * 1 || 500;
+	        var $this = $(this),
+	            $toElement      = $this.attr('data-scroll-to'),
+	            $focusElement   = $this.attr('data-scroll-focus'),
+	            $offset         = $this.attr('data-scroll-offset') * 1 || 0,
+	            $speed          = $this.attr('data-scroll-speed') * 1 || 500;
 
-	          var objDiv = document.getElementById("myscrol");
-	               objDiv.scrollTop = objDiv.scrollHeight;
-	    		});
+	        var objDiv = document.getElementById("myscrol");
+	            objDiv.scrollTop = objDiv.scrollHeight;
+	    	});
 
-	    $('#addMeet').click(function(){ //on add input button click
+	    $('.addbuttonMeet').click(function(){ //on add input button click
 	        // e.preventDefault();
-	        var named = $("input[name='meeting']").val();
-	        if(x < max_fields){ //max input box allowed
-	            x++; //text box increment
-	            $('#addMeetings').modal('toggle');
-	            $("#addedmeet").append(''); //add input box
-	        }
+	        // var named = $("input[name='meeting']").val();
+	        // if(x < max_fields){ //max input box allowed
+	        //     x++; //text box increment
+	        //     $('#addMeetings').modal('toggle');
+	        //     $("#addedmeet").append(''); //add input box
+	        // }
+	        $("#meetclone").clone().insertAfter("tbody#addedmeet tr:last");
+
+	        // if(x < max_fields){ //max input box allowed
+	        //     x++; //text box increment
+	        //     $('#addDeliverables').modal('toggle');
+	        //     $("#addedDeliv").append(''); //add input box
+	        // }
+
+	        var objDiv = document.getElementById("myscrol2");
+	            objDiv.scrollTop = objDiv.scrollHeight;
 	    });
 
 	    $('#addDes').click(function(){ //on add input button click
@@ -1295,8 +1305,8 @@
 	        	<div class="form-group">
 	        		<label>Meeting</label>
 	        		<input type="text" class="form-control" name="meeting">
-	        		<div id="meetclone">
-	        			<tr><td class="zui-sticky-col3"><input type="text" name="pre_app_name" value="'+named+'"></td><td class="td "><textarea class="hayt3" name="purpose" placeholder="Enter details here"></textarea></td><td class="td"><textarea class="hayt3" name="attendees" placeholder="Enter details here"></textarea></td><td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name="assumed_duration[]"></td><td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name="reoccurence[]"></td><td class="td"><div class="form-check"><label><input type="checkbox" name="arrange[]" value="Arrange"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="attend[]" value="Attend"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="minute[]" value="Minute"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="0"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="1"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="2"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="3"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="4"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="5"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="6"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="7"><span class="label-text"></span></label></div></td></tr>
+	        		<div >
+	        			<tr id="meetclone"><td class="zui-sticky-col3"><input type="text" name="pre_app_name" value="'+named+'"></td><td class="td "><textarea class="hayt3" name="purpose" placeholder="Enter details here"></textarea></td><td class="td"><textarea class="hayt3" name="attendees" placeholder="Enter details here"></textarea></td><td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name="assumed_duration[]"></td><td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name="reoccurence[]"></td><td class="td"><div class="form-check"><label><input type="checkbox" name="arrange[]" value="Arrange"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="attend[]" value="Attend"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="minute[]" value="Minute"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="0"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="1"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="2"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="3"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="4"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="5"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="6"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="7"><span class="label-text"></span></label></div></td></tr>
 	        		</div>
 	        	</div>
 	        </div>
@@ -1381,9 +1391,9 @@
 		<div class="col-sm-12">
 			<div class="tender-container tendnew">
 				<ul class="nav navs bid-form-nav">
-					<li class=""><a class="abut" href="{{ url('project_info/'. $tender[0]['project_record_id'] . '/edit') }}" >Project</a></li>
+					<li class=""><a class="abut" href="{{ url('project_info/'. $tender['project_record_id'] . '/edit') }}" >Project</a></li>
 					<li class="123"><a class="abut" >Scope</a></li>
-					<li class=""><a class="abut" >Tenders</a></li>
+					<li class=""><a class="abut" href="{{ url('tenders/'.$tender['project_record_id'].'/edit') }}">Tenders</a></li>
 					<li class="active" id="cret" ><a class="abut" ><span >Create New Tender</span></a></li>
 				</ul><br>
 			</div>

@@ -681,7 +681,7 @@
 							@if($ten->status == "Closed")
 								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a><p></p></a></td>
 								<td class="td">{{ $ten->status }}</td>
-								<td class="td">{{ $ten->start }}</td>
+								<td class="td">{{ date('d/m/Y', strtotime($ten->start)) }}</td>
 								<td class="td">{{ $ten->end }}</td>
 								<td class="td">{{ $ten->time_remaining }}</td>
 								<td class="td">{{ $ten->bids_received }}</td>
@@ -692,15 +692,20 @@
 							@elseif($ten->status == "Active")
 								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a class="edit_tender" data-tender-id="{{ $ten->tender_id }}" data-toggle="tab" href="#section4"><p>Edit Tender<br></p></a></td>
 								<td class="td">{{ $ten->status }}</td>
+<<<<<<< HEAD
 								<td class="td">{{ \Carbon\Carbon::parse($ten->start)->format('m/d/Y')}}</td>
 								<td class="td">{{ $ten->end }}</td>
+=======
+								<td class="td">{{ date('d/m/Y', strtotime($ten->start)) }}</td>
+								<td class="td">{{ date('d/m/Y', strtotime($ten->end)) }}</td>
+>>>>>>> fb6f7ec1d99f7f6fc9e9052197ed9c665d1f1c16
 								<td class="td">{{ $ten->time_remaining }}</td>
 								<td class="td"><strong style="font-size: 25px;">{{ $ten->bids_received }}</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewBid"><p>View Bids</p></a></td>
 								<td class="td">{{ $ten->queries_received }}</td>
 								<td class="td"></button><button style="width: 135px;" class="btn btn-success">Complete Tender  <br>Process</button></td>
 								{{-- </button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td> --}}
 							@else
-								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a class="edit_tender" data-tender-id="{{ $ten->tender_id }}" data-toggle="tab" href="#section4"><p>Edit Tender<br></p></a></td>
+								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a class="edit_tender" data-tender-id="{{ $ten->tender_id }}" href="{{ url('tenderget/'.$ten->tender_id.'') }}"><p>Edit Tender<br></p></a></td>
 								<td class="td">{{ $ten->status }}</td>
 								<td class="td">TBC</td>
 								<td class="td">TBC</td>
