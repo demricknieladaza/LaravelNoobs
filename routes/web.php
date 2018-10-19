@@ -82,6 +82,7 @@ Route::post('winwork/bid/{id}/save', 'BidController@saveBid');
 Route::resource('project_info','ProjectInformationController');
 Route::resource('scope', 'ScopeController');
 Route::resource('project_info_tender','TenderController');
+Route::post('questionnaire', 'TenderController@questionnaireSave');
 Route::resource('tenders', 'TenderDisplayController', [
     'names' =>[
         'index' => 'Tenders',

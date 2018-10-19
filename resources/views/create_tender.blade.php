@@ -377,6 +377,28 @@
 </script>
 <script type="text/javascript">
 	$(document).ready(function (){
+		$('#questionnaire_save').click(function(){
+			alert('QUESTIONNAIRE!');
+			var question = "";
+			jQuery("input[name='prequest[]']").each(function()
+				{	
+					question = question.concat($(this).val(),'^');
+				}
+			);
+			alert(question);
+			jQuery.ajax({
+				url: "{{ url('questionnaire') }}",
+				method: 'post',
+				data: {
+					idd: jQuery("input[name='question_id']").val(),
+					questions: question
+				},
+				success: function(result){
+					console.log(result);
+				}
+			});
+
+		});
 		$('#createservproj').click(function(){
 			// alert('adsad');
 			var serv = $('select[name="servicechoice"]').val();
@@ -1381,9 +1403,9 @@
 		<div class="col-sm-12">
 			<div class="tender-container tendnew">
 				<ul class="nav navs bid-form-nav">
-					<li class=""><a class="abut" href="{{ url('project_info/'. $tender[0]['project_record_id'] . '/edit') }}" >Project</a></li>
-					<li class="123"><a class="abut" >Scope</a></li>
-					<li class=""><a class="abut" >Tenders</a></li>
+					<li class=""><a class="abut" href="{{ url('project_info/'. $tender['project_record_id'] . '/edit') }}" >Project</a></li>
+					<li class="123"><a class="abut">Scope</a></li>
+					<li class=""><a class="abut"  href="{{ url('tenders/'.$tender['project_record_id'].'/edit') }}">Tenders</a></li>
 					<li class="active" id="cret" ><a class="abut" ><span >Create New Tender</span></a></li>
 				</ul><br>
 			</div>
@@ -1398,6 +1420,7 @@
 		    				<div class="tender-container" id="mama">
 		    					<ul class="nav bid-form-nav">
 									<h3 data-toggle="modal" data-target="#selectServe" data-id="0" style="margin-bottom: 10px; margin-top: 0;padding: 15px;border: 3px solid grey;border-radius: 6px;text-align: center;" id="serveprojtitle" class="header-title animate-pop-in">
+										{{ $tender->services }}
 									</h3>
 									<input type="hidden" name="" id="tendid">
 		    						<li class="active"><a data-toggle="tab" href="#section01">Pre-Qualification Questionnaire</a></li>
@@ -1419,12 +1442,14 @@
 		    									
 		    								</ul>
 		    								<div class="form-group">
-		    									<input class="form-control" type="" name="quest">
+												<input class="form-control" type="" name="quest">
+												<input type="hidden" name="question_id" id="" value="{{ $tender->tender_id }}">
 		    								</div>
 		    								<div class="form-group">
-		    									<button class="btn" onclick="addprequest()" style="background: rgba(254,114,53,1);color: white;width: 100px;">Add</button>
+		    									<button class="btn" onclick="addprequest()" style="background: rgba(254,114,53,1);color: white;width: 100px;">Add</button> <button type="button" class="btn btn-primary" id="questionnaire_save">Save</button>
 		    								</div>
-		    							</div>
+										</div>
+										
 		    							
 		    						</div>	
 		    						

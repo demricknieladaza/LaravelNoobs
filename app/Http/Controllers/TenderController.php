@@ -29,6 +29,7 @@ use App\TenderDesignConsiderations;
 use App\TenderScopeAdvise;
 use App\WinWorkData;
 use App\AddedDeliverables;
+use App\TenderPreQualificationQuestionnaire;
 
 
 class TenderController extends Controller
@@ -681,6 +682,22 @@ class TenderController extends Controller
 
         return('SUCCESS!');
 
+    }
+
+    public function questionnaireSave(Request $request){
+        
+        $data = $request->questions;
+        $ques = new TenderPreQualificationQuestionnaire;
+        $ques->tender_id = $request->get('idd');
+        $ques->question = $data;
+        $ques->save();
+
+        // $ques = new TenderPreQualificationQuestionnaire;
+        // $ques->tender_id = 180;
+        // $ques->question = 'WILKINS';
+        // $ques->save();
+
+        return 'SAVED!!!';
     }
 
     public function tenderQualityStore(Request $request){
