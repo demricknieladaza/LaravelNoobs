@@ -1005,10 +1005,20 @@
 <script>
 	$(document).ready(function(){
 		$(".date").datepicker( {
-			    format: "mm-yyyy",
-			    viewMode: "months", 
-			    minViewMode: "months"
-			});
+		    format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+		});
+
+		$('.addbutton').click(function(){
+			$('#addDeliverables').modal('toggle');
+		});
+		$('.addbuttonMeet').click(function(){
+			$('#addMeetings').modal('toggle');
+		});
+		$('.addbuttonDes').click(function(){
+			$('#addDesign').modal('toggle');
+		});
 	});
 		
 	</script>
@@ -1038,17 +1048,63 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 	    var max_fields      = 10; //maximum input boxes allowed
-	    var wrapper         = $("#addedsig"); //Fields wrapper
-	    var add_button      = $("#addsig"); //Add button ID
+	    var wrapper         = $("#addedinsur"); //Fields wrapper
+	    var add_button      = $("#addinsur"); //Add button ID
 	    
 	    var x = 1; //initlal text box count
-	    $(add_button).click(function(e){ //on add input button click
-	        e.preventDefault();
+	    $(add_button).click(function(){ //on add input button click
+
 	        if(x < max_fields){ //max input box allowed
 	            x++; //text box increment
-	            $(wrapper).append('<div><div class="form-group"><input type="text" placeholder="Enter Document Title" class="form-control" name="documents_for_signature[]"></div><div class="form-group"><input type="file" class="form-control" name="signature_files[]"></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
+	            $(wrapper).append('<div><div class="row" style="padding-bottom:10px;"><div class="col-sm-4"></div><div class="col-sm-8"><div class="form-group"><div class="col-sm-6" style="padding:0;"><select name="insurance_name[]" id="insurdrpdwn" class="form-control" ><option value="" disabled selected>Select insurance</option>'+yir+'</select></div><div class="col-sm-6" style="padding:0;padding-left: 15px;"><input type="number" placeholder="Insurance Level" name="insurance_level[]" class="form-control"></div></div></div></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
 	        }
 	    });
+	    
+	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+	        e.preventDefault(); $(this).parent('div').remove(); x--;
+	    });
+	});
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+	    var max_fields      = 10; //maximum input boxes allowed
+	    var wrapper         = $("#addedDeliv"); //Fields wrapper
+	    var add_button      = $("#addDeliv"); //Add button ID
+	    
+	    
+	    var x = 1; //initlal text box count
+	    $('#addDeliv').click(function(){ //on add input button click
+	        // e.preventDefault();
+	        var named = $("input[name='deliverable']").val();
+	        if(x < max_fields){ //max input box allowed
+	            x++; //text box increment
+	            $('#addDeliverables').modal('toggle');
+	            $("#addedDeliv").append('<tr><td class="zui-sticky-col2"><input type="text" name="addname" value="'+named+'"></td><td class="td "><textarea class="hayt" name="details" placeholder="Enter details here"></textarea></td><td class="td"><div class="col-sm-12"><div class="col-sm-3 form-check"><label><input type="checkbox" name="raci[]" value="R"><span class="label-text">R</span></label></div><div class="col-sm-3 form-check"><label><input type="checkbox" name="raci[]" value="A"><span class="label-text">A</span></label></div><div class="col-sm-3 form-check"><label><input type="checkbox" name="raci[]" value="C"><span class="label-text">C</span></label></div><div class="col-sm-3 form-check"><label><input type="checkbox" name="raci[]" value="I"><span class="label-text">I</span></label></div></div></td><td class="td"><div c=lass="form-check"><label><input type="checkbox" name="num[]" value="0"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="num[]" value="1"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="num[]" value="2"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="num[]" value="3"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="num[]" value="4"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="num[]" value="5"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="num[]" value="6"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="num[]" value="7"><span class="label-text"></span></label></div></td></tr>'); //add input box
+	        }
+	    });
+
+	    $('#addMeet').click(function(){ //on add input button click
+	        // e.preventDefault();
+	        var named = $("input[name='meeting']").val();
+	        if(x < max_fields){ //max input box allowed
+	            x++; //text box increment
+	            $('#addMeetings').modal('toggle');
+	            $("#addedmeet").append('<tr><td class="zui-sticky-col3"><input type="text" name="pre_app_name[]" value="'+named+'"></td><td class="td "><textarea class="hayt3" name="purpose[]" placeholder="Enter details here"></textarea></td><td class="td"><textarea class="hayt3" name="attendees[]" placeholder="Enter details here"></textarea></td><td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name="assumed_duration[]"></td><td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name="reoccurence[]"></td><td class="td"><div class="form-check"><label><input type="checkbox" name="arrange[]" value="Arrange"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="attend[]" value="Attend"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="minute[]" value="Minute"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="0"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="1"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="2"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="3"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="4"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="5"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="6"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="7"><span class="label-text"></span></label></div></td></tr>'); //add input box
+	        }
+	    });
+
+	    $('#addDes').click(function(){ //on add input button click
+	        // e.preventDefault();
+	        var details = $("#desi").val();
+	        if(x < max_fields){ //max input box allowed
+	            x++; //text box increment
+	            $('#addDesign').modal('toggle');
+	            $("#addedDesign").append('<tr><td class="zui-sticky-col4"><textarea class="hayt4" name="questionname[]">'+details+'</textarea></td><td class="td "><textarea class="hayt4" name="question[]" placeholder="Enter details here"></textarea></td></tr>'); //add input box
+	        }
+	    });
+
+
 	    
 	    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
 	        e.preventDefault(); $(this).parent('div').remove(); x--;
@@ -1090,6 +1146,69 @@
 	        </div>
 		  </div>
 		  {!! Form::close() !!}   
+	    </div>
+	</div>
+	<div class="modal fade" id="addDeliverables" role="dialog" tabindex="-1">
+	    <div class="modal-dialog">
+		  <!-- Modal content-->
+	      <div class="modal-content" style="top: 83px;">
+	        <div class="modal-header" style="border-top-left-radius: 6px;border-top-right-radius: 6px;">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">
+	          </h4>
+	        </div>
+	        <div class="modal-body">
+	        	<div class="form-group">
+	        		<label>Deliverable</label>
+	        		<input type="text" class="form-control deliverable" name="deliverable">
+	        	</div>
+	        </div>
+	        <div class="modal-footer" style="text-align: center;">
+	          <button type="button" class="btn btn-primary" id="addDeliv" >Add</button>
+	        </div>
+		  </div> 
+	    </div>
+	</div>
+	<div class="modal fade" id="addMeetings" role="dialog" tabindex="-1">
+	    <div class="modal-dialog">
+		  <!-- Modal content-->
+	      <div class="modal-content" style="top: 83px;">
+	        <div class="modal-header" style="border-top-left-radius: 6px;border-top-right-radius: 6px;">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">
+	          </h4>
+	        </div>
+	        <div class="modal-body">
+	        	<div class="form-group">
+	        		<label>Meeting</label>
+	        		<input type="text" class="form-control" name="meeting">
+	        	</div>
+	        </div>
+	        <div class="modal-footer" style="text-align: center;">
+	          <button type="button" class="btn btn-primary" id="addMeet" >Add</button>
+	        </div>
+		  </div> 
+	    </div>
+	</div>
+	<div class="modal fade" id="addDesign" role="dialog" tabindex="-1">
+	    <div class="modal-dialog">
+		  <!-- Modal content-->
+	      <div class="modal-content" style="top: 83px;">
+	        <div class="modal-header" style="border-top-left-radius: 6px;border-top-right-radius: 6px;">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">
+	          </h4>
+	        </div>
+	        <div class="modal-body">
+	        	<div class="form-group">
+	        		<label>Design</label>
+	        		<textarea class="hayt4" id="desi" name="design" placeholder="Enter details here"></textarea>
+	        	</div>
+	        </div>
+	        <div class="modal-footer" style="text-align: center;">
+	          <button type="button" class="btn btn-primary" id="addDes" >Add</button>
+	        </div>
+		  </div> 
 	    </div>
 	</div>
  <div class="modal fade" id="myModal2" role="dialog" tabindex="-1">
@@ -1215,7 +1334,7 @@
 		    						                    <th>7</th>
 		    						                </tr>
 		    						            </thead>
-		    						            <tbody>
+		    						            <tbody id="addedDeliv">
 		    						                <tr>
 		    						                    <td class="zui-sticky-col2">Strategic Brief</td>
 		    						                    <td class="td "><textarea class="hayt" name="strategic_details" placeholder="Enter details here"></textarea></td>
@@ -2145,6 +2264,13 @@
 		    						        </table>
 		    						    </div>
 		    						</div>
+		    						<div class="col-sm-12">
+		    							<div class="row">
+		    								<div class="form-group">
+		    									<button class="btn addbutton" >Add</button>
+		    								</div>
+		    							</div>
+		    						</div>
 		    						<br>
 		    						<br>
 		    						<!-- <div class="col-sm-12">
@@ -2181,7 +2307,7 @@
 		    						                    <th>7</th>
 		    						                </tr>
 		    						            </thead>
-		    						            <tbody>
+		    						            <tbody id="addedmeet">
 		    						                <tr>
 		    						                    <td class="zui-sticky-col3">Pre-Application<br> Meetings</td>
 		    						                    <td class="td "><textarea class="hayt3" name="pre_app_purpose" placeholder="Enter details here"></textarea></td>
@@ -2522,6 +2648,13 @@
 		    						        </table>
 		    						    </div>
 		    						</div>
+		    						<div class="col-sm-12">
+		    							<div class="row">
+		    								<div class="form-group">
+		    									<button class="btn addbuttonMeet">Add</button>
+		    								</div>
+		    							</div>
+		    						</div>
 
 		    						<br>
 		    						<br>
@@ -2535,7 +2668,7 @@
 		    						                    <th style="width: 500px; max-width: 500px; min-width: 500px;">Applies to</th>
 		    						                </tr>
 		    						            </thead>
-		    						            <tbody>
+		    						            <tbody id="addedDesign">
 		    						                <tr>
 		    						                    <td class="zui-sticky-col4">Cost, programme, quality, health & safety during construction and<br> operation, functionality, buildability, operation and maintenance.</td>
 		    						                    <td class="td "><textarea class="hayt4" name="question_one" placeholder="Enter details here"></textarea></td>
@@ -2559,6 +2692,13 @@
 		    						            </tbody>
 		    						        </table>
 		    						    </div>
+		    						</div>
+		    						<div class="col-sm-12">
+		    							<div class="row">
+		    								<div class="form-group">
+		    									<button class="btn addbuttonDes" >Add</button>
+		    								</div>
+		    							</div>
 		    						</div>
 
 		    						<br><br>

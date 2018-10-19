@@ -1302,14 +1302,14 @@
 		    							</td>
 		    							<td>
 		    								<table width="100%" id="addedtypeofuse" class="addedtype">
-												@foreach($type as $use)
 		    									<tr class="lastitem">
-		    										<td><input type="text" name="use_name[]" class="form-control proje" value="{{ $use->use_name }}" placeholder="Residential" readonly></td>&nbsp
-		    										<td><input type="text" name="use_area[]" class="form-control proje" value="{{ $use->use_area }}" placeholder="30,000m2" readonly></td>
-		    										<td><input type="text" name="use_units[]" class="form-control proje" value="{{ $use->use_units }}" placeholder="200 units" readonly></td>
-		    										<td><input type="text" name="use_type[]" class="form-control proje" value="{{ $use->use_type }}" placeholder="High-End" readonly></td>
+													@foreach($type as $use)
+			    										<td><input type="text" name="use_name[]" class="form-control proje" value="{{ $use->use_name }}" placeholder="Residential" readonly></td>&nbsp
+			    										<td><input type="text" name="use_area[]" class="form-control proje" value="{{ $use->use_area }}" placeholder="30,000m2" readonly></td>
+			    										<td><input type="text" name="use_units[]" class="form-control proje" value="{{ $use->use_units }}" placeholder="200 units" readonly></td>
+			    										<td><input type="text" name="use_type[]" class="form-control proje" value="{{ $use->use_type }}" placeholder="High-End" readonly></td>
+													@endforeach
 												</tr>
-												@endforeach
 
 		    									<tr>
 		    										<td>Total</td>
@@ -5092,7 +5092,7 @@ $('a[href^="#"]').on('click', function(event) {
 	        e.preventDefault(); $(this).parent('div').remove(); x--;
 	    });
 
-	    $('#addtypeofuse').click(function(e){
+	    $('#addtypeofuse').click(function(e){ 
 	    	// e.preventDefault();
 	    	$('.addedtype tr:last').before('<a href="#" class="remove_field">x</a><tr><td><input type="text" name="use_name[]" class="form-control proje" placeholder="Residential" ></td>&nbsp<td><input type="text" name="use_area[]" class="form-control proje" placeholder="30,000m2" ></td><td><input type="text" name="use_units[]" class="form-control proje" placeholder="200 units" ></td><td><input type="text" name="use_type[]" class="form-control proje" placeholder="High-End" ></td></tr>');
 	    });
