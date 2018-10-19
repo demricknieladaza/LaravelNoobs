@@ -373,17 +373,18 @@
 					services: jQuery('#tendserve').val(),
 					id: {{ $project->project_record_id }},
 					idd: jQuery('#idd').val()
-
 				},
 				success: function(result){
-					alert(result.services['tender_id']);
+					// alert(result.services['tender_id']);
+					var tid = '{{ url('tenderget') }}'+'/'+result.services['tender_id'];
+					// alert(tid);
 					// jQuery('.alert').show();
 					// jQuery('.alert').html(result.services);
-					$('h3#serveprojtitle').attr('data-id',result.services['tender_id']);	
+					// $('h3#serveprojtitle').attr('data-id',result.services['tender_id']);	
 					// $('#tendid').val(result.services['tender_id']);
-					$('tbody#tenderload').append('<tr><td style="text-align: left;font-weight:bolder; " calss="td">'+result.services['services']+'<a class="edit_tender" data-toggle="tab" href="#section4" aria-expanded="true" data-tender-id="'+result.services['tender_id']+'"><p>Edit Tender</p></a></td><td class="td">Drafted</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td"></td><tr>');
+					// $('tbody#tenderload').append('<tr><td style="text-align: left;font-weight:bolder; " calss="td">'+result.services['services']+'<a class="edit_tender" data-toggle="tab" href="#section4" aria-expanded="true" data-tender-id="'+result.services['tender_id']+'"><p>Edit Tender</p></a></td><td class="td">Drafted</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td">TBC</td><td class="td"></td><tr>');
 					console.log(result.services);
-					 
+					window.location.href = tid;
 					// alert(result.services);
 				}
 			});
@@ -1082,7 +1083,7 @@
 				  <input type="input" name="" id="idd" value="0">
 	        </div>
 	        <div class="modal-footer" style="text-align: center;">
-	          <button type="button" class="btn btn-primary" data-dismiss="modal"  id="createservproj" >Create</button>
+	          <button type="button" class="btn btn-primary" data-backdrop="false" data-dismiss="modal"  id="createservproj" >Create</button>
 	          <button type="button" class="btn btn-primary butgrey">Go Back</button>
 	        </div>
 	      </div>   
