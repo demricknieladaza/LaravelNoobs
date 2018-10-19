@@ -693,8 +693,13 @@
 								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a class="edit_tender" data-tender-id="{{ $ten->tender_id }}" data-toggle="tab" href="#section4"><p>Edit Tender<br></p></a></td>
 								<td class="td">{{ $ten->status }}</td>
 <<<<<<< HEAD
+<<<<<<< HEAD
 								<td class="td">{{ \Carbon\Carbon::parse($ten->start)->format('m/d/Y')}}</td>
 								<td class="td">{{ $ten->end }}</td>
+=======
+								<td class="td">{{ date('d/m/Y', strtotime($ten->start)) }}</td>
+								<td class="td">{{ date('d/m/Y', strtotime($ten->end)) }}</td>
+>>>>>>> fb6f7ec1d99f7f6fc9e9052197ed9c665d1f1c16
 =======
 								<td class="td">{{ date('d/m/Y', strtotime($ten->start)) }}</td>
 								<td class="td">{{ date('d/m/Y', strtotime($ten->end)) }}</td>
