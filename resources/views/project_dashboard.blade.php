@@ -5,6 +5,11 @@
 	thead.thead tr th {
 	  vertical-align: middle;
 	}
+
+	.datepicker {
+		background: white;
+	}
+
 	.widt th {
 		width: 80px;
 	}
