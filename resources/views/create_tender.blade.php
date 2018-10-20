@@ -1483,8 +1483,13 @@
 				<ul class="nav navs bid-form-nav">
 					<li class=""><a class="abut" href="{{ url('project_info/'. $tender['project_record_id'] . '/edit') }}" >Project</a></li>
 <<<<<<< HEAD
+<<<<<<< HEAD
 					<li class="123"><a class="abut" >Scope</a></li>
 					<li class=""><a class="abut" href="{{ url('tenders/'. $tender['project_record_id'] . '/edit') }}" >Tenders</a></li>
+=======
+					<li class="123"><a class="abut">Scope</a></li>
+					<li class=""><a class="abut"  href="{{ url('tenders/'.$tender['project_record_id'].'/edit') }}">Tenders</a></li>
+>>>>>>> 316ce37470666baefab655404328292ead69a15f
 =======
 					<li class="123"><a class="abut">Scope</a></li>
 					<li class=""><a class="abut"  href="{{ url('tenders/'.$tender['project_record_id'].'/edit') }}">Tenders</a></li>
