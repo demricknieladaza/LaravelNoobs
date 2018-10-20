@@ -377,6 +377,28 @@
 </script>
 <script type="text/javascript">
 	$(document).ready(function (){
+		$('#questionnaire_save').click(function(){
+			alert('QUESTIONNAIRE!');
+			var question = "";
+			jQuery("input[name='prequest[]']").each(function()
+				{	
+					question = question.concat($(this).val(),'^');
+				}
+			);
+			alert(question);
+			jQuery.ajax({
+				url: "{{ url('questionnaire') }}",
+				method: 'post',
+				data: {
+					idd: jQuery("input[name='question_id']").val(),
+					questions: question
+				},
+				success: function(result){
+					console.log(result);
+				}
+			});
+
+		});
 		$('#createservproj').click(function(){
 			// alert('adsad');
 			var serv = $('select[name="servicechoice"]').val();
@@ -1013,12 +1035,12 @@
 		// $('.addbutton').click(function(){
 		// 	$('#addDeliverables').modal('toggle');
 		// });
-		$('.addbuttonMeet').click(function(){
-			$('#addMeetings').modal('toggle');
-		});
-		$('.addbuttonDes').click(function(){
-			$('#addDesign').modal('toggle');
-		});
+		// $('.addbuttonMeet').click(function(){
+		// 	$('#addMeetings').modal('toggle');
+		// });
+		// $('.addbuttonDes').click(function(){
+		// 	$('#addDesign').modal('toggle');
+		// });
 	});
 		
 	</script>
@@ -1084,24 +1106,21 @@
 	        //     $('#addDeliverables').modal('toggle');
 	        //     $("#addedDeliv").append(''); //add input box
 	        // }
-	          var $this = $(this),
-	              $toElement      = $this.attr('data-scroll-to'),
-	              $focusElement   = $this.attr('data-scroll-focus'),
-	              $offset         = $this.attr('data-scroll-offset') * 1 || 0,
-	              $speed          = $this.attr('data-scroll-speed') * 1 || 500;
+	        var $this = $(this),
+	            $toElement      = $this.attr('data-scroll-to'),
+	            $focusElement   = $this.attr('data-scroll-focus'),
+	            $offset         = $this.attr('data-scroll-offset') * 1 || 0,
+	            $speed          = $this.attr('data-scroll-speed') * 1 || 500;
 
-	          var objDiv = document.getElementById("myscrol");
-	               objDiv.scrollTop = objDiv.scrollHeight;
-	    		});
+	        var objDiv = document.getElementById("myscrol");
+	        objDiv.scrollTop = objDiv.scrollHeight;
+	    });
 
-	    $('#addMeet').click(function(){ //on add input button click
-	        // e.preventDefault();
-	        var named = $("input[name='meeting']").val();
-	        if(x < max_fields){ //max input box allowed
-	            x++; //text box increment
-	            $('#addMeetings').modal('toggle');
-	            $("#addedmeet").append(''); //add input box
-	        }
+	    $('.addbuttonMeet').click(function(){ 
+	        $("#meetclone").clone().insertAfter("tbody#addedmeet tr:last");
+
+	        var objDiv = document.getElementById("myscrol2");
+	        objDiv.scrollTop = objDiv.scrollHeight;
 	    });
 
 	    $('#addDes').click(function(){ //on add input button click
@@ -1295,9 +1314,90 @@
 	        	<div class="form-group">
 	        		<label>Meeting</label>
 	        		<input type="text" class="form-control" name="meeting">
-	        		<div id="meetclone">
-	        			<tr><td class="zui-sticky-col3"><input type="text" name="pre_app_name" value="'+named+'"></td><td class="td "><textarea class="hayt3" name="purpose" placeholder="Enter details here"></textarea></td><td class="td"><textarea class="hayt3" name="attendees" placeholder="Enter details here"></textarea></td><td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name="assumed_duration[]"></td><td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name="reoccurence[]"></td><td class="td"><div class="form-check"><label><input type="checkbox" name="arrange[]" value="Arrange"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="attend[]" value="Attend"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="minute[]" value="Minute"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="0"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="1"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="2"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="3"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="4"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="5"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="6"><span class="label-text"></span></label></div></td><td class="td"><div class="form-check"><label><input type="checkbox" name="pre_app_num[]" value="7"><span class="label-text"></span></label></div></td></tr>
-	        		</div>
+	        			<tr id="meetclone">
+	        				<td class="zui-sticky-col3"><textarea class="hayt3" name="pre_app_name" placeholder="Enter details here"></textarea></td>
+	        				<td class="td "><textarea class="hayt3" name="pre_app_purpose" placeholder="Enter details here"></textarea></td>
+	        				<td class="td"><textarea class="hayt3" name="pre_app_attendees" placeholder="Enter details here"></textarea></td>
+	        				<td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name="pre_app_assumed_duration"></td>
+	        				<td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" id="" name="pre_app_reoccurence"></td>
+	        				<td class="td">
+	        					<div class="form-check">
+	        						<label>
+	        							<input type="checkbox" name="pre_app_choice[]" value="Arrange"><span class="label-text"></span>
+	        						</label>
+	        					</div>
+	        				</td>
+	        				<td class="td">
+	        					<div class="form-check">
+	        						<label>
+	        							<input type="checkbox" name="pre_app_choice[]" value="Attend"><span class="label-text"></span>
+	        						</label>
+	        					</div>
+	        				</td>
+	        				<td class="td">
+	        					<div class="form-check">
+	        						<label>
+	        							<input type="checkbox" name="pre_app_choice[]" value="Minute"><span class="label-text"></span>
+	        						</label>
+	        					</div>
+	        				</td>
+	        				<td class="td">
+	        					<div class="form-check">
+	        						<label>
+	        							<input type="checkbox" name="pre_app_num[]" value="0"><span class="label-text"></span>
+	        						</label>
+	        					</div>
+	        				</td>
+	        				<td class="td">
+	        					<div class="form-check">
+	        						<label>
+	        							<input type="checkbox" name="pre_app_num[]" value="1"><span class="label-text"></span>
+	        						</label>
+	        					</div>
+	        				</td>
+	        				<td class="td">
+	        					<div class="form-check">
+	        						<label>
+	        							<input type="checkbox" name="pre_app_num[]" value="2"><span class="label-text"></span>
+	        						</label>
+	        					</div>
+	        				</td>
+	        				<td class="td">
+	        					<div class="form-check">
+	        						<label>
+	        							<input type="checkbox" name="pre_app_num[]" value="3"><span class="label-text"></span>
+	        						</label>
+	        					</div>
+	        				</td>
+	        				<td class="td">
+	        					<div class="form-check">
+	        						<label>
+	        							<input type="checkbox" name="pre_app_num[]" value="4"><span class="label-text"></span>
+	        						</label>
+	        					</div>
+	        				</td>
+	        				<td class="td">
+	        					<div class="form-check">
+	        						<label>
+	        							<input type="checkbox" name="pre_app_num[]" value="5"><span class="label-text"></span>
+	        						</label>
+	        					</div>
+	        				</td>
+	        				<td class="td">
+	        					<div class="form-check">
+	        						<label>
+	        							<input type="checkbox" name="pre_app_num[]" value="6"><span class="label-text"></span>
+	        						</label>
+	        					</div>
+	        				</td>
+	        				<td class="td">
+	        					<div class="form-check">
+	        						<label>
+	        							<input type="checkbox" name="pre_app_num[]" value="7"><span class="label-text"></span>
+	        						</label>
+	        					</div>
+	        				</td>
+	        			</tr>
 	        	</div>
 	        </div>
 	        <div class="modal-footer" style="text-align: center;">
@@ -1381,9 +1481,14 @@
 		<div class="col-sm-12">
 			<div class="tender-container tendnew">
 				<ul class="nav navs bid-form-nav">
-					<li class=""><a class="abut" href="{{ url('project_info/'. $tender[0]['project_record_id'] . '/edit') }}" >Project</a></li>
+					<li class=""><a class="abut" href="{{ url('project_info/'. $tender['project_record_id'] . '/edit') }}" >Project</a></li>
+<<<<<<< HEAD
 					<li class="123"><a class="abut" >Scope</a></li>
-					<li class=""><a class="abut" >Tenders</a></li>
+					<li class=""><a class="abut" href="{{ url('tenders/'. $tender['project_record_id'] . '/edit') }}" >Tenders</a></li>
+=======
+					<li class="123"><a class="abut">Scope</a></li>
+					<li class=""><a class="abut"  href="{{ url('tenders/'.$tender['project_record_id'].'/edit') }}">Tenders</a></li>
+>>>>>>> 316ce37470666baefab655404328292ead69a15f
 					<li class="active" id="cret" ><a class="abut" ><span >Create New Tender</span></a></li>
 				</ul><br>
 			</div>
@@ -1398,6 +1503,7 @@
 		    				<div class="tender-container" id="mama">
 		    					<ul class="nav bid-form-nav">
 									<h3 data-toggle="modal" data-target="#selectServe" data-id="0" style="margin-bottom: 10px; margin-top: 0;padding: 15px;border: 3px solid grey;border-radius: 6px;text-align: center;" id="serveprojtitle" class="header-title animate-pop-in">
+										{{ $tender->services }}
 									</h3>
 									<input type="hidden" name="" id="tendid">
 		    						<li class="active"><a data-toggle="tab" href="#section01">Pre-Qualification Questionnaire</a></li>
@@ -1419,12 +1525,14 @@
 		    									
 		    								</ul>
 		    								<div class="form-group">
-		    									<input class="form-control" type="" name="quest">
+												<input class="form-control" type="" name="quest">
+												<input type="hidden" name="question_id" id="" value="{{ $tender->tender_id }}">
 		    								</div>
 		    								<div class="form-group">
-		    									<button class="btn" onclick="addprequest()" style="background: rgba(254,114,53,1);color: white;width: 100px;">Add</button>
+		    									<button class="btn" onclick="addprequest()" style="background: rgba(254,114,53,1);color: white;width: 100px;">Add</button> <button type="button" class="btn btn-primary" id="questionnaire_save">Save</button>
 		    								</div>
-		    							</div>
+										</div>
+										
 		    							
 		    						</div>	
 		    						
@@ -2402,8 +2510,8 @@
 						            		<h4>RIBA Stages</h4>
 						            	</div>
 		    						</div> -->
-		    						<div class="zui-wrapper3" >
-		    						    <div class="zui-scroller3" id="myscrol2">
+		    						<div class="zui-wrapper3" id="myscrol2" >
+		    						    <div class="zui-scroller3" >
 		    						        <table class="zui-table3">
 		    						            <thead>
 		    						                <tr>
@@ -2427,7 +2535,7 @@
 		    						                </tr>
 		    						            </thead>
 		    						            <tbody id="addedmeet">
-		    						                <tr>
+		    						                <tr class="addedmeet">
 		    						                    <td class="zui-sticky-col3">Pre-Application<br> Meetings</td>
 		    						                    <td class="td "><textarea class="hayt3" name="pre_app_purpose" placeholder="Enter details here"></textarea></td>
 		    						                    <td class="td"><textarea class="hayt3" name="pre_app_attendees" placeholder="Enter details here"></textarea></td>
@@ -2511,7 +2619,7 @@
 		    						                    	</div>
 		    						                    </td>
 		    						                </tr>
-		    						                <tr>
+		    						                <tr class="addedmeet">
 		    						                    <td class="zui-sticky-col3">Site Visits</td>
 		    						                    <td class="td "><textarea class="hayt3" name="site_visits_purpose" placeholder="Enter details here"></textarea></td>
 		    						                    <td class="td"><textarea class="hayt3" name="site_visits_attendees" placeholder="Enter details here"></textarea></td>
@@ -2595,7 +2703,7 @@
 		    						                    	</div>
 		    						                    </td>
 		    						                </tr>
-		    						                <tr>
+		    						                <tr class="addedmeet">
 		    						                    <td class="zui-sticky-col3">Site/Project Meetings<br>(RIBA Stage 4/5)</td>
 		    						                    <td class="td "><textarea class="hayt3" name="riba_purpose" placeholder="Enter details here"></textarea></td>
 		    						                    <td class="td"><textarea class="hayt3" name="riba_attendees" placeholder="Enter details here"></textarea></td>
@@ -2679,7 +2787,7 @@
 		    						                    	</div>
 		    						                    </td>
 		    						                </tr>
-		    						                <tr>
+		    						                <tr class="addedmeet">
 		    						                    <td class="zui-sticky-col3">SC / PC Site<br> Inspection</td>
 		    						                    <td class="td "><textarea class="hayt3" name="inspection_purpose" placeholder="Enter details here"></textarea></td>
 		    						                    <td class="td"><textarea class="hayt3" name="inspection_attendees" placeholder="Enter details here"></textarea></td>
@@ -2770,7 +2878,10 @@
 		    						<div class="col-sm-12">
 		    							<div class="row">
 		    								<div class="form-group">
-		    									<button class="btn addbuttonMeet">Add</button>
+		    									<button class="btn addbuttonMeet" data-scroll-to="#deliv"
+        data-scroll-focus="#delivname"
+        data-scroll-speed="700"
+        data-scroll-offset="200">Add</button>
 		    								</div>
 		    							</div>
 		    						</div>
