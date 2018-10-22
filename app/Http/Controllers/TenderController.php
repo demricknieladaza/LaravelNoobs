@@ -31,6 +31,7 @@ use App\WinWorkData;
 use App\AddedDeliverables;
 use App\AddedMeetings;
 use App\AddedDesign;
+use App\AddedAdvise;
 use App\TenderPreQualificationQuestionnaire;
 
 
@@ -168,7 +169,7 @@ class TenderController extends Controller
 
     }
 
-    public function gamitonbi($idd, $deliverables, $meeting, $design){
+    public function gamitonbi($idd, $deliverables, $meeting, $design, $advise){
         if($deliverables){
             foreach ($deliverables as $del) {
                 if($del['edit'] == 'no'){
@@ -193,7 +194,7 @@ class TenderController extends Controller
                     $added->attendees = $del['attendees'];
                     $added->duration = $del['duration'];
                     $added->reoccurence = $del['reoccurence'];
-                    $added->arrange = $del['arrange'];
+                    $added->arrange = $del['arrange'];  
                     $added->num = $del['number'];
                     $added->save();
                 }
@@ -207,6 +208,18 @@ class TenderController extends Controller
                     $added->tender_id = $idd;
                     $added->name = $del['name'];
                     $added->question = $del['question'];
+                    $added->save();
+                }
+            }
+        }
+
+        if($advise){
+            foreach ($advise as $del) {
+                if($del['edit'] == 'no'){
+                    $added = new AddedAdvise;
+                    $added->tender_id = $idd;
+                    $added->name = $del['name'];
+                    $added->num = $del['number'];
                     $added->save();
                 }
             }
@@ -227,7 +240,7 @@ class TenderController extends Controller
         $execution = 'Project Execution Plan';
         $proposal = 'Design Proposals';
 
-        $this->gamitonbi($request->get('idd'), $request->get('addeddeliv'), $request->get('addedmeet'),  $request->get('addeddes'));
+        $this->gamitonbi($request->get('idd'), $request->get('addeddeliv'), $request->get('addedmeet'),  $request->get('addeddes'), $request->get('addedad'));
 
 
         $deliverables = new TenderScopeDeliverables;

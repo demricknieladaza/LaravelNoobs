@@ -957,7 +957,29 @@
 			    darray.push(parr);
 
 			});
-			console.log(darray);
+
+			var aarray = [];
+			$("table tbody#addedadvise tr#adviseclone").each(function () {
+				var rac = [];
+
+				$(this).find(".advisenum:checked").each(function() {
+					rac.push($(this).val());
+				});
+				
+				/* we join the array separated by the comma */
+				var selectedrac;
+				selectedrac = rac.join(',') ;
+
+			    var parr = {
+			    	name : $(this).find('.name').val(),
+			    	number : selectedrac,
+			    	edit : $(this).attr('data-edit')
+			    };
+
+			    aarray.push(parr);
+
+			});
+			console.log(aarray);
 			jQuery.ajax({
 				url:"{{ url('tender_deliverables_save') }}",
 				method: 'post',
@@ -966,6 +988,7 @@
 					addeddeliv: xarray,
 					addedmeet: yarray,
 					addeddes: darray,
+					addedad: aarray,
 					strategic_details: jQuery("textarea[name='strategic_details']").val(),
 					pprogramme_details: jQuery("textarea[name='pprogramme_details']").val(),
 					feasibility_details: jQuery("textarea[name='feasibility_details']").val(),
@@ -1220,6 +1243,16 @@
 	        
 	    });
 
+	    $('.addadvise').click(function(){ //on add input button click
+	        // e.preventDefault();
+
+	        $("#adviseclone").clone().insertAfter("tbody#addedadvise tr:last");
+
+	        var objDiv = document.getElementById("myscrol4");
+	        objDiv.scrollTop = objDiv.scrollHeight;
+	        
+	    });
+
 
 
 	    
@@ -1388,6 +1421,7 @@
 		  </div> 
 	    </div>
 	</div>
+
 	<div class="modal fade" id="addMeetings" role="dialog" tabindex="-1">
 	    <div class="modal-dialog">
 		  <!-- Modal content-->
@@ -1521,6 +1555,94 @@
 	        				<tr id="desclone" data-edit="no">
 	        				    <td class="zui-sticky-col4"><textarea class="hayt4 name" name="question_name" placeholder="Enter details here"></textarea></td>
 	        				    <td class="td "><textarea class="hayt4 question" name="question_one" placeholder="Enter details here"></textarea></td>
+	        				</tr>
+	        			</tbody>
+	        		</table>
+	        	</div>
+	        </div>
+	        <div class="modal-footer" style="text-align: center;">
+	          <button type="button" class="btn btn-primary" id="addDes" >Add</button>
+	        </div>
+		  </div> 
+	    </div>
+	</div>
+
+	<div class="modal fade" id="addAdvise" role="dialog" tabindex="-1">
+	    <div class="modal-dialog">
+		  <!-- Modal content-->
+	      <div class="modal-content" style="top: 83px;">
+	        <div class="modal-header" style="border-top-left-radius: 6px;border-top-right-radius: 6px;">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">
+	          </h4>
+	        </div>
+	        <div class="modal-body">
+	        	<div class="form-group">
+	        		<label>Design</label>
+	        		<table>
+	        			<thead>
+	        				
+	        			</thead>
+	        			<tbody>
+	        				<tr id="adviseclone" data-edit="no">
+	        				    <td class="zui-sticky-col5"><textarea class="name"  style="border-radius: 6px;
+    height: 70px;" name="question_one" placeholder="Enter details here"></textarea></td>
+	        				    <td class="td">
+	        				    	<div class="form-check">
+	        				    		<label>
+	        				    			<input type="checkbox" name="advisenum[]" class="advisenum" value="0"><span class="label-text"></span>
+	        				    		</label>
+	        				    	</div>
+	        				    </td>
+	        				    <td class="td">
+	        				    	<div class="form-check">
+	        				    		<label>
+	        				    			<input type="checkbox" name="advisenum[]" class="advisenum" value="1"><span class="label-text"></span>
+	        				    		</label>
+	        				    	</div>
+	        				    </td>
+	        				    <td class="td">
+	        				    	<div class="form-check">
+	        				    		<label>
+	        				    			<input type="checkbox" name="advisenum[]" class="advisenum" value="2"><span class="label-text"></span>
+	        				    		</label>
+	        				    	</div>
+	        				    </td>
+	        				    <td class="td">
+	        				    	<div class="form-check">
+	        				    		<label>
+	        				    			<input type="checkbox" name="advisenum[]" class="advisenum" value="3"><span class="label-text"></span>
+	        				    		</label>
+	        				    	</div>
+	        				    </td>
+	        				    <td class="td">
+	        				    	<div class="form-check">
+	        				    		<label>
+	        				    			<input type="checkbox" name="advisenum[]" class="advisenum" value="4"><span class="label-text"></span>
+	        				    		</label>
+	        				    	</div>
+	        				    </td>
+	        				    <td class="td">
+	        				    	<div class="form-check">
+	        				    		<label>
+	        				    			<input type="checkbox" name="advisenum[]" class="advisenum" value="5"><span class="label-text"></span>
+	        				    		</label>
+	        				    	</div>
+	        				    </td>
+	        				    <td class="td">
+	        				    	<div class="form-check">
+	        				    		<label>
+	        				    			<input type="checkbox" name="advisenum[]" class="advisenum" value="6"><span class="label-text"></span>
+	        				    		</label>
+	        				    	</div>
+	        				    </td>
+	        				    <td class="td">
+	        				    	<div class="form-check">
+	        				    		<label>
+	        				    			<input type="checkbox" name="advisenum[]" class="advisenum" value="7"><span class="label-text"></span>
+	        				    		</label>
+	        				    	</div>
+	        				    </td>
 	        				</tr>
 	        			</tbody>
 	        		</table>
@@ -3036,7 +3158,7 @@
 		    						<br>
 		    						<br>
 
-		    						<div class="zui-wrapper5">
+		    						<div class="zui-wrapper5" id="myscrol4">
 		    						    <div class="zui-scroller5">
 		    						        <table class="zui-table5">
 		    						            <thead>
@@ -3052,7 +3174,7 @@
 		    						                    <th>7</th>
 		    						                </tr>
 		    						            </thead>
-		    						            <tbody>
+		    						            <tbody id="addedadvise">
 		    						                <tr>
 		    						                    <td class="zui-sticky-col5">Any products or materials, specified within the guidelines<br> named in Item<span style="color: red;">???</span> , that are relevant to the project and have been found<br> to be deleterious or hazardous to health and safety.</td>
 		    						                    <td class="td">
@@ -4222,7 +4344,12 @@
 		    						        </table>
 		    						    </div>
 		    						</div>
-									<button type="button" class="btn btn-primary" id="deliverables_save">Save</button>
+		    						<div class="form-group">
+    									<button class="btn addadvise" >Add</button>
+		    						</div>
+		    						<div class="form-group">
+    									<button type="button" class="btn btn-primary" id="deliverables_save">Save</button>
+		    						</div>
 		    					</div>
 		    					<div id="section21" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Appointment</h3>
