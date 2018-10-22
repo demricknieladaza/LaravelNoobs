@@ -114,9 +114,6 @@
 	    background-color: #ffc2a7 !important;
 	}
 
-/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
-
-/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
 .hayt3{
 	border-radius: 6px;
 	height: 90px;
@@ -1123,14 +1120,14 @@
 	        objDiv.scrollTop = objDiv.scrollHeight;
 	    });
 
-	    $('#addDes').click(function(){ //on add input button click
+	    $('.addbuttonDes').click(function(){ //on add input button click
 	        // e.preventDefault();
-	        var details = $("#desi").val();
-	        if(x < max_fields){ //max input box allowed
-	            x++; //text box increment
-	            $('#addDesign').modal('toggle');
-	            $("#addedDesign").append('<tr><td class="zui-sticky-col4"><textarea class="hayt4" name="questionname[]">'+details+'</textarea></td><td class="td "><textarea class="hayt4" name="question[]" placeholder="Enter details here"></textarea></td></tr>'); //add input box
-	        }
+
+	        $("#desclone").clone().insertAfter("tbody#addedDesign tr:last");
+
+	        var objDiv = document.getElementById("myscrol3");
+	        objDiv.scrollTop = objDiv.scrollHeight;
+	        
 	    });
 
 
@@ -1314,7 +1311,12 @@
 	        	<div class="form-group">
 	        		<label>Meeting</label>
 	        		<input type="text" class="form-control" name="meeting">
-	        			<tr id="meetclone">
+	        		<table>
+	        			<thead>
+	        				
+	        			</thead>
+	        			<tbody>
+	        				<tr id="meetclone">
 	        				<td class="zui-sticky-col3"><textarea class="hayt3" name="pre_app_name" placeholder="Enter details here"></textarea></td>
 	        				<td class="td "><textarea class="hayt3" name="pre_app_purpose" placeholder="Enter details here"></textarea></td>
 	        				<td class="td"><textarea class="hayt3" name="pre_app_attendees" placeholder="Enter details here"></textarea></td>
@@ -1398,6 +1400,9 @@
 	        					</div>
 	        				</td>
 	        			</tr>
+	        			</tbody>
+	        		</table>
+	        			
 	        	</div>
 	        </div>
 	        <div class="modal-footer" style="text-align: center;">
@@ -1418,7 +1423,17 @@
 	        <div class="modal-body">
 	        	<div class="form-group">
 	        		<label>Design</label>
-	        		<textarea class="hayt4" id="desi" name="design" placeholder="Enter details here"></textarea>
+	        		<table>
+	        			<thead>
+	        				
+	        			</thead>
+	        			<tbody>
+	        				<tr id="desclone">
+	        				    <td class="zui-sticky-col4"><textarea class="hayt4" name="question_name" placeholder="Enter details here"></textarea></td>
+	        				    <td class="td "><textarea class="hayt4" name="question_one" placeholder="Enter details here"></textarea></td>
+	        				</tr>
+	        			</tbody>
+	        		</table>
 	        	</div>
 	        </div>
 	        <div class="modal-footer" style="text-align: center;">
@@ -2884,7 +2899,7 @@
 		    						<br>
 		    						<br>
 
-		    						<div class="zui-wrapper4">
+		    						<div class="zui-wrapper4" id="myscrol3">
 		    						    <div class="zui-scroller4">
 		    						        <table class="zui-table4">
 		    						            <thead>

@@ -166,6 +166,10 @@ class TenderController extends Controller
 
     }
 
+    public function gamitonbi($deliverables){
+        echo $deliverables;
+    }
+
     public function tenderScopeStore(Request $request){
         $strategic = 'Strategic Brief';
         $programme = 'Project Programme';
@@ -178,6 +182,8 @@ class TenderController extends Controller
         $handover = 'Handover Strategy';
         $execution = 'Project Execution Plan';
         $proposal = 'Design Proposals';
+
+        $this->gamitonbi();
 
 
         $deliverables = new TenderScopeDeliverables;
