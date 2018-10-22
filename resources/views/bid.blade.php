@@ -187,7 +187,25 @@
   }
 });
 </script>
-
+<script>
+	$(document).ready(function(){
+		$('#submit_query').click(function(){
+			// var idd = $('#serveprojtitle').attr('data-id');
+			jQuery.ajax({
+				url:"{{ url('tender_queries') }}",
+				method: 'post',
+				data: {
+					project_record_id: jQuery("input[name='project_record_id']").val(),
+					tender_id: jQuery("input[name='tender_id']").val(),
+					question: jQuery("textarea[name='query']").val()
+				},
+				success: function(result){
+					console.log(result);
+				}
+			});
+		});
+	});
+</script>
 <script type="text/javascript">
 	$(document).ready(function() {
   if (window.File && window.FileList && window.FileReader) {
@@ -527,7 +545,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-info" data-dismiss="modal">Go Back</button>
-						<button type="button" class="btn btn-success" style="color: #fff;background-color: #fe7235;">Submit</button>
+						<button type="button" id="submit_query" class="btn btn-success" style="color: #fff;background-color: #fe7235;">Submit</button>
 					</div>
 				</div>
 			</div>
@@ -543,7 +561,7 @@
 	          <h4 class="modal-title">Ask the Employer</h4>
 	        </div>
 	        <div class="modal-body">
-	          <textarea placeholder="Enter your query here" rows="4" cols="50" active></textarea>
+	          <textarea name="query" placeholder="Enter your query here" rows="4" cols="50" active></textarea>
 	        </div>
 	        <div class="modal-footer">
 					<!-- Button HTML (to Trigger Modal) -->

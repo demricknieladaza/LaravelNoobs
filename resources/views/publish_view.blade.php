@@ -448,6 +448,31 @@
 				}
 			});
 		});
+		$('.save_query').click(function(){
+			var id = [];
+			var response = [];
+			jQuery("input[name='query_id[]']").each(function()
+				{
+					id.push($(this).val());
+				}
+			);
+			jQuery("input[name='response[]']").each(function()
+				{
+					response.push($(this).val());
+				}
+			);
+			jQuery.ajax({
+				url: "{{ url('response_save') }}",
+				method: 'post',
+				data: {
+					id: id,
+					response: response
+				},
+				success: function(result){
+					console.log(result);
+				}
+			});
+		});
 		$('#appointment_save').click(function(){
 			var idd = $('#serveprojtitle').attr('data-id');
 			// alert($('#idd').val());
@@ -1463,23 +1488,26 @@
 		    			<div class="row">
 		    				<div class="col-sm-12 active-tenders">
 		    					<h3 >Tender Queries
-		    					<button class="btn buts save_proj1" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction1()"><i class="fa fa-save" style="font-size:15px"></i>Save</button>
+		    					<button class="btn buts save_query save_proj1" style="display: none; float:right;margin-top:-14px;"><i class="fa fa-save" style="font-size:15px"></i>Save</button>
 		    					<button class="btn buts" id="edit_proj1" onclick="myFunction1()" style="float: right;margin-top:-14px;"><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
 		    					<div class="row">	
 		    						<div class="col-sm-12">	
 		    							<table class="table table-striped table-hover tender_queries" id="a">
 		    								<tr>
-		    									<td width="10%" style="font-weight: 600;">#</td>
+		    									{{-- <td width="10%" style="font-weight: 600;">#</td> --}}
 		    									<td style="font-weight: 600;">Query</td>
 		    									<td style="font-weight: 600;">Responses</td>
 
-		    								</tr>
+											</tr>
+											@foreach($questions as $qu)
 		    								<tr>
-		    									<td>1</td>
-		    									<td>TextTextTextTextTextTextTextTextText</td>
-		    									<td><input id="respo1" type="text" name="respo1" class="form-control proje" placeholder="TextTextTextTextTextTextTextTextTextTextTextText" readonly></td>
-		    								</tr>
-		    								<tr>
+		    									{{-- <td>1</td> --}}
+												<td>{{ $qu->question }}</td>
+												<input type="hidden" name="query_id[]" value="{{ $qu->tender_query_id }}" id="">
+		    									<td><input id="respo1" type="text" name="response[]" class="form-control proje" placeholder="TextTextTextTextTextTextTextTextTextTextTextText" value="{{ $qu->response }}" readonly></td>
+											</tr>
+											@endforeach
+		    								{{-- <tr>
 		    									<td>2</td>
 		    									<td>TextTextTextTextTextTextTextTextText</td>
 		    									<td><input id="respo2" type="text" name="respo2" class="form-control proje" placeholder="TextTextTextTextTextTextTextTextTextTextTextText" readonly></td>
@@ -1488,7 +1516,7 @@
 		    									<td>3</td>
 		    									<td>TextTextTextTextTextTextTextTextText</td>
 		    									<td><input id="respo3" type="text" name="respo3" class="form-control proje" placeholder="TextTextTextTextTextTextTextTextTextTextTextText" readonly></td>
-		    								</tr>
+		    								</tr> --}}
 		    							</table>
 		    						</div>
 		    					</div>

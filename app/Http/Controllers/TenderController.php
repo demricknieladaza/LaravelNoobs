@@ -693,9 +693,10 @@ class TenderController extends Controller
     public function questionnaireSave(Request $request){
         
         $data = $request->questions;
+        $new = substr($data, 0, -1);
         $ques = new TenderPreQualificationQuestionnaire;
         $ques->tender_id = $request->get('idd');
-        $ques->question = $data;
+        $ques->question = $new;
         $ques->save();
 
         // $ques = new TenderPreQualificationQuestionnaire;

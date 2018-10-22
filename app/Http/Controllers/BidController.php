@@ -7,6 +7,7 @@ use App\Tender;
 use App\ProjectInformations;
 use App\SubmittedTenders;
 use App\DraftedTenders;
+use App\TenderQuery;
 
 class BidController extends Controller
 {
@@ -133,5 +134,17 @@ class BidController extends Controller
         ]);
 
         // return 'SUCCESS!!';
+    }
+
+    public function saveQuery(Request $request){
+
+        $query = new TenderQuery;
+        $query->project_record_id = $request->get('project_record_id');
+        $query->tender_id = $request->get('tender_id');
+        $query->question = $request->get('question');
+        $query->save();
+
+        return 'SAVED!!!';
+
     }
 }

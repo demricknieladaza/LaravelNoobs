@@ -12,6 +12,7 @@ class TenderQuery extends Model
     public $timestamps = false;
     protected $fillable = [
         'project_record_id',
+        'tender_id',
         'question',
         'response'
     ];
@@ -20,3 +21,4 @@ class TenderQuery extends Model
         return $this->belongsTo('App\ProjectInformations');
     }
 }
+

@@ -17,6 +17,7 @@ use App\Meetings;
 use App\UserAccountsModel;
 use App\ProjectTeam;
 use App\SavedTenders;
+use App\TenderQuery;
 
 class WinWorkController extends Controller
 {
@@ -610,6 +611,8 @@ class WinWorkController extends Controller
         $meetings = Meetings::where('project_record_id', $id)->first();
 
         $team = ProjectTeam::where('project_record_id', $id)->get(); 
+
+        $questions = TenderQuery::where('project_record_id', $id)->get();
         return view('pds')->with([
             'tenders'=> $tenders,
             'project' => $project,
@@ -619,7 +622,8 @@ class WinWorkController extends Controller
             'type' => $type,
             'milestones' => $milestones,
             'meetings' => $meetings,
-            'team' => $team
+            'team' => $team,
+            'question' => $questions
             ]);
     }
 

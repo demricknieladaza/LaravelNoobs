@@ -77,9 +77,11 @@ Route::get('winwork/bid/{id}', 'BidController@getCredentials');
 Route::post('submit_bid', 'BidController@submitBid');
 // Route::resource('winwork/bid', 'BidController');
 Route::post('winwork/bid/{id}/save', 'BidController@saveBid');
+Route::post('tender_queries', 'BidController@saveQuery');
 
 //Route::put('project_info/{id}', 'ProjectInformationController@Update');
 Route::resource('project_info','ProjectInformationController');
+Route::post('response_save', 'ProjectInformationController@saveResponse');
 Route::resource('scope', 'ScopeController');
 Route::resource('project_info_tender','TenderController');
 Route::post('questionnaire', 'TenderController@questionnaireSave');

@@ -12,6 +12,7 @@ use App\Meetings;
 use App\UserAccountsModel;
 use App\ProjectTeam;
 use App\Tender;
+use App\TenderQuery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
@@ -245,6 +246,8 @@ class ProjectInformationController extends Controller
 
         $tender = Tender::where('project_record_id', $id)->get();
 
+        $questions = TenderQuery::where('project_record_id', $id)->get();
+
         return view('publish_view')->with([
             'project' => $project,
             'transport' => $transport,
@@ -255,6 +258,7 @@ class ProjectInformationController extends Controller
             'meetings' => $meetings,
             'team' => $team,
             'tender' => $tender,
+            'questions' => $questions
         ]);
        // return json($tender);
 
@@ -365,7 +369,6 @@ class ProjectInformationController extends Controller
 
         $project->save();
 
-
         //This the sub models
         $transport = TransportLink::find($id);
         $main_road = $request->input('main_road');
@@ -461,5 +464,22 @@ class ProjectInformationController extends Controller
         // return $id;
         // return redirect('/project_info'.'/'.$id.'/edit');
         return $id;
+    }
+
+    public function saveResponse(Request $request){
+
+        $query_id = $request->id;
+        $response = $request->response;
+
+        for($counter = 0; $counter < count($query_id); $counter++){
+            $quest = TenderQuery::find($query_id[$counter]);
+            // $quest->response = $response[$counter];
+            $quest->update([
+                'response' => $quest->response = $response[$counter]
+            ]);
+        }
+
+        return "SUCCESS!";
+
     }
 }

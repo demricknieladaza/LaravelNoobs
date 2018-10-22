@@ -317,17 +317,19 @@
 							<div class="col-sm-12">				
 								<table class="table table-striped table-hover" id="a">
 									<tr>
-										<td width="10%">#</td>
+										{{-- <td width="10%">#</td> --}}
 										<td style="font-weight: 800;"><strong>Query</strong></td>
 										<td style="font-weight: 800;"><strong>Responses</strong></td>
 
 									</tr>
+									@foreach($question as $qu)
 									<tr>
-										<td>1</td>
-										<td>TextTextTextTextTextTextTextTextText</td>
-										<td>TextTextTextTextTextTextTextTextTextTextTextText</td>
+										{{-- <td>1</td> --}}
+										<td>{{ $qu->question }}</td>
+										<td>{{ $qu->response }}</td>
 									</tr>
-									<tr>
+									@endforeach
+									{{-- <tr>
 										<td>2</td>
 										<td>TextTextTextTextTextTextTextTextText</td>
 										<td>TextTextTextTextTextTextTextTextTextTextTextText</td>
@@ -336,7 +338,7 @@
 										<td>3</td>
 										<td>TextTextTextTextTextTextTextTextText</td>
 										<td>TextTextTextTextTextTextTextTextTextTextTextText</td>
-									</tr>
+									</tr> --}}
 								</table>
 							</div>
 						</div>
