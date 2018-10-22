@@ -29,6 +29,8 @@ use App\TenderDesignConsiderations;
 use App\TenderScopeAdvise;
 use App\WinWorkData;
 use App\AddedDeliverables;
+use App\AddedMeetings;
+use App\AddedDesign;
 use App\TenderPreQualificationQuestionnaire;
 
 
@@ -166,8 +168,50 @@ class TenderController extends Controller
 
     }
 
-    public function gamitonbi($deliverables){
-        echo $deliverables;
+    public function gamitonbi($idd, $deliverables, $meeting, $design){
+        if($deliverables){
+            foreach ($deliverables as $del) {
+                if($del['edit'] == 'no'){
+                    $added = new AddedDeliverables;
+                    $added->tender_id = $idd;
+                    $added->name = $del['name'];
+                    $added->details = $del['details'];
+                    $added->raci = $del['raci'];
+                    $added->num = $del['number'];
+                    $added->save();
+                }
+            }
+        }
+
+        if($meeting){
+            foreach ($meeting as $del) {
+                if($del['edit'] == 'no'){
+                    $added = new AddedMeetings;
+                    $added->tender_id = $idd;
+                    $added->name = $del['name'];
+                    $added->purpose = $del['purpose'];
+                    $added->attendees = $del['attendees'];
+                    $added->duration = $del['duration'];
+                    $added->reoccurence = $del['reoccurence'];
+                    $added->arrange = $del['arrange'];
+                    $added->num = $del['number'];
+                    $added->save();
+                }
+            }
+        }
+
+        if($design){
+            foreach ($design as $del) {
+                if($del['edit'] == 'no'){
+                    $added = new AddedDesign;
+                    $added->tender_id = $idd;
+                    $added->name = $del['name'];
+                    $added->question = $del['question'];
+                    $added->save();
+                }
+            }
+        }
+        
     }
 
     public function tenderScopeStore(Request $request){
@@ -183,7 +227,7 @@ class TenderController extends Controller
         $execution = 'Project Execution Plan';
         $proposal = 'Design Proposals';
 
-        $this->gamitonbi();
+        $this->gamitonbi($request->get('idd'), $request->get('addeddeliv'), $request->get('addedmeet'),  $request->get('addeddes'));
 
 
         $deliverables = new TenderScopeDeliverables;
@@ -676,15 +720,15 @@ class TenderController extends Controller
         }
         $add_num = substr($add_num, 0, -1);
 
-        for($counter = 0; $counter < count($added_row_name); $counter++){
-            $added = new AddedDeliverables;
-            $added->tender_id = $request->get('idd');
-            $added->row_name = $added_row_name;
-            $added->details = $added_details;
-            $added->raci = $add_raci;
-            $added->num = $add_num;
-            $added->save();
-        }
+        // for($counter = 0; $counter < count($added_row_name); $counter++){
+        //     $added = new AddedDeliverables;
+        //     $added->tender_id = $request->get('idd');
+        //     $added->row_name = $added_row_name;
+        //     $added->details = $added_details;
+        //     $added->raci = $add_raci;
+        //     $added->num = $add_num;
+        //     $added->save();
+        // }
 
         return('SUCCESS!');
 
