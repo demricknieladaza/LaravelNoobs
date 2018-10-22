@@ -570,7 +570,7 @@
 																				<input type="text" name="first_name" class="form-control" placeholder="First name">
 																			</div>
 																			<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-																				<input type="text" name="last_name" class="form-control" placeholder="Surname">
+																				<input type="text" name="sur_name" class="form-control" placeholder="Surname">
 																			</div>
 																		</div>
 																	</div>
@@ -589,7 +589,7 @@
 																				<div class="form-group">	
 																					<div class="field" align="left">
 																						<strong>Upload your images</strong>
-																						<input type="file" id="file1" name="file1[]" multiple />
+																						<input type="file" id="file1" name="images[]" multiple />
 																					</div>
 																				</div>
 																			</div>
@@ -600,13 +600,13 @@
 																						<div class="col-sm-8">
 																						<div class="form-group">
 																						<div class="col-sm-6" style="padding:0;">
-																						<div class="autocomplete" >
-																							<input id="myInput" class="form-control" type="text" name="accredation" placeholder="Accredation">
+																							<div class="autocomplete" >
+																								<input id="myInput" class="form-control" type="text" name="accredation[]" placeholder="Accredation">
 																							</div>
 									
 																						</div>
 																						<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-																						<select name='degree_year' class="form-control">
+																						<select name='accre_year[]' class="form-control">
 																						<option value="">Year awarded</option>
 																						<?php 
 																						$cur_year = date('Y');
@@ -651,7 +651,7 @@
 									
 																						</div>
 																						<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-																							<select name='degree_year' class="form-control">
+																							<select name='degree_year[]' class="form-control">
 																					<option value="">Year awarded</option>
 																					<?php 
 																						$cur_year = date('Y');
@@ -675,7 +675,7 @@
 																		<div class="row">
 																			<div class="col-sm-4"></div>
 																			<div class="col-sm-8">
-																				<input type="text" name="" class="form-control" placeholder="Name of degree">
+																				<input type="text" name="degree_name" class="form-control" placeholder="Name of degree">
 																			</div>
 																		</div>
 																		<br>
@@ -700,7 +700,7 @@
 																			<div class="col-sm-8">
 									
 																				<div class="form-group">
-																					<input type="text" name="" class="form-control" placeholder="Enter level of seniority">
+																					<input type="text" name="seniority" class="form-control" placeholder="Enter level of seniority">
 																				</div>
 																			</div>
 																		</div>
@@ -711,10 +711,10 @@
 																	<div class="col-sm-8">
 																		<div class="form-group">
 																			<div class="col-sm-6" style="padding:0;">
-																				<input type="text" name="" class="form-control" placeholder="Enter name of award">
+																				<input type="text" name="award_name" class="form-control" placeholder="Enter name of award">
 																			</div>
 																			<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-																				<input type="text" name="" class="form-control" placeholder="Awarded by">
+																				<input type="text" name="awarded_by" class="form-control" placeholder="Awarded by">
 																			</div>
 																		</div>
 																	</div>
@@ -723,7 +723,7 @@
 																	<div class="col-sm-4"></div>
 																	<div class="col-sm-8">
 																		<div class="form-group">
-																			<select name="awards_year" class="form-control">
+																			<select name="year_awarded" class="form-control">
 																							<option value="">Year awarded</option>
 																						<?php 
 																							$cur_year = date('Y');
@@ -743,7 +743,7 @@
 																	<div class="col-sm-4"></div>
 																	<div class="col-sm-8">
 																		<div class="form-group">
-																			<textarea id="text-input2" cols="25" rows="3" placeholder="Enter the details"></textarea>
+																			<textarea id="text-input2" name="award_details" cols="25" rows="3" placeholder="Enter the details"></textarea>
 																					<div class="word-counter">
 																							<label id="count-label2">3000</label>/3000 words
 																					</div>
@@ -778,7 +778,7 @@
 																					foreach ($Service as $key ) {
 																						echo "<li><div class='form-check'>
 																								<label>
-																									<input type='checkbox' name='offeredservicesindi[]' value='".$key."'><span class='label-text'>".$key."</span>
+																									<input type='checkbox' name='services_offered[]' value='".$key."'><span class='label-text'>".$key."</span>
 																								</label>
 																							</div></li>";
 																					}
@@ -799,7 +799,7 @@
 																			</div>
 																			<div class="col-sm-8">
 																				<div class="form-group">
-																					<input type="text" name="" id="consvalue1" class="form-control" placeholder="Enter project title ">
+																					<input type="text" name="project_experience" id="consvalue1" class="form-control" placeholder="Enter project title ">
 																				</div>
 									
 																			<div class="form-group">
@@ -815,7 +815,7 @@
 																			</div>
 																			<div class="col-sm-8">
 																				<div class="form-group">
-																					<select name="" class="form-control">
+																					<select name="type_of_use" class="form-control">
 																						<option value="" disabled selected>Select types of uses</option>
 																						<?php 
 									
@@ -870,7 +870,7 @@
 																			</div>
 																			<div class="col-sm-8">
 																				<div class="form-group">
-																					<select name="" class="form-control">
+																					<select name="service" class="form-control">
 																						<option value="" disabled selected>Select service</option>
 																						<?php 
 																							$Services = array(
@@ -897,7 +897,7 @@
 																				<div class="input-group date" id="datepicker7" data-date="02-2012" 
 																								data-date-format="mm-yyyy">
 									
-																							<input class="form-control" type="text" placeholder="Provided this service from" readonly="readonly" name="date" >	  
+																							<input class="form-control" name="service_from" type="text" placeholder="Provided this service from" readonly="readonly" name="date" >	  
 																							<span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 																					</div>
 																			</div>
@@ -905,7 +905,7 @@
 																				<div class="input-group date" id="datepicker8" data-date="02-2012" 
 																								data-date-format="mm-yyyy">
 									
-																							<input class="form-control" type="text" placeholder="Provided this service until" readonly="readonly" name="date" >	  
+																							<input class="form-control" name="service_until" type="text" placeholder="Provided this service until" readonly="readonly" name="date" >	  
 																							<span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 																					</div>
 																			</div>
@@ -932,7 +932,7 @@
 																			</div>
 																			<div class="col-sm-8">
 																				<div class="form-group">
-																					<select name="" class="form-control">
+																					<select name="type_of_development" class="form-control">
 																						<option value="" disabled selected>Select type of development</option>
 																						<?php 
 																							$Services = array("New built","Refurbishment","Demolition"
@@ -964,7 +964,7 @@
 																		<div class="row">
 																			<div class="col-sm-4"></div>
 																			<div class="col-sm-8">
-																						<textarea id="text-input3" cols="25" rows="3" placeholder="Enter project description"></textarea>
+																						<textarea id="text-input3" name="project_description" cols="25" rows="3" placeholder="Enter project description"></textarea>
 																					<div class="word-counter">
 																							<label id="count-label3">3000</label>/3000 words
 																					</div>
@@ -978,7 +978,7 @@
 																				<div class="form-group">	
 																					<div class="field" align="left">
 																						<strong>Upload your images</strong>
-																						<input type="file" id="file2" name="file2[]" multiple />
+																						<input type="file" id="file2" name="project_images[]" multiple />
 																					</div>
 																				</div>
 																			</div>
@@ -988,7 +988,7 @@
 																	<div class="col-sm-8">
 																		<div class="form-group">
 																			<div class="col-sm-6" style="padding:0;">
-																				<select name='ddlSelectYear' class="form-control">
+																				<select name='team_member' class="form-control">
 																						<option value="">Select project team member</option>
 																					<?php 
 																							$Services = array(
@@ -1004,7 +1004,7 @@
 																					</select>
 																			</div>
 																			<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-																					<select name='ddlSelectYear' class="form-control">
+																					<select name='company' class="form-control">
 																						<option value="">Company name</option>
 																					<?php 
 																							$Services = array(
@@ -1027,12 +1027,13 @@
 																		
 																		<div class="form-group butcent">
 																			<button type="button" data-toggle="tab" href="#section4" id="checkinpbut" name="Next" class="btn btn-primary butsize ">Next</button>
-																			<button type="button" name="Save" value="Save" class="btn  butsize color">Save</button>
+																			<button type="submit" name="Save" value="Save" class="btn  butsize color">Save</button>
 																		</div>
 																	</div>
 																</div>
 															</div>
 														</div>
+													{!! Form::close() !!}
 												</div>
 												<div class="col-sm-3 company-quick-details">
 														<p><img src="{{ url('images/logo-british.jpg') }}"></p>

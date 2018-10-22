@@ -565,7 +565,7 @@
 			var isValid = true;
 			$('textarea').each(function() {
 	            if ($.trim($(this).val()) == '') {
-	                isValid = false;
+	                isValid = true;
 	                $(this).css({
 	                    "border": "1px solid red",
 	                    "background": "#FFCECE"
@@ -1033,6 +1033,7 @@
 
 			});
 			console.log(xarray);
+			alert('dafssfdvsdf');
 			jQuery.ajax({
 				url:"{{ url('tender_deliverables_save') }}",
 				method: 'post',

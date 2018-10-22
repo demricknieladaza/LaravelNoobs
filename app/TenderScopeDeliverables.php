@@ -24,7 +24,29 @@ class TenderScopeDeliverables extends Model
         'risk_assessment',
         'handover_strategy',
         'project_execution_plan',
-        'design_proposal'
+        'design_proposal',
+        'strategic_raci'.
+        'strategic_num',
+        'pprogramme_raci',
+        'pprogramme_num',
+        'feasibility_raci',
+        'feasibility_num',
+        'design_raci',
+        'design_num',
+        'site_raci',
+        'site_num',
+        'information_raci',
+        'information_num',
+        'project_raci',
+        'project_num',
+        'risk_raci',
+        'risk_num',
+        'handover_raci',
+        'handover_num',
+        'execution_raci',
+        'execution_num',
+        'proposal_raci',
+        'proposal_num'
     ];
     
     public function tender(){

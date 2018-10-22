@@ -300,7 +300,6 @@ class TenderController extends Controller
         $deliverables->handover_strategy = $request->get('hand_details');
         $deliverables->project_execution_plan = $request->get('execution_details');
         $deliverables->design_proposal = $request->get('design_details');
-        $deliverables->save();
 
         //Strategic Brief
         $strat_raci_storage = $request->strategic_raci;
@@ -311,21 +310,13 @@ class TenderController extends Controller
             $strat_raci .= $strat_raci_storage[$counter] .",";
         }
         $strat_raci = substr($strat_raci, 0, -1);
-        $strategic_raci = new TenderDeliverablesRaci;
-        $strategic_raci->deliverables_id = $deliverables->deliverables_id;
-        $strategic_raci->row_name = $strategic;
-        $strategic_raci->raci = $strat_raci;
-        $strategic_raci->save();
+        $deliverables->strategic_raci = $strat_raci;
 
         for($counter = 0; $counter < count($strat_num_storage); $counter++){
             $strat_num .= $strat_num_storage[$counter] . ",";
         }
         $strat_num = substr($strat_num, 0 , -1);
-        $strategic_num = new TenderDeliverablesNum;
-        $strategic_num->deliverables_id = $deliverables->deliverables_id;
-        $strategic_num->row_name = $strategic;
-        $strategic_num->num = $strat_num;
-        $strategic_num->save();
+        $deliverables->strategic_num = $strat_num;
 
         //Project Programme
         $programme_raci_storage = $request->pprogramme_raci;
@@ -336,21 +327,13 @@ class TenderController extends Controller
             $prog_raci .= $programme_raci_storage[$counter] . ",";
         }
         $prog_raci = substr($prog_raci, 0, -1);
-        $pprogramme_raci = new TenderDeliverablesRaci;
-        $pprogramme_raci->deliverables_id = $deliverables->deliverables_id;
-        $pprogramme_raci->row_name = $programme;
-        $pprogramme_raci->raci = $prog_raci;
-        $pprogramme_raci->save();
+        $deliverables->pprogramme_raci = $prog_raci;
 
         for($counter = 0; $counter < count($programme_num_storage); $counter++){
             $prog_num .= $programme_num_storage[$counter] . ",";
         }
         $prog_num = substr($prog_num, 0, -1);
-        $pprogramme_num = new TenderDeliverablesNum;
-        $pprogramme_num->deliverables_id = $deliverables->deliverables_id;
-        $pprogramme_num->row_name = $programme;
-        $pprogramme_num->num = $prog_num;
-        $pprogramme_num->save();
+        $deliverables->pprogramme_num = $prog_num;
 
         //Feasibility Study
         $feasibility_raci_storage = $request->feasibility_raci;
@@ -359,22 +342,16 @@ class TenderController extends Controller
             $feasibility_raci .= $feasibility_raci_storage[$counter] . ",";
         }
         $feasibility_raci = substr($feasibility_raci, 0, -1);
-        $feas_raci = new TenderDeliverablesRaci;
-        $feas_raci->deliverables_id = $deliverables->deliverables_id;
-        $feas_raci->row_name = $feasibility;
-        $feas_raci->raci = $feasibility_raci;
-        $feas_raci->save();
+        $deliverables->feasibility_raci = $feasibility_raci;
+
 
         $feasibility_num_storage = $request->feasibility_num;
         $feasibility_num = "";
         for($counter = 0; $counter < count($feasibility_num_storage); $counter++){
             $feasibility_num .= $feasibility_num_storage[$counter] . ",";
         }
-        $feasibility_num = substr($feasibility_num, 0, -1);        $feas_num = new TenderDeliverablesNum;
-        $feas_num->deliverables_id = $deliverables->deliverables_id;
-        $feas_num->row_name = $feasibility;
-        $feas_num->num = $feasibility_num;
-        $feas_num->save();
+        $feasibility_num = substr($feasibility_num, 0, -1);
+        $deliverables->feasibility_num = $feasibility_num;
 
         //Design Responsibility
         $design_raci_storage = $request->design_raci;
@@ -383,11 +360,7 @@ class TenderController extends Controller
             $des_raci .= $design_raci_storage[$counter] . ",";
         }
         $des_raci = substr($des_raci, 0, -1);
-        $design_raci = new TenderDeliverablesRaci;
-        $design_raci->deliverables_id = $deliverables->deliverables_id;
-        $design_raci->row_name = $design;
-        $design_raci->raci = $des_raci;
-        $design_raci->save();
+        $deliverables->design_raci = $des_raci;
 
         $design_num_storage = $request->design_num;
         $des_num = "";
@@ -395,11 +368,7 @@ class TenderController extends Controller
             $des_num .= $design_num_storage[$counter] . ",";
         }
         $des_num = substr($des_num, 0, -1);
-        $design_num = new TenderDeliverablesNum;
-        $design_num->deliverables_id = $deliverables->deliverables_id;
-        $design_num->row_name = $design;
-        $design_num->num = $des_num;
-        $design_num->save();
+        $deliverables->design_num= $des_num;
 
         //Site Information
         $site_raci_storage = $request->site_raci;
@@ -408,23 +377,17 @@ class TenderController extends Controller
             $s_raci .= $site_raci_storage[$counter] . ",";
         }
         $s_raci = substr($s_raci, 0, -1);
-        $site_raci = new TenderDeliverablesRaci;
-        $site_raci->deliverables_id = $deliverables->deliverables_id;
-        $site_raci->row_name = $site;
-        $site_raci->raci = $s_raci;
-        $site_raci->save();
-        $site_num_storage = $request->site_num;
+        $deliverables->site_raci = $s_raci;
 
+
+        $site_num_storage = $request->site_num;
         $s_num = "";
         for($counter = 0; $counter < count($site_num_storage); $counter++){
             $s_num .= $site_num_storage[$counter] . ",";
         }
         $s_num = substr($s_num, 0, -1);
-        $site_num = new TenderDeliverablesNum;
-        $site_num->deliverables_id = $deliverables->deliverables_id;
-        $site_num->row_name = $site;
-        $site_num->num = $s_num;
-        $site_num->save();
+        $deliverables->site_num = $s_num;
+
 
         //Information Exchange
         $info_raci_storage = $request->info_raci;
@@ -433,11 +396,8 @@ class TenderController extends Controller
             $inf_raci .= $info_raci_storage[$counter] . ",";
         }
         $inf_raci = substr($inf_raci, 0, -1);
-        $info_raci = new TenderDeliverablesRaci;
-        $info_raci->deliverables_id = $deliverables->deliverables_id;
-        $info_raci->row_name = $information;
-        $info_raci->raci = $inf_raci;
-        $info_raci->save();
+        $deliverables->information_raci = $inf_raci;
+
 
         $info_num_storage = $request->info_num;
         $inf_num = "";
@@ -445,11 +405,7 @@ class TenderController extends Controller
             $inf_num .= $info_num_storage[$counter] . ",";
         }
         $inf_num = substr($inf_num, 0, -1);
-        $info_num = new TenderDeliverablesNum;
-        $info_num->deliverables_id = $deliverables->deliverables_id;
-        $info_num->row_name = $information;
-        $info_num->num = $inf_num;
-        $info_num->save();
+        $deliverables->information_num = $inf_num;
 
         //Project Brief
         $project_raci_storage = $request->project_raci;
@@ -458,11 +414,8 @@ class TenderController extends Controller
             $project_raci .= $project_raci_storage[$counter] . ",";
         }
         $project_raci = substr($project_raci, 0, -1);
-        $proj_raci = new TenderDeliverablesRaci;
-        $proj_raci->deliverables_id = $deliverables->deliverables_id;
-        $proj_raci->row_name = $project;
-        $proj_raci->raci = $project_raci;
-        $proj_raci->save();
+        $deliverables->project_raci = $project_raci;
+
 
         $project_num_storage = $request->project_num;
         $project_num = "";
@@ -470,11 +423,8 @@ class TenderController extends Controller
             $project_num .= $project_num_storage[$counter] . ",";
         }
         $project_num = substr($project_num, 0, -1);
-        $proj_num = new TenderDeliverablesNum;
-        $proj_num->deliverables_id = $deliverables->deliverables_id;
-        $proj_num->row_name = $project;
-        $proj_num->num = $project_num;
-        $proj_num->save();
+        $deliverables->project_num = $project_num;
+
 
         //Risk Assessment
         $risk_raci_storage = $request->risk_raci;
@@ -483,11 +433,8 @@ class TenderController extends Controller
             $r_raci .= $risk_raci_storage[$counter] . ",";
         }
         $r_raci = substr($r_raci, 0, -1);
-        $risk_raci = new TenderDeliverablesRaci;
-        $risk_raci->deliverables_id = $deliverables->deliverables_id;
-        $risk_raci->row_name = $risk;
-        $risk_raci->raci = $r_raci;
-        $risk_raci->save();
+        $deliverables->risk_raci = $r_raci;
+
 
         $risk_num_storage = $request->risk_num;
         $r_num = "";
@@ -495,11 +442,7 @@ class TenderController extends Controller
             $r_num .= $risk_num_storage[$counter] . ",";
         }
         $r_num = substr($r_num, 0, -1);
-        $risk_num = new TenderDeliverablesNum;
-        $risk_num->deliverables_id = $deliverables->deliverables_id;
-        $risk_num->row_name = $risk;
-        $risk_num->num = $r_num;
-        $risk_num->save();
+        $deliverables->risk_num = $r_num;
 
         //Handover
         $hand_raci_storage = $request->handover_raci;
@@ -508,11 +451,8 @@ class TenderController extends Controller
             $h_raci .= $hand_raci_storage[$counter] . ",";
         }
         $h_raci = substr($h_raci, 0, -1);
-        $hand_raci = new TenderDeliverablesRaci;
-        $hand_raci->deliverables_id = $deliverables->deliverables_id;
-        $hand_raci->row_name = $handover;
-        $hand_raci->raci = $h_raci;
-        $hand_raci->save();
+        $deliverables->handover_raci = $h_raci;
+
 
         $hand_num_storage = $request->handover_num;
         $h_num = "";
@@ -520,11 +460,8 @@ class TenderController extends Controller
             $h_num .= $hand_num_storage[$counter] . ",";
         }
         $h_num = substr($h_num, 0, -1);
-        $hand_num = new TenderDeliverablesNum;
-        $hand_num->deliverables_id = $deliverables->deliverables_id;
-        $hand_num->row_name = $handover;
-        $hand_num->num = $h_num;
-        $hand_num->save();
+        $deliverables->handover_num = $h_num;
+
 
         //Project Execution Plan
         $exec_raci_storage = $request->execution_raci;
@@ -533,11 +470,7 @@ class TenderController extends Controller
             $e_raci .= $exec_raci_storage[$counter] . ",";
         }
         $e_raci = substr($e_raci, 0, -1);
-        $exec_raci = new TenderDeliverablesRaci;
-        $exec_raci->deliverables_id = $deliverables->deliverables_id;
-        $exec_raci->row_name = $execution;
-        $exec_raci->raci = $e_raci;
-        $exec_raci->save();
+        $deliverables->execution_raci = $e_raci;
 
         $exec_num_storage = $request->execution_num;
         $e_num = "";
@@ -545,11 +478,7 @@ class TenderController extends Controller
             $e_num .= $exec_num_storage[$counter] . ",";
         }
         $e_num = substr($e_num, 0, -1);
-        $exec_num = new TenderDeliverablesNum;
-        $exec_num->deliverables_id = $deliverables->deliverables_id;
-        $exec_num->row_name = $execution;
-        $exec_num->num = $e_num;
-        $exec_num->save();
+        $deliverables->execution_num= $e_num;
 
         //Design Proposal
         $prop_raci_storage = $request->proposal_raci;
@@ -558,11 +487,7 @@ class TenderController extends Controller
             $pro_raci .= $prop_raci_storage[$counter] . ",";
         }
         $pro_raci = substr($pro_raci, 0, -1);
-        $prop_raci = new TenderDeliverablesRaci;
-        $prop_raci->deliverables_id = $deliverables->deliverables_id;
-        $prop_raci->row_name = $proposal;
-        $prop_raci->raci = $pro_raci;
-        $prop_raci->save();
+        $deliverables->proposal_raci = $pro_raci;
 
         $prop_num_storage = $request->proposal_num;
         $pro_num = "";
@@ -570,11 +495,9 @@ class TenderController extends Controller
             $pro_num .= $prop_num_storage[$counter] . ",";
         }
         $pro_num = substr($pro_num, 0, -1);
-        $prop_num = new TenderDeliverablesNum;
-        $prop_num->deliverables_id = $deliverables->deliverables_id;
-        $prop_num->row_name = $proposal;
-        $prop_num->num = $pro_num;
-        $prop_num->save();
+        $deliverables->proposal_num = $pro_num;
+
+        $deliverables->save();
 
         //Scope Meetings
         $pre = 'Pre-Application Meetings';
@@ -583,7 +506,7 @@ class TenderController extends Controller
         $ins = 'Inspection';
 
 
-        $meeting = new TenderScopeMeetings;
+        /*$meeting = new TenderScopeMeetings;
         $meeting->tender_id = $request->get('idd');
         $meeting->pre_app_purpose = $request->get('pre_app_purpose');
         $meeting->pre_app_attendees = $request->get('pre_app_attendees');
@@ -775,7 +698,7 @@ class TenderController extends Controller
         for($counter = 0; $counter < count($added_num); $counter++){
             $add_num .= $added_num[$counter] . ",";
         }
-        $add_num = substr($add_num, 0, -1);
+        $add_num = substr($add_num, 0, -1);*/
 
         // for($counter = 0; $counter < count($added_row_name); $counter++){
         //     $added = new AddedDeliverables;

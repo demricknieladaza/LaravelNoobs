@@ -91,6 +91,7 @@ Route::resource('tenders', 'TenderDisplayController', [
         'edit' => 'Tenders Table'
     ]
 ]);
+Route::resource('dashboard/individuals', 'IndividualsController');
 Route::resource('winwork', 'WinWorkController');
 Route::post('move_to_saved', 'WinWorkController@moveToSavedOps');
 Route::post('winwork/filtered_results', 'WinWorkController@searchFilters');

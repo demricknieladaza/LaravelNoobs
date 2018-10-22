@@ -202,10 +202,10 @@ class UsersController extends Controller
     {
         return view('organisation');
     }
-     public function individuals_controller()
-    {
-        return view('individuals');
-    }
+    //  public function individuals_controller()
+    // {
+    //     return view('individuals');
+    // }
      public function scopey_controller()
     {
         return view('scopey');
