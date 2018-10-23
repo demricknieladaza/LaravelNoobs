@@ -181,6 +181,18 @@ class TenderController extends Controller
                     $added->num = $del['number'];
                     $added->save();
                 }
+                else{
+                    AddedDeliverables::where('added_id', $del['add_id'])
+                    ->update(
+                        [
+                            'name' => $del['name'],
+                            'details' => $del['details'],
+                            'raci' => $del['raci'],
+                            'num' => $del['number']
+                        ]
+                    );
+                    echo 'updated';
+                }
             }
         }
 
@@ -198,6 +210,20 @@ class TenderController extends Controller
                     $added->num = $del['number'];
                     $added->save();
                 }
+                else{
+                    AddedMeetings::where('added_id', $del['add_id'])
+                    ->update(
+                        [
+                            'name' => $del['name'],
+                            'purpose' => $del['purpose'],
+                            'attendees' => $del['attendees'],
+                            'duration' => $del['duration'],
+                            'reoccurence' => $del['reoccurence'],
+                            'arrange' => $del['arrange'],  
+                            'num' => $del['number']
+                        ]
+                    );
+                }
             }
         }
 
@@ -210,6 +236,15 @@ class TenderController extends Controller
                     $added->question = $del['question'];
                     $added->save();
                 }
+                else{
+                    AddedDesign::where('added_id', $del['add_id'])
+                    ->update(
+                        [
+                            'name' => $del['name'],
+                            'question' => $del['question']
+                        ]
+                    );
+                }
             }
         }
 
@@ -221,6 +256,15 @@ class TenderController extends Controller
                     $added->name = $del['name'];
                     $added->num = $del['number'];
                     $added->save();
+                }
+                else{
+                    AddedAdvise::where('added_id', $del['add_id'])
+                    ->update(
+                        [
+                            'name' => $del['name'],
+                            'num' => $del['number']
+                        ]
+                    );
                 }
             }
         }
@@ -743,7 +787,8 @@ class TenderController extends Controller
         //     $added->save();
         // }
 
-        return('SUCCESS!');
+        // return $this->gettend($request->get('idd'));
+        return ('success');
 
     }
 
@@ -806,6 +851,10 @@ class TenderController extends Controller
         $bonds = TenderBonds::where('tender_id', $tenid)->get();
         $appointment = TenderAppointment::where('tender_id', $tenid)->get();
         $eval = TenderEvaluation::where('tender_id', $tenid)->get();
+        $delivs = AddedDeliverables::where('tender_id', $tenid)->get();
+        $meetings = AddedMeetings::where('tender_id', $tenid)->get();
+        $design = AddedDesign::where('tender_id', $tenid)->get();
+        $advises = AddedAdvise::where('tender_id', $tenid)->get();
 
         // return response()->json(array(
         //     'tender' => $tender,
@@ -813,11 +862,16 @@ class TenderController extends Controller
         //     'appointment' => $appointment,
         //     'eval' => $eval
         // ));
+        // echo $advises;
         return view('create_tender')->with([
             'tender' => $tender,
             'bonds' => $bonds,
             'appointment' => $appointment,
-            'eval' => $eval
+            'eval' => $eval,
+            'delivs' => $delivs,
+            'meetings' => $meetings,
+            'designs' => $design,
+            'advises' => $advises
         ]);
     
 

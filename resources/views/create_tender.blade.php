@@ -374,6 +374,7 @@
 </script>
 <script type="text/javascript">
 	$(document).ready(function (){
+		var scopesave = 0;
 		$('#questionnaire_save').click(function(){
 			alert('QUESTIONNAIRE!');
 			var question = "";
@@ -560,7 +561,46 @@
 		// 		}
 		// 	});
 		// });
-		$('#deliverables_save').click(function(){
+		$('#deliverables_save').click(function(e){
+			var isValid = true;
+			$('textarea').each(function() {
+	            if ($.trim($(this).val()) == '') {
+	                isValid = false;
+	                $(this).css({
+	                    "border": "1px solid red",
+	                    "background": "#FFCECE"
+	                });
+	            }
+	            else {
+	                $(this).css({
+	                    "border": "",
+	                    "background": ""
+	                });
+	            }
+	        });
+	        // $('input[type="checkbox"]').each(function() {
+	        //     if ($.trim($(this).val()) == '') {
+	        //         isValid = false;
+	        //         $(this).parents('.col-sm-12').css({
+	        //             "border": "1px solid red",
+	        //             "background": "#FFCECE"
+	        //         });
+	        //     }
+	        //     else {
+	        //         $(this).css({
+	        //             "border": "",
+	        //             "background": ""
+	        //         });
+	        //     }
+	        // });
+	        if (isValid == false)
+	            e.preventDefault();
+	        else{
+			if (scopesave != 0){
+				alert('you need to refresh the page to perform save');
+			}
+			else{
+			scopesave++;
 			var idd = $('#serveprojtitle').attr('data-id');
 			var strat_raci = [];
 			var strat_num = [];
@@ -874,6 +914,7 @@
 			var xarray = [];
 
 			$("table tbody#addedDelivs tr#deliv").each(function () {
+
 				var rac = [];
 				var ribanum = [];
 				
@@ -881,6 +922,14 @@
 				$(this).find(".rac:checked").each(function() {
 					rac.push($(this).val());
 				});
+				if(rac.length == 0)
+				{
+					 $(this).css({
+	                    "border": "1px solid red",
+	                    "background": "#FFCECE"
+	                });
+					e.preventDefault();
+				}
 				$(this).find(".ribanum:checked").each(function() {
 					ribanum.push($(this).val());
 				});
@@ -900,7 +949,8 @@
 			    	details : $(this).find('.details').val(),
 			    	raci : selectedrac,
 			    	number : selectednum,
-			    	edit : $(this).attr('data-edit')
+			    	edit : $(this).attr('data-edit'),
+			    	add_id : $(this).attr('data-addid')
 			    };
 
 			    xarray.push(parr);
@@ -939,7 +989,8 @@
 			    	reoccurence : $(this).find('.reoccurence').val(),
 			    	arrange : selectedrac,
 			    	number : selectednum,
-			    	edit : $(this).attr('data-edit')
+			    	edit : $(this).attr('data-edit'),
+			    	add_id : $(this).attr('data-addid')
 			    };
 
 			    yarray.push(parr);
@@ -951,7 +1002,8 @@
 			    var parr = {
 			    	name : $(this).find('.name').val(),
 			    	question : $(this).find('.question').val(),
-			    	edit : $(this).attr('data-edit')
+			    	edit : $(this).attr('data-edit'),
+			    	add_id : $(this).attr('data-addid')
 			    };
 
 			    darray.push(parr);
@@ -973,13 +1025,14 @@
 			    var parr = {
 			    	name : $(this).find('.name').val(),
 			    	number : selectedrac,
-			    	edit : $(this).attr('data-edit')
+			    	edit : $(this).attr('data-edit'),
+			    	add_id : $(this).attr('data-addid')
 			    };
 
 			    aarray.push(parr);
 
 			});
-			console.log(aarray);
+			console.log(xarray);
 			jQuery.ajax({
 				url:"{{ url('tender_deliverables_save') }}",
 				method: 'post',
@@ -1059,9 +1112,11 @@
 					advise_six: a_six
 				},
 				success: function(result){
-					console.log(result);
+					window.location.href = '{{ url('tenderget') }}'+'/'+idd;
 				}
 			})
+			}
+		}
 		});
 
 		$('input[type="number"]').on('input', function(){
@@ -2706,6 +2761,92 @@
 		    						                    	</div>
 		    						                    </td>
 		    						                </tr>
+		    						                @foreach($delivs as $deliv)
+		    						                	<tr id="deliv" data-edit="yes" data-addid="{{ $deliv['added_id'] }}">
+		    						                	    <td class="zui-sticky-col2"><textarea id="delivname" class="hayt named" name="named" placeholder="Enter details here">{{ $deliv['name'] }}</textarea></td>
+		    						                	    <td class="td "><textarea class="hayt details" name="deliv_details" placeholder="Enter details here">{{ $deliv['details'] }}</textarea></td>
+		    						                	    <td class="td">
+		    						                	    	<div class="col-sm-12">
+		    						                	    		<div class="col-sm-3 form-check">
+		    						                	    			<label>
+		    						                	    				<input type="checkbox" @if (strpos($deliv['raci'],'R')!==false) checked @else  @endif name="strat_raci[]" value="R" class="rac"><span class="label-text">R</span>
+		    						                	    			</label>
+		    						                	    		</div>
+		    						                	    		<div class="col-sm-3 form-check">
+		    						                	    			<label>
+		    						                	    				<input type="checkbox" @if (strpos($deliv['raci'],'A')!==false) checked @else  @endif name="strat_raci[]" value="A" class="rac"><span class="label-text">A</span>
+		    						                	    			</label>
+		    						                	    		</div>
+		    						                	    		<div class="col-sm-3 form-check">
+		    						                	    			<label>
+		    						                	    				<input type="checkbox" @if (strpos($deliv['raci'],'C')!==false) checked @else  @endif name="strat_raci[]" value="C" class="rac"><span class="label-text">C</span>
+		    						                	    			</label>
+		    						                	    		</div>
+		    						                	    		<div class="col-sm-3 form-check">
+		    						                	    			<label>
+		    						                	    				<input type="checkbox" @if (strpos($deliv['raci'],'I')!==false) checked @else  @endif name="strat_raci[]" value="I" class="rac"><span class="label-text">I</span>
+		    						                	    			</label>
+		    						                	    		</div>
+		    						                	    	</div>
+		    						                	    </td>
+		    						                	    <td class="td">
+		    						                	    	<div class="form-check">
+		    						                	    		<label>
+		    						                	    			<input type="checkbox" @if (strpos($deliv['num'],'0')!==false) checked @else  @endif name="strat_num[]" value="0" class="ribanum"><span class="label-text"></span>
+		    						                	    		</label>
+		    						                	    	</div>
+		    						                	    </td>
+		    						                	    <td class="td">
+		    						                	    	<div class="form-check">
+		    						                	    		<label>
+		    						                	    			<input type="checkbox" @if (strpos($deliv['num'],'1')!==false) checked @else  @endif name="strat_num[]" value="1" class="ribanum"><span class="label-text"></span>
+		    						                	    		</label>
+		    						                	    	</div>
+		    						                	    </td>
+		    						                	    <td class="td">
+		    						                	    	<div class="form-check">
+		    						                	    		<label>
+		    						                	    			<input type="checkbox" @if (strpos($deliv['num'],'2')!==false) checked @else  @endif name="strat_num[]" value="2" class="ribanum"><span class="label-text"></span>
+		    						                	    		</label>
+		    						                	    	</div>
+		    						                	    </td>
+		    						                	    <td class="td">
+		    						                	    	<div class="form-check">
+		    						                	    		<label>
+		    						                	    			<input type="checkbox" @if (strpos($deliv['num'],'3')!==false) checked @else  @endif name="strat_num[]" value="3" class="ribanum"><span class="label-text"></span>
+		    						                	    		</label>
+		    						                	    	</div>
+		    						                	    </td>
+		    						                	    <td class="td">
+		    						                	    	<div class="form-check">
+		    						                	    		<label>
+		    						                	    			<input type="checkbox" @if (strpos($deliv['num'],'4')!==false) checked @else  @endif name="strat_num[]" value="4" class="ribanum"><span class="label-text"></span>
+		    						                	    		</label>
+		    						                	    	</div>
+		    						                	    </td>
+		    						                	    <td class="td">
+		    						                	    	<div class="form-check">
+		    						                	    		<label>
+		    						                	    			<input type="checkbox" @if (strpos($deliv['num'],'5')!==false) checked @else  @endif name="strat_num[]" value="5" class="ribanum"><span class="label-text"></span>
+		    						                	    		</label>
+		    						                	    	</div>
+		    						                	    </td>
+		    						                	    <td class="td">
+		    						                	    	<div class="form-check">
+		    						                	    		<label>
+		    						                	    			<input type="checkbox" @if (strpos($deliv['num'],'6')!==false) checked @else  @endif name="strat_num[]" value="6" class="ribanum"><span class="label-text"></span>
+		    						                	    		</label>
+		    						                	    	</div>
+		    						                	    </td>
+		    						                	    <td class="td">
+		    						                	    	<div class="form-check">
+		    						                	    		<label>
+		    						                	    			<input type="checkbox" @if (strpos($deliv['num'],'7')!==false) checked @else  @endif name="strat_num[]" value="7" class="ribanum"><span class="label-text"></span>
+		    						                	    		</label>
+		    						                	    	</div>
+		    						                	    </td>
+		    						                	</tr>
+		    						                @endforeach
 		    						            </tbody>
 		    						        </table>
 		    						    </div>
@@ -3093,6 +3234,92 @@
 		    						                    	</div>
 		    						                    </td>
 		    						                </tr>
+		    						                @foreach($meetings as $meet)
+		    						                	<tr id="meetclone" data-edit="yes" data-addid="{{ $meet['added_id'] }}">
+		    						                		<td class="zui-sticky-col3"><textarea class="hayt3 name" name="name" placeholder="Enter details here">{{ $meet['name'] }}</textarea></td>
+		    						                		<td class="td "><textarea class="hayt3 purpose" name="purpose" placeholder="Enter details here">{{ $meet['purpose'] }}</textarea></td>
+		    						                		<td class="td"><textarea class="hayt3 attendees" name="attendees" placeholder="Enter details here">{{ $meet['attendees'] }}</textarea></td>
+		    						                		<td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" value="{{ $meet['duration'] }} " class="duration" name="durations"></td>
+		    						                		<td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" value="{{ $meet['reoccurence'] }}" class="reoccurence" name="reoccurences"></td>
+		    						                		<td class="td">
+		    						                			<div class="form-check">
+		    						                				<label>
+		    						                					<input type="checkbox" @if(strpos($meet['arrange'],'Arrange')!==false) checked @endif class="arrange" name="arrange[]" value="Arrange"><span class="label-text"></span>
+		    						                				</label>
+		    						                			</div>
+		    						                		</td>
+		    						                		<td class="td">
+		    						                			<div class="form-check">
+		    						                				<label>
+		    						                					<input type="checkbox" @if(strpos($meet['arrange'],'Attend')!==false) checked @endif class="arrange" name="arrange[]" value="Attend"><span class="label-text"></span>
+		    						                				</label>
+		    						                			</div>
+		    						                		</td>
+		    						                		<td class="td">
+		    						                			<div class="form-check">
+		    						                				<label>
+		    						                					<input type="checkbox" @if(strpos($meet['arrange'],'Minute')!==false) checked @endif class="arrange" name="arrange[]" value="Minute"><span class="label-text"></span>
+		    						                				</label>
+		    						                			</div>
+		    						                		</td>
+		    						                		<td class="td">
+		    						                			<div class="form-check">
+		    						                				<label>
+		    						                					<input type="checkbox" @if(strpos($meet['num'],'0')!==false) checked @endif name="num[]" class="meetnum" value="0"><span class="label-text"></span>
+		    						                				</label>
+		    						                			</div>
+		    						                		</td>
+		    						                		<td class="td">
+		    						                			<div class="form-check">
+		    						                				<label>
+		    						                					<input type="checkbox" @if(strpos($meet['num'],'1')!==false) checked @endif name="num[]" class="meetnum" value="1"><span class="label-text"></span>
+		    						                				</label>
+		    						                			</div>
+		    						                		</td>
+		    						                		<td class="td">
+		    						                			<div class="form-check">
+		    						                				<label>
+		    						                					<input type="checkbox" @if(strpos($meet['num'],'2')!==false) checked @endif name="num[]" class="meetnum" value="2"><span class="label-text"></span>
+		    						                				</label>
+		    						                			</div>
+		    						                		</td>
+		    						                		<td class="td">
+		    						                			<div class="form-check">
+		    						                				<label>
+		    						                					<input type="checkbox" @if(strpos($meet['num'],'3')!==false) checked @endif name="num[]" class="meetnum" value="3"><span class="label-text"></span>
+		    						                				</label>
+		    						                			</div>
+		    						                		</td>
+		    						                		<td class="td">
+		    						                			<div class="form-check">
+		    						                				<label>
+		    						                					<input type="checkbox" @if(strpos($meet['num'],'4')!==false) checked @endif name="num[]" class="meetnum" value="4"><span class="label-text"></span>
+		    						                				</label>
+		    						                			</div>
+		    						                		</td>
+		    						                		<td class="td">
+		    						                			<div class="form-check">
+		    						                				<label>
+		    						                					<input type="checkbox" @if(strpos($meet['num'],'5')!==false) checked @endif name="num[]" class="meetnum" value="5"><span class="label-text"></span>
+		    						                				</label>
+		    						                			</div>
+		    						                		</td>
+		    						                		<td class="td">
+		    						                			<div class="form-check">
+		    						                				<label>
+		    						                					<input type="checkbox" @if(strpos($meet['num'],'6')!==false) checked @endif name="num[]" class="meetnum" value="6"><span class="label-text"></span>
+		    						                				</label>
+		    						                			</div>
+		    						                		</td>
+		    						                		<td class="td">
+		    						                			<div class="form-check">
+		    						                				<label>
+		    						                					<input type="checkbox" @if(strpos($meet['num'],'7')!==false) checked @endif name="num[]" class="meetnum" value="7"><span class="label-text"></span>
+		    						                				</label>
+		    						                			</div>
+		    						                		</td>
+		    						                	</tr>
+		    						                @endforeach
 		    						            </tbody>
 		    						        </table>
 		    						    </div>
@@ -3141,6 +3368,12 @@
 		    						                    <td class="zui-sticky-col4">Co-ordination with structural and building services</td>
 		    						                    <td class="td "><textarea class="hayt4" name="question_five" placeholder="Enter details here"></textarea></td>
 		    						                </tr>
+		    						                @foreach ($designs as $des)
+		    						                	<tr id="desclone" data-edit="yes" data-addid="{{ $des['added_id'] }}" >
+		    						                	    <td class="zui-sticky-col4"><textarea class="hayt4 name" name="question_name" placeholder="Enter details here">{{ $des['name'] }}</textarea></td>
+		    						                	    <td class="td "><textarea class="hayt4 question" name="question_one" placeholder="Enter details here">{{ $des['question'] }}</textarea></td>
+		    						                	</tr>
+		    						                @endforeach
 		    						            </tbody>
 		    						        </table>
 		    						    </div>
@@ -4340,6 +4573,68 @@
 		    						                    	</div>
 		    						                    </td>
 		    						                </tr>
+		    						                @foreach ($advises as $advise)
+		    						                	<tr id="adviseclone" data-edit="yes" data-addid="{{ $advise['added_id'] }}">
+								        				    <td class="zui-sticky-col5"><textarea class="name"  style="border-radius: 6px;
+							    height: 70px;" name="question_one" placeholder="Enter details here">{{ $advise['name'] }}</textarea></td>
+								        				    <td class="td">
+								        				    	<div class="form-check">
+								        				    		<label>
+								        				    			<input type="checkbox" @if(strpos($advise['num'], '0')!==false) checked @endif name="advisenum[]" class="advisenum" value="0"><span class="label-text"></span>
+								        				    		</label>
+								        				    	</div>
+								        				    </td>
+								        				    <td class="td">
+								        				    	<div class="form-check">
+								        				    		<label>
+								        				    			<input type="checkbox" @if(strpos($advise['num'], '1')!==false) checked @endif name="advisenum[]" class="advisenum" value="1"><span class="label-text"></span>
+								        				    		</label>
+								        				    	</div>
+								        				    </td>
+								        				    <td class="td">
+								        				    	<div class="form-check">
+								        				    		<label>
+								        				    			<input type="checkbox" @if(strpos($advise['num'], '2')!==false) checked @endif name="advisenum[]" class="advisenum" value="2"><span class="label-text"></span>
+								        				    		</label>
+								        				    	</div>
+								        				    </td>
+								        				    <td class="td">
+								        				    	<div class="form-check">
+								        				    		<label>
+								        				    			<input type="checkbox" @if(strpos($advise['num'], '3')!==false) checked @endif name="advisenum[]" class="advisenum" value="3"><span class="label-text"></span>
+								        				    		</label>
+								        				    	</div>
+								        				    </td>
+								        				    <td class="td">
+								        				    	<div class="form-check">
+								        				    		<label>
+								        				    			<input type="checkbox" @if(strpos($advise['num'], '4')!==false) checked @endif name="advisenum[]" class="advisenum" value="4"><span class="label-text"></span>
+								        				    		</label>
+								        				    	</div>
+								        				    </td>
+								        				    <td class="td">
+								        				    	<div class="form-check">
+								        				    		<label>
+								        				    			<input type="checkbox" @if(strpos($advise['num'], '5')!==false) checked @endif name="advisenum[]" class="advisenum" value="5"><span class="label-text"></span>
+								        				    		</label>
+								        				    	</div>
+								        				    </td>
+								        				    <td class="td">
+								        				    	<div class="form-check">
+								        				    		<label>
+								        				    			<input type="checkbox" @if(strpos($advise['num'], '6')!==false) checked @endif name="advisenum[]" class="advisenum" value="6"><span class="label-text"></span>
+								        				    		</label>
+								        				    	</div>
+								        				    </td>
+								        				    <td class="td">
+								        				    	<div class="form-check">
+								        				    		<label>
+								        				    			<input type="checkbox" @if(strpos($advise['num'], '7')!==false) checked @endif name="advisenum[]" class="advisenum" value="7"><span class="label-text"></span>
+								        				    		</label>
+								        				    	</div>
+								        				    </td>
+								        				</tr>
+		    						                @endforeach
 		    						            </tbody>
 		    						        </table>
 		    						    </div>
