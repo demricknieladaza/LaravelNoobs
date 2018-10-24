@@ -8,6 +8,7 @@ use App\ProjectInformations;
 use App\SubmittedTenders;
 use App\DraftedTenders;
 use App\TenderQuery;
+use App\Individuals;
 
 class BidController extends Controller
 {
@@ -87,15 +88,19 @@ class BidController extends Controller
         //
     }
 
-    public function getCredentials($id){
+    public function getCredentials(Request $request,$id){
         $tender_id = $id;
+        $user = $request->session()->get('id');
         $tender = Tender::where('tender_id', $tender_id)->first();
 
         $project = ProjectInformations::where('project_record_id', $tender->project_record_id)->first();
 
+        $indi = Individuals::where('user_id', $user)->get();
+
         return view('bid')->with([
             'tender' => $tender,
-            'project' =>$project
+            'project' => $project,
+            'individuals' => $indi
         ]);
 
     }

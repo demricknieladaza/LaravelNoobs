@@ -1012,12 +1012,16 @@
 								</div>
 								<div class="col-sm-8">
 									<div class="form-group">
-										<div class="col-sm-6" style="padding:0;">
-											<input type="text" name="" class="form-control" placeholder="First name">
-										</div>
-										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-											<input type="text" name="" class="form-control" placeholder="Surname">
-										</div>
+										<div class="form-group">
+											<ul id="servicelistindi" class="servicelist">
+												<li><div class='form-check'>
+													<label>
+														@foreach($i	ndividuals as $i)
+														<input type='checkbox' name='offeredservicesindi[]' value='{{ $i->first_name }} {{ $i->sur_name }}'><span class='label-text'>{{ $i->first_name }} {{ $i->sur_name }}</span>
+														@endforeach
+													</label>
+												</div></li>
+											</ul>
 									</div>
 								</div>
 							</div>
