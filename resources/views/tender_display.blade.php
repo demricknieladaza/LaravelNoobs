@@ -588,7 +588,7 @@
 	          		</div>
 				  </p>
 				  {{-- TENDER ID --}}
-				  <input type="input" name="" id="idd" value="0">
+				  <input type="hidden" name="" id="idd" value="0">
 	        </div>
 	        <div class="modal-footer" style="text-align: center;">
 	          <button type="button" class="btn btn-primary" data-backdrop="false" data-dismiss="modal"  id="createservproj" >Create</button>

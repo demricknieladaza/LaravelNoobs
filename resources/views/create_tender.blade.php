@@ -336,7 +336,13 @@
 	.datepicker {
 	    z-index: 9999999;
 	}
+	.dropdown-menu
+	{
+		margin-left: 0;
+	}
 </style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
 <script type="text/javascript">
 	function showaddbondslist(){
 		$('.hid.adbondslist').css('display','block');
@@ -374,27 +380,67 @@
 </script>
 <script type="text/javascript">
 	$(document).ready(function (){
+		$('#country_name').keyup(function(){
+	       var query = $(this).val();
+	       if(query != '')
+	       {
+	        var _token = $('input[name="_token"]').val();
+	        $.ajax({
+	         url:"{{ url('autocomplete') }}",
+	         method:"POST",
+	         data:{query:query, _token:_token},
+	         success:function(data){
+	            $('#countryList').fadeIn();  
+	            $('#countryList').html(data);
+	         }
+	        });
+	       }
+	       else{
+	       		$('#countryList').fadeOut();
+	       }
+	   });
+
+	   $('.chos').click(function(){  
+	       $('#country_name').val($(this).text());  
+	       $('#countryList').fadeOut();  
+	   });
 		var scopesave = 0;
 		$('#questionnaire_save').click(function(){
-			alert('QUESTIONNAIRE!');
+			// alert('QUESTIONNAIRE!');
 			var question = "";
 			jQuery("input[name='prequest[]']").each(function()
 				{	
 					question = question.concat($(this).val(),'^');
 				}
 			);
-			alert(question);
-			jQuery.ajax({
-				url: "{{ url('questionnaire') }}",
-				method: 'post',
-				data: {
-					idd: jQuery("input[name='question_id']").val(),
-					questions: question
-				},
-				success: function(result){
-					console.log(result);
-				}
-			});
+			// alert(question);
+			if($('input[name="pre_id"]').val() == 0){
+				jQuery.ajax({
+					url: "{{ url('questionnaire') }}",
+					method: 'post',
+					data: {
+						idd: jQuery("input[name='question_id']").val(),
+						questions: question
+					},
+					success: function(result){
+						console.log(result);
+					}
+				});
+			}
+			else{
+				jQuery.ajax({
+					url: "{{ url('questionnaireedit') }}",
+					method: 'post',
+					data: {
+						idd: $('input[name="pre_id"]').val(),
+						questions: question
+					},
+					success: function(result){
+						console.log(result);
+					}
+				});
+			}
+			
 
 		});
 		$('#createservproj').click(function(){
@@ -404,7 +450,7 @@
 			$('#serveprojtitle').html(serv);
 			$('#tendserve').val(serv);
 			jQuery.ajax({
-				url: "{{ url('project_info_tender') }}",
+				url: "{{ url('edit_tender_service') }}",
 				method: 'post',
 				data: {
 					services: jQuery('#tendserve').val(),
@@ -1192,10 +1238,19 @@
 </script>
 <script>
 	$(document).ready(function(){
-		$(".date").datepicker( {
+		$(".dates").datepicker( {
 		    format: "mm-yyyy",
 		    viewMode: "months", 
-		    minViewMode: "months"
+		    minViewMode: "months",
+		    orientation: 'auto'
+		});
+
+		$(".dateday").datepicker( {
+			// container:'#datepicker4',
+		    format: "mm-dd-yyyy",
+		    viewMode: "days", 
+		    minViewMode: "days",
+		    orientation: 'auto'
 		});
 
 		// $('.addbutton').click(function(){
@@ -1317,6 +1372,16 @@
 	    });
 	});
 </script>
+<script type="text/javascript">
+    var path = "{{ route('autocomplete') }}";
+    $('input.typeahead').typeahead({
+        source:  function (query, process) {
+        return $.get(path, { query: query }, function (data) {
+                return process(data);
+            });
+        }
+    });
+</script>
 <div class="container below-header ">
 	<h1 id="logo" class="project-title bid-page-title centerh" style="margin-left: 5%;
     margin-right: 5%;">Project Dashboard</small></h1>
@@ -1344,7 +1409,7 @@
 	          		</div>
 				  </p>
 				  {{-- TENDER ID --}}
-				  <input type="input" name="" id="idd" value="0">
+				  <input type="hidden" name="" id="idd" value="0">
 	        </div>
 	        <div class="modal-footer" style="text-align: center;">
 	          <button type="button" class="btn btn-primary" data-toggle="tab" data-backdrop="false" data-dismiss="modal" href="#section4" id="createservproj" >Create</button>
@@ -1719,36 +1784,29 @@
 		          <h4 class="modal-title"></h4>
 		        </div>
 		        <div class="modal-body">
-		          <p>Deadline<div class="form-group">
-					<div class="input-group date" id="datepicker4" data-date="02-2012" 
+		          <p>Deadline</p><div class="form-group" >
+					<div class="input-group dateday date" id="datepicker4" data-date-container="#datepicker4" data-date="02-2012" 
 					         data-date-format="mm-yyyy">
 
-						 <input class="form-control" type="text" placeholder="Select year" readonly="readonly" name="date" >	  
+						 <input class="form-control " type="text" placeholder="Select year" readonly="readonly" name="date" >	  
 						 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 					</div>
 					
 				</div>
-			</p>
-		          <p>Feedback date<div class="form-group">
-				<select name="days" class="form-control" onchange="Days(this.value);"> 
-					<option value="" disabled selected>Select days</option> 
-					<?php 
-						$days = array(
-							"1 days",
-							"2 days","3 days","4 days","5 days","6 days","7 days","8 days",
-							"9 days","10 days","11 days","12 days","13 days","14 days",
-							"15 days","16 days","17 days","18 days","19 days","20 days","21 days","22 days",
-							"23 days","24 days","25 days","26 days","27 days","28 days","29 days","30 days"
-						);
-						sort($days, SORT_NATURAL | SORT_FLAG_CASE);
-						foreach ($days as $key ) {
-						    echo "<option value='".$key."'>".$key."</option>";
-						}
+			
+		          <p>Feedback date<div class="form-group" >
+					<div class="input-group dateday" id="datepicker41" data-date-container="#datepicker41" data-date="02-2012" 
+					         data-date-format="mm-yyyy">
 
-					 ?>
-				</select>
-								</div></p>
-		          <input type="text" placeholder="Search.." name="search">
+						 <input class="form-control " type="text" placeholder="Select year" readonly="readonly" name="date" >	  
+						 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+					</div>
+					
+				</div></p>
+		          {{-- <input type="text" placeholder="Search.." name="search"> --}}
+		          <input type="text" name="country_name" id="country_name" class=" " value=" " placeholder="Enter Company Name" />
+		          <div id="countryList">
+		          </div>
 		      <button type="submit">Add</button>
 		        </div>
 		        <div class="modal-footer" style="text-align: center;">
@@ -1799,6 +1857,13 @@
 		    						<h3 class="bid-form-title">Pre-Qualification Questionnaire</h3>
 		    						<div class="row">
 		    							<div class="col-sm-12">
+		    								<input type="hidden" name="pre_id" @if($questsid) value="{{ $questsid }}" @else value="0" @endif>
+		    								
+		    								<ul style="list-style: none;padding-left: 0;">
+		    								@foreach($quests as $quest)
+		    									<li><input type='text' name='prequest[]' class="form-control" value="{{ $quest }}"></li>
+		    								@endforeach
+		    								</ul>
 		    								<ul id="prequest" style="list-style: none;padding-left: 0;">	
 		    									
 		    								</ul>
@@ -1817,6 +1882,7 @@
 		    					</div>
 		    					<div id="section11" class="tab-pane tender-container">
 		    						<h3 class="bid-form-title">Scope</h3>
+		    						@if(sizeof($scopes) != 0)
 		    						<div class="zui-wrapper2" id="myscrol">
 		    						    <div class="zui-scroller2">
 		    						        <table class="zui-table2">
@@ -1839,27 +1905,28 @@
 		    						            <tbody id="addedDelivs" >
 		    						                <tr class="addedDeliv">
 		    						                    <td class="zui-sticky-col2">Strategic Brief</td>
-		    						                    <td class="td "><textarea class="hayt" name="strategic_details" placeholder="Enter details here"></textarea></td>
+		    						                    <input type="hidden" name="delivid" value="{{ $scopes[0]->deliverables_id	 }}">
+		    						                    <td class="td "><textarea class="hayt" name="strategic_details" placeholder="Enter details here">@if($scopes[0]->strategic_brief) {{ $scopes[0]->strategic_brief }} @endif</textarea></td>
 		    						                    <td class="td">
 		    						                    	<div class="col-sm-12">
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="strategic_raci[]" value="R"><span class="label-text">R</span>
+		    						                    				<input type="checkbox" @if (strpos($scopes[0]['strategic_raci'],'R')!==false) checked  @endif name="strategic_raci[]" value="R"><span class="label-text">R</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="strategic_raci[]" value="A"><span class="label-text">A</span>
+		    						                    				<input type="checkbox" @if (strpos($scopes[0]['strategic_raci'],'A')!==false) checked  @endif name="strategic_raci[]" value="A"><span class="label-text">A</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="strategic_raci[]" value="C"><span class="label-text">C</span>
+		    						                    				<input type="checkbox" @if (strpos($scopes[0]['strategic_raci'],'C')!==false) checked  @endif name="strategic_raci[]" value="C"><span class="label-text">C</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="strategic_raci[]" value="I"><span class="label-text">I</span>
+		    						                    				<input type="checkbox" @if (strpos($scopes[0]['strategic_raci'],'I')!==false) checked  @endif name="strategic_raci[]" value="I"><span class="label-text">I</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    	</div>
@@ -1867,56 +1934,56 @@
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="strategic_num[]" value="0"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopes[0]['strategic_num'],'0')!==false) checked  @endif name="strategic_num[]" value="0"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="strategic_num[]" value="1"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopes[0]['strategic_num'],'1')!==false) checked  @endif name="strategic_num[]" value="1"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="strategic_num[]" value="2"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopes[0]['strategic_num'],'2')!==false) checked  @endif name="strategic_num[]" value="2"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="strategic_num[]" value="3"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopes[0]['strategic_num'],'3')!==false) checked  @endif name="strategic_num[]" value="3"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="strategic_num[]" value="4"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopes[0]['strategic_num'],'4')!==false) checked  @endif name="strategic_num[]" value="4"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="strategic_num[]" value="5"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopes[0]['strategic_num'],'5')!==false) checked  @endif name="strategic_num[]" value="5"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="strategic_num[]" value="6"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopes[0]['strategic_num'],'6')!==false) checked  @endif name="strategic_num[]" value="6"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="strategic_num[]" value="7"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopes[0]['strategic_num'],'7')!==false) checked  @endif name="strategic_num[]" value="7"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
@@ -1924,27 +1991,27 @@
 		    						                </tr>
 		    						                <tr class="addedDeliv">
 		    						                    <td class="zui-sticky-col2">Project Programme(Lead)</td>
-		    						                    <td class="td "><textarea class="hayt" name="pprogramme_details" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td "><textarea class="hayt" name="pprogramme_details" placeholder="Enter details here">@if ($scopes[0]['project_programme']) {{ $scopes[0]['project_programme'] }}  @endif</textarea></td>
 		    						                    <td class="td">
 		    						                    	<div class="col-sm-12">
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="pprogramme_raci[]" value="R"><span class="label-text">R</span>
+		    						                    				<input type="checkbox" @if (strpos($scopes[0]['pprogramme_raci'],'R')!==false) checked  @endif name="pprogramme_raci[]" value="R"><span class="label-text">R</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="pprogramme_raci[]" value="A"><span class="label-text">A</span>
+		    						                    				<input type="checkbox" @if (strpos($scopes[0]['pprogramme_raci'],'A')!==false) checked  @endif name="pprogramme_raci[]" value="A"><span class="label-text">A</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="pprogramme_raci[]" value="C"><span class="label-text">C</span>
+		    						                    				<input type="checkbox" @if (strpos($scopes[0]['pprogramme_raci'],'C')!==false) checked  @endif name="pprogramme_raci[]" value="C"><span class="label-text">C</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="pprogramme_raci[]" value="I"><span class="label-text">I</span>
+		    						                    				<input type="checkbox" @if (strpos($scopes[0]['pprogramme_raci'],'I')!==false) checked  @endif name="pprogramme_raci[]" value="I"><span class="label-text">I</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    	</div>
@@ -1952,83 +2019,83 @@
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="pprogramme_num[]" value="0"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopes[0]['pprogramme_num'],'0')!==false) checked  @endif name="pprogramme_num[]" value="0"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="pprogramme_num[]" value="1"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopes[0]['pprogramme_num'],'1')!==false) checked  @endif name="pprogramme_num[]" value="1"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="pprogramme_num[]" value="2"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopes[0]['pprogramme_num'],'2')!==false) checked  @endif name="pprogramme_num[]" value="2"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="pprogramme_num[]" value="3"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopes[0]['pprogramme_num'],'3')!==false) checked  @endif name="pprogramme_num[]" value="3"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="pprogramme_num[]" value="4"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopes[0]['pprogramme_num'],'4')!==false) checked  @endif name="pprogramme_num[]" value="4"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="pprogramme_num[]" value="5"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopes[0]['pprogramme_num'],'5')!==false) checked  @endif name="pprogramme_num[]" value="5"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="pprogramme_num[]" value="6"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopes[0]['pprogramme_num'],'6')!==false) checked  @endif name="pprogramme_num[]" value="6"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="pprogramme_num[]" value="7"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopes[0]['pprogramme_num'],'7')!==false) checked  @endif name="pprogramme_num[]" value="7"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                </tr>
 		    						                <tr class="addedDeliv">
 		    						                    <td class="zui-sticky-col2">Feasibility Study</td>
-		    						                    <td class="td "><textarea class="hayt" name="feasibility_details" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td "><textarea class="hayt" name="feasibility_details" placeholder="Enter details here">@if ($scopes[0]['feasibility_study']) {{ $scopes[0]['feasibility_study'] }} @endif</textarea></td>
 		    						                    <td class="td">
 		    						                    	<div class="col-sm-12">
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="feasibility_raci[]" value="R"><span class="label-text">R</span>
+		    						                    				<input type="checkbox" @if (strpos($scopes[0]['feasibility_raci'],'R')!==false) checked  @endif name="feasibility_raci[]" value="R"><span class="label-text">R</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="feasibility_raci[]" value="A"><span class="label-text">A</span>
+		    						                    				<input type="checkbox" @if (strpos($scopes[0]['feasibility_raci'],'A')!==false) checked  @endif name="feasibility_raci[]" value="A"><span class="label-text">A</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="feasibility_raci[]" value="C"><span class="label-text">C</span>
+		    						                    				<input type="checkbox" @if (strpos($scopes[0]['feasibility_raci'],'C')!==false) checked  @endif name="feasibility_raci[]" value="C"><span class="label-text">C</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="feasibility_raci[]" value="I"><span class="label-text">I</span>
+		    						                    				<input type="checkbox" @if (strpos($scopes[0]['feasibility_raci'],'I')!==false) checked  @endif name="feasibility_raci[]" value="I"><span class="label-text">I</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    	</div>
@@ -2036,83 +2103,83 @@
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="" value="0"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopes[0]['feasibility_num'],'0')!==false) checked  @endif name="feasibility_num[]" value="0"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="feasibility_num[]" value="1"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopes[0]['feasibility_num'],'1')!==false) checked  @endif name="feasibility_num[]" value="1"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="feasibility_num[]" value="2"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopes[0]['feasibility_num'],'2')!==false) checked  @endif name="feasibility_num[]" value="2"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="feasibility_num[]" value="3"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopes[0]['feasibility_num'],'3')!==false) checked  @endif name="feasibility_num[]" value="3"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="feasibility_num[]" value="4"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopes[0]['feasibility_num'],'4')!==false) checked  @endif name="feasibility_num[]" value="4"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="feasibility_num[]" value="5"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopes[0]['feasibility_num'],'5')!==false) checked  @endif name="feasibility_num[]" value="5"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="feasibility_num[]" value="6"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopes[0]['feasibility_num'],'6')!==false) checked  @endif name="feasibility_num[]" value="6"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="feasibility_num[]" value="7"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopes[0]['feasibility_num'],'7')!==false) checked  @endif name="feasibility_num[]" value="7"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                </tr>
 		    						                <tr class="addedDeliv">
 		    						                    <td class="zui-sticky-col2">Design Responsibility<br> Matrix</td>
-		    						                    <td class="td "><textarea class="hayt" name="design_details" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td "><textarea class="hayt" name="design_details" placeholder="Enter details here">@if ($scopes[0]['design_responsibility']) {{ $scopes[0]['design_responsibility'] }}  @endif</textarea></td>
 		    						                    <td class="td">
 		    						                    	<div class="col-sm-12">
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="design_raci[]" value="R"><span class="label-text">R</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['design_raci'],'R')!==false) checked  @endif name="design_raci[]" value="R"><span class="label-text">R</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="design_raci[]" value="A"><span class="label-text">A</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['design_raci'],'A')!==false) checked  @endif name="design_raci[]" value="A"><span class="label-text">A</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="design_raci[]" value="C"><span class="label-text">C</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['design_raci'],'C')!==false) checked  @endif name="design_raci[]" value="C"><span class="label-text">C</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="design_raci[]" value="I"><span class="label-text">I</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['design_raci'],'I')!==false) checked  @endif name="design_raci[]" value="I"><span class="label-text">I</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    	</div>
@@ -2120,83 +2187,83 @@
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="design_num[]" value="0"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['design_num'],'0')!==false) checked  @endif name="design_num[]" value="0"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="design_num[]" value="1"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['design_num'],'1')!==false) checked  @endif name="design_num[]" value="1"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="design_num[]" value="2"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['design_num'],'2')!==false) checked  @endif name="design_num[]" value="2"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="design_num[]" value="3"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['design_num'],'3')!==false) checked  @endif name="design_num[]" value="3"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="design_num[]" value="4"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['design_num'],'4')!==false) checked  @endif name="design_num[]" value="4"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="design_num[]" value="5"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['design_num'],'5')!==false) checked  @endif name="design_num[]" value="5"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="design_num[]" value="6"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['design_num'],'6')!==false) checked  @endif name="design_num[]" value="6"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="design_num[]" value="7"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['design_num'],'7')!==false) checked  @endif name="design_num[]" value="7"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                </tr>
 		    						                <tr class="addedDeliv">
 		    						                    <td class="zui-sticky-col2">Site Information Report</td>
-		    						                    <td class="td "><textarea class="hayt" name="site_details" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td "><textarea class="hayt" name="site_details" placeholder="Enter details here">@if($scopes[0]['site_information']) {{ $scopes[0]['site_information'] }} @endif</textarea></td>
 		    						                    <td class="td">
 		    						                    	<div class="col-sm-12">
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="site_raci[]" value="R"><span class="label-text">R</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['site_raci'],'R')!==false) checked  @endif name="site_raci[]" value="R"><span class="label-text">R</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="site_raci[]" value="A"><span class="label-text">A</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['site_raci'],'A')!==false) checked  @endif name="site_raci[]" value="A"><span class="label-text">A</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="site_raci[]" value="C"><span class="label-text">C</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['site_raci'],'C')!==false) checked  @endif name="site_raci[]" value="C"><span class="label-text">C</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="site_raci[]" value="I"><span class="label-text">I</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['site_raci'],'I')!==false) checked  @endif name="site_raci[]" value="I"><span class="label-text">I</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    	</div>
@@ -2204,83 +2271,83 @@
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="site_num[]" value="0"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['site_num'],'0')!==false) checked  @endif name="site_num[]" value="0"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="site_num[]" value="1"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['site_num'],'1')!==false) checked  @endif name="site_num[]" value="1"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="site_num[]" value="2"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['site_num'],'2')!==false) checked  @endif name="site_num[]" value="2"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="site_num[]" value="3"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['site_num'],'3')!==false) checked  @endif name="site_num[]" value="3"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="site_num[]" value="4"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['site_num'],'4')!==false) checked  @endif name="site_num[]" value="4"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="site_num[]" value="5"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['site_num'],'5')!==false) checked  @endif name="site_num[]" value="5"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="site_num[]" value="6"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['site_num'],'6')!==false) checked  @endif name="site_num[]" value="6"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="site_num[]" value="7"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['site_num'],'7')!==false) checked  @endif name="site_num[]" value="7"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                </tr>
 		    						                <tr class="addedDeliv">
 		    						                    <td class="zui-sticky-col2">Information Exchange<br> Strategy</td>
-		    						                    <td class="td "><textarea class="hayt" name="info_details" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td "><textarea class="hayt" name="info_details" placeholder="Enter details here">@if($scopes[0]['information_exchange_strategy']) {{ $scopes[0]['information_exchange_strategy'] }}  @endif</textarea></td>
 		    						                    <td class="td">
 		    						                    	<div class="col-sm-12">
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="info_raci[]" value="R"><span class="label-text">R</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['information_raci'],'R')!==false) checked  @endif name="info_raci[]" value="R"><span class="label-text">R</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="info_raci[]" value="A"><span class="label-text">A</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['information_raci'],'A')!==false) checked  @endif name="info_raci[]" value="A"><span class="label-text">A</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="info_raci[]" value="C"><span class="label-text">C</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['information_raci'],'C')!==false) checked  @endif name="info_raci[]" value="C"><span class="label-text">C</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="info_raci[]" value="I"><span class="label-text">I</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['information_raci'],'I')!==false) checked  @endif name="info_raci[]" value="I"><span class="label-text">I</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    	</div>
@@ -2288,83 +2355,83 @@
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="info_num[]" value="0"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['information_num'],'0')!==false) checked  @endif name="info_num[]" value="0"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="info_num[]" value="1"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['information_num'],'1')!==false) checked  @endif name="info_num[]" value="1"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="info_num[]" value="2"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['information_num'],'2')!==false) checked  @endif name="info_num[]" value="2"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="info_num[]" value="3"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['information_num'],'3')!==false) checked  @endif name="info_num[]" value="3"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="info_num[]" value="4"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['information_num'],'4')!==false) checked  @endif name="info_num[]" value="4"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="info_num[]" value="5"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['information_num'],'5')!==false) checked  @endif name="info_num[]" value="5"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="info_num[]" value="6"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['information_num'],'6')!==false) checked  @endif name="info_num[]" value="6"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="info_num[]" value="7"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['information_num'],'7')!==false) checked  @endif name="info_num[]" value="7"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                </tr>
 		    						                <tr class="addedDeliv">
 		    						                    <td class="zui-sticky-col2">Project Brief</td>
-		    						                    <td class="td "><textarea class="hayt" name="project_details" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td "><textarea class="hayt" name="project_details" placeholder="Enter details here">@if($scopes[0]['project_brief']) {{ $scopes[0]['project_brief'] }}  @endif</textarea></td>
 		    						                    <td class="td">
 		    						                    	<div class="col-sm-12">
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="project_raci[]" value="R"><span class="label-text">R</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['project_raci'],'R')!==false) checked  @endif name="project_raci[]" value="R"><span class="label-text">R</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="project_raci[]" value="A"><span class="label-text">A</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['project_raci'],'A')!==false) checked  @endif name="project_raci[]" value="A"><span class="label-text">A</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="project_raci[]" value="C"><span class="label-text">C</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['project_raci'],'C')!==false) checked  @endif name="project_raci[]" value="C"><span class="label-text">C</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="project_raci[]" value="I"><span class="label-text">I</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['project_raci'],'I')!==false) checked  @endif name="project_raci[]" value="I"><span class="label-text">I</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    	</div>
@@ -2372,83 +2439,83 @@
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="project_num[]" value="0"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['project_num'],'0')!==false) checked  @endif name="project_num[]" value="0"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="project_num[]" value="1"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['project_num'],'1')!==false) checked  @endif name="project_num[]" value="1"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="project_num[]" value="2"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['project_num'],'2')!==false) checked  @endif name="project_num[]" value="2"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="project_num[]" value="3"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['project_num'],'3')!==false) checked  @endif name="project_num[]" value="3"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="project_num[]" value="4"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['project_num'],'4')!==false) checked  @endif name="project_num[]" value="4"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="project_num[]" value="5"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['project_num'],'5')!==false) checked  @endif name="project_num[]" value="5"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="project_num[]" value="6"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['project_num'],'6')!==false) checked  @endif name="project_num[]" value="6"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="project_num[]" value="7"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['project_num'],'7')!==false) checked  @endif name="project_num[]" value="7"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
-		    						                </tr>
+		    						                </tr>	
 		    						                <tr class="addedDeliv">
 		    						                    <td class="zui-sticky-col2">Risk Assessment(Lead)</td>
-		    						                    <td class="td "><textarea class="hayt" name="risk_details" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td "><textarea class="hayt" name="risk_details" placeholder="Enter details here">@if($scopes[0]['risk_assessment']) {{ $scopes[0]['risk_assessment'] }}  @endif</textarea></td>
 		    						                    <td class="td">
 		    						                    	<div class="col-sm-12">
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="risk_raci[]" value="R"><span class="label-text">R</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['risk_raci'],'R')!==false) checked  @endif name="risk_raci[]" value="R"><span class="label-text">R</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="risk_raci[]" value="A"><span class="label-text">A</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['risk_raci'],'A')!==false) checked  @endif name="risk_raci[]" value="A"><span class="label-text">A</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="risk_raci[]" value="C"><span class="label-text">C</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['risk_raci'],'C')!==false) checked  @endif name="risk_raci[]" value="C"><span class="label-text">C</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="risk_raci[]" value="I"><span class="label-text">I</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['risk_raci'],'I')!==false) checked  @endif name="risk_raci[]" value="I"><span class="label-text">I</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    	</div>
@@ -2456,83 +2523,83 @@
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="risk_num[]" value="0"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['risk_num'],'0')!==false) checked  @endif name="risk_num[]" value="0"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="risk_num[]" value="1"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['risk_num'],'1')!==false) checked  @endif name="risk_num[]" value="1"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="risk_num[]" value="2"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['risk_num'],'2')!==false) checked  @endif name="risk_num[]" value="2"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="risk_num[]" value="3"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['risk_num'],'3')!==false) checked  @endif name="risk_num[]" value="3"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="risk_num[]" value="4"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['risk_num'],'4')!==false) checked  @endif name="risk_num[]" value="4"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="risk_num[]" value="5"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['risk_num'],'5')!==false) checked  @endif name="risk_num[]" value="5"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="risk_num[]" value="6"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['risk_num'],'6')!==false) checked  @endif name="risk_num[]" value="6"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="risk_num[]" value="7"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['risk_num'],'7')!==false) checked  @endif name="risk_num[]" value="7"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                </tr>
 		    						                 <tr class="addedDeliv">
 		    						                    <td class="zui-sticky-col2">Handover Strategy(Lead)</td>
-		    						                    <td class="td "><textarea class="hayt" name="hand_details" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td "><textarea class="hayt" name="hand_details" placeholder="Enter details here">@if($scopes[0]['handover_strategy']) {{ $scopes[0]['handover_strategy'] }} @endif</textarea></td>
 		    						                    <td class="td">
 		    						                    	<div class="col-sm-12">
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="hand_raci[]" value="R"><span class="label-text">R</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['handover_raci'],'R')!==false) checked  @endif name="hand_raci[]" value="R"><span class="label-text">R</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="hand_raci[]" value="A"><span class="label-text">A</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['handover_raci'],'A')!==false) checked  @endif name="hand_raci[]" value="A"><span class="label-text">A</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="hand_raci[]" value="C"><span class="label-text">C</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['handover_raci'],'C')!==false) checked  @endif name="hand_raci[]" value="C"><span class="label-text">C</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="hand_raci[]" value="I"><span class="label-text">I</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['handover_raci'],'I')!==false) checked  @endif name="hand_raci[]" value="I"><span class="label-text">I</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    	</div>
@@ -2540,83 +2607,83 @@
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="hand_num[]" value="0"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['handover_num'],'0')!==false) checked  @endif name="hand_num[]" value="0"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="hand_num[]" value="1"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['handover_num'],'1')!==false) checked  @endif name="hand_num[]" value="1"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="hand_num[]" value="2"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['handover_num'],'2')!==false) checked  @endif name="hand_num[]" value="2"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="hand_num[]" value="3"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['handover_num'],'3')!==false) checked  @endif name="hand_num[]" value="3"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="hand_num[]" value="4"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['handover_num'],'4')!==false) checked  @endif name="hand_num[]" value="4"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="hand_num[]" value="5"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['handover_num'],'5')!==false) checked  @endif name="hand_num[]" value="5"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="hand_num[]" value="6"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['handover_num'],'6')!==false) checked  @endif name="hand_num[]" value="6"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="hand_num[]" value="7"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['handover_num'],'7')!==false) checked  @endif name="hand_num[]" value="7"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                </tr>
 		    						                 <tr class="addedDeliv">
 		    						                    <td class="zui-sticky-col2">Project Execution Plan</td>
-		    						                    <td class="td "><textarea class="hayt" name="execution_details" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td "><textarea class="hayt" name="execution_details" placeholder="Enter details here">@if($scopes[0]['project_execution_plan']) {{ $scopes[0]['project_execution_plan'] }}  @endif</textarea></td>
 		    						                    <td class="td">
 		    						                    	<div class="col-sm-12">
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="execution_raci[]" value="R"><span class="label-text">R</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['execution_raci'],'R')!==false) checked  @endif name="execution_raci[]" value="R"><span class="label-text">R</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="execution_raci[]" value="A"><span class="label-text">A</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['execution_raci'],'A')!==false) checked  @endif name="execution_raci[]" value="A"><span class="label-text">A</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="execution_raci[]" value="C"><span class="label-text">C</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['execution_raci'],'C')!==false) checked  @endif name="execution_raci[]" value="C"><span class="label-text">C</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="execution_raci[]" value="I"><span class="label-text">I</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['execution_raci'],'I')!==false) checked  @endif name="execution_raci[]" value="I"><span class="label-text">I</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    	</div>
@@ -2624,83 +2691,83 @@
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="execution_num[]" value="0"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['execution_num'],'0')!==false) checked  @endif name="execution_num[]" value="0"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="execution_num[]" value="1"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['execution_num'],'1')!==false) checked  @endif name="execution_num[]" value="1"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="execution_num[]" value="2"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['execution_num'],'2')!==false) checked  @endif name="execution_num[]" value="2"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="execution_num[]" value="3"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['execution_num'],'3')!==false) checked  @endif name="execution_num[]" value="3"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="execution_num[]" value="4"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['execution_num'],'4')!==false) checked  @endif name="execution_num[]" value="4"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="execution_num[]" value="5"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['execution_num'],'5')!==false) checked  @endif name="execution_num[]" value="5"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="execution_num[]" value="6"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['execution_num'],'6')!==false) checked  @endif name="execution_num[]" value="6"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="execution_num[]" value="7"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['execution_num'],'7')!==false) checked  @endif name="execution_num[]" value="7"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                </tr>
 		    						                <tr class="addedDeliv">
 		    						                    <td class="zui-sticky-col2">Design Proposals from<br> Design Team Members</td>
-		    						                    <td class="td "><textarea class="hayt" name="proposal_details" placeholder="Enter details here"></textarea></td>
+		    						                    <td class="td "><textarea class="hayt" name="proposal_details" placeholder="Enter details here">@if($scopes[0]['design_proposal']) {{ $scopes[0]['design_proposal'] }}  @endif</textarea></td>
 		    						                    <td class="td">
 		    						                    	<div class="col-sm-12">
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="proposal_raci[]" value="R"><span class="label-text">R</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['proposal_raci'],'R')!==false) checked  @endif name="proposal_raci[]" value="R"><span class="label-text">R</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="proposal_raci[]" value="A"><span class="label-text">A</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['proposal_raci'],'A')!==false) checked  @endif name="proposal_raci[]" value="A"><span class="label-text">A</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="proposal_raci[]" value="C"><span class="label-text">C</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['proposal_raci'],'C')!==false) checked  @endif name="proposal_raci[]" value="C"><span class="label-text">C</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    		<div class="col-sm-3 form-check">
 		    						                    			<label>
-		    						                    				<input type="checkbox" name="proposal_raci[]" value="I"><span class="label-text">I</span>
+		    						                    				<input type="checkbox" @if(strpos($scopes[0]['proposal_raci'],'I')!==false) checked  @endif name="proposal_raci[]" value="I"><span class="label-text">I</span>
 		    						                    			</label>
 		    						                    		</div>
 		    						                    	</div>
@@ -2708,56 +2775,56 @@
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="proposal_num[]" value="0"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['proposal_num'],'0')!==false) checked  @endif name="proposal_num[]" value="0"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="proposal_num[]" value="1"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['proposal_num'],'1')!==false) checked  @endif name="proposal_num[]" value="1"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="proposal_num[]" value="2"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['proposal_num'],'2')!==false) checked  @endif name="proposal_num[]" value="2"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="proposal_num[]" value="3"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['proposal_num'],'3')!==false) checked  @endif name="proposal_num[]" value="3"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="proposal_num[]" value="4"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['proposal_num'],'4')!==false) checked  @endif name="proposal_num[]" value="4"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="proposal_num[]" value="5"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['proposal_num'],'5')!==false) checked  @endif name="proposal_num[]" value="5"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="proposal_num[]" value="6"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['proposal_num'],'6')!==false) checked  @endif name="proposal_num[]" value="6"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" name="proposal_num[]" value="7"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if(strpos($scopes[0]['proposal_num'],'7')!==false) checked  @endif name="proposal_num[]" value="7"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
@@ -4640,6 +4707,2832 @@
 		    						        </table>
 		    						    </div>
 		    						</div>
+		    						@else
+			    						<div class="zui-wrapper2" id="myscrol">
+			    						    <div class="zui-scroller2">
+			    						        <table class="zui-table2">
+			    						            <thead>
+			    						                <tr>
+			    						                    <th class="zui-sticky-col2"><center>Deliverables</center></th>
+			    						                    <th style="width: 300px;max-width: 300px;min-width: 300px;">
+			    						                    Details/Contents</th>
+			    						                    <th style="width: 250px;max-width: 250px;min-width: 250px;">RACI</th>
+			    						                    <th>0</th>
+			    						                    <th>1</th>
+			    						                    <th>2</th>
+			    						                    <th>3</th>
+			    						                    <th>4</th>
+			    						                    <th>5</th>
+			    						                    <th>6</th>
+			    						                    <th>7</th>
+			    						                </tr>
+			    						            </thead>
+			    						            <tbody id="addedDelivs" >
+			    						                <tr class="addedDeliv">
+			    						                    <td class="zui-sticky-col2">Strategic Brief</td>
+			    						                    <input type="hidden" name="delivid" value="0">
+			    						                    <td class="td "><textarea class="hayt" name="strategic_details" placeholder="Enter details here"></textarea></td>
+			    						                    <td class="td">
+			    						                    	<div class="col-sm-12">
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="strategic_raci[]" value="R"><span class="label-text">R</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="strategic_raci[]" value="A"><span class="label-text">A</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="strategic_raci[]" value="C"><span class="label-text">C</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="strategic_raci[]" value="I"><span class="label-text">I</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="strategic_num[]" value="0"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="strategic_num[]" value="1"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="strategic_num[]" value="2"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="strategic_num[]" value="3"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="strategic_num[]" value="4"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="strategic_num[]" value="5"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="strategic_num[]" value="6"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="strategic_num[]" value="7"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    
+			    						                </tr>
+			    						                <tr class="addedDeliv">
+			    						                    <td class="zui-sticky-col2">Project Programme(Lead)</td>
+			    						                    <td class="td "><textarea class="hayt" name="pprogramme_details" placeholder="Enter details here"></textarea></td>
+			    						                    <td class="td">
+			    						                    	<div class="col-sm-12">
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="pprogramme_raci[]" value="R"><span class="label-text">R</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="pprogramme_raci[]" value="A"><span class="label-text">A</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="pprogramme_raci[]" value="C"><span class="label-text">C</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="pprogramme_raci[]" value="I"><span class="label-text">I</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="pprogramme_num[]" value="0"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="pprogramme_num[]" value="1"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="pprogramme_num[]" value="2"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="pprogramme_num[]" value="3"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="pprogramme_num[]" value="4"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="pprogramme_num[]" value="5"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="pprogramme_num[]" value="6"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="pprogramme_num[]" value="7"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr class="addedDeliv">
+			    						                    <td class="zui-sticky-col2">Feasibility Study</td>
+			    						                    <td class="td "><textarea class="hayt" name="feasibility_details" placeholder="Enter details here"></textarea></td>
+			    						                    <td class="td">
+			    						                    	<div class="col-sm-12">
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="feasibility_raci[]" value="R"><span class="label-text">R</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="feasibility_raci[]" value="A"><span class="label-text">A</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="feasibility_raci[]" value="C"><span class="label-text">C</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="feasibility_raci[]" value="I"><span class="label-text">I</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="0"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="feasibility_num[]" value="1"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="feasibility_num[]" value="2"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="feasibility_num[]" value="3"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="feasibility_num[]" value="4"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="feasibility_num[]" value="5"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="feasibility_num[]" value="6"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="feasibility_num[]" value="7"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr class="addedDeliv">
+			    						                    <td class="zui-sticky-col2">Design Responsibility<br> Matrix</td>
+			    						                    <td class="td "><textarea class="hayt" name="design_details" placeholder="Enter details here"></textarea></td>
+			    						                    <td class="td">
+			    						                    	<div class="col-sm-12">
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="design_raci[]" value="R"><span class="label-text">R</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="design_raci[]" value="A"><span class="label-text">A</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="design_raci[]" value="C"><span class="label-text">C</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="design_raci[]" value="I"><span class="label-text">I</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="design_num[]" value="0"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="design_num[]" value="1"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="design_num[]" value="2"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="design_num[]" value="3"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="design_num[]" value="4"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="design_num[]" value="5"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="design_num[]" value="6"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="design_num[]" value="7"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr class="addedDeliv">
+			    						                    <td class="zui-sticky-col2">Site Information Report</td>
+			    						                    <td class="td "><textarea class="hayt" name="site_details" placeholder="Enter details here"></textarea></td>
+			    						                    <td class="td">
+			    						                    	<div class="col-sm-12">
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="site_raci[]" value="R"><span class="label-text">R</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="site_raci[]" value="A"><span class="label-text">A</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="site_raci[]" value="C"><span class="label-text">C</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="site_raci[]" value="I"><span class="label-text">I</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="site_num[]" value="0"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="site_num[]" value="1"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="site_num[]" value="2"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="site_num[]" value="3"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="site_num[]" value="4"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="site_num[]" value="5"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="site_num[]" value="6"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="site_num[]" value="7"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr class="addedDeliv">
+			    						                    <td class="zui-sticky-col2">Information Exchange<br> Strategy</td>
+			    						                    <td class="td "><textarea class="hayt" name="info_details" placeholder="Enter details here"></textarea></td>
+			    						                    <td class="td">
+			    						                    	<div class="col-sm-12">
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="info_raci[]" value="R"><span class="label-text">R</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="info_raci[]" value="A"><span class="label-text">A</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="info_raci[]" value="C"><span class="label-text">C</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="info_raci[]" value="I"><span class="label-text">I</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="info_num[]" value="0"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="info_num[]" value="1"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="info_num[]" value="2"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="info_num[]" value="3"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="info_num[]" value="4"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="info_num[]" value="5"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="info_num[]" value="6"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="info_num[]" value="7"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr class="addedDeliv">
+			    						                    <td class="zui-sticky-col2">Project Brief</td>
+			    						                    <td class="td "><textarea class="hayt" name="project_details" placeholder="Enter details here"></textarea></td>
+			    						                    <td class="td">
+			    						                    	<div class="col-sm-12">
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="project_raci[]" value="R"><span class="label-text">R</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="project_raci[]" value="A"><span class="label-text">A</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="project_raci[]" value="C"><span class="label-text">C</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="project_raci[]" value="I"><span class="label-text">I</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="project_num[]" value="0"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="project_num[]" value="1"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="project_num[]" value="2"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="project_num[]" value="3"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="project_num[]" value="4"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="project_num[]" value="5"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="project_num[]" value="6"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="project_num[]" value="7"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr class="addedDeliv">
+			    						                    <td class="zui-sticky-col2">Risk Assessment(Lead)</td>
+			    						                    <td class="td "><textarea class="hayt" name="risk_details" placeholder="Enter details here"></textarea></td>
+			    						                    <td class="td">
+			    						                    	<div class="col-sm-12">
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="risk_raci[]" value="R"><span class="label-text">R</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="risk_raci[]" value="A"><span class="label-text">A</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="risk_raci[]" value="C"><span class="label-text">C</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="risk_raci[]" value="I"><span class="label-text">I</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="risk_num[]" value="0"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="risk_num[]" value="1"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="risk_num[]" value="2"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="risk_num[]" value="3"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="risk_num[]" value="4"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="risk_num[]" value="5"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="risk_num[]" value="6"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="risk_num[]" value="7"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                 <tr class="addedDeliv">
+			    						                    <td class="zui-sticky-col2">Handover Strategy(Lead)</td>
+			    						                    <td class="td "><textarea class="hayt" name="hand_details" placeholder="Enter details here"></textarea></td>
+			    						                    <td class="td">
+			    						                    	<div class="col-sm-12">
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="hand_raci[]" value="R"><span class="label-text">R</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="hand_raci[]" value="A"><span class="label-text">A</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="hand_raci[]" value="C"><span class="label-text">C</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="hand_raci[]" value="I"><span class="label-text">I</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="hand_num[]" value="0"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="hand_num[]" value="1"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="hand_num[]" value="2"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="hand_num[]" value="3"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="hand_num[]" value="4"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="hand_num[]" value="5"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="hand_num[]" value="6"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="hand_num[]" value="7"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                 <tr class="addedDeliv">
+			    						                    <td class="zui-sticky-col2">Project Execution Plan</td>
+			    						                    <td class="td "><textarea class="hayt" name="execution_details" placeholder="Enter details here"></textarea></td>
+			    						                    <td class="td">
+			    						                    	<div class="col-sm-12">
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="execution_raci[]" value="R"><span class="label-text">R</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="execution_raci[]" value="A"><span class="label-text">A</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="execution_raci[]" value="C"><span class="label-text">C</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="execution_raci[]" value="I"><span class="label-text">I</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="execution_num[]" value="0"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="execution_num[]" value="1"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="execution_num[]" value="2"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="execution_num[]" value="3"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="execution_num[]" value="4"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="execution_num[]" value="5"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="execution_num[]" value="6"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="execution_num[]" value="7"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr class="addedDeliv">
+			    						                    <td class="zui-sticky-col2">Design Proposals from<br> Design Team Members</td>
+			    						                    <td class="td "><textarea class="hayt" name="proposal_details" placeholder="Enter details here"></textarea></td>
+			    						                    <td class="td">
+			    						                    	<div class="col-sm-12">
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="proposal_raci[]" value="R"><span class="label-text">R</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="proposal_raci[]" value="A"><span class="label-text">A</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="proposal_raci[]" value="C"><span class="label-text">C</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    		<div class="col-sm-3 form-check">
+			    						                    			<label>
+			    						                    				<input type="checkbox" name="proposal_raci[]" value="I"><span class="label-text">I</span>
+			    						                    			</label>
+			    						                    		</div>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="proposal_num[]" value="0"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="proposal_num[]" value="1"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="proposal_num[]" value="2"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="proposal_num[]" value="3"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="proposal_num[]" value="4"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="proposal_num[]" value="5"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="proposal_num[]" value="6"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="proposal_num[]" value="7"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                @foreach($delivs as $deliv)
+			    						                	<tr id="deliv" data-edit="yes" data-addid="{{ $deliv['added_id'] }}">
+			    						                	    <td class="zui-sticky-col2"><textarea id="delivname" class="hayt named" name="named" placeholder="Enter details here">{{ $deliv['name'] }}</textarea></td>
+			    						                	    <td class="td "><textarea class="hayt details" name="deliv_details" placeholder="Enter details here">{{ $deliv['details'] }}</textarea></td>
+			    						                	    <td class="td">
+			    						                	    	<div class="col-sm-12">
+			    						                	    		<div class="col-sm-3 form-check">
+			    						                	    			<label>
+			    						                	    				<input type="checkbox" @if (strpos($deliv['raci'],'R')!==false) checked @else  @endif name="strat_raci[]" value="R" class="rac"><span class="label-text">R</span>
+			    						                	    			</label>
+			    						                	    		</div>
+			    						                	    		<div class="col-sm-3 form-check">
+			    						                	    			<label>
+			    						                	    				<input type="checkbox" @if (strpos($deliv['raci'],'A')!==false) checked @else  @endif name="strat_raci[]" value="A" class="rac"><span class="label-text">A</span>
+			    						                	    			</label>
+			    						                	    		</div>
+			    						                	    		<div class="col-sm-3 form-check">
+			    						                	    			<label>
+			    						                	    				<input type="checkbox" @if (strpos($deliv['raci'],'C')!==false) checked @else  @endif name="strat_raci[]" value="C" class="rac"><span class="label-text">C</span>
+			    						                	    			</label>
+			    						                	    		</div>
+			    						                	    		<div class="col-sm-3 form-check">
+			    						                	    			<label>
+			    						                	    				<input type="checkbox" @if (strpos($deliv['raci'],'I')!==false) checked @else  @endif name="strat_raci[]" value="I" class="rac"><span class="label-text">I</span>
+			    						                	    			</label>
+			    						                	    		</div>
+			    						                	    	</div>
+			    						                	    </td>
+			    						                	    <td class="td">
+			    						                	    	<div class="form-check">
+			    						                	    		<label>
+			    						                	    			<input type="checkbox" @if (strpos($deliv['num'],'0')!==false) checked @else  @endif name="strat_num[]" value="0" class="ribanum"><span class="label-text"></span>
+			    						                	    		</label>
+			    						                	    	</div>
+			    						                	    </td>
+			    						                	    <td class="td">
+			    						                	    	<div class="form-check">
+			    						                	    		<label>
+			    						                	    			<input type="checkbox" @if (strpos($deliv['num'],'1')!==false) checked @else  @endif name="strat_num[]" value="1" class="ribanum"><span class="label-text"></span>
+			    						                	    		</label>
+			    						                	    	</div>
+			    						                	    </td>
+			    						                	    <td class="td">
+			    						                	    	<div class="form-check">
+			    						                	    		<label>
+			    						                	    			<input type="checkbox" @if (strpos($deliv['num'],'2')!==false) checked @else  @endif name="strat_num[]" value="2" class="ribanum"><span class="label-text"></span>
+			    						                	    		</label>
+			    						                	    	</div>
+			    						                	    </td>
+			    						                	    <td class="td">
+			    						                	    	<div class="form-check">
+			    						                	    		<label>
+			    						                	    			<input type="checkbox" @if (strpos($deliv['num'],'3')!==false) checked @else  @endif name="strat_num[]" value="3" class="ribanum"><span class="label-text"></span>
+			    						                	    		</label>
+			    						                	    	</div>
+			    						                	    </td>
+			    						                	    <td class="td">
+			    						                	    	<div class="form-check">
+			    						                	    		<label>
+			    						                	    			<input type="checkbox" @if (strpos($deliv['num'],'4')!==false) checked @else  @endif name="strat_num[]" value="4" class="ribanum"><span class="label-text"></span>
+			    						                	    		</label>
+			    						                	    	</div>
+			    						                	    </td>
+			    						                	    <td class="td">
+			    						                	    	<div class="form-check">
+			    						                	    		<label>
+			    						                	    			<input type="checkbox" @if (strpos($deliv['num'],'5')!==false) checked @else  @endif name="strat_num[]" value="5" class="ribanum"><span class="label-text"></span>
+			    						                	    		</label>
+			    						                	    	</div>
+			    						                	    </td>
+			    						                	    <td class="td">
+			    						                	    	<div class="form-check">
+			    						                	    		<label>
+			    						                	    			<input type="checkbox" @if (strpos($deliv['num'],'6')!==false) checked @else  @endif name="strat_num[]" value="6" class="ribanum"><span class="label-text"></span>
+			    						                	    		</label>
+			    						                	    	</div>
+			    						                	    </td>
+			    						                	    <td class="td">
+			    						                	    	<div class="form-check">
+			    						                	    		<label>
+			    						                	    			<input type="checkbox" @if (strpos($deliv['num'],'7')!==false) checked @else  @endif name="strat_num[]" value="7" class="ribanum"><span class="label-text"></span>
+			    						                	    		</label>
+			    						                	    	</div>
+			    						                	    </td>
+			    						                	</tr>
+			    						                @endforeach
+			    						            </tbody>
+			    						        </table>
+			    						    </div>
+			    						</div>
+			    						<div class="col-sm-12">
+			    							<div class="row">
+			    								<div class="form-group">
+			    									<button class="btn addbutton" data-scroll-to="#deliv"
+	        data-scroll-focus="#delivname"
+	        data-scroll-speed="700"
+	        data-scroll-offset="200" >Add</button>
+			    								</div>
+			    							</div>
+			    						</div>
+			    						<br>
+			    						<br>
+			    						<!-- <div class="col-sm-12">
+			    							<div class="col-sm-2"></div>
+			    							<div class="col-sm-2"></div>
+			    							<div class="col-sm-2"></div>
+			    							<div class="col-sm-2"></div>
+			    							<div class="col-sm-2"></div>
+			    							<div class="col-sm-2">
+							            		<h4>RIBA Stages</h4>
+							            	</div>
+			    						</div> -->
+			    						<div class="zui-wrapper3" id="myscrol2" >
+			    						    <div class="zui-scroller3" >
+			    						        <table class="zui-table3">
+			    						            <thead>
+			    						                <tr>
+			    						                    <th class="zui-sticky-col3"><center>Meetings</center></th>
+			    						                    <th style="width: 300px;max-width: 300px;min-width: 300px;">
+			    						                    Purpose</th>
+			    						                    <th style="width: 250px;max-width: 250px;min-width: 250px;">Attendees</th>
+			    						                    <th style="width: 250px;max-width: 250px;min-width: 250px;">Assumed Duration<br>(hours)</th>
+			    						                    <th>Reoccurence/Number of<br>Meetings</th>
+			    						                    <th>Arrange</th>
+			    						                    <th>Attend</th>
+			    						                    <th>Minute</th>
+			    						                    <th>0</th>
+			    						                    <th>1</th>
+			    						                    <th>2</th>
+			    						                    <th>3</th>
+			    						                    <th>4</th>
+			    						                    <th>5</th>
+			    						                    <th>6</th>
+			    						                    <th>7</th>
+			    						                </tr>
+			    						            </thead>
+			    						            <tbody id="addedmeet">
+			    						                <tr class="addedmeet">
+			    						                    <td class="zui-sticky-col3">Pre-Application<br> Meetings</td>
+			    						                    <td class="td "><textarea class="hayt3" name="pre_app_purpose" placeholder="Enter details here"></textarea></td>
+			    						                    <td class="td"><textarea class="hayt3" name="pre_app_attendees" placeholder="Enter details here"></textarea></td>
+			    						                    <td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text name="pre_app_assumed_duration"></td>
+			    						                    <td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" name="pre_app_reoccurence"></td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="pre_app_choice[]" value="Arrange"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="pre_app_choice[]" value="Attend"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="pre_app_choice[]" value="Minute"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="pre_app_num[]" value="0"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="pre_app_num[]" value="1"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="pre_app_num[]" value="2"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="pre_app_num[]" value="3"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="pre_app_num[]" value="4"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="pre_app_num[]" value="5"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="pre_app_num[]" value="6"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="pre_app_num[]" value="7"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr class="addedmeet">
+			    						                    <td class="zui-sticky-col3">Site Visits</td>
+			    						                    <td class="td "><textarea class="hayt3" name="site_visits_purpose" placeholder="Enter details here"></textarea></td>
+			    						                    <td class="td"><textarea class="hayt3" name="site_visits_attendees" placeholder="Enter details here"></textarea></td>
+			    						                    <td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" name="site_visits_assumed_duration"></td>
+			    						                    <td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" name="site_visits_reoccurence"></td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="site_visits_choice[]" value="Arrange"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="site_visits_choice[]" value="Attend"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="site_visits_choice[]" value="Minute"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="site_visits_num[]" value="0"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="site_visits_num[]" value="1"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="site_visits_num[]" value="2"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="site_visits_num[]" value="3"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="site_visits_num[]" value="4"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="site_visits_num[]" value="5"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="site_visits_num[]" value="6"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="site_visits_num[]" value="7"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr class="addedmeet">
+			    						                    <td class="zui-sticky-col3">Site/Project Meetings<br>(RIBA Stage 4/5)</td>
+			    						                    <td class="td "><textarea class="hayt3" name="riba_purpose" placeholder="Enter details here"></textarea></td>
+			    						                    <td class="td"><textarea class="hayt3" name="riba_attendees" placeholder="Enter details here"></textarea></td>
+			    						                    <td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" name="riba_assumed_duration"></td>
+			    						                    <td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" name="riba_reoccurence"></td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="riba_choice[]" value="Arrange"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="riba_choice[]" value="Attend"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="riba_choice[]" value="Minute"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="riba_num[]" value="0"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="riba_num[]" value="1"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="riba_num[]" value="2"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="riba_num[]" value="3"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="riba_num[]" value="4"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="riba_num[]" value="5"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="riba_num[]" value="6"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="riba_num[]" value="7"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr class="addedmeet">
+			    						                    <td class="zui-sticky-col3">SC / PC Site<br> Inspection</td>
+			    						                    <td class="td "><textarea class="hayt3" name="inspection_purpose" placeholder="Enter details here"></textarea></td>
+			    						                    <td class="td"><textarea class="hayt3" name="inspection_attendees" placeholder="Enter details here"></textarea></td>
+			    						                    <td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" name="inspection_assumed_duration"></td>
+			    						                    <td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" name="inspection_reoccurence"></td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="inspection_choice[]" value="Arrange"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="inspection_choice[]" value="Attend"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="inspection_choice[]" value="Minute"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="inspection_num[]" value="0"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="inspection_num[]" value="1"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="inspection_num[]" value="2"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="inspection_num[]" value="3"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="inspection_num[]" value="4"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="inspection_num[]" value="5"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="inspection_num[]" value="6"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="inspection_num[]" value="7"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                @foreach($meetings as $meet)
+			    						                	<tr id="meetclone" data-edit="yes" data-addid="{{ $meet['added_id'] }}">
+			    						                		<td class="zui-sticky-col3"><textarea class="hayt3 name" name="name" placeholder="Enter details here">{{ $meet['name'] }}</textarea></td>
+			    						                		<td class="td "><textarea class="hayt3 purpose" name="purpose" placeholder="Enter details here">{{ $meet['purpose'] }}</textarea></td>
+			    						                		<td class="td"><textarea class="hayt3 attendees" name="attendees" placeholder="Enter details here">{{ $meet['attendees'] }}</textarea></td>
+			    						                		<td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" value="{{ $meet['duration'] }} " class="duration" name="durations"></td>
+			    						                		<td class="td"><input style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" value="{{ $meet['reoccurence'] }}" class="reoccurence" name="reoccurences"></td>
+			    						                		<td class="td">
+			    						                			<div class="form-check">
+			    						                				<label>
+			    						                					<input type="checkbox" @if(strpos($meet['arrange'],'Arrange')!==false) checked @endif class="arrange" name="arrange[]" value="Arrange"><span class="label-text"></span>
+			    						                				</label>
+			    						                			</div>
+			    						                		</td>
+			    						                		<td class="td">
+			    						                			<div class="form-check">
+			    						                				<label>
+			    						                					<input type="checkbox" @if(strpos($meet['arrange'],'Attend')!==false) checked @endif class="arrange" name="arrange[]" value="Attend"><span class="label-text"></span>
+			    						                				</label>
+			    						                			</div>
+			    						                		</td>
+			    						                		<td class="td">
+			    						                			<div class="form-check">
+			    						                				<label>
+			    						                					<input type="checkbox" @if(strpos($meet['arrange'],'Minute')!==false) checked @endif class="arrange" name="arrange[]" value="Minute"><span class="label-text"></span>
+			    						                				</label>
+			    						                			</div>
+			    						                		</td>
+			    						                		<td class="td">
+			    						                			<div class="form-check">
+			    						                				<label>
+			    						                					<input type="checkbox" @if(strpos($meet['num'],'0')!==false) checked @endif name="num[]" class="meetnum" value="0"><span class="label-text"></span>
+			    						                				</label>
+			    						                			</div>
+			    						                		</td>
+			    						                		<td class="td">
+			    						                			<div class="form-check">
+			    						                				<label>
+			    						                					<input type="checkbox" @if(strpos($meet['num'],'1')!==false) checked @endif name="num[]" class="meetnum" value="1"><span class="label-text"></span>
+			    						                				</label>
+			    						                			</div>
+			    						                		</td>
+			    						                		<td class="td">
+			    						                			<div class="form-check">
+			    						                				<label>
+			    						                					<input type="checkbox" @if(strpos($meet['num'],'2')!==false) checked @endif name="num[]" class="meetnum" value="2"><span class="label-text"></span>
+			    						                				</label>
+			    						                			</div>
+			    						                		</td>
+			    						                		<td class="td">
+			    						                			<div class="form-check">
+			    						                				<label>
+			    						                					<input type="checkbox" @if(strpos($meet['num'],'3')!==false) checked @endif name="num[]" class="meetnum" value="3"><span class="label-text"></span>
+			    						                				</label>
+			    						                			</div>
+			    						                		</td>
+			    						                		<td class="td">
+			    						                			<div class="form-check">
+			    						                				<label>
+			    						                					<input type="checkbox" @if(strpos($meet['num'],'4')!==false) checked @endif name="num[]" class="meetnum" value="4"><span class="label-text"></span>
+			    						                				</label>
+			    						                			</div>
+			    						                		</td>
+			    						                		<td class="td">
+			    						                			<div class="form-check">
+			    						                				<label>
+			    						                					<input type="checkbox" @if(strpos($meet['num'],'5')!==false) checked @endif name="num[]" class="meetnum" value="5"><span class="label-text"></span>
+			    						                				</label>
+			    						                			</div>
+			    						                		</td>
+			    						                		<td class="td">
+			    						                			<div class="form-check">
+			    						                				<label>
+			    						                					<input type="checkbox" @if(strpos($meet['num'],'6')!==false) checked @endif name="num[]" class="meetnum" value="6"><span class="label-text"></span>
+			    						                				</label>
+			    						                			</div>
+			    						                		</td>
+			    						                		<td class="td">
+			    						                			<div class="form-check">
+			    						                				<label>
+			    						                					<input type="checkbox" @if(strpos($meet['num'],'7')!==false) checked @endif name="num[]" class="meetnum" value="7"><span class="label-text"></span>
+			    						                				</label>
+			    						                			</div>
+			    						                		</td>
+			    						                	</tr>
+			    						                @endforeach
+			    						            </tbody>
+			    						        </table>
+			    						    </div>
+			    						</div>
+			    						<div class="col-sm-12">
+			    							<div class="row">
+			    								<div class="form-group">
+			    									<button class="btn addbuttonMeet" data-scroll-to="#deliv"
+	        data-scroll-focus="#delivname"
+	        data-scroll-speed="700"
+	        data-scroll-offset="200">Add</button>
+			    								</div>
+			    							</div>
+			    						</div>
+
+			    						<br>
+			    						<br>
+
+			    						<div class="zui-wrapper4" id="myscrol3">
+			    						    <div class="zui-scroller4">
+			    						        <table class="zui-table4">
+			    						            <thead>
+			    						                <tr>
+			    						                    <th class="zui-sticky-col4"><center>Design Considerations</center></th>
+			    						                    <th style="width: 500px; max-width: 500px; min-width: 500px;">Applies to</th>
+			    						                </tr>
+			    						            </thead>
+			    						            <tbody id="addedDesign">
+			    						                <tr>
+			    						                    <td class="zui-sticky-col4">Cost, programme, quality, health & safety during construction and<br> operation, functionality, buildability, operation and maintenance.</td>
+			    						                    <td class="td "><textarea class="hayt4" name="question_one" placeholder="Enter details here"></textarea></td>
+			    						                </tr>
+			    						                <tr>
+			    						                    <td class="zui-sticky-col4">All information provided by other members of the Project Team.</td>
+			    						                    <td class="td "><textarea class="hayt4" name="question_two" placeholder="Enter details here"></textarea></td> 
+			    						                </tr>
+			    						                <tr>
+			    						                    <td class="zui-sticky-col4">Good Practice in the Selection of Construction Materials 2011<br> (British Council of Offices Publication).</td>
+			    						                    <td class="td "><textarea class="hayt4" name="question_three" placeholder="Enter details here"></textarea></td>
+			    						                </tr>
+			    						                <tr>
+			    						                    <td class="zui-sticky-col4">Statutory standards</td>
+			    						                    <td class="td "><textarea class="hayt4" name="question_four" placeholder="Enter details here"></textarea></td>
+			    						                </tr>
+			    						                <tr>
+			    						                    <td class="zui-sticky-col4">Co-ordination with structural and building services</td>
+			    						                    <td class="td "><textarea class="hayt4" name="question_five" placeholder="Enter details here"></textarea></td>
+			    						                </tr>
+			    						                @foreach ($designs as $des)
+			    						                	<tr id="desclone" data-edit="yes" data-addid="{{ $des['added_id'] }}" >
+			    						                	    <td class="zui-sticky-col4"><textarea class="hayt4 name" name="question_name" placeholder="Enter details here">{{ $des['name'] }}</textarea></td>
+			    						                	    <td class="td "><textarea class="hayt4 question" name="question_one" placeholder="Enter details here">{{ $des['question'] }}</textarea></td>
+			    						                	</tr>
+			    						                @endforeach
+			    						            </tbody>
+			    						        </table>
+			    						    </div>
+			    						</div>
+			    						<div class="col-sm-12">
+			    							<div class="row">
+			    								<div class="form-group">
+			    									<button class="btn addbuttonDes" >Add</button>
+			    								</div>
+			    							</div>
+			    						</div>
+
+			    						<br><br>
+
+			    						<br>
+			    						<br>
+
+			    						<div class="zui-wrapper5" id="myscrol4">
+			    						    <div class="zui-scroller5">
+			    						        <table class="zui-table5">
+			    						            <thead>
+			    						                <tr>
+			    						                    <th class="zui-sticky-col5"><center>Advise on</center></th>
+			    						                    <th>0</th>
+			    						                    <th>1</th>
+			    						                    <th>2</th>
+			    						                    <th>3</th>
+			    						                    <th>4</th>
+			    						                    <th>5</th>
+			    						                    <th>6</th>
+			    						                    <th>7</th>
+			    						                </tr>
+			    						            </thead>
+			    						            <tbody id="addedadvise">
+			    						                <tr>
+			    						                    <td class="zui-sticky-col5">Any products or materials, specified within the guidelines<br> named in Item<span style="color: red;">???</span> , that are relevant to the project and have been found<br> to be deleterious or hazardous to health and safety.</td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_one[]" value="0"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_one[]" value="1"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_one[]" value="2"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_one[]" value="3"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_one[]" value="4"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_one[]" value="5"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_one[]" value="6"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_one[]" value="7"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr>
+			    						                    <td class="zui-sticky-col5">Assembly of Project Team. (Lead)</td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_two[]" value="0"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_two[]" value="1"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_two[]" value="2"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_two[]" value="3"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_two[]" value="4"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_two[]" value="5"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_two[]" value="6"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_two[]" value="7"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td> 
+			    						                </tr>
+			    						                <tr>
+			    						                    <td class="zui-sticky-col5">Need for and the scope of services by consultants, specialists,<br> sub-contractors or suppliers. (Lead)</td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_three[]" value="0"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_three[]" value="1"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_three[]" value="2"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_three[]" value="3"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_three[]" value="4"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_three[]" value="5"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_three[]" value="6"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_three[]" value="7"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr>
+			    						                    <td class="zui-sticky-col5">Resolution of defects.</td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_four[]" value="0"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_four[]" value="1"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_four[]" value="2"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_four[]" value="3"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_four[]" value="4"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_four[]" value="5"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_four[]" value="6"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_four[]" value="7"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr>
+			    						                    <td class="zui-sticky-col5">Form and content of design outputs, their interfaces<br> and a verification procedure. (Lead)</td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_five[]" value="0"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_five[]" value="1"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_five[]" value="2"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_five[]" value="3"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_five[]" value="4"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_five[]" value="5"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_five[]" value="6"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_five[]" value="7"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr>
+			    						                    <td class="zui-sticky-col5">Relevant experience from previous projects.</td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_six[]" value="0"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_six[]" value="1"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_six[]" value="2"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_six[]" value="3"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_six[]" value="4"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_six[]" value="5"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_six[]" value="6"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="advise_six[]" value="7"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr style="background: #FFC000;">
+			    						                    <td style="background: #FFC000; font-weight: bold; color: #fff;" class="zui-sticky-col5"><center>Monitor</center></td> <!-- background/bold -->
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                </tr>
+			    						                <tr>
+			    						                    <td class="zui-sticky-col5">Work of the Designers. <br><span style="color: red;">Designers regarding…. [WHAT?]</span></td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr>
+			    						                    <td class="zui-sticky-col5">Performance of Design Team.</td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr>
+			    						                    <td class="zui-sticky-col5">Compliance with statutory and contract requirements.</td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr style="background: #FFC000;">
+			    						                    <td style="background: #FFC000; font-weight: bold; color: #fff;" class="zui-sticky-col5"><center>Collaborate / Consult with</center></td> <!-- background/bold -->
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                </tr>
+			    						                <tr>
+			    						                    <td class="zui-sticky-col5">Relevant Third Parties as required.</td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr>
+			    						                    <td class="zui-sticky-col5">Planning authority to discuss the project</td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr>
+			    						                    <td class="zui-sticky-col5">Statutory authorities on developing design.</td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr>
+			    						                    <td class="zui-sticky-col5">Project Manager & Employer on significant design issues. (Lead)</td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr style="background: #FFC000;">
+			    						                    <td style="background: #FFC000; font-weight: bold; color: #fff;" class="zui-sticky-col5"><center>Co-ordinate</center></td> <!-- background/bold -->
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                </tr>
+			    						                <tr>
+			    						                    <td class="zui-sticky-col5">Collation of all planning submission documents.</td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr>
+			    						                    <td class="zui-sticky-col5">Reviewing design information provided by contractors <br>or specialists to establish whether that information <br>can be co-ordinated and integrated with other project information.</td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr style="background: #FFC000">
+			    						                    <td style="background: #FFC000; font-weight: bold; color: #fff;" class="zui-sticky-col5"><center>Other</center></td> <!-- background/bold -->
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                    <td></td>
+			    						                </tr>
+			    						                <tr>
+			    						                    <td class="zui-sticky-col5">Submit the [detailed / outline] planning application.</td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr>
+			    						                    <td class="zui-sticky-col5">Assisting building user during initial occupation period.</td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr>
+			    						                    <td class="zui-sticky-col5">Review all instructions and information about the Project,<br> provided by the Employer.</td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                <tr>
+			    						                    <td class="zui-sticky-col5">preparing and making submissions under building acts<br> and/or regulations or other statutory requirements.</td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                    <td class="td">
+			    						                    	<div class="form-check">
+			    						                    		<label>
+			    						                    			<input type="checkbox" name="" value="R"><span class="label-text"></span>
+			    						                    		</label>
+			    						                    	</div>
+			    						                    </td>
+			    						                </tr>
+			    						                @foreach ($advises as $advise)
+			    						                	<tr id="adviseclone" data-edit="yes" data-addid="{{ $advise['added_id'] }}">
+									        				    <td class="zui-sticky-col5"><textarea class="name"  style="border-radius: 6px;
+								    height: 70px;" name="question_one" placeholder="Enter details here">{{ $advise['name'] }}</textarea></td>
+									        				    <td class="td">
+									        				    	<div class="form-check">
+									        				    		<label>
+									        				    			<input type="checkbox" @if(strpos($advise['num'], '0')!==false) checked @endif name="advisenum[]" class="advisenum" value="0"><span class="label-text"></span>
+									        				    		</label>
+									        				    	</div>
+									        				    </td>
+									        				    <td class="td">
+									        				    	<div class="form-check">
+									        				    		<label>
+									        				    			<input type="checkbox" @if(strpos($advise['num'], '1')!==false) checked @endif name="advisenum[]" class="advisenum" value="1"><span class="label-text"></span>
+									        				    		</label>
+									        				    	</div>
+									        				    </td>
+									        				    <td class="td">
+									        				    	<div class="form-check">
+									        				    		<label>
+									        				    			<input type="checkbox" @if(strpos($advise['num'], '2')!==false) checked @endif name="advisenum[]" class="advisenum" value="2"><span class="label-text"></span>
+									        				    		</label>
+									        				    	</div>
+									        				    </td>
+									        				    <td class="td">
+									        				    	<div class="form-check">
+									        				    		<label>
+									        				    			<input type="checkbox" @if(strpos($advise['num'], '3')!==false) checked @endif name="advisenum[]" class="advisenum" value="3"><span class="label-text"></span>
+									        				    		</label>
+									        				    	</div>
+									        				    </td>
+									        				    <td class="td">
+									        				    	<div class="form-check">
+									        				    		<label>
+									        				    			<input type="checkbox" @if(strpos($advise['num'], '4')!==false) checked @endif name="advisenum[]" class="advisenum" value="4"><span class="label-text"></span>
+									        				    		</label>
+									        				    	</div>
+									        				    </td>
+									        				    <td class="td">
+									        				    	<div class="form-check">
+									        				    		<label>
+									        				    			<input type="checkbox" @if(strpos($advise['num'], '5')!==false) checked @endif name="advisenum[]" class="advisenum" value="5"><span class="label-text"></span>
+									        				    		</label>
+									        				    	</div>
+									        				    </td>
+									        				    <td class="td">
+									        				    	<div class="form-check">
+									        				    		<label>
+									        				    			<input type="checkbox" @if(strpos($advise['num'], '6')!==false) checked @endif name="advisenum[]" class="advisenum" value="6"><span class="label-text"></span>
+									        				    		</label>
+									        				    	</div>
+									        				    </td>
+									        				    <td class="td">
+									        				    	<div class="form-check">
+									        				    		<label>
+									        				    			<input type="checkbox" @if(strpos($advise['num'], '7')!==false) checked @endif name="advisenum[]" class="advisenum" value="7"><span class="label-text"></span>
+									        				    		</label>
+									        				    	</div>
+									        				    </td>
+									        				</tr>
+			    						                @endforeach
+			    						            </tbody>
+			    						        </table>
+			    						    </div>
+			    						</div>
+		    						@endif
 		    						<div class="form-group">
     									<button class="btn addadvise" >Add</button>
 		    						</div>
@@ -5024,14 +7917,14 @@
 								<div class="row" style="padding-bottom:10px;">
 	<div class="col-sm-4">	</div>
 								<div class="col-sm-8">
-									<div class="form-group">
 										<div class="col-sm-12" style="padding:0;">
-												<div class="input-group date form-group" id="datepicker2" data-date="02-2012" data-date-format="mm-yyyy">
-																 <input class="form-control" type="text" readonly="readonly" name="date" >	  
-																 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-															</div>
-										</div>
-									
+											<div class="form-group" >
+												<div class="input-group dates" id="datepicker2" data-date-container="#datepicker2" data-date="02-2012" 
+												         data-date-format="mm-yyyy">
+													 <input class="form-control " type="text" placeholder="Select year" readonly="readonly" name="date" >	  
+													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -5053,7 +7946,7 @@
 								<div class="col-sm-8">
 									<div class="form-group">
 										<div class="col-sm-12" style="padding:0;">
-												<div class="input-group date form-group" id="datepicker2" data-date="02-2012" data-date-format="mm-yyyy">
+												<div class="input-group dates form-group" id="datepicker2" data-date="02-2012" data-date-format="mm-yyyy">
 																 <input class="form-control" type="text" readonly="readonly" name="date" >	  
 																 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 															</div>
@@ -5082,7 +7975,7 @@
 								<div class="col-sm-8">
 									<div class="form-group">
 										<div class="col-sm-12" style="padding:0;">
-												<div class="input-group date form-group" id="datepicker2" data-date="02-2012" data-date-format="mm-yyyy">
+												<div class="input-group dates form-group" id="datepicker2" data-date="02-2012" data-date-format="mm-yyyy">
 																 <input class="form-control" type="text" readonly="readonly" name="date" >	  
 																 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 															</div>

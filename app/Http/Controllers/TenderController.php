@@ -57,6 +57,15 @@ class TenderController extends Controller
         //
     }
 
+    public function editTend(Request $request)
+    {
+        Tender::where('tender_id',$request->get('idd'))
+        ->update([
+            'services' => $request->get('services')
+        ]);
+        return "success";
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -732,6 +741,16 @@ class TenderController extends Controller
         return 'SAVED!!!';
     }
 
+    public function questionnaireEdit(Request $request)
+    {
+        $data = $request->questions;
+        $new = substr($data, 0, -1);
+        TenderPreQualificationQuestionnaire::where('pre_id', $request->get('idd'))
+        ->update([
+            'question' => $new
+        ]);
+    }
+
     public function tenderQualityStore(Request $request){
 
         $qual = new TenderQualityAssurance;
@@ -769,6 +788,7 @@ class TenderController extends Controller
 
     public function gettend($id)
     {
+        
         $tenid = $id;
         $tender = Tender::where('tender_id', $tenid)->first();
         $bonds = TenderBonds::where('tender_id', $tenid)->get();
@@ -778,6 +798,8 @@ class TenderController extends Controller
         $meetings = AddedMeetings::where('tender_id', $tenid)->get();
         $design = AddedDesign::where('tender_id', $tenid)->get();
         $advises = AddedAdvise::where('tender_id', $tenid)->get();
+        $scopes = TenderScopeDeliverables::where('tender_id', $tenid)->get();
+        $quests = TenderPreQualificationQuestionnaire::where('tender_id', $tenid)->get();
 
         // return response()->json(array(
         //     'tender' => $tender,
@@ -785,7 +807,25 @@ class TenderController extends Controller
         //     'appointment' => $appointment,
         //     'eval' => $eval
         // ));
-        // echo $advises;
+        
+        // if(sizeof($scopes) == 0){
+        //     $scopes = null;
+
+        // }
+        // echo ($scopes);
+        $questions = array();
+        $qid = "";
+        if(sizeof($quests) != 0){
+            $string = explode("^",$quests[0]['question']);
+            $qid = $quests[0]['pre_id'];
+            
+            foreach ($string as $str) {
+                $questions[] = $str; 
+            }
+        }
+        
+        
+        
         return view('create_tender')->with([
             'tender' => $tender,
             'bonds' => $bonds,
@@ -794,7 +834,10 @@ class TenderController extends Controller
             'delivs' => $delivs,
             'meetings' => $meetings,
             'designs' => $design,
-            'advises' => $advises
+            'advises' => $advises,
+            'quests' => $questions,
+            'questsid' => $qid,
+            'scopes' => $scopes
         ]);
     
 

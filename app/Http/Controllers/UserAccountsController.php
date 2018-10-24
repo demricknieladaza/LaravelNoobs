@@ -91,11 +91,51 @@ class UserAccountsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int  $idate(format)
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
+    }
+
+    public function autocomplete(Request $request)
+    {
+        // $data = UserAccountsModel::select("company")
+        //         ->where("company","LIKE","%{$request->input('query')}%")
+        //         ->get();
+
+        // $datas = array();
+        // foreach ($data as $hsl)
+        //     {
+        //         $datas[] = $hsl->company;
+        //     }
+        // echo json_encode($datas);
+   
+        // return response()->json($datas);
+        if($request->get('query'))
+             {
+              $query = $request->get('query');
+              $data = UserAccountsModel::select("company")
+                ->where('company', 'LIKE', "%{$query}%")
+                ->get();
+              $output = '<ul class="dropdown-menu" style="display:block;position: relative;
+    background: white;
+    width: auto;">';
+              foreach($data as $row)
+              {
+               $output .= '
+               <li class="chos"><a href="#">'.$row->company.'</a></li>
+               ';
+              }
+              $output .= '</ul>';
+              echo $output;
+             }
+    }
+
+    public function ind(Request $request)
+    {
+   
+        return view('searching');
     }
 }

@@ -75,6 +75,8 @@ Route::post('project_info_tender_appointment', 'TenderController@appointmentStor
 // Route::post('')
 Route::get('winwork/bid/{id}', 'BidController@getCredentials');
 Route::post('submit_bid', 'BidController@submitBid');
+
+Route::post('edit_tender_service', 'TenderController@editTend');
 // Route::resource('winwork/bid', 'BidController');
 Route::post('winwork/bid/{id}/save', 'BidController@saveBid');
 Route::post('tender_queries', 'BidController@saveQuery');
@@ -85,6 +87,9 @@ Route::post('response_save', 'ProjectInformationController@saveResponse');
 Route::resource('scope', 'ScopeController');
 Route::resource('project_info_tender','TenderController');
 Route::post('questionnaire', 'TenderController@questionnaireSave');
+Route::post('questionnaireedit', 'TenderController@questionnaireEdit');
+Route::post('autocomplete', 'UserAccountsController@autocomplete')->name('autocomplete');
+Route::get('search', 'UserAccountsController@ind');
 Route::resource('tenders', 'TenderDisplayController', [
     'names' =>[
         'index' => 'Tenders',
@@ -100,6 +105,10 @@ Route::post('tender_evaluation', 'TenderController@tenderEvalStore');
 Route::post('tender_deliverables_save', 'TenderController@tenderScopeStore');
 Route::post('tender_quality_assurance', 'TenderController@tenderQualityStore');
 Route::post('start_tender_process', 'TenderController@updateTenderProcess');
+
+
+
+
 
 
 
