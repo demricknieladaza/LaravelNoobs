@@ -29,6 +29,8 @@
     <script type="text/javascript" src="{{asset('js/functions.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/bxslider.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/bootstrap-datepicker.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/shield.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/canvas.js')}}"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css"> -->
 	{{-- <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/bootstrap.datepicker/0.1/css/datepicker.css"> --}}
@@ -40,9 +42,9 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link id="themecss" rel="stylesheet" type="text/css" href="//www.shieldui.com/shared/components/latest/css/light/all.min.css" />
 	<!-- <script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/jquery-1.11.1.min.js"></script> -->
-	<script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+	{{-- <script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script> --}}
 	<link rel="stylesheet" type="text/css" href="{{asset('css/owl.carousel.css')}}">
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    {{-- <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> --}}
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
     <script>

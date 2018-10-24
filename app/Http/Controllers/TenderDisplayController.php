@@ -60,12 +60,12 @@ class TenderDisplayController extends Controller
     {
         $proj = $id;
         $tenders = Tender::where('project_record_id', $proj)->orderBy('created_at', 'desc')->get();
-        if(count($tenders) == 0){
-            return view('tender_no_display')->with('proj', $proj);
-        }
-        else{
-            return view('tender_display')->with('tenders', $tenders);
-        }
+        // if(count($tenders) == 0){
+        //     return view('tender_no_display')->with('proj', $proj);
+        // }
+        // else{
+            return view('tender_display')->with(['tenders'=> $tenders, 'proj'=> $proj]);
+        // }
     }
 
     /**

@@ -130,25 +130,57 @@ class ProjectInformationController extends Controller
         $use_area = $request->use_area;
         $use_units = $request->use_units;
         $use_type = $request->use_type;
+
+        $concatname = "";
+        $concatarea = "";
+        $concatunits = "";
+        $concattype = "";
+
         for($counter = 0; $counter < count($use_name); $counter++){
-            $type = new TypeOfUse;
-            $type->use_name = $use_name[$counter];
-            $type->use_area = $use_area[$counter];
-            $type->use_units = $use_units[$counter];
-            $type->use_type = $use_type[$counter];
-            $type->project_record_id = $project->project_record_id;
-            $type->save();
+            $concatname .= $use_name[$counter] . ",";
+            $concatarea .= str_replace(",","",$use_area[$counter]) . ",";
+            $concatunits .= str_replace(",","",$use_units[$counter]) . ",";
+            $concattype .= $use_type[$counter] . ",";
+            // $type = new TypeOfUse;
+            // $type->use_name = $use_name[$counter];
+            // $type->use_area = $use_area[$counter];
+            // $type->use_units = $use_units[$counter];
+            // $type->use_type = $use_type[$counter];
+            // $type->project_record_id = $project->project_record_id;
+            // $type->save();
         }
-        
+
+        $concatname = substr($concatname, 0, -1);
+        $concatarea = substr($concatarea, 0, -1);
+        $concatunits = substr($concatunits, 0, -1);
+        $concattype = substr($concattype, 0, -1);
+
+        $type = new TypeOfUse;
+        $type->use_name = $concatname;
+        $type->use_area = $concatarea;
+        $type->use_units = $concatunits;
+        $type->use_type = $concattype;
+        $type->project_record_id = $project->project_record_id;
+        $type->save();
+
         $riba = $request->riba_stage;
         $date = $request->date;
+
+        $rriba = "";
+        $ddate = "";
         for($counter = 0; $counter < count($riba); $counter++){
-            $milestones = new Milestones;
-            $milestones->riba_stage = $riba[$counter];
-            $milestones->date = $date[$counter];
-            $milestones->project_record_id = $project->project_record_id;
-            $milestones->save();
+            $rriba .= $riba[$counter] . ",";
+            $ddate .= str_replace(",","",$date[$counter]) . ",";
         }
+
+        $rriba = substr($rriba, 0, -1);
+        $ddate = substr($ddate, 0, -1);
+
+        $milestones = new Milestones;
+        $milestones->riba_stage = $rriba;
+        $milestones->date = $ddate;
+        $milestones->project_record_id = $project->project_record_id;
+        $milestones->save();
 
         $meetings = new Meetings;
         $meetings->design_team_meeting = $request->input('design_team_meeting');
@@ -248,19 +280,63 @@ class ProjectInformationController extends Controller
 
         $questions = TenderQuery::where('project_record_id', $id)->get();
 
+        $string = explode(",",$type[0]['use_name']);
+        $string1 = explode(",",$type[0]['use_area']);
+        $string2 = explode(",",$type[0]['use_units']);
+        $string3 = explode(",",$type[0]['use_type']);
+        
+        foreach ($string as $str) {
+            $typename[] = $str; 
+        }
+        foreach ($string1 as $str) {
+            $typearea[] = $str; 
+        }
+        foreach ($string2 as $str) {
+            $typeunit[] = $str; 
+        }
+        foreach ($string3 as $str) {
+            $typetype[] = $str; 
+        }
+        
+        for($x=0;sizeof($typename) > $x; $x++){
+            $typeamen[] = array(
+                'name' => $typename[$x],
+                'area' => $typearea[$x],
+                'unit' => $typeunit[$x],
+                'type' => $typetype[$x]
+            );
+        }
+
+        $strings = explode(",",$milestones[0]['riba_stage']);
+        $strings1 = explode(",",$milestones[0]['date']);
+        
+        foreach ($strings as $str) {
+            $milname[] = $str; 
+        }
+        foreach ($strings1 as $str) {
+            $mildate[] = $str; 
+        }
+        
+        for($y=0;count($milname) > $y; $y++){
+            $milestonesni[] = array(
+                'name' => $milname[$y],
+                'date' => $mildate[$y]
+            );
+        }
+        // print_r($mildate);
         return view('publish_view')->with([
             'project' => $project,
             'transport' => $transport,
             'area' => $area,
             'constraints' => $constraints,
-            'type' => $type,
-            'milestones' => $milestones,
+            'type' => $typeamen,
+            'milestones' => $milestonesni,
             'meetings' => $meetings,
             'team' => $team,
             'tender' => $tender,
             'questions' => $questions
         ]);
-       // return json($tender);
+        // return json($tender);
 
     }
 
@@ -399,30 +475,69 @@ class ProjectInformationController extends Controller
         }
         
         TypeOfUse::where('project_record_id', $id)->delete();
+        // $use_name = $request->use_name;
+        // $use_area = $request->use_area;
+        // $use_units = $request->use_units;
+        // $use_type = $request->use_type;
+        // for($counter = 0; $counter < count($use_name); $counter++){
+        //     $type = new TypeOfUse;
+        //     $type->use_name = $use_name[$counter];
+        //     $type->use_area = $use_area[$counter];
+        //     $type->use_units = $use_units[$counter];
+        //     $type->use_type = $use_type[$counter];
+        //     $type->project_record_id = $project->project_record_id;
+        //     $type->save();
+        // }
         $use_name = $request->use_name;
         $use_area = $request->use_area;
         $use_units = $request->use_units;
         $use_type = $request->use_type;
+
+        $concatname = "";
+        $concatarea = "";
+        $concatunits = "";
+        $concattype = "";
+
         for($counter = 0; $counter < count($use_name); $counter++){
-            $type = new TypeOfUse;
-            $type->use_name = $use_name[$counter];
-            $type->use_area = $use_area[$counter];
-            $type->use_units = $use_units[$counter];
-            $type->use_type = $use_type[$counter];
-            $type->project_record_id = $project->project_record_id;
-            $type->save();
+            $concatname .= $use_name[$counter] . ",";
+            $concatarea .= str_replace(",","",$use_area[$counter]) . ",";
+            $concatunits .= str_replace(",","",$use_units[$counter]) . ",";
+            $concattype .= $use_type[$counter] . ",";
         }
+
+        $concatname = substr($concatname, 0, -1);
+        $concatarea = substr($concatarea, 0, -1);
+        $concatunits = substr($concatunits, 0, -1);
+        $concattype = substr($concattype, 0, -1);
+
+        $type = new TypeOfUse;
+        $type->use_name = $concatname;
+        $type->use_area = $concatarea;
+        $type->use_units = $concatunits;
+        $type->use_type = $concattype;
+        $type->project_record_id = $project->project_record_id;
+        $type->save();
+
 
         Milestones::where('project_record_id', $id)->delete();
         $riba = $request->riba_stage;
         $date = $request->date;
+
+        $rriba = "";
+        $ddate = "";
         for($counter = 0; $counter < count($riba); $counter++){
-            $milestones = new Milestones;
-            $milestones->riba_stage = $riba[$counter];
-            $milestones->date = $date[$counter];
-            $milestones->project_record_id = $project->project_record_id;
-            $milestones->save();
+            $rriba .= $riba[$counter] . ",";
+            $ddate .= str_replace(",","",$date[$counter]) . ",";
         }
+
+        $rriba = substr($rriba, 0, -1);
+        $ddate = substr($ddate, 0, -1);
+
+        $milestones = new Milestones;
+        $milestones->riba_stage = $rriba;
+        $milestones->date = $ddate;
+        $milestones->project_record_id = $project->project_record_id;
+        $milestones->save();
 
 
         $meetings = Meetings::where('project_record_id', $id);
