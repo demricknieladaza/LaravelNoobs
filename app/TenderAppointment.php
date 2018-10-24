@@ -13,12 +13,14 @@ class TenderAppointment extends Model
     public $timestamps = false;
     protected $fillable = [
         
+        'tender_id',
         'insurance_name',
         'insurance_level',
-        'tender_id',
-        'bonds_id',
+        'bonds',
         'collateral_warranties',
-        'limit_of_liability'
+        'limit_of_liability',
+        'form_of_appointment',
+        'documents_for_signature'
         
     ];
 

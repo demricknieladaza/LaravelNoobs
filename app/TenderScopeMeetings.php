@@ -29,7 +29,16 @@ class TenderScopeMeetings extends Model
         'inspection_purpose',
         'inspection_attendees',
         'inspection_assumed_duration',
-        'inspection_reoccurence'
+        'inspection_reoccurence',
+        'pre_app_choice',
+        'pre_app_num',
+        'site_visits_choice',
+        'site_visits_num',
+        'riba_choice',
+        'riba_num',
+        'site_inspection_choice',
+        'site_inspection_num'
+        
     ];
 
     public function tender(){

@@ -114,30 +114,85 @@ class TenderController extends Controller
     }
 
     public function appointmentStore(Request $request){
-
+        
         $idd = $request->get('current_tend');
+        $appointment = new TenderAppointment;
+        $appointment->tender_id = $idd;
+
+        $insurance_name = $request->insurance_name;
+        $new_ins_name = "";
+        for($counter = 0; $counter < count($insurance_name); $counter++){
+            $new_ins_name .= $insurance_name[$counter] . ",";
+        }
+        $new_ins_name = substr($new_ins_name, 0, -1);
+        $appointment->insurance_name;
+
+        $insurance_level = $request->insurance_level;
+        $new_ins_lvl = "";
+        for($counter = 0; $counter < count($insurance_level); $counter++){
+            $new_ins_lvl .= $insurance_level[$counter] . ",";
+        }
+        $new_ins_lvl = substr($new_ins_lvl, 0, -1);
+        $appointment->insurance_level;
 
         $bond = $request->bonds;
+        $new_bonds = "";
         for($counter = 0; $counter < count($bond); $counter++){
-            $bonds = new TenderBonds;
-            $bonds->tender_id = $idd;
-            $bonds->bond_name = $bond[$counter];
-            $bonds->save();
+            $new_bonds .= $bond[$counter] . ",";
+        }
+        $new_bonds = substr($new_bonds, 0, -1);
+        $appointment->bonds = $new_bonds;
+        $appointment->collateral_warranties = $request->get('collateral_warranties');
+
+        if($request->hasFile('form_of_appointment')){
+
+            $filenameWithExt = $request->file('form_of_appointment')->getClientOriginalName();
+
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+            $extension = $request->file('form_of_appointment')->getClientOriginalExtension();
+
+            $filenameToStore = $filename.'_'.time().'_'.'.'.$extension;
+            
+            $path = $request->file('form_of_appointment')->storeAs('public/formOfAppointment', $filenameToStore); 
+            $appointment->form_of_appointment = $filenameToStore;
         }
 
-        $name = $request->insurance_name;
-        $level = $request->insurance_level;
-        for($counter = 0; $counter < count($name); $counter++){
-            $appointment = new TenderAppointment;
-            $appointment->insurance_name = $name[$counter];
-            $appointment->insurance_level = $level[$counter];
-            $appointment->tender_id = $idd;
-            $appointment->collateral_warranties = $request->get('collateral_warranties');
-            $appointment->limit_of_liability = $request->get('limit_of_liability');
-            $appointment->save();
-        }
+        $name_of_files = "";
 
-        return response()->json(array('success' => true, 'test' => $idd), 200);
+        if($request->hasFile('signature_files')){
+            $files = $request->file('signature_files');
+            foreach($files as $file){
+                $filenameWithExt = $file->getClientOriginalName();
+        
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            
+                $extension = $file->getClientOriginalExtension();
+            
+                $filenameToStore = $filename.'_'.time().'_'.'.'.$extension;
+                
+                $path = $file->storeAs('public/signatureFiles', $filenameToStore); 
+                $name_of_files .= $filenameToStore . "/";
+            }
+        }
+        $name_of_files = substr($name_of_files, 0, -1);
+        $appointment->documents_for_signature = $name_of_files;
+        $appointment->save();
+
+        // $name = $request->insurance_name;
+        // $level = $request->insurance_level;
+        // for($counter = 0; $counter < count($name); $counter++){
+        //     $appointment = new TenderAppointment;
+        //     $appointment->insurance_name = $name[$counter];
+        //     $appointment->insurance_level = $level[$counter];
+        //     $appointment->tender_id = $idd;
+        //     $appointment->collateral_warranties = $request->get('collateral_warranties');
+        //     $appointment->limit_of_liability = $request->get('limit_of_liability');
+        //     $appointment->save();
+        // }
+        //return response()->json(array('success' => true, 'test' => $idd), 200);
+       return "SUCCESS!";
+
     }
 
     public function tenderEvalStore(Request $request){
@@ -315,16 +370,22 @@ class TenderController extends Controller
         $strat_num_storage = $request->strategic_num;
         $strat_raci = "";
         $strat_num = "";
-        for($counter = 0; $counter < count($strat_raci_storage); $counter++){
-            $strat_raci .= $strat_raci_storage[$counter] .",";
+        if(count($strat_raci_storage) != 0){
+            for($counter = 0; $counter < count($strat_raci_storage); $counter++){
+                $strat_raci .= $strat_raci_storage[$counter] .",";
+            }
+            $strat_raci = substr($strat_raci, 0, -1);
+            $deliverables->strategic_raci = $strat_raci;
         }
-        $strat_raci = substr($strat_raci, 0, -1);
         $deliverables->strategic_raci = $strat_raci;
 
-        for($counter = 0; $counter < count($strat_num_storage); $counter++){
-            $strat_num .= $strat_num_storage[$counter] . ",";
+        if(count($strat_num_storage) != 0){
+            for($counter = 0; $counter < count($strat_num_storage); $counter++){
+                $strat_num .= $strat_num_storage[$counter] . ",";
+            }
+            $strat_num = substr($strat_num, 0 , -1);
+            $deliverables->strategic_num = $strat_num;
         }
-        $strat_num = substr($strat_num, 0 , -1);
         $deliverables->strategic_num = $strat_num;
 
         //Project Programme
@@ -332,190 +393,236 @@ class TenderController extends Controller
         $programme_num_storage = $request->pprogramme_num;
         $prog_raci = "";
         $prog_num = "";
-        for($counter = 0; $counter < count($programme_raci_storage); $counter++){
-            $prog_raci .= $programme_raci_storage[$counter] . ",";
+        if(count($programme_raci_storage) != 0){
+            for($counter = 0; $counter < count($programme_raci_storage); $counter++){
+                $prog_raci .= $programme_raci_storage[$counter] . ",";
+            }
+            $prog_raci = substr($prog_raci, 0, -1);
+            $deliverables->pprogramme_raci = $prog_raci;
         }
-        $prog_raci = substr($prog_raci, 0, -1);
         $deliverables->pprogramme_raci = $prog_raci;
 
-        for($counter = 0; $counter < count($programme_num_storage); $counter++){
-            $prog_num .= $programme_num_storage[$counter] . ",";
+        if(count($programme_num_storage) != 0){
+            for($counter = 0; $counter < count($programme_num_storage); $counter++){
+                $prog_num .= $programme_num_storage[$counter] . ",";
+            }
+            $prog_num = substr($prog_num, 0, -1);
+            $deliverables->pprogramme_num = $prog_num;
         }
-        $prog_num = substr($prog_num, 0, -1);
         $deliverables->pprogramme_num = $prog_num;
 
         //Feasibility Study
         $feasibility_raci_storage = $request->feasibility_raci;
         $feasibility_raci = "";
-        for($counter = 0; $counter < count($feasibility_raci_storage); $counter++){
-            $feasibility_raci .= $feasibility_raci_storage[$counter] . ",";
+        if(count($feasibility_raci_storage) != 0){
+            for($counter = 0; $counter < count($feasibility_raci_storage); $counter++){
+                $feasibility_raci .= $feasibility_raci_storage[$counter] . ",";
+            }
+            $feasibility_raci = substr($feasibility_raci, 0, -1);
+            $deliverables->feasibility_raci = $feasibility_raci;
         }
-        $feasibility_raci = substr($feasibility_raci, 0, -1);
         $deliverables->feasibility_raci = $feasibility_raci;
-
 
         $feasibility_num_storage = $request->feasibility_num;
         $feasibility_num = "";
-        for($counter = 0; $counter < count($feasibility_num_storage); $counter++){
-            $feasibility_num .= $feasibility_num_storage[$counter] . ",";
+        if(count($feasibility_num_storage) != 0){
+            for($counter = 0; $counter < count($feasibility_num_storage); $counter++){
+                $feasibility_num .= $feasibility_num_storage[$counter] . ",";
+            }
+            $feasibility_num = substr($feasibility_num, 0, -1);
+            $deliverables->feasibility_num = $feasibility_num;
         }
-        $feasibility_num = substr($feasibility_num, 0, -1);
         $deliverables->feasibility_num = $feasibility_num;
 
         //Design Responsibility
         $design_raci_storage = $request->design_raci;
         $des_raci = "";
-        for($counter = 0; $counter < count($design_raci_storage); $counter++){
-            $des_raci .= $design_raci_storage[$counter] . ",";
+        if(count($design_raci_storage) != 0){
+            for($counter = 0; $counter < count($design_raci_storage); $counter++){
+                $des_raci .= $design_raci_storage[$counter] . ",";
+            }
+            $des_raci = substr($des_raci, 0, -1);
+            $deliverables->design_raci = $des_raci;
         }
-        $des_raci = substr($des_raci, 0, -1);
         $deliverables->design_raci = $des_raci;
 
         $design_num_storage = $request->design_num;
         $des_num = "";
-        for($counter = 0; $counter < count($design_num_storage); $counter++){
-            $des_num .= $design_num_storage[$counter] . ",";
+        if(count($design_num_storage) != 0){
+            for($counter = 0; $counter < count($design_num_storage); $counter++){
+                $des_num .= $design_num_storage[$counter] . ",";
+            }
+            $des_num = substr($des_num, 0, -1);
+            $deliverables->design_num= $des_num;
         }
-        $des_num = substr($des_num, 0, -1);
         $deliverables->design_num= $des_num;
 
         //Site Information
         $site_raci_storage = $request->site_raci;
         $s_raci = "";
-        for($counter = 0; $counter < count($site_raci_storage); $counter++){
-            $s_raci .= $site_raci_storage[$counter] . ",";
+        if(count($site_raci_storage) != 0){
+            for($counter = 0; $counter < count($site_raci_storage); $counter++){
+                $s_raci .= $site_raci_storage[$counter] . ",";
+            }
+            $s_raci = substr($s_raci, 0, -1);
+            $deliverables->site_raci = $s_raci;
         }
-        $s_raci = substr($s_raci, 0, -1);
         $deliverables->site_raci = $s_raci;
-
 
         $site_num_storage = $request->site_num;
         $s_num = "";
-        for($counter = 0; $counter < count($site_num_storage); $counter++){
-            $s_num .= $site_num_storage[$counter] . ",";
+        if(count($site_num_storage) != 0){
+            for($counter = 0; $counter < count($site_num_storage); $counter++){
+                $s_num .= $site_num_storage[$counter] . ",";
+            }
+            $s_num = substr($s_num, 0, -1);
+            $deliverables->site_num = $s_num;
         }
-        $s_num = substr($s_num, 0, -1);
         $deliverables->site_num = $s_num;
-
 
         //Information Exchange
         $info_raci_storage = $request->info_raci;
         $inf_raci = "";
-        for($counter = 0; $counter < count($info_raci_storage); $counter++){
-            $inf_raci .= $info_raci_storage[$counter] . ",";
+        if(count($info_raci_storage) != 0){
+            for($counter = 0; $counter < count($info_raci_storage); $counter++){
+                $inf_raci .= $info_raci_storage[$counter] . ",";
+            }
+            $inf_raci = substr($inf_raci, 0, -1);
+            $deliverables->information_raci = $inf_raci;
         }
-        $inf_raci = substr($inf_raci, 0, -1);
         $deliverables->information_raci = $inf_raci;
-
 
         $info_num_storage = $request->info_num;
         $inf_num = "";
-        for($counter = 0; $counter < count($info_num_storage); $counter++){
-            $inf_num .= $info_num_storage[$counter] . ",";
+        if(count($info_num_storage) != 0){
+            for($counter = 0; $counter < count($info_num_storage); $counter++){
+                $inf_num .= $info_num_storage[$counter] . ",";
+            }
+            $inf_num = substr($inf_num, 0, -1);
+            $deliverables->information_num = $inf_num;
         }
-        $inf_num = substr($inf_num, 0, -1);
         $deliverables->information_num = $inf_num;
 
         //Project Brief
         $project_raci_storage = $request->project_raci;
         $project_raci = "";
-        for($counter = 0; $counter < count($project_raci_storage); $counter++){
-            $project_raci .= $project_raci_storage[$counter] . ",";
+        if(count($project_raci_storage) != 0){
+            for($counter = 0; $counter < count($project_raci_storage); $counter++){
+                $project_raci .= $project_raci_storage[$counter] . ",";
+            }
+            $project_raci = substr($project_raci, 0, -1);
+            $deliverables->project_raci = $project_raci;
         }
-        $project_raci = substr($project_raci, 0, -1);
         $deliverables->project_raci = $project_raci;
-
 
         $project_num_storage = $request->project_num;
         $project_num = "";
-        for($counter = 0; $counter < count($project_num_storage); $counter++){
-            $project_num .= $project_num_storage[$counter] . ",";
+        if(count($project_num_storage) != 0){
+            for($counter = 0; $counter < count($project_num_storage); $counter++){
+                $project_num .= $project_num_storage[$counter] . ",";
+            }
+            $project_num = substr($project_num, 0, -1);
+            $deliverables->project_num = $project_num;
+    
         }
-        $project_num = substr($project_num, 0, -1);
         $deliverables->project_num = $project_num;
 
 
         //Risk Assessment
         $risk_raci_storage = $request->risk_raci;
         $r_raci = "";
-        for($counter = 0; $counter < count($risk_raci_storage); $counter++){
-            $r_raci .= $risk_raci_storage[$counter] . ",";
+        if(count($risk_raci_storage) != 0){
+            for($counter = 0; $counter < count($risk_raci_storage); $counter++){
+                $r_raci .= $risk_raci_storage[$counter] . ",";
+            }
+            $r_raci = substr($r_raci, 0, -1);
+            $deliverables->risk_raci = $r_raci;
         }
-        $r_raci = substr($r_raci, 0, -1);
         $deliverables->risk_raci = $r_raci;
-
 
         $risk_num_storage = $request->risk_num;
         $r_num = "";
-        for($counter = 0; $counter < count($risk_raci_storage); $counter++){
-            $r_num .= $risk_num_storage[$counter] . ",";
+        if(count($risk_num_storage) != 0){
+            for($counter = 0; $counter < count($risk_raci_storage); $counter++){
+                $r_num .= $risk_num_storage[$counter] . ",";
+            }
+            $r_num = substr($r_num, 0, -1);
+            $deliverables->risk_num = $r_num;
         }
-        $r_num = substr($r_num, 0, -1);
         $deliverables->risk_num = $r_num;
 
         //Handover
         $hand_raci_storage = $request->handover_raci;
         $h_raci = "";
-        for($counter = 0; $counter < count($hand_raci_storage); $counter++){
-            $h_raci .= $hand_raci_storage[$counter] . ",";
+        if(count($hand_raci_storage) != 0){
+            for($counter = 0; $counter < count($hand_raci_storage); $counter++){
+                $h_raci .= $hand_raci_storage[$counter] . ",";
+            }
+            $h_raci = substr($h_raci, 0, -1);
+            $deliverables->handover_raci = $h_raci;
         }
-        $h_raci = substr($h_raci, 0, -1);
         $deliverables->handover_raci = $h_raci;
-
 
         $hand_num_storage = $request->handover_num;
         $h_num = "";
-        for($counter = 0; $counter < count($hand_num_storage); $counter++){
-            $h_num .= $hand_num_storage[$counter] . ",";
+        if(count($hand_num_storage) != 0){
+            for($counter = 0; $counter < count($hand_num_storage); $counter++){
+                $h_num .= $hand_num_storage[$counter] . ",";
+            }
+            $h_num = substr($h_num, 0, -1);
+            $deliverables->handover_num = $h_num;
         }
-        $h_num = substr($h_num, 0, -1);
         $deliverables->handover_num = $h_num;
-
 
         //Project Execution Plan
         $exec_raci_storage = $request->execution_raci;
         $e_raci = "";
-        for($counter = 0; $counter < count($exec_raci_storage); $counter++){
-            $e_raci .= $exec_raci_storage[$counter] . ",";
+        if(count($exec_raci_storage) != 0){
+            for($counter = 0; $counter < count($exec_raci_storage); $counter++){
+                $e_raci .= $exec_raci_storage[$counter] . ",";
+            }
+            $e_raci = substr($e_raci, 0, -1);
+            $deliverables->execution_raci = $e_raci;
         }
-        $e_raci = substr($e_raci, 0, -1);
         $deliverables->execution_raci = $e_raci;
 
         $exec_num_storage = $request->execution_num;
         $e_num = "";
-        for($counter = 0; $counter < count($exec_num_storage); $counter++){
-            $e_num .= $exec_num_storage[$counter] . ",";
+        if(count($exec_num_storage) != 0){
+            for($counter = 0; $counter < count($exec_num_storage); $counter++){
+                $e_num .= $exec_num_storage[$counter] . ",";
+            }
+            $e_num = substr($e_num, 0, -1);
+            $deliverables->execution_num= $e_num;
         }
-        $e_num = substr($e_num, 0, -1);
         $deliverables->execution_num= $e_num;
 
         //Design Proposal
         $prop_raci_storage = $request->proposal_raci;
         $pro_raci = "";
-        for($counter = 0; $counter < count($prop_raci_storage); $counter++){
-            $pro_raci .= $prop_raci_storage[$counter] . ",";
+        if(count($prop_raci_storage) != 0){
+            for($counter = 0; $counter < count($prop_raci_storage); $counter++){
+                $pro_raci .= $prop_raci_storage[$counter] . ",";
+            }
+            $pro_raci = substr($pro_raci, 0, -1);
+            $deliverables->proposal_raci = $pro_raci;
         }
-        $pro_raci = substr($pro_raci, 0, -1);
         $deliverables->proposal_raci = $pro_raci;
 
         $prop_num_storage = $request->proposal_num;
         $pro_num = "";
-        for($counter = 0; $counter < count($prop_num_storage); $counter++){
-            $pro_num .= $prop_num_storage[$counter] . ",";
+        if(count($prop_num_storage) != 0){
+            for($counter = 0; $counter < count($prop_num_storage); $counter++){
+                $pro_num .= $prop_num_storage[$counter] . ",";
+            }
+            $pro_num = substr($pro_num, 0, -1);
+            $deliverables->proposal_num = $pro_num;
         }
-        $pro_num = substr($pro_num, 0, -1);
         $deliverables->proposal_num = $pro_num;
-
         $deliverables->save();
 
         //Scope Meetings
-        $pre = 'Pre-Application Meetings';
-        $sv = 'Site Visits';
-        $riba = 'Riba stage';
-        $ins = 'Inspection';
-
-
-        /*$meeting = new TenderScopeMeetings;
+        $meeting = new TenderScopeMeetings;
         $meeting->tender_id = $request->get('idd');
         $meeting->pre_app_purpose = $request->get('pre_app_purpose');
         $meeting->pre_app_attendees = $request->get('pre_app_attendees');
@@ -533,107 +640,101 @@ class TenderController extends Controller
         $meeting->inspection_attendees = $request->get('inspection_attendees');
         $meeting->inspection_assumed_duration = $request->get('inspection_assumed');
         $meeting->inspection_reoccurence = $request->get('inspection_reoccurence');
-        $meeting->save();
+        // $meeting->save();
 
         //Pre-Application Meetings
         $pre_choice = $request->pre_app_choice;
         $p_choice = "";
-        for($counter = 0; $counter < count($pre_choice); $counter++){
-            $p_choice .= $pre_choice[$counter] . ",";
+        if(count($pre_choice) != 0){
+            for($counter = 0; $counter < count($pre_choice); $counter++){
+                $p_choice .= $pre_choice[$counter] . ",";
+            }
+            $p_choice = substr($p_choice, 0 , -1);
+            $meeting->pre_app_choice = $p_choice;
         }
-        $p_choice = substr($p_choice, 0 , -1);
-        $choice = new TenderMeetingsChoice;
-        $choice->meeting_id = $meeting->meeting_id;
-        $choice->row_name = $pre;
-        $choice->choice = $p_choice;
-        $choice->save();
+        $meeting->pre_app_choice = $p_choice;
 
         $pre_num = $request->pre_app_num;
         $p_num = "";
-        for($counter = 0; $counter < count($pre_num); $counter++){
-            $p_num .= $pre_num[$counter] . ",";
+        if(count($pre_num) != 0){
+            for($counter = 0; $counter < count($pre_num); $counter++){
+                $p_num .= $pre_num[$counter] . ",";
+            }
+            $p_num = substr($p_num, 0, -1);
+            $meeting->pre_app_num = $p_num;
         }
-        $p_num = substr($p_num, 0, -1);
-        $num = new TenderMeetingsNum;
-        $num->meeting_id = $meeting->meeting_id;
-        $num->row_name = $pre;
-        $num->num = $p_num;
-        $num->save();
+        $meeting->pre_app_num = $p_num;
 
         //Site Visits
         $sv_choice = $request->site_visits_choice;
         $s_choice = "";
-        for($counter = 0; $counter < count($sv_choice); $counter++){
-            $s_choice .= $sv_choice[$counter] . ",";
+        if(count($sv_choice) != 0){
+            for($counter = 0; $counter < count($sv_choice); $counter++){
+                $s_choice .= $sv_choice[$counter] . ",";
+            }
+            $s_choice = substr($s_choice, 0, -1);
+            $meeting->site_visits_choice = $s_choice;
         }
-        $s_choice = substr($s_choice, 0, -1);
-        $svc = new TenderMeetingsChoice;
-        $svc->meeting_id = $meeting->meeting_id;
-        $svc->row_name = $sv;
-        $svc->choice = $s_choice;
-        $svc->save();
+        $meeting->site_visits_choice = $s_choice;
 
         $sv_num = $request->site_visits_num;
         $s_num = "";
-        for($counter = 0; $counter < count($sv_num); $counter++){
-            $s_num .= $sv_num[$counter] . ",";
+        if(count($sv_num) != 0){
+            for($counter = 0; $counter < count($sv_num); $counter++){
+                $s_num .= $sv_num[$counter] . ",";
+            }
+            $s_num = substr($s_num, 0, -1);
+            $meeting->site_visits_num = $s_num;
         }
-        $s_num = substr($s_num, 0, -1);
-        $svn = new TenderMeetingsNum;
-        $svn->meeting_id = $meeting->meeting_id;
-        $svn->row_name = $sv;
-        $svn->num = $s_num;
-        $svn->save();
+        $meeting->site_visits_num = $s_num;
 
         //Riba Stage
         $r_choice = $request->riba_choice;
         $riba_c = "";
-        for($counter = 0; $counter < count($r_choice); $counter++){
-            $riba_c = $r_choice[$counter] . ",";
+        if(count($r_choice) != 0){
+            for($counter = 0; $counter < count($r_choice); $counter++){
+                $riba_c = $r_choice[$counter] . ",";
+            }
+            $riba_c = substr($riba_c, 0, -1);
+            $meeting->riba_choice = $riba_c;
         }
-        $riba_c = substr($riba_c, 0, -1);
-        $rc = new TenderMeetingsChoice;
-        $rc->meeting_id = $meeting->meeting_id;
-        $rc->row_name = $riba;
-        $rc->choice = $riba_c;
-        $rc->save();
+        $meeting->riba_choice = $riba_c;
 
         $r_num = $request->riba_num;
         $riba_n = "";
-        for($counter = 0; $counter < count($r_num); $counter++){
-            $riba_n .= $r_num[$counter] . ",";
+        if(count($r_num) != 0){
+            for($counter = 0; $counter < count($r_num); $counter++){
+                $riba_n .= $r_num[$counter] . ",";
+            }
+            $riba_n = substr($riba_n, 0, -1);
+            $meeting->riba_num = $riba_n;
         }
-        $riba_n = substr($riba_n, 0, -1);
-        $rn = new TenderMeetingsNum;
-        $rn->meeting_id = $meeting->meeting_id;
-        $rn->row_name = $riba;
-        $rn->num = $riba_n;
-        $rn->save();
+        $meeting->riba_num = $riba_n;
+
 
         //Inspection
         $ins_choice = $request->inspection_choice;
         $ins_c = "";
-        for($counter = 0; $counter < count($ins_choice); $counter++){
-            $ins_c .= $ins_choice[$counter] . ",";
+        if(count($ins_choice) != 0){
+            for($counter = 0; $counter < count($ins_choice); $counter++){
+                $ins_c .= $ins_choice[$counter] . ",";
+            }
+            $ins_c = substr($ins_c, 0, -1);
+            $meeting->site_inspection_choice = $ins_c;
         }
-        $ins_c = substr($ins_c, 0, -1);
-        $ic = new TenderMeetingsChoice;
-        $ic->meeting_id = $meeting->meeting_id;
-        $ic->row_name = $ins;
-        $ic->choice = $ins_c;
-        $ic->save();
+        $meeting->site_inspection_choice = $ins_c;
 
         $ins_num = $request->inspection_num;
         $ins_n = "";
-        for($counter = 0; $counter < count($ins_num); $counter++){
-            $ins_n .= $ins_num[$counter] . ",";
+        if(count($ins_num) != 0){
+            for($counter = 0; $counter < count($ins_num); $counter++){
+                $ins_n .= $ins_num[$counter] . ",";
+            }
+            $ins_n = substr($ins_n, 0, -1);
+            $meeting->site_inspection_num = $ins_n;
         }
-        $ins_n = substr($ins_n, 0, -1);
-        $in = new TenderMeetingsNum;
-        $in->meeting_id = $meeting->meeting_id;
-        $in->row_name = $ins;
-        $in->num = $ins_n;
-        $in->save();
+
+        $meeting->save();
 
         //Design Considerations
         $question = new TenderDesignConsiderations;
@@ -645,56 +746,229 @@ class TenderController extends Controller
         $question->question_five_applies_to = $request->get('question_five');
         $question->save();
 
-        //Advise On
+        //Advise On  
         $ad = new TenderScopeAdvise;
-        $one = $request->advise_one;
-        $two = $request->advise_two;
-        $three= $request->advise_three;
-        $four = $request->advise_four;
-        $five = $request->advise_five;
-        $six = $request->advise_six;
-        $a_one = "";
-        $a_two = "";
-        $a_three = "";
-        $a_four = "";
-        $a_five = "";
-        $a_six = "";
-
-        for($counter = 0; $counter < count($one); $counter++){
-            $a_one .= $one[$counter] . ",";
-        }
-        for($counter = 0; $counter < count($two); $counter++){
-            $a_two .= $two[$counter] . ",";
-        }
-        for($counter = 0; $counter < count($three); $counter++){
-            $a_three .= $three[$counter] . ",";
-        }
-        for($counter = 0; $counter < count($four); $counter++){
-            $a_four .= $four[$counter] . ",";
-        }
-        for($counter = 0; $counter < count($five); $counter++){
-            $a_five .= $five[$counter] . ",";
-        }
-        for($counter = 0; $counter < count($six); $counter++){
-            $a_six .= $six[$counter] . ",";
-        }
-        $a_one = substr($a_one, 0, -1);
-        $a_two = substr($a_two, 0, -1);
-        $a_three = substr($a_three, 0, -1);
-        $a_four = substr($a_four, 0, -1);
-        $a_five = substr($a_five, 0, -1);
-        $a_six = substr($a_six, 0, -1);
         $ad->tender_id = $request->get('idd');
+        
+        $one = $request->advise_one;
+        $a_one = "";
+        if(count($a_one) != 0){
+            for($counter = 0; $counter < count($one); $counter++){
+                $a_one .= $one[$counter] . ",";
+            }
+            $a_one = substr($a_one, 0, -1);
+            $ad->advise_one = $a_one;
+
+        }
         $ad->advise_one = $a_one;
+
+        $two = $request->advise_two;
+        $a_two = "";
+        if(count($two) != 0){
+            for($counter = 0; $counter < count($two); $counter++){
+                $a_two .= $two[$counter] . ",";
+            }
+            $a_two = substr($a_two, 0, -1);
+            $ad->advise_two = $a_two;
+        }
         $ad->advise_two = $a_two;
+
+        $three= $request->advise_three;
+        $a_three = "";
+        if(count($three) != 0){
+            for($counter = 0; $counter < count($three); $counter++){
+                $a_three .= $three[$counter] . ",";
+            }
+            $a_three = substr($a_three, 0, -1);
+            $ad->advise_three = $a_three;
+
+        }
         $ad->advise_three = $a_three;
+
+        $four = $request->advise_four;
+        $a_four = "";
+        if(count($four) != 0){
+            for($counter = 0; $counter < count($four); $counter++){
+                $a_four .= $four[$counter] . ",";
+            }
+            $a_four = substr($a_four, 0, -1);
+            $ad->advise_four = $a_four;
+
+        }
         $ad->advise_four = $a_four;
+
+        $five = $request->advise_five;
+        $a_five = "";
+        if(count($five) != 0){
+            for($counter = 0; $counter < count($five); $counter++){
+                $a_five .= $five[$counter] . ",";
+            }
+            $a_five = substr($a_five, 0, -1);
+            $ad->advise_five = $a_five;
+        }
         $ad->advise_five = $a_five;
+
+        $six = $request->advise_six;
+        $a_six = "";
+        if(count($six) != 0){
+            for($counter = 0; $counter < count($six); $counter++){
+                $a_six .= $six[$counter] . ",";
+            }
+            $a_six = substr($a_six, 0, -1);
+            $ad->advise_six = $a_six;
+        }
         $ad->advise_six = $a_six;
+
+        //Monitor
+        $mon_one = $request->monitor_one;
+        $moni_one = "";
+        if(count($mon_one) != 0){
+            for($counter = 0; $counter < count($mon_one); $counter++){
+                $moni_one .= $mon_one[$counter] . ",";
+            }
+            $moni_one = substr($moni_one, 0, -1);
+            $ad->monitor_one = $moni_one;
+        }
+        $ad->monitor_one = $moni_one;
+
+        $mon_two = $request->monitor_two;
+        $moni_two = "";
+        if(count($mon_two) != 0){
+            for($counter = 0; $counter < count($mon_two); $counter++){
+                $moni_two .= $mon_two[$counter] . ",";
+            }
+            $moni_two = substr($moni_two, 0, -1);
+            $ad->monitor_two = $moni_two;
+        }
+        $ad->monitor_two = $moni_two;
+
+        $mon_three = $request->monitor_three;
+        $moni_three = "";
+        if(count($mon_three) != 0){
+            for($counter = 0; $counter < count($moni_three); $counter++){
+                $moni_three .= $mon_three[$counter] . ",";
+            }
+            $moni_three = substr($moni_three, 0, -1);
+            $ad->monitor_three;
+        }
+        $ad->monitor_three;
+
+        //Collaborate/Consult with
+        $collab_one = $request->collab_one;
+        $new_collab_one = "";
+        if(count($collab_one) != 0){
+            for($counter = 0; $counter < count($collab_one); $counter++){
+                $new_collab_one .= $collab_one[$counter] . ",";
+            }
+            $new_collab_one = substr($new_collab_one, 0, -1);
+            $ad->collab_one = $new_collab_one;
+        }
+        $ad->collab_one = $new_collab_one;
+
+        $collab_two = $request->collab_two;
+        $new_collab_two = "";
+        if(count($collab_two) != 0){
+            for($counter = 0; $counter < count($collab_two); $counter++){
+                $new_collab_two .= $collab_two[$counter] . ",";
+            }
+            $new_collab_two = substr($new_collab_two, 0, -1);
+            $ad->collab_one = $new_collab_two;
+        }
+        $ad->collab_one = $new_collab_two;
+
+        $collab_three = $request->collab_three;
+        $new_collab_three = "";
+        if(count($collab_three) != 0){
+            for($counter = 0; $counter < count($collab_three); $counter++){
+                $new_collab_three .= $collab_three[$counter] . ".";
+            }
+            $new_collab_three = substr($new_collab_three, 0, -1);
+            $ad->collab_three = $new_collab_three;
+        }
+        $ad->collab_three = $new_collab_three;
+
+        $collab_four = $request->collab_four;
+        $new_collab_four = "";
+        if(count($collab_four) != 0){
+            for($counter = 0; $counter < count($collab_four); $counter++){
+                $new_collab_four .= $collab_four[$counter] . ",";
+            }
+            $new_collab_four = substr($new_collab_four, 0, -1);
+            $ad->collab_four = $new_collab_four;
+        }
+        $ad->collab_four = $new_collab_four;
+
+        //Coordinate
+        $coord_one = $request->coordinate_one;
+        $new_coord_one = "";
+        if(count($coord_one) != 0){
+            for($counter = 0; $counter < count($coord_one); $counter++){
+                $new_coord_one .= $coord_one[$counter] . ",";
+            }
+            $new_coord_one = substr($new_coord_one, 0, -1);
+            $ad->coordinate_one = $new_coord_one;
+        }
+        $ad->coordinate_one = $new_coord_one;
+
+        $coord_two = $request->coordinate_two;
+        $new_coord_two = "";
+        if(count($coord_two) != 0){
+            for($counter = 0; $counter < count($coord_two); $counter++){
+                $new_coord_two .= $coord_two[$counter] . ",";
+            }
+            $new_coord_two = substr($new_coord_two, 0, -1);
+            $ad->coordinate_two = $new_coord_two;
+        }
+        $ad->coordinate_two = $new_coord_two;
+
+        //Other
+        $other_one = $request->other_one;
+        $new_other_one = "";
+        if(count($other_one) != 0){
+            for($counter = 0; $counter < count($other_one); $counter++){
+                $new_other_one .= $other_one[$counter] . ",";
+            }
+            $new_other_one = substr($new_other_one, 0, -1);
+            $ad->other_one = $new_other_one;
+        }
+        $ad->other_one = $new_other_one;
+        
+        $other_two = $request->other_two;
+        $new_other_two = "";
+        if(count($other_two) != 0){
+            for($counter = 0; $counter < count($other_two); $counter++){
+                $new_other_two .= $other_two[$counter] . ",";
+            }
+            $new_other_two = substr($new_other_two, 0, -1);
+            $ad->other_two = $new_other_two;
+        }
+        $ad->other_two = $new_other_two;
+
+        $other_three = $request->other_three;
+        $new_other_three = "";
+        if(count($other_three) != 0){
+            for($counter = 0; $counter < count($other_three); $counter++){
+                $new_other_three .= $other_three[$counter] . ",";
+            }
+            $new_other_three = substr($new_other_three, 0, -1);
+            $ad->other_three = $new_other_three;
+        }
+        $ad->other_three = $new_other_three;
+
+        $other_four = $request->other_four;
+        $new_other_four = "";
+        if(count($other_four) != 0){
+            for($counter = 0; $counter < count($other_four); $counter++){
+                $new_other_four .= $other_four[$counter] . ",";
+            }
+            $new_other_four = substr($new_other_four, 0, -1);
+            $ad->other_four = $new_other_four;
+        }
+        $ad->other_four = $new_other_four;
         $ad->save();
 
 
-        $added_row_name = $request->added_row_name;
+        /*$added_row_name = $request->added_row_name;
         $added_details = $request->added_details;
         $added_raci = $request->added_raci;
         $added_num = $request->added_num;
@@ -707,20 +981,21 @@ class TenderController extends Controller
         for($counter = 0; $counter < count($added_num); $counter++){
             $add_num .= $added_num[$counter] . ",";
         }
-        $add_num = substr($add_num, 0, -1);*/
+        $add_num = substr($add_num, 0, -1);
 
-        // for($counter = 0; $counter < count($added_row_name); $counter++){
-        //     $added = new AddedDeliverables;
-        //     $added->tender_id = $request->get('idd');
-        //     $added->row_name = $added_row_name;
-        //     $added->details = $added_details;
-        //     $added->raci = $add_raci;
-        //     $added->num = $add_num;
-        //     $added->save();
-        // }
+        for($counter = 0; $counter < count($added_row_name); $counter++){
+            $added = new AddedDeliverables;
+            $added->tender_id = $request->get('idd');
+            $added->row_name = $added_row_name;
+            $added->details = $added_details;
+            $added->raci = $add_raci;
+            $added->num = $add_num;
+            $added->save();
+        }*/
 
         // return $this->gettend($request->get('idd'));
         return ('success');
+        // echo $ins_n;
 
     }
 
@@ -757,10 +1032,13 @@ class TenderController extends Controller
         $qual->tender_id = $request->get('idd');
         $qual->created_by_fname = $request->get('created_fname');
         $qual->created_by_lname = $request->get('created_lname');
+        $qual->created_data = $request->get('created_date');
         $qual->checked_by_fname = $request->get('checked_fname');
         $qual->checked_by_lname = $request->get('checked_lname');
+        $qual->checked_date = $request->get('checked_date');
         $qual->approved_by_fname = $request->get('approved_fname');
         $qual->approved_by_lname = $request->get('approved_lname');
+        $qual->approved_date = $request->get('approved_date');
         $qual->save();
 
         return "SUCCESS!";

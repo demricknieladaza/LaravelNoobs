@@ -17,7 +17,20 @@ class TenderScopeAdvise extends Model
         'advise_three',
         'advise_four',
         'advise_five',
-        'advise_six'
+        'advise_six',
+        'monitor_one',
+        'monitor_two',
+        'monitor_three',
+        'collab_one',
+        'collab_two',
+        'collab_three',
+        'collab_four',
+        'coordinate_one',
+        'coordinate_two',
+        'other_one',
+        'other_two',
+        'other_three',
+        'other_four'
     ];
 
     public function tender(){

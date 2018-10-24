@@ -65,10 +65,6 @@ class IndividualsController extends Controller
                 $name_of_files .= $filenameToStore . "/";
             }
 
-            // for($counter = 0; $counter < count($files); $counter++){
-            //         $name_of_files .= $files[$counter] . ",";
-            // }
-
         }
         $name_of_files = substr($name_of_files, 0, -1);
         $new->images = $name_of_files;
