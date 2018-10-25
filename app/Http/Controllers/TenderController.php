@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Response;
 use App\ProjectInformations;
 use App\TransportLink;
 use App\AreaSpecificInformation;
@@ -20,8 +23,6 @@ use App\TenderQaStatements;
 use App\TenderQualityAssurance;
 use App\TenderEvaluation;
 use App\TenderScopeDeliverables;
-use App\TenderDeliverablesRaci;
-use App\TenderDeliverablesNum;
 use App\TenderScopeMeetings;
 use App\TenderMeetingsChoice;
 use App\TenderMeetingsNum;
@@ -115,34 +116,45 @@ class TenderController extends Controller
 
     public function appointmentStore(Request $request){
         
-        $idd = $request->get('current_tend');
+        $idd = $request->get('tender_id');
         $appointment = new TenderAppointment;
         $appointment->tender_id = $idd;
 
         $insurance_name = $request->insurance_name;
         $new_ins_name = "";
-        for($counter = 0; $counter < count($insurance_name); $counter++){
-            $new_ins_name .= $insurance_name[$counter] . ",";
+        if(count($insurance_name) != 0){
+            for($counter = 0; $counter < count($insurance_name); $counter++){
+                $new_ins_name .= $insurance_name[$counter] . ",";
+            }
+            $new_ins_name = substr($new_ins_name, 0, -1);
+            $appointment->insurance_name;
         }
-        $new_ins_name = substr($new_ins_name, 0, -1);
         $appointment->insurance_name;
 
         $insurance_level = $request->insurance_level;
         $new_ins_lvl = "";
-        for($counter = 0; $counter < count($insurance_level); $counter++){
-            $new_ins_lvl .= $insurance_level[$counter] . ",";
+        if(count($insurance_level)){
+            for($counter = 0; $counter < count($insurance_level); $counter++){
+                $new_ins_lvl .= $insurance_level[$counter] . ",";
+            }
+            $new_ins_lvl = substr($new_ins_lvl, 0, -1);
+            $appointment->insurance_level;
         }
-        $new_ins_lvl = substr($new_ins_lvl, 0, -1);
         $appointment->insurance_level;
 
         $bond = $request->bonds;
         $new_bonds = "";
-        for($counter = 0; $counter < count($bond); $counter++){
-            $new_bonds .= $bond[$counter] . ",";
+        if(count($bond) != 0){
+            for($counter = 0; $counter < count($bond); $counter++){
+                $new_bonds .= $bond[$counter] . ",";
+            }
+            $new_bonds = substr($new_bonds, 0, -1);
+            $appointment->bonds = $new_bonds;
         }
-        $new_bonds = substr($new_bonds, 0, -1);
         $appointment->bonds = $new_bonds;
+
         $appointment->collateral_warranties = $request->get('collateral_warranties');
+        $appointment->limit_of_liability = $request->get('limit_of_liability');
 
         if($request->hasFile('form_of_appointment')){
 
@@ -177,21 +189,12 @@ class TenderController extends Controller
         }
         $name_of_files = substr($name_of_files, 0, -1);
         $appointment->documents_for_signature = $name_of_files;
+
         $appointment->save();
 
-        // $name = $request->insurance_name;
-        // $level = $request->insurance_level;
-        // for($counter = 0; $counter < count($name); $counter++){
-        //     $appointment = new TenderAppointment;
-        //     $appointment->insurance_name = $name[$counter];
-        //     $appointment->insurance_level = $level[$counter];
-        //     $appointment->tender_id = $idd;
-        //     $appointment->collateral_warranties = $request->get('collateral_warranties');
-        //     $appointment->limit_of_liability = $request->get('limit_of_liability');
-        //     $appointment->save();
-        // }
         //return response()->json(array('success' => true, 'test' => $idd), 200);
-       return "SUCCESS!";
+        return "SUCCESS!";
+        // return $this->gettend($idd);
 
     }
 
@@ -628,7 +631,7 @@ class TenderController extends Controller
         $meeting->pre_app_attendees = $request->get('pre_app_attendees');
         $meeting->pre_app_assumed_duration = $request->get('pre_app_assumed');
         $meeting->pre_app_reoccurence = $request->get('pre_app_reoccurence');
-        $meeting->site_visits_purpose = $request->get('site_visists_purpose');
+        $meeting->site_visits_purpose = $request->get('site_visits_purpose');
         $meeting->site_visits_attendees = $request->get('site_visits_attendees');
         $meeting->site_visits_assumed_duration = $request->get('site_visits_assumed');
         $meeting->site_visits_reoccurence = $request->get('site_visits_reoccurence');

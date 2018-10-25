@@ -10,8 +10,9 @@ class TenderPreQualificationQuestionnaire extends Model
     public $primaryKey = 'pre_id';
     public $timestamps = false;
     protected $fillable = [
+        'tender_id',
         'question',
-        'tender_id'
+        'response'
     ];
     
 }
