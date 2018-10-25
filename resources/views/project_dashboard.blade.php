@@ -200,7 +200,7 @@
 		    							<td>Project ID
 			    							
 		    							</td>
-		    							<td><input type="number" name="project_id" class="form-control proje" placeholder="123456789" readonly></td>
+		    							<td></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Location
@@ -432,7 +432,7 @@
 		    					<div style="text-align: center;">
 								</div>
 								{{-- <button class="btn buts save_proj" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction()"><i class="fa fa-save" style="font-size:15px" href=""></i>Save</button> --}}
-								<button type="submit" class="btn btn-primary">Save</button>
+								{{-- <button type="submit" class="btn btn-primary">Save</button> --}}
 								{!! Form::close() !!}			
 		    				</div>
 		    			</div>
@@ -1273,11 +1273,48 @@ var element=document.getElementById('bonds');
 	   $('#edit_proj').css('display', 'none');
 	}
 	function saveFunction() {
-	   $('#projform input.proje').attr('readonly',true);
-	   $('#projform input.addbbutn').attr('disabled',true);
-	   $('.save_proj').css('display', 'none');
-	   $('#edit_proj').css('display', 'block');
-	   $('#projform').submit();
+		if( $('input[name="project_title"]').val() == "")
+		{
+			$('input[name="project_title"]').css('border-color','red');
+			$('input[name="project_title"]').after('<p style="color: red;">Enter Project Title</p>');
+		} 
+		else if($('input[name="location"]').val() == ""  )
+		{
+			$('input[name="location"]').css('border-color','red');
+			$('input[name="location"]').after('<p style="color: red;">Enter Location</p>');
+		}
+		else if($('input[name="type_of_development"]').val() == ""  )
+		{
+			$('input[name="type_of_development"]').css('border-color','red');
+			$('input[name="type_of_development"]').after('<p style="color: red;">Enter Type of development</p>');
+		}
+		// else if($('input[name="construction_value"]').val() == ""  )
+		// {
+		// 	$('input[name="construction_value"]').css('border-color','red');
+		// 	$('input[name="construction_value"]').after('<p style="color: red;">Enter Construction value</p>');
+		// }	
+		else if($('input[name^="use_name"]').val() == ""  )
+		{
+			$('input[name^="use_name"]').parent().css('border-color','red');
+			$('input[name^="use_name"]').after('<p style="color: red;font-size: 11px;">*Need to have atleast one</p>');
+		}
+		else if($('input[name^="riba_stage"]').val() == ""  )
+		{
+			$('input[name^="riba_stage"]').parent().css('border-color','red');
+			$('input[name^="riba_stage"]').after('<p style="color: red;font-size: 11px;">*Need to have atleast one</p>');
+		}
+		else if($('input[name^="member_position"]').val() == ""  )
+		{
+			$('input[name^="member_position"]').parent().css('border-color','red');
+			$('input[name^="member_position"]').after('<p style="color: red;font-size: 11px;">*Need to have atleast one</p>');
+		}
+	    else{
+	    	$('#projform input.proje').attr('readonly',true);
+		    $('#projform input.addbbutn').attr('disabled',true);
+		    $('.save_proj').css('display', 'none');
+		    $('#edit_proj').css('display', 'block');
+		    $('#projform').submit();
+	    }
 
 
 	}
@@ -1371,7 +1408,7 @@ $('a[href^="#"]').on('click', function(event) {
 			
 		$('#addriba').click(function(e){
 	    	// e.preventDefault();
-	    	$('.addedriba tr:last').before('<a href="#" class="remove_field">x</a><tr class="lastitemriba"><td><input type="text" name="riba_stage_name[]" class="form-control proje" placeholder="RIBA Stage 1 Completion" ></td><td><input type="text" name="riba_stage_date[]" class="form-control proje" placeholder="01/03/2019" ></td></tr>');
+	    	$('.addedriba tr:last').before('<a href="#" class="remove_field">x</a><tr class="lastitemriba"><td><input type="text" name="riba_stage[]" class="form-control proje" placeholder="RIBA Stage 1 Completion" ></td><td><input type="text" name="date[]" class="form-control proje" placeholder="01/03/2019" ></td></tr>');
 	    });
 
 	    $('.addedriba').on("click",".remove_field", function(e){ //user click on remove text

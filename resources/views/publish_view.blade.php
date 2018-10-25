@@ -1105,7 +1105,7 @@
 	          		</div>
 				  </p>
 				  {{-- TENDER ID --}}
-				  <input type="input" name="" id="idd" value="0">
+				  <input type="hidden" name="" id="idd" value="0">
 	        </div>
 	        <div class="modal-footer" style="text-align: center;">
 	          <button type="button" class="btn btn-primary" data-backdrop="false" data-dismiss="modal"  id="createservproj" >Create</button>
@@ -1328,19 +1328,23 @@
 		    							</td>
 		    							<td>
 		    								<table width="100%" id="addedtypeofuse" class="addedtype">
+		    									<?php $total = 0; ?>
 												@foreach($type as $use)
+												<?php 
+													$total = $total + $use['area'];
+												 ?>
 												<tr>
-		    										<td><input type="text" name="use_name[]" class="form-control proje" value="{{ $use->use_name }}" placeholder="Residential" readonly></td>&nbsp
-		    										<td><input type="text" name="use_area[]" class="form-control proje" value="{{ $use->use_area }}" placeholder="30,000m2" readonly></td>
-		    										<td><input type="text" name="use_units[]" class="form-control proje" value="{{ $use->use_units }}" placeholder="200 units" readonly></td>
-		    										<td><input type="text" name="use_type[]" class="form-control proje" value="{{ $use->use_type }}" placeholder="High-End" readonly></td>
+		    										<td><input type="text" name="use_name[]" class="form-control proje" value="{{ $use['name'] }}" placeholder="Residential" readonly></td>&nbsp
+		    										<td><input type="text" name="use_area[]" class="form-control proje" value="{{ number_format($use['area']) }}" placeholder="30,000m2" readonly></td>
+		    										<td><input type="text" name="use_units[]" class="form-control proje" value="{{ number_format($use['unit']) }}" placeholder="200 units" readonly></td>
+		    										<td><input type="text" name="use_type[]" class="form-control proje" value="{{ $use['type'] }}" placeholder="High-End" readonly></td>
 		    									</tr>
 												@endforeach
 												<tr class="lastitem" >
 												</tr>
 		    									<tr>
 		    										<td>Total</td>
-		    										<td id="total">57,000m2</td>
+		    										<td id="total"><?php echo number_format($total); ?> m2</td>
 		    										<td></td>
 		    										<td><div class="form-group">
 		    									<input type="button" id="addtypeofuse" class="addbbutn btn form-control pull-right" style="background-color: #fe7235;color:white;width: 90px;" value="Add" disabled />
@@ -1357,8 +1361,8 @@
 		    								<table width="100%" class="addedriba">
 												@foreach($milestones as $mile)
 		    									<tr class="lastitemiba">
-		    										<td><input type="text" name="riba_stage[]" class="form-control proje" value="{{ $mile->riba_stage }}" placeholder="RIBA Stage 1 Completion" readonly></td>
-		    										<td><input type="text" name="date[]" class="form-control proje" value="{{ $mile->date }}" placeholder="01/03/2019" readonly></td>
+		    										<td><input type="text" name="riba_stage[]" class="form-control proje" value="{{ $mile['name'] }}" placeholder="RIBA Stage 1 Completion" readonly></td>
+		    										<td><input type="text" name="date[]" class="form-control proje" value="{{ $mile['date'] }}" placeholder="01/03/2019" readonly></td>
 												</tr>
 												@endforeach
 		    									{{-- <tr>
@@ -5133,7 +5137,7 @@ $('a[href^="#"]').on('click', function(event) {
 			
 		$('#addriba').click(function(e){
 	    	// e.preventDefault();
-	    	$('.addedriba tr:last').before('<tr class="lastitemriba"><a href="#" class="remove_field">x</a><td><input type="text" name="riba_stage_name[]" class="form-control proje" placeholder="RIBA Stage 1 Completion" ></td><td><input type="text" name="riba_stage_date[]" class="form-control proje" placeholder="01/03/2019" ></td></tr>');
+	    	$('.addedriba tr:last').before('<tr class="lastitemriba"><a href="#" class="remove_field">x</a><td><input type="text" name="riba_stage[]" class="form-control proje" placeholder="RIBA Stage 1 Completion" ></td><td><input type="text" name="date[]" class="form-control proje" placeholder="01/03/2019" ></td></tr>');
 	    });
 
 	    $('.addedriba').on("click",".remove_field", function(e){ //user click on remove text

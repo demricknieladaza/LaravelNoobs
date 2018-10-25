@@ -447,7 +447,7 @@
 				method: 'post',
 				data: {
 					services: jQuery('#tendserve').val(),
-					id: {{ $tenders[0]['project_record_id'] }},
+					id: {{ $proj }},
 					idd: jQuery('#idd').val()
 				},
 				success: function(result){
@@ -651,7 +651,7 @@
 		<div class="col-sm-12">
 			<div class="tender-container tendnew">
 				<ul class="nav navs bid-form-nav">
-					<li class=""><a class="abut" href="{{ url('project_info/'. $tenders[0]['project_record_id'] . '/edit') }}" >Project</a></li>
+					<li class=""><a class="abut" href="{{ url('project_info/'. $proj . '/edit') }}" >Project</a></li>
 					<li class="123"><a class="abut" >Scope</a></li>
 					<li class="active"><a class="abut" >Tenders</a></li>
 					<li class="123" id="cret" ><a class="abut" data-toggle="modal" data-target="#selectServe"><span>Create New Tender</span></a></li>
@@ -676,42 +676,57 @@
   			        </tr>
     			    </thead>
     			    <tbody id="tenderload">
-						@foreach($tenders as $ten)
-						<tr>
-							@if($ten->status == "Closed")
-								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a><p></p></a></td>
-								<td class="td">{{ $ten->status }}</td>
-								<td class="td">{{ date('d/m/Y', strtotime($ten->start)) }}</td>
-								<td class="td">{{ $ten->end }}</td>
-								<td class="td">{{ $ten->time_remaining }}</td>
-								<td class="td">{{ $ten->bids_received }}</td>
-								<td class="td">{{ $ten->queries_received }}</td>
+    			    	{{-- @if ()
+    			    		<tr>
+								<td style="text-align: left;font-weight:bolder; " class="td"><a><p></p></a></td>
+								<td class="td"></td>
+								<td class="td"></td>
+								<td class="td"></td>
+								<td class="td"></td>
+								<td class="td"></td>
+								<td class="td"></td>
 								<td class="td">
-								</button><button class="btn btn-primary" style="margin-bottom:10px;    width: 135px;">Dowload Evalution<br>Report</button>
-							 	</button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td>
-							@elseif($ten->status == "Active")
-								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a class="edit_tender" data-tender-id="{{ $ten->tender_id }}" href="{{ url('tenderget/'.$ten->tender_id.'') }}" ><p>Edit Tender<br></p></a></td>
-								<td class="td">{{ $ten->status }}</td>
-								<td class="td">{{ \Carbon\Carbon::parse($ten->start)->format('m/d/Y')}}</td>
-								<td class="td">{{ $ten->end }}</td>
-								<td class="td">{{ $ten->time_remaining }}</td>
-								<td class="td"><strong style="font-size: 25px;">{{ $ten->bids_received }}</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewBid"><p>View Bids</p></a></td>
-								<td class="td">{{ $ten->queries_received }}</td>
-								<td class="td"></button><button style="width: 135px;" class="btn btn-success">Complete Tender  <br>Process</button></td>
-								{{-- </button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td> --}}
-							@else
-								<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a class="edit_tender" data-tender-id="{{ $ten->tender_id }}" href="{{ url('tenderget/'.$ten->tender_id.'') }}"><p>Edit Tender<br></p></a></td>
-								<td class="td">{{ $ten->status }}</td>
-								<td class="td">TBC</td>
-								<td class="td">TBC</td>
-								<td class="td">TBC</td>
-								<td class="td">TBC</td>
-								<td class="td">TBC</td>
-								<td class="td">No Default Action!</td>
-							@endif
+								<button class="btn btn-primary" style="margin-bottom:10px;    width: 135px;">Dowload Evalution<br>Report</button>
+							 	<button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td>
+							 </tr>
+    			    	@else --}}
+							@foreach($tenders as $ten)
+							<tr>
+								@if($ten->status == "Closed")
+									<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a><p></p></a></td>
+									<td class="td">{{ $ten->status }}</td>
+									<td class="td">{{ date('d/m/Y', strtotime($ten->start)) }}</td>
+									<td class="td">{{ $ten->end }}</td>
+									<td class="td">{{ $ten->time_remaining }}</td>
+									<td class="td">{{ $ten->bids_received }}</td>
+									<td class="td">{{ $ten->queries_received }}</td>
+									<td class="td">
+									<button class="btn btn-primary" style="margin-bottom:10px;    width: 135px;">Dowload Evalution<br>Report</button>
+								 	<button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td>
+								@elseif($ten->status == "Active")
+									<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a class="edit_tender" data-tender-id="{{ $ten->tender_id }}" href="{{ url('tenderget/'.$ten->tender_id.'') }}" ><p>Edit Tender<br></p></a></td>
+									<td class="td">{{ $ten->status }}</td>
+									<td class="td">{{ \Carbon\Carbon::parse($ten->start)->format('m/d/Y')}}</td>
+									<td class="td">{{ $ten->end }}</td>
+									<td class="td">{{ $ten->time_remaining }}</td>
+									<td class="td"><strong style="font-size: 25px;">{{ $ten->bids_received }}</strong><a data-toggle="modal" data-backdrop="static" data-target="#viewBid"><p>View Bids</p></a></td>
+									<td class="td">{{ $ten->queries_received }}</td>
+									<td class="td"></button><button style="width: 135px;" class="btn btn-success">Complete Tender  <br>Process</button></td>
+									{{-- </button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td> --}}
+								@else
+									<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a class="edit_tender" data-tender-id="{{ $ten->tender_id }}" href="{{ url('tenderget/'.$ten->tender_id.'') }}"><p>Edit Tender<br></p></a></td>
+									<td class="td">{{ $ten->status }}</td>
+									<td class="td">TBC</td>
+									<td class="td">TBC</td>
+									<td class="td">TBC</td>
+									<td class="td">TBC</td>
+									<td class="td">TBC</td>
+									<td class="td">No Default Action!</td>
+								@endif
 
-						</tr>
-						@endforeach
+							</tr>
+							@endforeach
+						{{-- @endif --}}
     			    </tbody>
 	    			</table>
 	    			<button class="btn">Print Report</button>
