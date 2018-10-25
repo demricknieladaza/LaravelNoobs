@@ -494,7 +494,7 @@
 				data: {
 					created_fname: jQuery("input[name='created_fname']").val(),
 					created_lname: jQuery("input[name='created_lname']").val(),
-					created_data: jQuery("input[name='created_date']").val(),
+					created_date: jQuery("input[name='created_date']").val(),
 					checked_fname: jQuery("input[name='checked_fname']").val(),
 					checked_lname: jQuery("input[name='checked_lname']").val(),
 					checked_date: jQuery("input[name='checked_date']").val(),
@@ -503,7 +503,6 @@
 					approved_date: jQuery("input[name='approved_date']").val()
 				},
 				success: function(result){
-
 					console.log(result);
 				}
 			});
@@ -545,7 +544,6 @@
 					collateral_warranties: jQuery("select[name='collateral_warranties']").val(),
 					limit_of_liability: jQuery("input[name='limit_of_liability']").val()
 					// net_contribution_clause:jQuery("input[name='net_contribution_clause']").val(),
-					form_of_appointment: 
 					// documents_for_signature:  jQuery("input[name='documents_for_signature']").val(),
 					// signature_files: jQuery("input[name='signature_files']").val()
 				},
