@@ -556,7 +556,8 @@
 		});
 		$('#start_tender').click(function(){
 			alert('START!!!');
-			var idd = $('#serveprojtitle').attr('data-id');
+			// var idd = $('#serveprojtitle').attr('data-id');
+			var idd = jQuery("input[name='tender_id']");
 			var status = "Active"
 			var end = "N/A";
 			jQuery.ajax({
@@ -807,10 +808,18 @@
 					
 				}
 			);
-			jQuery("input[name='handover_raci[]']").each(function()
+			jQuery("input[name='hand_raci[]']").each(function()
 				{	
 					if($(this).prop('checked')){
 						han_raci.push($(this).val());
+					}
+					
+				}
+			);
+			jQuery("input[name='hand_num[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						han_num.push($(this).val());
 					}
 					
 				}
@@ -1233,23 +1242,23 @@
 					execution_raci: exec_raci,
 					execution_num: exec_num,
 					proposal_raci: prop_raci,
-					proposal_numn: prop_num,
+					proposal_num: prop_num,
 					pre_app_purpose: jQuery("textarea[name='pre_app_purpose']").val(),
 					pre_app_attendees: jQuery("textarea[name='pre_app_attendees']").val(),
-					pre_app_assumed: jQuery("textarea[name='pre_app_assumed_duration']").val(),
-					pre_app_reoccurence: jQuery("textarea[name='pre_app_reoccurence']").val(),
+					pre_app_assumed: jQuery("input[name='pre_app_assumed_duration']").val(),
+					pre_app_reoccurence: jQuery("input[name='pre_app_reoccurence']").val(),
 					site_visits_purpose: jQuery("textarea[name='site_visits_purpose']").val(),
 					site_visists_attendees: jQuery("textarea[name='site_visits_attendees']").val(),
-					site_visits_assumed: jQuery("textarea[name='site_visits_assumed_duration']").val(),
-					site_visits_reoccurence: jQuery("textarea[name='site_visits_reoccurence']").val(),
+					site_visits_assumed: jQuery("input[name='site_visits_assumed_duration']").val(),
+					site_visits_reoccurence: jQuery("input[name='site_visits_reoccurence']").val(),
 					riba_purpose: jQuery("textarea[name='riba_purpose']").val(),
 					riba_attendees: jQuery("textarea[name='riba_attendees']").val(),
-					riba_assumed: jQuery("textarea[name='riba_assumed_duration']").val(),
-					riba_reoccurence: jQuery("textarea[name='riba_reoccurence']").val(),
+					riba_assumed: jQuery("input[name='riba_assumed_duration']").val(),
+					riba_reoccurence: jQuery("input[name='riba_reoccurence']").val(),
 					inspection_purpose: jQuery("textarea[name='inspection_purpose']").val(),
 					inspection_attendees: jQuery("textarea[name='inspection_attendees']").val(),
-					inspection_assumed: jQuery("textarea[name='inspection_assumed_duration']").val(),
-					inspection_reoccurence: jQuery("textarea[name='inspection_reoccurence']").val(),
+					inspection_assumed: jQuery("input[name='inspection_assumed_duration']").val(),
+					inspection_reoccurence: jQuery("input[name='inspection_reoccurence']").val(),
 					pre_app_choice: pre_choice,
 					pre_app_num: pre_num,
 					site_visits_choice: site_v_choice,

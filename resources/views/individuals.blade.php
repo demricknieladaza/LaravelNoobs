@@ -1104,7 +1104,10 @@
 																	<div class="field" align="left">
 																		<strong>Upload your images</strong>
 																		<input type="file" id="file1" name="images[]"  onchange="readURL(this);" multiple /><br>
-																		<img id="blah" src="#" alt="your image" />
+																		<?php $images = explode("/", $da->images); ?>
+																		@foreach($images as $i)
+																			<img id='blah' style="width: 10%; height: 10%;"  src='{{ asset("storage/images/".$i) }}' alt='your image' />
+																		@endforeach	
 																	</div>
 																</div>
 															</div>
@@ -1574,6 +1577,10 @@
 																	<div class="field" align="left">
 																		<strong>Upload your images</strong>
 																		<input type="file" id="file2" name="project_images[]" multiple />
+																		<?php $images = explode("/", $da->project_images); ?>
+																		@foreach($images as $i)
+																			<img id='blah' style="width: 10%; height: 10%;"  src='{{ asset("storage/project_images/".$i) }}' alt='your image' />
+																		@endforeach	
 																	</div>
 																</div>
 															</div>
