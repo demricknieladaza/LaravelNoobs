@@ -260,7 +260,7 @@
 														</div>
 																	
 														<div class="col-sm-6">
-															@if(count($proj->tender_count) < 0)
+															@if($proj->tender_count < 0)
 															<h5>{{ $proj->services }} and {{ $proj->tender_count }} Other Services</h5>
 															@else
 															<h5>{{ $proj->services }}</h5>

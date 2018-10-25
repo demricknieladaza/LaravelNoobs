@@ -75,6 +75,7 @@ class WinWorkController extends Controller
         // return count($type);         
         // return $work;
         // return $sub;
+        // echo count($work);
         return view('winwork')->with([
             'project' => $work,
             'saved'   => $saved

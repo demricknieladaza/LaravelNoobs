@@ -2999,3 +2999,11 @@ a.fill-div {
     background: none;
     border: none;
 }
+
+.backs{
+    padding-top: 18px;
+    text-align: left;
+    font-size: 25px;
+    color: #fff;
+    text-align: center;
+}
