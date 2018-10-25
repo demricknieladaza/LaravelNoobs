@@ -380,30 +380,7 @@
 </script>
 <script type="text/javascript">
 	$(document).ready(function (){
-		$('#country_name').keyup(function(){
-	       var query = $(this).val();
-	       if(query != '')
-	       {
-	        var _token = $('input[name="_token"]').val();
-	        $.ajax({
-	         url:"{{ url('autocomplete') }}",
-	         method:"POST",
-	         data:{query:query, _token:_token},
-	         success:function(data){
-	            $('#countryList').fadeIn();  
-	            $('#countryList').html(data);
-	         }
-	        });
-	       }
-	       else{
-	       		$('#countryList').fadeOut();
-	       }
-	   });
-
-	   $('.chos').click(function(){  
-	       $('#country_name').val($(this).text());  
-	       $('#countryList').fadeOut();  
-	   });
+		
 		var scopesave = 0;
 		$('#questionnaire_save').click(function(){
 			// alert('QUESTIONNAIRE!');
@@ -1375,14 +1352,57 @@
 </script>
 <script>
 	$(document).ready(function(){
-		$(".dates").datepicker( {
-		    format: "mm-yyyy",
+		$('#country_name').keyup(function(){
+	       var query = $(this).val();
+	       if(query != '')
+	       {
+	        var _token = $('input[name="_token"]').val();
+	        $.ajax({
+	         url:"{{ url('autocomplete') }}",
+	         method:"POST",
+	         data:{query:query, _token:_token},
+	         success:function(data){
+	            $('#countryList').fadeIn();  
+	            $('#countryList').html(data);
+	         }
+	        });
+	       }
+	       else{
+	       		$('#countryList').fadeOut();
+	       }
+	   });
+
+	   $('.chos').click(function(){  
+	       $('#country_name').val($(this).text());  
+	       $('#countryList').fadeOut();  
+	   });
+		$('#date1').datepicker({
+	    	format: "mm-yyyy",
 		    viewMode: "months", 
-		    minViewMode: "months",
+		    minViewMode: "months"
+	    });
+
+		$('#date2').datepicker({
+	    	format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+	    });
+
+	    $('#date3').datepicker({
+	    	format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+	    });
+
+		$("#datepicker42").datepicker( {
+			// container:'#datepicker4',
+		    format: "mm-dd-yyyy",
+		    viewMode: "days", 
+		    minViewMode: "days",
 		    orientation: 'auto'
 		});
 
-		$(".dateday").datepicker( {
+		$("#datepicker41").datepicker( {
 			// container:'#datepicker4',
 		    format: "mm-dd-yyyy",
 		    viewMode: "days", 
@@ -1922,26 +1942,25 @@
 		        </div>
 		        <div class="modal-body">
 		          <p>Deadline</p><div class="form-group" >
-					<div class="input-group dateday date" id="datepicker4" data-date-container="#datepicker4" data-date="02-2012" 
-					         data-date-format="mm-yyyy">
-
+					<div class="input-group date dateday" id="datepicker42" data-date-container="#datepicker41" data-date="02-2012" 
+					         data-date-format="mm-dd-yyyy">
+					         <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	 
 						 <input class="form-control " type="text" placeholder="Select year" readonly="readonly" name="date" >	  
-						 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+						  
 					</div>
 					
 				</div>
 			
 		          <p>Feedback date<div class="form-group" >
-					<div class="input-group dateday" id="datepicker41" data-date-container="#datepicker41" data-date="02-2012" 
-					         data-date-format="mm-yyyy">
-
+					<div class="input-group date dateday" id="datepicker41" data-date-container="#datepicker41" data-date="02-2012" 
+					         data-date-format="mm-dd-yyyy">
+					         <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
 						 <input class="form-control " type="text" placeholder="Select year" readonly="readonly" name="date" >	  
-						 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+						 	  
 					</div>
-					
 				</div></p>
 		          {{-- <input type="text" placeholder="Search.." name="search"> --}}
-		          <input type="text" name="country_name" id="country_name" class=" " value=" " placeholder="Enter Company Name" />
+		          <input type="text" name="country_name" id="country_name" value=" " placeholder="Enter Company Name" />
 		          <div id="countryList">
 		          </div>
 		      <button type="submit">Add</button>
@@ -8056,10 +8075,10 @@
 								<div class="col-sm-8">
 										<div class="col-sm-12" style="padding:0;">
 											<div class="form-group" >
-												<div class="input-group dates" id="datepicker2" data-date-container="#datepicker2" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
+												<div class="input-group date dat" id="date1" data-date-container="#datepicker2" data-date="02-2012" 
+												         data-date-format="mm-yyyy"><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
 													 <input class="form-control" name="created_data" type="text" placeholder="Select year" readonly="readonly" name="date" >	  
-													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+													 	  
 												</div>
 											</div>
 										</div>
@@ -8083,10 +8102,10 @@
 								<div class="col-sm-8">
 									<div class="form-group">
 										<div class="col-sm-12" style="padding:0;">
-												<div class="input-group dates form-group" id="datepicker2" data-date="02-2012" data-date-format="mm-yyyy">
-																 <input class="form-control" name="checked_data" type="text" readonly="readonly" name="date" >	  
-																 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-															</div>
+												<div class="input-group date dat form-group" id="date2" data-date="02-2012" data-date-format="mm-yyyy"><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
+												 <input class="form-control" name="checked_data" type="text" readonly="readonly" name="date" >	  
+																 	  
+										</div>
 										</div>
 									
 										</div>
@@ -8112,9 +8131,9 @@
 								<div class="col-sm-8">
 									<div class="form-group">
 										<div class="col-sm-12" style="padding:0;">
-												<div class="input-group dates form-group" id="datepicker2" data-date="02-2012" data-date-format="mm-yyyy">
-																 <input class="form-control" name="approved_date" type="text" readonly="readonly" name="date" >	  
-																 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
+												<div class="input-group date dat form-group" id="date3" data-date="02-2012" data-date-format="mm-yyyy"><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
+												<input class="form-control" name="approved_date" type="text" readonly="readonly" name="date" >	  
+																 	  
 															</div>
 										</div>
 									
