@@ -9,6 +9,7 @@ use App\SubmittedTenders;
 use App\DraftedTenders;
 use App\TenderQuery;
 use App\Individuals;
+use App\TenderPreQualificationQuestionnaire;
 
 class BidController extends Controller
 {
@@ -89,6 +90,7 @@ class BidController extends Controller
     }
 
     public function getCredentials(Request $request,$id){
+
         $tender_id = $id;
         $user = $request->session()->get('id');
         $tender = Tender::where('tender_id', $tender_id)->first();
@@ -97,11 +99,16 @@ class BidController extends Controller
 
         $indi = Individuals::where('user_id', $user)->get();
 
+        $quest = TenderPreQualificationQuestionnaire::where('tender_id', $tender_id)->first();
+
+
         return view('bid')->with([
             'tender' => $tender,
             'project' => $project,
-            'individuals' => $indi
+            'individuals' => $indi,
+            'pre_qual' => $quest
         ]);
+        // return $quest;
 
     }
 

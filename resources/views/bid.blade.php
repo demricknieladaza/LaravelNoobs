@@ -624,36 +624,18 @@
 					<div id="section1" class="tab-pane fade in active tender-container" style="border-radius: 6px;">
 						<h3 class="bid-form-title">Pre-Qualification Questionnaire</h3>
 							<div class="inputscheck">
-							<div class="form-group">
-								<input type="checkbox" name="" value="" class="tata filled-in" id="check1"> <label for="check1">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
-							</div>
-							<div class="form-group">
-								<input type="checkbox" name="" value="" class="tata filled-in" id="check2"> <label for="check2">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
-							</div>
-							<div class="form-group">
-								<input type="checkbox" name="" value="" class="tata filled-in" id="check3"> <label for="check3">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
-							</div>
-							<div class="form-group">
-								<input type="checkbox" name="" value="" class="tata filled-in" id="check4"> <label for="check4">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
-							</div>
-							<div class="form-group">
-								<input type="checkbox" name="" value="" class="tata filled-in" id="check5"> <label for="check5">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
-							</div>
-							<div class="form-group">
-								<input type="checkbox" name="" value="" class="tata filled-in" id="check6"> <label for="check6">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
-							</div>
-							<div class="form-group">
-								<input type="checkbox" name="" value="" class="tata filled-in" id="check7"> <label for="check7">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
-							</div>
-							<div class="form-group">
-								<input type="checkbox" name="" value="" class="tata filled-in" id="check8"> <label for="check8">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
-							</div>
-							<div class="form-group">
-								<input type="checkbox" name="" value="" class="tata filled-in" id="check9"> <label for="check9">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
-							</div>
-							<div class="form-group">
-								<input type="checkbox" name="" value="" class="tata filled-in" id="check10"> <label for="check10">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
-							</div>
+								<?php
+							
+									$q = explode("^", $pre_qual->question);
+									$counter = 1;
+									foreach($q as $qu){
+										echo '<div class="form-group">
+													<input type="checkbox" name="" value="'.$qu.'" class="tata filled-in" id="check'.$counter.'"> <label for="check'.$counter.'">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
+											</div>';
+										$counter++;
+									}	
+							
+								?>
 							</div>						
 							<div class="form-group butcent">
 								<input id="sec2" type="submit" data-toggle="tab" href="#section2" name="Next" value="Next" class="nbtn disabled btn btn-primary butsize pointerev">

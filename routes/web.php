@@ -71,6 +71,7 @@ Route::get('/dashboard/individuals', 'UsersController@individuals_controller');
 Route::get('tenderget/{id}','TenderController@gettend');
 
 Route::post('project_info_tender_appointment', 'TenderController@appointmentStore');
+// Route::resource('tenderget', 'TenderController');
 
 // Route::post('')
 Route::get('winwork/bid/{id}', 'BidController@getCredentials');

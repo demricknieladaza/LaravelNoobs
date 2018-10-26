@@ -32,7 +32,8 @@
 						  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 						    <div class="flipper">
 						      <div class="front">
-						      	<i class="fa fa-fire-extinguisher fa-4x" style="color: #FE7235;"></i>
+						      	<!-- <i class="fa fa-fire-extinguisher fa-4x" style="color: #FE7235;"></i> -->
+						      	<img src="../../images/principal.png">
 						      	<h1 style="color: #000; font-size: 20px;">{{ $ten->services }}</h1>
 						      	<p> {{ $ten->time_remaining }}</p>	
 						      </div>
@@ -44,6 +45,193 @@
 						</a>
 					</div>
 					@endforeach
+					<div class="col-sm-3">
+						<a href="{{ url('/winwork/bid/'.$ten->tender_id) }}">
+						  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+						    <div class="flipper">
+						      <div class="front">
+						      	<!-- <i class="fa fa-fire-extinguisher fa-4x" style="color: #FE7235;"></i> -->
+						      	<img src="../../images/security.png">
+						      	<h1 style="color: #000; font-size: 20px;">Security Consultant</h1>
+						      	<p> {{ $ten->time_remaining }}</p>	
+						      </div>
+						      <div class="back">
+						      	<h1>Submit Bid<br>-<br>Win Work</h1>
+						      </div>
+						    </div>
+						  </div>
+						</a>
+					</div>
+					<div class="col-sm-3">
+						<a href="{{ url('/winwork/bid/'.$ten->tender_id) }}">
+						  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+						    <div class="flipper">
+						      <div class="front">
+						      	<!-- <i class="fa fa-fire-extinguisher fa-4x" style="color: #FE7235;"></i> -->
+						      	<img src="../../images/acoustic.png">
+						      	<h1 style="color: #000; font-size: 20px;">Acoustic Enginner</h1>
+						      	<p> {{ $ten->time_remaining }}</p>	
+						      </div>
+						      <div class="back">
+						      	<h1>Submit Bid<br>-<br>Win Work</h1>
+						      </div>
+						    </div>
+						  </div>
+						</a>
+					</div>
+					<div class="col-sm-3">
+						<a href="{{ url('/winwork/bid/'.$ten->tender_id) }}">
+						  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+						    <div class="flipper">
+						      <div class="front" style="padding-top: 10px;">
+						      	<!-- <i class="fa fa-fire-extinguisher fa-4x" style="color: #FE7235;"></i> -->
+						      	<img src="../../images/project.png">
+						      	<h1 style="color: #000; font-size: 20px;">Project Manager</h1>
+						      	<p> {{ $ten->time_remaining }}</p>	
+						      </div>
+						      <div class="back ">
+						      	<h1 class="backs">Submit Bid<br>-<br>Win Work</h1>
+						      </div>
+						    </div>
+						  </div>
+						</a>
+					</div>
+					<div class="col-sm-3">
+						<a href="{{ url('/winwork/bid/'.$ten->tender_id) }}">
+						  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+						    <div class="flipper">
+						      <div class="front" style="padding-top: 10px;">
+						      	<!-- <i class="fa fa-fire-extinguisher fa-4x" style="color: #FE7235;"></i> -->
+						      	<img src="../../images/building.png">
+						      	<h1 style="color: #000; font-size: 20px;">Building Control</h1>
+						      	<p> {{ $ten->time_remaining }}</p>	
+						      </div>
+						      <div class="back ">
+						      	<h1 class="backs">Submit Bid<br>-<br>Win Work</h1>
+						      </div>
+						    </div>
+						  </div>
+						</a>
+					</div>
+					<div class="col-sm-3">
+						<a href="{{ url('/winwork/bid/'.$ten->tender_id) }}">
+						  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+						    <div class="flipper">
+						      <div class="front" style="padding-top: 10px;">
+						      	<!-- <i class="fa fa-fire-extinguisher fa-4x" style="color: #FE7235;"></i> -->
+						      	<img src="../../images/services.png">
+						      	<h1 style="color: #000; font-size: 20px;">Services Engineer</h1>
+						      	<p> {{ $ten->time_remaining }}</p>	
+						      </div>
+						      <div class="back ">
+						      	<h1 class="backs">Submit Bid<br>-<br>Win Work</h1>
+						      </div>
+						    </div>
+						  </div>
+						</a>
+					</div>
+					<div class="col-sm-3">
+						<a href="{{ url('/winwork/bid/'.$ten->tender_id) }}">
+						  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+						    <div class="flipper">
+						      <div class="front" style="padding-top: 10px;">
+						      	<!-- <i class="fa fa-fire-extinguisher fa-4x" style="color: #FE7235;"></i> -->
+						      	<img src="../../images/others.png">
+						      	<h1 style="color: #000; font-size: 20px;">Others</h1>
+						      	<p> {{ $ten->time_remaining }}</p>	
+						      </div>
+						      <div class="back ">
+						      	<h1 class="backs">Submit Bid<br>-<br>Win Work</h1>
+						      </div>
+						    </div>
+						  </div>
+						</a>
+					</div>
+					<div class="col-sm-3">
+						<a href="{{ url('/winwork/bid/'.$ten->tender_id) }}">
+						  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+						    <div class="flipper">
+						      <div class="front" style="padding-top: 10px;">
+						      	<!-- <i class="fa fa-fire-extinguisher fa-4x" style="color: #FE7235;"></i> -->
+						      	<img src="../../images/cost.png">
+						      	<h1 style="color: #000; font-size: 20px;">Cost Manager</h1>
+						      	<p> {{ $ten->time_remaining }}</p>	
+						      </div>
+						      <div class="back ">
+						      	<h1 class="backs">Submit Bid<br>-<br>Win Work</h1>
+						      </div>
+						    </div>
+						  </div>
+						</a>
+					</div>
+					<div class="col-sm-3">
+						<a href="{{ url('/winwork/bid/'.$ten->tender_id) }}">
+						  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+						    <div class="flipper">
+						      <div class="front" style="padding-top: 10px;">
+						      	<!-- <i class="fa fa-fire-extinguisher fa-4x" style="color: #FE7235;"></i> -->
+						      	<img src="../../images/calculator.png">
+						      	<h1 style="color: #000; font-size: 20px;">Facade Engineer</h1>
+						      	<p> {{ $ten->time_remaining }}</p>	
+						      </div>
+						      <div class="back ">
+						      	<h1 class="backs">Submit Bid<br>-<br>Win Work</h1>
+						      </div>
+						    </div>
+						  </div>
+						</a>
+					</div>
+					<div class="col-sm-3">
+						<a href="{{ url('/winwork/bid/'.$ten->tender_id) }}">
+						  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+						    <div class="flipper">
+						      <div class="front" style="padding-top: 10px;">
+						      	<!-- <i class="fa fa-fire-extinguisher fa-4x" style="color: #FE7235;"></i> -->
+						      	<img src="../../images/calculator.png">
+						      	<h1 style="color: #000; font-size: 20px;">Architect</h1>
+						      	<p> {{ $ten->time_remaining }}</p>	
+						      </div>
+						      <div class="back ">
+						      	<h1 class="backs">Submit Bid<br>-<br>Win Work</h1>
+						      </div>
+						    </div>
+						  </div>
+						</a>
+					</div>
+					<div class="col-sm-3">
+						<a href="{{ url('/winwork/bid/'.$ten->tender_id) }}">
+						  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+						    <div class="flipper">
+						      <div class="front" style="padding-top: 10px;">
+						      	<!-- <i class="fa fa-fire-extinguisher fa-4x" style="color: #FE7235;"></i> -->
+						      	<img src="../../images/calculator.png">
+						      	<h1 style="color: #000; font-size: 20px;">Structural Engineer</h1>
+						      	<p> {{ $ten->time_remaining }}</p>	
+						      </div>
+						      <div class="back ">
+						      	<h1 class="backs">Submit Bid<br>-<br>Win Work</h1>
+						      </div>
+						    </div>
+						  </div>
+						</a>
+					</div>
+					<div class="col-sm-3">
+						<a href="{{ url('/winwork/bid/'.$ten->tender_id) }}">
+						  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+						    <div class="flipper">
+						      <div class="front" style="padding-top: 10px;">
+						      	<!-- <i class="fa fa-fire-extinguisher fa-4x" style="color: #FE7235;"></i> -->
+						      	<img src="../../images/calculator.png">
+						      	<h1 style="color: #000; font-size: 20px;">Fire Engineer</h1>
+						      	<p> {{ $ten->time_remaining }}</p>	
+						      </div>
+						      <div class="back ">
+						      	<h1 class="backs">Submit Bid<br>-<br>Win Work</h1>
+						      </div>
+						    </div>
+						  </div>
+						</a>
+					</div>
 					{{-- <div class="col-sm-3">
 						<a href="#">
 						  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
@@ -401,7 +589,7 @@
 				<div class="media">
 					<a href="#">
 						<div class="media-left">
-							<img src="../images/construction.jpg" width="80">
+							<img src="../../images/construction.jpg" width="80">
 						</div>
 						<div class="media-body">
 							<h3>Canada Water Masterplan</h3>
@@ -412,7 +600,7 @@
 				<div class="media">
 					<a href="#">
 						<div class="media-left">
-							<img src="../images/construction.jpg" width="80">
+							<img src="../../images/construction.jpg" width="80">
 						</div>
 						<div class="media-body">
 							<h3>Canada Water Masterplan</h3>
@@ -423,7 +611,7 @@
 				<div class="media">
 					<a href="#">
 						<div class="media-left">
-							<img src="../images/construction.jpg" width="80">
+							<img src="../../images/construction.jpg" width="80">
 						</div>
 						<div class="media-body">
 							<h3>Canada Water Masterplan</h3>
@@ -434,7 +622,7 @@
 				<div class="media">
 					<a href="#">
 						<div class="media-left">
-							<img src="../images/construction.jpg" width="80">
+							<img src="../../images/construction.jpg" width="80">
 						</div>
 						<div class="media-body">
 							<h3>Canada Water Masterplan</h3>
@@ -445,7 +633,7 @@
 				<div class="media">
 					<a href="#">
 						<div class="media-left">
-							<img src="../images/construction.jpg" width="80">
+							<img src="../../images/construction.jpg" width="80">
 						</div>
 						<div class="media-body">
 							<h3>Canada Water Masterplan</h3>

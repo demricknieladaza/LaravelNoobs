@@ -36,21 +36,7 @@ class WinWorkController extends Controller
         $work = DB::table('project_information_tbl')
                 ->rightJoin('tender_tbl as td', 'project_information_tbl.project_record_id', '=', 'td.project_record_id')
                 ->where('status', '=', 'Active')
-                // ->joinSub($sub, 'sub', function ($join) {
-                //     $join->on('project_information_tbl.project_record_id', '=', 'sub.project_record_id');
-                // })
-                // ->rightJoin('type_of_use_tbl as ty', 'td.project_record_id', '=', 'ty.project_record_id')
-                // ->where('td.project_record_id', '=', 'ty.project_record_id')
-                // ->rightJoin('tender_tbl', function($join){
-                //     $join->on('tender_tbl.project_record_id', '=', 'ty.project_record_id')
-                //     ->where('tender_tbl.status', '=', 'Active');
-                // })
                 ->leftJoin('type_of_use_tbl as tb', 'project_information_tbl.project_record_id', '=', 'tb.project_record_id')
-                // ->where('status', '=', 'Active')
-                // ->where('services', '=', 'Fire Engineer', 'Sustainability Consultant')
-                // ->whereIn('services',['Fire Engineer', '', '' , '' ])
-                // ->rightJoin('winwork_data_tbl as wd', 'project_information_tbl.project_record_id', '=', 'wd.project_record_id')
-                // ->whereBetween('project_information_tbl.construction_value', array(10000, 30000))
                 ->orderBy('project_information_tbl.created_at', 'desc')
                 // ->get();
                 ->paginate(5);
@@ -75,11 +61,12 @@ class WinWorkController extends Controller
         // return count($type);         
         // return $work;
         // return $sub;
+        // echo count($work);
         return view('winwork')->with([
             'project' => $work,
             'saved'   => $saved
         ]);
-
+        // echo $work;
         // return $saved;
 
         

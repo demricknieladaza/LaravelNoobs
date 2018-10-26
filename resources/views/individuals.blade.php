@@ -478,6 +478,27 @@
     	});
 	});
 </script>
+
+
+<script type="text/javascript">
+	function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result)
+                    .width(98)
+                    .height(75);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+
+
+
 	<div class="container-fluid below-header">
 	</div>
 
@@ -1082,7 +1103,8 @@
 																<div class="form-group">	
 																	<div class="field" align="left">
 																		<strong>Upload your images</strong>
-																		<input type="file" id="file1" name="images[]" multiple />
+																		<input type="file" id="file1" name="images[]"  onchange="readURL(this);" multiple /><br>
+																		<img id="blah" src="#" alt="your image" />
 																	</div>
 																</div>
 															</div>

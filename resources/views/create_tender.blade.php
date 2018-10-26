@@ -807,6 +807,14 @@
 					
 				}
 			);
+			jQuery("input[name='handover_raci[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						han_raci.push($(this).val());
+					}
+					
+				}
+			);
 			jQuery("input[name='execution_raci[]']").each(function()
 				{	
 					if($(this).prop('checked')){
@@ -2001,7 +2009,7 @@
 									<h3 data-toggle="modal" data-target="#selectServe" data-id="{{ $tender->tender_id }}" style="margin-bottom: 10px; margin-top: 0;padding: 15px;border: 3px solid grey;border-radius: 6px;text-align: center;" id="serveprojtitle" class="header-title animate-pop-in">
 										{{ $tender->services }}
 									</h3>
-									<input type="hidden" name="" id="tendid">
+									<input type="hidden" name="tender_id" id="tendid">
 		    						<li class="active"><a data-toggle="tab" href="#section01">Pre-Qualification Questionnaire</a></li>
 		    						<li ><a data-toggle="tab" href="#section11">Scope</a></li>
 		    						<li><a data-toggle="tab" href="#section21">Appointment</a></li>
@@ -4875,9 +4883,10 @@
 		    					</div>
 		    					<div id="section21" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Appointment</h3>
-		    						<form method="post">
-									{{-- {!! Form::open(['action' => 'TenderController@appointmentStore', 'method' => 'POST'])!!} --}}
+		    						{{-- <form method="post"> --}}
+									{!! Form::open(['action' => 'TenderController@appointmentStore', 'method' => 'POST'])!!}
 										<input type="hidden" id="tendserve" name="services">
+										<input type="hidden" name="tender_id" id="tendid" value="{{ $tender->tender_id }}">
 		    							<div class="row">
 		    								<div class="col-sm-12">
 		    									<div class="row" style="padding-bottom:10px;">
@@ -5061,8 +5070,8 @@
 		    									</div>
 		    								</div>
 		    							</div>
-									</form>
-									{{-- {!! Form::close() !!} --}}
+									{{-- </form> --}}
+									{!! Form::close() !!}
 		    					</div>
 		    					<div id="section31" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Evaluation Settings</h3>
