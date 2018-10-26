@@ -5148,7 +5148,7 @@ $('a[href^="#"]').on('click', function(event) {
 	    $('#addtypeofuse').click(function(e){ 
 	    	// e.preventDefault();
 	    	var sele = "<?php $Service = array( "Residential","Commercial ","Retail","Leisure","Sports and venues","Hotel","Industrial","Education","Healthcare","Defence","Aviation","Highways","Bridges","Rail","Water","Oil,gas and chemical", "Office");sort($Service, SORT_NATURAL | SORT_FLAG_CASE);foreach ($Service as $key ) {echo "<option value='".$key."'>".$key."</option>";}?>";
-	    	$('.addedtype tr:last').before('<a href="#" class="remove_field">x</a><tr><td><select name="use_name[]" class="form-control sel" style="width: auto;">'+sele+'</select></td>&nbsp<td><input type="text" name="use_area[]" class="form-control proje" placeholder="30,000m2" ></td><td><input type="text" name="use_units[]" class="form-control proje" placeholder="200 units" ></td><td><input type="text" name="use_type[]" class="form-control proje" placeholder="High-End" ></td></tr>');
+	    	$('.addedtype tr:last').before('<tr><td><select name="use_name[]" class="form-control sel" style="width: auto;">'+sele+'</select></td>&nbsp<td><input type="text" name="use_area[]" class="form-control proje" placeholder="30,000m2" ></td><td><input type="text" name="use_units[]" class="form-control proje" placeholder="200 units" ></td><td><input type="text" name="use_type[]" class="form-control proje" placeholder="High-End" ></td></tr>');
 	    });
 
 	    $('.addedtype').on("click",".remove_field", function(e){ //user click on remove text

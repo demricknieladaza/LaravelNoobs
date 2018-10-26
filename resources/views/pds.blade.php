@@ -1,7 +1,12 @@
 @extends('layouts.master')
 
 @section('content')
-
+<style type="text/css">
+	tr.lastitemiba:last-of-type
+	{
+		border-bottom: none !important;
+	}
+</style>
 	<div id="actTinder" class="container-fluid below-header project-img-collection text-center">
 		<h1>{{ $project->project_title }}</h1>
 		<div class="project-image popup-gallery">
@@ -270,8 +275,7 @@
 				<div class="row">
 					<div class="col-sm-12 active-tenders">
 						<h3 style="font-weight: 900;">Project Vision and Brief</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p>No Description</p>
 					</div>
 				</div>				
 			</div>
@@ -374,32 +378,24 @@
 								<td>Types of Use</td>
 								<td>
 									<table width="100%">
+										<?php $total = 0; ?>
+										@foreach($type as $use)
+										<?php 
+											$total = $total + $use['area'];
+										 ?>
 										<tr>
-											@foreach($type as $u)
-											<?php 
-											$strr = explode(",",$u->use_name);
-											$strr1 = explode(",",$u->use_area);
-											// echo count($strr);
-											// var_dump($strr);
-											$counter = count($strr);
-											// if(count($strr) <= ){
-											// 	$counter = 2;
-											// }
-											// else{
-											// 	$counter = count($strr);
-											// }
-											for($x=0;$x < $counter;$x++)
-											{
-												echo '<td>'.' '.$strr[$x].' '.$strr1[$x].' m2'.'</td>';
-											}
-										
-											?>
-											{{-- <td>{{ $u->use_name }}</td>
-											<td>{{ $u->use_area }}</td>
-											<td>{{ $u->use_units }}</td>
-											<td>{{ $u->use_type }}</td> --}}
-											@endforeach
-										</tr>
+    										<td>{{ $use['name'] }}</td>
+    										<td>{{ number_format($use['area']) }} m2</td>
+    										<td>{{ number_format($use['unit']) }} units</td>
+    										<td>{{ $use['type'] }}</td>
+    									</tr>
+										@endforeach
+										<tr style="border-bottom:none;">
+    										<td>Total</td>
+    										<td id="total"><?php echo number_format($total); ?> m2</td>
+    										<td></td>
+    										<td></td>	
+    									</tr>
 										{{-- <tr>
 											<td>Residential</td>
 											<td>10,000m2</td>
@@ -431,12 +427,18 @@
 								<td>Milestones</td>
 								<td>
 									<table width="100%">
-										<tr>
+										{{-- <tr>
 											@foreach($milestones as $mile)
 											<td>{{ $mile->riba_stage }}</td>
 											<td>{{ $mile->date }}</td>
 											@endforeach
+										</tr> --}}
+										@foreach($milestones as $mile)
+    									<tr class="lastitemiba">
+    										<td>{{ $mile['name'] }}</td>
+    										<td>{{ $mile['date'] }}</td>
 										</tr>
+										@endforeach
 										{{-- <tr>
 											<td>RIBA Stage 2 Completion</td>
 											<td>01/07/2019</td>
@@ -475,21 +477,21 @@
 								<td>Project Team</td>
 								<td>
 									<table width="100%">
-										<tr>
-											@foreach($team as $t)
-											<td>{{ $t->member_position }}</td>
-											<td>{{ $t->member_name }}</td>
-											@endforeach
-										</tr>
+										@foreach($team as $t)
+											<tr class="lastitemiba">
+												<td>{{ $t->member_position }}</td>
+												<td>{{ $t->member_name }}</td>
+											</tr>
+										@endforeach
 									</table>
 								</td>
 							</tr>
 							<tr>
 								<td >Supporting Documents</td>
 								<td>
-									<p><a style="color: white;" href="{{asset('storage/site_plan/'.$project->site_plan )}}" name="download" class="btn btn-primary">{{ $project->site_plan }} <i class="fa fa-download"></i></a><input type="hidden" name="site_plan_name" value="{{ $project->site_plan }}"><button type="button" id="delete_site_plan" class="btn btn-primary" name="delete" value="Delete">Delete</button><input type="file" name="new_site_plan"></p>
-									<p><a style="color: white;" href="{{asset('storage/programme/'.$project->programme )}}" name="download" class="btn btn-primary">{{ $project->programme }} <i class="fa fa-download"></i></a><input type="hidden" name="programme_name" value="{{ $project->programme }}"><button type="button" id="delete_programme" class="btn btn-primary" name="delete" value="Delete">Delete</button><input type="file" name="new_programme"></p>         
-									<p><a style="color: white;" href="{{asset('storage/policy/'.$project->policy )}}" name="download" class="btn btn-primary">{{ $project->policy }} <i class="fa fa-download"></i></a><input type="hidden" name="policy_name" value="{{ $project->policy }}"><button type="button" id="delete_policy" class="btn btn-primary" name="delete" value="Delete">Delete</button><input type="file" name="new_policy"/></a></p>
+									<p><a style="color: white;" href="{{asset('storage/site_plan/'.$project->site_plan )}}" name="download" class="btn btn-primary">{{ $project->site_plan }} <i class="fa fa-download"></i></a></p>
+									<p><a style="color: white;" href="{{asset('storage/programme/'.$project->programme )}}" name="download" class="btn btn-primary">{{ $project->programme }} <i class="fa fa-download"></i></a></p>         
+									<p><a style="color: white;" href="{{asset('storage/policy/'.$project->policy )}}" name="download" class="btn btn-primary">{{ $project->policy }} <i class="fa fa-download"></i></a></p>
 								</td>
 							</tr>
 						</table>						

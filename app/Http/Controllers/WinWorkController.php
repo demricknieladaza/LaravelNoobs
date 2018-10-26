@@ -600,14 +600,59 @@ class WinWorkController extends Controller
         $team = ProjectTeam::where('project_record_id', $id)->get(); 
 
         $questions = TenderQuery::where('project_record_id', $id)->get();
+
+        $string = explode(",",$type[0]['use_name']);
+        $string1 = explode(",",$type[0]['use_area']);
+        $string2 = explode(",",$type[0]['use_units']);
+        $string3 = explode(",",$type[0]['use_type']);
+        
+        foreach ($string as $str) {
+            $typename[] = $str; 
+        }
+        foreach ($string1 as $str) {
+            $typearea[] = $str; 
+        }
+        foreach ($string2 as $str) {
+            $typeunit[] = $str; 
+        }
+        foreach ($string3 as $str) {
+            $typetype[] = $str; 
+        }
+        
+        for($x=0;sizeof($typename) > $x; $x++){
+            $typeamen[] = array(
+                'name' => $typename[$x],
+                'area' => $typearea[$x],
+                'unit' => $typeunit[$x],
+                'type' => $typetype[$x]
+            );
+        }
+
+        $strings = explode(",",$milestones[0]['riba_stage']);
+        $strings1 = explode(",",$milestones[0]['date']);
+        
+        foreach ($strings as $str) {
+            $milname[] = $str; 
+        }
+        foreach ($strings1 as $str) {
+            $mildate[] = $str; 
+        }
+        
+        for($y=0;count($milname) > $y; $y++){
+            $milestonesni[] = array(
+                'name' => $milname[$y],
+                'date' => $mildate[$y]
+            );
+        }
+
         return view('pds')->with([
             'tenders'=> $tenders,
             'project' => $project,
             'transport' => $transport,
             'area' => $area,
             'constraints' => $constraints,
-            'type' => $type,
-            'milestones' => $milestones,
+            'type' => $typeamen,
+            'milestones' => $milestonesni,
             'meetings' => $meetings,
             'team' => $team,
             'question' => $questions
