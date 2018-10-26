@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\UserAccountsModel;
+use App\CompInfo;
 
 class UserAccountsController extends Controller
 {
@@ -51,6 +52,12 @@ class UserAccountsController extends Controller
             'password' => $pass
         ]);
         $uacc->save();
+        $ucomp = new CompInfo([
+            'u_id' => $uacc->id,
+            'comp_name' => $request->get('company'),
+            'comp_email' => $request->get('email')
+        ]);
+        $ucomp->save();
         return response()->json(['success'=>'Registered successfully!']);
     }
 
@@ -116,20 +123,26 @@ class UserAccountsController extends Controller
         if($request->get('query'))
              {
               $query = $request->get('query');
-              $data = UserAccountsModel::select("company")
-                ->where('company', 'LIKE', "%{$query}%")
+              $data = CompInfo::select("comp_name")
+                ->where('comp_name', 'LIKE', "%{$query}%")
                 ->get();
               $output = '<ul class="dropdown-menu" style="display:block;position: relative;
     background: white;
     width: auto;">';
-              foreach($data as $row)
-              {
-               $output .= '
-               <li class="chos"><a href="#">'.$row->company.'</a></li>
-               ';
+              if(!count($data)){
+                echo "No Result Found";
               }
-              $output .= '</ul>';
-              echo $output;
+              else{
+                foreach($data as $row)
+                {   
+                 $output .= '
+                 <li class="chos">'.$row->comp_name.'</li>
+                 ';
+                }
+                $output .= '</ul>';
+                echo $output;
+              }
+              
              }
     }
 

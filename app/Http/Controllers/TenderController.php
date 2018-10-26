@@ -34,6 +34,7 @@ use App\AddedMeetings;
 use App\AddedDesign;
 use App\AddedAdvise;
 use App\TenderPreQualificationQuestionnaire;
+use App\CompInfo;
 
 
 class TenderController extends Controller
@@ -1103,6 +1104,7 @@ class TenderController extends Controller
         $scopesd = TenderDesignConsiderations::where('tender_id', $tenid)->get();
         $scopesa = TenderScopeAdvise::where('tender_id', $tenid)->get();
         $quests = TenderPreQualificationQuestionnaire::where('tender_id', $tenid)->get();
+        $company = CompInfo::all()->pluck('comp_name')->toArray();
 
         // return response()->json(array(
         //     'tender' => $tender,
@@ -1126,8 +1128,9 @@ class TenderController extends Controller
                 $questions[] = $str; 
             }
         }
-        
-        // echo $scopesa[0];
+        // var_dump(response()->json($company));
+        // if(in_array('test',array_column($company, 'comp_name')))   
+        //     echo 'tang ina';
         // echo $scopesm[0]['pre_app_assumed_duration'];
         return view('create_tender')->with([
             'tender' => $tender,
@@ -1143,7 +1146,8 @@ class TenderController extends Controller
             'scopes' => $scopes,
             'scopesm' => $scopesm,
             'scopesd' => $scopesd,
-            'scopesa' => $scopesa
+            'scopesa' => $scopesa,
+            'company' => $company
         ]);
     
 

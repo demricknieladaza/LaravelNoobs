@@ -2,9 +2,9 @@
 <html>
  <head>
   <title>Ajax Autocomplete Textbox in Laravel using JQuery</title>
-  <script type="text/javascript" src="http://localhost:8000/js/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="http://demo.expertphp.in/css/jquery.ui.autocomplete.css" rel="stylesheet">
+  <script src="http://demo.expertphp.in/js/jquery.js"></script>
+  <script src="http://demo.expertphp.in/js/jquery-ui.min.js"></script>
   <style type="text/css">
    .box{
     width:600px;
@@ -17,40 +17,40 @@
   <div class="container box">
    <h3 align="center">Ajax Autocomplete Textbox in Laravel using JQuery</h3><br />
    
-   <div class="form-group">
-    <input type="text" name="country_name" id="country_name" class="form-control input-lg" value=" " />
-    <div id="countryList">
+   <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                
+                {!! Form::text('search_text', null, array('placeholder' => 'Search Text','class' => 'form-control','id'=>'search_text')) !!}
+            </div>
+        </div>
     </div>
-   </div>
    {{ csrf_field() }}
   </div>
  </body>
 </html>
 
-<script>
-$(document).ready(function(){
-
- $('#country_name').keyup(function(){
-        var query = $(this).val();
-        if(query != '')
-        {
-         var _token = $('input[name="_token"]').val();
-         $.ajax({
-          url:"{{ url('autocomplete') }}",
-          method:"POST",
-          data:{query:query, _token:_token},
-          success:function(data){
-           $('#countryList').fadeIn();  
-                    $('#countryList').html(data);
-          }
-         });
-        }
+   
+    
+   <script>
+   $(document).ready(function() {
+    src = "{{ url('autocomplete') }}";
+     $("#search_text").autocomplete({
+        source: function(request, response) {
+            $.ajax({
+                url: src,
+                dataType: "json",
+                data: {
+                    term : request.term
+                },
+                success: function(data) {
+                    response(data);
+                   
+                }
+            });
+        },
+        minLength: 3,
+       
     });
-
-    $(document).on('click', 'li', function(){  
-        $('#country_name').val($(this).text());  
-        $('#countryList').fadeOut();  
-    });  
-
 });
 </script>

@@ -57,6 +57,9 @@
 	table.zui-table tbody tr:hover {
 	    background-color: #ffc2a7 !important;
 	}
+	.chos{
+		padding: 5px;
+	}
 
 /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
 .hayt{
@@ -387,7 +390,13 @@
 			var question = "";
 			jQuery("input[name='prequest[]']").each(function()
 				{	
-					question = question.concat($(this).val(),'^');
+					if($(this).val()==""){
+
+					}
+					else{
+						question = question.concat($(this).val(),'^');
+					}
+					
 				}
 			);
 			// alert(question);
@@ -400,7 +409,7 @@
 						questions: question
 					},
 					success: function(result){
-						console.log(result);
+						window.location.href = '{{ url('tenderget') }}'+'/'+jQuery("input[name='question_id']").val();
 					}
 				});
 			}
@@ -413,7 +422,7 @@
 						questions: question
 					},
 					success: function(result){
-						console.log(result);
+						window.location.href = '{{ url('tenderget') }}'+'/'+jQuery("input[name='question_id']").val();
 					}
 				});
 			}
@@ -1377,6 +1386,7 @@
 	       var query = $(this).val();
 	       if(query != '')
 	       {
+	       	$('#addcompbuton').css('display','block');
 	        var _token = $('input[name="_token"]').val();
 	        $.ajax({
 	         url:"{{ url('autocomplete') }}",
@@ -1385,18 +1395,24 @@
 	         success:function(data){
 	            $('#countryList').fadeIn();  
 	            $('#countryList').html(data);
+	            itemclick();
 	         }
 	        });
 	       }
 	       else{
 	       		$('#countryList').fadeOut();
+	       		$('#addcompbuton').css('display','none');
 	       }
 	   });
 
-	   $('.chos').click(function(){  
+	function itemclick(){
+		$('.chos').click(function(){  
 	       $('#country_name').val($(this).text());  
 	       $('#countryList').fadeOut();  
 	   });
+	}
+	   
+
 		$('#date1').datepicker({
 	    	format: "mm-yyyy",
 		    viewMode: "months", 
@@ -1559,6 +1575,35 @@
             });
         }
     });
+</script>
+
+<script type="text/javascript">	
+	function addcompany()
+	{
+		var ival = $.trim($('input[name="country_name"]').val());
+		if( ival.length != "" ){
+
+			var x = <?php echo json_encode($company) ?>;
+			// alert(jQuery.inArray(ival,x ));
+			// console.log(ival);
+			// console.log(x);
+			if($.inArray($('input[name="country_name"]').val(),x )!== -1){
+				ival = ival.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+				    return letter.toUpperCase();
+				});
+				var out = "<li><div class='form-check'><label><input disabled type='checkbox' checked name='companyemail[]' value='"+ival+"'><span class='label-text'>"+ival+"</span></label></div></li>";
+				$('ul#companylist').append(out);
+
+				$('input[name="country_name"]').val('');
+				$('#addcompbuton').css('display','none');
+			}
+			else{
+				alert('Company is not in our system	');
+				$('#questionnaire_save').click();
+			}
+			
+		}
+	}
 </script>
 <div class="container below-header ">
 	<h1 id="logo" class="project-title bid-page-title centerh" style="margin-left: 5%;
@@ -1981,10 +2026,17 @@
 					</div>
 				</div></p>
 		          {{-- <input type="text" placeholder="Search.." name="search"> --}}
-		          <input type="text" name="country_name" id="country_name" value=" " placeholder="Enter Company Name" />
+		          <div>
+		          	<ul id="companylist" style="list-style: none;padding: 0;">
+		          		
+		          	</ul>
+		          </div>
+		          <div class="">
+		          <input type="text" name="country_name" id="country_name" value="" class="form-control" placeholder="Enter Company Name" /><span><button onclick="addcompany()" class="btn" style="display: none;float: right;position: relative;top: -34px;" id="addcompbuton">Add</button></span>
+		          </div>
 		          <div id="countryList">
 		          </div>
-		      <button type="submit">Add</button>
+		      {{-- <button type="submit">Add</button> --}}
 		        </div>
 		        <div class="modal-footer" style="text-align: center;">
 		          <button type="button" id="start_tender" class="btn btn-primary">Start Tender Process</button>

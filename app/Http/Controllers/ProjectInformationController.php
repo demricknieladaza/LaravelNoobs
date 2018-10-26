@@ -56,7 +56,7 @@ class ProjectInformationController extends Controller
         // $project->project_id = $request->input('project_id');
         $project->location = $request->input('location');
         $project->type_of_development = $request->input('type_of_development');
-        $project->construction_value = $request->input('construction_value');
+        $project->construction_value = str_replace(',','',$request->input('construction_value'));
         $project->procurement_route = $request->input('procurement_route');
         $project->user_id = $request->session()->get('id');
         if($request->hasFile('site_plan')){
@@ -189,17 +189,39 @@ class ProjectInformationController extends Controller
         $meetings->save();
 
         
+        // $position = $request->member_position;
+        // $name = $request->member_name;
+        // for($counter = 0; $counter < count($position); $counter++){
+        //     $team = new ProjectTeam;
+        //     $team->member_position = $position[$counter];
+        //     $team->member_name = $name[$counter];
+        //     $team->project_record_id = $project->project_record_id;
+        //     $team->save();
+        // }
+
+        // ===========Project Team======= //
+
         $position = $request->member_position;
         $name = $request->member_name;
+
+        $projpos = "";
+        $projname = "";
         for($counter = 0; $counter < count($position); $counter++){
-            $team = new ProjectTeam;
-            $team->member_position = $position[$counter];
-            $team->member_name = $name[$counter];
-            $team->project_record_id = $project->project_record_id;
-            $team->save();
+            $projpos .= $position[$counter] . ",";
+            $projname .= $name[$counter] . ",";
         }
 
-        
+        $projpos = substr($projpos, 0, -1);
+        $projname = substr($projname, 0, -1);
+
+        $team = new ProjectTeam;
+        $team->member_position = $projpos;
+        $team->member_name = $projname;
+        $team->project_record_id = $project->project_record_id;
+        $team->save();
+
+        // echo $projpos;
+        // echo $projname;
 
         //return response()->json(array('success' => true, 'insert_id' => $project->project_record_id), 200);
         // return view('publish_edit')->with('data', $data);
@@ -323,6 +345,24 @@ class ProjectInformationController extends Controller
                 'date' => $mildate[$y]
             );
         }
+
+
+        $strings12 = explode(",",$team[0]['member_position']);
+        $strings13 = explode(",",$team[0]['member_name']);
+        
+        foreach ($strings12 as $str) {
+            $projpos[] = $str; 
+        }
+        foreach ($strings13 as $str) {
+            $projname[] = $str; 
+        }
+        
+        for($y=0;count($projpos) > $y; $y++){
+            $teams[] = array(
+                'member_position' => $projpos[$y],
+                'member_name' => $projname[$y]
+            );
+        }
         // print_r($mildate);
         return view('publish_view')->with([
             'project' => $project,
@@ -332,7 +372,7 @@ class ProjectInformationController extends Controller
             'type' => $typeamen,
             'milestones' => $milestonesni,
             'meetings' => $meetings,
-            'team' => $team,
+            'team' => $teams,
             'tender' => $tender,
             'questions' => $questions
         ]);
@@ -360,7 +400,7 @@ class ProjectInformationController extends Controller
         // $project->project_id = $request->input('project_id');
         $project->location = $request->input('location');
         $project->type_of_development = $request->input('type_of_development');
-        $project->construction_value = $request->input('construction_value');
+        $project->construction_value = str_replace(',','',$request->input('construction_value'));
         $project->procurement_route = $request->input('procurement_route');
         //$project->user_id = $request->session()->get('id');
         if($request->hasFile('site_plan')){
@@ -549,13 +589,23 @@ class ProjectInformationController extends Controller
         ProjectTeam::where('project_record_id', $id)->delete();
         $position = $request->member_position;
         $name = $request->member_name;
+
+        $projpos = "";
+        $projname = "";
         for($counter = 0; $counter < count($position); $counter++){
-            $team = new ProjectTeam;
-            $team->member_position = $position[$counter];
-            $team->member_name = $name[$counter];
-            $team->project_record_id = $project->project_record_id;
-            $team->save();
+            $projpos .= $position[$counter] . ",";
+            $projname .= $name[$counter] . ",";
         }
+
+        $projpos = substr($projpos, 0, -1);
+        $projname = substr($projname, 0, -1);
+
+        $team = new ProjectTeam;
+        $team->member_position = $projpos;
+        $team->member_name = $projname;
+        $team->project_record_id = $project->project_record_id;
+        $team->save();
+
 
         return redirect('/project_info'.'/'.$id.'/edit');
         //return 'asdasd';
