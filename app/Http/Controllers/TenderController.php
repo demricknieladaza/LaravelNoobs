@@ -98,6 +98,21 @@ class TenderController extends Controller
             $tender->services = $request->get('services');
             $tender->save();
             $newtend = $tender;
+            $deliv = new TenderScopeDeliverables;
+            $deliv->tender_id = $tender->tender_id;
+            $deliv->save();
+
+            $meet = new TenderScopeMeetings;
+            $meet->tender_id = $tender->tender_id;
+            $meet->save();
+
+            $des = new TenderDesignConsiderations;
+            $des->tender_id = $tender->tender_id;
+            $des->save();
+
+            $add = new TenderScopeAdvise;
+            $add->tender_id = $tender->tender_id;
+            $add->save();
         }
 
         // $tender = Tender::where('project_record_id', $id)->get();
@@ -350,7 +365,7 @@ class TenderController extends Controller
 
         $this->gamitonbi($request->get('idd'), $request->get('addeddeliv'), $request->get('addedmeet'),  $request->get('addeddes'), $request->get('addedad'));
 
-
+        TenderScopeDeliverables::where('deliverables_id', $request->get('delivid'))->delete();
         $deliverables = new TenderScopeDeliverables;
         $deliverables->tender_id = $request->get('idd');
         $deliverables->strategic_brief = $request->get('strategic_details');
@@ -622,6 +637,7 @@ class TenderController extends Controller
         $deliverables->save();
 
         //Scope Meetings
+        TenderScopeMeetings::where('meeting_id', $request->get('meetid'))->delete();
         $meeting = new TenderScopeMeetings;
         $meeting->tender_id = $request->get('idd');
         $meeting->pre_app_purpose = $request->get('pre_app_purpose');
@@ -737,6 +753,7 @@ class TenderController extends Controller
         $meeting->save();
 
         //Design Considerations
+        TenderDesignConsiderations::where('design_id', $request->get('desid'))->delete();
         $question = new TenderDesignConsiderations;
         $question->tender_id = $request->get('idd');
         $question->question_one_applies_to = $request->get('question_one');
@@ -746,7 +763,8 @@ class TenderController extends Controller
         $question->question_five_applies_to = $request->get('question_five');
         $question->save();
 
-        //Advise On  
+        //Advise On
+        TenderScopeAdvise::where('advise_id', $request->get('adid'))->delete();  
         $ad = new TenderScopeAdvise;
         $ad->tender_id = $request->get('idd');
         
@@ -1077,6 +1095,9 @@ class TenderController extends Controller
         $design = AddedDesign::where('tender_id', $tenid)->get();
         $advises = AddedAdvise::where('tender_id', $tenid)->get();
         $scopes = TenderScopeDeliverables::where('tender_id', $tenid)->get();
+        $scopesm = TenderScopeMeetings::where('tender_id', $tenid)->get();
+        $scopesd = TenderDesignConsiderations::where('tender_id', $tenid)->get();
+        $scopesa = TenderScopeAdvise::where('tender_id', $tenid)->get();
         $quests = TenderPreQualificationQuestionnaire::where('tender_id', $tenid)->get();
 
         // return response()->json(array(
@@ -1102,8 +1123,8 @@ class TenderController extends Controller
             }
         }
         
-        
-        
+        // echo $scopesa[0];
+        // echo $scopesm[0]['pre_app_assumed_duration'];
         return view('create_tender')->with([
             'tender' => $tender,
             'bonds' => $bonds,
@@ -1115,7 +1136,10 @@ class TenderController extends Controller
             'advises' => $advises,
             'quests' => $questions,
             'questsid' => $qid,
-            'scopes' => $scopes
+            'scopes' => $scopes,
+            'scopesm' => $scopesm,
+            'scopesd' => $scopesd,
+            'scopesa' => $scopesa
         ]);
     
 

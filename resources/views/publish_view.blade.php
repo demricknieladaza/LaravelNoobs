@@ -1228,7 +1228,7 @@
 		    							<td>Project ID
 			    							
 		    							</td>
-		    							<td><input type="number" name="project_id" class="form-control proje" value="{{ $project->project_id }}" placeholder="123456789" readonly></td>
+		    							<td><input type="number" name="project_id" class="form-control" value="{{ $project->project_id }}" placeholder="123456789" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Location
@@ -1334,7 +1334,25 @@
 													$total = $total + $use['area'];
 												 ?>
 												<tr>
-		    										<td><input type="text" name="use_name[]" class="form-control proje" value="{{ $use['name'] }}" placeholder="Residential" readonly></td>&nbsp
+		    										{{-- <td><input type="text" name="use_name[]" class="form-control proje" value="{{ $use['name'] }}" placeholder="Residential" readonly></td>&nbsp --}}
+		    										<td><select disabled name="use_name[]" class="form-control sel" style="width: auto;">
+		    											<?php
+		    											$Service = array(
+		    												"Residential","Commercial","Retail","Leisure","Sports and venues","Hotel","Industrial","Education","Healthcare","Defence","Aviation","Highways","Bridges","Rail","Water","Oil,gas and chemical", "Office"
+		    											);
+		    											sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
+		    											foreach ($Service as $key ) {
+		    												if($use['name']==$key){
+		    													echo "<option selected value='".$key."'>".$key."</option>";
+		    												}
+		    												else{
+		    													echo "<option value='".$key."'>".$key."</option>";
+		    												}
+		    											    
+		    											}
+
+		    											?>
+		    										</select></td>
 		    										<td><input type="text" name="use_area[]" class="form-control proje" value="{{ number_format($use['area']) }}" placeholder="30,000m2" readonly></td>
 		    										<td><input type="text" name="use_units[]" class="form-control proje" value="{{ number_format($use['unit']) }}" placeholder="200 units" readonly></td>
 		    										<td><input type="text" name="use_type[]" class="form-control proje" value="{{ $use['type'] }}" placeholder="High-End" readonly></td>
@@ -1535,7 +1553,7 @@
 					<div class="tender-container">
 						<div class="row">
 							<div class="col-sm-12 active-tenders">
-								<h3>Project Information
+								<h3>Employer Information
 		    						<button class="btn buts save_proj2" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction2()"><i class="fa fa-save" style="font-size:15px"></i>Save</button>
 		    						<button class="btn buts" id="edit_proj2" onclick="myFunction2()" style="float:right;margin-top:-14px;" ><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
 								<div class="row">	
@@ -5035,6 +5053,7 @@ var element=document.getElementById('bonds');
 	function myFunction() {
 	   $('#projform input.proje').attr('readonly',false);
 	   $('#projform input.addbbutn').attr('disabled',false);
+	   $('#projform select.sel').attr('disabled',false);
 	   $('.save_proj').css('display', 'block');
 	   $('#edit_proj').css('display', 'none');
 	}
@@ -5128,7 +5147,8 @@ $('a[href^="#"]').on('click', function(event) {
 
 	    $('#addtypeofuse').click(function(e){ 
 	    	// e.preventDefault();
-	    	$('.addedtype tr:last').before('<tr><td><input type="text" name="use_name[]" class="form-control proje" placeholder="Residential" ></td>&nbsp<td><input type="text" name="use_area[]" class="form-control proje" placeholder="30,000m2" ></td><td><input type="text" name="use_units[]" class="form-control proje" placeholder="200 units" ></td><td><input type="text" name="use_type[]" class="form-control proje" placeholder="High-End" ></td></tr>');
+	    	var sele = "<?php $Service = array( "Residential","Commercial ","Retail","Leisure","Sports and venues","Hotel","Industrial","Education","Healthcare","Defence","Aviation","Highways","Bridges","Rail","Water","Oil,gas and chemical", "Office");sort($Service, SORT_NATURAL | SORT_FLAG_CASE);foreach ($Service as $key ) {echo "<option value='".$key."'>".$key."</option>";}?>";
+	    	$('.addedtype tr:last').before('<a href="#" class="remove_field">x</a><tr><td><select name="use_name[]" class="form-control sel" style="width: auto;">'+sele+'</select></td>&nbsp<td><input type="text" name="use_area[]" class="form-control proje" placeholder="30,000m2" ></td><td><input type="text" name="use_units[]" class="form-control proje" placeholder="200 units" ></td><td><input type="text" name="use_type[]" class="form-control proje" placeholder="High-End" ></td></tr>');
 	    });
 
 	    $('.addedtype').on("click",".remove_field", function(e){ //user click on remove text
