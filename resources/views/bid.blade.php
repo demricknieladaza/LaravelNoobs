@@ -618,8 +618,6 @@
 				</div>
 			</div>
 			<div class="col-sm-8 questionnaire-section" style="margin-left: 338px; width: 845px;">
-				<form method="POST" action="{{ url('winwork/bid/'.$tender->tender_id.'/save') }}">
-					@csrf
 				<div class="tab-content">
 					<div id="section1" class="tab-pane fade in active tender-container" style="border-radius: 6px;">
 						<h3 class="bid-form-title">Pre-Qualification Questionnaire</h3>
@@ -1464,7 +1462,10 @@
 						
 					</div>
 					<div id="section4" class="tab-pane fade tender-container">
+						<form method="POST" action="{{ url('winwork/bid/'.$tender->tender_id.'/approach') }}" enctype="multipart/form-data">
+							@csrf
 						<h3 class="bid-form-title">Approach</h3>
+						<input type="hidden" name="app_tender_id" value="{{ $tender->tender_id }}">
 						<div class="kuwestion">
 							<div class="inputscheck">
 							<div class="row">
@@ -1477,7 +1478,22 @@
 										</div>
 										<div class="col-sm-8">
 											<div class="form-group">
-													<textarea id="text-input4" name="comments_constraints"ols="25" rows="3" placeholder="Enter here.."></textarea>
+													<textarea id="text-input4" name="comments_constraints[]"ols="25" rows="3" placeholder="Enter here.."></textarea>
+												<div class="word-counter">
+												     <label id="count-label4">3000</label>/3000 words
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-4">
+											<div class="form-group">
+												Comments on Constraints/Issues
+											</div>
+										</div>
+										<div class="col-sm-8">
+											<div class="form-group">
+													<textarea id="text-input4" name="comments_constraints[]"ols="25" rows="3" placeholder="Enter here.."></textarea>
 												<div class="word-counter">
 												     <label id="count-label4">3000</label>/3000 words
 												</div>
@@ -1490,14 +1506,13 @@
 											<div class="form-group">	
 												<div class="field" align="left">
 												  <strong>Upload your images</strong>
-												  <input type="file" id="file4" name="file4[]" multiple />
+												  <input type="file" id="file4" name="comments_images[]" multiple />
 												</div>
 						                    </div>
 						                </div>
 									</div><br>
                                     <div class="row">
 										<div class="col-sm-4">
-											
 										</div>
 										<div class="col-sm-8">
 												<div class="input_fields_com">
@@ -1514,7 +1529,22 @@
 										</div>
 										<div class="col-sm-8">
 											<div class="form-group">
-													<textarea id="text-input5" cols="25" rows="3" placeholder="Enter text here"></textarea>
+													<textarea id="text-input5" name="solutions[]" cols="25" rows="3" placeholder="Enter text here"></textarea>
+												<div class="word-counter">
+												     <label id="count-label5">3000</label>/3000 words
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-4">
+											<div class="form-group">
+												Solutions
+											</div>
+										</div>
+										<div class="col-sm-8">
+											<div class="form-group">
+													<textarea id="text-input5" name="solutions[]" cols="25" rows="3" placeholder="Enter text here"></textarea>
 												<div class="word-counter">
 												     <label id="count-label5">3000</label>/3000 words
 												</div>
@@ -1527,7 +1557,7 @@
 											<div class="form-group">	
 												<div class="field" align="left">
 												  <strong>Upload your images</strong>
-												  <input type="file" id="file3" name="file3[]" multiple />
+												  <input type="file" id="file3" name="solutions_images[]" multiple />
 												</div>
 						                    </div>
 						                </div>
@@ -1546,12 +1576,13 @@
 									
 									<div class="form-group butcent">
 										<button type="button" data-toggle="tab" href="#section5" id="checkinpbut3" name="Next" class="btn btn-primary butsize ">Next</button>
-										<button type="button" name="Save" value="Save" class="btn  butsize color">Save</button>
+										<button type="submit" name="Save" value="Save" class="btn  butsize color">Save</button>
 										
 									</div>
 								</div>
 							</div>
 						</div>
+						</form>
 					</div>
 						
 					</div>
@@ -2300,16 +2331,21 @@
 										</div>
 
 									</div>
-
+									<?php 
+										$storage = $appointment->bonds;
+										$bonds = explode(",", $storage);
+									?>
+									@foreach($bonds as $b)
 										<div class="row">
 										<div class="col-sm-4">
 											<div class="form-group">
 												Bonds
 											</div>
 										</div>
+
 										<div class="col-sm-8">
 											<div class="form-group">
-												<p >Parent company guarantee</p>
+												<p >{{ $b }}</p>
 											</div>
 										</div>
 									</div>
@@ -2338,6 +2374,7 @@
 												</div>
 										</div>
 									</div><br>
+									@endforeach
 									<div class="row">
 										<div class="col-sm-4">Collateral  Warranties  /  Third  Parties  </div>
 										<div class="col-sm-8">
@@ -2510,6 +2547,9 @@
 					</div>
 					</div>
 					<div id="section7" class="tab-pane fade tender-container" style="margin-bottom: 117px;">
+						<form method="POST" action="{{ url('winwork/bid/'.$tender->tender_id.'/save') }}">
+						<input type="hidden" name="project_record_id" value="{{ $project->project_record_id }}" id=""/>
+							@csrf
 						<h3 class="bid-form-title">Quality Assurance</h3>
 						
 							<div class="row">
@@ -2523,10 +2563,10 @@
 										<div class="col-sm-8">
 											<div class="form-group">
 												<div class="col-sm-6" style="padding:0;">
-													<input type="text" name="" class="form-control" placeholder="First name">
+													<input type="text" name="created_by_fname" class="form-control" placeholder="First name">
 												</div>
 												<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-													<input type="text" name="" class="form-control" placeholder="Surname">
+													<input type="text" name="created_by_sname" class="form-control" placeholder="Surname">
 												</div>
 											</div>
 										</div>
@@ -2548,7 +2588,7 @@
 												<div class="input-group date" id="datepicker4" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
-													 <input class="form-control" type="text" placeholder="Select year" readonly="readonly" name="date" >	  
+													 <input class="form-control" name="created_by_date" type="text" placeholder="Select year" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
 												
@@ -2564,10 +2604,10 @@
 										<div class="col-sm-8">
 											<div class="form-group">
 												<div class="col-sm-6" style="padding:0;">
-													<input type="text" name="" class="form-control" placeholder="First name">
+													<input type="text" name="checked_by_fname" class="form-control" placeholder="First name">
 												</div>
 												<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-													<input type="text" name="" class="form-control" placeholder="Surname">
+													<input type="text" name="checked_by_sname" class="form-control" placeholder="Surname">
 												</div>
 											</div>
 										</div>
@@ -2589,7 +2629,7 @@
 												<div class="input-group date" id="datepicker10" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
-													 <input class="form-control" type="text" placeholder="Select year" readonly="readonly" name="date" >	  
+													 <input class="form-control" name="checked_by_date" type="text" placeholder="Select year" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
 												
@@ -2605,10 +2645,10 @@
 										<div class="col-sm-8">
 											<div class="form-group">
 												<div class="col-sm-6" style="padding:0;">
-													<input type="text" name="" class="form-control" placeholder="First name">
+													<input type="text" name="approved_by_fname" class="form-control" placeholder="First name">
 												</div>
 												<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-													<input type="text" name="" class="form-control" placeholder="Surname">
+													<input type="text" name="approved_by_sname" class="form-control" placeholder="Surname">
 												</div>
 											</div>
 										</div>
@@ -2630,10 +2670,9 @@
 												<div class="input-group date" id="datepicker11" data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
-													 <input class="form-control" type="text" placeholder="Select year" readonly="readonly" name="date" >	  
+													 <input class="form-control" name="approved_by_date" type="text" placeholder="Select year" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	
-													 <input type="hidden" name="project_record_id" value="{{ $project->project_record_id }}" id=""/>
-													 <input type="hidden" name="tender_id" value="{{ $tender->tender_id }}" id=""/>  
+						
 												</div>
 												
 											</div>
@@ -2653,8 +2692,8 @@
 									</div>
 								</div>
 							</div>
+						</form>
 					</div>
-					</form>
 				</div>
 			</div>			
 		</div>

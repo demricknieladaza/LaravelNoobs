@@ -132,6 +132,7 @@ class TenderController extends Controller
     public function appointmentStore(Request $request){
         
         $idd = $request->get('tender_id');
+        
         $appointment = new TenderAppointment;
         $appointment->tender_id = $idd;
 
@@ -142,9 +143,9 @@ class TenderController extends Controller
                 $new_ins_name .= $insurance_name[$counter] . ",";
             }
             $new_ins_name = substr($new_ins_name, 0, -1);
-            $appointment->insurance_name;
+            $appointment->insurance_name = $new_ins_name;
         }
-        $appointment->insurance_name;
+        $appointment->insurance_name = $new_ins_name;
 
         $insurance_level = $request->insurance_level;
         $new_ins_lvl = "";
@@ -153,9 +154,9 @@ class TenderController extends Controller
                 $new_ins_lvl .= $insurance_level[$counter] . ",";
             }
             $new_ins_lvl = substr($new_ins_lvl, 0, -1);
-            $appointment->insurance_level;
+            $appointment->insurance_level = $new_ins_lvl;
         }
-        $appointment->insurance_level;
+        $appointment->insurance_level = $new_ins_lvl;
 
         $bond = $request->bonds;
         $new_bonds = "";
@@ -208,8 +209,8 @@ class TenderController extends Controller
         $appointment->save();
 
         //return response()->json(array('success' => true, 'test' => $idd), 200);
-        return "SUCCESS!";
-        // return $this->gettend($idd);
+        // return "SUCCESS!";
+        return $this->gettend($idd);
 
     }
 
@@ -712,7 +713,7 @@ class TenderController extends Controller
         $riba_c = "";
         if(count($r_choice) != 0){
             for($counter = 0; $counter < count($r_choice); $counter++){
-                $riba_c = $r_choice[$counter] . ",";
+                $riba_c .= $r_choice[$counter] . ",";
             }
             $riba_c = substr($riba_c, 0, -1);
             $meeting->riba_choice = $riba_c;
@@ -866,13 +867,13 @@ class TenderController extends Controller
         $mon_three = $request->monitor_three;
         $moni_three = "";
         if(count($mon_three) != 0){
-            for($counter = 0; $counter < count($moni_three); $counter++){
+            for($counter = 0; $counter < count($mon_three); $counter++){
                 $moni_three .= $mon_three[$counter] . ",";
             }
             $moni_three = substr($moni_three, 0, -1);
-            $ad->monitor_three;
+            $ad->monitor_three = $moni_three;
         }
-        $ad->monitor_three;
+        $ad->monitor_three = $moni_three;
 
         //Collaborate/Consult with
         $collab_one = $request->collab_one;
@@ -895,7 +896,7 @@ class TenderController extends Controller
             $new_collab_two = substr($new_collab_two, 0, -1);
             $ad->collab_one = $new_collab_two;
         }
-        $ad->collab_one = $new_collab_two;
+        $ad->collab_two = $new_collab_two;
 
         $collab_three = $request->collab_three;
         $new_collab_three = "";

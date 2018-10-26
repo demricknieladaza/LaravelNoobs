@@ -1114,7 +1114,7 @@
 	        e.preventDefault();
 	        if(x < max_fields){ //max input box allowed
 	            x++; //text box increment
-	            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+	            $(wrapper).append('<div class="row"><div class="col-sm-12"><div class="row"><div class="col-sm-4"><div class="form-group">Comments on Constraints/Issues</div></div><div class="col-sm-8"><div class="form-group"><textarea id="text-input4" name="comments_constraints[]" ols="25" rows="3" placeholder="Enter here.."></textarea><div class="word-counter"><label id="count-label4">3000</label>/3000 words</div></div></div></div></div></div>'); //add input box
 	        }
 	    });
 	    

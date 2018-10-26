@@ -74,12 +74,19 @@ Route::post('project_info_tender_appointment', 'TenderController@appointmentStor
 // Route::resource('tenderget', 'TenderController');
 
 // Route::post('')
-Route::get('winwork/bid/{id}', 'BidController@getCredentials');
+// Route::get('winwork/bid/{id}', 'BidController@getCredentials');
+Route::resource('winwork/bid', 'BidController', [
+    'names' => [
+        'edit' => 'Bid'
+    ]
+]);
 Route::post('submit_bid', 'BidController@submitBid');
 
 Route::post('edit_tender_service', 'TenderController@editTend');
 // Route::resource('winwork/bid', 'BidController');
 Route::post('winwork/bid/{id}/save', 'BidController@saveBid');
+Route::post('winwork/bid/{id}/approach', 'BidController@saveApproach');
+
 Route::post('tender_queries', 'BidController@saveQuery');
 
 //Route::put('project_info/{id}', 'ProjectInformationController@Update');
