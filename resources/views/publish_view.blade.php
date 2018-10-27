@@ -57,6 +57,11 @@
 	table.zui-table tbody tr:hover {
 	    background-color: #ffc2a7 !important;
 	}
+	.pound{
+	    position: absolute;
+	    line-height: 33.8px;
+	    padding-left: 4px;
+	}
 
 /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
 .hayt{
@@ -1314,13 +1319,13 @@
 		    							<td>Type of Development
 		    								
 		    							</td>
-		    							<td><input type="text" name="type_of_development" class="form-control proje" value="{{ $project->type_of_development }}" placeholder="New Built" readonly></td>
+		    							<td><input type="number" name="type_of_development" class="form-control proje" value="{{ $project->type_of_development }}" placeholder="New Built" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Construction Value
 		    								
 		    							</td>
-		    							<td><input type="text" name="construction_value" class="form-control proje" value="{{ $project->construction_value }}" placeholder="£ 300,000,000" readonly></td>
+		    							<td><span class="pound">£</span><input type="text" name="construction_value" class="form-control proje" value=" {{ number_format((int)$project->construction_value) }}" placeholder="£ 300,000,000" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Types of Use
@@ -1433,8 +1438,8 @@
 		    								<table width="100%" class="addedproj">
 												@foreach($team as $team)
 		    									<tr class="lastitemproj">
-		    										<td><input type="text" name="member_position[]" class="form-control proje" value="{{ $team->member_position }}" placeholder="Architect" readonly></td>
-		    										<td><input type="text" name="member_name[]" class="form-control proje" value="{{ $team->member_name }}" placeholder="Allies and Morrison" readonly></td>
+		    										<td><input type="text" name="member_position[]" class="form-control proje" value="{{ $team['member_position'] }}" placeholder="Architect" readonly></td>
+		    										<td><input type="text" name="member_name[]" class="form-control proje" value="{{ $team['member_name'] }}" placeholder="Allies and Morrison" readonly></td>
 												</tr>
 												@endforeach
 		    									{{-- <tr>
@@ -5166,7 +5171,7 @@ $('a[href^="#"]').on('click', function(event) {
 
 		$('#addprojteam').click(function(e){
 	    	// e.preventDefault();
-	    	$('.addedproj tr:last').before('<tr class="lastitemproj"><a href="#" class="remove_field">x</a><td><input type="text" name="projteam_pos[]" class="form-control proje" placeholder="Architect"></td><td><input type="text" name="projteam_name[]" class="form-control proje" placeholder="Allies and Morrison" ></td></tr>');
+	    	$('.addedproj tr:last').before('<tr class="lastitemproj"><a href="#" class="remove_field">x</a><td><input type="text" name="member_position[]" class="form-control proje" placeholder="Architect"></td><td><input type="text" name="member_name[]" class="form-control proje" placeholder="Allies and Morrison" ></td></tr>');
 	    });
 
 	    $('.addedproj').on("click",".remove_field", function(e){ //user click on remove text

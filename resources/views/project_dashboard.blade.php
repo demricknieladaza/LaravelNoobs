@@ -290,7 +290,7 @@
 		    							<td>Construction Value
 		    								
 		    							</td>
-		    							<td><input type="text" name="construction_value" class="form-control proje" placeholder="£ 300,000,000" readonly></td>
+		    							<td><input type="number" name="construction_value" class="form-control proje" placeholder="£ 300,000,000" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Types of Use
@@ -1429,7 +1429,7 @@ $('a[href^="#"]').on('click', function(event) {
 
 		$('#addprojteam').click(function(e){
 	    	// e.preventDefault();
-	    	$('.addedproj tr:last').before('<a href="#" class="remove_field">x</a><tr class="lastitemproj"><td><input type="text" name="projteam_pos[]" class="form-control proje" placeholder="Architect"></td><td><input type="text" name="projteam_name[]" class="form-control proje" placeholder="Allies and Morrison" ></td></tr>');
+	    	$('.addedproj tr:last').before('<a href="#" class="remove_field">x</a><tr class="lastitemproj"><td><input type="text" name="member_position[]" class="form-control proje" placeholder="Architect"></td><td><input type="text" name="member_name[]" class="form-control proje" placeholder="Allies and Morrison" ></td></tr>');
 	    });
 
 	    $('.addedproj').on("click",".remove_field", function(e){ //user click on remove text
