@@ -142,6 +142,21 @@ ul.typeofdev {
 	var projcounter = 0;
 
 	$(document).ready(function(){
+		$('#testSave').click(function(){
+			var testData = new FormData(document.getElementById('testForm'));
+			$.ajax({
+				url: '{{ url("testroute") }}',
+				type: 'POST',
+				data: testData,
+				dataType: 'json',
+				processData: false,
+				contentType: false,
+				success:function(result){
+					console.log(result);
+				}
+
+			});
+		});
 		$('.date').datepicker({
 			orientation: "bottom left",
 			autoclose: true,
@@ -464,6 +479,11 @@ ul.typeofdev {
 										<a data-toggle="collapse" data-parent="#accordion2" href="#collapse7">Add Organisation<span class="pull-right caret"></span></a>
 									</h4>
 								</div>
+								<form id="testForm">
+									<input type="text" name="testField" >
+									<input type="file" name="testFile[]" multiple>
+									<input type="button" id="testSave" name="save" value="Save">
+								</form>
 								<div id="collapse7" class="panel-collapse collapse">
 									<div class="panel-body">
 										<div class="row">	
@@ -471,11 +491,11 @@ ul.typeofdev {
 												<table class="table table-striped table-hover c-info-table">
 													<tr>
 														<td width="30%">Company Name</td>
-														<td><input type="text" name="" class="form-control" placeholder="British Land"></td>
+														<td><input type="text" name="company_name" class="form-control" placeholder="British Land"></td>
 													</tr>
 													<tr>
 														<td>Registered Office Address</td>
-														<td><input type="text" name="" class="form-control" placeholder="100 Sample Road, London, W1 23Y, United Kingdom"></td>
+														<td><input type="text" name="office_address" class="form-control" placeholder="100 Sample Road, London, W1 23Y, United Kingdom"></td>
 													</tr>
 													<tr>
 														<td>
@@ -574,10 +594,10 @@ ul.typeofdev {
 												</td>
 												<td>
 													<div class="form-group">
-														<input type="text" name="" class="form-control" placeholder="Enter Project Title">
+														<input type="text" name="project_title" class="form-control" placeholder="Enter Project Title">
 													</div>
 													<div class="form-group">
-														<input type="text" name="" class="form-control" placeholder="Enter Project Value">
+														<input type="text" name="project_value" class="form-control" placeholder="Enter Project Value">
 													</div>
 													<div class="form-group">
 														<div class="col-sm-6" style="padding: 0;">
@@ -646,17 +666,17 @@ ul.typeofdev {
 
 										<div class="form-group">
 											<div class="col-sm-12" style="padding: 0;">
-												<input type="checkbox" name="development" class="filled-in" id="new"> <label for="new"> New built</label>
+												<input type="checkbox" name="development" name="development[]" class="filled-in" id="new"> <label for="new"> New built</label>
 											</div>
 											<div class="col-sm-12" style="padding: 0;">
-												<input type="checkbox" name="development" class="filled-in" id="refurbishment"> <label for="refurbishment"> Refurbishment</label>
+												<input type="checkbox" name="development" name="development[]" class="filled-in" id="refurbishment"> <label for="refurbishment"> Refurbishment</label>
 											</div>
 											<div class="col-sm-12" style="padding: 0;">
-												<input type="checkbox" name="development" class="filled-in" id="demolition"> <label for="demolition"> Demolition</label>
+												<input type="checkbox" name="development" name="development[]" class="filled-in" id="demolition"> <label for="demolition"> Demolition</label>
 											</div>
 										</div>
 										<div class="form-group">
-											<textarea class="form-control" rows="10" placeholder="Enter Project Description"></textarea>
+											<textarea class="form-control" name="project_description" rows="10" placeholder="Enter Project Description"></textarea>
 										</div>
 										<div class="form-group">
 											<button class="btn btn-warning sakto"><span class="sakto2"><i class="fa fa-plus"></i> Upload Images</span></button>
@@ -679,7 +699,7 @@ ul.typeofdev {
 											<button id="edtprojmem" class="btn btn-warning sakto"style="margin-top: 10px;display: none;" ><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
 										</div>
 										<div class="form-group">
-											<button class="btn btn-warning sakto"><span class="sakto2"><i class="fa fa-plus"></i> Add another project</span></button>
+											<button class="btn btn-warning sakto save_current"><span class="sakto2"><i class="fa fa-plus"></i> Add another project</span></button>
 											
 										</div>
 									</td>
