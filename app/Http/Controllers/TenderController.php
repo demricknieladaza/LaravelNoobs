@@ -35,6 +35,7 @@ use App\AddedDesign;
 use App\AddedAdvise;
 use App\TenderPreQualificationQuestionnaire;
 use App\CompInfo;
+use App\RequestForProposal;
 
 
 class TenderController extends Controller
@@ -173,20 +174,22 @@ class TenderController extends Controller
         $appointment->collateral_warranties = $request->get('collateral_warranties');
         $appointment->limit_of_liability = $request->get('limit_of_liability');
 
-        if($request->hasFile('form_of_appointment')){
+        $check = "WALA";
 
-            $filenameWithExt = $request->file('form_of_appointment')->getClientOriginalName();
+        if($request->hasFile('formOfAppointment')){
+            $check = "NAAY SULOD!";
+
+            $filenameWithExt = $request->file('formOfAppointment')->getClientOriginalName();
 
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
 
-            $extension = $request->file('form_of_appointment')->getClientOriginalExtension();
+            $extension = $request->file('formOfAppointment')->getClientOriginalExtension();
 
             $filenameToStore = $filename.'_'.time().'_'.'.'.$extension;
             
-            $path = $request->file('form_of_appointment')->storeAs('public/formOfAppointment', $filenameToStore); 
+            $path = $request->file('formOfAppointment')->storeAs('public/formOfAppointment', $filenameToStore); 
             $appointment->form_of_appointment = $filenameToStore;
         }
-
         $name_of_files = "";
 
         if($request->hasFile('signature_files')){
@@ -212,6 +215,8 @@ class TenderController extends Controller
         //return response()->json(array('success' => true, 'test' => $idd), 200);
         // return "SUCCESS!";
         return $this->gettend($idd);
+        // return $check;
+
 
     }
 
@@ -1072,7 +1077,6 @@ class TenderController extends Controller
         $tender = Tender::where('tender_id', $request->get('idd'))
                     ->update([
                         "status" => $request->get('status'),
-                        "end" => $request->get('end'),
                         "time_remaining" => $request->get('time_remaining')
                     ]);
         
@@ -1082,9 +1086,39 @@ class TenderController extends Controller
         // $tender->update([
         //     "end" => $tender->end = $request->get('end'),
         //     "time_remaining" => $tender->time_remaining = $request->get('time_remaining')
-        // ]);  
+        // ]); 
+        
+        // foreach($companies as $c){
+        // $user = UserAccountsModel::whereIn('company', $request->companies)->get();
 
-        return "UPDATED!!!";
+        $proposal = $request->companies;
+        for($counter = 0; $counter < count($proposal); $counter++){
+            $user = UserAccountsModel::where('company', $proposal[$counter])->get();
+
+            $requestProposal = new RequestForProposal;
+            $requestProposal->user_id = $user[$counter]->id;
+            $requestProposal->tender_id = $request->get('idd');
+            $requestProposal->project_record_id = $request->get('project_id');
+            $requestProposal->save();
+            
+        }
+        // }
+        // for($counter = 0; $counter < count($user); $counter++){
+
+        //     $request = new RequestForProposal;
+        //     $request->user_id = $user[0]->id;
+        //     $request->tender_id = $request->get('idd');
+        //     $request->project_record_id = $request->get('project_id');
+        //     $request->save();
+
+        // }
+        
+
+
+
+
+        // return $user[0]->id;
+        return "UPDATED!!";
     }
 
     public function gettend($id)

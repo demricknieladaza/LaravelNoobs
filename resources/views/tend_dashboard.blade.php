@@ -49,17 +49,18 @@
 							</div>
 							<div class="col-sm-6 tab1">
 								<div class="tender-tiles new-project-tile" style="background: #FE7235; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px;">
-									<h3><a href="{{ url('/winwork/pds') }}">Request for Proposal   <span  class="project1 pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">3</span></a></h3>
+									<h3><a href="{{ url('/winwork/pds') }}">Request for Proposal   <span  class="project1 pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">{{ count($request) }}</span></a></h3>
 								</div>
 								<table >
 									<tr class="col-sm-3">
 										<div class="ex3">
-											<a href="{{ url('/dashboard/tend_dashboard/active_page') }}"><p style="font-weight: bold; font-size: 20px; border-top: 2px black solid; color: #000; padding-top: 10px; ">Project Infinity Tree</p></a>
+											@foreach($request as $p)
+											<a href="{{ url('/dashboard/tend_dashboard/active_page') }}"><p style="font-weight: bold; font-size: 20px; border-top: 2px black solid; color: #000; padding-top: 10px; ">{{ $p->project_title }}</p></a>
 											<p>Closes in <span style="color: #FE7235;">0</span> hours <span style="color: #FE7235;">6</span> minutes<br></p>
-											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
+											 s
+											@endforeach
 
-
-											<a href="{{ url('/dashboard/tend_dashboard/active_page') }}"><p style="font-weight: bold; font-size: 20px; color: #000; padding-top: 10px; ">Project Green Lagune</p></a>
+											{{-- <a href="{{ url('/dashboard/tend_dashboard/active_page') }}"><p style="font-weight: bold; font-size: 20px; color: #000; padding-top: 10px; ">Project Green Lagune</p></a>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
 											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
 
@@ -150,7 +151,7 @@
 
 											 <p style="font-weight: bold; font-size: 20px; padding-top: 10px; ">Project Green Lagune</p>
 											<p>Closes in <span style="color: #FE7235;">23</span> hours <span style="color: #FE7235;">14</span> minutes<br></p>
-											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p>
+											 <p style="border-bottom: 2px black solid;padding-bottom: 10px;">Feedback by <span style="color: #FE7235;">14/08/2018</span></p> --}}
 
 
 											 <ul class="pagination pages">

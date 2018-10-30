@@ -12,6 +12,7 @@ use App\ProjectInformation;
 use App\Tender;
 use App\SavedTenders;
 use App\SubmittedTenders;
+use App\RequestForProposal;
 
 class UsersController extends Controller
 {
@@ -135,11 +136,18 @@ class UsersController extends Controller
                     ->join('project_information_tbl as pj', 'drafted_tenders_tbl.project_record_id', '=', 'pj.project_record_id')
                     ->get();
 
+        $proposal = DB::table('request_for_proposal_tbl')
+                    ->where('request_for_proposal_tbl.user_id', $user)
+                    ->join('tender_tbl as te', 'request_for_proposal_tbl.tender_id', '=', 'te.tender_id' )
+                    ->join('project_information_tbl as pj', 'request_for_proposal_tbl.project_record_id', '=', 'pj.project_record_id')
+                    ->get();                   
+
         return view('tend_dashboard')->with([
             'oppur' => $oppur,
             'saved' => $saved,
             'active' => $active,
-            'drafted' => $drafted
+            'drafted' => $drafted,
+            'request' => $proposal
 
         ]);
         // return $saved;

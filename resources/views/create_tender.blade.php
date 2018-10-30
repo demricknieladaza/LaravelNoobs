@@ -501,6 +501,7 @@
 				url:"{{ url('tender_quality_assurance') }}",
 				method: 'post',
 				data: {
+					idd: idd,
 					created_fname: jQuery("input[name='created_fname']").val(),
 					created_lname: jQuery("input[name='created_lname']").val(),
 					created_date: jQuery("input[name='created_date']").val(),
@@ -565,18 +566,26 @@
 		});
 		$('#start_tender').click(function(){
 			alert('START!!!');
-			// var idd = $('#serveprojtitle').attr('data-id');
-			var idd = jQuery("input[name='tender_id']");
+			var idd = $('#serveprojtitle').attr('data-id');
+			// var idd = jQuery("input[name='tender_id']");
+			var comp = [];
 			var status = "Active"
-			var end = "N/A";
+			jQuery("input[name='companyemail[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						comp.push($(this).val());
+					}
+					
+				}
+			);
 			jQuery.ajax({
 				url: "{{ url('start_tender_process') }}",
 				method: 'post',
 				data: {
 					idd: idd,
 					status: status,
-					end: end,
-					time_remaining: jQuery("select[name='days']").val()
+					time_remaining: jQuery("select[name='days']").val(),
+					companies: comp
 				},
 				success: function(result){
 					console.log(result);
@@ -4945,7 +4954,7 @@
 		    					<div id="section21" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Appointment</h3>
 		    						{{-- <form method="post"> --}}
-									{!! Form::open(['action' => 'TenderController@appointmentStore', 'method' => 'POST'])!!}
+									{!! Form::open(['action' => 'TenderController@appointmentStore', 'method' => 'POST', 'enctype' => 'multipart/form-data'])!!}
 										<input type="hidden" id="tendserve" name="services">
 										<input type="hidden" name="tender_id" id="tendid" value="{{ $tender->tender_id }}">
 		    							<div class="row">
@@ -5093,7 +5102,7 @@
 		    										</div>
 		    										<div class="col-sm-8">
 		    											<div class="form-group">
-															<input type="file" class="form-control" name="form_of_appointment">
+															<input type="file" class="form-control" id="form-of-appointment" name="formOfAppointment"/>
 														</div>
 		    										</div>
 		    									</div>
@@ -5108,7 +5117,7 @@
 															<input type="text" placeholder="Enter Document Title" class="form-control" name="document[]">
 														</div>
 														<div class="form-group">
-															<input type="file" class="form-control" name="signature_files[]" multiple>
+															<input type="file" class="form-control" id="signature-files" name="signature_files[]" multiple/>
 														</div>
 		    										</div>
 		    										<div class="col-sm-4">
@@ -5126,7 +5135,7 @@
 		    										</div>
 		    										<div class="form-group butcent">
 														<input id="sec2" type="button" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
-														<input id="appointment_save" type="submit" name="Save" value="Save" class="btn btn-primary butsize">
+														<input id="" type="submit" name="Save" value="Save" class="btn btn-primary butsize">
 													</div>
 		    									</div>
 		    								</div>
