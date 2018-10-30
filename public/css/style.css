@@ -1161,7 +1161,6 @@ body > div.container.publish-project-outer-page > div > div > div > div > owl-di
     background-color: #3E506B;
 }
 
-<<<<<<< HEAD
 .tender-tiles:hover 
 {
     color: rgba(0, 0, 10, 1);
@@ -1175,7 +1174,6 @@ body > div.container.publish-project-outer-page > div > div > div > div > owl-di
     background: #fe7235;
 
 }   
-=======
 body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(3){
     margin-top: 22px;
 }
@@ -1193,7 +1191,7 @@ body > div.container.tender-details > div > div.col-sm-8 > div:nth-child(4) > di
 .dropdown-menu {
     background:white;
     margin-left: -225px;
-        width: 21%;
+     /*   width: 21%;*/
 }
 .dropdown1 {
    

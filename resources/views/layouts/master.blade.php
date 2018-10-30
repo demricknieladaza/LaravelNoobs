@@ -17,7 +17,9 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/bxslider.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/proj_dash.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/datepicker.css')}}">
+    {{-- <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-datepicker.css')}}"> --}}
+    <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-datepicker.min.css')}}">
+    {{-- <link rel="stylesheet" type="text/css" href="{{asset('css/datepicker.css')}}"> --}}
     <link rel="shortcut icon" href="{{asset('images/logo.jpg')}}">
     {{-- @if(Route::currentRouteName() != 'winwork') --}}
         <script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
