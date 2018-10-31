@@ -142,12 +142,34 @@ ul.typeofdev {
 	var projcounter = 0;
 
 	$(document).ready(function(){
-		$('#testSave').click(function(){
-			var testData = new FormData(document.getElementById('testForm'));
+		$('#orgSave').click(function(){
+			var serv = JSON.stringify(services);
+			var awa = JSON.stringify(awards);
+			var type = JSON.stringify(typeofuse);
+			var provserv = JSON.stringify(provservices);
+			var projm = JSON.stringify(projmem);
+			var devchecked = [];
+			jQuery("input[name='development[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						devchecked.push($(this).val());
+					}
+					
+				}
+			);
+			var dev = JSON.stringify(devchecked);
+			alert('LLLLLL');
+			var orgData = new FormData(document.getElementById('orgForm'));
+			orgData.append('services', serv);
+			orgData.append('awards', awa);
+			orgData.append('typeofuse', type);
+			orgData.append('provservices', provserv);
+			orgData.append('projmem', projm);
+			orgData.append('development', dev);
 			$.ajax({
-				url: '{{ url("testroute") }}',
+				url: '{{ url("organisationStore") }}',
 				type: 'POST',
-				data: testData,
+				data: orgData,
 				dataType: 'json',
 				processData: false,
 				contentType: false,
@@ -156,6 +178,7 @@ ul.typeofdev {
 				}
 
 			});
+			// console.log(orgData);
 		});
 		$('.date').datepicker({
 			orientation: "bottom left",
@@ -479,11 +502,7 @@ ul.typeofdev {
 										<a data-toggle="collapse" data-parent="#accordion2" href="#collapse7">Add Organisation<span class="pull-right caret"></span></a>
 									</h4>
 								</div>
-								<form id="testForm">
-									<input type="text" name="testField" >
-									<input type="file" name="testFile[]" multiple>
-									<input type="button" id="testSave" name="save" value="Save">
-								</form>
+								<form id="orgForm">
 								<div id="collapse7" class="panel-collapse collapse">
 									<div class="panel-body">
 										<div class="row">	
@@ -538,8 +557,8 @@ ul.typeofdev {
 														</tr>
 														<tr>
 															<td colspan="3">
-																<button id="addservices" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another service</span></button>
-																<button id="edtservices" class="btn btn-warning sakto" style="display:none; margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
+																<button type="button" id="addservices" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another service</span></button>
+																<button type="button" id="edtservices" class="btn btn-warning sakto" style="display:none; margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
 															</td>
 														</tr>
 													</table>
@@ -570,8 +589,8 @@ ul.typeofdev {
 														</tr>
 														<tr>
 															<td colspan="3">
-																<button id="addaward" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another award</span></button>
-																<button id="edtaward" class="btn btn-warning sakto" style="display:none;margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
+																<button id="addaward" type="button" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another award</span></button>
+																<button id="edtaward" type="button" class="btn btn-warning sakto" style="display:none;margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
 															</td>
 														</tr>
 													</table>
@@ -622,8 +641,8 @@ ul.typeofdev {
 														</div>
 													</div>
 													<div class="form-group">
-														<button id="addtype" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another type of use</span></button>
-														<button id="edttype" class="btn btn-warning sakto" style="display:none;margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
+														<button id="addtype" type="button" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another type of use</span></button>
+														<button id="edttype" type="button" class="btn btn-warning sakto" style="display:none;margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
 													</div>
 
 													<label>Service Provided</label>
@@ -658,21 +677,21 @@ ul.typeofdev {
 											</div>
 										</div>
 										<div class="form-group">
-											<button id="addprovservices" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another service</span></button>
-											<button id="edtprovservices" class="btn btn-warning sakto" style="display:none;margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
+											<button id="addprovservices" type="button" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another service</span></button>
+											<button id="edtprovservices" type="button" class="btn btn-warning sakto" style="display:none;margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
 										</div>
 
 										<label>Type of Development</label>
 
 										<div class="form-group">
 											<div class="col-sm-12" style="padding: 0;">
-												<input type="checkbox" name="development" name="development[]" class="filled-in" id="new"> <label for="new"> New built</label>
+												<input type="checkbox" name="development[]" class="filled-in" id="new" value="New"> <label for="new"> New built</label>
 											</div>
 											<div class="col-sm-12" style="padding: 0;">
-												<input type="checkbox" name="development" name="development[]" class="filled-in" id="refurbishment"> <label for="refurbishment"> Refurbishment</label>
+												<input type="checkbox" name="development[]" class="filled-in" id="refurbishment" value="Refurbishment"> <label for="refurbishment"> Refurbishment</label>
 											</div>
 											<div class="col-sm-12" style="padding: 0;">
-												<input type="checkbox" name="development" name="development[]" class="filled-in" id="demolition"> <label for="demolition"> Demolition</label>
+												<input type="checkbox" name="development[]" class="filled-in" id="demolition" value="Demolition"> <label for="demolition"> Demolition</label>
 											</div>
 										</div>
 										<div class="form-group">
@@ -695,17 +714,20 @@ ul.typeofdev {
 											</div>
 										</div>
 										<div class="form-group">
-											<button id="addprojmem" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another project team member</span></button>
-											<button id="edtprojmem" class="btn btn-warning sakto"style="margin-top: 10px;display: none;" ><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
+											<button id="addprojmem" type="button" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another project team member</span></button>
+											<button id="edtprojmem" type="button" class="btn btn-warning sakto"style="margin-top: 10px;display: none;" ><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
 										</div>
 										<div class="form-group">
-											<button class="btn btn-warning sakto save_current"><span class="sakto2"><i class="fa fa-plus"></i> Add another project</span></button>
+											<button type="button" class="btn btn-warning sakto save_current"><span class="sakto2"><i class="fa fa-plus"></i> Add another project</span></button>
 											
 										</div>
 									</td>
 								</tr>											
 							</table>
+						
 						</div>
+						<input type="button" id='orgSave' class="btn btn-primary" name='Save' value="Save"/>
+					</form>
 						<div class="col-sm-3 company-quick-details">
 							<p><img src="{{ url('images/logo-british.jpg') }}"></p>
 							<p><button class="btn btn-warning sakto">Change Logo</button></p>

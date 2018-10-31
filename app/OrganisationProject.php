@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class OrgnisationProject extends Model
+class OrganisationProject extends Model
 {
     protected $table = 'organisation_project_tbl';
     public $primaryKey = 'op_id';

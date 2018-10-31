@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class OrgnisationServices extends Model
+class OrganisationProjectService extends Model
 {
-    protected $table = 'organisation_services_tbl';
-    public $primaryKey = 'os_id';
+    protected $table = 'organisation_project_service_tbl';
+    public $primaryKey = 'ops_id';
     public $timestamps = false;
     protected $fillable = [
-        'org_id',
+        'op_id',
         'service',
         'from',
         'until'
