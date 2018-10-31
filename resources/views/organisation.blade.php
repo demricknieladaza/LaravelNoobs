@@ -582,7 +582,7 @@ ul.typeofdev {
 													<div class="form-group">
 														<div class="col-sm-6" style="padding: 0;">
 															<select name="type_name" class="form-control sel" style="width: 100%;">
-																<option value="" disabled selected>Select service</option> 
+																<option value="" disabled selected>Select type of use</option> 
 																<?php
 																$Service = array(
 																	"Residential","Commercial ","Retail","Leisure","Sports and venues","Hotel","Industrial","Education","Healthcare","Defence","Aviation","Highways","Bridges","Rail","Water","Oil,gas and chemical", "Office"
@@ -680,7 +680,6 @@ ul.typeofdev {
 										</div>
 										<div class="form-group">
 											<button class="btn btn-warning sakto"><span class="sakto2"><i class="fa fa-plus"></i> Add another project</span></button>
-											
 										</div>
 									</td>
 								</tr>											
