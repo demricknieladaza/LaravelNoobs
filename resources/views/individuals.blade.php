@@ -774,7 +774,7 @@ ul.typeofdev {
 										<p><img src="{{ url('images/logo-british.jpg') }}"></p>
 										<p>
 											<input type="button" class="btn btn-warning sakto" id="loadFileXml" value="Upload image" onclick="document.getElementById('file').click();" />
-											<input type="file" style="display:none;" id="file" accept="image/*" name="file"/>
+											<input type="file" style="display:none;" id="file" accept="image/*" auto="auto" name="file"/>
 										</p>
 									</div>
 
@@ -824,22 +824,32 @@ ul.typeofdev {
 		function removeimg(id)
 		{
 			alert(id);
+
+			$('#upload_file')[0].files[id];
 		}
 
 		function preview_image() 
 		{
+			$('#image_preview').html('');
 			var total_file=document.getElementById("upload_file").files.length;
 			var filesni=document.getElementById("upload_file").files;
-			
-			for(var i=0;i<total_file;i++)
-			{
-				// console.log(filesni[i]['name']);
-				$('#image_preview').append("<div style='padding: 5px' class='col-sm-3'><img width='100px' height='100px' src='"+URL.createObjectURL(event.target.files[i])+"'><a class='alo' data-id='"+filesni[i]['name']+"'>Remove</a></div>");
-				filesniss.push(filesni[i]);
+			// $('#image_preview').load(document.URL +  ' #image_preview');
+			if(total_file >= 10){
+				alert("maximum upload file is 10 images only!");
 			}
+			else{
+				for(var i=0;i<total_file;i++)
+				{
+					// console.log(filesni[i]['name']);
+					$('#image_preview').append("<div style='padding: 5px' class='col-sm-3'><img width='100px' height='100px' src='"+URL.createObjectURL(event.target.files[i])+"'></div>");
+					filesniss.push(filesni[i]);
+				}
+			}
+			
+			//<a class='alo' data-id='"+filesni[i]['name']+"'>Remove</a>
 			// console.log(filesniss);
 			// console.log(filesni);
-			runjq();
+			// runjq();
 		}
 	</script>
 

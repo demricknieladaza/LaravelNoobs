@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/bxslider.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/proj_dash.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/dropzone.css')}}">
     {{-- <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-datepicker.css')}}"> --}}
     <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-datepicker.min.css')}}">
     {{-- <link rel="stylesheet" type="text/css" href="{{asset('css/datepicker.css')}}"> --}}
@@ -33,6 +34,7 @@
     <script type="text/javascript" src="{{asset('js/bootstrap-datepicker.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/shield.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/canvas.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/dropzone.js')}}"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css"> -->
 	{{-- <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/bootstrap.datepicker/0.1/css/datepicker.css"> --}}
