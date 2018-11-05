@@ -32,6 +32,21 @@ class OrganisationController extends Controller
         $organisation = new Organisation;
         $organisation->company_name = $request->company_name;
         $organisation->office_address = $request->office_address;
+
+        if($request->hasFile('logo_img')){
+            $filenameWithExt = $request->file('logo_img')->getClientOriginalName();
+
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+            $extension = $request->file('logo_img')->getClientOriginalExtension();
+
+            $filenameToStore = $filename.'_'.time().'_'.'.'.$extension;
+            
+            $path = $request->file('logo_img')->storeAs('public/organisation/logo', $filenameToStore); 
+            $organisation->logo = $filenameToStore;
+        }
+
+        
         $organisation->user_id = $user;
         $organisation->save();
 
@@ -75,7 +90,26 @@ class OrganisationController extends Controller
         $devchecked = substr($devchecked, 0, -1);
         $orgproj->type_of_development = $devchecked;
         $orgproj->project_description = $request->project_description;
+
+        $name_of_files = "";
+        $files = $request->file('project_images');
+        foreach($files as $file){
+            $filenameWithExt = $file->getClientOriginalName();
+    
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        
+            $extension = $file->getClientOriginalExtension();
+        
+            $filenameToStore = $filename.'_'.time().'_'.'.'.$extension;
+            
+            $path = $file->storeAs('public/organisation/projectImages', $filenameToStore); 
+            $name_of_files .= $filenameToStore . "/";
+        }
+
+        $name_of_files = substr($name_of_files, 0, -1);
+        $orgproj->project_images = $name_of_files;
         $orgproj->save();
+
 
 
         $org_use = $request->typeofuse;
