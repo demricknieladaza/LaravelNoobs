@@ -142,6 +142,16 @@ ul.typeofdev {
 	var projcounter = 0;
 
 	$(document).ready(function(){
+        $('input[type="file"]').change(function(e){
+            var fileName = e.target.files[0].name;
+			alert(fileName);
+        });
+		$('#project_img_btn').click(function(){
+			$('#project_img').click();
+		});
+		$('#change_logo_btn').click(function(){
+			$('#change_logo').click();
+		});
 		$('#orgSave').click(function(){
 			var serv = JSON.stringify(services);
 			var awa = JSON.stringify(awards);
@@ -158,7 +168,6 @@ ul.typeofdev {
 				}
 			);
 			var dev = JSON.stringify(devchecked);
-			alert('LLLLLL');
 			var orgData = new FormData(document.getElementById('orgForm'));
 			orgData.append('services', serv);
 			orgData.append('awards', awa);
@@ -178,7 +187,7 @@ ul.typeofdev {
 				}
 
 			});
-			// console.log(orgData);
+			console.log(orgData);
 		});
 		$('.date').datepicker({
 			orientation: "bottom left",
@@ -698,7 +707,8 @@ ul.typeofdev {
 											<textarea class="form-control" name="project_description" rows="10" placeholder="Enter Project Description"></textarea>
 										</div>
 										<div class="form-group">
-											<button class="btn btn-warning sakto"><span class="sakto2"><i class="fa fa-plus"></i> Upload Images</span></button>
+											<button id="project_img_btn" type="button" class="btn btn-warning sakto"><span class="sakto2"><i class="fa fa-plus"></i> Upload Images</span></button>
+											<input id="project_img" style="display: none;" type="file" class="btn btn-warning sakto" name="project_images[]" multiple/>
 										</div>
 										<div class="form-group">
 											<div class="col-sm-6" style="padding: 0;">
@@ -718,20 +728,21 @@ ul.typeofdev {
 											<button id="edtprojmem" type="button" class="btn btn-warning sakto"style="margin-top: 10px;display: none;" ><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
 										</div>
 										<div class="form-group">
-											<button type="button" class="btn btn-warning sakto save_current"><span class="sakto2"><i class="fa fa-plus"></i> Add another project</span></button>
-											
+											<button type="button" class="btn btn-warning sakto save_current"><span class="sakto2"><i class="fa fa-plus"></i> Add another project</span></button>	
 										</div>
 									</td>
 								</tr>											
 							</table>
 						
 						</div>
-						<input type="button" id='orgSave' class="btn btn-primary" name='Save' value="Save"/>
-					</form>
+
 						<div class="col-sm-3 company-quick-details">
 							<p><img src="{{ url('images/logo-british.jpg') }}"></p>
-							<p><button class="btn btn-warning sakto">Change Logo</button></p>
+							<p><button id="change_logo_btn" type="button" class="btn btn-warning sakto">Change Logo</button></p>
+							<input type="file" id="change_logo" name="logo_img" style="display: none;"/>
+							<input type="button" id='orgSave' class="btn btn-primary" name='Save' value="Save"/>
 						</div>
+					</form>
 					</div>
 				</div>
 			</div>
