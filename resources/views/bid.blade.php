@@ -204,6 +204,9 @@
 				}
 			});
 		});
+		$('#ind_save').click(function(){
+
+		})
 	});
 </script>
 <script type="text/javascript">
@@ -588,8 +591,8 @@
 					<p>Your  query  will  be  sent  to  the  Employer  and  published  on  the  project  page,  visible  for  everyone,  once  you  have  received  a  response. This process cannot be undone.</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" id="submitBid" class="btn btn-info" data-dismiss="modal">Go Back</button>
-					<button type="button" class="btn btn-success">Submit</button>
+					<button type="button"  class="btn btn-info" data-dismiss="modal">Go Back</button>
+					<button type="button" id="submitBid" class="btn btn-success">Submit</button>
 				</div>
 			</div>
 		</div>
@@ -640,6 +643,7 @@
 							</div>
 						
 					</div>
+					
 					{{-- <input type="button" id="next" value="Next" onclick="validateFormSection()" /> --}}
 					<div id="section2" class="tab-pane fade tender-container">
 						<!-- <div class="form-group" style="text-align: right;">
@@ -985,487 +989,32 @@
 						</div>
 					</div>
 					<div id="section3" class="tab-pane fade tender-container">
+					
 						<h3 class="bid-form-title">Individuals</h3>
-							<div class="row" style="padding-bottom:10px;">
-								<div class="col-sm-4">
-									Name
-								</div>
-								<div class="col-sm-8">
-									<div class="form-group">
-										<div class="col-sm-6" style="padding:0;">
-											<input type="text" name="" class="form-control" placeholder="First name">
-										</div>
-										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-											<input type="text" name="" class="form-control" placeholder="Surname">
-										</div>
-									</div>
-								</div>
-							</div>
-						<div class="kuwestion">
-							<div class="inputscheck">
-							<div class="row">
-								<div class="col-sm-12">
-									<div class="row" style="padding-bottom: 10px;">
-										<div class="col-sm-4">
-											<div class="form-group">
-												Image
-											</div>
-										</div>
-										<div class="col-sm-8" >						
-											<div class="form-group">	
-												<div class="field" align="left">
-												  <strong>Upload your images</strong>
-												  <input type="file" id="file1" name="file1[]" multiple />
-												</div>
-						                    </div>
-								        </div>
-						            </div>
-						           <div class="row" style="padding-bottom:10px;">
-													<div class="col-sm-4">
-													Accredation</div>
-													<div class="col-sm-8">
-													<div class="form-group">
-													<div class="col-sm-6" style="padding:0;">
-													<div class="autocomplete" >
-    													<input id="myInput" class="form-control" type="text" name="accredation" placeholder="Accredation">
- 													 </div>
+						<ul id="servicelistindi" class="servicelist">
+							<?php
+							foreach ($individuals as $key ) {
+								echo "<li><div class='form-check'>
+										<label>
+											<input type='checkbox' name='individuals[]' value='".$key->first_name."".' '."".$key->last_name."'><span class='label-text'>".$key->first_name."".' '."".$key->last_name."</span>
+										</label>
+									</div></li>";
+							}
 
-													</div>
-													<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-													<select name='degree_year' class="form-control">
-													<option value="">Year awarded</option>
-													<?php 
-													$cur_year = date('Y');
-													$years = [];
-													for ($i=0; $i<=50; $i++) {
-													array_push($years,$cur_year--);
-													}
-													foreach ($years as $year ) {
-													echo "<option value='".$year."'>".$year."</option>";
-													}
-													?>
-													</select>
-													</div>
-													</div>
-													</div>
-													</div>
-
+							?>
+						</ul>
 									
-									<div class="row">
-										<div class="col-sm-4">
-											
-										</div>
-										<div class="col-sm-8">
-											<div id="addedaccreditation">
-												
-											</div>
-											<div class="">
-											    <button class="btn btn-primary" id="addaccreditation">Add another accreditation</button>
-											    <div></div>
-											</div>
-										</div>
-									</div><br>
-									 <div class="row" style="padding-bottom:10px;">
-													<div class="col-sm-4">
-													Degree</div>
-													<div class="col-sm-8">
-													<div class="form-group">
-													<div class="col-sm-6" style="padding:0;">
-													<div class="autocomplete1" >
-    													<input id="myInput1" class="form-control" type="text" name="degree" placeholder="Degree">
- 													 </div>
-
-													</div>
-													<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-														<select name='degree_year' class="form-control">
-											    <option value="">Year awarded</option>
-											    <?php 
-													$cur_year = date('Y');
-													$years = [];
-												    for ($i=0; $i<=50; $i++) {
-												        array_push($years,$cur_year--);
-												    }
-												    foreach ($years as $year ) {
-												    	echo "<option value='".$year."'>".$year."</option>";
-												    }
-												?>
-											</select>
-													
-													</div>
-													</div>
-													</div>
-													</div>
-
-
-                                     
-									<div class="row">
-										<div class="col-sm-4"></div>
-										<div class="col-sm-8">
-											<input type="text" name="" class="form-control" placeholder="Name of degree">
-										</div>
-									</div>
-									<br>
-									<div class="row">
-										<div class="col-sm-4">
-											
-										</div>
-										<div class="col-sm-8">
-											<div id="addeddegree">
-												
-											</div>
-											<div class="">
-											    <button type="button" class="btn btn-primary" id="adddegree">Add another degree</button>
-											    <div></div>
-											</div>
-											</div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-4">
-											Seniority
-										</div>
-										<div class="col-sm-8">
-
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Enter level of seniority">
-											</div>
-										</div>
-									</div>
-																<div class="row" style="padding-bottom:10px;">
-								<div class="col-sm-4">
-								Awards
-								</div>
-								<div class="col-sm-8">
-									<div class="form-group">
-										<div class="col-sm-6" style="padding:0;">
-											<input type="text" name="" class="form-control" placeholder="Enter name of award">
-										</div>
-										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-											<input type="text" name="" class="form-control" placeholder="Awarded by">
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-4"></div>
-								<div class="col-sm-8">
-									<div class="form-group">
-										<select name="awards_year" class="form-control">
-														<option value="">Year awarded</option>
-													<?php 
-														$cur_year = date('Y');
-														$years = [];
-													    for ($i=0; $i<=50; $i++) {
-													        array_push($years,$cur_year--);
-													    }
-													    foreach ($years as $year ) {
-													    	echo "<option value='".$year."'>".$year."</option>";
-													    }
-													?>
-													</select>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-4"></div>
-								<div class="col-sm-8">
-									<div class="form-group">
-										<textarea id="text-input2" cols="25" rows="3" placeholder="Enter the details"></textarea>
-												<div class="word-counter">
-												     <label id="count-label2">3000</label>/3000 words
-												</div>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-4"></div>
-								<div class="col-sm-8">
-									<div class="form-group">
-									<div class="input_fields_piste">
-												    <button type="button" class="btn btn-primary" id="add_award" >Add another award</button>
-												</div>
-									</div>
-								</div>
-							</div>
-									<div class="row">
-										<div class="col-sm-4">
-											<div class="form-group">
-											 Services offered
-											</div>
-										</div>
-										<div class="col-sm-8">
-											<div class="form-group">
-												<ul id="servicelistindi" class="servicelist">
-												<?php
-												$Service = array(
-													"Architect", "Structural engineer", "Service engineer",
-													"Fire engineer", "Acoustic engineer", "Principal designer","Facade engineer" , "Building control", "Lighting consultant", "Security consultant", "Planning consultant" , "Sustainability consultant", "BIM consultant", "Quantity surveyor", "Project manager"
-												);
-												sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
-												foreach ($Service as $key ) {
-												    echo "<li><div class='form-check'>
-															<label>
-																<input type='checkbox' name='offeredservicesindi[]' value='".$key."'><span class='label-text'>".$key."</span>
-															</label>
-														</div></li>";
-												}
-
-												?>
-												</ul>
-											</div>
-											<div class="form-group divaddservbid">
-												<input type="text" class="form-control hid adservindi" name="adserv">
-											    <button type="button" class="btn btn-primary notherbutindi" onclick="showaddserindi()">Add another service</button>
-											    <button type="button" class="btn btn-primary hid adservindi" id="addservicebutindi" onclick="addserviceindi()">Add service</button>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-4">
-											Project Experience
-										</div>
-										<div class="col-sm-8">
-											<div class="form-group">
-												<input type="text" name="" id="consvalue1" class="form-control" placeholder="Enter project title ">
-											</div>
-
-										<div class="form-group">
-								               <input type="checkbox" name="" value="cheked" class="filled-in" id="valconfi1" ><label for="valconfi1">Value confidential </label>
-							              </div>
-										</div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-4">
-											<div class="form-group">
-												
-											</div>
-										</div>
-										<div class="col-sm-8">
-											<div class="form-group">
-												<select name="" class="form-control">
-													<option value="" disabled selected>Select types of uses</option>
-													<?php 
-
-													$uses = array("Residential",
-																	"Commercial",
-																	"Retial",
-																	"Leisure",
-																	"Sports and Venues",
-																	"Hotel",
-																	"Industrial",
-																	"Education",
-																	"Healthcare",
-																	"Defence",
-																	"Avaition",
-																	"Highways",
-																	"Bridges",
-																	"Rail",
-																	"Water",
-																	"Power",
-																	"Oil,Gas And Chemicals"
-
-																);
-
-													sort($uses,SORT_NATURAL | SORT_FLAG_CASE);
-
-													foreach ($uses as $key) {
-													  echo "<option value='".$key."'>".$key."</option>";
-													}
-
-													 ?>
-													<option>Other</option>
-												</select>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-4">
-											
-										</div>
-										<div class="col-sm-8">
-												<div class="input_fields_project1">
-												    <button class="btn btn-primary" id="add_field_project1">Add another type of uses</button>
-												    <div></div>
-												</div>
-											</div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-4">
-											<div class="form-group">
-												
-											</div>
-										</div>
-										<div class="col-sm-8">
-											<div class="form-group">
-												<select name="" class="form-control">
-													<option value="" disabled selected>Select service</option>
-													<?php 
-														$Services = array(
-															"Architect","Structural engineer","Service engineer","Fire engineer","Acoustic engineer","Principal Designer","Facade engineer","Building control","Lighting consultant","Security consultant","Planning consultant","Sustainability consultant","BIM consultant","Quantity Surveyor","Project manager"
-														);
-														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
-														foreach ($Services as $key ) {
-														    echo "<option value='".$key."'>".$key."</option>";
-														}
-
-													 ?>
-													<option>Other</option>
-												</select>
-											</div>
-										</div>
-									</div>
-																<div class="row" style="padding-bottom:10px;">
-								<div class="col-sm-4">
-							
-								</div>
-								<div class="col-sm-8">
-									<div class="form-group">
-										<div class="col-sm-6" style="padding:0;">
-											<div class="input-group date" id="datepicker7" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
-
-													 <input class="form-control" type="text" placeholder="Provided this service from" readonly="readonly" name="date" >	  
-													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-												</div>
-										</div>
-										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-											<div class="input-group date" id="datepicker8" data-date="02-2012" 
-												         data-date-format="mm-yyyy">
-
-													 <input class="form-control" type="text" placeholder="Provided this service until" readonly="readonly" name="date" >	  
-													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
-												</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-									<div class="row">
-										<div class="col-sm-4">
-											
-										</div>
-										<div class="col-sm-8">
-												<div class="input_fields_project1">
-												    <button class="btn btn-primary" id="add_field_project1">Add another service</button>
-												    <div></div>
-												</div>
-											</div>
-										</div><br>
-									<div class="row">
-										<div class="col-sm-4">
-											<div class="form-group">
-												
-											</div>
-										</div>
-										<div class="col-sm-8">
-											<div class="form-group">
-												<select name="" class="form-control">
-													<option value="" disabled selected>Select type of development</option>
-													<?php 
-														$Services = array("New built","Refurbishment","Demolition"
-															
-														);
-														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
-														foreach ($Services as $key ) {
-														    echo "<option value='".$key."'>".$key."</option>";
-														}
-
-													 ?>
-													<option>Other</option>
-												</select>
-											</div>
-										</div>
-									</div>
-								
-								<div class="row">
-										<div class="col-sm-4">
-											
-										</div>
-										<div class="col-sm-8">
-												<div class="input_fields_project1">
-												    <button class="btn btn-primary" id="add_field_project1">Add another type of uses</button>
-												    <div></div>
-												</div>
-											</div>
-									</div><br>
-									<div class="row">
-										<div class="col-sm-4"></div>
-										<div class="col-sm-8">
-													<textarea id="text-input3" cols="25" rows="3" placeholder="Enter project description"></textarea>
-												<div class="word-counter">
-												     <label id="count-label3">3000</label>/3000 words
-												</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-4">
-
-										</div>
-										<div class="col-sm-8" >	
-											<div class="form-group">	
-												<div class="field" align="left">
-												  <strong>Upload your images</strong>
-												  <input type="file" id="file2" name="file2[]" multiple />
-												</div>
-						                    </div>
-								        </div>
-						            </div>
-						           <div class="row" style="padding-bottom:10px;">
-						           	<div class="col-sm-4"></div>
-								<div class="col-sm-8">
-									<div class="form-group">
-										<div class="col-sm-6" style="padding:0;">
-											<select name='ddlSelectYear' class="form-control">
-										            <option value="">Select project team member</option>
-										       <?php 
-														$Services = array(
-															"Architect","Structural engineer","Service engineer","Fire engineer","Acoustic engineer","Principal designer","Facade engineer","Building Control","Lighting consultant","Security consultant","Planning consultant","Sustainability consultant","BIM consultant","Quantity surveyor","Project manager"
-														);
-														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
-														foreach ($Services as $key ) {
-														    echo "<option value='".$key."'>".$key."</option>";
-														}
-
-													 ?>
-													 <option>Others</option>
-										        </select>
-										</div>
-										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-												<select name='ddlSelectYear' class="form-control">
-										            <option value="">Company name</option>
-										       <?php 
-														$Services = array(
-															
-														);
-														sort($Services, SORT_NATURAL | SORT_FLAG_CASE);
-														foreach ($Services as $key ) {
-														    echo "<option value='".$key."'>".$key."</option>";
-														}
-
-													 ?>
-													 <option>Others</option>
-										        </select>
-										</div>
-										</div>
-									</div>
-								</div>
-							
-
-									
-									<div class="form-group butcent">
-										<button type="button" data-toggle="tab" href="#section4" id="checkinpbut" name="Next" class="btn btn-primary butsize ">Next</button>
-										<button type="button" name="Save" value="Save" class="btn  butsize color">Save</button>
-									</div>
-								</div>
-							</div>
+						<div class="form-group butcent">
+							<button type="button" data-toggle="tab" href="#section4" id="checkinpbut" name="Next" class="btn btn-primary butsize ">Next</button>
+							<button type="button" id="ind_save" name="Save" value="Save" class="btn  butsize color">Save</button>
 						</div>
-					</div>
 						
 					</div>
 					<div id="section4" class="tab-pane fade tender-container">
 						<form method="POST" action="{{ url('winwork/bid/'.$tender->tender_id.'/approach') }}" enctype="multipart/form-data">
 							@csrf
 						<h3 class="bid-form-title">Approach</h3>
-						<input type="hidden" name="app_tender_id" value="{{ $tender->tender_id }}">
+						<input type="hidden" name="tender_id" value="{{ $tender->tender_id }}">
 						<div class="kuwestion">
 							<div class="inputscheck">
 							<div class="row">
@@ -2949,22 +2498,13 @@ $('textarea').keyup(function() {
 		$('#submitfrm').click(function()
 		{
 			$("#pngsubmit").modal('toggle');
-			jQuery.ajax({
-				url: "{{ url('submit_bid') }}",
-				method: 'post',
-				data: {
-					project_id: jQuery("input[name='project_record_id']").val(),
-					tender_id: jQuery("input[name='tender_id']").val()
-				},
-				success: function(result){
-					console.log(result);
-				}
-			});
+
 		});
 
 		$('#submitBid').click(function()
 		{
-			jQuery.ajax({
+			alert('clicked!');
+			$.ajax({
 				url: "{{ url('submit_bid') }}",
 				method: 'post',
 				data: {

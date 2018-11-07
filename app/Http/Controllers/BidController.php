@@ -13,6 +13,7 @@ use App\DraftedTenders;
 use App\TenderQuery;
 use App\Individuals;
 use App\TenderPreQualificationQuestionnaire;
+use App\Bids;
 use App\BidApproach;
 use App\BidQualityAssurance;
 use App\TenderAppointment;
@@ -74,7 +75,7 @@ class BidController extends Controller
 
         $project = ProjectInformations::where('project_record_id', $tender->project_record_id)->first();
 
-        $indi = Individuals::where('user_id', $user)->get();
+        $indi = Individuals::where('user_id', $user)->orderBy('first_name', 'asc')->get();
 
         $quest = TenderPreQualificationQuestionnaire::where('tender_id', $tender_id)->first();
 
@@ -140,11 +141,18 @@ class BidController extends Controller
 
     public function submitBid(Request $request){
         
+        //Submitted Tenders
         $sub = new SubmittedTenders;
         $sub->user_id = $request->session()->get('id');
         $sub->project_record_id = $request->get('project_id');
         $sub->tender_id = $request->get('tender_id');
         $sub->save();
+        //Bids
+        $bid = new Bids;
+        $bid->project_record_id = $request->get('project_id');
+        $bid->tender_id = $request->get('tender_id');
+        $bid->user_id = $request->session()->get('id');
+        $bid->save();
 
         $tender = Tender::find($request->get('tender_id'));
         $tender->bids_received = $tender->bids_received + 1;
