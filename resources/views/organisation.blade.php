@@ -140,8 +140,43 @@ ul.typeofdev {
 	var typecounter = 0;
 	var provcounter = 0;
 	var projcounter = 0;
-
+	var org = [];
 	$(document).ready(function(){
+		var serv = <?php echo $services; ?>;
+		var awar = <?php echo $awards; ?>;
+		var proj = <?php echo $projects; ?>;
+		console.log(proj);
+		// console.log(org);
+		if(serv.length > 0){
+			$.each( serv, function( key, value ) {
+				$("ul#addedserv").append('<li data-myid="'+value['os_id']+'" data-id="'+key+'" onclick="editservices('+key+')">'+value['service']+'</li>');
+				var newservices = {
+					name: value['service'],
+					dfrom: value['from'],
+					duntil: value['until'],
+					editable: 'true',
+					myid: value['os_id']
+				};
+				services.push(newservices);
+				// alert(services.length);
+			});
+		}
+
+		if(awar.length > 0){
+			$.each( awar, function( key, value ) {
+				$("ul#addedawards").append('<li data-myid="'+value['oa_id']+'" data-id="'+key+'" onclick="editaward('+key+')">'+value['award_name']+'</li>');
+				var newservices = {
+					name: value['award_name'],
+					details: value['award_details'],
+					year: value['award_year'],
+					editable: 'true',
+					myid: value['oa_id']
+				};
+				awards.push(newservices);
+				// alert(services.length);
+			});
+		}
+		
         $('input[type="file"]').change(function(e){
             var fileName = e.target.files[0].name;
 			alert(fileName);
@@ -179,15 +214,15 @@ ul.typeofdev {
 				url: '{{ url("organisationStore") }}',
 				type: 'POST',
 				data: orgData,
-				dataType: 'json',
 				processData: false,
 				contentType: false,
 				success:function(result){
-					console.log(result);
+					// console.log(result);
+					location.reload();
 				}
 
 			});
-			console.log(orgData);
+			// console.log(orgData);
 		});
 		$('.date').datepicker({
 			orientation: "bottom left",
@@ -203,11 +238,12 @@ ul.typeofdev {
 				alert('Lacking fields')
 			}
 			else{
-				$("ul#addedserv").append('<li data-id="'+counter+'" onclick="editservices('+counter+')">'+$('select[name="servicechoice"]').val()+'</li>');
+				$("ul#addedserv").append('<li data-myid="-1" data-id="'+(services.length)+'" onclick="editservices('+(services.length)+')">'+$('select[name="servicechoice"]').val()+'</li>');
 				var newservices = {
 					name: $('select[name="servicechoice"]').val(),
 					dfrom: $('input[name="servdatefrom"]').val(),
-					duntil: $('input[name="servdateuntil"]').val()
+					duntil: $('input[name="servdateuntil"]').val(),
+					editable: 'false'
 				};
 				services.push(newservices);
 				$('select[name="servicechoice"]').val('');
@@ -225,12 +261,11 @@ ul.typeofdev {
 			}
 			else{
 				var id = $(this).attr('data-id');
-				$('li[data-id="'+id+'"]').text($('select[name="servicechoice"]').val());
-				services[id] = {
-					name: $('select[name="servicechoice"]').val(),
-					dfrom: $('input[name="servdatefrom"]').val(),
-					duntil: $('input[name="servdateuntil"]').val()
-				};
+				$('ul#addedserv li[data-id="'+id+'"]').text($('select[name="servicechoice"]').val());
+				services[id]['name'] = $('select[name="servicechoice"]').val();
+				services[id]['dfrom'] = $('input[name="servdatefrom"]').val();
+				services[id]['duntil'] = $('input[name="servdateuntil"]').val();
+
 				$('select[name="servicechoice"]').val('');
 				$('input[name="servdatefrom"]').val('');
 				$('input[name="servdateuntil"]').val('');
@@ -247,11 +282,12 @@ ul.typeofdev {
 				alert('Lacking fields')
 			}
 			else{
-				$("ul#addedawards").append('<li data-id="'+awardcounter+'" onclick="editaward('+awardcounter+')">'+$('input[name="award_name"]').val()+'</li>');
+				$("ul#addedawards").append('<li data-id="'+awards.length+'" onclick="editaward('+awards.length+')">'+$('input[name="award_name"]').val()+'</li>');
 				var newaward = {
 					name: $('input[name="award_name"]').val(),
 					details: $('input[name="award_details"]').val(),
-					year: $('select[name="year_awarded"]').val()
+					year: $('select[name="year_awarded"]').val(),
+					editable: 'false'
 				};
 				awards.push(newaward);
 				$('input[name="award_name"]').val('');
@@ -269,12 +305,10 @@ ul.typeofdev {
 			}
 			else{
 				var id = $(this).attr('data-id');
-				$('li[data-id="'+id+'"]').text($('input[name="award_name"]').val());
-				awards[id] = {
-					name: $('input[name="award_name"]').val(),
-					details: $('input[name="award_details"]').val(),
-					year: $('select[name="year_awarded"]').val()
-				};
+				$('ul#addedawards li[data-id="'+id+'"]').text($('input[name="award_name"]').val());
+				awards[id]['name'] = $('input[name="award_name"]').val();
+				awards[id]['details'] = $('input[name="award_details"]').val();
+				awards[id]['year'] = $('select[name="year_awarded"]').val();
 				$('input[name="award_name"]').val('');
 				$('input[name="award_details"]').val('');
 				$('select[name="year_awarded"]').val('');
@@ -292,7 +326,7 @@ ul.typeofdev {
 				alert('Lacking fields')
 			}
 			else{
-				$("ul#addedtype").append('<li data-id="'+typecounter+'" onclick="edittype('+typecounter+')">'+$('select[name="type_name"]').val()+'</li>');
+				$("ul#addedtype").append('<li data-id="'+typeofuse.length+'" onclick="edittype('+typeofuse.length+')">'+$('select[name="type_name"]').val()+'</li>');
 				var newtype = {
 					name: $('select[name="type_name"]').val(),
 					area:$('input[name="area"]').val(),
@@ -314,12 +348,11 @@ ul.typeofdev {
 			}
 			else{
 				var id = $(this).attr('data-id');
-				$('li[data-id="'+id+'"]').text($('select[name="type_name"]').val());
-				typeofuse[id] = {
-					name: $('select[name="type_name"]').val(),
-					area:$('input[name="area"]').val(),
-					units: $('input[name="units"]').val()
-				};
+				$('ul#addedtype li[data-id="'+id+'"]').text($('select[name="type_name"]').val());
+				typeofuse[id]['name'] = $('select[name="type_name"]').val();
+				typeofuse[id]['area'] = $('input[name="area"]').val();
+				typeofuse[id]['units'] = $('input[name="units"]').val();
+
 				$('select[name="type_name"]').val('');
 				$('input[name="area"]').val('');
 				$('input[name="units"]').val('');
@@ -337,7 +370,7 @@ ul.typeofdev {
 				alert('Lacking fields')
 			}
 			else{
-				$("ul#addedprovserv").append('<li data-id="'+provcounter+'" onclick="editprovservices('+provcounter+')">'+$('select[name="provservicechoice"]').val()+'</li>');
+				$("ul#addedprovserv").append('<li data-id="'+provservices.length+'" onclick="editprovservices('+provservices.length+')">'+$('select[name="provservicechoice"]').val()+'</li>');
 				var newservices = {
 					name: $('select[name="provservicechoice"]').val(),
 					dfrom: $('input[name="provdfrom"]').val(),
@@ -359,7 +392,7 @@ ul.typeofdev {
 			}
 			else{
 				var id = $(this).attr('data-id');
-				$('li[data-id="'+id+'"]').text($('select[name="provservicechoice"]').val());
+				$('ul#addedprovserv li[data-id="'+id+'"]').text($('select[name="provservicechoice"]').val());
 				provservices[id] = {
 					name: $('select[name="provservicechoice"]').val(),
 					dfrom: $('input[name="provdfrom"]').val(),
@@ -382,7 +415,7 @@ ul.typeofdev {
 				alert('Lacking fields')
 			}
 			else{
-				$("ul#addedprojmem").append('<li data-id="'+projcounter+'" onclick="editprojmem('+projcounter+')">'+$('select[name="member"]').val()+'</li>');
+				$("ul#addedprojmem").append('<li data-id="'+projmem.length+'" onclick="editprojmem('+projmem.length+')">'+$('select[name="member"]').val()+'</li>');
 				var newservices = {
 					name: $('select[name="member"]').val(),
 					compname: $('input[name="compname"]').val()
@@ -402,11 +435,10 @@ ul.typeofdev {
 			}
 			else{
 				var id = $(this).attr('data-id');
-				$('li[data-id="'+id+'"]').text($('select[name="member"]').val());
-				projmem[id] = {
-					name: $('select[name="member"]').val(),
-					compname: $('input[name="compname"]').val()
-				};
+				$('ul#addedprojmem li[data-id="'+id+'"]').text($('select[name="member"]').val());
+				projmem[id]['name'] = $('select[name="member"]').val();
+				projmem[id]['compname']	= $('input[name="compname"]').val();
+
 				$('select[name="member"]').val('');
 				$('input[name="compname"]').val('');
 				$('#edtprojmem').css('display','none');
@@ -415,7 +447,89 @@ ul.typeofdev {
 			// console.log(services);
 		});
 
+		$('.editproj').click(function(){
+			var projid = $(this).attr('data-id');
+			$('#refre').css('display','none');
+			// console.log('{{ url("getproj") }}'+'/'+projid);
+			$.ajax({
+				url: '{{ url("getproj") }}'+'/'+projid,
+				type: 'get',
+				processData: false,
+				contentType: false,
+				success:function(result){
+					
+					$('#refre').load(document.URL +  ' #refre *')
+					// $('#refre').ready(function(){
+					// 	nalitysaproject(result);
+					// });
+					setTimeout(function() { nalitysaproject(result); }, 2000);
+					// location.reload();
+					// alert(url);
+				}
+
+			});
+		});
+
 	});
+
+	function nalitysaproject(proj){
+		console.log(proj);
+		typeofuse = [];
+		provservices = [];
+		projmem = [];
+		$('input[name="project_title"]').val(proj['proj'][0]['project_title']);
+		$('input[name="project_value"]').val(proj['proj'][0]['project_value']);
+		$('#saveproj').css('display','block');
+		$('#addotherproj').css('display','none');
+		$('#refre').css('display','block');
+		if(proj['use'].length > 0){
+			$.each( proj['use'], function( key, value ) {
+				$("ul#addedtype").append('<li data-myid="'+value['op_id']+'" data-id="'+key+'" onclick="edittype('+key+')">'+value['service']+'</li>');
+				var newservices = {
+					name: value['service'],
+					area: value['area'],
+					units: value['units'],
+					editable: 'true',
+					myid: value['op_id']
+				};
+				typeofuse.push(newservices);
+				// alert(services.length);
+			});
+		}
+		if(proj['serv'].length > 0){
+			$.each( proj['serv'], function( key, value ) {
+				$("ul#addedprovserv").append('<li data-myid="'+value['op_id']+'" data-id="'+key+'" onclick="editprovservices('+key+')">'+value['service']+'</li>');
+				var newservices = {
+					name: value['service'],
+					dfrom: value['from'],
+					duntil: value['until'],
+					editable: 'true',
+					myid: value['op_id']
+				};
+				provservices.push(newservices);
+				// alert(services.length);
+			});
+		}
+		if(proj['team'].length > 0){
+			$.each( proj['team'], function( key, value ) {
+				$("ul#addedprojmem").append('<li data-myid="'+value['op_id']+'" data-id="'+key+'" onclick="editprojmem('+key+')">'+value['position']+'</li>');
+				var newservices = {
+					name: value['position'],
+					compname: value['company'],
+					editable: 'true',
+					myid: value['op_id']
+				};
+				projmem.push(newservices);
+				// alert(services.length);
+			});
+		}
+		var arr = proj['proj'][0]['type_of_development'].split(',');
+		$.each(arr, function(k,v)
+		{
+			$('input[name="development[]"][value="'+v+'"]').prop("checked",true);
+		});
+		$('#descript').val(proj['proj'][0]['project_description']);
+	}
 
 	// ================EDIT SERVICES============
 	function editservices(id){
@@ -445,7 +559,7 @@ ul.typeofdev {
 		$('select[name="type_name"]').val(typeofuse[id]['name']);
 		$('input[name="area"]').val(typeofuse[id]['area']);
 		$('input[name="units"]').val(typeofuse[id]['units']);
-		$('#edttype').css('display','block');
+		$('#edttype').css('display','inline');
 		$('#edttype').attr('data-id',id);
 		$('#addtype').css('display','none');
 	}
@@ -455,7 +569,7 @@ ul.typeofdev {
 		$('select[name="provservicechoice"]').val(provservices[id]['name']);
 		$('input[name="provdfrom"]').val(provservices[id]['dfrom']);
 		$('input[name="provduntil"]').val(provservices[id]['duntil']);
-		$('#edtprovservices').css('display','block');
+		$('#edtprovservices').css('display','inline');
 		$('#edtprovservices').attr('data-id',id);
 		$('#addprovservices').css('display','none');
 	}
@@ -464,7 +578,7 @@ ul.typeofdev {
 		// console.log(services[id]);
 		$('select[name="member"]').val(projmem[id]['name']);
 		$('input[name="compname"]').val(projmem[id]['compname']);
-		$('#edtprojmem').css('display','block');
+		$('#edtprojmem').css('display','inline');
 		$('#edtprojmem').attr('data-id',id);
 		$('#addprojmem').css('display','none');
 	}
@@ -498,32 +612,30 @@ ul.typeofdev {
 					<button class="btn btn-warning pull-right">Print Company Information</button>
 				</div>
 			</div>
-			
 			<div class="row">					
 				<div class="col-sm-12">
 					<div class="shadow-wrapper">
-
 						<div class="clearfix"></div>
 						<div class="panel-group" id="accordion1">
 							<div class="panel">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordion2" href="#collapse7">Add Organisation<span class="pull-right caret"></span></a>
+										<a data-toggle="collapse" data-parent="#accordion2" href="#collapse7">Organisation<span class="pull-right caret"></span></a>
 									</h4>
 								</div>
 								<form id="orgForm">
-								<div id="collapse7" class="panel-collapse collapse">
+								<div id="collapse7" class="panel-collapse collapse in">
 									<div class="panel-body">
 										<div class="row">	
 											<div class="col-sm-9">				
 												<table class="table table-striped table-hover c-info-table">
 													<tr>
-														<td width="30%">Company Name</td>
-														<td><input type="text" name="company_name" class="form-control" placeholder="British Land"></td>
+														<td width="35%">Company Name</td>
+														<td><input type="text" @if (count($org)==1) value="{{ $org[0]->company_name }}" @endif name="company_name" class="form-control" placeholder="British Land"></td>
 													</tr>
 													<tr>
 														<td>Registered Office Address</td>
-														<td><input type="text" name="office_address" class="form-control" placeholder="100 Sample Road, London, W1 23Y, United Kingdom"></td>
+														<td><input type="text" @if (count($org)==1) value="{{ $org[0]->office_address }}" @endif name="office_address" class="form-control" placeholder="100 Sample Road, London, W1 23Y, United Kingdom"></td>
 													</tr>
 													<tr>
 														<td>
@@ -609,7 +721,29 @@ ul.typeofdev {
 												<td>
 													<div class="col-sm-12" style="padding: 0;">Track Record</div>
 													<div class="col-sm-12" style="padding: 0;">
-														<label>Type of use</label>
+														<ul id="addedtrack" style="list-style: none;">
+															@foreach ($projects as $proj)
+																<li data-id="{{$proj->op_id}}" class="editproj">{{$proj->project_title}}
+																</li>
+															@endforeach
+															<li>
+																<ul id="refre" style="display: none;">
+																	<li>Type of use
+																		<ul id="addedtype">
+																		</ul>
+																	</li>
+																	<li>Service provided
+																		<ul id="addedprovserv">
+																		</ul>
+																	</li>
+																	<li>Project team
+																		<ul id="addedprojmem">
+																		</ul>
+																	</li>
+																</ul>
+															</li>
+														</ul>
+														{{-- <label>Type of use</label>
 														<ul id="addedtype" style="list-style: none;">
 														</ul>
 														<label>Service Provided</label>
@@ -617,7 +751,7 @@ ul.typeofdev {
 														</ul>
 														<label>Project Team Member</label>
 														<ul id="addedprojmem" style="list-style: none;">
-														</ul>
+														</ul> --}}
 													</div>
 												</td>
 												<td>
@@ -651,6 +785,8 @@ ul.typeofdev {
 													</div>
 													<div class="form-group">
 														<button id="addtype" type="button" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another type of use</span></button>
+													</div>
+													<div class="form-group">
 														<button id="edttype" type="button" class="btn btn-warning sakto" style="display:none;margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
 													</div>
 
@@ -694,7 +830,7 @@ ul.typeofdev {
 
 										<div class="form-group">
 											<div class="col-sm-12" style="padding: 0;">
-												<input type="checkbox" name="development[]" class="filled-in" id="new" value="New"> <label for="new"> New built</label>
+												<input type="checkbox" name="development[]" class="filled-in" id="new" value="New built"> <label for="new"> New built</label>
 											</div>
 											<div class="col-sm-12" style="padding: 0;">
 												<input type="checkbox" name="development[]" class="filled-in" id="refurbishment" value="Refurbishment"> <label for="refurbishment"> Refurbishment</label>
@@ -704,7 +840,7 @@ ul.typeofdev {
 											</div>
 										</div>
 										<div class="form-group">
-											<textarea class="form-control" name="project_description" rows="10" placeholder="Enter Project Description"></textarea>
+											<textarea id="descript" class="form-control" name="project_description" rows="10" placeholder="Enter Project Description"></textarea>
 										</div>
 										<div class="form-group">
 											<button id="project_img_btn" type="button" class="btn btn-warning sakto"><span class="sakto2"><i class="fa fa-plus"></i> Upload Images</span></button>
@@ -728,7 +864,10 @@ ul.typeofdev {
 											<button id="edtprojmem" type="button" class="btn btn-warning sakto"style="margin-top: 10px;display: none;" ><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
 										</div>
 										<div class="form-group">
-											<button type="button" class="btn btn-warning sakto save_current"><span class="sakto2"><i class="fa fa-plus"></i> Add another project</span></button>	
+											<button type="button" id="saveproj" class="btn btn-warning sakto" style="display: none;"><span class="sakto2"> Save</span></button>	
+										</div>
+										<div class="form-group">
+											<button type="button" id="addotherproj" class="btn btn-warning sakto save_current"><span class="sakto2"><i class="fa fa-plus"></i> Add another project</span></button>	
 										</div>
 									</td>
 								</tr>											

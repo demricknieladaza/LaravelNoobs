@@ -62,13 +62,17 @@ Route::get('/dashboard/comp_orga', 'UsersController@comp_orga_controller');
 
 Route::get('/dashboard/comp_indi', 'UsersController@comp_indi_controller');
 
-Route::get('/dashboard/organisation', 'UsersController@organisation_controller');
+// Route::get('/dashboard/organisation', 'UsersController@organisation_controller');
+
+Route::get('/dashboard/organisation/{id}', 'OrganisationController@getmyorganisation');
 
 Route::get('/dashboard/individuals', 'UsersController@individuals_controller');
 
 Route::get('/dashboard/individuals', 'UsersController@individuals_controller');
 
 Route::get('tenderget/{id}','TenderController@gettend');
+
+Route::get('getproj/{id}','OrganisationController@getproj');
 
 Route::post('project_info_tender_appointment', 'TenderController@appointmentStore');
 Route::post('organisationStore', 'OrganisationController@organisationStore');

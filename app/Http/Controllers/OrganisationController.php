@@ -28,130 +28,218 @@ class OrganisationController extends Controller
     public function organisationStore(Request $request){
 
         $user = $request->session()->get('id');
+        $orgid = 0;
+        $check = Organisation::where('user_id', $request->session()->get('id'))->get();
+        if(count($check) == 1){
+            $organisation = Organisation::where('user_id', $request->session()->get('id'))->first();
+            $organisation->update(
+                [
+                    'company_name' => $request->company_name,
+                    'office_address' => $request->office_address
+                ]
+            );
+            $orgid = $organisation->org_id;
+        }
+        else{
+            $organisation = new Organisation;
+            $organisation->company_name = $request->company_name;
+            $organisation->office_address = $request->office_address;
+            if($request->hasFile('logo_img')){
+                $filenameWithExt = $request->file('logo_img')->getClientOriginalName();
 
-        $organisation = new Organisation;
-        $organisation->company_name = $request->company_name;
-        $organisation->office_address = $request->office_address;
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
 
-        if($request->hasFile('logo_img')){
-            $filenameWithExt = $request->file('logo_img')->getClientOriginalName();
+                $extension = $request->file('logo_img')->getClientOriginalExtension();
 
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                $filenameToStore = $filename.'_'.time().'_'.'.'.$extension;
+                
+                $path = $request->file('logo_img')->storeAs('public/organisation/logo', $filenameToStore); 
+                $organisation->logo = $filenameToStore;
+            }
 
-            $extension = $request->file('logo_img')->getClientOriginalExtension();
-
-            $filenameToStore = $filename.'_'.time().'_'.'.'.$extension;
             
-            $path = $request->file('logo_img')->storeAs('public/organisation/logo', $filenameToStore); 
-            $organisation->logo = $filenameToStore;
+            $organisation->user_id = $user;
+            $organisation->save();
+            $orgid = $organisation->org_id;
         }
 
-        
-        $organisation->user_id = $user;
-        $organisation->save();
+        // 
 
         $org_services = $request->services;
         $org_services = json_decode($org_services);
         for($counter = 0; $counter < count($org_services); $counter++){
-
-            $orgservices = new OrganisationServices;
-            $orgservices->org_id = $organisation->org_id;
-            $orgservices->service = $org_services[$counter]->name;
-            $orgservices->from = $org_services[$counter]->dfrom;
-            $orgservices->until = $org_services[$counter]->duntil;
-            $orgservices->save();
-
+            if($org_services[$counter]->editable == "true"){
+                OrganisationServices::where('os_id', $org_services[$counter]->myid )
+                ->update(
+                    [
+                        'service' => $org_services[$counter]->name,
+                        'from' => $org_services[$counter]->dfrom,
+                        'until' => $org_services[$counter]->duntil
+                    ]
+                );
+            }
+            else{
+                $orgservices = new OrganisationServices;
+                $orgservices->org_id = $organisation->org_id;
+                $orgservices->service = $org_services[$counter]->name;
+                $orgservices->from = $org_services[$counter]->dfrom;
+                $orgservices->until = $org_services[$counter]->duntil;
+                $orgservices->save();
+            }
         }
 
         $org_awards = $request->awards;
         $org_awards = json_decode($org_awards);
         for($counter = 0; $counter < count($org_awards); $counter++){
-
-            $orgawards = new OrganisationAwards;
-            $orgawards->org_id = $organisation->org_id;
-            $orgawards->award_name = $org_awards[$counter]->name;
-            $orgawards->award_details = $org_awards[$counter]->details;
-            $orgawards->award_year = $org_awards[$counter]->year;
-            $orgawards->save();
-
+            if($org_awards[$counter]->editable == "true"){
+                OrganisationAwards::where('oa_id', $org_awards[$counter]->myid )
+                ->update(
+                    [
+                        'award_name' => $org_awards[$counter]->name,
+                        'award_details' => $org_awards[$counter]->details,
+                        'award_year' => $org_awards[$counter]->year
+                    ]
+                );
+            }
+            else{
+                $orgawards = new OrganisationAwards;
+                $orgawards->org_id = $organisation->org_id;
+                $orgawards->award_name = $org_awards[$counter]->name;
+                $orgawards->award_details = $org_awards[$counter]->details;
+                $orgawards->award_year = $org_awards[$counter]->year;
+                $orgawards->save();
+            }
         }
 
-        $orgproj = new OrganisationProject;
-        $orgproj->org_id = $organisation->org_id;
-        $orgproj->project_title = $request->project_title;
-        $orgproj->project_value = $request->project_value;
+        // $orgproj = new OrganisationProject;
+        // $orgproj->org_id = $organisation->org_id;
+        // $orgproj->project_title = $request->project_title;
+        // $orgproj->project_value = $request->project_value;
 
-        $dev = $request->development;
-        $dev = json_decode($dev);
-        $devchecked = "";
-        for($counter = 0; $counter < count($dev); $counter++){
-            $devchecked .= $dev[$counter] . ",";
-        }
-        $devchecked = substr($devchecked, 0, -1);
-        $orgproj->type_of_development = $devchecked;
-        $orgproj->project_description = $request->project_description;
+        // $dev = $request->development;
+        // $dev = json_decode($dev);
+        // $devchecked = "";
+        // for($counter = 0; $counter < count($dev); $counter++){
+        //     $devchecked .= $dev[$counter] . ",";
+        // }
+        // $devchecked = substr($devchecked, 0, -1);
+        // $orgproj->type_of_development = $devchecked;
+        // $orgproj->project_description = $request->project_description;
 
-        $name_of_files = "";
-        $files = $request->file('project_images');
-        foreach($files as $file){
-            $filenameWithExt = $file->getClientOriginalName();
+        // $name_of_files = "";
+        // $files = $request->file('project_images');
+        // foreach($files as $file){
+        //     $filenameWithExt = $file->getClientOriginalName();
     
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        //     $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
         
-            $extension = $file->getClientOriginalExtension();
+        //     $extension = $file->getClientOriginalExtension();
         
-            $filenameToStore = $filename.'_'.time().'_'.'.'.$extension;
+        //     $filenameToStore = $filename.'_'.time().'_'.'.'.$extension;
             
-            $path = $file->storeAs('public/organisation/projectImages', $filenameToStore); 
-            $name_of_files .= $filenameToStore . "/";
-        }
+        //     $path = $file->storeAs('public/organisation/projectImages', $filenameToStore); 
+        //     $name_of_files .= $filenameToStore . "/";
+        // }
 
-        $name_of_files = substr($name_of_files, 0, -1);
-        $orgproj->project_images = $name_of_files;
-        $orgproj->save();
-
-
-
-        $org_use = $request->typeofuse;
-        $org_use = json_decode($org_use);
-
-        for($counter = 0; $counter < count($org_use); $counter++){
-            $orguse = new OrganisationProjectUse;
-            $orguse->op_id = $orgproj->op_id;
-            $orguse->service = $org_use[$counter]->name;
-            $orguse->area = $org_use[$counter]->area;
-            $orguse->units = $org_use[$counter]->units;
-            $orguse->save();
-        }
-
-        $org_provided = $request->provservices;
-        $org_provided = json_decode($org_provided);
-
-        for($counter = 0; $counter < count($counter); $counter++){
-            $orgprovided = new OrganisationProjectService;
-            $orgprovided->op_id = $orgproj->op_id;
-            $orgprovided->service = $org_provided[$counter]->name;
-            $orgprovided->from = $org_provided[$counter]->dfrom;
-            $orgprovided->until = $org_provided[$counter]->duntil;
-            $orgprovided->save();
-        }
-
-        $org_team = $request->projmem;
-        $org_team = json_decode($org_team);
-
-        for($counter = 0; $counter < count($org_team); $counter++){
-            $orgteam = new OrganisationProjectTeam;
-            $orgteam->op_id = $orgproj->op_id;
-            $orgteam->position = $org_team[$counter]->name;
-            $orgteam->company = $org_team[$counter]->compname;
-            $orgteam->save();
-        }
+        // $name_of_files = substr($name_of_files, 0, -1);
+        // $orgproj->project_images = $name_of_files;
+        // $orgproj->save();
 
 
 
-        return $org_services[0]->name;
+        // $org_use = $request->typeofuse;
+        // $org_use = json_decode($org_use);
+
+        // for($counter = 0; $counter < count($org_use); $counter++){
+        //     $orguse = new OrganisationProjectUse;
+        //     $orguse->op_id = $orgproj->op_id;
+        //     $orguse->service = $org_use[$counter]->name;
+        //     $orguse->area = $org_use[$counter]->area;
+        //     $orguse->units = $org_use[$counter]->units;
+        //     $orguse->save();
+        // }
+
+        // $org_provided = $request->provservices;
+        // $org_provided = json_decode($org_provided);
+
+        // for($counter = 0; $counter < count($counter); $counter++){
+        //     $orgprovided = new OrganisationProjectService;
+        //     $orgprovided->op_id = $orgproj->op_id;
+        //     $orgprovided->service = $org_provided[$counter]->name;
+        //     $orgprovided->from = $org_provided[$counter]->dfrom;
+        //     $orgprovided->until = $org_provided[$counter]->duntil;
+        //     $orgprovided->save();
+        // }
+
+        // $org_team = $request->projmem;
+        // $org_team = json_decode($org_team);
+
+        // for($counter = 0; $counter < count($org_team); $counter++){
+        //     $orgteam = new OrganisationProjectTeam;
+        //     $orgteam->op_id = $orgproj->op_id;
+        //     $orgteam->position = $org_team[$counter]->name;
+        //     $orgteam->company = $org_team[$counter]->compname;
+        //     $orgteam->save();
+        // }
+
+        return 'yes';
+        // echo $link;
+        // return redirect('/dashboard/organisation/'.$request->session()->get('id'));
         //var_dump($org_services);
 
 
+    }
+
+    public function getmyorganisation(Request $request){
+        $myorg = Organisation::where('user_id', $request->session()->get('id'))->get();
+        // echo $myorg[0]['org_id'];
+        // $myorg = Organisation::all();
+        $orgy = [];
+        $services = "";
+        $awards = "";
+        if(count($myorg)==1){
+            $services = DB::table('organisation_services_tbl')
+                ->where('org_id',$myorg[0]['org_id'])
+                ->get();
+            $awards = DB::table('organisation_awards_tbl')
+                ->where('org_id',$myorg[0]['org_id'])
+                ->get();
+            $projects = DB::table('organisation_project_tbl')
+                ->where('org_id',$myorg[0]['org_id'])
+                ->get();
+        }
+
+        // print_r($orgy);
+        // echo count((array)$orgy);
+        return view('organisation')->with([
+            'org' => $myorg,
+            'services' => $services,
+            'awards' => $awards,
+            'projects' => $projects,
+        ]);
+    }
+
+    public function getproj($id){
+        // echo $id;
+        $use = DB::table('organisation_project_use_tbl')
+                ->where('op_id',$id)
+                ->get();
+        $proj = DB::table('organisation_project_tbl')
+                ->where('op_id',$id)
+                ->get();
+        $serv = DB::table('organisation_project_service_tbl')
+                ->where('op_id',$id)
+                ->get();
+        $team = DB::table('organisation_project_team_tbl')
+                ->where('op_id',$id)
+                ->get();
+
+        return response()->json(array(
+            'success' => true,  
+            'use' => $use,
+            'proj' => $proj,
+            'serv' => $serv,
+            'team' => $team
+        ), 200);
     }
 }
