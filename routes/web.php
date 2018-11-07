@@ -76,6 +76,7 @@ Route::get('getproj/{id}','OrganisationController@getproj');
 
 Route::post('project_info_tender_appointment', 'TenderController@appointmentStore');
 Route::post('organisationStore', 'OrganisationController@organisationStore');
+Route::post('individualStore', 'IndividualsController@individualStore');
 // Route::resource('tenderget', 'TenderController');
 
 // Route::post('')

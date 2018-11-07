@@ -127,13 +127,52 @@ ul.typeofdev {
 </style>
 
 <script type="text/javascript">
-	var accredations = [];
+	var accredatations = [];
 	var degrees = [];
 	var awards = [];
 	var types = [];
 	var provs = [];
 	var projteam = [];
 	$(document).ready(function(){
+		$('#add_another').click(function(){
+			alert('SAD');
+			var accre = JSON.stringify(accredatations);
+			var deg = JSON.stringify(degrees);
+			var awa = JSON.stringify(awards);
+			var ty = JSON.stringify(types);
+			var prov = JSON.stringify(provs);
+			var projt = JSON.stringify(projteam);
+			var devchecked = [];
+			jQuery("input[name='development[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						devchecked.push($(this).val());
+					}
+					
+				}
+			);
+			var dev = JSON.stringify(devchecked);
+			var indData = new FormData(document.getElementById('indForm'));
+			indData.append('accredatations', accre);
+			indData.append('degrees', deg);
+			indData.append('awards', awa);
+			indData.append('types', ty);
+			indData.append('provs', prov);
+			indData.append('projteam', projt);
+			indData.append('development', dev);
+			$.ajax({
+				url: '{{ url("individualStore") }}',
+				type: 'POST',
+				data: indData,
+				dataType: 'json',
+				processData: false,
+				contentType: false,
+				success:function(result){
+					console.log(result);
+				}
+
+			});
+		});
 		$('.date').datepicker({
 			orientation: "bottom left",
 			autoclose: true,
@@ -145,34 +184,34 @@ ul.typeofdev {
 		/*==================================Add Accreditaion=================================================================*/
 		/*===================================================================================================================*/
 		$('#addaccreditaion').click(function(){
-			if($('select[name="accredation"]').val() == null || $('select[name="accreyear"]').val() == null){
+			if($('select[name="accredatations"]').val() == null || $('select[name="accreyear"]').val() == null){
 				alert('Lacking fields')
 			}
 			else{
-				$("ul#addedaccreditaion").append('<li data-id="'+accredations.length+'" onclick="editaccreditaion('+accredations.length+')">'+$('select[name="accredation"]').val()+'</li>');
+				$("ul#addedaccreditaion").append('<li data-id="'+accredatations.length+'" onclick="editaccreditaion('+accredatations.length+')">'+$('select[name="accredatations"]').val()+'</li>');
 				var newarray = {
-					id: accredations.length,
-					accredation: $('select[name="accredation"]').val(),
+					id: accredatations.length,
+					accredatations: $('select[name="accredatations"]').val(),
 					year: $('select[name="accreyear"]').val()
 				};
-				accredations.push(newarray);
-				$('select[name="accredation"]').val(''),
+				accredatations.push(newarray);
+				$('select[name="accredatations"]').val(''),
 				$('select[name="accreyear"]').val('')
 			}
 		});
 		/*==================================Edit Accreditaion=================================================================*/
 		$('#editaccreditaion').click(function(){
-			if($('select[name="accredation"]').val() == null || $('select[name="accreyear"]').val() == null){
+			if($('select[name="accredatations"]').val() == null || $('select[name="accreyear"]').val() == null){
 				alert('Lacking fields')
 			}
 			else{
 				var id = $(this).attr('data-id');
-				$('ul#addedaccreditaion li[data-id="'+id+'"]').text($('select[name="accredation"]').val());
-				accredations[id] = {
-					accredation: $('select[name="accredation"]').val(),
+				$('ul#addedaccreditaion li[data-id="'+id+'"]').text($('select[name="accredatations"]').val());
+				accredatations[id] = {
+					accredatations: $('select[name="accredatations"]').val(),
 					year: $('select[name="accreyear"]').val()
 				};
-				$('select[name="accredation"]').val(''),
+				$('select[name="accredatations"]').val(''),
 				$('select[name="accreyear"]').val('')
 				$('#editaccreditaion').css('display','none');
 				$('#addaccreditaion').css('display','block');
@@ -389,8 +428,8 @@ ul.typeofdev {
 	});
 	function editaccreditaion(id){
 		// console.log(services[id]);
-		$('select[name="accredation"]').val(accredations[id]['accredation']);
-		$('select[name="accreyear"]').val(accredations[id]['year']);
+		$('select[name="accredatations"]').val(accredatations[id]['accredatations']);
+		$('select[name="accreyear"]').val(accredatations[id]['year']);
 		$('#editaccreditaion').css('display','block');
 		$('#editaccreditaion').attr('data-id',id);
 		$('#addaccreditaion').css('display','none');
@@ -487,6 +526,7 @@ ul.typeofdev {
 										<a data-toggle="collapse" data-parent="#accordion2" href="#collapse6">Add new Individual<span class="pull-right caret"></span></a>
 									</h4>
 								</div>
+								<form id="indForm"> 
 								<div id="collapse6" class="panel-collapse collapse in">
 									<div class="panel-body">
 										<div class="row">	
@@ -496,15 +536,15 @@ ul.typeofdev {
 														<td width="40%">Name</td>
 														<td>
 															<div class="col-sm-6" style="padding: 0;">
-																<input type="text" name="" class="form-control" placeholder="First Name">
+																<input type="text" name="first_name" class="form-control" placeholder="First Name">
 															</div>
 															<div class="col-sm-6" style="padding: 0;">
-																<input type="text" name="" class="form-control" placeholder="Last Name">
+																<input type="text" name="last_name" class="form-control" placeholder="Last Name">
 															</div>
 														</td>
 													</tr>
 													<tr>
-														<td><div class="col-sm-12" style="padding: 0;">Accredation</div>
+														<td><div class="col-sm-12" style="padding: 0;">Accredatations</div>
 															<div class="col-sm-12" style="padding: 0;">
 																<ul id="addedaccreditaion">
 																	
@@ -513,8 +553,8 @@ ul.typeofdev {
 														</td>
 														<td>
 															<div class="col-sm-6" style="padding: 0;">
-																<select name="accredation" class="form-control">
-																	<option value="" disabled selected>Select accredation</option> 
+																<select name="accredatations" class="form-control">
+																	<option value="" disabled selected>Select accredatations</option> 
 																	<?php $members = array("AMCIOB","AssocRICS","MRICS","FRICS","HonRICS","BREEAM","AP","RIBA");sort($members, SORT_NATURAL | SORT_FLAG_CASE);foreach ($members as $key ) {echo "<option value='".$key."'>".$key."</option>";}?>
 																	<option value="Other">Other</option>
 																</select>
@@ -526,8 +566,8 @@ ul.typeofdev {
 																</select>
 															</div>
 															<div class="col-sm-12" style="padding: 0">
-																<button id="addaccreditaion" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another accredation</span></button>
-																<button id="editaccreditaion" class="btn btn-warning sakto" style="display:none; margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
+																<button type="button" id="addaccreditaion" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another accredatations</span></button>
+																<button type="button" id="editaccreditaion" class="btn btn-warning sakto" style="display:none; margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
 															</div>
 														</td>
 													</tr>
@@ -558,8 +598,8 @@ ul.typeofdev {
 																<input type="text" name="degree_name" placeholder="Name of degree" class="form-control">
 															</div>
 															<div class="col-sm-12" style="padding: 0">
-																<button id="adddegrees" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another degree</span></button>
-																<button id="editdegrees" class="btn btn-warning sakto" style="display:none; margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
+																<button type="button" id="adddegrees" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another degree</span></button>
+																<button type="button" id="editdegrees" class="btn btn-warning sakto" style="display:none; margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
 															</div>
 														</td>
 													</tr>
@@ -597,8 +637,8 @@ ul.typeofdev {
 																<textarea id="award_details" class="form-control" placeholder="Enter details"></textarea>
 															</div>
 															<div class="col-sm-12" style="padding: 0;">
-																<button id="addawards" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another award</span></button>
-																<button id="editawards" class="btn btn-warning sakto" style="display:none; margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
+																<button type="button" id="addawards" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another award</span></button>
+																<button type="button" id="editawards" class="btn btn-warning sakto" style="display:none; margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
 															</div>
 														</td>
 													</tr>
@@ -627,7 +667,7 @@ ul.typeofdev {
 															<div class="col-sm-12" style="padding: 0;">
 																<div class="form-group divaddservbid">
 																	<input type="text" class="form-control hid adserv" name="adserv">
-																	<button type="button" class="btn btn-warning sakto notherbut" onclick="showadd()"><span class="sakto2"><i class="fa fa-plus"></i></span>Add another service</button>
+																	<button type="button" type="button" class="btn btn-warning sakto notherbut" onclick="showadd()"><span class="sakto2"><i class="fa fa-plus"></i></span>Add another service</button>
 																	<button type="button" class="btn btn-warning sakto hid adserv" id="addservicebut" onclick="addservice()"><span class="sakto2"><i class="fa fa-plus"></i></span>Add Service</button>
 																</div>
 															</div>
@@ -662,12 +702,12 @@ ul.typeofdev {
 														<td>
 															<div class="col-sm-6" style="padding: 0;">
 																<div class="form-group">
-																	<input type="text" name="" class="form-control" placeholder="Project title">
+																	<input type="text" name="project_title" class="form-control" placeholder="Project title">
 																</div>
 															</div>
 															<div class="col-sm-6" style="padding: 0;">
 																<div class="form-group">
-																	<input type="number" name="" class="form-control" placeholder="Project value">
+																	<input type="number" name="project_value" class="form-control" placeholder="Project value">
 																</div>
 															</div>
 															<div class="col-sm-6" style="padding: 0;">
@@ -691,8 +731,8 @@ ul.typeofdev {
 																<input type="number" name="units" class="form-control" placeholder="Units">
 															</div>
 															<div class="col-sm-12" style="padding: 0;">
-																<button id="adduse" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another type of use</span></button>
-																<button id="edituse" class="btn btn-warning sakto" style="display:none; margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
+																<button type="button" id="adduse" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another type of use</span></button>
+																<button type="button" id="edituse" class="btn btn-warning sakto" style="display:none; margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
 															</div>
 															<label>Service Provided</label>
 															<div class="col-sm-12" style="padding: 0;margin-bottom: 15px;">
@@ -719,23 +759,23 @@ ul.typeofdev {
 															</div>
 													</div>
 													<div class="col-sm-12" style="padding: 0;">
-														<button id="addprov" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another service</span></button>
-														<button id="editprov" class="btn btn-warning sakto" style="display:none; margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
+														<button type="button" id="addprov" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another service</span></button>
+														<button type="button" id="editprov" class="btn btn-warning sakto" style="display:none; margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
 													</div>
 													<div class="col-sm-12" style="padding: 0;">
 														<label>Type of Development</label>
 													</div>
 													<div class="col-sm-12" style="padding: 0;">
-														<input type="checkbox" name="development[]" class="filled-in" id="new"> <label for="new"> New built</label>
+														<input type="checkbox" name="development[]" class="filled-in" value="New Built" id="new"> <label for="new"> New built</label>
 													</div>
 													<div class="col-sm-12" style="padding: 0;">
-														<input type="checkbox" name="development[]" class="filled-in" id="refurbishment"> <label for="refurbishment"> Refurbishment</label>
+														<input type="checkbox" name="development[]" class="filled-in" value="Refurbishment" id="refurbishment"> <label for="refurbishment"> Refurbishment</label>
 													</div>
 													<div class="col-sm-12" style="padding: 0;">
-														<input type="checkbox" name="development[]" class="filled-in" id="demolition"> <label for="demolition"> Demolition</label>
+														<input type="checkbox" name="development[]" class="filled-in" value="Demolition" id="demolition"> <label for="demolition"> Demolition</label>
 													</div>
 													<div class="form-group">
-														<textarea class="form-control" rows="10" placeholder="Enter Project Description"></textarea>
+														<textarea name="project_description" class="form-control" rows="10" placeholder="Enter Project Description"></textarea>
 													</div>
 													<div class="form-group">
 														<div id="wrapper">
@@ -760,11 +800,11 @@ ul.typeofdev {
 														</div>
 													</div>
 													<div class="form-group">
-														<button id="addteam" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another project team member</span></button>
-														<button id="editteam" class="btn btn-warning sakto"style="margin-top: 10px;display: none;" ><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
+														<button type="button" id="addteam" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another project team member</span></button>
+														<button type="button" id="editteam" class="btn btn-warning sakto"style="margin-top: 10px;display: none;" ><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
 													</div>
 													<div class="form-group">
-														<button class="btn btn-warning sakto"><span class="sakto2"><i class="fa fa-plus"></i> Add another project</span></button>
+														<button type="button" id="add_another" class="btn btn-warning sakto"><span class="sakto2"><i class="fa fa-plus"></i> Add another project</span></button>
 													</div>
 												</td>
 											</tr>											
@@ -787,7 +827,7 @@ ul.typeofdev {
 											</div>
 										</div>
 									</div>
-
+								</form>
 									<h3 class="org-head"><button type="button" class="btn btn-primary" data-toggle="modal" data-backdrop="static" data-target="#exampleModalCenter"><span><i class="fa fa-plus-square"></i> </span> Add</button></h3>
 								</div>
 							</div>	

@@ -148,7 +148,7 @@
 								<div class="cont hidcont">
 								<?php
 
-								$Service = array("Fire Engineer","Service Engineer","Principal Designer","Fascade Engineer","Building Control","Lighting Consulant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager", "Architecture", "Acoustic Engineer"
+								$Service = array("Fire Engineer","Service Engineer","Principal Designer","Facade Engineer","Building Control","Lighting Consulant","Security Consultant","Planning Consultant","Sustainability Consultant","BIM Consultant","Quantity Surveyor","Project Manager", "Architecture", "Acoustic Engineer"
 								);
 								sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
 								foreach ($Service as $key ) {
