@@ -36,6 +36,7 @@ use App\AddedAdvise;
 use App\TenderPreQualificationQuestionnaire;
 use App\CompInfo;
 use App\RequestForProposal;
+use App\Bids;
 
 
 class TenderController extends Controller
@@ -1125,6 +1126,7 @@ class TenderController extends Controller
     {
         
         $tenid = $id;
+        $user = $request->session()->get('id');
         $tender = Tender::where('tender_id', $tenid)->first();
         $bonds = TenderBonds::where('tender_id', $tenid)->get();
         $appointment = TenderAppointment::where('tender_id', $tenid)->get();
@@ -1139,6 +1141,10 @@ class TenderController extends Controller
         $scopesa = TenderScopeAdvise::where('tender_id', $tenid)->get();
         $quests = TenderPreQualificationQuestionnaire::where('tender_id', $tenid)->get();
         $company = CompInfo::all()->pluck('comp_name')->toArray();
+        $bids = Bids::where([
+            ['tender_id', '=', $tenid],
+            ['user_id', '=', $user]
+        ])->get();
 
         // return response()->json(array(
         //     'tender' => $tender,
@@ -1181,7 +1187,8 @@ class TenderController extends Controller
             'scopesm' => $scopesm,
             'scopesd' => $scopesd,
             'scopesa' => $scopesa,
-            'company' => $company
+            'company' => $company,
+            'bids' => $bids
         ]);
     
 
