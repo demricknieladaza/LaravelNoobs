@@ -144,7 +144,12 @@ ul.typeofdev {
 	$(document).ready(function(){
 		var serv = <?php echo $services; ?>;
 		var awar = <?php echo $awards; ?>;
-		var proj = <?php echo $projects; ?>;
+		<?php if(count($projects) > 0 ){ ?>
+			var proj = <?php echo $projects; ?>; 
+		<?php }
+		 else{ 
+			echo "var proj = [];";
+		 } ?>
 		console.log(proj);
 		// console.log(org);
 		if(serv.length > 0){
@@ -177,13 +182,10 @@ ul.typeofdev {
 			});
 		}
 		
-        $('input[type="file"]').change(function(e){
-            var fileName = e.target.files[0].name;
-			alert(fileName);
-        });
-		$('#project_img_btn').click(function(){
-			$('#project_img').click();
-		});
+       
+		// $('#project_img_btn').click(function(){
+		// 	$('#project_img').click();
+		// });
 		$('#change_logo_btn').click(function(){
 			$('#change_logo').click();
 		});
@@ -224,6 +226,123 @@ ul.typeofdev {
 			});
 			// console.log(orgData);
 		});
+		$('#orgupdate').click(function(){
+			var serv = JSON.stringify(services);
+			var awa = JSON.stringify(awards);
+			var type = JSON.stringify(typeofuse);
+			var provserv = JSON.stringify(provservices);
+			var projm = JSON.stringify(projmem);
+			var devchecked = [];
+			jQuery("input[name='development[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						devchecked.push($(this).val());
+					}
+					
+				}
+			);
+			var dev = JSON.stringify(devchecked);
+			var orgData = new FormData(document.getElementById('orgForm'));
+			orgData.append('services', serv);
+			orgData.append('awards', awa);
+			orgData.append('typeofuse', type);
+			orgData.append('provservices', provserv);
+			orgData.append('projmem', projm);
+			orgData.append('development', dev);
+			$.ajax({
+				url: '{{ url("organisationupdate") }}',
+				type: 'POST',
+				data: orgData,
+				processData: false,
+				contentType: false,
+				success:function(result){
+					// console.log(result);
+					location.reload();
+					// console.log('Updated');
+				}
+
+			});
+			// console.log(orgData);
+		});
+
+		$('#saveproj').click(function(){
+			var serv = JSON.stringify(services);
+			var awa = JSON.stringify(awards);
+			var type = JSON.stringify(typeofuse);
+			var provserv = JSON.stringify(provservices);
+			var projm = JSON.stringify(projmem);
+			var devchecked = [];
+			jQuery("input[name='development[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						devchecked.push($(this).val());
+					}
+					
+				}
+			);
+			var dev = JSON.stringify(devchecked);
+			var orgData = new FormData(document.getElementById('orgForm'));
+			orgData.append('services', serv);
+			orgData.append('awards', awa);
+			orgData.append('typeofuse', type);
+			orgData.append('provservices', provserv);
+			orgData.append('projmem', projm);
+			orgData.append('development', dev);
+			$.ajax({
+				url: '{{ url("updatemyproj") }}',
+				type: 'POST',
+				data: orgData,
+				processData: false,
+				contentType: false,
+				success:function(result){
+					// console.log(result);
+					location.reload();
+					// console.log('Updated');
+				}
+
+			});
+			// console.log(orgData);
+		});
+
+		$('#addproj').click(function(){
+			var serv = JSON.stringify(services);
+			var awa = JSON.stringify(awards);
+			var type = JSON.stringify(typeofuse);
+			var provserv = JSON.stringify(provservices);
+			var projm = JSON.stringify(projmem);
+			var devchecked = [];
+			jQuery("input[name='development[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						devchecked.push($(this).val());
+					}
+					
+				}
+			);
+			var dev = JSON.stringify(devchecked);
+			var orgData = new FormData(document.getElementById('orgForm'));
+			orgData.append('services', serv);
+			orgData.append('awards', awa);
+			orgData.append('typeofuse', type);
+			orgData.append('provservices', provserv);
+			orgData.append('projmem', projm);
+			orgData.append('development', dev);
+			$.ajax({
+				url: '{{ url("addproject") }}',
+				type: 'POST',
+				data: orgData,
+				processData: false,
+				contentType: false,
+				success:function(result){
+					// console.log(result);
+					location.reload();
+					// console.log('Updated');
+				}
+
+			});
+			// console.log(orgData);
+		});
+
 		$('.date').datepicker({
 			orientation: "bottom left",
 			autoclose: true,
@@ -330,7 +449,8 @@ ul.typeofdev {
 				var newtype = {
 					name: $('select[name="type_name"]').val(),
 					area:$('input[name="area"]').val(),
-					units: $('input[name="units"]').val()
+					units: $('input[name="units"]').val(),
+					editable: 'false'
 				};
 				typeofuse.push(newtype);
 				$('select[name="type_name"]').val('');
@@ -374,7 +494,8 @@ ul.typeofdev {
 				var newservices = {
 					name: $('select[name="provservicechoice"]').val(),
 					dfrom: $('input[name="provdfrom"]').val(),
-					duntil: $('input[name="provduntil"]').val()
+					duntil: $('input[name="provduntil"]').val(),
+					editable: 'false'
 				};
 				provservices.push(newservices);
 				$('select[name="provservicechoice"]').val('');
@@ -393,11 +514,10 @@ ul.typeofdev {
 			else{
 				var id = $(this).attr('data-id');
 				$('ul#addedprovserv li[data-id="'+id+'"]').text($('select[name="provservicechoice"]').val());
-				provservices[id] = {
-					name: $('select[name="provservicechoice"]').val(),
-					dfrom: $('input[name="provdfrom"]').val(),
-					duntil: $('input[name="provduntil"]').val()
-				};
+				provservices[id]['name'] = $('select[name="provservicechoice"]').val();
+				provservices[id]['dfrom'] = $('input[name="provdfrom"]').val();
+				provservices[id]['duntil'] = $('input[name="provduntil"]').val();
+
 				$('select[name="provservicechoice"]').val('');
 				$('input[name="provdfrom"]').val('');
 				$('input[name="provduntil"]').val('');
@@ -418,7 +538,8 @@ ul.typeofdev {
 				$("ul#addedprojmem").append('<li data-id="'+projmem.length+'" onclick="editprojmem('+projmem.length+')">'+$('select[name="member"]').val()+'</li>');
 				var newservices = {
 					name: $('select[name="member"]').val(),
-					compname: $('input[name="compname"]').val()
+					compname: $('input[name="compname"]').val(),
+					editable: 'false'
 				};
 				projmem.push(newservices);
 				$('select[name="member"]').val('');
@@ -450,7 +571,6 @@ ul.typeofdev {
 		$('.editproj').click(function(){
 			var projid = $(this).attr('data-id');
 			$('#refre').css('display','none');
-			// console.log('{{ url("getproj") }}'+'/'+projid);
 			$.ajax({
 				url: '{{ url("getproj") }}'+'/'+projid,
 				type: 'get',
@@ -477,20 +597,24 @@ ul.typeofdev {
 		typeofuse = [];
 		provservices = [];
 		projmem = [];
+		$('#descript').val('');
+		$('input:checked').removeAttr('checked');
 		$('input[name="project_title"]').val(proj['proj'][0]['project_title']);
 		$('input[name="project_value"]').val(proj['proj'][0]['project_value']);
+		$('input[name="projidedit"]').val(proj['proj'][0]['op_id']);
 		$('#saveproj').css('display','block');
-		$('#addotherproj').css('display','none');
+		$('#addproj').css('display','none');
 		$('#refre').css('display','block');
+		$('#image_preview').html('');
 		if(proj['use'].length > 0){
 			$.each( proj['use'], function( key, value ) {
-				$("ul#addedtype").append('<li data-myid="'+value['op_id']+'" data-id="'+key+'" onclick="edittype('+key+')">'+value['service']+'</li>');
+				$("ul#addedtype").append('<li data-myid="'+value['opu_id']+'" data-id="'+key+'" onclick="edittype('+key+')">'+value['service']+'</li>');
 				var newservices = {
 					name: value['service'],
 					area: value['area'],
 					units: value['units'],
 					editable: 'true',
-					myid: value['op_id']
+					myid: value['opu_id']
 				};
 				typeofuse.push(newservices);
 				// alert(services.length);
@@ -498,13 +622,13 @@ ul.typeofdev {
 		}
 		if(proj['serv'].length > 0){
 			$.each( proj['serv'], function( key, value ) {
-				$("ul#addedprovserv").append('<li data-myid="'+value['op_id']+'" data-id="'+key+'" onclick="editprovservices('+key+')">'+value['service']+'</li>');
+				$("ul#addedprovserv").append('<li data-myid="'+value['ops_id']+'" data-id="'+key+'" onclick="editprovservices('+key+')">'+value['service']+'</li>');
 				var newservices = {
 					name: value['service'],
 					dfrom: value['from'],
 					duntil: value['until'],
 					editable: 'true',
-					myid: value['op_id']
+					myid: value['ops_id']
 				};
 				provservices.push(newservices);
 				// alert(services.length);
@@ -512,12 +636,12 @@ ul.typeofdev {
 		}
 		if(proj['team'].length > 0){
 			$.each( proj['team'], function( key, value ) {
-				$("ul#addedprojmem").append('<li data-myid="'+value['op_id']+'" data-id="'+key+'" onclick="editprojmem('+key+')">'+value['position']+'</li>');
+				$("ul#addedprojmem").append('<li data-myid="'+value['opt_id']+'" data-id="'+key+'" onclick="editprojmem('+key+')">'+value['position']+'</li>');
 				var newservices = {
 					name: value['position'],
 					compname: value['company'],
 					editable: 'true',
-					myid: value['op_id']
+					myid: value['opt_id']
 				};
 				projmem.push(newservices);
 				// alert(services.length);
@@ -529,6 +653,13 @@ ul.typeofdev {
 			$('input[name="development[]"][value="'+v+'"]').prop("checked",true);
 		});
 		$('#descript').val(proj['proj'][0]['project_description']);
+		var img = proj['proj'][0]['project_images'].split('/');
+		$.each(img, function(k,v)
+		{
+			var sors = '{{asset('storage/organisation/projectImages' )}}'+'/'+v;
+			$('#image_preview').append("<div style='padding: 5px' class='col-sm-3'><img width='100px' height='100px' src='"+sors+"'></div>");
+			// alert();
+		});
 	}
 
 	// ================EDIT SERVICES============
@@ -596,6 +727,30 @@ ul.typeofdev {
 		});
 
 	}
+	function preview_image() 
+		{
+			$('#image_preview').html('');
+			var total_file=document.getElementById("project_img").files.length;
+			var filesni=document.getElementById("project_img").files;
+
+			// $('#image_preview').load(document.URL +  ' #image_preview');
+			if(total_file >= 10){
+				alert("maximum upload file is 10 images only!");
+			}
+			else{
+				for(var i=0;i<total_file;i++)
+				{
+					// console.log(filesni[i]['name']);
+					// alert(total_file);
+					$('#image_preview').append("<div style='padding: 5px' class='col-sm-3'><img width='100px' height='100px' src='"+URL.createObjectURL(event.target.files[i])+"'></div>");
+				}
+			}
+			
+			//<a class='alo' data-id='"+filesni[i]['name']+"'>Remove</a>
+			// console.log(filesniss);
+			// console.log(filesni);
+			// runjq();
+		}
 </script>
 
 <div class="container-fluid below-header">
@@ -722,12 +877,16 @@ ul.typeofdev {
 													<div class="col-sm-12" style="padding: 0;">Track Record</div>
 													<div class="col-sm-12" style="padding: 0;">
 														<ul id="addedtrack" style="list-style: none;">
-															@foreach ($projects as $proj)
-																<li data-id="{{$proj->op_id}}" class="editproj">{{$proj->project_title}}
-																</li>
-															@endforeach
+															@if (count($projects) > 0)
+																@foreach ($projects as $proj)
+																	<li data-id="{{$proj->op_id}}" class="editproj">{{$proj->project_title}}
+																	</li>
+																@endforeach
+															@endif
+															
+
 															<li>
-																<ul id="refre" style="display: none;">
+																<ul id="refre" style="">
 																	<li>Type of use
 																		<ul id="addedtype">
 																		</ul>
@@ -757,6 +916,7 @@ ul.typeofdev {
 												<td>
 													<div class="form-group">
 														<input type="text" name="project_title" class="form-control" placeholder="Enter Project Title">
+														<input type="hidden" name="projidedit" >
 													</div>
 													<div class="form-group">
 														<input type="text" name="project_value" class="form-control" placeholder="Enter Project Value">
@@ -843,8 +1003,9 @@ ul.typeofdev {
 											<textarea id="descript" class="form-control" name="project_description" rows="10" placeholder="Enter Project Description"></textarea>
 										</div>
 										<div class="form-group">
-											<button id="project_img_btn" type="button" class="btn btn-warning sakto"><span class="sakto2"><i class="fa fa-plus"></i> Upload Images</span></button>
-											<input id="project_img" style="display: none;" type="file" class="btn btn-warning sakto" name="project_images[]" multiple/>
+											<div id="image_preview"></div>
+											<button onclick="document.getElementById('project_img').click();" id="project_img_btn" type="button" class="btn btn-warning sakto"><span class="sakto2"><i class="fa fa-plus"></i> Upload Images</span></button>
+											<input id="project_img" style="display: none;" type="file" accept="image/*" class="btn btn-warning sakto" name="project_images[]" onchange="preview_image();" multiple/>
 										</div>
 										<div class="form-group">
 											<div class="col-sm-6" style="padding: 0;">
@@ -864,10 +1025,11 @@ ul.typeofdev {
 											<button id="edtprojmem" type="button" class="btn btn-warning sakto"style="margin-top: 10px;display: none;" ><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
 										</div>
 										<div class="form-group">
-											<button type="button" id="saveproj" class="btn btn-warning sakto" style="display: none;"><span class="sakto2"> Save</span></button>	
+											<button type="button" id="saveproj" class="btn btn-warning sakto" style="display: none;"><span class="sakto2"> Save</span></button>
 										</div>
 										<div class="form-group">
-											<button type="button" id="addotherproj" class="btn btn-warning sakto save_current"><span class="sakto2"><i class="fa fa-plus"></i> Add another project</span></button>	
+											<input type="hidden" name="org_id" @if (count($org)==1) value="{{$org[0]['org_id']}}" @endif >
+											<button type="button" id="addproj"class="btn btn-warning sakto save_current"><span class="sakto2"><i class="fa fa-plus"></i> Add another project</span></button>	
 										</div>
 									</td>
 								</tr>											
@@ -879,7 +1041,11 @@ ul.typeofdev {
 							<p><img src="{{ url('images/logo-british.jpg') }}"></p>
 							<p><button id="change_logo_btn" type="button" class="btn btn-warning sakto">Change Logo</button></p>
 							<input type="file" id="change_logo" name="logo_img" style="display: none;"/>
-							<input type="button" id='orgSave' class="btn btn-primary" name='Save' value="Save"/>
+							@if (count($org)==1)
+								<button type="button" id="orgupdate" class="btn btn-warning sakto"><span class="sakto2"> Save Organisation</span></button>	
+							@else
+								<input type="button" id='orgSave' class="btn btn-primary" name='Save' value="Save"/>
+							@endif
 						</div>
 					</form>
 					</div>
