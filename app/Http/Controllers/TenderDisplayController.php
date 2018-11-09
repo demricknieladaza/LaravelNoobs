@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Tender;
 
 class TenderDisplayController extends Controller
@@ -64,7 +65,12 @@ class TenderDisplayController extends Controller
         //     return view('tender_no_display')->with('proj', $proj);
         // }
         // else{
-            return view('tender_display')->with(['tenders'=> $tenders, 'proj'=> $proj]);
+        $bids = Db::table('bid_records_tbl as b')->where('project_record_id', $proj)
+        ->rightJoin('company_tbl as c', 'b.user_id', '=', 'c.u_id')
+        ->orderBy('b.created_at', 'desc')
+        ->get();
+        return view('tender_display')->with(['tenders'=> $tenders, 'proj'=> $proj, 'bids' => $bids]);
+        // return $bids->comp_name;
         // }
     }
 

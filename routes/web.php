@@ -76,7 +76,7 @@ Route::get('tenderget/{id}','TenderController@gettend');
 
 Route::get('getproj/{id}','OrganisationController@getproj');
 
-Route::post('project_info_tender_appointment', 'TenderController@appointmentStore');
+Route::post('tender_appointment', 'TenderController@appointmentStore');
 Route::post('organisationStore', 'OrganisationController@organisationStore');
 
 Route::post('individualStore', 'IndividualsController@individualStore');
@@ -107,9 +107,10 @@ Route::post('submit_bid', 'BidController@submitBid');
 Route::post('edit_tender_service', 'TenderController@editTend');
 // Route::resource('winwork/bid', 'BidController');
 Route::post('winwork/bid/{id}/save', 'BidController@saveBid');
-Route::post('winwork/bid/{id}/approach', 'BidController@saveApproach');
 
+Route::post('bid_approach', 'BidController@saveApproach');
 Route::post('tender_queries', 'BidController@saveQuery');
+Route::post('bid_ind', 'BidController@saveBidIndividuals');
 
 //Route::put('project_info/{id}', 'ProjectInformationController@Update');
 Route::resource('project_info','ProjectInformationController');

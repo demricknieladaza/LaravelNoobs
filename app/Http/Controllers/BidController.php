@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
+use App\UserAccountsModel;
 use App\Tender;
 use App\ProjectInformations;
 use App\SubmittedTenders;
@@ -16,6 +17,7 @@ use App\TenderPreQualificationQuestionnaire;
 use App\Bids;
 use App\BidApproach;
 use App\BidQualityAssurance;
+use App\BidIndividuals;
 use App\TenderAppointment;
 
 class BidController extends Controller
@@ -140,7 +142,7 @@ class BidController extends Controller
     }
 
     public function submitBid(Request $request){
-        
+
         //Submitted Tenders
         $sub = new SubmittedTenders;
         $sub->user_id = $request->session()->get('id');
@@ -213,10 +215,10 @@ class BidController extends Controller
 
     }
 
-    public function saveApproach(Request $request, $id){
+    public function saveApproach(Request $request){
         
         $user = $request->session()->get('id');
-        $tender_id = $request->input('app_tender_id');
+        $tender_id = $request->input('tender_id');
         $tender = Tender::where('tender_id', $tender_id)->first();
 
         $project = ProjectInformations::where('project_record_id', $tender->project_record_id)->first();
@@ -299,5 +301,27 @@ class BidController extends Controller
             'individuals' => $indi,
             'pre_qual' => $quest
         ]);
+    }
+
+    public function saveBidIndividuals(Request $request){
+        
+        $ind = $request->individual;
+
+        for($counter = 0; $counter < count($ind); $counter++){
+
+            $exploded = explode(' ', $ind[$counter]);
+
+            $individualInfo = Individuals::where('first_name', $exploded[0])
+                                          ->where('last_name', $exploded[1])
+                                          ->get();
+
+            $individual = new BidIndividuals;
+            $individual->tender_id = $request->get('tender_id');
+            $individual->ind_id = $individualInfo[$counter]->ind_id;
+            $individual->save();
+
+        }
+
+
     }
 }
