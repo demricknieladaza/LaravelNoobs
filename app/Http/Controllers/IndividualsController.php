@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
@@ -28,6 +29,14 @@ class IndividualsController extends Controller
         $user = $request->session()->get('id');
         $data = Individuals::where('user_id', $user)->get();
         return view('individuals')->with('data',$data);
+    }
+
+    public function getmyindividual(Request $request){
+        $indi = Individuals::where('user_id', $request->session()->get('id'))->get();
+
+        return view('individuals')->with([
+            'indi' => $indi
+        ]);
     }
 
     /**
@@ -209,6 +218,259 @@ class IndividualsController extends Controller
         return view('individuals')->with('data',$data);
     }
 
+    public function getmyindividualinfo(Request $request){
+        $individual = DB::table('individuals_tbl')->where('ind_id', $request->id)->get();
+        $accredation = DB::table('individuals_accredation_tbl')->where('ind_id', $request->id)->get();
+        $degree = DB::table('individuals_degrees_tbl')->where('ind_id', $request->id)->get();
+        $awards = DB::table('individuals_awards_tbl')->where('ind_id', $request->id)->get();
+
+        $project = DB::table('individuals_project_tbl')->where('ind_id', $request->id)->get();
+
+        return response()->json(array(
+            'success' => true,  
+            'id' => $individual,
+            'accredation' => $accredation,
+            'degree' => $degree,
+            'awards' => $awards,
+            'project' => $project
+        ), 200);
+    }
+
+    public function updateindiproj(Request $request){
+        
+
+        $dev = $request->development;
+        $dev = json_decode($dev);
+        $new_dev = "";
+        if(count($dev) != 0){
+            for($counter = 0; $counter < count($dev); $counter++){
+                $new_dev .= $dev[$counter] . ",";
+            }
+            $new_dev = substr($new_dev, 0, -1);
+        }
+
+        $name_of_files = "";
+        $files = $request->file('upload_file');
+        if($request->hasfile('upload_file')){
+            foreach($files as $file){
+            $filenameWithExt = $file->getClientOriginalName();
+    
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        
+            $extension = $file->getClientOriginalExtension();
+        
+            $filenameToStore = $filename.'_'.time().'_'.'.'.$extension;
+            
+            $path = $file->storeAs('public/individuals/projectImages', $filenameToStore); 
+            $name_of_files .= $filenameToStore . "/";
+        }
+        }
+        
+
+        if($request->hasFile('file')){
+            $filenameWithExt = $request->file('file')->getClientOriginalName();
+
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+            $extension = $request->file('file')->getClientOriginalExtension();
+
+            $filenameToStore = $filename.'_'.time().'_'.'.'.$extension;
+            
+            $path = $request->file('file')->storeAs('public/individuals/profileImg', $filenameToStore); 
+            $ind_p->profile_image = $filenameToStore;
+        }
+
+        $name_of_files = substr($name_of_files, 0, -1);
+        
+        IndividualsProject::where('indp_id', $request->project_id)
+            ->update([
+                'project_title' => $request->project_title,
+                'project_value' => $request->project_value,
+                'type_of_development' => $request->new_dev,
+                'project_description' => $request->project_description,
+                'profile_images' => $request->name_of_files,
+            ]);
+
+        
+        //Type of use
+        $typ = $request->types;
+        $typ = json_decode($typ);
+        for($counter = 0; $counter < count($typ); $counter++){
+            if($typ[$counter]->editable == "true"){
+                IndividualsUse::where('use_id',$typ[$counter]->myid)
+                    ->update([
+                        'use_name' => $typ[$counter]->name,
+                        'use_area' => $typ[$counter]->area,
+                        'use_units' => $typ[$counter]->units
+                    ]);
+            }
+            else{
+                $indty = new IndividualsUse;
+                $indty->indp_id = $request->project_id;
+                $indty->use_name = $typ[$counter]->name;
+                $indty->use_area = $typ[$counter]->area;
+                $indty->use_units = $typ[$counter]->units;
+                $indty->save();
+            }
+        }
+
+        //Service Provided
+        $pro = $request->provs;
+        $pro = json_decode($pro);
+        for($counter = 0; $counter < count($pro); $counter++){
+            if($pro[$counter]->editable == "true"){
+                IndividualsService::where('serv_id',$pro[$counter]->myid)
+                    ->update([
+                        'service_name' => $pro[$counter]->name,
+                        'from' => $pro[$counter]->from,
+                        'until' => $pro[$counter]->until,
+                    ]);
+            }
+            else{
+                $indpro = new IndividualsService;
+                $indpro->indp_id = $request->project_id;
+                $indpro->service_name = $pro[$counter]->name;
+                $indpro->from = $pro[$counter]->from;
+                $indpro->until = $pro[$counter]->until;
+                $indpro->save();
+            }
+        }
+
+        //Project Team
+        $projt = $request->projteam;
+        $projt = json_decode($projt);
+        for($counter = 0; $counter < count($projt); $counter++){
+            if($projt[$counter]->editable == "true"){
+                IndividualsTeam::where('team_id',$projt[$counter]->myid)
+                    ->update([
+                        'position' => $projt[$counter]->name,
+                        'company' => $projt[$counter]->compname
+                    ]);
+            }
+            else{
+                $indteam = new IndividualsTeam;
+                $indteam->indp_id = $request->project_id;
+                $indteam->position = $projt[$counter]->name;
+                $indteam->company = $projt[$counter]->compname;
+                $indteam->save();
+            }
+        }
+    }
+
+    public function individualgetproject(Request $request){
+        $proj = DB::table('individuals_project_tbl')->where('indp_id',$request->id)->get();
+        $use = DB::table('individuals_use_tbl')->where('indp_id',$request->id)->get();
+        $service = DB::table('individuals_service_tbl')->where('indp_id',$request->id)->get();
+        $team = DB::table('individuals_team_tbl')->where('indp_id',$request->id)->get();
+
+        return response()->json(array(
+            'success' => true,  
+            'use' => $use,
+            'service' => $service,
+            'team' => $team,
+            'proj' => $proj
+        ), 200);
+    }
+
+    public function addindiproject(Request $request){
+        $ind_p = new IndividualsProject;
+        $ind_p->ind_id = $request->myiid;
+        $ind_p->project_title = $request->project_title;
+        $ind_p->project_value = $request->project_value;
+
+        $dev = $request->development;
+        $dev = json_decode($dev);
+        $new_dev = "";
+        if(count($dev) != 0){
+            for($counter = 0; $counter < count($dev); $counter++){
+                $new_dev .= $dev[$counter] . ",";
+            }
+            $new_dev = substr($new_dev, 0, -1);
+            $ind_p->type_of_development = $new_dev;
+        }
+        $ind_p->type_of_development = $new_dev;
+        $ind_p->project_description = $request->project_description;
+
+        $name_of_files = "";
+        $files = $request->file('upload_file');
+        if($request->hasfile('upload_file')){
+            foreach($files as $file){
+            $filenameWithExt = $file->getClientOriginalName();
+        
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        
+            $extension = $file->getClientOriginalExtension();
+        
+            $filenameToStore = $filename.'_'.time().'_'.'.'.$extension;
+            
+            $path = $file->storeAs('public/individuals/projectImages', $filenameToStore); 
+            $name_of_files .= $filenameToStore . "/";
+        }
+        }
+        
+
+        if($request->hasFile('file')){
+            $filenameWithExt = $request->file('file')->getClientOriginalName();
+
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+            $extension = $request->file('file')->getClientOriginalExtension();
+
+            $filenameToStore = $filename.'_'.time().'_'.'.'.$extension;
+            
+            $path = $request->file('file')->storeAs('public/individuals/profileImg', $filenameToStore); 
+            $ind_p->profile_image = $filenameToStore;
+        }
+
+        $name_of_files = substr($name_of_files, 0, -1);
+        $ind_p->profile_images = $name_of_files;
+        $ind_p->save();
+
+        
+        //Type of use
+        $typ = $request->types;
+        $typ = json_decode($typ);
+        for($counter = 0; $counter < count($typ); $counter++){
+
+            $indty = new IndividualsUse;
+            $indty->indp_id = $ind_p->indp_id;
+            $indty->use_name = $typ[$counter]->name;
+            $indty->use_area = $typ[$counter]->area;
+            $indty->use_units = $typ[$counter]->units;
+            $indty->save();
+
+        }
+
+        //Service Provided
+        $pro = $request->provs;
+        $pro = json_decode($pro);
+        for($counter = 0; $counter < count($pro); $counter++){
+
+            $indpro = new IndividualsService;
+            $indpro->indp_id = $ind_p->indp_id;
+            $indpro->service_name = $pro[$counter]->name;
+            $indpro->from = $pro[$counter]->from;
+            $indpro->until = $pro[$counter]->until;
+            $indpro->save();
+
+        }
+
+        //Project Team
+        $projt = $request->projteam;
+        $projt = json_decode($projt);
+        for($counter = 0; $counter < count($projt); $counter++){
+
+            $indteam = new IndividualsTeam;
+            $indteam->indp_id = $ind_p->indp_id;
+            $indteam->position = $projt[$counter]->name;
+            $indteam->company = $projt[$counter]->compname;
+            $indteam->save();
+
+        }
+
+        echo "saved";
+    }
+
     /**
      * Display the specified resource.
      *
@@ -338,7 +600,8 @@ class IndividualsController extends Controller
 
         $name_of_files = "";
         $files = $request->file('upload_file');
-        foreach($files as $file){
+        if($request->hasfile('upload_file')){
+            foreach($files as $file){
             $filenameWithExt = $file->getClientOriginalName();
     
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
@@ -350,6 +613,8 @@ class IndividualsController extends Controller
             $path = $file->storeAs('public/individuals/projectImages', $filenameToStore); 
             $name_of_files .= $filenameToStore . "/";
         }
+        }
+        
 
         if($request->hasFile('file')){
             $filenameWithExt = $request->file('file')->getClientOriginalName();
@@ -413,5 +678,94 @@ class IndividualsController extends Controller
 
         return $individual->ind_id;
 
+    }
+
+    public function individualupdate(Request $request)
+    {
+
+        $service = $request->offeredservices;
+        $new_service = "";
+        if(count($service) != 0){
+            for($counter = 0; $counter < count($service); $counter++){
+                $new_service .= $service[$counter] . ",";
+            }
+            $new_service = substr($new_service, 0, -1);
+        }
+
+        DB::table('individuals_tbl')->where('ind_id',$request->myiid)
+            ->update(
+                [
+                    'first_name' => $request->first_name,
+                    'last_name' => $request->last_name,
+                    'seniority' => $request->seniority_level,
+                    'services' => $new_service
+                ]);
+// ========================================accreditations================================================================
+        $accre = $request->accredatations;
+        $accre = json_decode($accre);
+        for($counter = 0; $counter < count($accre); $counter++){
+            if($accre[$counter]->editable == "true"){
+                IndividualsAccredatation::where('accredatation_id',$accre[$counter]->myid)
+                    ->update(
+                        [
+                            'accredatation_name' => $accre[$counter]->accredatations,
+                            'accredatation_year' => $accre[$counter]->year
+                        ]
+                    );
+            }
+            else{
+                $indaccre = new IndividualsAccredatation;
+                $indaccre->ind_id = $request->myiid;
+                $indaccre->accredatation_name = $accre[$counter]->accredatations;
+                $indaccre->accredatation_year = $accre[$counter]->year;
+                $indaccre->save();
+            }
+        }
+// ========================================Degree======================================================================
+        $deg = $request->degrees;
+        $deg = json_decode($deg);
+        for($counter = 0; $counter < count($deg); $counter++){
+            if($deg[$counter]->editable == "true"){
+                IndividualsDegrees::where('degree_id',$deg[$counter]->myid)
+                    ->update([
+                        'degree' => $deg[$counter]->degree,
+                        'degree_year' => $deg[$counter]->year,
+                        'name_of_degree' => $deg[$counter]->name
+                    ]);
+            }
+            else{
+                $inddeg = new IndividualsDegrees;
+                $inddeg->ind_id = $request->myiid;
+                $inddeg->degree = $deg[$counter]->degree;
+                $inddeg->degree_year = $deg[$counter]->year;
+                $inddeg->name_of_degree = $deg[$counter]->name;
+                $inddeg->save();
+            }
+            
+        }
+// ========================================Awards======================================================================
+        $awa = $request->awards;
+        $awa = json_decode($awa);
+        for($counter = 0; $counter < count($awa); $counter++){
+            if($awa[$counter]->editable == "true"){
+                IndividualsAwards::where('award_id',$awa[$counter]->myid)
+                    ->update([
+                        'award_name' => $awa[$counter]->name,
+                        'awarded_by' => $awa[$counter]->awarded_by,
+                        'award_year' => $awa[$counter]->award_year,
+                        'award_details' => $awa[$counter]->details
+                    ]);
+            }
+            else{
+                $indawa = new IndividualsAwards;
+                $indawa->ind_id = $request->myiid;
+                $indawa->award_name = $awa[$counter]->name;
+                $indawa->awarded_by = $awa[$counter]->awarded_by;
+                $indawa->award_year = $awa[$counter]->award_year;
+                $indawa->award_details = $awa[$counter]->details;
+                $indawa->save();
+            }
+        }
+        return 'updated';
     }
 }

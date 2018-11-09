@@ -66,9 +66,11 @@ Route::get('/dashboard/comp_indi', 'UsersController@comp_indi_controller');
 
 Route::get('/dashboard/organisation/{id}', 'OrganisationController@getmyorganisation');
 
-Route::get('/dashboard/individuals', 'UsersController@individuals_controller');
+Route::get('/dashboard/individuals/{id}', 'IndividualsController@getmyindividual');
 
-Route::get('/dashboard/individuals', 'UsersController@individuals_controller');
+Route::get('individualget', 'IndividualsController@getmyindividualinfo');
+
+Route::get('individualgetproject', 'IndividualsController@individualgetproject');
 
 Route::get('tenderget/{id}','TenderController@gettend');
 
@@ -79,11 +81,17 @@ Route::post('organisationStore', 'OrganisationController@organisationStore');
 
 Route::post('individualStore', 'IndividualsController@individualStore');
 
+Route::post('individualupdate', 'IndividualsController@individualupdate');
+
 Route::post('organisationupdate', 'OrganisationController@updateorg');
 
 Route::post('updatemyproj', 'OrganisationController@updatemyproj');
 
 Route::post('addproject', 'OrganisationController@addproject');
+
+Route::post('addindiproject', 'IndividualsController@addindiproject');
+
+Route::post('updateindiproj', 'IndividualsController@updateindiproj');
 
 // Route::resource('tenderget', 'TenderController');
 

@@ -1122,7 +1122,7 @@ class TenderController extends Controller
         return "UPDATED!!";
     }
 
-    public function gettend($id)
+    public function gettend(Request $request, $id)
     {
         
         $tenid = $id;

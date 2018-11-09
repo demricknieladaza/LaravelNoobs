@@ -168,6 +168,7 @@ class OrganisationController extends Controller
 
     public function addproject(Request $request)
     {
+        
         $orgproj = new OrganisationProject;
         $orgproj->org_id = $request->org_id;
         $orgproj->project_title = $request->project_title;
@@ -479,6 +480,12 @@ class OrganisationController extends Controller
         $myorg = Organisation::where('user_id', $request->session()->get('id'))->get();
         // echo $myorg[0]['org_id'];
         // $myorg = Organisation::all();
+        if(count($myorg) == 0){
+            $org = new Organisation;
+            $org->user_id = $request->session()->get('id');
+            $org->save();
+            $myorg = Organisation::where('user_id', $request->session()->get('id'))->get();
+        }
         $orgy = [];
         $services = "";
         $awards = "";
@@ -496,7 +503,7 @@ class OrganisationController extends Controller
         }
 
         // print_r($orgy);
-        // echo count((array)$orgy);
+        // echo count($myorg);
         return view('organisation')->with([
             'org' => $myorg,
             'services' => $services,
