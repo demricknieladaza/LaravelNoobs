@@ -205,8 +205,56 @@
 			});
 		});
 		$('#ind_save').click(function(){
-
-		})
+			alert('clicked!');
+			var ind = [];
+			jQuery("input[name='individuals[]']").each(function()
+				{	
+					if($(this).prop('checked')){
+						ind.push($(this).val());
+					}
+					
+				}
+			);
+			$.ajax({
+				url:"{{ url('bid_ind') }}",
+				method: 'post',
+				data: {
+					individual: ind,
+					tender_id: jQuery("input[name='tender_id']").val()
+				},
+				success: function(result){
+					console.log(result);
+				}
+			});
+		});
+		$('#approach_save').click(function(){
+			var approachData = new FormData(document.getElementById('approachForm'));
+			$.ajax({
+				url:"{{ url('bid_approach') }}",
+				method: 'post',
+				data: approachData,
+				dataType: 'json',
+				processData: false,
+				contentType: false,
+				success: function(result){
+					console.log(result);
+				}
+			});
+		});
+		$('#appointment_save').click(function(){
+			var appointmentData = new FormData(document.getElementById('appointmentForm'));
+			$.ajax({
+				url:"{{ url('bid_appointment') }}",
+				method: 'post',
+				data: appointmentData,
+				dataType: 'json',
+				processData: false,
+				contentType: false,
+				success: function(result){
+					console.log(result);
+				}
+			});
+		});
 	});
 </script>
 <script type="text/javascript">
@@ -1006,12 +1054,12 @@
 									
 						<div class="form-group butcent">
 							<button type="button" data-toggle="tab" href="#section4" id="checkinpbut" name="Next" class="btn btn-primary butsize ">Next</button>
-							<button type="button" id="ind_save" name="Save" value="Save" class="btn  butsize color">Save</button>
+							<button type="button" id="ind_save" name="Save" value="Save" class="btn butsize color">Save</button>
 						</div>
 						
 					</div>
 					<div id="section4" class="tab-pane fade tender-container">
-						<form method="POST" action="{{ url('winwork/bid/'.$tender->tender_id.'/approach') }}" enctype="multipart/form-data">
+						<form id='approachForm'>
 							@csrf
 						<h3 class="bid-form-title">Approach</h3>
 						<input type="hidden" name="tender_id" value="{{ $tender->tender_id }}">
@@ -1125,14 +1173,14 @@
 									
 									<div class="form-group butcent">
 										<button type="button" data-toggle="tab" href="#section5" id="checkinpbut3" name="Next" class="btn btn-primary butsize ">Next</button>
-										<button type="submit" name="Save" value="Save" class="btn  butsize color">Save</button>
+										<button type="button" id="approach_save" name="Save" value="Save" class="btn  butsize color">Save</button>
 										
 									</div>
 								</div>
 							</div>
 						</div>
-						</form>
 					</div>
+					</form>
 						
 					</div>
 					<div id="section5" class="tab-pane fade tender-container">
@@ -1199,615 +1247,6 @@
 
 						</div><br> 
 
-
-
-
-							{{-- <div class="row">
-								<div class="col-sm-12">
-									<table id="customers1">
-											  <tr>
-											    <th>Deliverable</th>
-											    <th>Details / Contents</th>
-											    <th>RACI</th>
-											    <th>0</th>
-											    <th>1</th>
-											    <th>2</th>
-											    <th>3</th>
-											    <th>4</th>
-											    <th>5</th>
-											    <th>6</th>
-											    <th>7</th>
-											    <th>Total</th>
-											  </tr>
-											  <tr>
-											    <td>Strategic Brief</td>
-											  <td contenteditable='true'></td>
-											  <td contenteditable='true'></td>
-											   <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											    											
-											  </tr>
-											  <tr>
-											    <td>Project Programme (Lead)</td>
-											     <td contenteditable='true'></td>
-											  <td contenteditable='true'></td>
-											   <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>
-											  <tr>
-											    <td>Feasibility Study</td>
-											    <td contenteditable='true'></td>
-											  <td contenteditable='true'></td>
-											   <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  <tr>
-											    <td>Design Responsibility Matrix</td>
-											    <td contenteditable='true'></td>
-											  <td contenteditable='true'></td>
-											   <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>
-											  <tr>
-											   <td>Site Information Report</td>
-											     <td contenteditable='true'></td>
-											  <td contenteditable='true'></td>
-											   <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>
-											  <tr>
-											    <td>Information Exchange Strategy</td>
-											     <td contenteditable='true'></td>
-											  <td contenteditable='true'></td>
-											   <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>
-											  <tr>
-											    <td>Project Brief/td>
-											    <td contenteditable='true'></td>
-											  <td contenteditable='true'></td>
-											   <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>
-											  <tr>
-											    <td>Risk Assessment (Lead)</td>
-											     <td contenteditable='true'></td>
-											  <td contenteditable='true'></td>
-											   <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>
-											  <tr>
-											    <td>Handover Strategy (Lead)</td>
-											    <td contenteditable='true'></td>
-											  <td contenteditable='true'></td>
-											   <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>
-											  <tr>
-											    <td>Project Execution Plan</td>
-											     <td contenteditable='true'></td>
-											  <td contenteditable='true'></td>
-											   <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>
-											  <tr>
-											    <td>Design Proposals from Design Team members</td>
-											    <td contenteditable='true'></td>
-											  <td contenteditable='true'></td>
-											   <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>
-											</table><br>
-											 <button type="button" class="btn btn-info">Add another Lines</button>
-								</div>
-							</div><br> --}}
-							{{-- <div class="row">
-								<div class="col-sm-12">
-									<table id="Riba1" style="overflow-x:auto;">
-											  <tr>
-											    <th> Meetings</th>
-											    <th>Purpose</th>
-											    <th>Attendees</th>
-											    <th>Assumed Duration (hours)</th>
-											    <th>Reoccurence / Number of Meetings</th>
-											    <th>Arrange</th>
-											    <th>Attend</th>
-											    <th>Minute</th>
-											    <th>1</th>
-											    <th>2</th>
-											    <th>3</th>
-											    <th>4</th>
-											    <th>5</th>
-											    <th>6</th>
-											    <th>7</th>
-											  </tr>
-											  <tr>
-											    <td>Pre-Application Meetings</td>
-											   <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											   
-											 
-											    
-											  </tr>
-											  <tr>
-											    <td>Site Visits</td>
-											     <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											   
-											  </tr>
-											  <tr>
-											    <td>Site / Project Meetings (RIBA Stage 4/5)</td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    
-											  </tr>
-											  <tr>
-											   <td>SC / PC Site Inspection</td>
-											   <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td><div class="mama" onmouseup="mUp(this)"></div></td>
-											 <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											    
-											  </tr>
-											  <tr>
-										</table><br>
-										<button type="button" class="btn btn-primary">Add another Lines</button>
-								</div>
-							</div><br> --}}
-							{{-- <div class="row">
-								<div class="col-sm-12">
-									<table id="Content">
-											  <tr>
-											    <th> Design Considerations</th>
-											    <th>Applies to</th>
-											  </tr>
-											 
-											  <tr>
-											   <td>Cost, programme, quality, health & safety during construction and operation, functionality, buildability, operation and maintenance.</td>
-											    <td contenteditable='true'></td>
-											  
-											  </tr>
-											   <tr>
-											   <td>All information provided by other members of the Project Team.</td>
-											      <td contenteditable='true'></td>
-											  </tr>
-											   <tr>
-											   <td>Good Practice in the Selection of Construction Materials 2011 (British Council of Offices Publication.</td>
-											     <td contenteditable='true'></td>
-											  </tr>
-											   <tr>
-											   <td>Statutory standards</td>
-											     <td contenteditable='true'></td>
-											  </tr>
-											   <tr>
-											   <td>Co-ordination with structural and building services</td>
-											     <td contenteditable='true'></td>
-											  </tr>
-										</table><br>
-										<button type="button" class="btn btn-info">Add another Lines</button>
-								</div>
-							</div><br> --}}
-								{{-- <div class="row">
-								<div class="col-sm-12">
-									<table id="Stages1">
-											  <tr>
-											    <th>Advise on</th>
-											    <th>0</th>
-											    <th>1</th>
-											    <th>2</th>
-											    <th>3</th>
-											    <th>4</th>
-											    <th>5</th>
-											    <th>6</th>
-											    <th>7</th>
-											  </tr>
-											  
-										      <tr>
-											  <td>Any products or materials, specified within the guidelines named in Item ???, that are relevant to the project and have been found to be deleterious or hazardous to health and safety.</td>
-											  <td contenteditable='true'></td>
-											   <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											  </tr>
-											     <tr>
-											  <td>Assembly of Project Team. (Lead)</td>
-										        <td contenteditable='true'></td>
-										         <td contenteditable='true'></td>
-										          <td contenteditable='true'></td>
-										           <td contenteditable='true'></td>
-										            <td contenteditable='true'></td>
-										             <td contenteditable='true'></td>
-										              <td contenteditable='true'></td>
-										               <td contenteditable='true'></td>
-											  </tr>
-											   <tr>
-											  <td>Need for and the scope of services by consultants, specialists, sub-contractors or suppliers. (Lead)</td>
-											   <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>
-
-											   <tr>
-											  <td>Form and content of design outputs, their interfaces and a verification procedure. (Lead)</td>
-											  <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>
-
-											   <tr>
-											  <td>Resolution of defects.</td>
-											  <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>
-											  <tr>
-											  <td>Form and content of design outputs, their interfaces and a verification procedure. (Lead)</td>
-											  <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>
-
-											   <tr>
-											  <td>Relevant experience from previous projects.</td>
-											  <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>
-											  <tr>
-											    <th>Monitor</th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											  </tr>
-
-											  <tr>
-											  <td>Work of the Designers Designers regarding…. [WHAT?]</td>
-											  <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>
-
-											  <tr>
-											  <td>Performance of Design Team.</td>
-											  <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-												
-											  </tr>										    
-											 
-											 <tr>
-											  <td>Compliance with statutory and contract requirements.</td>
-											 <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>
-											  <tr>
-											    <th>Collaborate / Consult with</th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											  </tr>
-											  <tr>
-											  <td>Relevant Third Parties as required.</td>
-											   <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>
-											  <tr>
-											  <td>Planning authority to discuss the project</td>
-											   <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>	
-											  <tr>
-											  <td>Statutory authorities on developing design.</td>
-											   <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>	
-                                               <tr>
-											  <td>Project Manager & Employer on significant design issues. (Lead).</td>
-											  <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>	
-											  <tr>
-											    <th>Co-ordinate</th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											  </tr>
-											  <tr>
-											  <td>Collation of all planning submission documents.</td>
-											  <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>
-
-											  <tr>
-											  <td>Reviewing design information provided by contractors or specialists to establish whether that information can be co-ordinated and integrated with other project information.</td>
-											   <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>
-											   <tr>
-											    <th>Other</th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											    <th></th>
-											  </tr>
-                                              
-                                              <tr>
-											  <td>Submit the [detailed / outline] planning application.</td>
-                                               <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>
-
-											   <tr>
-											  <td>Assisting building user during initial occupation period.</td>
-											  <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>
-
-											  <tr>
-											  <td>Review all instructions and information about the Project, provided by the Employer.</td>
-											  <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>
-
-											  <tr>
-											  <td>preparing and making submissions under building acts and/or regulations or other statutory requirements.</td>
-											   <td contenteditable='true'></td>
-											    <td contenteditable='true'></td>
-											     <td contenteditable='true'></td>
-											      <td contenteditable='true'></td>
-											       <td contenteditable='true'></td>
-											        <td contenteditable='true'></td>
-											         <td contenteditable='true'></td>
-											          <td contenteditable='true'></td>
-											  </tr>
-
-
-										</table><br>
-										<button type="button" class="btn btn-success">Add another Lines</button>
-								</div>
-								
-							</div><br> --}}
-
 							<div class="form-group butcent">
 								<button type="button" data-toggle="tab" href="#section6" id="checkinpbut4" name="Next" class="btn btn-primary butsize ">Next</button>
 								<button type="button" name="Save" value="Save" class="btn  butsize color">Save</button>
@@ -1816,6 +1255,7 @@
 					</div>
 
 					<div id="section6" class="tab-pane fade tender-container">
+						<form id="appointmentForm">
 						<h3 class="bid-form-title">Appointment</h3>
 						<div class="kuwestion">
 							<div class="inputscheck">
@@ -1880,11 +1320,6 @@
 										</div>
 
 									</div>
-									<?php 
-										$storage = $appointment->bonds;
-										$bonds = explode(",", $storage);
-									?>
-									@foreach($bonds as $b)
 										<div class="row">
 										<div class="col-sm-4">
 											<div class="form-group">
@@ -1894,7 +1329,7 @@
 
 										<div class="col-sm-8">
 											<div class="form-group">
-												<p >{{ $b }}</p>
+												<p ></p>
 											</div>
 										</div>
 									</div>
@@ -1923,7 +1358,6 @@
 												</div>
 										</div>
 									</div><br>
-									@endforeach
 									<div class="row">
 										<div class="col-sm-4">Collateral  Warranties  /  Third  Parties  </div>
 										<div class="col-sm-8">
@@ -2087,13 +1521,14 @@
 									
 									<div class="form-group butcent">
 										<button type="button" data-toggle="tab" href="#section7" id="checkinpbut5" name="Next" class="btn btn-primary butsize ">Next</button>
-										<button type="button" name="Save" value="Save" class="btn  butsize color">Save</button>
+										<button type="button" id="appointment_save" name="Save" value="Save" class="btn  butsize color">Save</button>
 										
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+					</form>
 					</div>
 					<div id="section7" class="tab-pane fade tender-container" style="margin-bottom: 117px;">
 						<form method="POST" action="{{ url('winwork/bid/'.$tender->tender_id.'/save') }}">

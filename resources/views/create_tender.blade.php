@@ -517,49 +517,19 @@
 				}
 			});
 		});
-		$('#appointment_save').click(function(){
-			var idd = $('#serveprojtitle').attr('data-id');
-			// alert($('#idd').val());
-			var insurance_n = [];
-			var insurance_l = [];
-			var bond = [];
-			// var dummy = 'Test';
-			//alert('dasdad');
-			jQuery("select[name='insurance_name[]']").each(function()
-				{
-					insurance_n.push($(this).val());
-				}
-			);
-			jQuery("input[name='insurance_level[]']").each(function()
-				{
-					insurance_l.push($(this).val());
-				}
-			);
-			jQuery("input[name='bonds[]']").each(function()
-				{	
-					if($(this).prop('checked')){
-						bond.push($(this).val());
-					}
-					
-				}
-			);
+		$('#app_save').click(function(){
+			alert('clicked!');
+			var id = $('#serveprojtitle').attr('data-id');
+			var appointmentData = new FormData(document.getElementById('appointmentForm'));
+			appointmentData.append('idd', id);
 			jQuery.ajax({
-				url:"{{ url('project_info_tender_appointment') }}",
+				url:"{{ url('tender_appointment') }}",
 				method: 'post',
-				data: {
-					insurance_name: insurance_n,
-					insurance_level: insurance_l,
-					current_tend: idd,
-					bonds: bond,
-					collateral_warranties: jQuery("select[name='collateral_warranties']").val(),
-					limit_of_liability: jQuery("input[name='limit_of_liability']").val()
-					// net_contribution_clause:jQuery("input[name='net_contribution_clause']").val(),
-					// documents_for_signature:  jQuery("input[name='documents_for_signature']").val(),
-					// signature_files: jQuery("input[name='signature_files']").val()
-				},
+				data: appointmentData,
+				dataType: 'json',
+				processData: false,
+				contentType: false,
 				success: function(result){
-					// jQuery('.alert').show();
-					// jQuery('.alert').html(result.success);
 					console.log(result);
 				}
 			});
@@ -584,7 +554,9 @@
 				data: {
 					idd: idd,
 					status: status,
-					time_remaining: jQuery("select[name='days']").val(),
+					// time_remaining: jQuery("select[name='days']").val(),
+					end: jQuery("input[name='deadline_date']").val(),
+					feedback: jQuery("input[name='feedback_date']").val(),
 					companies: comp
 				},
 				success: function(result){
@@ -1266,7 +1238,7 @@
 					pre_app_assumed: jQuery("input[name='pre_app_assumed_duration']").val(),
 					pre_app_reoccurence: jQuery("input[name='pre_app_reoccurence']").val(),
 					site_visits_purpose: jQuery("textarea[name='site_visits_purpose']").val(),
-					site_visists_attendees: jQuery("textarea[name='site_visits_attendees']").val(),
+					site_visits_attendees: jQuery("textarea[name='site_visits_attendees']").val(),
 					site_visits_assumed: jQuery("input[name='site_visits_assumed_duration']").val(),
 					site_visits_reoccurence: jQuery("input[name='site_visits_reoccurence']").val(),
 					riba_purpose: jQuery("textarea[name='riba_purpose']").val(),
@@ -1283,14 +1255,14 @@
 					site_visits_num: site_v_num,
 					riba_choice: riba_choice,
 					riba_num: riba_num,
-					inspection_choice: ins_choice,
-					inspection_num: ins_num,
-					question_one: jQuery("textarea[name='question_one']").val(),
-					question_two: jQuery("textarea[name='question_two']").val(),
-					question_three: jQuery("textarea[name='question_three']").val(),
-					question_four: jQuery("textarea[name='question_four']").val(),
-					question_five: jQuery("textarea[name='question_five']").val(),
-					question_six: jQuery("textarea[name='question_six']").val(),
+					inspect_choice: ins_choice,
+					inspect_num: ins_num,
+					quest_one: jQuery("textarea[name='question_one']").val(),
+					quest_two: jQuery("textarea[name='question_two']").val(),
+					quest_three: jQuery("textarea[name='question_three']").val(),
+					quest_four: jQuery("textarea[name='question_four']").val(),
+					quest_five: jQuery("textarea[name='question_five']").val(),
+					quest_six: jQuery("textarea[name='question_six']").val(),
 					advise_one: a_one,
 					advise_two: a_two,
 					advise_three: a_three,
@@ -1442,7 +1414,7 @@
 
 		$("#datepicker42").datepicker( {
 			// container:'#datepicker4',
-		    format: "mm-dd-yyyy",
+		    format: "yyyy-mm-dd",
 		    viewMode: "days", 
 		    minViewMode: "days",
 		    orientation: 'auto'
@@ -1450,7 +1422,7 @@
 
 		$("#datepicker41").datepicker( {
 			// container:'#datepicker4',
-		    format: "mm-dd-yyyy",
+		    format: "yyyy-mm-dd",
 		    viewMode: "days", 
 		    minViewMode: "days",
 		    orientation: 'auto'
@@ -1907,7 +1879,7 @@
 	        			<tbody>
 	        				<tr id="desclone" data-edit="no">
 	        				    <td class="zui-sticky-col4"><textarea class="hayt4 name" name="question_name" placeholder="Enter details here"></textarea></td>
-	        				    <td class="td "><textarea class="hayt4 question" name="question_one" placeholder="Enter details here"></textarea></td>
+	        				    <td class="td "><textarea class="hayt4 question" name="" placeholder="Enter details here"></textarea></td>
 	        				</tr>
 	        			</tbody>
 	        		</table>
@@ -1939,7 +1911,7 @@
 	        			<tbody>
 	        				<tr id="adviseclone" data-edit="no">
 	        				    <td class="zui-sticky-col5"><textarea class="name"  style="border-radius: 6px;
-    height: 70px;" name="question_one" placeholder="Enter details here"></textarea></td>
+    height: 70px;" name="" placeholder="Enter details here"></textarea></td>
 	        				    <td class="td">
 	        				    	<div class="form-check">
 	        				    		<label>
@@ -2018,9 +1990,9 @@
 		        <div class="modal-body">
 		          <p>Deadline</p><div class="form-group" >
 					<div class="input-group date dateday" id="datepicker42" data-date-container="#datepicker41" data-date="02-2012" 
-					         data-date-format="mm-dd-yyyy">
+					         data-date-format="yyyy-mm-dd">
 					         <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	 
-						 <input class="form-control " type="text" placeholder="Select year" readonly="readonly" name="date" >	  
+						 <input class="form-control" name="deadline_date" type="text" placeholder="Select year" readonly="readonly">	  
 						  
 					</div>
 					
@@ -2028,9 +2000,9 @@
 			
 		          <p>Feedback date<div class="form-group" >
 					<div class="input-group date dateday" id="datepicker41" data-date-container="#datepicker41" data-date="02-2012" 
-					         data-date-format="mm-dd-yyyy">
+					         data-date-format="yyyy-mm-dd">
 					         <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
-						 <input class="form-control " type="text" placeholder="Select year" readonly="readonly" name="date" >	  
+						 <input class="form-control" name="feedback_date" type="text" placeholder="Select year" readonly="readonly">	  
 						 	  
 					</div>
 				</div></p>
@@ -3676,7 +3648,7 @@
 		    						                @foreach ($designs as $des)
 		    						                	<tr id="desclone" data-edit="yes" data-addid="{{ $des['added_id'] }}" >
 		    						                	    <td class="zui-sticky-col4"><textarea class="hayt4 name" name="question_name" placeholder="Enter details here">{{ $des['name'] }}</textarea></td>
-		    						                	    <td class="td "><textarea class="hayt4 question" name="question_one" placeholder="Enter details here">{{ $des['question'] }}</textarea></td>
+		    						                	    <td class="td "><textarea class="hayt4 question" name="" placeholder="Enter details here">{{ $des['question'] }}</textarea></td>
 		    						                	</tr>
 		    						                @endforeach
 		    						            </tbody>
@@ -4881,7 +4853,7 @@
 		    						                @foreach ($advises as $advise)
 		    						                	<tr id="adviseclone" data-edit="yes" data-addid="{{ $advise['added_id'] }}">
 								        				    <td class="zui-sticky-col5"><textarea class="name"  style="border-radius: 6px;
-							    height: 70px;" name="question_one" placeholder="Enter details here">{{ $advise['name'] }}</textarea></td>
+							    height: 70px;" name="" placeholder="Enter details here">{{ $advise['name'] }}</textarea></td>
 								        				    <td class="td">
 								        				    	<div class="form-check">
 								        				    		<label>
@@ -4953,8 +4925,7 @@
 		    					</div>
 		    					<div id="section21" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Appointment</h3>
-		    						{{-- <form method="post"> --}}
-									{!! Form::open(['action' => 'TenderController@appointmentStore', 'method' => 'POST', 'enctype' => 'multipart/form-data'])!!}
+		    						<form id="appointmentForm">
 										<input type="hidden" id="tendserve" name="services">
 										<input type="hidden" name="tender_id" id="tendid" value="{{ $tender->tender_id }}">
 		    							<div class="row">
@@ -5135,13 +5106,12 @@
 		    										</div>
 		    										<div class="form-group butcent">
 														<input id="sec2" type="button" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
-														<input id="" type="submit" name="Save" value="Save" class="btn btn-primary butsize">
+														<input id="app_save" type="buttton" name="Save" value="Save" class="btn btn-primary butsize">
 													</div>
 		    									</div>
 		    								</div>
 		    							</div>
-									{{-- </form> --}}
-									{!! Form::close() !!}
+									</form
 		    					</div>
 		    					<div id="section31" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Evaluation Settings</h3>

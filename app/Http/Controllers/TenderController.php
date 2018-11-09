@@ -134,7 +134,9 @@ class TenderController extends Controller
 
     public function appointmentStore(Request $request){
         
-        $idd = $request->get('tender_id');
+        $tender_id = $request->idd;
+        $tender_id = json_decode($tender_id);
+        $idd = $tender_id;
         
         $appointment = new TenderAppointment;
         $appointment->tender_id = $idd;
@@ -569,7 +571,7 @@ class TenderController extends Controller
         $risk_num_storage = $request->risk_num;
         $r_num = "";
         if(count($risk_num_storage) != 0){
-            for($counter = 0; $counter < count($risk_raci_storage); $counter++){
+            for($counter = 0; $counter < count($risk_num_storage); $counter++){
                 $r_num .= $risk_num_storage[$counter] . ",";
             }
             $r_num = substr($r_num, 0, -1);
@@ -740,7 +742,7 @@ class TenderController extends Controller
 
 
         //Inspection
-        $ins_choice = $request->inspection_choice;
+        $ins_choice = $request->inspect_choice;
         $ins_c = "";
         if(count($ins_choice) != 0){
             for($counter = 0; $counter < count($ins_choice); $counter++){
@@ -751,7 +753,7 @@ class TenderController extends Controller
         }
         $meeting->site_inspection_choice = $ins_c;
 
-        $ins_num = $request->inspection_num;
+        $ins_num = $request->inspect_num;
         $ins_n = "";
         if(count($ins_num) != 0){
             for($counter = 0; $counter < count($ins_num); $counter++){
@@ -760,6 +762,7 @@ class TenderController extends Controller
             $ins_n = substr($ins_n, 0, -1);
             $meeting->site_inspection_num = $ins_n;
         }
+        $meeting->site_inspection_num = $ins_n;
 
         $meeting->save();
 
@@ -767,11 +770,11 @@ class TenderController extends Controller
         TenderDesignConsiderations::where('design_id', $request->get('desid'))->delete();
         $question = new TenderDesignConsiderations;
         $question->tender_id = $request->get('idd');
-        $question->question_one_applies_to = $request->get('question_one');
-        $question->question_two_applies_to = $request->get('question_two');
-        $question->question_three_applies_to = $request->get('question_three');
-        $question->question_four_applies_to = $request->get('question_four');
-        $question->question_five_applies_to = $request->get('question_five');
+        $question->question_one_applies_to = $request->get('quest_one');
+        $question->question_two_applies_to = $request->get('quest_two');
+        $question->question_three_applies_to = $request->get('quest_three');
+        $question->question_four_applies_to = $request->get('quest_four');
+        $question->question_five_applies_to = $request->get('quest_five');
         $question->save();
 
         //Advise On
@@ -1078,7 +1081,7 @@ class TenderController extends Controller
         $tender = Tender::where('tender_id', $request->get('idd'))
                     ->update([
                         "status" => $request->get('status'),
-                        "time_remaining" => $request->get('time_remaining')
+                        "end" => $request->get('end')
                     ]);
         
         // $tender->status = $request->get('status');
@@ -1126,7 +1129,7 @@ class TenderController extends Controller
     {
         
         $tenid = $id;
-        $user = $request->session()->get('id');
+        // $user = $request->session()->get('id');
         $tender = Tender::where('tender_id', $tenid)->first();
         $bonds = TenderBonds::where('tender_id', $tenid)->get();
         $appointment = TenderAppointment::where('tender_id', $tenid)->get();
@@ -1141,10 +1144,9 @@ class TenderController extends Controller
         $scopesa = TenderScopeAdvise::where('tender_id', $tenid)->get();
         $quests = TenderPreQualificationQuestionnaire::where('tender_id', $tenid)->get();
         $company = CompInfo::all()->pluck('comp_name')->toArray();
-        $bids = Bids::where([
-            ['tender_id', '=', $tenid],
-            ['user_id', '=', $user]
-        ])->get();
+
+        
+
 
         // return response()->json(array(
         //     'tender' => $tender,
@@ -1188,7 +1190,6 @@ class TenderController extends Controller
             'scopesd' => $scopesd,
             'scopesa' => $scopesa,
             'company' => $company,
-            'bids' => $bids
         ]);
     
 

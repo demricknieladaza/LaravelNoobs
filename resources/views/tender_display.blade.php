@@ -531,14 +531,16 @@
         		</tr>
         	</thead>
         	<tbody>
-        		<tr>
-        			<td>Company 1</td>
-        			<td>5</td>
-        			<td>9</td>
-        			<td>2</td>
-        			<td><a>View Bid</a></td>
-        		</tr>
-        		<tr>
+					@foreach($bids as $b)
+					<tr>
+						<td>{{ $b->comp_name }}</td>
+						<td>5</td>
+						<td>13</td>
+						<td>2</td>
+						<td><a>View Bid</a></td>
+					</tr>
+					@endforeach
+        		{{-- <tr>
         			<td>Company 2</td>
         			<td>2</td>
         			<td>4</td>
@@ -551,7 +553,7 @@
         			<td>8</td>
         			<td>7</td>
         			<td><a>View Bid</a></td>
-        		</tr>
+        		</tr> --}}
         	</tbody>
         </table>
       </div>
@@ -3922,14 +3924,16 @@
         		</tr>
         	</thead>
         	<tbody>
+				{{-- @foreach($bids as $b)
         		<tr>
-        			<td>Company 1</td>
+        			<td>{{ $b->comp_name }}</td>
         			<td>5</td>
-        			<td>9</td>
+        			<td>13</td>
         			<td>2</td>
         			<td><a>View Bid</a></td>
-        		</tr>
-        		<tr>
+				</tr>
+				@endforeach --}}
+        		{{-- <tr>
         			<td>Company 2</td>
         			<td>2</td>
         			<td>4</td>
@@ -3942,7 +3946,7 @@
         			<td>8</td>
         			<td>7</td>
         			<td><a>View Bid</a></td>
-        		</tr>
+        		</tr> --}}
         	</tbody>
         </table>
       </div>

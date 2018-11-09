@@ -912,7 +912,7 @@
 					pre_app_assumed: jQuery("textarea[name='pre_app_assumed_duration']").val(),
 					pre_app_reoccurence: jQuery("textarea[name='pre_app_reoccurence']").val(),
 					site_visits_purpose: jQuery("textarea[name='site_visits_purpose']").val(),
-					site_visists_attendees: jQuery("textarea[name='site_visits_attendees']").val(),
+					site_visits_attendees: jQuery("textarea[name='site_visits_attendees']").val(),
 					site_visits_assumed: jQuery("textarea[name='site_visits_assumed_duration']").val(),
 					site_visits_reoccurence: jQuery("textarea[name='site_visits_reoccurence']").val(),
 					riba_purpose: jQuery("textarea[name='riba_purpose']").val(),
@@ -1233,7 +1233,7 @@
 		    							<td>Project ID
 			    							
 		    							</td>
-		    							<td><input type="number" name="project_id" class="form-control" value="{{ $project->project_id }}" placeholder="123456789" readonly></td>
+		    							<td><input type="number" name="project_id" class="form-control" value="{{ $project->project_record_id }}" placeholder="123456789" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Location
@@ -1319,7 +1319,7 @@
 		    							<td>Type of Development
 		    								
 		    							</td>
-		    							<td><input type="number" name="type_of_development" class="form-control proje" value="{{ $project->type_of_development }}" placeholder="New Built" readonly></td>
+		    							<td><input type="text" name="type_of_development" class="form-control proje" value="{{ $project->type_of_development }}" placeholder="New Built" readonly></td>
 		    						</tr>
 		    						<tr>
 		    							<td>Construction Value
