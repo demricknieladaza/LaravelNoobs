@@ -124,6 +124,13 @@ ul.typeofdev {
 {
     width: 100%;
 }
+#indilist {
+     /*your fixed height*/
+    -webkit-column-count: 4;
+       -moz-column-count: 4;
+            column-count: 4; /*3 in those rules is just placeholder -- can be anything*/
+}
+
 </style>
 
 <script type="text/javascript">
@@ -134,45 +141,285 @@ ul.typeofdev {
 	var provs = [];
 	var projteam = [];
 	$(document).ready(function(){
-		$('#add_another').click(function(){
-			alert('SAD');
-			var accre = JSON.stringify(accredatations);
-			var deg = JSON.stringify(degrees);
-			var awa = JSON.stringify(awards);
-			var ty = JSON.stringify(types);
-			var prov = JSON.stringify(provs);
-			var projt = JSON.stringify(projteam);
-			var devchecked = [];
-			jQuery("input[name='development[]']").each(function()
-				{	
-					if($(this).prop('checked')){
-						devchecked.push($(this).val());
-					}
-					
-				}
-			);
-			var dev = JSON.stringify(devchecked);
-			var indData = new FormData(document.getElementById('indForm'));
-			indData.append('accredatations', accre);
-			indData.append('degrees', deg);
-			indData.append('awards', awa);
-			indData.append('types', ty);
-			indData.append('provs', prov);
-			indData.append('projteam', projt);
-			indData.append('development', dev);
-			$.ajax({
-				url: '{{ url("individualStore") }}',
-				type: 'POST',
-				data: indData,
-				dataType: 'json',
-				processData: false,
-				contentType: false,
-				success:function(result){
-					console.log(result);
-				}
+		var divClone = $("#projectlist").clone();
+		$("#danger-alert").hide();
 
+		// =====================================================Add Individual=============================================
+		$('#add_another').click(function(e){
+			if($('input[name="first_name"]').val()=="" || $('input[name="last_name"]').val()==""){
+
+                $("#danger-alert").fadeTo(2000, 500).slideUp(500, function(){
+                	$("#danger-alert").slideUp(500);
+            	});
+
+			}
+			else{
+				var accre = JSON.stringify(accredatations);
+				var deg = JSON.stringify(degrees);
+				var awa = JSON.stringify(awards);
+				var ty = JSON.stringify(types);
+				var prov = JSON.stringify(provs);
+				var projt = JSON.stringify(projteam);
+				var devchecked = [];
+				jQuery("input[name='development[]']").each(function()
+					{	
+						if($(this).prop('checked')){
+							devchecked.push($(this).val());
+						}
+						
+					}
+				);
+				var dev = JSON.stringify(devchecked);
+				var indData = new FormData(document.getElementById('indForm'));
+				indData.append('accredatations', accre);
+				indData.append('degrees', deg);
+				indData.append('awards', awa);
+				indData.append('types', ty);
+				indData.append('provs', prov);
+				indData.append('projteam', projt);
+				indData.append('development', dev);
+				$.ajax({
+					url: '{{ url("individualStore") }}',
+					type: 'POST',
+					data: indData,
+					dataType: 'json',
+					processData: false,
+					contentType: false,
+					success:function(result){
+						console.log(result);
+						location.reload();
+					}
+
+				});
+			}
+			// alert('SAD');
+			
+		});
+		// =====================================================Add Individual=============================================
+		$('#add_another1').click(function(e){
+			if($('input[name="first_name"]').val()=="" || $('input[name="last_name"]').val()==""){
+
+                $("#danger-alert").fadeTo(2000, 500).slideUp(500, function(){
+                	$("#danger-alert").slideUp(500);
+            	});
+
+			}
+			else{
+				var accre = JSON.stringify(accredatations);
+				var deg = JSON.stringify(degrees);
+				var awa = JSON.stringify(awards);
+				var ty = JSON.stringify(types);
+				var prov = JSON.stringify(provs);
+				var projt = JSON.stringify(projteam);
+				var devchecked = [];
+				jQuery("input[name='development[]']").each(function()
+					{	
+						if($(this).prop('checked')){
+							devchecked.push($(this).val());
+						}
+						
+					}
+				);
+				var dev = JSON.stringify(devchecked);
+				var indData = new FormData(document.getElementById('indForm'));
+				indData.append('accredatations', accre);
+				indData.append('degrees', deg);
+				indData.append('awards', awa);
+				indData.append('types', ty);
+				indData.append('provs', prov);
+				indData.append('projteam', projt);
+				indData.append('development', dev);
+				$.ajax({
+					url: '{{ url("individualStore") }}',
+					type: 'POST',
+					data: indData,
+					dataType: 'json',
+					processData: false,
+					contentType: false,
+					success:function(result){
+						console.log(result);
+						location.reload();
+					}
+
+				});
+			}
+			// alert('SAD');
+			
+		});
+		// ================================================Update Individual================================================
+		$('#update_another').click(function(){
+			if($('input[name="first_name"]').val()=="" || $('input[name="last_name"]').val()==""){
+
+                $("#danger-alert").fadeTo(2000, 500).slideUp(500, function(){
+                	$("#danger-alert").slideUp(500);
+            	});
+
+			}
+			else{
+				var accre = JSON.stringify(accredatations);
+				var deg = JSON.stringify(degrees);
+				var awa = JSON.stringify(awards);
+				var ty = JSON.stringify(types);
+				var prov = JSON.stringify(provs);
+				var projt = JSON.stringify(projteam);
+				var devchecked = [];
+				jQuery("input[name='development[]']").each(function()
+					{	
+						if($(this).prop('checked')){
+							devchecked.push($(this).val());
+						}
+						
+					}
+				);
+				var dev = JSON.stringify(devchecked);
+				var indData = new FormData(document.getElementById('indForm'));
+				indData.append('accredatations', accre);
+				indData.append('degrees', deg);
+				indData.append('awards', awa);
+				indData.append('types', ty);
+				indData.append('provs', prov);
+				indData.append('projteam', projt);
+				indData.append('development', dev);
+				$.ajax({
+					url: '{{ url("individualupdate") }}',
+					type: 'POST',
+					data: indData,
+					processData: false,
+					contentType: false,
+					success:function(result){
+						// console.log(result);
+						location.reload();
+					}
+
+				});
+			}
+		});
+		// ==============================================Add individual Project==============================================
+		$('#add_another_indi').click(function(e){
+			if($('input[name="project_title"]').val()=="" || $('input[name="project_value"]').val()==""){
+
+                $("#danger-alerts").fadeTo(2000, 500).slideUp(500, function(){
+                	$("#danger-alerts").slideUp(500);
+            	});
+
+			}
+			else{
+				var accre = JSON.stringify(accredatations);
+				var deg = JSON.stringify(degrees);
+				var awa = JSON.stringify(awards);
+				var ty = JSON.stringify(types);
+				var prov = JSON.stringify(provs);
+				var projt = JSON.stringify(projteam);
+				var devchecked = [];
+				jQuery("input[name='development[]']").each(function()
+					{	
+						if($(this).prop('checked')){
+							devchecked.push($(this).val());
+						}
+						
+					}
+				);
+				var dev = JSON.stringify(devchecked);
+				var indData = new FormData(document.getElementById('indForm'));
+				indData.append('accredatations', accre);
+				indData.append('degrees', deg);
+				indData.append('awards', awa);
+				indData.append('types', ty);
+				indData.append('provs', prov);
+				indData.append('projteam', projt);
+				indData.append('development', dev);
+				$.ajax({
+					url: '{{ url("addindiproject") }}',
+					type: 'POST',
+					data: indData,
+					processData: false,
+					contentType: false,
+					success:function(result){
+						// console.log(result);
+						location.reload();
+					}
+				});
+			}
+		});
+
+		// =================================================Get Individual===================================================
+		$('.getthisindi').click(function(e){
+			// e.stopPropagation();
+			// e.preventDefault();
+			$('.getthisindi').css('color','black');
+			$(this).css('color','#fe7235');
+			$('input:checked').removeAttr('checked');
+			$('#add_another_indi').css('display','block');
+			$('#add_another1').css('display','none');
+			var ids = $(this).attr('data-ind_id');
+			console.log(ids);
+			$.ajax({
+				url: '{{ url("individualget") }}',
+				type: 'GET',
+				data: { id: ids },
+				success:function(result){
+					// console.log(result['id'][0]);
+					// location.reload();
+					$('#add_another').css('display','none');
+					$('#update_another').css('display','block');
+					accredatations = [];
+					degrees = [];
+					awards = [];
+					$('#addedaccreditaion').html("");
+					$('#addeddegree').html("");
+					$('#addedawards').html("");
+					$("#projectlist").replaceWith(divClone.clone());
+					$('input[name="first_name"]').val(result['id'][0]['first_name']);
+					$('input[name="last_name"]').val(result['id'][0]['last_name']);
+					$('input[name="seniority_level"]').val(result['id'][0]['seniority']);
+					$('input[name="myiid"]').val(result['id'][0]['ind_id']);
+					$.each(result['accredation'],function(k,v){
+						$("ul#addedaccreditaion").append('<li data-id="'+accredatations.length+'" onclick="editaccreditaion('+accredatations.length+')">'+v['accredatation_name']+'</li>');
+						var newarray = {
+							accredatations: v['accredatation_name'],
+							year: v['accredatation_year'],
+							editable: 'true',
+							myid: v['accredatation_id']
+						};
+						accredatations.push(newarray);
+					});
+					$.each(result['degree'],function(k,v){
+						$("ul#addeddegree").append('<li data-id="'+degrees.length+'" onclick="editdegrees('+degrees.length+')">'+v['degree']+'</li>');
+						var newarray = {
+							degree: v['degree'],
+							year: v['degree_year'],
+							name: v['name_of_degree'],
+							editable: 'true',
+							myid: v['degree_id']
+						};
+						degrees.push(newarray);
+					});
+					var arr = result['id'][0]['services'].split(',');
+					$.each(arr, function(k,v)
+					{
+						$('input[name="offeredservices[]"][value="'+v+'"]').prop("checked",true);
+					});
+					$.each(result['awards'],function(k,v){
+						$("ul#addedawards").append('<li data-id="'+awards.length+'" onclick="editawards('+awards.length+')">'+v['award_name']+'</li>');
+						var newarray = {
+							name: v['award_name'],
+							awarded_by: v['awarded_by'],
+							award_year: v['award_year'],
+							details: v['award_details'],
+							editable: 'true',
+							myid: v['award_id']
+						};
+						awards.push(newarray);
+					});
+
+					$.each(result['project'],function(k,v)
+					{
+						$('<li class="getmyproj" data-id="'+v['indp_id']+'">'+v['project_title']+'</li>').insertBefore('.item:last');
+					});
+				}
 			});
 		});
+
 		$('.date').datepicker({
 			orientation: "bottom left",
 			autoclose: true,
@@ -180,6 +427,72 @@ ul.typeofdev {
 			minViewMode: 'months',
 			viewMode: 'months'
 		});
+		// =======================================SHOW PROJECT===============================================================
+		$(document).on("click","li.getmyproj",function(){
+			console.log($(this).attr('data-id'));
+			$('#add_another_indi').css('display','none');
+			$('#updateproj').css('display','block');
+			var ids = $(this).attr('data-id');
+			$('input[name="project_id"]').val(ids);
+			$.ajax({
+				url: '{{ url("individualgetproject") }}',
+				type: 'GET',
+				data: { id: ids },
+				success:function(result){
+					$('#refre').load(document.URL +  ' #refre *');
+					setTimeout(function() { nalitysaproject(result); }, 2000);
+				}
+			});
+		});
+
+		// ==============================================Update project======================================================
+		$('#updateproj').click(function(){
+			if($('input[name="project_title"]').val()=="" || $('input[name="project_value"]').val()==""){
+
+                $("#danger-alerts").fadeTo(2000, 500).slideUp(500, function(){
+                	$("#danger-alerts").slideUp(500);
+            	});
+
+			}
+			else{
+				var accre = JSON.stringify(accredatations);
+				var deg = JSON.stringify(degrees);
+				var awa = JSON.stringify(awards);
+				var ty = JSON.stringify(types);
+				var prov = JSON.stringify(provs);
+				var projt = JSON.stringify(projteam);
+				var devchecked = [];
+				jQuery("input[name='development[]']").each(function()
+					{	
+						if($(this).prop('checked')){
+							devchecked.push($(this).val());
+						}
+						
+					}
+				);
+				var dev = JSON.stringify(devchecked);
+				var indData = new FormData(document.getElementById('indForm'));
+				indData.append('accredatations', accre);
+				indData.append('degrees', deg);
+				indData.append('awards', awa);
+				indData.append('types', ty);
+				indData.append('provs', prov);
+				indData.append('projteam', projt);
+				indData.append('development', dev);
+				$.ajax({
+					url: '{{ url("updateindiproj") }}',
+					type: 'POST',
+					data: indData,
+					processData: false,
+					contentType: false,
+					success:function(result){
+						// console.log(result);
+						location.reload();
+					}
+				});
+			}
+		});
+
 		/*===================================================================================================================*/
 		/*==================================Add Accreditaion=================================================================*/
 		/*===================================================================================================================*/
@@ -192,7 +505,8 @@ ul.typeofdev {
 				var newarray = {
 					id: accredatations.length,
 					accredatations: $('select[name="accredatations"]').val(),
-					year: $('select[name="accreyear"]').val()
+					year: $('select[name="accreyear"]').val(),
+					editable: 'false'
 				};
 				accredatations.push(newarray);
 				$('select[name="accredatations"]').val(''),
@@ -207,10 +521,9 @@ ul.typeofdev {
 			else{
 				var id = $(this).attr('data-id');
 				$('ul#addedaccreditaion li[data-id="'+id+'"]').text($('select[name="accredatations"]').val());
-				accredatations[id] = {
-					accredatations: $('select[name="accredatations"]').val(),
-					year: $('select[name="accreyear"]').val()
-				};
+				accredatations[id]['accredatations'] = $('select[name="accredatations"]').val();
+				accredatations[id]['year'] = $('select[name="accreyear"]').val();
+
 				$('select[name="accredatations"]').val(''),
 				$('select[name="accreyear"]').val('')
 				$('#editaccreditaion').css('display','none');
@@ -230,7 +543,8 @@ ul.typeofdev {
 					id: degrees.length,
 					degree: $('select[name="degree"]').val(),
 					year: $('select[name="degree_year"]').val(),
-					name: $('input[name="degree_name"]').val()
+					name: $('input[name="degree_name"]').val(),
+					editable: 'false'
 				};
 				degrees.push(newarray);
 				$('select[name="degree"]').val(''),
@@ -238,7 +552,7 @@ ul.typeofdev {
 				$('input[name="degree_name"]').val('')
 			}
 		});
-		/*==================================Edit Degrees=================================================================*/
+		/*======================================Edit Degrees=================================================================*/
 		$('#editdegrees').click(function(){
 			if($('select[name="degree"]').val() == null || $('select[name="degree_year"]').val() == null || $('input[name="degree_name"]').val() == ""){
 				alert('Lacking fields')
@@ -246,11 +560,10 @@ ul.typeofdev {
 			else{
 				var id = $(this).attr('data-id');
 				$('ul#addeddegree li[data-id="'+id+'"]').text($('select[name="degree"]').val());
-				degrees[id] = {
-					degree: $('select[name="degree"]').val(),
-					year: $('select[name="degree_year"]').val(),
-					name: $('input[name="degree_name"]').val()
-				};
+				degrees[id]['degree'] = $('select[name="degree"]').val();
+				degrees[id]['year'] = $('select[name="degree_year"]').val();
+				degrees[id]['name'] = $('input[name="degree_name"]').val();
+				
 				$('select[name="degree"]').val(''),
 				$('select[name="degree_year"]').val(''),
 				$('input[name="degree_name"]').val('')
@@ -272,7 +585,8 @@ ul.typeofdev {
 					name: $('input[name="award_name"]').val(),
 					awarded_by: $('input[name="award_by"]').val(),
 					award_year: $('select[name="award_year"]').val(),
-					details: $('textarea#award_details').val()
+					details: $('textarea#award_details').val(),
+					editable: 'false'
 				};
 				awards.push(newarray);
 				$('input[name="award_name"]').val('');
@@ -281,7 +595,7 @@ ul.typeofdev {
 				$('textarea#award_details').val('');
 			}
 		});
-		/*==================================Edit Degrees=================================================================*/
+		/*======================================Edit Degrees=================================================================*/
 		$('#editawards').click(function(){
 			if($('input[name="award_name"]').val() == "" || $('input[name="award_by"]').val() == "" || $('select[name="award_year"]').val() == null || $('textarea#award_details').val() == "" ){
 				alert('Lacking fields');
@@ -289,12 +603,11 @@ ul.typeofdev {
 			else{
 				var id = $(this).attr('data-id');
 				$('ul#addedawards li[data-id="'+id+'"]').text($('input[name="award_name"]').val());
-				awards[id] = {
-					name: $('input[name="award_name"]').val(),
-					awarded_by: $('input[name="award_by"]').val(),
-					award_year: $('select[name="award_year"]').val(),
-					details: $('textarea#award_details').val()
-				};
+				awards[id]['name'] = $('input[name="award_name"]').val();
+				awards[id]['awarded_by'] = $('input[name="award_by"]').val();
+				awards[id]['award_year'] = $('select[name="award_year"]').val();
+				awards[id]['details'] = $('textarea#award_details').val();
+				
 				$('input[name="award_name"]').val('');
 				$('input[name="award_by"]').val('');
 				$('select[name="award_year"]').val('');
@@ -316,7 +629,8 @@ ul.typeofdev {
 					id: types.length,
 					name: $('select[name="type_name"]').val(),
 					area: $('input[name="area"]').val(),
-					units: $('input[name="units"]').val()
+					units: $('input[name="units"]').val(),
+					editable: 'false'
 				};
 				types.push(newarray);
 				$('select[name="type_name"]').val('');
@@ -332,11 +646,10 @@ ul.typeofdev {
 			else{
 				var id = $(this).attr('data-id');
 				$('ul#addedtype li[data-id="'+id+'"]').text($('select[name="type_name"]').val());
-				types[id] = {
-					name: $('select[name="type_name"]').val(),
-					area: $('input[name="area"]').val(),
-					units: $('input[name="units"]').val()
-				};
+				types[id]['name'] = $('select[name="type_name"]').val();
+				types[id]['area'] = $('input[name="area"]').val();
+				types[id]['units'] = $('input[name="units"]').val();
+				
 				$('select[name="type_name"]').val('');
 				$('input[name="area"]').val('');
 				$('input[name="units"]').val('');
@@ -357,7 +670,8 @@ ul.typeofdev {
 					id: provs.length,
 					name: $('select[name="provservicechoice"]').val(),
 					from: $('input[name="provdfrom"]').val(),
-					until: $('input[name="provduntil"]').val()
+					until: $('input[name="provduntil"]').val(),
+					editable: 'false'
 				};
 				provs.push(newarray);
 				$('select[name="provservicechoice"]').val('');
@@ -365,7 +679,7 @@ ul.typeofdev {
 				$('input[name="provduntil"]').val('');
 			}
 		});
-		/*==================================Edit provided service=================================================================*/
+		/*==================================Edit provided service============================================================*/
 		$('#editprov').click(function(){
 			if($('select[name="provservicechoice"]').val() == null || $('input[name="provdfrom"]').val() == "" || $('input[name="provduntil"]').val() == "" ){
 				alert('Lacking fields');
@@ -373,11 +687,10 @@ ul.typeofdev {
 			else{
 				var id = $(this).attr('data-id');
 				$('ul#addedprov li[data-id="'+id+'"]').text($('select[name="provservicechoice"]').val());
-				provs[id] = {
-					name: $('select[name="provservicechoice"]').val(),
-					from: $('input[name="provdfrom"]').val(),
-					until: $('input[name="provduntil"]').val()
-				};
+				provs[id]['name'] = $('select[name="provservicechoice"]').val();
+				provs[id]['from'] = $('input[name="provdfrom"]').val();
+				provs[id]['until'] = $('input[name="provduntil"]').val();
+				
 				$('select[name="provservicechoice"]').val('');
 				$('input[name="provdfrom"]').val('');
 				$('input[name="provduntil"]').val('');
@@ -397,14 +710,15 @@ ul.typeofdev {
 				var newarray = {
 					id: projteam.length,
 					name: $('select[name="member"]').val(),
-					compname: $('input[name="compname"]').val()
+					compname: $('input[name="compname"]').val(),
+					editable: 'false'
 				};
 				projteam.push(newarray);
 				$('select[name="member"]').val('');
 				$('input[name="compname"]').val('');
 			}
 		});
-		/*==================================Edit provided service=================================================================*/
+		/*==================================Edit provided service============================================================*/
 		$('#editteam').click(function(){
 			if($('select[name="member"]').val() == null || $('input[name="compname"]').val() == "" ){
 				alert('Lacking fields')
@@ -412,10 +726,9 @@ ul.typeofdev {
 			else{
 				var id = $(this).attr('data-id');
 				$('ul#addedproj li[data-id="'+id+'"]').text($('select[name="member"]').val());
-				projteam[id] = {
-					name: $('select[name="member"]').val(),
-					compname: $('input[name="compname"]').val()
-				};
+				projteam[id]['name'] = $('select[name="member"]').val();
+				projteam[id]['compname'] = $('input[name="compname"]').val();
+
 				$('select[name="member"]').val('');
 				$('input[name="compname"]').val('');
 				$('#editteam').css('display','none');
@@ -426,6 +739,58 @@ ul.typeofdev {
 		/*==================================Add Accreditaion=================================================================*/
 		/*===================================================================================================================*/
 	});
+
+	function nalitysaproject(result){
+		console.log(result);
+		$('input[name="project_title"]').val(result['proj'][0]['project_title']);
+		$('input[name="project_value"]').val(result['proj'][0]['project_value']);
+		if(result['proj'][0]['type_of_development'] == null){
+			var arr = [];
+		}else{
+			var arr = result['proj'][0]['type_of_development'].split(',');
+		}
+		
+		$.each(arr, function(k,v)
+		{
+			$('input[name="development[]"][value="'+v+'"]').prop("checked",true);
+		});
+		$('#descript').val(result['proj'][0]['project_description']);
+		$.each( result['use'], function( key, value ) {
+			$("ul#addedtype").append('<li data-myid="'+value['use_id']+'" data-id="'+key+'" onclick="edituse('+key+')">'+value['use_name']+'</li>');
+			var newservices = {
+				name: value['use_name'],
+				area: value['use_area'],
+				units: value['use_units'],
+				editable: 'true',
+				myid: value['use_id']
+			};
+			types.push(newservices);
+			// alert(services.length);
+		});
+		$.each( result['service'], function( key, value ) {
+			$("ul#addedprov").append('<li data-id="'+provs.length+'" onclick="editprov('+provs.length+')">'+value['service_name']+'</li>');
+			var newarray = {
+				name: value['service_name'],
+				from: value['from'],
+				until: value['until'],
+				editable: 'true',
+				myid: value['serv_id']
+			};
+			provs.push(newarray);
+			// alert(services.length);
+		});
+		$.each( result['team'], function( key, value ) {
+			$("ul#addedproj").append('<li data-id="'+projteam.length+'" onclick="editteam('+projteam.length+')">'+value['position']+'</li>');
+			var newarray = {
+				name: value['position'],
+				compname: value['company'],
+				editable: 'true',
+				myid: value['team_id']
+			};
+			projteam.push(newarray);
+		});
+	}
+
 	function editaccreditaion(id){
 		// console.log(services[id]);
 		$('select[name="accredatations"]').val(accredatations[id]['accredatations']);
@@ -499,6 +864,7 @@ ul.typeofdev {
 		$('.adserv').val('');
 	}
 </script>
+
 <div class="container-fluid below-header">
 </div>
 
@@ -517,7 +883,25 @@ ul.typeofdev {
 			<div class="row">					
 				<div class="col-sm-12">
 					<div class="shadow-wrapper">
-
+						<div class="alert alert-danger" id="danger-alert" hidden>
+						    <button type="button" class="close" data-dismiss="alert">x</button>
+						    <strong>Error! </strong>missing name
+						</div>
+						<div class="alert alert-danger" id="danger-alerts" hidden>
+						    <button type="button" class="close" data-dismiss="alert">x</button>
+						    <strong>Error! </strong>missing Project title or value
+						</div>
+						@if (count($indi) > 0)
+							<ul id="indilist" style="list-style: none;padding-left: 10px;">
+							@foreach ($indi as $ind)
+								<li>
+									<div class="custom-control custom-radio getthisindi" data-ind_id="{{$ind->ind_id}}" >
+									  <label class="custom-control-label " >{{$ind->first_name}} {{$ind->last_name}}</label>
+									</div>
+								</li>
+							@endforeach
+							</ul>
+						@endif
 						<div class="clearfix"></div>
 						<div class="panel-group" id="accordion1">
 							<div class="panel">
@@ -536,15 +920,16 @@ ul.typeofdev {
 														<td width="40%">Name</td>
 														<td>
 															<div class="col-sm-6" style="padding: 0;">
-																<input type="text" name="first_name" class="form-control" placeholder="First Name">
+																<input type="text" required name="first_name" class="form-control" placeholder="First Name">
+																<input type="hidden" name="myiid" value="">
 															</div>
 															<div class="col-sm-6" style="padding: 0;">
-																<input type="text" name="last_name" class="form-control" placeholder="Last Name">
+																<input type="text" required name="last_name" class="form-control" placeholder="Last Name">
 															</div>
 														</td>
 													</tr>
 													<tr>
-														<td><div class="col-sm-12" style="padding: 0;">Accredatations</div>
+														<td><div class="col-sm-12" style="padding: 0;">Accreditations</div>
 															<div class="col-sm-12" style="padding: 0;">
 																<ul id="addedaccreditaion">
 																	
@@ -554,7 +939,7 @@ ul.typeofdev {
 														<td>
 															<div class="col-sm-6" style="padding: 0;">
 																<select name="accredatations" class="form-control">
-																	<option value="" disabled selected>Select accredatations</option> 
+																	<option value="" disabled selected>Select accreditations</option> 
 																	<?php $members = array("AMCIOB","AssocRICS","MRICS","FRICS","HonRICS","BREEAM","AP","RIBA");sort($members, SORT_NATURAL | SORT_FLAG_CASE);foreach ($members as $key ) {echo "<option value='".$key."'>".$key."</option>";}?>
 																	<option value="Other">Other</option>
 																</select>
@@ -566,7 +951,7 @@ ul.typeofdev {
 																</select>
 															</div>
 															<div class="col-sm-12" style="padding: 0">
-																<button type="button" id="addaccreditaion" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another accredatations</span></button>
+																<button type="button" id="addaccreditaion" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add another accreditations</span></button>
 																<button type="button" id="editaccreditaion" class="btn btn-warning sakto" style="display:none; margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
 															</div>
 														</td>
@@ -679,9 +1064,9 @@ ul.typeofdev {
 																Project Experience
 															</div>
 															<div class="col-sm-12" style="padding: 0;">
-																<ul>
-																	<li>Project 1
-																		<ul>
+																<ul id="projectlist" style="list-style: none;padding-left:10px;">
+																	<li class="item">
+																		<ul id="refre" style="">
 																			<li>Type of use
 																				<ul id="addedtype">
 																				</ul>
@@ -703,6 +1088,7 @@ ul.typeofdev {
 															<div class="col-sm-6" style="padding: 0;">
 																<div class="form-group">
 																	<input type="text" name="project_title" class="form-control" placeholder="Project title">
+																	<input type="hidden" name="project_id">
 																</div>
 															</div>
 															<div class="col-sm-6" style="padding: 0;">
@@ -775,7 +1161,7 @@ ul.typeofdev {
 														<input type="checkbox" name="development[]" class="filled-in" value="Demolition" id="demolition"> <label for="demolition"> Demolition</label>
 													</div>
 													<div class="form-group">
-														<textarea name="project_description" class="form-control" rows="10" placeholder="Enter Project Description"></textarea>
+														<textarea id="descript" name="project_description" class="form-control" rows="10" placeholder="Enter Project Description"></textarea>
 													</div>
 													<div class="form-group">
 														<div id="wrapper">
@@ -804,7 +1190,9 @@ ul.typeofdev {
 														<button type="button" id="editteam" class="btn btn-warning sakto"style="margin-top: 10px;display: none;" ><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
 													</div>
 													<div class="form-group">
-														<button type="button" id="add_another" class="btn btn-warning sakto"><span class="sakto2"><i class="fa fa-plus"></i> Add another project</span></button>
+														<button type="button" id="add_another1" class="btn btn-warning sakto"><span class="sakto2"><i class="fa fa-plus"></i> Add another project</span></button>
+														<button type="button" id="add_another_indi" style="display: none;" class="btn btn-warning sakto"><span class="sakto2"><i class="fa fa-plus"></i> Add another project</span></button>
+														<button type="button" id="updateproj" style="display: none;" class="btn btn-warning sakto"><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>	
 													</div>
 												</td>
 											</tr>											
@@ -815,6 +1203,12 @@ ul.typeofdev {
 										<p>
 											<input type="button" class="btn btn-warning sakto" id="loadFileXml" value="Upload image" onclick="document.getElementById('file').click();" />
 											<input type="file" style="display:none;" id="file" accept="image/*" auto="auto" name="file"/>
+										</p>
+										<p>
+											<button type="button" id="add_another" class="btn btn-warning sakto"><span class="sakto2"><i class="fa fa-plus"></i> Save individual</span></button>
+										</p>
+										<p>
+											<button type="button" id="update_another" style="display: none;" class="btn btn-warning sakto"><span class="sakto2"><i class="fa fa-plus"></i> Update individual</span></button>
 										</p>
 									</div>
 
@@ -828,7 +1222,7 @@ ul.typeofdev {
 										</div>
 									</div>
 								</form>
-									<h3 class="org-head"><button type="button" class="btn btn-primary" data-toggle="modal" data-backdrop="static" data-target="#exampleModalCenter"><span><i class="fa fa-plus-square"></i> </span> Add</button></h3>
+									{{-- <h3 class="org-head"><button type="button" class="btn btn-primary" data-toggle="modal" data-backdrop="static" data-target="#exampleModalCenter"><span><i class="fa fa-plus-square"></i> </span> Add</button></h3> --}}
 								</div>
 							</div>	
 						</div>

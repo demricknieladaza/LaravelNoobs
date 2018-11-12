@@ -150,8 +150,7 @@ ul.typeofdev {
 		 else{ 
 			echo "var proj = [];";
 		 } ?>
-		console.log(proj);
-		// console.log(org);
+		
 		if(serv.length > 0){
 			$.each( serv, function( key, value ) {
 				$("ul#addedserv").append('<li data-myid="'+value['os_id']+'" data-id="'+key+'" onclick="editservices('+key+')">'+value['service']+'</li>');
@@ -181,7 +180,6 @@ ul.typeofdev {
 				// alert(services.length);
 			});
 		}
-		
        
 		// $('#project_img_btn').click(function(){
 		// 	$('#project_img').click();
@@ -335,7 +333,7 @@ ul.typeofdev {
 				contentType: false,
 				success:function(result){
 					// console.log(result);
-					location.reload();
+					// location.reload();
 					// console.log('Updated');
 				}
 
