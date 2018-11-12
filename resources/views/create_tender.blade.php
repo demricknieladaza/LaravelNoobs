@@ -5111,7 +5111,7 @@
 		    									</div>
 		    								</div>
 		    							</div>
-									</form
+									</form>
 		    					</div>
 		    					<div id="section31" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Evaluation Settings</h3>

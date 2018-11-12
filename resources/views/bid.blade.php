@@ -670,7 +670,7 @@
 			</div>
 			<div class="col-sm-8 questionnaire-section" style="margin-left: 338px; width: 845px;">
 				<div class="tab-content">
-					<div id="section1" class="tab-pane fade in active tender-container" style="border-radius: 6px;">
+					<div id="section1" class="tab-pane fade in active tender-container" style="border-radius: 6px;min-height: 600px;">
 						<h3 class="bid-form-title">Pre-Qualification Questionnaire</h3>
 							<div class="inputscheck">
 								<?php
@@ -693,7 +693,7 @@
 					</div>
 					
 					{{-- <input type="button" id="next" value="Next" onclick="validateFormSection()" /> --}}
-					<div id="section2" class="tab-pane fade tender-container">
+					<div id="section2" class="tab-pane fade tender-container" style="min-height: 600px;">
 						<!-- <div class="form-group" style="text-align: right;">
 							<div class="input_fields_team">
 								<button class="btn" id="button1 ">Complete Page using Profile Information</button>
@@ -1036,7 +1036,7 @@
 							</div>
 						</div>
 					</div>
-					<div id="section3" class="tab-pane fade tender-container">
+					<div id="section3" class="tab-pane fade tender-container" style="min-height: 600px;">
 					
 						<h3 class="bid-form-title">Individuals</h3>
 						<ul id="servicelistindi" class="servicelist">
@@ -1058,7 +1058,7 @@
 						</div>
 						
 					</div>
-					<div id="section4" class="tab-pane fade tender-container">
+					<div id="section4" class="tab-pane fade tender-container" style="min-height: 600px;">
 						<form id='approachForm'>
 							@csrf
 						<h3 class="bid-form-title">Approach</h3>
@@ -1180,10 +1180,10 @@
 							</div>
 						</div>
 					</div>
-					</form>
+						</form>
 						
 					</div>
-					<div id="section5" class="tab-pane fade tender-container">
+					<div id="section5" class="tab-pane fade tender-container" style="min-height: 600px;">
 						<h3 class="bid-form-title">Scope</h3>
 
 						<p style="padding: 18px; border: 1px solid grey;border-radius: 6px;">
@@ -1254,7 +1254,7 @@
 						
 					</div>
 
-					<div id="section6" class="tab-pane fade tender-container">
+					<div id="section6" class="tab-pane fade tender-container" style="min-height: 600px;">
 						<form id="appointmentForm">
 						<h3 class="bid-form-title">Appointment</h3>
 						<div class="kuwestion">
@@ -1530,7 +1530,7 @@
 					</div>
 					</form>
 					</div>
-					<div id="section7" class="tab-pane fade tender-container" style="margin-bottom: 117px;">
+					<div id="section7" class="tab-pane fade tender-container" style="margin-bottom: 117px;min-height: 600px;">
 						<form method="POST" action="{{ url('winwork/bid/'.$tender->tender_id.'/save') }}">
 						<input type="hidden" name="project_record_id" value="{{ $project->project_record_id }}" id=""/>
 							@csrf

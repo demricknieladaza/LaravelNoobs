@@ -137,6 +137,7 @@ Route::post('tender_deliverables_save', 'TenderController@tenderScopeStore');
 Route::post('tender_quality_assurance', 'TenderController@tenderQualityStore');
 Route::post('start_tender_process', 'TenderController@updateTenderProcess');
 
+Route::get('generatereport/{pid}/{tid}/{uid}','ReportsController@generate');
 
 
 
