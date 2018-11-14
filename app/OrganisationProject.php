@@ -15,6 +15,7 @@ class OrganisationProject extends Model
         'project_value',
         'type_of_development',
         'project_description',
-        'project_images'
+        'project_images',
+        '_until'
     ];
 }

@@ -69,7 +69,13 @@ class TenderDisplayController extends Controller
         ->rightJoin('company_tbl as c', 'b.user_id', '=', 'c.u_id')
         ->orderBy('b.created_at', 'desc')
         ->get();
-        return view('tender_display')->with(['tenders'=> $tenders, 'proj'=> $proj, 'bids' => $bids]);
+
+        return view('tender_display')->with([
+            'tenders'=> $tenders, 
+            'proj'=> $proj, 
+            'bids' => $bids,
+            'qual' => 4
+        ]);
         // return $bids->comp_name;
         // }
     }

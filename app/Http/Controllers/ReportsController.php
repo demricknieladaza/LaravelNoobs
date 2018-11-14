@@ -39,9 +39,16 @@ class ReportsController extends Controller
     			'p_name' => $v->project_title,
     			'p_valu' => $v->project_value,
     			'type' => $this->getuse($v->op_id,$use),
-    			'dev_type' => explode(",", $v->type_of_development)
+    			'dev_type' => explode(",", $v->type_of_development),
+    			'until' => $v->_until
     		);
     	}
+
+    	$dept = DB::table('organisation_department_tbl')->where('org_id',$org->org_id)->get();
+    	$awards = DB::table('organisation_awards_tbl')->where('org_id',$org->org_id)->get();
+    	$accreditation = DB::table('organisation_accreditation_tbl')->where('org_id',$org->org_id)->get();
+
+    	$evaluation = DB::table('tender_evaluation_tbl')->where('tender_id',$tid)->first();
 
     	
     	
@@ -152,14 +159,18 @@ class ReportsController extends Controller
     	// 				}
     	// echo "			</tbody>
     	// 	  	</table>";
-
+    	// echo $project->project_title;
     	return view('report')->with([
     		'use' => $use,
     		'project' => $project,
     		'usearea' => $usearea,
     		'arr' => $arr,
     		'tenderer' => $tenderer,
-    		'orgallproj' => $orgallproj
+    		'orgallproj' => $orgallproj,
+    		'dept' => $dept,
+    		'awards' => $awards,
+    		'accreditation' => $accreditation,
+    		'evaluation' => $evaluation
     	]);
 
     	// var_dump($projectuse);
@@ -177,5 +188,66 @@ class ReportsController extends Controller
     		}
     	}
     	return $usetype;
+    }
+
+    public function gettenderbid(Request $request){
+    	$tenderrec = DB::table('bid_records_tbl')->where('tender_id',$request->get('id'))->get();
+
+    	foreach ($tenderrec as $key) {
+    		// echo $key->user_id;
+    		$comp_name = DB::table('user_accounts_models')->where('id',$key->user_id)->pluck('company')->first();
+    		$org = DB::table('organisation_tbl')->where('user_id',$key->user_id)->pluck('org_id')->first();
+    	 	$tendinfo[] = array(
+    	 		'comp_name' => $comp_name,
+    	 		'qualitative' => $this->getorgprojectexp($org,$key->project_record_id)
+    	 	);
+    	}
+
+    	return $tendinfo;
+    }
+
+    public function getorgprojectexp($org_id,$proj_id){
+    	$project = DB::table('project_information_tbl')
+    				->where('project_record_id', $proj_id)
+    				->first();
+    				
+    	$orgproj = DB::table('organisation_project_tbl')
+    			->where('org_id',$org_id)->get();
+
+    	$projectuse = DB::table('type_of_use_tbl')
+    				->where('project_record_id', $proj_id)
+    				->first();
+
+    	$use = explode(",",$projectuse->use_name);
+
+    	$orgallproj = [];
+
+    	foreach ($orgproj as $v) {
+    		$orgallproj[] = array(
+    			'p_name' => $v->project_title,
+    			'p_valu' => $v->project_value,
+    			'type' => $this->getuse($v->op_id,$use),
+    			'dev_type' => explode(",", $v->type_of_development),
+    			'until' => $v->_until
+    		);
+    	}
+
+    
+		$avesuses = 0;
+		$areasuses = 0;
+		$value = 0;
+		$type = 0;
+		$yeard = 0;
+		$aver = 0;
+    	
+    	foreach ($orgallproj as $element) {
+    		$val = round((($element['p_valu'] - $project->construction_value)/$project->construction_value)*100)/100;
+			$_1=0;
+			$_2=0;
+			$_3=0;
+			$_4=0;
+    	}
+
+    	return $orgallproj;
     }
 }
