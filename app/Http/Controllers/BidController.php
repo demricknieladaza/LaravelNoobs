@@ -20,6 +20,18 @@ use App\BidQualityAssurance;
 use App\BidIndividuals;
 use App\TenderAppointment;
 
+use App\TenderScopeDeliverables;
+use App\TenderScopeMeetings;
+use App\TenderMeetingsChoice;
+use App\TenderMeetingsNum;
+use App\TenderDesignConsiderations;
+use App\TenderScopeAdvise;
+use App\WinWorkData;
+use App\AddedDeliverables;
+use App\AddedMeetings;
+use App\AddedDesign;
+use App\AddedAdvise;
+
 class BidController extends Controller
 {
     /**
@@ -83,13 +95,40 @@ class BidController extends Controller
 
         $appointment = TenderAppointment::where('tender_id', $tender_id)->first();
 
+        $insur_name = explode(",", $appointment->insurance_name);
+        $insur_level = explode(",", $appointment->insurance_level);
+        $counter = 0;
+
+        $delivs = AddedDeliverables::where('tender_id', $id)->get();
+        $meetings = AddedMeetings::where('tender_id', $id)->get();
+        $design = AddedDesign::where('tender_id', $id)->get();
+        $advises = AddedAdvise::where('tender_id', $id)->get();
+        $scopes = TenderScopeDeliverables::where('tender_id', $id)->get();
+        $scopesm = TenderScopeMeetings::where('tender_id', $id)->get();
+        $scopesd = TenderDesignConsiderations::where('tender_id', $id)->get();
+        $scopesa = TenderScopeAdvise::where('tender_id', $id)->get();
+
+        foreach ($insur_name as $key) {
+            $insur[] = array('name' => $insur_name[$counter], 'level' => $insur_level[$counter]);
+            $counter++;
+        }
+
 
         return view('bid')->with([
             'tender' => $tender,
             'project' => $project,
             'individuals' => $indi,
             'pre_qual' => $quest,
-            'appointment' => $appointment
+            'appointment' => $appointment,
+            'insur' => $insur,
+            'delivs' => $delivs,
+            'meetings' => $meetings,
+            'designs' => $design,
+            'advises' => $advises,
+            'scopes' => $scopes,
+            'scopesm' => $scopesm,
+            'scopesd' => $scopesd,
+            'scopesa' => $scopesa
         ]);
 
         // return $appointment;

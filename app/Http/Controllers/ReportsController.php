@@ -199,14 +199,14 @@ class ReportsController extends Controller
     		$org = DB::table('organisation_tbl')->where('user_id',$key->user_id)->pluck('org_id')->first();
     	 	$tendinfo[] = array(
     	 		'comp_name' => $comp_name,
-    	 		'qualitative' => $this->getorgprojectexp($org,$key->project_record_id)
+    	 		'qualitative' => $this->getorgprojectexp($org,$key->project_record_id,$key->tender_id)
     	 	);
     	}
 
     	return $tendinfo;
     }
 
-    public function getorgprojectexp($org_id,$proj_id){
+    public function getorgprojectexp($org_id,$proj_id,$tid){
     	$project = DB::table('project_information_tbl')
     				->where('project_record_id', $proj_id)
     				->first();
@@ -218,7 +218,19 @@ class ReportsController extends Controller
     				->where('project_record_id', $proj_id)
     				->first();
 
+    	$tenderer = DB::table('tender_tbl')
+    				->where('tender_id',$tid)
+    				->first();
+
     	$use = explode(",",$projectuse->use_name);
+    	$arr = explode(",",$project->type_of_development);
+    	$usearea = explode(",",$projectuse->use_area);
+
+    	$dept = DB::table('organisation_department_tbl')->where('org_id',$org_id)->get();
+    	$awards = DB::table('organisation_awards_tbl')->where('org_id',$org_id)->get();
+    	$accreditation = DB::table('organisation_accreditation_tbl')->where('org_id',$org_id)->get();
+
+    	$evaluation = DB::table('tender_evaluation_tbl')->where('tender_id',$tid)->first();
 
     	$orgallproj = [];
 
@@ -240,14 +252,152 @@ class ReportsController extends Controller
 		$yeard = 0;
 		$aver = 0;
     	
+    	$totaldrn = 0;
+		$totalk = 0;
+		foreach ($usearea as $k) {
+			$totalk += $k;
+		}
+		if(in_array("Demolition",$arr)){
+			$totaldrn += 1;
+		}
+		if(in_array("Refurbishment",$arr)){
+			$totaldrn += 1;
+		}
+		if(in_array("New Built",$arr)){
+			$totaldrn += 1;
+		}
+
     	foreach ($orgallproj as $element) {
     		$val = round((($element['p_valu'] - $project->construction_value)/$project->construction_value)*100)/100;
 			$_1=0;
 			$_2=0;
 			$_3=0;
 			$_4=0;
+			$total=0;
+
+			foreach ($element['type'] as $elements){
+				if($elements['area'] > 0)
+					$total += 1;
+				else
+					$total += 0;
+			}
+
+			$tots = ($total/count($arr))*5;
+			$avesuses += $tots ;
+
+			$counter = 0;
+		    $areause = 0;
+		    $average = 0;
+
+		    foreach ($element['type'] as $elements){
+				$tot = round(($elements['area']-$usearea[$counter])/$usearea[$counter]);
+				if ($tot > 5)
+					$areause = 0;
+				elseif ($tot > 0) 
+					$areause = abs(round(5 - $tot,1)) ;
+				elseif ($tot == 0) 
+					$areause = 5;
+				else
+					$areause = abs(round(5 + ($tot*5),1)) ;
+					
+				$average += round(($areause/$totalk)*$usearea[$counter],1);
+				
+				$counter++;
+			}
+			
+			$areasuses += $average;
+			$_1 = $average;
+			
+			if ($val > 5){
+				$value += 0;
+				$_2 = 0;
+			}
+			elseif ($val > 0){
+				$value += abs(round(5 - $val,1));
+				$_2 = abs(round(5 - $val,1));
+			}
+			elseif ($val == 0){
+				$value += 5;
+				$_2 = 5;
+			}
+			else{
+				$value += abs(round(5 + ($val*5),1));
+				$_2 = abs(round(5 + ($val*5),1));
+			}
+
+			$totolorgdrn = 0;
+
+			if(in_array("Demolition",$element['dev_type']) && in_array("Demolition",$arr)){
+				$totolorgdrn +=1;
+			}
+			
+			if(in_array("Refurbishment",$element['dev_type']) && in_array("Refurbishment",$arr)){
+				$totolorgdrn +=1;
+			}
+				
+			if(in_array("New built",$element['dev_type']) && in_array("New Built",$arr)){
+				$totolorgdrn +=1;
+			}
+				
+
+			$type += ($totaldrn/$totolorgdrn)*5;
+			$_3 = ($totaldrn/$totolorgdrn)*5;
+			$x = strtotime($tenderer->end)-strtotime($element['until']);
+			$yeardiff = round(($x/ (60 * 60 * 24))/365.25,1);
+
+			if ($yeardiff >= 10){
+				$_4 = 0;
+			}
+			else{
+				$yeard += round((10-$yeardiff)/2,1);
+				$_4 = round((10-$yeardiff)/2,1);
+			}
+
+			$aver += round(($tots+$_1+$_2+$_3+$_4)/5,1);
+
     	}
 
-    	return $orgallproj;
+    	$averating = 0;
+    	$numofrating = 0;
+    	foreach ($awards as $element){
+	    	$ago = date("Y",strtotime($tenderer->end))-$element->award_year;
+	    	if ($ago >= 10){
+	    		$averating += 0;
+	    	}
+	    	else{
+	    		$averating += (10-$ago)/2;
+	    	}
+	    }
+
+    	if(count($awards)>5){
+    		$numofrating = 5;
+    	}
+    	else{
+    		$numofrating = count($awards);
+    	}
+    	if(count($accreditation)>10){
+    		$accre = 5;
+    	}
+    	else{
+    		$accre = count($accreditation)/2;
+    	}
+    	if(count($orgallproj)>5){
+    		$rele = 5;
+    	}
+    	else{
+    		$rele = count($orgallproj);
+    	}
+
+    	$projex = round(((round(($aver+round($aver/count($orgallproj),1)+count($orgallproj))/(count($orgallproj)+2),1))*$evaluation->organisation_project_exp)/100,1);
+    	$vos = round(((count($dept)/2)*$evaluation->organisation_variety_of_services)/100,1);
+    	$awa = round(((round((($averating/count($awards))+$numofrating)/2,1))*$evaluation->organisation_awards)/100,1);
+    	$acc = round(($accre*$evaluation->organisation_accreditations)/100,1);
+    	$rel = round(($rele*$evaluation->orgranisation_relationship)/100,1);
+
+    	$totalorg = $projex+$vos+$awa+$acc+$rel;
+
+    	$score = round(((($totalorg*$evaluation->organisation)/100)*$evaluation->qualitative)/100,1);
+
+    	return $score;
     }
 }

@@ -73,8 +73,7 @@ class TenderDisplayController extends Controller
         return view('tender_display')->with([
             'tenders'=> $tenders, 
             'proj'=> $proj, 
-            'bids' => $bids,
-            'qual' => 4
+            'bids' => $bids
         ]);
         // return $bids->comp_name;
         // }

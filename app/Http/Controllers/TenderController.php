@@ -212,6 +212,8 @@ class TenderController extends Controller
         }
         $name_of_files = substr($name_of_files, 0, -1);
         $appointment->documents_for_signature = $name_of_files;
+        $appointment->execution = $request->get('execution');
+        $appointment->net_contrib = $request->get('net_contrib');
 
         $appointment->save();
 

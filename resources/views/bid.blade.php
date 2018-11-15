@@ -114,6 +114,283 @@
 	  background: white;
 	  color: black;
 	}
+	/*========================================================*/
+	.zui-table {
+	    border: none;
+	    border-collapse: separate;
+	    border-spacing: 0;
+	}
+	.zui-table thead th {
+	    background-color: #fe7235;
+	    border: none;
+	    color: white;
+	    padding: 10px;
+	    text-align: left;
+	    white-space: nowrap;
+	    text-align: center;
+	}
+	.zui-table tbody td {
+	    border-bottom: solid 1px #DDEFEF;
+	    color: #333;
+	    padding: 10px;
+	    text-shadow: 1px 1px 1px #fff;
+	    white-space: nowrap;
+	}
+	.zui-wrapper {
+	    position: relative;
+	}
+	.zui-scroller {
+	    margin-left: 141px;
+	    overflow-x: scroll;
+	    overflow-y: visible;
+	    padding-bottom: 5px;
+	}
+	.zui-table .zui-sticky-col {
+	    left: 0;
+	    position: absolute;
+	    top: auto;
+	    border-right: 1px solid orange;
+	    width: 141px;
+	    text-align:center; 
+	}
+	table.zui-table tbody tr:nth-child(even){
+		background: #fff8f3;
+	}
+	table.zui-table tbody tr:hover {
+	    background-color: #ffc2a7 !important;
+	}
+	.chos{
+		padding: 5px;
+	}
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+.hayt{
+	border-radius: 6px;
+	height: 90px;
+}
+.zui-table2 {
+	    border: none;
+	    border-right: solid 1px #00B0F0;
+	    border-collapse: separate;
+	    border-spacing: 0;
+	}
+	.zui-table2 thead th {
+	    background-color: #00B0F0;
+	    border: none;
+	    color: white;
+	    padding: 10px;
+	    text-align: left;
+	    white-space: nowrap;
+	    text-align: center;
+	}
+	.zui-table2 tbody td {
+	    color: #333;
+	    padding: 10px;
+	    text-shadow: 1px 1px 1px #fff;
+	    white-space: nowrap;
+	}
+	.zui-wrapper2 {
+	    position: relative;
+	    height: 600px;
+	    max-height: 600px;
+	    min-height: 600px;
+	    overflow-x: scroll;
+	    overflow-y: scroll;
+	    padding-right: 5px;
+	}
+	.zui-scroller2 {
+	    margin-left: 270px;
+	    overflow-x: visible;
+	    overflow-y: visible;
+	    padding-bottom: 5px;
+	    border-left: 2px solid #00B0F0;
+	}
+	.zui-table2 .zui-sticky-col2 {
+	    left: 0;
+	    position: absolute;
+	    top: auto;
+	    width: 270px;
+	    text-align:center; 
+	}
+	table.zui-table2 tbody tr:nth-child(even){
+		background: #fff8f3;
+	}
+	table.zui-table2 tbody tr:hover {
+	    background-color: #ffc2a7 !important;
+	}
+
+.hayt3{
+	border-radius: 6px;
+	height: 90px;
+}
+.zui-table3 {
+	    border: none;
+	    border-collapse: separate;
+	    border-spacing: 0;
+	}
+	.zui-table3 thead th {
+	    background-color: #7030A0;
+	    border: none;
+	    color: white;
+	    padding: 10px;
+	    text-align: left;
+	    white-space: nowrap;
+	    text-align: center;
+	}
+	.zui-table3 tbody td {
+	    color: #333;
+	    padding: 10px;
+	    text-shadow: 1px 1px 1px #fff;
+	    white-space: nowrap;
+	}
+	.zui-wrapper3 {
+	    position: relative;
+	    height: 300px;
+	    max-height: 300px;
+	    min-height: 300px;
+	    overflow-x: scroll;
+	    overflow-y: scroll;
+	    padding-right: 5px;
+	}
+	.zui-scroller3 {
+	    margin-left: 270px;
+	    overflow-x: visible;
+	    overflow-y: visible;
+	    padding-bottom: 5px;
+	    border-left: 2px solid #7030A0;
+	}
+	.zui-table3 .zui-sticky-col3 {
+	    left: 0;
+	    position: absolute;
+	    top: auto;
+	    width: 270px;
+	    text-align:center; 
+	    height: 60px;
+	}
+	table.zui-table3 tbody tr:nth-child(even){
+		background: #fff8f3;
+	}
+	table.zui-table3 tbody tr:hover {
+	    background-color: #ffc2a7 !important;
+	}
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+.hayt4{
+	border-radius: 6px;
+	height: 90px;
+}
+.zui-table4 {
+	    border: none;
+	    border-collapse: separate;
+	    border-spacing: 0;
+	}
+	.zui-table4 thead th {
+	    background-color: #00B050;
+	    border: none;
+	    color: white;
+	    padding: 10px;
+	    text-align: left;
+	    white-space: nowrap;
+	    text-align: center;
+	}
+	.zui-table4 tbody td {
+	    color: #333;
+	    padding: 10px;
+	    text-shadow: 1px 1px 1px #fff;
+	    white-space: nowrap;
+	}
+	.zui-wrapper4 {
+	    position: relative;
+	    height: 330px;
+	    max-height: 330px;
+	    min-height: 330px;
+	    overflow-x: scroll;
+	    overflow-y: scroll;
+	    padding-right: 5px;
+	}
+	.zui-scroller4 {
+	    margin-left: 460px;
+	    overflow-x: visible;
+	    overflow-y: visible;
+	    padding-bottom: 5px;
+	    border-left: 2px solid #00B050;
+	}
+	.zui-table4 .zui-sticky-col4 {
+	    left: 0;
+	    position: absolute;
+	    top: auto;
+	    width: 460px;
+	    text-align:left; 
+	}
+	table.zui-table4 tbody tr:nth-child(even){
+		background: #fff8f3;
+	}
+	table.zui-table4 tbody tr:hover {
+	    background-color: #ffc2a7 !important;
+	}
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+.zui-table5 {
+	    border: none;
+	    border-collapse: separate;
+	    border-spacing: 0;
+	    width: 612px;
+	}
+	.zui-table5 thead th {
+	    background-color: #FFC000;
+	    border: none;
+	    color: white;
+	    padding: 10px;
+	    text-align: left;
+	    white-space: nowrap;
+	    text-align: center;
+	}
+	.zui-table5 tbody td {
+	    color: #333;
+	    padding: 10px;
+	    text-shadow: 1px 1px 1px #fff;
+	    white-space: nowrap;
+	    height: 80px;
+	}
+	.zui-wrapper5 {
+	    position: relative;
+	    height: 500px;
+	    max-height: 500px;
+	    min-height: 500px;
+	    overflow-x: scroll;
+	    overflow-y: scroll;
+	    padding-right: 5px;
+	}
+	.zui-scroller5 {
+	    margin-left: 460px;
+	    overflow-x: visible;
+	    overflow-y: visible;
+	    padding-bottom: 5px;
+	    border-left: 2px solid #FFC000;
+	}
+	.zui-table5 .zui-sticky-col5 {
+	    left: 0;
+	    position: absolute;
+	    top: auto;
+	    width: 460px;
+	    text-align:left; 
+	}
+	table.zui-table5 tbody tr:nth-child(even){
+		background: #fff8f3;
+	}
+	table.zui-table5 tbody tr:hover {
+	    background-color: #ffc2a7 !important;
+	}
+	.inputwidth{
+		width: 100px;
+	}
+	.dropdown-menu{
+		margin-left: 0;
+	}
 </style>
 
 <script type="text/javascript">
@@ -494,12 +771,6 @@
 	        e.preventDefault(); $(this).parent('div').remove(); x--;
 	    });
 
-	    $('.date').datepicker({
-	    	format: "mm-yyyy",
-		    viewMode: "months", 
-		    minViewMode: "months"
-	    });
-
 	    function rundate(){
     	    $('.date').datepicker({
     	    	format: "mm-yyyy",
@@ -520,6 +791,23 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
+
+		$('#datepicker4').datepicker({
+	    	format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+	    });
+	    $('#datepicker10').datepicker({
+	    	format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+	    });
+	    $('#datepicker11').datepicker({
+	    	format: "mm-yyyy",
+		    viewMode: "months", 
+		    minViewMode: "months"
+	    });
+
 	    var max_fields      = 10; //maximum input boxes allowed
 	    var wrapper         = $("#indiaddedawards"); //Fields wrapper
 	    var add_button      = $("#indiaddawards"); //Add button ID
@@ -655,12 +943,12 @@
 				<div class="tender-container" style="border-radius: 6px;">
 					<ul class="nav bid-form-nav">
 						<li class="active totop"><a data-toggle="tab" href="#section1">Pre-Qualification Questionnaire<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disda totop" ><a data-toggle="tab" href="#section2">Organisation<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disda totop"><a data-toggle="tab" href="#section3">Individuals<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disda totop"><a data-toggle="tab" href="#section4">Approach<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disda totop"><a data-toggle="tab" href="#section5">Scope<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disda totop"><a data-toggle="tab" href="#section6">Appointment<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
-						<li class="disda totop"><a data-toggle="tab" href="#section7">Quality Assurance<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						{{-- <li class="disda totop" ><a data-toggle="tab" href="#section2">Organisation<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li> --}}
+						<li class="disd totop"><a data-toggle="tab" href="#section3">Individuals<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disd totop"><a data-toggle="tab" href="#section4">Approach<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disd totop"><a data-toggle="tab" href="#section5">Scope<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disd totop"><a data-toggle="tab" href="#section6">Appointment<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li class="disd totop"><a data-toggle="tab" href="#section7">Quality Assurance<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
 					</ul><br>
 				</div>
 				<div class="form-group">
@@ -1083,27 +1371,12 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-4">
-											<div class="form-group">
-												Comments on Constraints/Issues
-											</div>
-										</div>
-										<div class="col-sm-8">
-											<div class="form-group">
-													<textarea id="text-input4" name="comments_constraints[]"ols="25" rows="3" placeholder="Enter here.."></textarea>
-												<div class="word-counter">
-												     <label id="count-label4">3000</label>/3000 words
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="row">
 										<div class=" col-sm-4"></div>
 										<div class="col-sm-8">
 											<div class="form-group">	
 												<div class="field" align="left">
 												  <strong>Upload your images</strong>
-												  <input type="file" id="file4" name="comments_images[]" multiple />
+												  <input type="file" id="file4" name="comments_images[]" accept="image/*" multiple />
 												</div>
 						                    </div>
 						                </div>
@@ -1118,21 +1391,6 @@
 												</div>
 											</div>
 									</div><br>
-									<div class="row">
-										<div class="col-sm-4">
-											<div class="form-group">
-												Solutions
-											</div>
-										</div>
-										<div class="col-sm-8">
-											<div class="form-group">
-													<textarea id="text-input5" name="solutions[]" cols="25" rows="3" placeholder="Enter text here"></textarea>
-												<div class="word-counter">
-												     <label id="count-label5">3000</label>/3000 words
-												</div>
-											</div>
-										</div>
-									</div>
 									<div class="row">
 										<div class="col-sm-4">
 											<div class="form-group">
@@ -1186,71 +1444,3831 @@
 					<div id="section5" class="tab-pane fade tender-container" style="min-height: 600px;">
 						<h3 class="bid-form-title">Scope</h3>
 
-						<p style="padding: 18px; border: 1px solid grey;border-radius: 6px;">
-						<b>Note: Read first!</b> <br>
-						In order to complete this section, you have to download the excel file below. Afterwards, you have to fill out all the important information or fields needed. Please be informed that all the data you have  inputted will remain confidential.</p>
-						{{-- 
-						<div class="down">
-							<a download="Book-Scope.xlsx" href="{{asset('css/scopexl/Book-Scope.xlsx')}} "><i class="fa fa-download"> Download</i></a>
-						</div> --}}
-
-						<div class="row downloader" style="    display: flex;     padding: 25px;">
-						  <img
-						  	style="width: 150px;height: 150px;"
-						    alt="excel-logo"
-						    class="excel"
-						    src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Microsoft_Excel_2013_logo.svg/2000px-Microsoft_Excel_2013_logo.svg.png" />
-						  <div class="download_icon">
-						    <p>
-						     <a download="Book-Scope.xlsx" href="{{asset('css/scopexl/Book-Scope.xlsx')}} "><i class="fa fa-download"> Download</i></a>
-						    </p>
-						    <p class="download_para">
-						      <small>Lorem <abbr title="Download">DL</abbr>.  It has survived not only five centuries, but also the leap into electronic typesetting</small>
-						    </p>
-						  </div>
-						</div><br>
-
-						<p style="padding: 18px; border: 1px solid grey;border-radius: 6px;">
-						<b>Note: Almost there!</b> <br>
-						Already done filling up the fields? Well you're almost done! Once, you have completed it. Kindly, submit or drag the excel file below. You are good to proceed now. Thank you!</p>
-
-						<div class="row" style="padding: 30px;">
-							{{-- <form method="POSt" enctype="multipart/form-data" action="upload.php">
-								<input type="file" name="file" value="Upload">
-								<input type="submit" value="Upload">
-							</form> --}}
-
-							<form id="upload" action="index.html" method="POST" enctype="multipart/form-data">
-
-							<fieldset>
-							<legend>Upload Excel File</legend>
-
-							<input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
-
-							<div>
-								<label for="fileselect">File to upload:</label>
-								<input type="file" id="fileselect" name="fileselect[]" />
-								<div id="filedrag">or drop file here</div>
+						<div class="zui-wrapper2" id="myscrol">
+						    <div class="zui-scroller2">
+						        <table class="zui-table2">
+						            <thead>
+						                <tr>
+						                    <th class="zui-sticky-col2"><center>Deliverables</center></th>
+						                    <th style="width: 300px;max-width: 300px;min-width: 300px;">
+						                    Details/Contents</th>
+						                    <th style="width: 250px;max-width: 250px;min-width: 250px;">RACI</th>
+						                    <th>0</th>
+						                    <th>1</th>
+						                    <th>2</th>
+						                    <th>3</th>
+						                    <th>4</th>
+						                    <th>5</th>
+						                    <th>6</th>
+						                    <th>7</th>
+						                </tr>
+						            </thead>
+						            <tbody id="addedDelivs" >
+						                <tr class="addedDeliv">
+						                    <td class="zui-sticky-col2">Strategic Brief</td>
+						                    <input type="hidden" disabled name="delivid" value="{{ $scopes[0]->deliverables_id }}">
+						                    <td class="td "><textarea disabled class="hayt" name="strategic_details" placeholder="Enter details here">@if($scopes[0]->strategic_brief) {{ $scopes[0]->strategic_brief }} @endif</textarea></td>
+						                    <td class="td">
+						                    	<div class="col-sm-12">
+						                    		{{$scopes[0]['strategic_raci']}}
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopes[0]['strategic_num'],'0')!==false)
+						                    				<input type="number" name="strategic_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="strategic_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopes[0]['strategic_num'],'1')!==false)
+						                    				<input type="number" name="strategic_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="strategic_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopes[0]['strategic_num'],'2')!==false)
+						                    				<input type="number" name="strategic_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="strategic_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopes[0]['strategic_num'],'3')!==false)
+						                    				<input type="number" name="strategic_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="strategic_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopes[0]['strategic_num'],'4')!==false)
+						                    				<input type="number" name="strategic_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="strategic_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopes[0]['strategic_num'],'5')!==false)
+						                    				<input type="number" name="strategic_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="strategic_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopes[0]['strategic_num'],'6')!==false)
+						                    				<input type="number" name="strategic_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="strategic_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopes[0]['strategic_num'],'7')!==false)
+						                    				<input type="number" name="strategic_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="strategic_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    
+						                </tr>
+						                <tr class="addedDeliv">
+						                    <td class="zui-sticky-col2">Project Programme(Lead)</td>
+						                    <td class="td "><textarea disabled class="hayt" name="pprogramme_details" placeholder="Enter details here">@if ($scopes[0]['project_programme']) {{ $scopes[0]['project_programme'] }}  @endif</textarea></td>
+						                    <td class="td">
+						                    	<div class="col-sm-12">
+						                    		{{$scopes[0]['pprogramme_raci']}}
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopes[0]['pprogramme_num'],'0')!==false) 
+						                    				<input type="number" name="pprogramme_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="pprogramme_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopes[0]['pprogramme_num'],'1')!==false) 
+						                    				<input type="number" name="pprogramme_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="pprogramme_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopes[0]['pprogramme_num'],'2')!==false) 
+						                    				<input type="number" name="pprogramme_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="pprogramme_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopes[0]['pprogramme_num'],'3')!==false) 
+						                    				<input type="number" name="pprogramme_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="pprogramme_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopes[0]['pprogramme_num'],'4')!==false) 
+						                    				<input type="number" name="pprogramme_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="pprogramme_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopes[0]['pprogramme_num'],'5')!==false) 
+						                    				<input type="number" name="pprogramme_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="pprogramme_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopes[0]['pprogramme_num'],'6')!==false) 
+						                    				<input type="number" name="pprogramme_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="pprogramme_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopes[0]['pprogramme_num'],'7')!==false) 
+						                    				<input type="number" name="pprogramme_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="pprogramme_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                </tr>
+						                <tr class="addedDeliv">
+						                    <td class="zui-sticky-col2">Feasibility Study</td>
+						                    <td class="td "><textarea disabled class="hayt" name="feasibility_details" placeholder="Enter details here">@if ($scopes[0]['feasibility_study']) {{ $scopes[0]['feasibility_study'] }} @endif</textarea></td>
+						                    <td class="td">
+						                    	<div class="col-sm-12">
+						                    		{{$scopes[0]['feasibility_raci']}}
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopes[0]['feasibility_num'],'0')!==false)
+						                    				<input type="number" name="feasibility_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="feasibility_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopes[0]['feasibility_num'],'1')!==false)
+						                    				<input type="number" name="feasibility_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="feasibility_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopes[0]['feasibility_num'],'2')!==false)
+						                    				<input type="number" name="feasibility_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="feasibility_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopes[0]['feasibility_num'],'3')!==false)
+						                    				<input type="number" name="feasibility_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="feasibility_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopes[0]['feasibility_num'],'4')!==false)
+						                    				<input type="number" name="feasibility_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="feasibility_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopes[0]['feasibility_num'],'5')!==false)
+						                    				<input type="number" name="feasibility_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="feasibility_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopes[0]['feasibility_num'],'6')!==false)
+						                    				<input type="number" name="feasibility_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="feasibility_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopes[0]['feasibility_num'],'7')!==false)
+						                    				<input type="number" name="feasibility_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="feasibility_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                </tr>
+						                <tr class="addedDeliv">
+						                    <td class="zui-sticky-col2">Design Responsibility<br> Matrix</td>
+						                    <td class="td "><textarea disabled class="hayt" name="design_details" placeholder="Enter details here">@if ($scopes[0]['design_responsibility']) {{ $scopes[0]['design_responsibility'] }}  @endif</textarea></td>
+						                    <td class="td">
+						                    	<div class="col-sm-12">
+						                    		{{$scopes[0]['design_raci']}}
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['design_num'],'0')!==false) 
+						                    				<input type="number" name="design_num_ans[]" class="inputwidth" >
+						                    			@else 
+						                    				<input type="checkbox" disabled name="design_num[]" value="0"><span class="label-text"></span> 
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['design_num'],'1')!==false) 
+						                    				<input type="number" name="design_num_ans[]" class="inputwidth" >
+						                    			@else 
+						                    				<input type="checkbox" disabled name="design_num[]" value="0"><span class="label-text"></span> 
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['design_num'],'2')!==false) 
+						                    				<input type="number" name="design_num_ans[]" class="inputwidth" >
+						                    			@else 
+						                    				<input type="checkbox" disabled name="design_num[]" value="0"><span class="label-text"></span> 
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['design_num'],'3')!==false) 
+						                    				<input type="number" name="design_num_ans[]" class="inputwidth" >
+						                    			@else 
+						                    				<input type="checkbox" disabled name="design_num[]" value="0"><span class="label-text"></span> 
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['design_num'],'4')!==false) 
+						                    				<input type="number" name="design_num_ans[]" class="inputwidth" >
+						                    			@else 
+						                    				<input type="checkbox" disabled name="design_num[]" value="0"><span class="label-text"></span> 
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['design_num'],'5')!==false) 
+						                    				<input type="number" name="design_num_ans[]" class="inputwidth" >
+						                    			@else 
+						                    				<input type="checkbox" disabled name="design_num[]" value="0"><span class="label-text"></span> 
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['design_num'],'6')!==false) 
+						                    				<input type="number" name="design_num_ans[]" class="inputwidth" >
+						                    			@else 
+						                    				<input type="checkbox" disabled name="design_num[]" value="0"><span class="label-text"></span> 
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['design_num'],'7')!==false) 
+						                    				<input type="number" name="design_num_ans[]" class="inputwidth" >
+						                    			@else 
+						                    				<input type="checkbox" disabled name="design_num[]" value="0"><span class="label-text"></span> 
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                </tr>
+						                <tr class="addedDeliv">
+						                    <td class="zui-sticky-col2">Site Information Report</td>
+						                    <td class="td "><textarea disabled class="hayt" name="site_details" placeholder="Enter details here">@if($scopes[0]['site_information']) {{ $scopes[0]['site_information'] }} @endif</textarea></td>
+						                    <td class="td">
+						                    	<div class="col-sm-12">
+						                    		{{$scopes[0]['site_raci']}}
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['site_num'],'0')!==false) 
+						                    				<input type="number" name="site_num_ans[]" class="inputwidth" >
+						                    			@else  
+						                    				<input type="checkbox" disabled name="site_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['site_num'],'1')!==false) 
+						                    				<input type="number" name="site_num_ans[]" class="inputwidth" >
+						                    			@else  
+						                    				<input type="checkbox" disabled name="site_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['site_num'],'2')!==false) 
+						                    				<input type="number" name="site_num_ans[]" class="inputwidth" >
+						                    			@else  
+						                    				<input type="checkbox" disabled name="site_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['site_num'],'3')!==false) 
+						                    				<input type="number" name="site_num_ans[]" class="inputwidth" >
+						                    			@else  
+						                    				<input type="checkbox" disabled name="site_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['site_num'],'4')!==false) 
+						                    				<input type="number" name="site_num_ans[]" class="inputwidth" >
+						                    			@else  
+						                    				<input type="checkbox" disabled name="site_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['site_num'],'5')!==false) 
+						                    				<input type="number" name="site_num_ans[]" class="inputwidth" >
+						                    			@else  
+						                    				<input type="checkbox" disabled name="site_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['site_num'],'6')!==false) 
+						                    				<input type="number" name="site_num_ans[]" class="inputwidth" >
+						                    			@else  
+						                    				<input type="checkbox" disabled name="site_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['site_num'],'7')!==false) 
+						                    				<input type="number" name="site_num_ans[]" class="inputwidth" >
+						                    			@else  
+						                    				<input type="checkbox" disabled name="site_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                </tr>
+						                <tr class="addedDeliv">
+						                    <td class="zui-sticky-col2">Information Exchange<br> Strategy</td>
+						                    <td class="td "><textarea disabled class="hayt" name="info_details" placeholder="Enter details here">@if($scopes[0]['information_exchange_strategy']) {{ $scopes[0]['information_exchange_strategy'] }}  @endif</textarea></td>
+						                    <td class="td">
+						                    	<div class="col-sm-12">
+						                    		{{$scopes[0]['information_raci']}}
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['information_num'],'0')!==false) 
+						                    				<input type="number" name="info_num_ans[]" class="inputwidth" >
+						                    			@else  
+						                    				<input type="checkbox" disabled name="info_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['information_num'],'1')!==false) 
+						                    				<input type="number" name="info_num_ans[]" class="inputwidth" >
+						                    			@else  
+						                    				<input type="checkbox" disabled name="info_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['information_num'],'2')!==false) 
+						                    				<input type="number" name="info_num_ans[]" class="inputwidth" >
+						                    			@else  
+						                    				<input type="checkbox" disabled name="info_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['information_num'],'3')!==false) 
+						                    				<input type="number" name="info_num_ans[]" class="inputwidth" >
+						                    			@else  
+						                    				<input type="checkbox" disabled name="info_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['information_num'],'4')!==false) 
+						                    				<input type="number" name="info_num_ans[]" class="inputwidth" >
+						                    			@else  
+						                    				<input type="checkbox" disabled name="info_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['information_num'],'5')!==false) 
+						                    				<input type="number" name="info_num_ans[]" class="inputwidth" >
+						                    			@else  
+						                    				<input type="checkbox" disabled name="info_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['information_num'],'6')!==false) 
+						                    				<input type="number" name="info_num_ans[]" class="inputwidth" >
+						                    			@else  
+						                    				<input type="checkbox" disabled name="info_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['information_num'],'7')!==false) 
+						                    				<input type="number" name="info_num_ans[]" class="inputwidth" >
+						                    			@else  
+						                    				<input type="checkbox" disabled name="info_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                </tr>
+						                <tr class="addedDeliv">
+						                    <td class="zui-sticky-col2">Project Brief</td>
+						                    <td class="td "><textarea disabled class="hayt" name="project_details" placeholder="Enter details here">@if($scopes[0]['project_brief']) {{ $scopes[0]['project_brief'] }}  @endif</textarea></td>
+						                    <td class="td">
+						                    	<div class="col-sm-12">
+						                    		{{$scopes[0]['project_raci']}}
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['project_num'],'0')!==false) 
+						                    				<input type="number" name="project_num_ans[]" class="inputwidth" >
+						                    			@else 
+						                    				<input type="checkbox" disabled name="project_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['project_num'],'1')!==false) 
+						                    				<input type="number" name="project_num_ans[]" class="inputwidth" >
+						                    			@else 
+						                    				<input type="checkbox" disabled name="project_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['project_num'],'2')!==false) 
+						                    				<input type="number" name="project_num_ans[]" class="inputwidth" >
+						                    			@else 
+						                    				<input type="checkbox" disabled name="project_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['project_num'],'3')!==false) 
+						                    				<input type="number" name="project_num_ans[]" class="inputwidth" >
+						                    			@else 
+						                    				<input type="checkbox" disabled name="project_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['project_num'],'4')!==false) 
+						                    				<input type="number" name="project_num_ans[]" class="inputwidth" >
+						                    			@else 
+						                    				<input type="checkbox" disabled name="project_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['project_num'],'5')!==false) 
+						                    				<input type="number" name="project_num_ans[]" class="inputwidth" >
+						                    			@else 
+						                    				<input type="checkbox" disabled name="project_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['project_num'],'6')!==false) 
+						                    				<input type="number" name="project_num_ans[]" class="inputwidth" >
+						                    			@else 
+						                    				<input type="checkbox" disabled name="project_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['project_num'],'7')!==false) 
+						                    				<input type="number" name="project_num_ans[]" class="inputwidth" >
+						                    			@else 
+						                    				<input type="checkbox" disabled name="project_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                </tr>	
+						                <tr class="addedDeliv">
+						                    <td class="zui-sticky-col2">Risk Assessment(Lead)</td>
+						                    <td class="td "><textarea disabled class="hayt" name="risk_details" placeholder="Enter details here">@if($scopes[0]['risk_assessment']) {{ $scopes[0]['risk_assessment'] }}  @endif</textarea></td>
+						                    <td class="td">
+						                    	<div class="col-sm-12">
+						                    		{{$scopes[0]['risk_raci']}}
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['risk_num'],'0')!==false)
+						                    				<input type="number" name="risk_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="risk_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['risk_num'],'1')!==false)
+						                    				<input type="number" name="risk_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="risk_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['risk_num'],'2')!==false)
+						                    				<input type="number" name="risk_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="risk_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['risk_num'],'3')!==false)
+						                    				<input type="number" name="risk_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="risk_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['risk_num'],'4')!==false)
+						                    				<input type="number" name="risk_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="risk_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['risk_num'],'5')!==false)
+						                    				<input type="number" name="risk_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="risk_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['risk_num'],'6')!==false)
+						                    				<input type="number" name="risk_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="risk_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['risk_num'],'7')!==false)
+						                    				<input type="number" name="risk_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="risk_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                </tr>
+						                 <tr class="addedDeliv">
+						                    <td class="zui-sticky-col2">Handover Strategy(Lead)</td>
+						                    <td class="td "><textarea disabled class="hayt" name="hand_details" placeholder="Enter details here">@if($scopes[0]['handover_strategy']) {{ $scopes[0]['handover_strategy'] }} @endif</textarea></td>
+						                    <td class="td">
+						                    	<div class="col-sm-12">
+						                    		{{$scopes[0]['handover_raci']}}
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['handover_num'],'0')!==false)
+						                    				<input type="number" name="hand_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="hand_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['handover_num'],'1')!==false)
+						                    				<input type="number" name="hand_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="hand_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['handover_num'],'2')!==false)
+						                    				<input type="number" name="hand_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="hand_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['handover_num'],'3')!==false)
+						                    				<input type="number" name="hand_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="hand_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['handover_num'],'4')!==false)
+						                    				<input type="number" name="hand_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="hand_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['handover_num'],'5')!==false)
+						                    				<input type="number" name="hand_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="hand_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['handover_num'],'6')!==false)
+						                    				<input type="number" name="hand_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="hand_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['handover_num'],'7')!==false)
+						                    				<input type="number" name="hand_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="hand_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                </tr>
+						                 <tr class="addedDeliv">
+						                    <td class="zui-sticky-col2">Project Execution Plan</td>
+						                    <td class="td "><textarea disabled class="hayt" name="execution_details" placeholder="Enter details here">@if($scopes[0]['project_execution_plan']) {{ $scopes[0]['project_execution_plan'] }}  @endif</textarea></td>
+						                    <td class="td">
+						                    	<div class="col-sm-12">
+						                    		{{$scopes[0]['execution_raci']}}
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['execution_num'],'0')!==false) 
+						                    				<input type="number" name="execution_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="execution_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['execution_num'],'1')!==false) 
+						                    				<input type="number" name="execution_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="execution_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['execution_num'],'2')!==false) 
+						                    				<input type="number" name="execution_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="execution_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['execution_num'],'3')!==false) 
+						                    				<input type="number" name="execution_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="execution_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['execution_num'],'4')!==false) 
+						                    				<input type="number" name="execution_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="execution_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['execution_num'],'5')!==false) 
+						                    				<input type="number" name="execution_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="execution_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['execution_num'],'6')!==false) 
+						                    				<input type="number" name="execution_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="execution_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['execution_num'],'7')!==false) 
+						                    				<input type="number" name="execution_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="execution_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                </tr>
+						                <tr class="addedDeliv">
+						                    <td class="zui-sticky-col2">Design Proposals from<br> Design Team Members</td>
+						                    <td class="td "><textarea disabled class="hayt" name="proposal_details" placeholder="Enter details here">@if($scopes[0]['design_proposal']) {{ $scopes[0]['design_proposal'] }}  @endif</textarea></td>
+						                    <td class="td">
+						                    	<div class="col-sm-12">
+						                    		{{$scopes[0]['proposal_raci']}}
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['proposal_num'],'0')!==false)
+						                    				<input type="number" name="proposal_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="proposal_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['proposal_num'],'1')!==false)
+						                    				<input type="number" name="proposal_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="proposal_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['proposal_num'],'2')!==false)
+						                    				<input type="number" name="proposal_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="proposal_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['proposal_num'],'3')!==false)
+						                    				<input type="number" name="proposal_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="proposal_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['proposal_num'],'4')!==false)
+						                    				<input type="number" name="proposal_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="proposal_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['proposal_num'],'5')!==false)
+						                    				<input type="number" name="proposal_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="proposal_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['proposal_num'],'6')!==false)
+						                    				<input type="number" name="proposal_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="proposal_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if(strpos($scopes[0]['proposal_num'],'7')!==false)
+						                    				<input type="number" name="proposal_num_ans[]" class="inputwidth" >
+						                    			@else
+						                    				<input type="checkbox" disabled name="proposal_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                </tr>
+						                @foreach($delivs as $deliv)
+						                	<tr id="deliv" data-edit="yes" data-addid="{{ $deliv['added_id'] }}">
+						                	    <td class="zui-sticky-col2"><textarea disabled id="delivname" class="hayt named" name="named" placeholder="Enter details here">{{ $deliv['name'] }}</textarea></td>
+						                	    <td class="td "><textarea disabled class="hayt details" name="deliv_details" placeholder="Enter details here">{{ $deliv['details'] }}</textarea></td>
+						                	    <td class="td">
+						                	    	<div class="col-sm-12">
+						                	    		{{$deliv['raci']}}
+						                	    	</div>
+						                	    </td>
+						                	    <td class="td">
+						                	    	<div class="form-check">
+						                	    		<label>
+						                	    			@if (strpos($deliv['num'],'0')!==false)
+						                	    				<input type="number" name="strat_num_ans[]" class="inputwidth" >
+						                	    			@else  
+						                	    				<input type="checkbox" disabled name="strat_num[]" value="0" class="ribanum"><span class="label-text"></span>
+						                	    			@endif
+						                	    		</label>
+						                	    	</div>
+						                	    </td>
+						                	    <td class="td">
+						                	    	<div class="form-check">
+						                	    		<label>
+						                	    			@if (strpos($deliv['num'],'1')!==false)
+						                	    				<input type="number" name="strat_num_ans[]" class="inputwidth" >
+						                	    			@else  
+						                	    				<input type="checkbox" disabled name="strat_num[]" value="0" class="ribanum"><span class="label-text"></span>
+						                	    			@endif
+						                	    		</label>
+						                	    	</div>
+						                	    </td>
+						                	    <td class="td">
+						                	    	<div class="form-check">
+						                	    		<label>
+						                	    			@if (strpos($deliv['num'],'2')!==false)
+						                	    				<input type="number" name="strat_num_ans[]" class="inputwidth" >
+						                	    			@else  
+						                	    				<input type="checkbox" disabled name="strat_num[]" value="0" class="ribanum"><span class="label-text"></span>
+						                	    			@endif
+						                	    		</label>
+						                	    	</div>
+						                	    </td>
+						                	    <td class="td">
+						                	    	<div class="form-check">
+						                	    		<label>
+						                	    			@if (strpos($deliv['num'],'3')!==false)
+						                	    				<input type="number" name="strat_num_ans[]" class="inputwidth" >
+						                	    			@else  
+						                	    				<input type="checkbox" disabled name="strat_num[]" value="0" class="ribanum"><span class="label-text"></span>
+						                	    			@endif
+						                	    		</label>
+						                	    	</div>
+						                	    </td>
+						                	    <td class="td">
+						                	    	<div class="form-check">
+						                	    		<label>
+						                	    			@if (strpos($deliv['num'],'4')!==false)
+						                	    				<input type="number" name="strat_num_ans[]" class="inputwidth" >
+						                	    			@else  
+						                	    				<input type="checkbox" disabled name="strat_num[]" value="0" class="ribanum"><span class="label-text"></span>
+						                	    			@endif
+						                	    		</label>
+						                	    	</div>
+						                	    </td>
+						                	    <td class="td">
+						                	    	<div class="form-check">
+						                	    		<label>
+						                	    			@if (strpos($deliv['num'],'5')!==false)
+						                	    				<input type="number" name="strat_num_ans[]" class="inputwidth" >
+						                	    			@else  
+						                	    				<input type="checkbox" disabled name="strat_num[]" value="0" class="ribanum"><span class="label-text"></span>
+						                	    			@endif
+						                	    		</label>
+						                	    	</div>
+						                	    </td>
+						                	    <td class="td">
+						                	    	<div class="form-check">
+						                	    		<label>
+						                	    			@if (strpos($deliv['num'],'6')!==false)
+						                	    				<input type="number" name="strat_num_ans[]" class="inputwidth" >
+						                	    			@else  
+						                	    				<input type="checkbox" disabled name="strat_num[]" value="0" class="ribanum"><span class="label-text"></span>
+						                	    			@endif
+						                	    		</label>
+						                	    	</div>
+						                	    </td>
+						                	    <td class="td">
+						                	    	<div class="form-check">
+						                	    		<label>
+						                	    			@if (strpos($deliv['num'],'7')!==false)
+						                	    				<input type="number" name="strat_num_ans[]" class="inputwidth" >
+						                	    			@else  
+						                	    				<input type="checkbox" disabled name="strat_num[]" value="0" class="ribanum"><span class="label-text"></span>
+						                	    			@endif
+						                	    		</label>
+						                	    	</div>
+						                	    </td>
+						                	</tr>
+						                @endforeach
+						            </tbody>
+						        </table>
+						    </div>
+						</div>
+						<div class="col-sm-12">
+							<div class="row">
+								<div class="form-group">
+									{{-- <button class="btn addbutton" data-scroll-to="#deliv"
+	data-scroll-focus="#delivname"
+	data-scroll-speed="700"
+	data-scroll-offset="200" >Add</button> --}}
+								</div>
 							</div>
-
-							{{-- <div id="submitbutton">
-								<button type="submit">Upload Files</button>
-							</div> --}}
-
-							</fieldset>
-
-							</form>
-
-							<div id="messages">
-							<p>Status Messages</p>
+						</div>
+						<br>
+						<br>
+						<!-- <div class="col-sm-12">
+							<div class="col-sm-2"></div>
+							<div class="col-sm-2"></div>
+							<div class="col-sm-2"></div>
+							<div class="col-sm-2"></div>
+							<div class="col-sm-2"></div>
+							<div class="col-sm-2">
+			            		<h4>RIBA Stages</h4>
+			            	</div>
+						</div> -->
+						<div class="zui-wrapper3" id="myscrol2" >
+						    <div class="zui-scroller3" >
+						        <table class="zui-table3">
+						            <thead>
+						                <tr>
+						                    <th class="zui-sticky-col3"><center>Meetings</center></th>
+						                    <th style="width: 300px;max-width: 300px;min-width: 300px;">
+						                    Purpose</th>
+						                    <th style="width: 250px;max-width: 250px;min-width: 250px;">Attendees</th>
+						                    <th style="width: 250px;max-width: 250px;min-width: 250px;">Assumed Duration<br>(hours)</th>
+						                    <th>Reoccurence/Number of<br>Meetings</th>
+						                    <th>Arrange</th>
+						                    <th>Attend</th>
+						                    <th>Minute</th>
+						                    <th>0</th>
+						                    <th>1</th>
+						                    <th>2</th>
+						                    <th>3</th>
+						                    <th>4</th>
+						                    <th>5</th>
+						                    <th>6</th>
+						                    <th>7</th>
+						                </tr>
+						            </thead>
+						            <tbody id="addedmeet">
+						                <tr class="addedmeet">
+						                    <td class="zui-sticky-col3">Pre-Application<br> Meetings</td>
+						                    <td class="td "><textarea disabled class="hayt3" name="pre_app_purpose" placeholder="Enter details here">@if($scopesm[0]['pre_app_purpose']) {{ $scopesm[0]['pre_app_purpose'] }} @endif</textarea></td>
+						                    <td class="td"><textarea disabled class="hayt3" name="pre_app_attendees" placeholder="Enter details here">@if($scopesm[0]['pre_app_attendees']) {{ $scopesm[0]['pre_app_attendees'] }}  @endif</textarea></td>
+						                    <td class="td"><input disabled style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" value="{{ $scopesm[0]['pre_app_assumed_duration'] }}" type="text" name="pre_app_assumed_duration"></td>
+						                    <td class="td"><input disabled style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" value="{{ $scopesm[0]['pre_app_reoccurence'] }}" type="text" name="pre_app_reoccurence"></td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['pre_app_choice'],'Arrange')!==false) 
+						                    				<input type="checkbox" disabled name="pre_app_choice_ans[]" value="Arrange"><span class="label-text"></span>
+						                    			@else  
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['pre_app_choice'],'Attend')!==false) 
+						                    				<input type="checkbox" disabled name="pre_app_choice_ans[]" value="Attend"><span class="label-text"></span>
+						                    			@else  
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['pre_app_choice'],'Minute')!==false) 
+						                    				<input type="checkbox" disabled name="pre_app_choice_ans[]" value="Minute"><span class="label-text"></span>
+						                    			@else  
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['pre_app_num'],'0')!==false) 
+						                    				<input type="number" name="pre_app_num_ans" class="inputwidth">
+						                    			@else  
+						                    				<input type="checkbox" disabled name="pre_app_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['pre_app_num'],'1')!==false) 
+						                    				<input type="number" name="pre_app_num_ans" class="inputwidth">
+						                    			@else  
+						                    				<input type="checkbox" disabled name="pre_app_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['pre_app_num'],'2')!==false) 
+						                    				<input type="number" name="pre_app_num_ans" class="inputwidth">
+						                    			@else  
+						                    				<input type="checkbox" disabled name="pre_app_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['pre_app_num'],'3')!==false) 
+						                    				<input type="number" name="pre_app_num_ans" class="inputwidth">
+						                    			@else  
+						                    				<input type="checkbox" disabled name="pre_app_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['pre_app_num'],'4')!==false) 
+						                    				<input type="number" name="pre_app_num_ans" class="inputwidth">
+						                    			@else  
+						                    				<input type="checkbox" disabled name="pre_app_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['pre_app_num'],'5')!==false) 
+						                    				<input type="number" name="pre_app_num_ans" class="inputwidth">
+						                    			@else  
+						                    				<input type="checkbox" disabled name="pre_app_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['pre_app_num'],'6')!==false) 
+						                    				<input type="number" name="pre_app_num_ans" class="inputwidth">
+						                    			@else  
+						                    				<input type="checkbox" disabled name="pre_app_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['pre_app_num'],'7')!==false) 
+						                    				<input type="number" name="pre_app_num_ans" class="inputwidth">
+						                    			@else  
+						                    				<input type="checkbox" disabled name="pre_app_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                </tr>
+						                <tr class="addedmeet">
+						                    <td class="zui-sticky-col3">Site Visits</td>
+						                    <td class="td "><textarea disabled class="hayt3" name="site_visits_purpose" placeholder="Enter details here">@if($scopesm[0]['site_visits_purpose']) {{ $scopesm[0]['site_visits_purpose'] }}  @endif</textarea></td>
+						                    <td class="td"><textarea disabled class="hayt3" name="site_visits_attendees" placeholder="Enter details here">@if($scopesm[0]['site_visits_attendees']) {{ $scopesm[0]['site_visits_attendees'] }}  @endif</textarea></td>
+						                    <td class="td"><input disabled style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" value="{{$scopesm[0]['site_visits_assumed_duration']}}" name="site_visits_assumed_duration"></td>
+						                    <td class="td"><input disabled style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text"  value="{{$scopesm[0]['site_visits_reoccurence']}}" name="site_visits_reoccurence"></td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['site_visits_choice'],'Arrange')!==false)
+						                    				<input type="checkbox" disabled name="site_visits_choice_ans[]" value="Arrange"><span class="label-text"></span>
+						                    			@else 
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['site_visits_choice'],'Attend')!==false)
+						                    				<input type="checkbox" disabled name="site_visits_choice_ans[]" value="Attend"><span class="label-text"></span>
+						                    			@else 
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['site_visits_choice'],'Minute')!==false)
+						                    				<input type="checkbox" disabled name="site_visits_choice_ans[]" value="Minute"><span class="label-text"></span>
+						                    			@else 
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['site_visits_num'],'0')!==false) 
+						                    				<input type="number" name="site_visits_num_ans" class="inputwidth">
+						                    			@else  
+						                    				<input type="checkbox" disabled name="site_visits_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['site_visits_num'],'1')!==false) 
+						                    				<input type="number" name="site_visits_num_ans" class="inputwidth">
+						                    			@else  
+						                    				<input type="checkbox" disabled name="site_visits_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['site_visits_num'],'2')!==false) 
+						                    				<input type="number" name="site_visits_num_ans" class="inputwidth">
+						                    			@else  
+						                    				<input type="checkbox" disabled name="site_visits_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['site_visits_num'],'3')!==false) 
+						                    				<input type="number" name="site_visits_num_ans" class="inputwidth">
+						                    			@else  
+						                    				<input type="checkbox" disabled name="site_visits_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['site_visits_num'],'4')!==false) 
+						                    				<input type="number" name="site_visits_num_ans" class="inputwidth">
+						                    			@else  
+						                    				<input type="checkbox" disabled name="site_visits_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['site_visits_num'],'5')!==false) 
+						                    				<input type="number" name="site_visits_num_ans" class="inputwidth">
+						                    			@else  
+						                    				<input type="checkbox" disabled name="site_visits_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['site_visits_num'],'6')!==false) 
+						                    				<input type="number" name="site_visits_num_ans" class="inputwidth">
+						                    			@else  
+						                    				<input type="checkbox" disabled name="site_visits_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['site_visits_num'],'7')!==false) 
+						                    				<input type="number" name="site_visits_num_ans" class="inputwidth">
+						                    			@else  
+						                    				<input type="checkbox" disabled name="site_visits_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                </tr>
+						                <tr class="addedmeet">
+						                    <td class="zui-sticky-col3">Site/Project Meetings<br>(RIBA Stage 4/5)</td>
+						                    <td class="td "><textarea disabled class="hayt3" name="riba_purpose" placeholder="Enter details here">@if($scopesm[0]['riba_purpose']) {{ $scopesm[0]['riba_purpose'] }}  @endif</textarea></td>
+						                    <td class="td"><textarea disabled class="hayt3" name="riba_attendees" placeholder="Enter details here">@if($scopesm[0]['riba_attendees']) {{ $scopesm[0]['riba_attendees'] }}  @endif</textarea></td>
+						                    <td class="td"><input disabled style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" value="{{ $scopesm[0]['riba_assumed_duration'] }}" type="text" name="riba_assumed_duration"></td>
+						                    <td class="td"><input disabled style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" value="{{ $scopesm[0]['riba_reoccurence'] }}" type="text" name="riba_reoccurence"></td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['riba_choice'],'Arrange')!==false) 
+						                    				<input type="checkbox" disabled name="riba_choice_ans[]" value="Arrange"><span class="label-text"></span>
+						                    			@else 
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['riba_choice'],'Attend')!==false) 
+						                    				<input type="checkbox" disabled name="riba_choice_ans[]" value="Attend"><span class="label-text"></span>
+						                    			@else 
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['riba_choice'],'Minute')!==false) 
+						                    				<input type="checkbox" disabled name="riba_choice_ans[]" value="Minute"><span class="label-text"></span>
+						                    			@else 
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['riba_num'],'0')!==false) 
+						                    				<input type="number" name="riba_num_ans" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="riba_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['riba_num'],'1')!==false) 
+						                    				<input type="number" name="riba_num_ans" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="riba_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['riba_num'],'2')!==false) 
+						                    				<input type="number" name="riba_num_ans" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="riba_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['riba_num'],'3')!==false) 
+						                    				<input type="number" name="riba_num_ans" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="riba_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['riba_num'],'4')!==false) 
+						                    				<input type="number" name="riba_num_ans" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="riba_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['riba_num'],'5')!==false) 
+						                    				<input type="number" name="riba_num_ans" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="riba_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['riba_num'],'6')!==false) 
+						                    				<input type="number" name="riba_num_ans" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="riba_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['riba_num'],'7')!==false) 
+						                    				<input type="number" name="riba_num_ans" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="riba_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                </tr>
+						                <tr class="addedmeet">
+						                    <td class="zui-sticky-col3">SC / PC Site<br> Inspection</td>
+						                    <td class="td "><textarea disabled class="hayt3" name="inspection_purpose" placeholder="Enter details here">@if($scopesm[0]['inspection_purpose']) {{ $scopesm[0]['inspection_purpose'] }}  @endif</textarea></td>
+						                    <td class="td"><textarea disabled class="hayt3" name="inspection_attendees" placeholder="Enter details here">@if($scopesm[0]['inspection_attendees']) {{ $scopesm[0]['inspection_attendees'] }} @endif</textarea></td>
+						                    <td class="td"><input disabled style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" value="{{ $scopesm[0]['inspection_assumed_duration'] }}" type="text" name="inspection_assumed_duration"></td>
+						                    <td class="td"><input disabled style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" value="{{ $scopesm[0]['inspection_reoccurence'] }}" type="text" name="inspection_reoccurence"></td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['inspection_choice'],'Arrange')!==false) 
+						                    				<input type="checkbox" disabled name="inspection_choice_ans[]" value="Arrange"><span class="label-text"></span>
+						                    			@else 
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['inspection_choice'],'Attend')!==false) 
+						                    				<input type="checkbox" disabled name="inspection_choice_ans[]" value="Attend"><span class="label-text"></span>
+						                    			@else 
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['inspection_choice'],'Minute')!==false) 
+						                    				<input type="checkbox" disabled name="inspection_choice_ans[]" value="Minute"><span class="label-text"></span>
+						                    			@else 
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['inspection_num'],'0')!==false)
+						                    				<input type="number" name="inspection_num_ans" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="inspection_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['inspection_num'],'1')!==false)
+						                    				<input type="number" name="inspection_num_ans" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="inspection_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['inspection_num'],'2')!==false)
+						                    				<input type="number" name="inspection_num_ans" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="inspection_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['inspection_num'],'3')!==false)
+						                    				<input type="number" name="inspection_num_ans" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="inspection_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['inspection_num'],'4')!==false)
+						                    				<input type="number" name="inspection_num_ans" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="inspection_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['inspection_num'],'5')!==false)
+						                    				<input type="number" name="inspection_num_ans" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="inspection_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['inspection_num'],'6')!==false)
+						                    				<input type="number" name="inspection_num_ans" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="inspection_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesm[0]['inspection_num'],'7')!==false)
+						                    				<input type="number" name="inspection_num_ans" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="inspection_num[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                </tr>
+						                @foreach($meetings as $meet)
+						                	<tr id="meetclone" data-edit="yes" data-addid="{{ $meet['added_id'] }}">
+						                		<td class="zui-sticky-col3"><textarea disabled class="hayt3 name" name="name" placeholder="Enter details here">{{ $meet['name'] }}</textarea></td>
+						                		<td class="td "><textarea disabled class="hayt3 purpose" name="purpose" placeholder="Enter details here">{{ $meet['purpose'] }}</textarea></td>
+						                		<td class="td"><textarea disabled class="hayt3 attendees" name="attendees" placeholder="Enter details here">{{ $meet['attendees'] }}</textarea></td>
+						                		<td class="td"><input disabled style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" value="{{ $meet['duration'] }} " class="duration" name="durations"></td>
+						                		<td class="td"><input disabled style="box-sizing: border-box;border: none;border-bottom: 2px solid #FE7235;" type="text" value="{{ $meet['reoccurence'] }}" class="reoccurence" name="reoccurences"></td>
+						                		<td class="td">
+						                			<div class="form-check">
+						                				<label>
+						                					@if(strpos($meet['arrange'],'Arrange')!==false) 
+						                						<input type="checkbox" disabled class="arrange" name="arrange_ans[]" value="Arrange"><span class="label-text"></span>
+						                					@else 
+						                					@endif
+						                				</label>
+						                			</div>
+						                		</td>
+						                		<td class="td">
+						                			<div class="form-check">
+						                				<label>
+						                					@if(strpos($meet['arrange'],'Attend')!==false) 
+						                						<input type="checkbox" disabled class="arrange" name="arrange_ans[]" value="Attend"><span class="label-text"></span>
+						                					@else 
+						                					@endif
+						                				</label>
+						                			</div>
+						                		</td>
+						                		<td class="td">
+						                			<div class="form-check">
+						                				<label>
+						                					@if(strpos($meet['arrange'],'Minute')!==false) 
+						                						<input type="checkbox" disabled class="arrange" name="arrange_ans[]" value="Minute"><span class="label-text"></span>
+						                					@else 
+						                					@endif
+						                				</label>
+						                			</div>
+						                		</td>
+						                		<td class="td">
+						                			<div class="form-check">
+						                				<label>
+						                					@if(strpos($meet['num'],'0')!==false) 
+						                						<input type="number" name="num_ans" class="inputwidth">
+						                					@else 
+						                						<input type="checkbox" disabled name="num[]" class="meetnum" value="0"><span class="label-text"></span>
+						                					@endif
+						                				</label>
+						                			</div>
+						                		</td>
+						                		<td class="td">
+						                			<div class="form-check">
+						                				<label>
+						                					@if(strpos($meet['num'],'1')!==false) 
+						                						<input type="number" name="num_ans" class="inputwidth">
+						                					@else 
+						                						<input type="checkbox" disabled name="num[]" class="meetnum" value="0"><span class="label-text"></span>
+						                					@endif
+						                				</label>
+						                			</div>
+						                		</td>
+						                		<td class="td">
+						                			<div class="form-check">
+						                				<label>
+						                					@if(strpos($meet['num'],'2')!==false) 
+						                						<input type="number" name="num_ans" class="inputwidth">
+						                					@else 
+						                						<input type="checkbox" disabled name="num[]" class="meetnum" value="0"><span class="label-text"></span>
+						                					@endif
+						                				</label>
+						                			</div>
+						                		</td>
+						                		<td class="td">
+						                			<div class="form-check">
+						                				<label>
+						                					@if(strpos($meet['num'],'3')!==false) 
+						                						<input type="number" name="num_ans" class="inputwidth">
+						                					@else 
+						                						<input type="checkbox" disabled name="num[]" class="meetnum" value="0"><span class="label-text"></span>
+						                					@endif
+						                				</label>
+						                			</div>
+						                		</td>
+						                		<td class="td">
+						                			<div class="form-check">
+						                				<label>
+						                					@if(strpos($meet['num'],'4')!==false) 
+						                						<input type="number" name="num_ans" class="inputwidth">
+						                					@else 
+						                						<input type="checkbox" disabled name="num[]" class="meetnum" value="0"><span class="label-text"></span>
+						                					@endif
+						                				</label>
+						                			</div>
+						                		</td>
+						                		<td class="td">
+						                			<div class="form-check">
+						                				<label>
+						                					@if(strpos($meet['num'],'5')!==false) 
+						                						<input type="number" name="num_ans" class="inputwidth">
+						                					@else 
+						                						<input type="checkbox" disabled name="num[]" class="meetnum" value="0"><span class="label-text"></span>
+						                					@endif
+						                				</label>
+						                			</div>
+						                		</td>
+						                		<td class="td">
+						                			<div class="form-check">
+						                				<label>
+						                					@if(strpos($meet['num'],'6')!==false) 
+						                						<input type="number" name="num_ans" class="inputwidth">
+						                					@else 
+						                						<input type="checkbox" disabled name="num[]" class="meetnum" value="0"><span class="label-text"></span>
+						                					@endif
+						                				</label>
+						                			</div>
+						                		</td>
+						                		<td class="td">
+						                			<div class="form-check">
+						                				<label>
+						                					@if(strpos($meet['num'],'7')!==false) 
+						                						<input type="number" name="num_ans" class="inputwidth">
+						                					@else 
+						                						<input type="checkbox" disabled name="num[]" class="meetnum" value="0"><span class="label-text"></span>
+						                					@endif
+						                				</label>
+						                			</div>
+						                		</td>
+						                	</tr>
+						                @endforeach
+						            </tbody>
+						        </table>
+						    </div>
+						</div>
+						<div class="col-sm-12">
+							<div class="row">
+								<div class="form-group">
+									{{-- <button class="btn addbuttonMeet" data-scroll-to="#deliv"
+	data-scroll-focus="#delivname"
+	data-scroll-speed="700"
+	data-scroll-offset="200">Add</button> --}}
+								</div>
 							</div>
+						</div>
 
-						</div><br> 
+						<br>
+						<br>
 
-							<div class="form-group butcent">
-								<button type="button" data-toggle="tab" href="#section6" id="checkinpbut4" name="Next" class="btn btn-primary butsize ">Next</button>
-								<button type="button" name="Save" value="Save" class="btn  butsize color">Save</button>
+						<div class="zui-wrapper4" id="myscrol3">
+						    <div class="zui-scroller4">
+						        <table class="zui-table4">
+						            <thead>
+						                <tr>
+						                    <th class="zui-sticky-col4"><center>Design Considerations</center></th>
+						                    <th style="width: 500px; max-width: 500px; min-width: 500px;">Applies to</th>
+						                </tr>
+						            </thead>
+						            <tbody id="addedDesign">
+						                <tr>
+						                    <td class="zui-sticky-col4">Cost, programme, quality, health & safety during construction and<br> operation, functionality, buildability, operation and maintenance.</td>
+						                    <td class="td "><textarea disabled class="hayt4" name="question_one" placeholder="Enter details here">@if($scopesd[0]['question_one_applies_to']) {{ $scopesd[0]['question_one_applies_to'] }} @endif</textarea></td>
+						                </tr>
+						                <tr>
+						                    <td class="zui-sticky-col4">All information provided by other members of the Project Team.</td>
+						                    <td class="td "><textarea disabled class="hayt4" name="question_two" placeholder="Enter details here">@if($scopesd[0]['question_two_applies_to']) {{ $scopesd[0]['question_two_applies_to'] }} @endif</textarea></td> 
+						                </tr>
+						                <tr>
+						                    <td class="zui-sticky-col4">Good Practice in the Selection of Construction Materials 2011<br> (British Council of Offices Publication).</td>
+						                    <td class="td "><textarea disabled class="hayt4" name="question_three" placeholder="Enter details here">@if($scopesd[0]['question_three_applies_to']) {{ $scopesd[0]['question_three_applies_to'] }} @endif</textarea></td>
+						                </tr>
+						                <tr>
+						                    <td class="zui-sticky-col4">Statutory standards</td>
+						                    <td class="td "><textarea disabled class="hayt4" name="question_four" placeholder="Enter details here">@if($scopesd[0]['question_four_applies_to']) {{ $scopesd[0]['question_four_applies_to'] }} @endif</textarea></td>
+						                </tr>
+						                <tr>
+						                    <td class="zui-sticky-col4">Co-ordination with structural and building services</td>
+						                    <td class="td "><textarea disabled class="hayt4" name="question_five" placeholder="Enter details here">@if($scopesd[0]['question_five_applies_to']) {{ $scopesd[0]['question_five_applies_to'] }} @endif</textarea></td>
+						                </tr>
+						                @foreach ($designs as $des)
+						                	<tr id="desclone" data-edit="yes" data-addid="{{ $des['added_id'] }}" >
+						                	    <td class="zui-sticky-col4"><textarea disabled class="hayt4 name" name="question_name" placeholder="Enter details here">{{ $des['name'] }}</textarea></td>
+						                	    <td class="td "><textarea disabled class="hayt4 question" name="" placeholder="Enter details here">{{ $des['question'] }}</textarea></td>
+						                	</tr>
+						                @endforeach
+						            </tbody>
+						        </table>
+						    </div>
+						</div>
+						<div class="col-sm-12">
+							<div class="row">
+								<div class="form-group">
+									{{-- <button class="btn addbuttonDes" >Add</button> --}}
+								</div>
 							</div>
+						</div>
+
+						<br><br>
+
+						<br>
+						<br>
+
+						<div class="zui-wrapper5" id="myscrol4">
+						    <div class="zui-scroller5">
+						        <table class="zui-table5">
+						            <thead>
+						                <tr>
+						                    <th class="zui-sticky-col5"><center>Advise on</center></th>
+						                    <th>0</th>
+						                    <th>1</th>
+						                    <th>2</th>
+						                    <th>3</th>
+						                    <th>4</th>
+						                    <th>5</th>
+						                    <th>6</th>
+						                    <th>7</th>
+						                </tr>
+						            </thead>
+						            <tbody id="addedadvise">
+						                <tr>
+						                    <td class="zui-sticky-col5">Any products or materials, specified within the guidelines<br> named in Item<span style="color: red;">???</span> , that are relevant to the project and have been found<br> to be deleterious or hazardous to health and safety.</td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_one'],'0')!==false) 
+						                    				<input type="number" name="advise_one_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_one_ans[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_one'],'1')!==false) 
+						                    				<input type="number" name="advise_one_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_one_ans[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_one'],'2')!==false) 
+						                    				<input type="number" name="advise_one_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_one_ans[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_one'],'3')!==false) 
+						                    				<input type="number" name="advise_one_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_one_ans[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_one'],'4')!==false) 
+						                    				<input type="number" name="advise_one_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_one_ans[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_one'],'5')!==false) 
+						                    				<input type="number" name="advise_one_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_one_ans[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_one'],'6')!==false) 
+						                    				<input type="number" name="advise_one_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_one_ans[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_one'],'7')!==false) 
+						                    				<input type="number" name="advise_one_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_one_ans[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                </tr>
+						                <tr>
+						                    <td class="zui-sticky-col5">Assembly of Project Team. (Lead)</td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_two'],'0')!==false) 
+						                    				<input type="number" name="advise_two_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_two[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_two'],'1')!==false) 
+						                    				<input type="number" name="advise_two_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_two[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_two'],'2')!==false) 
+						                    				<input type="number" name="advise_two_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_two[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_two'],'3')!==false) 
+						                    				<input type="number" name="advise_two_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_two[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_two'],'4')!==false) 
+						                    				<input type="number" name="advise_two_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_two[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_two'],'5')!==false) 
+						                    				<input type="number" name="advise_two_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_two[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_two'],'6')!==false) 
+						                    				<input type="number" name="advise_two_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_two[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_two'],'7')!==false) 
+						                    				<input type="number" name="advise_two_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_two[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td> 
+						                </tr>
+						                <tr>
+						                    <td class="zui-sticky-col5">Need for and the scope of services by consultants, specialists,<br> sub-contractors or suppliers. (Lead)</td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_three'],'0')!==false) 
+						                    				<input type="number" name="advise_three_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_three_ans[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_three'],'1')!==false) 
+						                    				<input type="number" name="advise_three_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_three_ans[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_three'],'2')!==false) 
+						                    				<input type="number" name="advise_three_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_three_ans[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_three'],'3')!==false) 
+						                    				<input type="number" name="advise_three_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_three_ans[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_three'],'4')!==false) 
+						                    				<input type="number" name="advise_three_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_three_ans[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_three'],'5')!==false) 
+						                    				<input type="number" name="advise_three_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_three_ans[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_three'],'6')!==false) 
+						                    				<input type="number" name="advise_three_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_three_ans[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_three'],'7')!==false) 
+						                    				<input type="number" name="advise_three_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_three_ans[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                </tr>
+						                <tr>
+						                    <td class="zui-sticky-col5">Resolution of defects.</td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_four'],'0')!==false) 
+						                    				<input type="number" name="advise_four_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_four[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_four'],'1')!==false) 
+						                    				<input type="number" name="advise_four_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_four[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_four'],'2')!==false) 
+						                    				<input type="number" name="advise_four_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_four[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_four'],'3')!==false) 
+						                    				<input type="number" name="advise_four_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_four[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_four'],'4')!==false) 
+						                    				<input type="number" name="advise_four_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_four[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_four'],'5')!==false) 
+						                    				<input type="number" name="advise_four_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_four[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_four'],'6')!==false) 
+						                    				<input type="number" name="advise_four_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_four[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_four'],'7')!==false) 
+						                    				<input type="number" name="advise_four_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_four[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                </tr>
+						                <tr>
+						                    <td class="zui-sticky-col5">Form and content of design outputs, their interfaces<br> and a verification procedure. (Lead)</td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_five'],'0')!==false) 
+						                    				<input type="number" name="advise_five_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_five[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_five'],'1')!==false) 
+						                    				<input type="number" name="advise_five_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_five[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_five'],'2')!==false) 
+						                    				<input type="number" name="advise_five_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_five[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_five'],'3')!==false) 
+						                    				<input type="number" name="advise_five_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_five[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_five'],'4')!==false) 
+						                    				<input type="number" name="advise_five_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_five[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_five'],'5')!==false) 
+						                    				<input type="number" name="advise_five_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_five[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_five'],'6')!==false) 
+						                    				<input type="number" name="advise_five_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_five[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_five'],'7')!==false) 
+						                    				<input type="number" name="advise_five_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_five[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                </tr>
+						                <tr>
+						                    <td class="zui-sticky-col5">Relevant experience from previous projects.</td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_six'],'0')!==false) 
+						                    				<input type="number" name="advise_six_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_six[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_six'],'1')!==false) 
+						                    				<input type="number" name="advise_six_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_six[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_six'],'2')!==false) 
+						                    				<input type="number" name="advise_six_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_six[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_six'],'3')!==false) 
+						                    				<input type="number" name="advise_six_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_six[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_six'],'4')!==false) 
+						                    				<input type="number" name="advise_six_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_six[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_six'],'5')!==false) 
+						                    				<input type="number" name="advise_six_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_six[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_six'],'6')!==false) 
+						                    				<input type="number" name="advise_six_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_six[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                    <td class="td">
+						                    	<div class="form-check">
+						                    		<label>
+						                    			@if (strpos($scopesa[0]['advise_six'],'7')!==false) 
+						                    				<input type="number" name="advise_six_ans[]" class="inputwidth">
+						                    			@else 
+						                    				<input type="checkbox" disabled name="advise_six[]" value="0"><span class="label-text"></span>
+						                    			@endif
+						                    		</label>
+						                    	</div>
+						                    </td>
+						                </tr>
+						                <tr style="background: #FFC000;">
+											<td style="background: #FFC000; font-weight: bold; color: #fff;" class="zui-sticky-col5"><center>Monitor</center></td> <!-- background/bold -->
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td class="zui-sticky-col5">Work of the Designers. <br><span style="color: red;">Designers regarding…. [WHAT?]</span></td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['monitor_one'],'0')!==false)
+															<input type="number" name="monitor_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="monitor_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['monitor_one'],'1')!==false)
+															<input type="number" name="monitor_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="monitor_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['monitor_one'],'2')!==false)
+															<input type="number" name="monitor_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="monitor_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['monitor_one'],'3')!==false)
+															<input type="number" name="monitor_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="monitor_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['monitor_one'],'4')!==false)
+															<input type="number" name="monitor_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="monitor_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['monitor_one'],'5')!==false)
+															<input type="number" name="monitor_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="monitor_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['monitor_one'],'6')!==false)
+															<input type="number" name="monitor_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="monitor_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['monitor_one'],'7')!==false)
+															<input type="number" name="monitor_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="monitor_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="zui-sticky-col5">Performance of Design Team.</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['monitor_two'],'0')!==false) 
+															<input type="number" name="monitor_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="monitor_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['monitor_two'],'1')!==false) 
+															<input type="number" name="monitor_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="monitor_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['monitor_two'],'2')!==false) 
+															<input type="number" name="monitor_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="monitor_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['monitor_two'],'3')!==false) 
+															<input type="number" name="monitor_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="monitor_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['monitor_two'],'4')!==false) 
+															<input type="number" name="monitor_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="monitor_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['monitor_two'],'5')!==false) 
+															<input type="number" name="monitor_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="monitor_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['monitor_two'],'6')!==false) 
+															<input type="number" name="monitor_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="monitor_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['monitor_two'],'7')!==false) 
+															<input type="number" name="monitor_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="monitor_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="zui-sticky-col5">Compliance with statutory and contract requirements.</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['monitor_three'],'0')!==false) 
+															<input type="number" name="monitor_three_ans[]" class="inputwidth">
+														@else
+															<input type="checkbox" disabled name="monitor_three[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['monitor_three'],'1')!==false) 
+															<input type="number" name="monitor_three_ans[]" class="inputwidth">
+														@else
+															<input type="checkbox" disabled name="monitor_three[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['monitor_three'],'2')!==false) 
+															<input type="number" name="monitor_three_ans[]" class="inputwidth">
+														@else
+															<input type="checkbox" disabled name="monitor_three[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['monitor_three'],'3')!==false) 
+															<input type="number" name="monitor_three_ans[]" class="inputwidth">
+														@else
+															<input type="checkbox" disabled name="monitor_three[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['monitor_three'],'4')!==false) 
+															<input type="number" name="monitor_three_ans[]" class="inputwidth">
+														@else
+															<input type="checkbox" disabled name="monitor_three[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['monitor_three'],'5')!==false) 
+															<input type="number" name="monitor_three_ans[]" class="inputwidth">
+														@else
+															<input type="checkbox" disabled name="monitor_three[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['monitor_three'],'6')!==false) 
+															<input type="number" name="monitor_three_ans[]" class="inputwidth">
+														@else
+															<input type="checkbox" disabled name="monitor_three[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['monitor_three'],'7')!==false) 
+															<input type="number" name="monitor_three_ans[]" class="inputwidth">
+														@else
+															<input type="checkbox" disabled name="monitor_three[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+										</tr>
+										<tr style="background: #FFC000;">
+											<td style="background: #FFC000; font-weight: bold; color: #fff;" class="zui-sticky-col5"><center>Collaborate / Consult with</center></td> <!-- background/bold -->
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td class="zui-sticky-col5">Relevant Third Parties as required.</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_one'],'0')!==false) 
+															<input type="number" name="collab_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="collab_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_one'],'1')!==false) 
+															<input type="number" name="collab_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="collab_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_one'],'2')!==false) 
+															<input type="number" name="collab_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="collab_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_one'],'3')!==false) 
+															<input type="number" name="collab_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="collab_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_one'],'4')!==false) 
+															<input type="number" name="collab_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="collab_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_one'],'5')!==false) 
+															<input type="number" name="collab_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="collab_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_one'],'6')!==false) 
+															<input type="number" name="collab_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="collab_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_one'],'7')!==false) 
+															<input type="number" name="collab_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="collab_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="zui-sticky-col5">Planning authority to discuss the project</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_two'],'0')!==false) 
+															<input type="number" name="collab_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="collab_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_two'],'1')!==false) 
+															<input type="number" name="collab_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="collab_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_two'],'2')!==false) 
+															<input type="number" name="collab_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="collab_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_two'],'3')!==false) 
+															<input type="number" name="collab_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="collab_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_two'],'4')!==false) 
+															<input type="number" name="collab_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="collab_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_two'],'5')!==false) 
+															<input type="number" name="collab_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="collab_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_two'],'6')!==false) 
+															<input type="number" name="collab_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="collab_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_two'],'7')!==false) 
+															<input type="number" name="collab_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="collab_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="zui-sticky-col5">Statutory authorities on developing design.</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_three'],'0')!==false) 
+															<input type="number" name="collab_three_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="collab_three[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_three'],'1')!==false) 
+															<input type="number" name="collab_three_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="collab_three[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_three'],'2')!==false) 
+															<input type="number" name="collab_three_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="collab_three[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_three'],'3')!==false) 
+															<input type="number" name="collab_three_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="collab_three[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_three'],'4')!==false) 
+															<input type="number" name="collab_three_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="collab_three[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_three'],'5')!==false) 
+															<input type="number" name="collab_three_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="collab_three[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_three'],'6')!==false) 
+															<input type="number" name="collab_three_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="collab_three[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_three'],'7')!==false) 
+															<input type="number" name="collab_three_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="collab_three[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="zui-sticky-col5">Project Manager & Employer on significant design issues. (Lead)</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_four'],'0')!==false) 
+															<input type="number" name="collab_four_ans[]" class="inputwidth">
+														@else
+															<input type="checkbox" disabled name="collab_four[]" value="0"><span class="label-text"></span>
+														@endif 
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_four'],'1')!==false) 
+															<input type="number" name="collab_four_ans[]" class="inputwidth">
+														@else
+															<input type="checkbox" disabled name="collab_four[]" value="0"><span class="label-text"></span>
+														@endif 
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_four'],'2')!==false) 
+															<input type="number" name="collab_four_ans[]" class="inputwidth">
+														@else
+															<input type="checkbox" disabled name="collab_four[]" value="0"><span class="label-text"></span>
+														@endif 
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_four'],'3')!==false) 
+															<input type="number" name="collab_four_ans[]" class="inputwidth">
+														@else
+															<input type="checkbox" disabled name="collab_four[]" value="0"><span class="label-text"></span>
+														@endif 
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_four'],'4')!==false) 
+															<input type="number" name="collab_four_ans[]" class="inputwidth">
+														@else
+															<input type="checkbox" disabled name="collab_four[]" value="0"><span class="label-text"></span>
+														@endif 
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_four'],'5')!==false) 
+															<input type="number" name="collab_four_ans[]" class="inputwidth">
+														@else
+															<input type="checkbox" disabled name="collab_four[]" value="0"><span class="label-text"></span>
+														@endif 
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_four'],'6')!==false) 
+															<input type="number" name="collab_four_ans[]" class="inputwidth">
+														@else
+															<input type="checkbox" disabled name="collab_four[]" value="0"><span class="label-text"></span>
+														@endif 
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['collab_four'],'7')!==false) 
+															<input type="number" name="collab_four_ans[]" class="inputwidth">
+														@else
+															<input type="checkbox" disabled name="collab_four[]" value="0"><span class="label-text"></span>
+														@endif 
+													</label>
+												</div>
+											</td>
+										</tr>
+										<tr style="background: #FFC000;">
+											<td style="background: #FFC000; font-weight: bold; color: #fff;" class="zui-sticky-col5"><center>Co-ordinate</center></td> <!-- background/bold -->
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td class="zui-sticky-col5">Collation of all planning submission documents.</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['coordinate_one'],'0')!==false) 
+															<input type="number" name="coordinate_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="coordinate_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['coordinate_one'],'1')!==false) 
+															<input type="number" name="coordinate_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="coordinate_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['coordinate_one'],'2')!==false) 
+															<input type="number" name="coordinate_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="coordinate_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['coordinate_one'],'3')!==false) 
+															<input type="number" name="coordinate_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="coordinate_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['coordinate_one'],'4')!==false) 
+															<input type="number" name="coordinate_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="coordinate_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['coordinate_one'],'5')!==false) 
+															<input type="number" name="coordinate_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="coordinate_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['coordinate_one'],'6')!==false) 
+															<input type="number" name="coordinate_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="coordinate_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['coordinate_one'],'7')!==false) 
+															<input type="number" name="coordinate_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="coordinate_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="zui-sticky-col5">Reviewing design information provided by contractors <br>or specialists to establish whether that information <br>can be co-ordinated and integrated with other project information.</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['coordinate_two'],'0')!==false) 
+															<input type="number" name="coordinate_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="coordinate_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['coordinate_two'],'1')!==false) 
+															<input type="number" name="coordinate_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="coordinate_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['coordinate_two'],'2')!==false) 
+															<input type="number" name="coordinate_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="coordinate_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['coordinate_two'],'3')!==false) 
+															<input type="number" name="coordinate_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="coordinate_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['coordinate_two'],'4')!==false) 
+															<input type="number" name="coordinate_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="coordinate_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['coordinate_two'],'5')!==false) 
+															<input type="number" name="coordinate_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="coordinate_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['coordinate_two'],'6')!==false) 
+															<input type="number" name="coordinate_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="coordinate_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['coordinate_two'],'7')!==false) 
+															<input type="number" name="coordinate_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="coordinate_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+										</tr>
+										<tr style="background: #FFC000">
+											<td style="background: #FFC000; font-weight: bold; color: #fff;" class="zui-sticky-col5"><center>Other</center></td> <!-- background/bold -->
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td class="zui-sticky-col5">Submit the [detailed / outline] planning application.</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['other_one'],'0')!==false) 
+															<input type="number" name="other_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['other_one'],'1')!==false) 
+															<input type="number" name="other_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['other_one'],'2')!==false) 
+															<input type="number" name="other_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['other_one'],'3')!==false) 
+															<input type="number" name="other_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['other_one'],'4')!==false) 
+															<input type="number" name="other_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['other_one'],'5')!==false) 
+															<input type="number" name="other_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['other_one'],'6')!==false) 
+															<input type="number" name="other_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_one[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['other_one'],'7')!==false) 
+															<input type="number" name="other_one_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_one[]" value="0"><span class="label-text"></span>
+														@endif													
+													</label>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="zui-sticky-col5">Assisting building user during initial occupation period.</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if(strpos($scopesa[0]['other_two'],'0')!==false) 
+															<input type="number" name="other_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if(strpos($scopesa[0]['other_two'],'1')!==false) 
+															<input type="number" name="other_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if(strpos($scopesa[0]['other_two'],'2')!==false) 
+															<input type="number" name="other_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if(strpos($scopesa[0]['other_two'],'3')!==false) 
+															<input type="number" name="other_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if(strpos($scopesa[0]['other_two'],'4')!==false) 
+															<input type="number" name="other_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if(strpos($scopesa[0]['other_two'],'5')!==false) 
+															<input type="number" name="other_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if(strpos($scopesa[0]['other_two'],'6')!==false) 
+															<input type="number" name="other_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if(strpos($scopesa[0]['other_two'],'7')!==false) 
+															<input type="number" name="other_two_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_two[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="zui-sticky-col5">Review all instructions and information about the Project,<br> provided by the Employer.</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['other_three'],'0')!==false) 
+															<input type="number" name="other_three_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_three[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['other_three'],'1')!==false) 
+															<input type="number" name="other_three_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_three[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['other_three'],'2')!==false) 
+															<input type="number" name="other_three_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_three[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['other_three'],'3')!==false) 
+															<input type="number" name="other_three_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_three[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['other_three'],'4')!==false) 
+															<input type="number" name="other_three_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_three[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['other_three'],'5')!==false) 
+															<input type="number" name="other_three_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_three[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['other_three'],'6')!==false) 
+															<input type="number" name="other_three_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_three[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['other_three'],'7')!==false) 
+															<input type="number" name="other_three_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_three[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="zui-sticky-col5">preparing and making submissions under building acts<br> and/or regulations or other statutory requirements.</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['other_four'],'0')!==false) 
+															<input type="number" name="other_four_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_four[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['other_four'],'1')!==false) 
+															<input type="number" name="other_four_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_four[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['other_four'],'2')!==false) 
+															<input type="number" name="other_four_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_four[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['other_four'],'3')!==false) 
+															<input type="number" name="other_four_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_four[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['other_four'],'4')!==false) 
+															<input type="number" name="other_four_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_four[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['other_four'],'5')!==false) 
+															<input type="number" name="other_four_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_four[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['other_four'],'6')!==false) 
+															<input type="number" name="other_four_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_four[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+											<td class="td">
+												<div class="form-check">
+													<label>
+														@if (strpos($scopesa[0]['other_four'],'7')!==false) 
+															<input type="number" name="other_four_ans[]" class="inputwidth">
+														@else 
+															<input type="checkbox" disabled name="other_four[]" value="0"><span class="label-text"></span>
+														@endif
+													</label>
+												</div>
+											</td>
+										</tr>
+						                @foreach ($advises as $advise)
+						                	<tr id="adviseclone" data-edit="yes" data-addid="{{ $advise['added_id'] }}">
+					        				    <td class="zui-sticky-col5"><textarea disabled class="name"  style="border-radius: 6px;
+				    height: 70px;" name="" placeholder="Enter details here">{{ $advise['name'] }}</textarea></td>
+					        				    <td class="td">
+					        				    	<div class="form-check">
+					        				    		<label>
+					        				    			@if(strpos($advise['num'], '0')!==false) 
+					        				    				<input type="number" name="advisenum_ans[]" class="inputwidth">
+					        				    			@else 
+					        				    				<input type="checkbox" disabled name="advisenum[]" class="advisenum" value="0"><span class="label-text"></span>
+					        				    			@endif
+					        				    		</label>
+					        				    	</div>
+					        				    </td>
+					        				    <td class="td">
+					        				    	<div class="form-check">
+					        				    		<label>
+					        				    			@if(strpos($advise['num'], '1')!==false) 
+					        				    				<input type="number" name="advisenum_ans[]" class="inputwidth">
+					        				    			@else 
+					        				    				<input type="checkbox" disabled name="advisenum[]" class="advisenum" value="0"><span class="label-text"></span>
+					        				    			@endif
+					        				    		</label>
+					        				    	</div>
+					        				    </td>
+					        				    <td class="td">
+					        				    	<div class="form-check">
+					        				    		<label>
+					        				    			@if(strpos($advise['num'], '2')!==false) 
+					        				    				<input type="number" name="advisenum_ans[]" class="inputwidth">
+					        				    			@else 
+					        				    				<input type="checkbox" disabled name="advisenum[]" class="advisenum" value="0"><span class="label-text"></span>
+					        				    			@endif
+					        				    		</label>
+					        				    	</div>
+					        				    </td>
+					        				    <td class="td">
+					        				    	<div class="form-check">
+					        				    		<label>
+					        				    			@if(strpos($advise['num'], '3')!==false) 
+					        				    				<input type="number" name="advisenum_ans[]" class="inputwidth">
+					        				    			@else 
+					        				    				<input type="checkbox" disabled name="advisenum[]" class="advisenum" value="0"><span class="label-text"></span>
+					        				    			@endif
+					        				    		</label>
+					        				    	</div>
+					        				    </td>
+					        				    <td class="td">
+					        				    	<div class="form-check">
+					        				    		<label>
+					        				    			@if(strpos($advise['num'], '4')!==false) 
+					        				    				<input type="number" name="advisenum_ans[]" class="inputwidth">
+					        				    			@else 
+					        				    				<input type="checkbox" disabled name="advisenum[]" class="advisenum" value="0"><span class="label-text"></span>
+					        				    			@endif
+					        				    		</label>
+					        				    	</div>
+					        				    </td>
+					        				    <td class="td">
+					        				    	<div class="form-check">
+					        				    		<label>
+					        				    			@if(strpos($advise['num'], '5')!==false) 
+					        				    				<input type="number" name="advisenum_ans[]" class="inputwidth">
+					        				    			@else 
+					        				    				<input type="checkbox" disabled name="advisenum[]" class="advisenum" value="0"><span class="label-text"></span>
+					        				    			@endif
+					        				    		</label>
+					        				    	</div>
+					        				    </td>
+					        				    <td class="td">
+					        				    	<div class="form-check">
+					        				    		<label>
+					        				    			@if(strpos($advise['num'], '6')!==false) 
+					        				    				<input type="number" name="advisenum_ans[]" class="inputwidth">
+					        				    			@else 
+					        				    				<input type="checkbox" disabled name="advisenum[]" class="advisenum" value="0"><span class="label-text"></span>
+					        				    			@endif
+					        				    		</label>
+					        				    	</div>
+					        				    </td>
+					        				    <td class="td">
+					        				    	<div class="form-check">
+					        				    		<label>
+					        				    			@if(strpos($advise['num'], '7')!==false) 
+					        				    				<input type="number" name="advisenum_ans[]" class="inputwidth">
+					        				    			@else 
+					        				    				<input type="checkbox" disabled name="advisenum[]" class="advisenum" value="0"><span class="label-text"></span>
+					        				    			@endif
+					        				    		</label>
+					        				    	</div>
+					        				    </td>
+					        				</tr>
+						                @endforeach
+						            </tbody>
+						        </table>
+						    </div>
+						</div>
 						
 					</div>
 
@@ -1268,19 +5286,19 @@
 											</div>
 										</div>
 										<div class="col-sm-8">
+										@foreach($insur as $elem)
+										<div class="col-sm-6">
 											<div class="form-group">
-												<p >Professional indemnity insurance</p>
+												<p>{{$elem['name']}}</p>
 											</div>
 										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-4"></div>
-										<div class="col-sm-8">
+										<div class="col-sm-6">
 											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Insurance level">
+												<input type="text" name="" disabled class="form-control" value="{{$elem['level']}}" >
 											</div>
 										</div>
-
+										@endforeach
+										</div>
 									</div>
 									<div class="row">
 										<div class="col-sm-4"></div>
@@ -1289,8 +5307,8 @@
 												<input type="text" name="" class="form-control" placeholder="Premium cost uplift to achieve required insurance level">
 											</div>
 										</div>
-
 									</div>
+									
 									<div class="row">
 										<div class="col-sm-4"></div>
 										<div class="col-sm-8">
@@ -1311,16 +5329,8 @@
 												</select>
 										</div>
 									</div><br>
+									
 									<div class="row">
-										<div class="col-sm-4">Execution</div>
-										<div class="col-sm-8">
-											<div class="form-group">
-												<input type="text" name="" class="form-control" placeholder="Fixed text">
-											</div>
-										</div>
-
-									</div>
-										<div class="row">
 										<div class="col-sm-4">
 											<div class="form-group">
 												Bonds
@@ -1329,7 +5339,7 @@
 
 										<div class="col-sm-8">
 											<div class="form-group">
-												<p ></p>
+												<p>{{$appointment->bonds}}</p>
 											</div>
 										</div>
 									</div>
@@ -1361,7 +5371,7 @@
 									<div class="row">
 										<div class="col-sm-4">Collateral  Warranties  /  Third  Parties  </div>
 										<div class="col-sm-8">
-												<p>Collateral Warranties</p>
+												<p>{{$appointment->collateral_warranties}}</p>
 										</div>
 									</div><br>
 									<div class="row">
@@ -1378,6 +5388,7 @@
 							             
 										</div>
 									</div><br>
+
 									<div class="row">
 										<div class="col-sm-4"></div>
 										
@@ -1392,7 +5403,7 @@
 									<div class="row">
 										<div class="col-sm-4">Limit  of  Liability  </div>
 										<div class="col-sm-8">
-												<p>Collateral Warranties</p>
+												<p>{{$appointment->limit_of_liability}}</p>
 										</div>
                                        </div><br>
                                        <div class="row">
@@ -1423,7 +5434,7 @@
 										<div class="row">
 										<div class="col-sm-4">Execution</div>
 										<div class="col-sm-8">
-												<p>Collateral Warranties</p>
+												<p>{{$appointment->execution}}</p>
 										</div>
                                       </div><br>
 									<div class="row">
@@ -1432,10 +5443,11 @@
 								               <input type="checkbox" name="" value="test" class="filled-in" id="check14" >   <label for="check14">I Agree</label>
 							             </div>
 									</div><br>
+									
 									<div class="row">
 										<div class="col-sm-4">Net  contribution  clause </div>
 										<div class="col-sm-8">
-												<p >Yes</p>
+												<p >{{$appointment->net_contrib}}</p>
 										</div>
                                        </div><br>
                                        <div class="row">
@@ -1569,9 +5581,8 @@
 										<div class="col-sm-4"></div>
 											<div class="col-sm-8">
 											<div class="form-group">
-												<div class="input-group date" id="datepicker4" data-date="02-2012" 
+												<div class="input-group date" id="datepicker4" data-date-container="#datepicker4" data-date="date()" 
 												         data-date-format="mm-yyyy">
-
 													 <input class="form-control" name="created_by_date" type="text" placeholder="Select year" readonly="readonly" name="date" >	  
 													 <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	  
 												</div>
@@ -1610,7 +5621,7 @@
 										<div class="col-sm-4"></div>
 											<div class="col-sm-8">
 											<div class="form-group">
-												<div class="input-group date" id="datepicker10" data-date="02-2012" 
+												<div class="input-group date" id="datepicker10" data-date-container="#datepicker10"  data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
 													 <input class="form-control" name="checked_by_date" type="text" placeholder="Select year" readonly="readonly" name="date" >	  
@@ -1651,7 +5662,7 @@
 										<div class="col-sm-4"></div>
 											<div class="col-sm-8">
 											<div class="form-group">
-												<div class="input-group date" id="datepicker11" data-date="02-2012" 
+												<div class="input-group date" id="datepicker11" data-date-container="#datepicker11"  data-date="02-2012" 
 												         data-date-format="mm-yyyy">
 
 													 <input class="form-control" name="approved_by_date" type="text" placeholder="Select year" readonly="readonly" name="date" >	  

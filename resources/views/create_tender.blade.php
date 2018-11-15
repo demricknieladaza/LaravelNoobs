@@ -1989,7 +1989,7 @@
 		        </div>
 		        <div class="modal-body">
 		          <p>Deadline</p><div class="form-group" >
-					<div class="input-group date dateday" id="datepicker42" data-date-container="#datepicker41" data-date="02-2012" 
+					<div class="input-group date dateday" id="datepicker42" data-date-container="#datepicker42" data-date="02-2012" 
 					         data-date-format="yyyy-mm-dd">
 					         <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>	 
 						 <input class="form-control" name="deadline_date" type="text" placeholder="Select year" readonly="readonly">	  
@@ -5064,6 +5064,40 @@
 															</div>
 		    										</div>
 		    									</div>
+
+		    									<div class="row">
+		    										<div class="col-sm-4">
+		    											<div class="form-group">
+		    												Execution 
+		    											</div>
+													</div>
+		    										<div class="col-sm-8">
+		    											<div class="form-group">
+															<select name="execution" class="form-control">
+																<option value="" disabled selected>Select</option>
+																<option value="Deed">Deed</option>
+																<option value="Under Hand">Under hand</option>
+															</select>
+														</div>
+		    										</div>
+		    									</div>
+
+		    									<div class="row">
+		    										<div class="col-sm-4">
+		    											<div class="form-group">
+		    												Net Contribution Clause 
+		    											</div>
+													</div>
+		    										<div class="col-sm-8">
+		    											<div class="form-group">
+															<select name="net_contrib" class="form-control">
+																<option value="" disabled selected>Select</option>
+																<option value="Yes">Yes</option>
+																<option value="No">No</option>
+															</select>
+														</div>
+		    										</div>
+		    									</div>
 		    									
 		    									<div class="row">
 		    										<div class="col-sm-4">
@@ -5301,10 +5335,9 @@
 								<div class="col-sm-8">
 										<div class="col-sm-12" style="padding:0;">
 											<div class="form-group" >
-												<div class="input-group date dat" id="date1" data-date-container="#datepicker2" data-date="02-2012" 
+												<div class="input-group date dat" id="date1" data-date-container="#date1" data-date="02-2012" 
 												         data-date-format="mm-yyyy"><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
-													 <input class="form-control" name="created_data" type="text" placeholder="Select year" readonly="readonly" name="date" >	  
-													 	  
+													 <input class="form-control" name="created_data" type="text" placeholder="Select year" readonly="readonly" name="date">
 												</div>
 											</div>
 										</div>
@@ -5328,7 +5361,7 @@
 								<div class="col-sm-8">
 									<div class="form-group">
 										<div class="col-sm-12" style="padding:0;">
-												<div class="input-group date dat form-group" id="date2" data-date="02-2012" data-date-format="mm-yyyy"><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
+												<div class="input-group date dat form-group" id="date2" data-date-container="#date2" data-date="02-2012" data-date-format="mm-yyyy"><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
 												 <input class="form-control" name="checked_data" type="text" readonly="readonly" name="date" >	  
 																 	  
 										</div>
@@ -5357,7 +5390,7 @@
 								<div class="col-sm-8">
 									<div class="form-group">
 										<div class="col-sm-12" style="padding:0;">
-												<div class="input-group date dat form-group" id="date3" data-date="02-2012" data-date-format="mm-yyyy"><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
+												<div class="input-group date dat form-group" id="date3" data-date-container="#date3"  data-date="02-2012" data-date-format="mm-yyyy"><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
 												<input class="form-control" name="approved_date" type="text" readonly="readonly" name="date" >	  
 																 	  
 															</div>

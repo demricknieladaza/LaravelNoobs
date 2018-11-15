@@ -431,6 +431,7 @@
 </script>
 <script>
 	$(document).ready(function(){
+		var divClone = $("#tenderer").clone();
 		$(".date").datepicker( {
 			    format: "mm-yyyy",
 			    viewMode: "months", 
@@ -468,6 +469,7 @@
 
 		$('.viewbid').click(function(){
 			// alert($(this).attr('data-tender-id'));
+			$("#tenderer").replaceWith(divClone.clone());
 			jQuery.ajax({
 				url: "{{ url('gettenderbid') }}",
 				method: 'get',
@@ -475,7 +477,7 @@
 				success: function(result){
 					// console.log(result[0]['comp_name']);
 					$.each(result,function(v,k){
-						$('#tenderer').append('<tr><td>'+k['comp_name']+'</td><td></td><td></td><td></td><td></td></tr>');
+						$('#tenderer').append('<tr><td>'+k['comp_name']+'</td><td>'+k['qualitative']+'</td><td></td><td></td><td></td></tr>');
 					});
 					$('#viewBid').modal('toggle');
 				}
