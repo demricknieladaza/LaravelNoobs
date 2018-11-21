@@ -468,53 +468,69 @@
 	$(document).ready(function(){
 		$('#bid_scope').click(function(){
 			alert('clicked!');
+			var strats = new Array();
+			var progs = new Array();
+			var feas = new Array();
+			var des = new Array();
+			var sits = new Array();
+			var infs = new Array();
+			var projs = new Array();
+			var risks = new Array();
+			var hands = new Array();
+			var execs = new Array();
+			var props = new Array();
+			$.each($('input[name="strategic_num_ans[]"]'),function(v,k){
+				strats.push(k['value']);
+			});
+			$.each($('input[name="pprogramme_num_ans[]"]'),function(v,k){
+				progs.push(k['value']);
+			});
+			$.each($('input[name="feasibility_num_ans[]"]'),function(v,k){
+				feas.push(k['value']);
+			});
+			$.each($('input[name="design_num_ans[]"]'),function(v,k){
+				des.push(k['value']);
+			});
+			$.each($('input[name="site_num_ans[]"]'),function(v,k){
+				sits.push(k['value']);
+			});
+			$.each($('input[name="info_num_ans[]"]'),function(v,k){
+				infs.push(k['value']);
+			});
+			$.each($('input[name="project_num_ans[]"]'),function(v,k){
+				projs.push(k['value']);
+			});
+			$.each($('input[name="risk_num_ans[]"]'),function(v,k){
+				risks.push(k['value']);
+			});
+			$.each($('input[name="hand_num_ans[]"]'),function(v,k){
+				hands.push(k['value']);
+			});	
+			$.each($('input[name="execution_num_ans[]"]'),function(v,k){
+				execs.push(k['value']);
+			});	
+			$.each($('input[name="proposal_num_ans[]"]'),function(v,k){
+				props.push(k['value']);
+			});	
 			$.ajax({
 				url: '{{ url("bid_scope") }}',
 				method: 'post',
-				data: {
-					strategic_num_ans: $("input[name='strategic_num_ans[]']").val();
-					programme_num_ans: $('input[name="programme_num_ans[]"]').val(),
-					feasibility_num_ans: $('input[name="feasibility_num_ans[]"]').val(),
-					design_num_ans: $('input[name="site_num_ans[]"]').val(),
-					info_num_ans: $('input[name="project_num_ans[]"]').val(),
-					risk_num_ans: $('input[name="risk_num_ans"]').val(),
-					hand_num_ans: $('input[name="hand_num_ans[]"]').val(),
-					execution_num_ans: $('input[name="execution_num_ans[]"]').val(),
-					proposal_num_ans: $('input[name="proposal_num_ans[]"]').val(),
-					strat_num_ans: $('input[name="strat_num_ans[]"]').val(),
-
-					pre_app_num_ans: $('input[name="pre_app_num_ans[]"]').val(),
-					site_visits_num_ans: $('input[name="site_visits_num_ans[]"]').val(),
-					inspection_num_ans: $('input[name="inspection_num_ans[]"]').val(),
-					num_ans: $('input[name="num_ans[]"]').val(),
-
-					advise_one_ans: $('input[name="advise_one_ans[]"]').val(),
-					advise_two_ans: $('input[name="advise_two_ans[]"]').val(),
-					advise_three_ans:$('input[name="advise_three_ans[]"]').val(),
-					advise_four_ans: $('input[name="advise_four_ans[]"]').val(),
-					advise_five_ans: $('input[name="advise_five_ans[]"]').val(),
-					advise_six_ans: $('input[name="advise_six_ans[]"]').val(),
-
-					monitor_one_ans: $('input[name="monitor_one_ans[]"]').val(),
-					monitor_two_ans: $('input[name="monitor_two_ans[]"]').val(),
-					monitor_three_ans: $('input[name="monitor_three_ans[]"]').val(),
-					
-					collab_one_ans: $('input[name="collab_one_ans[]"]').val(),
-					collab_two_ans: $('input[name="collab_two_ans[]"]').val(),
-					collab_three_ans: $('input[name="collab_three_ans[]"]').val(),
-					collab_four_ans: $('input[name="collab_four_ans[]"]').val(),
-
-					coordinate_one_ans: $('input[name="coordinate_one_ans[]"]').val(),
-					coordinate_two_ans: $('input[name="coordinate_two_ans[]"]').val(),
-
-					other_one_ans: $('input[name="other_one_ans[]"]').val(),
-					other_two_ans: $('input[name="other_two_ans[]"]').val(),
-					other_three_ans: $('input[name="other_three_ans[]"]').val(),
-					other_four_ans: $('input[name="other_four_ans[]"]').val(),
-					advisenum_ans: $('input[name="advisenum_ans[]"]').val()
+				data: { 
+					strat: strats,
+					prog: progs,
+					fea: feas,
+					de: des,
+					sit: sits,
+					inf: infs,
+					proj: projs,
+					risk: risks,
+					hand: hands,
+					exec: execs,
+					prop: props,
+					tender_id: jQuery("input[name='tender_id']").val()
 				},
 				success: function(result){
-					console.log(result);
+					// console.log(result);
 				}
 			}) 	
 		});
@@ -532,6 +548,12 @@
 					console.log(result);
 				}
 			});
+		});
+		$('#add_field_coms').click(function(){
+			$('#commnts').append('<textarea id="text-input4" name="comments_constraints[]" cols="25" rows="3" placeholder="Enter here.."></textarea><div class="word-counter"><label id="count-label4">3000</label>/3000 words</div>');
+		});
+		$('#add_field_sols').click(function(){
+			$('#soltions').append('<textarea id="text-input5" name="solutions[]" cols="25" rows="3" placeholder="Enter text here"></textarea><div class="word-counter"><label id="count-label5">3000</label>/3000 words </div>');
 		});
 		$('#ind_save').click(function(){
 			alert('clicked!');
@@ -1384,7 +1406,7 @@
 							foreach ($individuals as $key ) {
 								echo "<li><div class='form-check'>
 										<label>
-											<input type='checkbox' name='individuals[]' value='".$key->first_name."".' '."".$key->last_name."'><span class='label-text'>".$key->first_name."".' '."".$key->last_name."</span>
+											<input type='checkbox' name='individuals[]' value='".$key->ind_id."'><span class='label-text'>".$key->first_name."".' '."".$key->last_name."</span>
 										</label>
 									</div></li>";
 							}
@@ -1414,8 +1436,8 @@
 											</div>
 										</div>
 										<div class="col-sm-8">
-											<div class="form-group">
-													<textarea id="text-input4" name="comments_constraints[]"ols="25" rows="3" placeholder="Enter here.."></textarea>
+											<div id="commnts" class="form-group">
+												<textarea id="text-input4" name="comments_constraints[]" cols="25" rows="3" placeholder="Enter here.."></textarea>
 												<div class="word-counter">
 												     <label id="count-label4">3000</label>/3000 words
 												</div>
@@ -1438,7 +1460,7 @@
 										</div>
 										<div class="col-sm-8">
 												<div class="input_fields_com">
-												    <button class="btn btn-primary" id="add_field_com">Add another comment</button>
+												    <button class="btn btn-primary" type="button" id="add_field_coms">Add another comment</button>
 												    <div></div>
 												</div>
 											</div>
@@ -1450,7 +1472,7 @@
 											</div>
 										</div>
 										<div class="col-sm-8">
-											<div class="form-group">
+											<div id="soltions" class="form-group">
 													<textarea id="text-input5" name="solutions[]" cols="25" rows="3" placeholder="Enter text here"></textarea>
 												<div class="word-counter">
 												     <label id="count-label5">3000</label>/3000 words
@@ -1475,7 +1497,7 @@
 										</div>
 										<div class="col-sm-8">
 												<div class="input_fields_sul">
-												    <button class="btn btn-primary" id="add_field_sul">Add another solution</button>
+												    <button class="btn btn-primary" type="button" id="add_field_sols">Add another solution</button>
 												    <div></div>
 												</div>
 											</div>
@@ -1529,7 +1551,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopes[0]['strategic_num'],'0')!==false)
-						                    				<input type="number" name="strategic_num_ans[]" class="inputwidth" >
+						                    				<input type="number" name="strategic_num_ans[]" class="inputwidth strat" >
 						                    			@else
 						                    				<input type="checkbox" disabled name="strategic_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -1540,7 +1562,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopes[0]['strategic_num'],'1')!==false)
-						                    				<input type="number" name="strategic_num_ans[]" class="inputwidth" >
+						                    				<input type="number" name="strategic_num_ans[]" class="inputwidth strat" >
 						                    			@else
 						                    				<input type="checkbox" disabled name="strategic_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -1551,7 +1573,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopes[0]['strategic_num'],'2')!==false)
-						                    				<input type="number" name="strategic_num_ans[]" class="inputwidth" >
+						                    				<input type="number" name="strategic_num_ans[]" class="inputwidth strat" >
 						                    			@else
 						                    				<input type="checkbox" disabled name="strategic_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -1562,7 +1584,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopes[0]['strategic_num'],'3')!==false)
-						                    				<input type="number" name="strategic_num_ans[]" class="inputwidth" >
+						                    				<input type="number" name="strategic_num_ans[]" class="inputwidth strat" >
 						                    			@else
 						                    				<input type="checkbox" disabled name="strategic_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -1573,7 +1595,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopes[0]['strategic_num'],'4')!==false)
-						                    				<input type="number" name="strategic_num_ans[]" class="inputwidth" >
+						                    				<input type="number" name="strategic_num_ans[]" class="inputwidth strat" >
 						                    			@else
 						                    				<input type="checkbox" disabled name="strategic_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -1584,7 +1606,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopes[0]['strategic_num'],'5')!==false)
-						                    				<input type="number" name="strategic_num_ans[]" class="inputwidth" >
+						                    				<input type="number" name="strategic_num_ans[]" class="inputwidth strat" >
 						                    			@else
 						                    				<input type="checkbox" disabled name="strategic_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -1595,7 +1617,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopes[0]['strategic_num'],'6')!==false)
-						                    				<input type="number" name="strategic_num_ans[]" class="inputwidth" >
+						                    				<input type="number" name="strategic_num_ans[]" class="inputwidth strat" >
 						                    			@else
 						                    				<input type="checkbox" disabled name="strategic_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -1606,7 +1628,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopes[0]['strategic_num'],'7')!==false)
-						                    				<input type="number" name="strategic_num_ans[]" class="inputwidth" >
+						                    				<input type="number" name="strategic_num_ans[]" class="inputwidth strat" >
 						                    			@else
 						                    				<input type="checkbox" disabled name="strategic_num[]" value="0"><span class="label-text"></span>
 						                    			@endif

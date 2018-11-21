@@ -199,11 +199,76 @@ class ReportsController extends Controller
     		$org = DB::table('organisation_tbl')->where('user_id',$key->user_id)->pluck('org_id')->first();
     	 	$tendinfo[] = array(
     	 		'comp_name' => $comp_name,
-    	 		'qualitative' => $this->getorgprojectexp($org,$key->project_record_id,$key->tender_id)
+    	 		'qualitative' => $this->getorgprojectexp($org,$key->project_record_id,$key->tender_id),
+    	 		'quantitative' => $this->getquanti($key->user_id,$key->tender_id)
     	 	);
     	}
 
     	return $tendinfo;
+    }
+
+    public function getquanti($uid,$tid){
+    	$quant = DB::table('bid_deliverables_tbl')
+	    			->where('tender_id',$tid)
+	    			->where('user_id',$uid)
+	    			->first();
+    	$strat = explode(",",$quant->strategic);
+    	$tstrat = 0;
+    	foreach ($strat as $key) {
+    		$tstrat += (int)$key;
+    	}
+    	$prog = explode(",",$quant->programme);
+    	$tprog = 0;
+    	foreach ($prog as $key) {
+    		$tstrat += (int)$key;
+    	}
+    	$study = explode(",",$quant->study);
+    	$tstudy = 0;
+    	foreach ($study as $key) {
+    		$tstrat += (int)$key;
+    	}
+    	$drm = explode(",",$quant->drm);
+    	$tdrm = 0;
+    	foreach ($drm as $key) {
+    		$tstrat += (int)$key;
+    	}
+    	$info_report = explode(",",$quant->info_report);
+    	$tinfo_report = 0;
+    	foreach ($info_report as $key) {
+    		$tstrat += (int)$key;
+    	}
+    	$info_exchange = explode(",",$quant->info_exchange);
+    	$tinfo_exchange = 0;
+    	foreach ($info_exchange as $key) {
+    		$tstrat += (int)$key;
+    	}
+    	$proj_brief = explode(",",$quant->proj_brief);
+    	$tproj_brief = 0;
+    	foreach ($proj_brief as $key) {
+    		$tstrat += (int)$key;
+    	}
+    	$risk = explode(",",$quant->risk);
+    	$trisk = 0;
+    	foreach ($risk as $key) {
+    		$tstrat += (int)$key;
+    	}
+    	$handover = explode(",",$quant->handover);
+    	$thandover = 0;
+    	foreach ($handover as $key) {
+    		$tstrat += (int)$key;
+    	}
+    	$proj_exec = explode(",",$quant->proj_exec);
+    	$tproj_exec = 0;
+    	foreach ($proj_exec as $key) {
+    		$tstrat += (int)$key;
+    	}
+    	$design_proposal = explode(",",$quant->design_proposal);
+    	$tdesign_proposal = 0;
+    	foreach ($design_proposal as $key) {
+    		$tstrat += (int)$key;
+    	}
+
+    	return $tstrat;
     }
 
     public function getorgprojectexp($org_id,$proj_id,$tid){

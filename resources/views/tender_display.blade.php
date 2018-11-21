@@ -477,7 +477,7 @@
 				success: function(result){
 					// console.log(result[0]['comp_name']);
 					$.each(result,function(v,k){
-						$('#tenderer').append('<tr><td>'+k['comp_name']+'</td><td>'+k['qualitative']+'</td><td></td><td></td><td></td></tr>');
+						$('#tenderer').append('<tr><td>'+k['comp_name']+'</td><td>'+k['qualitative']+'</td><td>'+k['quantitative']+'</td><td></td><td></td></tr>');
 					});
 					$('#viewBid').modal('toggle');
 				}

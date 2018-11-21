@@ -106,6 +106,8 @@ Route::resource('winwork/bid', 'BidController', [
 ]);
 Route::post('submit_bid', 'BidController@submitBid');
 
+Route::post('bid_scope', 'BidController@bid_scope');
+
 Route::post('edit_tender_service', 'TenderController@editTend');
 // Route::resource('winwork/bid', 'BidController');
 Route::post('winwork/bid/{id}/save', 'BidController@saveBid');

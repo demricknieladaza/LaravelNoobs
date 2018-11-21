@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\DB;
 use App\UserAccountsModel;
 use App\Tender;
 use App\ProjectInformations;
@@ -156,6 +157,36 @@ class BidController extends Controller
     {
         //
     }
+    public function bid_scope(Request $request){
+        // dd($request->get('strat'));
+        $strat = implode(",", $request->get('strat'));
+        $prog = implode(",", $request->get('prog'));
+        $fea = implode(",", $request->get('fea'));
+        $de = implode(",", $request->get('de'));
+        $sit = implode(",", $request->get('sit'));
+        $inf = implode(",", $request->get('inf'));
+        $proj = implode(",", $request->get('proj'));
+        $risk = implode(",", $request->get('risk'));
+        $hand = implode(",", $request->get('hand'));
+        $exec = implode(",", $request->get('exec'));
+        $prop = implode(",", $request->get('prop'));
+        DB::table('bid_deliverables_tbl')->insert(
+            ['tender_id'=>$request->get('tender_id'),
+            'user_id'=>$request->session()->get('id'),
+            'strategic'=>$strat,
+            'programme'=>$prog,
+            'study' => $fea,
+            'drm' => $de,
+            'info_report' => $sit,
+            'info_exchange' => $inf,
+            'proj_brief' => $proj,
+            'risk' => $risk,
+            'handover' => $hand,
+            'proj_exec' => $exec,
+            'design_proposal' => $prop
+        ]
+        );
+    }
 
     public function getCredentials(Request $request,$id){
 
@@ -232,14 +263,14 @@ class BidController extends Controller
         $qual->approved_by_date = $request->input('approved_by_date');
         $qual->save();
 
-        return view('bid')->with([
-            'tender' => $tender,
-            'project' => $project,
-            'pre_qual' => $quest,
-            'appointment' => $appointment
-        ]);
+        // return view('bid')->with([
+        //     'tender' => $tender,
+        //     'project' => $project,
+        //     'pre_qual' => $quest,
+        //     'appointment' => $appointment
+        // ]);
 
-        // return 'SUCCESS!!';
+        return 'SUCCESS!!';
     }
 
     public function saveQuery(Request $request){
@@ -330,36 +361,32 @@ class BidController extends Controller
         }
         $name_of_solutions = substr($name_of_solutions, 0, -1);
         $bid->solutions_images = $name_of_solutions;
+        $bid->user_id = $request->session()->get('id');
         $bid->save();
 
-
+        return "save";
         // return "ERRGEZSHYTeuyigakwsyjuy";
-        return view('bid')->with([
-            'tender' => $tender,
-            'project' => $project,
-            'individuals' => $indi,
-            'pre_qual' => $quest
-        ]);
+        // return view('bid')->with([
+        //     'tender' => $tender,
+        //     'project' => $project,
+        //     'individuals' => $indi,
+        //     'pre_qual' => $quest
+        // ]);
     }
 
     public function saveBidIndividuals(Request $request){
         
         $ind = $request->individual;
 
-        for($counter = 0; $counter < count($ind); $counter++){
+        $individual = new BidIndividuals;
+        $individual->tender_id = $request->get('tender_id');
+        $individual->ind_id = implode(',', $ind);
+        $individual->user_id = $request->session()->get('id');
+        $individual->save();
 
-            $exploded = explode(' ', $ind[$counter]);
+        // dd($ind);
 
-            $individualInfo = Individuals::where('first_name', $exploded[0])
-                                          ->where('last_name', $exploded[1])
-                                          ->get();
-
-            $individual = new BidIndividuals;
-            $individual->tender_id = $request->get('tender_id');
-            $individual->ind_id = $individualInfo[$counter]->ind_id;
-            $individual->save();
-
-        }
+        return 'imu mama';
 
 
     }
