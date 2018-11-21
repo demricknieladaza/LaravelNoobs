@@ -13,6 +13,7 @@ use App\UserAccountsModel;
 use App\ProjectTeam;
 use App\Tender;
 use App\TenderQuery;
+use App\EmployerDetails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
@@ -645,6 +646,20 @@ class ProjectInformationController extends Controller
         }
 
         return "SUCCESS!";
+
+    }
+
+    public function saveEmployerDetails(Request $request){
+        
+        $emp = new EmployerDetails;
+        $emp->emp_name = $request->emp_name;
+        $emp->office_address = $request->address;
+        $emp->industry = $request->industry;
+        $emp->year_established = $request->year_est;
+        $emp->number_of_employees = $request->num_of_emp;
+        $emp->save();
+
+        return $emp->emp_id;
 
     }
 }

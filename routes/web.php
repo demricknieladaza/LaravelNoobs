@@ -116,6 +116,7 @@ Route::post('bid_ind', 'BidController@saveBidIndividuals');
 
 //Route::put('project_info/{id}', 'ProjectInformationController@Update');
 Route::resource('project_info','ProjectInformationController');
+Route::post('save_employer', 'ProjectInformationController@saveEmployerDetails');
 Route::post('response_save', 'ProjectInformationController@saveResponse');
 Route::resource('scope', 'ScopeController');
 Route::resource('project_info_tender','TenderController');

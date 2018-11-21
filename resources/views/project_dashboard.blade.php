@@ -66,7 +66,28 @@
 	}
 
 </style>
+<script>
+	$(document).ready(function(){
+		$('#save_employer').click(function(){
+			alert('clicked!');
+			$.ajax({
+				url: '{{ url("save_employer") }}',
+				method: 'POST',
+				data: {
+					emp_name: $('input[name="emp_name"]').val(),
+					address: $('input[name="office_address"]').val(),
+					industry: $('input[name="industry"]').val(),
+					year_est: $('input[name="year_established"]').val(),
+					num_of_emp: $('input[name="number_of_employees"]').val()
 
+				},
+				success: function(result){
+					console.log(result);
+				}
+			});
+		});
+	});
+</script>
 <div class="container below-header ">
 	<h1 id="logo" class="project-title bid-page-title centerh" style="margin-left: 5%;
     margin-right: 5%;">Project Dashboard</small></h1>
@@ -447,52 +468,11 @@
 		    				</div>
 		    			</div>
 		    		</div>
-		    		<div class="tender-container" >
-		    			<div class="row">
-		    				<div class="col-sm-12 active-tenders">
-		    					<h3 >Tender Queries
-		    					<button class="btn buts save_proj1" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction1()"><i class="fa fa-save" style="font-size:15px"></i>Save</button>
-		    					<button class="btn buts" id="edit_proj1" onclick="myFunction1()" style="float: right;margin-top:-14px;"><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
-		    					<div class="row">	
-		    						<div class="col-sm-12">	
-		    							<table class="table table-striped table-hover tender_queries" id="a">
-		    								<tr>
-		    									<td width="10%" style="font-weight: 600;">#</td>
-		    									<td style="font-weight: 600;">Query</td>
-		    									<td style="font-weight: 600;">Responses</td>
-
-		    								</tr>
-		    								<tr>
-		    									<td>1</td>
-		    									<td>TextTextTextTextTextTextTextTextText</td>
-		    									<td><input id="respo1" type="text" name="respo1" class="form-control proje" placeholder="TextTextTextTextTextTextTextTextTextTextTextText" readonly></td>
-		    								</tr>
-		    								<tr>
-		    									<td>2</td>
-		    									<td>TextTextTextTextTextTextTextTextText</td>
-		    									<td><input id="respo2" type="text" name="respo2" class="form-control proje" placeholder="TextTextTextTextTextTextTextTextTextTextTextText" readonly></td>
-		    								</tr>
-		    								<tr>
-		    									<td>3</td>
-		    									<td>TextTextTextTextTextTextTextTextText</td>
-		    									<td><input id="respo3" type="text" name="respo3" class="form-control proje" placeholder="TextTextTextTextTextTextTextTextTextTextTextText" readonly></td>
-		    								</tr>
-		    							</table>
-		    						</div>
-		    					</div>
-		    					<section id="emptab">
-		    						
-		    					</section>
-		    					<div style="text-align: center;">
-		    					</div>
-		    				</div>
-		    			</div>
-		    		</div>
 					<div class="tender-container">
 						<div class="row">
 							<div class="col-sm-12 active-tenders">
 								<h3>Employer Information
-		    						<button class="btn buts save_proj2" style="display: none; float:right;margin-top:-14px;" onclick="saveFunction2()"><i class="fa fa-save" style="font-size:15px"></i>Save</button>
+		    						<button class="btn buts save_proj2" style="display: none; float:right;margin-top:-14px;" id="save_employer"><i class="fa fa-save" style="font-size:15px"></i>Save</button>
 		    						<button class="btn buts" id="edit_proj2" onclick="myFunction2()" style="float:right;margin-top:-14px;" ><i class="fa fa-edit" style="font-size:15px"></i>Edit</button></h3>
 								<div class="row">	
 									<div class="col-sm-9">				
@@ -501,31 +481,31 @@
 												<td>Employer
 													
 												</td >
-												<td><input id="emp1" type="text" name="emp1" class="form-control proje" placeholder="British Land" readonly></td>
+												<td><input id="emp1" type="text" name="emp_name" class="form-control proje" placeholder="British Land" readonly></td>
 											</tr>
 											<tr>
 												<td>Registered Office Address
 													
 												</td>
-												<td><input id="emp2" type="text" name="emp2" class="form-control proje" placeholder="100 Sample Road, London, W1 23Y, United Kingdom" readonly></td>
+												<td><input id="emp2" type="text" name="office_address" class="form-control proje" placeholder="100 Sample Road, London, W1 23Y, United Kingdom" readonly></td>
 											</tr>
 											<tr>
 												<td>Industry
 													
 												</td>
-												<td><input id="emp3" type="text" name="emp3" class="form-control proje" placeholder="Developer" readonly></td>
+												<td><input id="emp3" type="text" name="industry" class="form-control proje" placeholder="Developer" readonly></td>
 											</tr>
 											<tr>
 												<td>Year Established
 													
 												</td>
-												<td><input id="emp4" type="text" name="emp4" class="form-control proje" placeholder="1955" readonly></td>
+												<td><input id="emp4" type="text" name="year_established" class="form-control proje" placeholder="1955" readonly></td>
 											</tr>
 											<tr>
 												<td>Number of Employees
 													
 												</td>
-												<td><input id="emp5" type="text" name="emp5" class="form-control proje" placeholder="10-50" readonly></td>
+												<td><input id="emp5" type="number" name="number_of_employees" class="form-control proje" placeholder="10-50" readonly></td>
 											</tr>
 										</table>
 									</div>

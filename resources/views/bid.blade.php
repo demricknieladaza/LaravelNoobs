@@ -466,6 +466,58 @@
 </script>
 <script>
 	$(document).ready(function(){
+		$('#bid_scope').click(function(){
+			alert('clicked!');
+			$.ajax({
+				url: '{{ url("bid_scope") }}',
+				method: 'post',
+				data: {
+					strategic_num_ans: $("input[name='strategic_num_ans[]']").val();
+					programme_num_ans: $('input[name="programme_num_ans[]"]').val(),
+					feasibility_num_ans: $('input[name="feasibility_num_ans[]"]').val(),
+					design_num_ans: $('input[name="site_num_ans[]"]').val(),
+					info_num_ans: $('input[name="project_num_ans[]"]').val(),
+					risk_num_ans: $('input[name="risk_num_ans"]').val(),
+					hand_num_ans: $('input[name="hand_num_ans[]"]').val(),
+					execution_num_ans: $('input[name="execution_num_ans[]"]').val(),
+					proposal_num_ans: $('input[name="proposal_num_ans[]"]').val(),
+					strat_num_ans: $('input[name="strat_num_ans[]"]').val(),
+
+					pre_app_num_ans: $('input[name="pre_app_num_ans[]"]').val(),
+					site_visits_num_ans: $('input[name="site_visits_num_ans[]"]').val(),
+					inspection_num_ans: $('input[name="inspection_num_ans[]"]').val(),
+					num_ans: $('input[name="num_ans[]"]').val(),
+
+					advise_one_ans: $('input[name="advise_one_ans[]"]').val(),
+					advise_two_ans: $('input[name="advise_two_ans[]"]').val(),
+					advise_three_ans:$('input[name="advise_three_ans[]"]').val(),
+					advise_four_ans: $('input[name="advise_four_ans[]"]').val(),
+					advise_five_ans: $('input[name="advise_five_ans[]"]').val(),
+					advise_six_ans: $('input[name="advise_six_ans[]"]').val(),
+
+					monitor_one_ans: $('input[name="monitor_one_ans[]"]').val(),
+					monitor_two_ans: $('input[name="monitor_two_ans[]"]').val(),
+					monitor_three_ans: $('input[name="monitor_three_ans[]"]').val(),
+					
+					collab_one_ans: $('input[name="collab_one_ans[]"]').val(),
+					collab_two_ans: $('input[name="collab_two_ans[]"]').val(),
+					collab_three_ans: $('input[name="collab_three_ans[]"]').val(),
+					collab_four_ans: $('input[name="collab_four_ans[]"]').val(),
+
+					coordinate_one_ans: $('input[name="coordinate_one_ans[]"]').val(),
+					coordinate_two_ans: $('input[name="coordinate_two_ans[]"]').val(),
+
+					other_one_ans: $('input[name="other_one_ans[]"]').val(),
+					other_two_ans: $('input[name="other_two_ans[]"]').val(),
+					other_three_ans: $('input[name="other_three_ans[]"]').val(),
+					other_four_ans: $('input[name="other_four_ans[]"]').val(),
+					advisenum_ans: $('input[name="advisenum_ans[]"]').val()
+				},
+				success: function(result){
+					console.log(result);
+				}
+			}) 	
+		});
 		$('#submit_query').click(function(){
 			// var idd = $('#serveprojtitle').attr('data-id');
 			jQuery.ajax({
@@ -975,7 +1027,7 @@
 								?>
 							</div>						
 							<div class="form-group butcent">
-								<input id="sec2" type="submit" data-toggle="tab" href="#section2" name="Next" value="Next" class="nbtn disabled btn btn-primary butsize pointerev">
+								<input id="sec2" type="submit" data-toggle="tab" href="#section3" name="Next" value="Next" class="nbtn disabled btn btn-primary butsize pointerev">
 							</div>
 						
 					</div>
@@ -2723,7 +2775,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['pre_app_num'],'0')!==false) 
-						                    				<input type="number" name="pre_app_num_ans" class="inputwidth">
+						                    				<input type="number" name="pre_app_num_ans[]" class="inputwidth">
 						                    			@else  
 						                    				<input type="checkbox" disabled name="pre_app_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -2734,7 +2786,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['pre_app_num'],'1')!==false) 
-						                    				<input type="number" name="pre_app_num_ans" class="inputwidth">
+						                    				<input type="number" name="pre_app_num_ans[]" class="inputwidth">
 						                    			@else  
 						                    				<input type="checkbox" disabled name="pre_app_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -2745,7 +2797,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['pre_app_num'],'2')!==false) 
-						                    				<input type="number" name="pre_app_num_ans" class="inputwidth">
+						                    				<input type="number" name="pre_app_num_ans[]" class="inputwidth">
 						                    			@else  
 						                    				<input type="checkbox" disabled name="pre_app_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -2756,7 +2808,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['pre_app_num'],'3')!==false) 
-						                    				<input type="number" name="pre_app_num_ans" class="inputwidth">
+						                    				<input type="number" name="pre_app_num_ans[]" class="inputwidth">
 						                    			@else  
 						                    				<input type="checkbox" disabled name="pre_app_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -2767,7 +2819,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['pre_app_num'],'4')!==false) 
-						                    				<input type="number" name="pre_app_num_ans" class="inputwidth">
+						                    				<input type="number" name="pre_app_num_ans[]" class="inputwidth">
 						                    			@else  
 						                    				<input type="checkbox" disabled name="pre_app_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -2778,7 +2830,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['pre_app_num'],'5')!==false) 
-						                    				<input type="number" name="pre_app_num_ans" class="inputwidth">
+						                    				<input type="number" name="pre_app_num_ans[]" class="inputwidth">
 						                    			@else  
 						                    				<input type="checkbox" disabled name="pre_app_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -2789,7 +2841,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['pre_app_num'],'6')!==false) 
-						                    				<input type="number" name="pre_app_num_ans" class="inputwidth">
+						                    				<input type="number" name="pre_app_num_ans[]" class="inputwidth">
 						                    			@else  
 						                    				<input type="checkbox" disabled name="pre_app_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -2800,7 +2852,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['pre_app_num'],'7')!==false) 
-						                    				<input type="number" name="pre_app_num_ans" class="inputwidth">
+						                    				<input type="number" name="pre_app_num_ans[]" class="inputwidth">
 						                    			@else  
 						                    				<input type="checkbox" disabled name="pre_app_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -2848,7 +2900,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['site_visits_num'],'0')!==false) 
-						                    				<input type="number" name="site_visits_num_ans" class="inputwidth">
+						                    				<input type="number" name="site_visits_num_ans[]" class="inputwidth">
 						                    			@else  
 						                    				<input type="checkbox" disabled name="site_visits_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -2859,7 +2911,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['site_visits_num'],'1')!==false) 
-						                    				<input type="number" name="site_visits_num_ans" class="inputwidth">
+						                    				<input type="number" name="site_visits_num_ans[]" class="inputwidth">
 						                    			@else  
 						                    				<input type="checkbox" disabled name="site_visits_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -2870,7 +2922,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['site_visits_num'],'2')!==false) 
-						                    				<input type="number" name="site_visits_num_ans" class="inputwidth">
+						                    				<input type="number" name="site_visits_num_ans[]" class="inputwidth">
 						                    			@else  
 						                    				<input type="checkbox" disabled name="site_visits_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -2881,7 +2933,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['site_visits_num'],'3')!==false) 
-						                    				<input type="number" name="site_visits_num_ans" class="inputwidth">
+						                    				<input type="number" name="site_visits_num_ans[]" class="inputwidth">
 						                    			@else  
 						                    				<input type="checkbox" disabled name="site_visits_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -2892,7 +2944,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['site_visits_num'],'4')!==false) 
-						                    				<input type="number" name="site_visits_num_ans" class="inputwidth">
+						                    				<input type="number" name="site_visits_num_ans[]" class="inputwidth">
 						                    			@else  
 						                    				<input type="checkbox" disabled name="site_visits_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -2903,7 +2955,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['site_visits_num'],'5')!==false) 
-						                    				<input type="number" name="site_visits_num_ans" class="inputwidth">
+						                    				<input type="number" name="site_visits_num_ans[]" class="inputwidth">
 						                    			@else  
 						                    				<input type="checkbox" disabled name="site_visits_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -2914,7 +2966,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['site_visits_num'],'6')!==false) 
-						                    				<input type="number" name="site_visits_num_ans" class="inputwidth">
+						                    				<input type="number" name="site_visits_num_ans[]" class="inputwidth">
 						                    			@else  
 						                    				<input type="checkbox" disabled name="site_visits_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -2925,7 +2977,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['site_visits_num'],'7')!==false) 
-						                    				<input type="number" name="site_visits_num_ans" class="inputwidth">
+						                    				<input type="number" name="site_visits_num_ans[]" class="inputwidth">
 						                    			@else  
 						                    				<input type="checkbox" disabled name="site_visits_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -2973,7 +3025,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['riba_num'],'0')!==false) 
-						                    				<input type="number" name="riba_num_ans" class="inputwidth">
+						                    				<input type="number" name="riba_num_ans[]" class="inputwidth">
 						                    			@else 
 						                    				<input type="checkbox" disabled name="riba_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -2984,7 +3036,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['riba_num'],'1')!==false) 
-						                    				<input type="number" name="riba_num_ans" class="inputwidth">
+						                    				<input type="number" name="riba_num_ans[]" class="inputwidth">
 						                    			@else 
 						                    				<input type="checkbox" disabled name="riba_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -2995,7 +3047,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['riba_num'],'2')!==false) 
-						                    				<input type="number" name="riba_num_ans" class="inputwidth">
+						                    				<input type="number" name="riba_num_ans[]" class="inputwidth">
 						                    			@else 
 						                    				<input type="checkbox" disabled name="riba_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -3006,7 +3058,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['riba_num'],'3')!==false) 
-						                    				<input type="number" name="riba_num_ans" class="inputwidth">
+						                    				<input type="number" name="riba_num_ans[]" class="inputwidth">
 						                    			@else 
 						                    				<input type="checkbox" disabled name="riba_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -3017,7 +3069,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['riba_num'],'4')!==false) 
-						                    				<input type="number" name="riba_num_ans" class="inputwidth">
+						                    				<input type="number" name="riba_num_ans[]" class="inputwidth">
 						                    			@else 
 						                    				<input type="checkbox" disabled name="riba_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -3028,7 +3080,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['riba_num'],'5')!==false) 
-						                    				<input type="number" name="riba_num_ans" class="inputwidth">
+						                    				<input type="number" name="riba_num_ans[]" class="inputwidth">
 						                    			@else 
 						                    				<input type="checkbox" disabled name="riba_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -3039,7 +3091,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['riba_num'],'6')!==false) 
-						                    				<input type="number" name="riba_num_ans" class="inputwidth">
+						                    				<input type="number" name="riba_num_ans[]" class="inputwidth">
 						                    			@else 
 						                    				<input type="checkbox" disabled name="riba_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -3050,7 +3102,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['riba_num'],'7')!==false) 
-						                    				<input type="number" name="riba_num_ans" class="inputwidth">
+						                    				<input type="number" name="riba_num_ans[]" class="inputwidth">
 						                    			@else 
 						                    				<input type="checkbox" disabled name="riba_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -3098,7 +3150,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['inspection_num'],'0')!==false)
-						                    				<input type="number" name="inspection_num_ans" class="inputwidth">
+						                    				<input type="number" name="inspection_num_ans[]" class="inputwidth">
 						                    			@else 
 						                    				<input type="checkbox" disabled name="inspection_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -3109,7 +3161,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['inspection_num'],'1')!==false)
-						                    				<input type="number" name="inspection_num_ans" class="inputwidth">
+						                    				<input type="number" name="inspection_num_ans[]" class="inputwidth">
 						                    			@else 
 						                    				<input type="checkbox" disabled name="inspection_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -3120,7 +3172,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['inspection_num'],'2')!==false)
-						                    				<input type="number" name="inspection_num_ans" class="inputwidth">
+						                    				<input type="number" name="inspection_num_ans[]" class="inputwidth">
 						                    			@else 
 						                    				<input type="checkbox" disabled name="inspection_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -3131,7 +3183,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['inspection_num'],'3')!==false)
-						                    				<input type="number" name="inspection_num_ans" class="inputwidth">
+						                    				<input type="number" name="inspection_num_ans[]" class="inputwidth">
 						                    			@else 
 						                    				<input type="checkbox" disabled name="inspection_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -3142,7 +3194,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['inspection_num'],'4')!==false)
-						                    				<input type="number" name="inspection_num_ans" class="inputwidth">
+						                    				<input type="number" name="inspection_num_ans[]" class="inputwidth">
 						                    			@else 
 						                    				<input type="checkbox" disabled name="inspection_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -3153,7 +3205,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['inspection_num'],'5')!==false)
-						                    				<input type="number" name="inspection_num_ans" class="inputwidth">
+						                    				<input type="number" name="inspection_num_ans[]" class="inputwidth">
 						                    			@else 
 						                    				<input type="checkbox" disabled name="inspection_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -3164,7 +3216,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['inspection_num'],'6')!==false)
-						                    				<input type="number" name="inspection_num_ans" class="inputwidth">
+						                    				<input type="number" name="inspection_num_ans[]" class="inputwidth">
 						                    			@else 
 						                    				<input type="checkbox" disabled name="inspection_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -3175,7 +3227,7 @@
 						                    	<div class="form-check">
 						                    		<label>
 						                    			@if (strpos($scopesm[0]['inspection_num'],'7')!==false)
-						                    				<input type="number" name="inspection_num_ans" class="inputwidth">
+						                    				<input type="number" name="inspection_num_ans[]" class="inputwidth">
 						                    			@else 
 						                    				<input type="checkbox" disabled name="inspection_num[]" value="0"><span class="label-text"></span>
 						                    			@endif
@@ -3224,7 +3276,7 @@
 						                			<div class="form-check">
 						                				<label>
 						                					@if(strpos($meet['num'],'0')!==false) 
-						                						<input type="number" name="num_ans" class="inputwidth">
+						                						<input type="number" name="num_ans[]" class="inputwidth">
 						                					@else 
 						                						<input type="checkbox" disabled name="num[]" class="meetnum" value="0"><span class="label-text"></span>
 						                					@endif
@@ -3235,7 +3287,7 @@
 						                			<div class="form-check">
 						                				<label>
 						                					@if(strpos($meet['num'],'1')!==false) 
-						                						<input type="number" name="num_ans" class="inputwidth">
+						                						<input type="number" name="num_ans[]" class="inputwidth">
 						                					@else 
 						                						<input type="checkbox" disabled name="num[]" class="meetnum" value="0"><span class="label-text"></span>
 						                					@endif
@@ -3246,7 +3298,7 @@
 						                			<div class="form-check">
 						                				<label>
 						                					@if(strpos($meet['num'],'2')!==false) 
-						                						<input type="number" name="num_ans" class="inputwidth">
+						                						<input type="number" name="num_ans[]" class="inputwidth">
 						                					@else 
 						                						<input type="checkbox" disabled name="num[]" class="meetnum" value="0"><span class="label-text"></span>
 						                					@endif
@@ -3257,7 +3309,7 @@
 						                			<div class="form-check">
 						                				<label>
 						                					@if(strpos($meet['num'],'3')!==false) 
-						                						<input type="number" name="num_ans" class="inputwidth">
+						                						<input type="number" name="num_ans[]" class="inputwidth">
 						                					@else 
 						                						<input type="checkbox" disabled name="num[]" class="meetnum" value="0"><span class="label-text"></span>
 						                					@endif
@@ -3268,7 +3320,7 @@
 						                			<div class="form-check">
 						                				<label>
 						                					@if(strpos($meet['num'],'4')!==false) 
-						                						<input type="number" name="num_ans" class="inputwidth">
+						                						<input type="number" name="num_ans[]" class="inputwidth">
 						                					@else 
 						                						<input type="checkbox" disabled name="num[]" class="meetnum" value="0"><span class="label-text"></span>
 						                					@endif
@@ -3279,7 +3331,7 @@
 						                			<div class="form-check">
 						                				<label>
 						                					@if(strpos($meet['num'],'5')!==false) 
-						                						<input type="number" name="num_ans" class="inputwidth">
+						                						<input type="number" name="num_ans[]" class="inputwidth">
 						                					@else 
 						                						<input type="checkbox" disabled name="num[]" class="meetnum" value="0"><span class="label-text"></span>
 						                					@endif
@@ -3290,7 +3342,7 @@
 						                			<div class="form-check">
 						                				<label>
 						                					@if(strpos($meet['num'],'6')!==false) 
-						                						<input type="number" name="num_ans" class="inputwidth">
+						                						<input type="number" name="num_ans[]" class="inputwidth">
 						                					@else 
 						                						<input type="checkbox" disabled name="num[]" class="meetnum" value="0"><span class="label-text"></span>
 						                					@endif
@@ -3301,7 +3353,7 @@
 						                			<div class="form-check">
 						                				<label>
 						                					@if(strpos($meet['num'],'7')!==false) 
-						                						<input type="number" name="num_ans" class="inputwidth">
+						                						<input type="number" name="num_ans[]" class="inputwidth">
 						                					@else 
 						                						<input type="checkbox" disabled name="num[]" class="meetnum" value="0"><span class="label-text"></span>
 						                					@endif
@@ -5266,10 +5318,10 @@
 					        				</tr>
 						                @endforeach
 						            </tbody>
-						        </table>
-						    </div>
+								</table>
+							</div>
 						</div>
-						
+						<button type="button" id="bid_scope" class="btn btn-primary" href="">Save</button>
 					</div>
 
 					<div id="section6" class="tab-pane fade tender-container" style="min-height: 600px;">

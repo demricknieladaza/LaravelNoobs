@@ -291,10 +291,19 @@
 								<td>
 									<table width="100%">
 										@foreach($team as $t)
-											<tr class="lastitemiba">
+											<?php
+												$pos = explode(',', $t->member_position);
+												$name = explode(',', $t->member_name);
+
+												for($counter = 0; $counter < count($pos); $counter++){
+													echo '<tr class="lastitemiba"><td>'.$pos[$counter].'</td><td>'.$name[$counter].'</td></tr>';
+												}
+											
+											?>
+											{{-- <tr class="lastitemiba">
 												<td>{{ $t->member_position }}</td>
 												<td>{{ $t->member_name }}</td>
-											</tr>
+											</tr> --}}
 										@endforeach
 									</table>
 								</td>
