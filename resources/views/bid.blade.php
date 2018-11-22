@@ -479,6 +479,108 @@
 			var hands = new Array();
 			var execs = new Array();
 			var props = new Array();
+
+			var preapp = new Array();
+			$.each($('input[name="pre_app_num_ans[]"]'),function(v,k){
+				preapp.push(k['value']);
+			});
+
+			var sitev = new Array();
+			$.each($('input[name="site_visits_num_ans[]"]'),function(v,k){
+				sitev.push(k['value']);
+			});
+
+			var ribast = new Array();
+			$.each($('input[name="riba_num_ans[]"]'),function(v,k){
+				ribast.push(k['value']);
+			});
+
+			var inspect = new Array();
+			$.each($('input[name="inspection_num_ans[]"]'),function(v,k){
+				inspect.push(k['value']);
+			});
+
+			var adone = new Array();
+			$.each($('input[name="advise_one_ans[]"]'),function(v,k){
+				adone.push(k['value']);
+			});
+
+			var adtwo = new Array();
+			$.each($('input[name="advise_two_ans[]"]'),function(v,k){
+				adtwo.push(k['value']);
+			});
+
+			var adthree = new Array();
+			$.each($('input[name="advise_three_ans[]"]'),function(v,k){
+				adthree.push(k['value']);
+			});
+
+			var adfour = new Array();
+			$.each($('input[name="advise_four_ans[]"]'),function(v,k){
+				adfour.push(k['value']);
+			});
+
+			var adfive = new Array();
+			$.each($('input[name="advise_five_ans[]"]'),function(v,k){
+				adfive.push(k['value']);
+			});
+
+			var adsix = new Array();
+			$.each($('input[name="advise_six_ans[]"]'),function(v,k){
+				adsix.push(k['value']);
+			});
+
+			var colone = new Array();
+			$.each($('input[name="collab_one_ans[]"]'),function(v,k){
+				colone.push(k['value']);
+			});
+
+			var coltwo = new Array();
+			$.each($('input[name="collab_two_ans[]"]'),function(v,k){
+				coltwo.push(k['value']);
+			});
+
+			var colthree = new Array();
+			$.each($('input[name="collab_three_ans[]"]'),function(v,k){
+				colthree.push(k['value']);
+			});
+
+			var colfour = new Array();
+			$.each($('input[name="collab_four_ans[]"]'),function(v,k){
+				colfour.push(k['value']);
+			});
+
+			var corone = new Array();
+			$.each($('input[name="coordinate_one_ans[]"]'),function(v,k){
+				corone.push(k['value']);
+			});
+
+			var cortwo = new Array();
+			$.each($('input[name="coordinate_two_ans[]"]'),function(v,k){
+				cortwo.push(k['value']);
+			});
+
+			var othone = new Array();
+			$.each($('input[name="other_one_ans[]"]'),function(v,k){
+				othone.push(k['value']);
+			});
+
+			var othtwo = new Array();
+			$.each($('input[name="other_two_ans[]"]'),function(v,k){
+				othtwo.push(k['value']);
+			});
+
+			var oththree = new Array();
+			$.each($('input[name="other_three_ans[]"]'),function(v,k){
+				oththree.push(k['value']);
+			});
+
+			var othfour = new Array();
+			$.each($('input[name="other_four_ans[]"]'),function(v,k){
+				othfour.push(k['value']);
+			});
+			
+
 			$.each($('input[name="strategic_num_ans[]"]'),function(v,k){
 				strats.push(k['value']);
 			});
@@ -527,6 +629,26 @@
 					hand: hands,
 					exec: execs,
 					prop: props,
+					preapp: preapp,
+					sitev: sitev,
+					ribast: ribast,
+					inspect: inspect,
+					adone: adone,
+					adtwo: adtwo,
+					adthree: adthree,
+					adfour: adfour,
+					adfive: adfive,
+					adsix: adsix,
+					colone: colone,
+					coltwo: coltwo,
+					colthree: colthree,
+					colfour: colfour,
+					corone: corone,
+					cortwo: cortwo,
+					othone: othone,
+					othtwo: othtwo,
+					oththree: oththree,
+					othfour: othfour,
 					tender_id: jQuery("input[name='tender_id']").val()
 				},
 				success: function(result){

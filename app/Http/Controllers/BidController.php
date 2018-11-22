@@ -19,6 +19,8 @@ use App\Bids;
 use App\BidApproach;
 use App\BidQualityAssurance;
 use App\BidIndividuals;
+use App\BidMeetings;
+use App\BidAdvise;
 use App\TenderAppointment;
 
 use App\TenderScopeDeliverables;
@@ -186,6 +188,61 @@ class BidController extends Controller
             'design_proposal' => $prop
         ]
         );
+
+
+        //Bid Meetings
+        $preapp = implode(",", $request->get('preapp'));
+        $sitev = implode(",", $request->get('sitev'));
+        $ribast = implode(",", $request->get('ribast'));
+        // $inspect = implode(",", $request->get('inspect'));
+        $meeting = new BidMeetings;
+        $meeting->tender_id = $request->get('tender_id');
+        $meeting->user_id = $request->session()->get('id');
+        $meeting->pre_application_meetings = $preapp;
+        $meeting->site_visits = $sitev;
+        $meeting->riba_stage = $ribast;
+        // $meeting->site_inspection = $inspect;
+        $meeting->save();
+
+        //Bid Advise
+        $adone = implode(",", $request->get('adone'));
+        $adtwo = implode(",", $request->get('adtwo'));
+        $adthree = implode(",", $request->get('adthree'));
+        $adfour = implode(",", $request->get('adfour'));
+        $adfive = implode(",", $request->get('adfive'));
+        $adsix = implode(",", $request->get('adsix'));
+        $colone = implode(",", $request->get('colone'));
+        $coltwo = implode(",", $request->get('coltwo'));
+        $colthree = implode(",", $request->get('colthree'));
+        $colfour = implode(",", $request->get('colfour'));
+        $corone = implode(",", $request->get('corone'));
+        $cortwo = implode(",", $request->get('cortwo'));
+        $othone = implode(",", $request->get('othone'));
+        $othtwo = implode(",", $request->get('othtwo'));
+        $oththree = implode(",", $request->get('oththree'));
+        $othfour = implode(",", $request->get('othfour'));
+
+        $advise = new BidAdvise;
+        $advise->user_id = $request->session()->get('id');
+        $advise->tender_id = $request->get('tender_id');
+        $advise->advise_one = $adone;
+        $advise->advise_two = $adtwo;
+        $advise->advise_three = $adthree;
+        $advise->advise_four = $adfour;
+        $advise->advise_five = $adfive;
+        $advise->advise_six = $adsix;
+        $advise->collab_one = $colone;
+        $advise->collab_two = $coltwo;
+        $advise->collab_three = $colthree;
+        $advise->collab_four = $colfour;
+        $advise->coordinate_one = $corone;
+        $advise->coordinate_two = $cortwo;
+        $advise->other_one = $othone;
+        $advise->other_two = $othtwo;
+        $advise->other_three = $oththree;
+        $advise->other_four = $othfour;
+        $advise->save();
+
     }
 
     public function getCredentials(Request $request,$id){
