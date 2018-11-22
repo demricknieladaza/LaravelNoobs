@@ -227,38 +227,82 @@ class TenderController extends Controller
 
     public function tenderEvalStore(Request $request){
 
-        $idd = $request->get('current_tend');
-        $eval = new TenderEvaluation;
-        $eval->tender_id = $idd;
-        $eval->qualitative = $request->get('qualitative');
-        $eval->quantitative = $request->get('quantitative');
-        $eval->risk = $request->get('risk');
-        $eval->orginasation = $request->get('orginasation');
-        $eval->organisation_project_exp = $request->get('organisation_project_exp');
-        $eval->organisation_variety_of_services = $request->get('organisation_variety_of_services');
-        $eval->organisation_awards = $request->get('organisation_awards');
-        $eval->organisation_accreditations = $request->get('organisation_accreditations');
-        $eval->orgranisation_relationship = $request->get('orgranisation_relationship');
-        $eval->individual = $request->get('individual');
-        $eval->individual_project_exp = $request->get('individual_project_exp');
-        $eval->individual_years_exp = $request->get('individual_industry_exp');
-        $eval->individual_awards = $request->get('individual_awards');
-        $eval->individual_accrediations = $request->get('individual_accrediations');
-        $eval->individual_relationship = $request->get('individual_relationship');
-        $eval->individual_communication_skills = $request->get('individual_communication_skills');
-        $eval->individual_people_management = $request->get('individual_people_management');
-        $eval->individual_time_management = $request->get('individual_time_management');
-        $eval->individual_pro_active = $request->get('individual_pro_active');
-        $eval->individual_social_behavior = $request->get('individual_social_behavior');
-        $eval->individual_hard_skills = $request->get('individual_hard_skills');
-        $eval->insurances = $request->get('insurances');
-        $eval->bonds = $request->get('bonds');
-        $eval->third_parties = $request->get('third_parties');
-        $eval->limit_of_liability = $request->get('limit_of_liability');
-        $eval->net_contribution_clause = $request->get('net_contribution_clause');
-        $eval->save();
+        $idd = $request->get('id');
+        $check = TenderEvaluation::where('tender_id', $idd);
 
-        return response()->json($eval);
+        if($check){
+            $delete = TenderEvaluation::where('tender_id', $idd)->delete();
+            $eval = new TenderEvaluation;
+            $eval->tender_id = $idd;
+            $eval->qualitative = $request->get('qualitative');
+            $eval->quantitative = $request->get('quantitative');
+            $eval->risk = $request->get('risk');
+            $eval->organisation = $request->get('orginasation');
+            $eval->organisation_project_exp = $request->get('organisation_project_exp');
+            $eval->organisation_variety_of_services = $request->get('organisation_variety_of_services');
+            $eval->organisation_awards = $request->get('organisation_awards');
+            $eval->organisation_accreditations = $request->get('organisation_accreditations');
+            $eval->orgranisation_relationship = $request->get('orgranisation_relationship');
+            $eval->individual = $request->get('individual');
+            $eval->individual_project_exp = $request->get('individual_project_exp');
+            $eval->individual_relevant_exp = $request->get('individual_relevant_exp');
+            $eval->individual_industry_exp = $request->get('individual_industry_exp');
+            $eval->individual_awards = $request->get('individual_awards');
+            $eval->individual_accrediations = $request->get('individual_accrediations');
+            $eval->individual_relationship = $request->get('individual_relationship');
+            $eval->individual_communication_skills = $request->get('individual_communication_skills');
+            $eval->individual_people_management = $request->get('individual_people_management');
+            $eval->individual_time_management = $request->get('individual_time_management');
+            $eval->individual_pro_active = $request->get('individual_pro_active');
+            $eval->individual_social_behavior = $request->get('individual_social_behavior');
+            $eval->individual_hard_skills = $request->get('individual_hard_skills');
+            $eval->insurances = $request->get('insurances');
+            $eval->bonds = $request->get('bonds');
+            $eval->third_parties = $request->get('third_parties');
+            $eval->limit_of_liability = $request->get('limit_of_liability');
+            $eval->net_contribution_clause = $request->get('net_contribution_clause');
+            $eval->save();
+    
+            return response()->json($eval);    
+        }
+        else{
+
+            $eval = new TenderEvaluation;
+            $eval->tender_id = $idd;
+            $eval->qualitative = $request->get('qualitative');
+            $eval->quantitative = $request->get('quantitative');
+            $eval->risk = $request->get('risk');
+            $eval->organisation = $request->get('orginasation');
+            $eval->organisation_project_exp = $request->get('organisation_project_exp');
+            $eval->organisation_variety_of_services = $request->get('organisation_variety_of_services');
+            $eval->organisation_awards = $request->get('organisation_awards');
+            $eval->organisation_accreditations = $request->get('organisation_accreditations');
+            $eval->orgranisation_relationship = $request->get('orgranisation_relationship');
+            $eval->individual = $request->get('individual');
+            $eval->individual_project_exp = $request->get('individual_project_exp');
+            $eval->individual_relevant_exp = $request->get('individual_relevant_exp');
+            $eval->individual_industry_exp = $request->get('individual_industry_exp');
+            $eval->individual_awards = $request->get('individual_awards');
+            $eval->individual_accrediations = $request->get('individual_accrediations');
+            $eval->individual_relationship = $request->get('individual_relationship');
+            $eval->individual_communication_skills = $request->get('individual_communication_skills');
+            $eval->individual_people_management = $request->get('individual_people_management');
+            $eval->individual_time_management = $request->get('individual_time_management');
+            $eval->individual_pro_active = $request->get('individual_pro_active');
+            $eval->individual_social_behavior = $request->get('individual_social_behavior');
+            $eval->individual_hard_skills = $request->get('individual_hard_skills');
+            $eval->insurances = $request->get('insurances');
+            $eval->bonds = $request->get('bonds');
+            $eval->third_parties = $request->get('third_parties');
+            $eval->limit_of_liability = $request->get('limit_of_liability');
+            $eval->net_contribution_clause = $request->get('net_contribution_clause');
+            $eval->save();
+    
+            return response()->json($eval);
+
+        }
+        
+
 
 
     }
@@ -1066,13 +1110,13 @@ class TenderController extends Controller
         $qual->tender_id = $request->get('idd');
         $qual->created_by_fname = $request->get('created_fname');
         $qual->created_by_lname = $request->get('created_lname');
-        $qual->created_data = $request->get('created_date');
+        $qual->date_created = $request->get('created_date');
         $qual->checked_by_fname = $request->get('checked_fname');
         $qual->checked_by_lname = $request->get('checked_lname');
-        $qual->checked_date = $request->get('checked_date');
+        $qual->date_checked = $request->get('checked_date');
         $qual->approved_by_fname = $request->get('approved_fname');
         $qual->approved_by_lname = $request->get('approved_lname');
-        $qual->approved_date = $request->get('approved_date');
+        $qual->date_approved = $request->get('approved_date');
         $qual->save();
 
         return "SUCCESS!";
@@ -1146,6 +1190,7 @@ class TenderController extends Controller
         $scopesa = TenderScopeAdvise::where('tender_id', $tenid)->get();
         $quests = TenderPreQualificationQuestionnaire::where('tender_id', $tenid)->get();
         $company = CompInfo::all()->pluck('comp_name')->toArray();
+        $quality = TenderQualityAssurance::where('tender_id', $tenid)->first();
 
         
 
@@ -1192,6 +1237,7 @@ class TenderController extends Controller
             'scopesd' => $scopesd,
             'scopesa' => $scopesa,
             'company' => $company,
+            'quality' => $quality
         ]);
         // dd($scopesm);
     

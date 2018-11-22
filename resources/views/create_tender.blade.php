@@ -429,6 +429,49 @@
 			
 
 		});
+		$('#tenderEvaluation').click(function(){
+			// alert("clicked!");
+			var tender_id = $('#serveprojtitle').attr('data-id');
+			$.ajax({
+				url: "{{ url('tender_evaluation') }}",
+				method: "POST",
+				data: {
+					id: tender_id,
+					qualitative: $('#quali').val(),
+					quantitative: $('#quanti').val(),
+					risk: $('#risk').val(),
+					orginasation: $('#organisation').val(),
+					individual: $('#individual').val(),
+					insurances: $('#insurance').val(),
+					bonds: $('#bonds').val(),
+					third_parties: $('#third_party').val(),
+					limit_of_liability: $('#limit').val(),
+					net_contribution_clause: $('#net').val(),
+					organisation_project_exp: $('#org_exp').val(),
+					organisation_variety_of_services: $('#org_serv').val(),
+					organisation_awards: $('#org_awa').val(),
+					organisation_accreditations: $('#org_accre').val(),
+					orgranisation_relationship: $('#org_relation').val(),
+					individual_project_exp: $('#ind_exp').val(),
+					individual_relevant_exp: $('#ind_years').val(),
+					individual_industry_exp: $('#ind_industry').val(),
+					individual_awards: $('#ind_awa').val(),
+					individual_accrediations: $('#ind_accre').val(),
+					individual_relationship: $('#ind_relation').val(),
+					individual_communication_skills: $('#ind_comm').val(),
+					individual_people_management: $('#ind_people').val(),
+					individual_time_management: $('#ind_time').val(),
+					individual_pro_active: $('#ind_pro').val(),
+					individual_social_behavior: $('#ind_social').val(),
+					individual_hard_skills: $('#ind_hard').val()
+
+				},
+				success: function(result){
+					console.log(result);
+				}
+			});
+			
+		});
 		$('#createservproj').click(function(){
 			// alert('adsad');
 			var serv = $('select[name="servicechoice"]').val();
@@ -5228,11 +5271,11 @@
 				    									<div class="evalorga hovertable" style="border: 1px solid #fe7235;">
 				    										<div class="spanliner" style="margin-bottom: 172px;">
 				    											<span>Organisation</span>
-				    											<input id="a1" placeholder="%" @if($eval->organisation > 0){ value="{{$eval->organisation}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="organisation" placeholder="%" @if($eval->organisation > 0){ value="{{$eval->organisation}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner" style="margin-bottom: 408px;">
 				    											<span>Individual</span>
-				    											<input id="a2" placeholder="%" @if($eval->individual > 0){ value="{{$eval->individual}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="individual" placeholder="%" @if($eval->individual > 0){ value="{{$eval->individual}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Total</span>
@@ -5242,23 +5285,23 @@
 				    									<div class="evalinsu hovertable" style="border: 1px solid #fe7235;margin-top: 35px;">
 				    										<div class="spanliner">
 				    											<span>Insurances</span>
-				    											<input id="b1" placeholder="%" @if($eval->insurances > 0){ value="{{$eval->insurances}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="insurance" placeholder="%" @if($eval->insurances > 0){ value="{{$eval->insurances}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Bonds</span>
-				    											<input id="b2" placeholder="%" @if($eval->bonds > 0){ value="{{$eval->bonds}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="bonds" placeholder="%" @if($eval->bonds > 0){ value="{{$eval->bonds}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>3rd Parties</span>
-				    											<input id="b3" placeholder="%" @if($eval->third_parties > 0){ value="{{$eval->third_parties}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="third_party" placeholder="%" @if($eval->third_parties > 0){ value="{{$eval->third_parties}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Limit of liability</span>
-				    											<input id="b4" placeholder="%" @if($eval->limit_of_liability > 0){ value="{{$eval->limit_of_liability}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="limit" placeholder="%" @if($eval->limit_of_liability > 0){ value="{{$eval->limit_of_liability}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Net contribution clause</span>
-				    											<input id="b5" placeholder="%" @if($eval->net_contribution_clause > 0){ value="{{$eval->net_contribution_clause}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="net" placeholder="%" @if($eval->net_contribution_clause > 0){ value="{{$eval->net_contribution_clause}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Total</span>
@@ -5270,23 +5313,23 @@
 				    									<div class="evalorgaproj hovertable" style="border: 1px solid #fe7235;">
 				    										<div class="spanliner">
 				    											<span>Project Experience</span>
-				    											<input id="c1" placeholder="%" @if($eval->organisation_project_exp > 0){ value="{{$eval->organisation_project_exp}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="org_exp" placeholder="%" @if($eval->organisation_project_exp > 0){ value="{{$eval->organisation_project_exp}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Variety of Services</span>
-				    											<input id="c2" placeholder="%" @if($eval->organisation_variety_of_services > 0){ value="{{$eval->organisation_variety_of_services}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="org_serv" placeholder="%" @if($eval->organisation_variety_of_services > 0){ value="{{$eval->organisation_variety_of_services}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Awards</span>
-				    											<input id="c3" placeholder="%" @if($eval->organisation_awards > 0){ value="{{$eval->organisation_awards}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="org_awa" placeholder="%" @if($eval->organisation_awards > 0){ value="{{$eval->organisation_awards}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Accreditations</span>
-				    											<input id="c4" placeholder="%" @if($eval->organisation_accreditations > 0){ value="{{$eval->organisation_accreditations}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="org_accre" placeholder="%" @if($eval->organisation_accreditations > 0){ value="{{$eval->organisation_accreditations}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Relationship to Employer</span>
-				    											<input id="c5" placeholder="%" @if($eval->orgranisation_relationship > 0){ value="{{$eval->orgranisation_relationship}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="org_relation" placeholder="%" @if($eval->orgranisation_relationship > 0){ value="{{$eval->orgranisation_relationship}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Total</span>
@@ -5296,51 +5339,51 @@
 				    									<div class="evalindiproj hovertable" style="border: 1px solid #fe7235;">
 				    										<div class="spanliner">
 				    											<span>Project Experience</span>
-				    											<input id="d1" placeholder="%" @if($eval->individual_project_exp > 0){ value="{{$eval->individual_project_exp}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="ind_exp" placeholder="%" @if($eval->individual_project_exp > 0){ value="{{$eval->individual_project_exp}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Years of relevant Experience</span>
-				    											<input id="d2" placeholder="%" @if($eval->individual_years_exp > 0){ value="{{$eval->individual_years_exp}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="ind_years" placeholder="%" @if($eval->individual_years_exp > 0){ value="{{$eval->individual_years_exp}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Industry Experience</span>
-				    											<input id="d3" placeholder="%" @if($eval->individual_industry_exp > 0){ value="{{$eval->individual_industry_exp}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="ind_industry" placeholder="%" @if($eval->individual_industry_exp > 0){ value="{{$eval->individual_industry_exp}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Awards</span>
-				    											<input id="d4" placeholder="%" @if($eval->individual_awards > 0){ value="{{$eval->individual_awards}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="ind_awa" placeholder="%" @if($eval->individual_awards > 0){ value="{{$eval->individual_awards}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Accreditaions</span>
-				    											<input id="d5" placeholder="%" @if($eval->individual_accrediations > 0){ value="{{$eval->individual_accrediations}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="ind_accre" placeholder="%" @if($eval->individual_accrediations > 0){ value="{{$eval->individual_accrediations}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Relationship to Employer</span>
-				    											<input id="d6" placeholder="%" @if($eval->individual_relationship > 0){ value="{{$eval->individual_relationship}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="ind_relation" placeholder="%" @if($eval->individual_relationship > 0){ value="{{$eval->individual_relationship}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Communication Skills</span>
-				    											<input id="d7" placeholder="%" @if($eval->individual_communication_skills > 0){ value="{{$eval->individual_communication_skills}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="ind_comm" placeholder="%" @if($eval->individual_communication_skills > 0){ value="{{$eval->individual_communication_skills}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>People Management</span>
-				    											<input id="d8" placeholder="%" @if($eval->individual_people_management > 0){ value="{{$eval->individual_people_management}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="ind_people" placeholder="%" @if($eval->individual_people_management > 0){ value="{{$eval->individual_people_management}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Time Management</span>
-				    											<input id="d9" placeholder="%" @if($eval->individual_time_management > 0){ value="{{$eval->individual_time_management}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="ind_time" placeholder="%" @if($eval->individual_time_management > 0){ value="{{$eval->individual_time_management}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Pro-Active</span>
-				    											<input id="d10" placeholder="%" @if($eval->individual_pro_active > 0){ value="{{$eval->individual_pro_active}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="ind_pro" placeholder="%" @if($eval->individual_pro_active > 0){ value="{{$eval->individual_pro_active}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Social Behaviour</span>
-				    											<input id="d11" placeholder="%" @if($eval->individual_social_behavior > 0){ value="{{$eval->individual_social_behavior}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="ind_social" placeholder="%" @if($eval->individual_social_behavior > 0){ value="{{$eval->individual_social_behavior}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Technical 'Hard' Skills</span>
-				    											<input id="d12" placeholder="%" @if($eval->individual_hard_skills > 0){ value="{{$eval->individual_hard_skills}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="ind_hard" placeholder="%" @if($eval->individual_hard_skills > 0){ value="{{$eval->individual_hard_skills}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Total</span>
@@ -5355,6 +5398,9 @@
 		    							<div class="form-group butcent">
 											<input id="sec2" type="submit" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
 										</div>
+										<div class="form-group butcent">
+											<button id="tenderEvaluation" type="button" class="btn btn-primary">Save</button>	 
+										</div>
 		    						</div><br> 
 		    					<div id="section41" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Quality Assurance</h3>
@@ -5364,10 +5410,10 @@
 										<div class="col-sm-8">
 											<div class="form-group">
 												<div class="col-sm-6" style="padding:0;">
-													<input type="text" class="form-control" name="created_fname" placeholder="First Name">
+													<input type="text" class="form-control" name="created_fname" placeholder="First Name" value="{{ $quality->created_by_fname }}">
 											</div>
 										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-										<input type="text" class="form-control" name="created_lname"placeholder="Last Name">
+										<input type="text" class="form-control" name="created_lname"placeholder="Last Name" value="{{ $quality->created_by_lname }}">
 										</div>
 										</div>
 									</div>
@@ -5379,7 +5425,7 @@
 											<div class="form-group" >
 												<div class="input-group date dat" id="date1" data-date-container="#date1" data-date="02-2012" 
 												         data-date-format="mm-yyyy"><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
-													 <input class="form-control" name="created_data" type="text" placeholder="Select year" readonly="readonly" name="date">
+													 <input value="{{ $quality->date_created }}" class="form-control" name="created_date" type="text" placeholder="Select year" readonly="readonly" name="date">
 												</div>
 											</div>
 										</div>
@@ -5390,10 +5436,10 @@
 										<div class="col-sm-8">
 											<div class="form-group">
 												<div class="col-sm-6" style="padding:0;">
-													<input type="text" class="form-control" name="checked_fname" placeholder="First Name">
+													<input type="text" class="form-control" name="checked_fname" placeholder="First Name" value="{{ $quality->checked_by_fname }}">
 											</div>
 										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-										<input type="text" class="form-control" name="checked_lname"placeholder="Last Name">
+										<input type="text" class="form-control" name="checked_lname"placeholder="Last Name" value="{{ $quality->checked_by_lname }}">
 										</div>
 										</div>
 									</div>
@@ -5404,7 +5450,7 @@
 									<div class="form-group">
 										<div class="col-sm-12" style="padding:0;">
 												<div class="input-group date dat form-group" id="date2" data-date-container="#date2" data-date="02-2012" data-date-format="mm-yyyy"><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
-												 <input class="form-control" name="checked_data" type="text" readonly="readonly" name="date" >	  
+												 <input value="{{ $quality->date_checked }}" class="form-control" name="checked_date" type="text" readonly="readonly" name="date" >	  
 																 	  
 										</div>
 										</div>
@@ -5419,10 +5465,10 @@
 										<div class="col-sm-8">
 											<div class="form-group">
 												<div class="col-sm-6" style="padding:0;">
-													<input type="text" class="form-control" name="approved_fname" placeholder="First Name">
+													<input type="text" class="form-control" name="approved_fname" placeholder="First Name" value="{{ $quality->approved_by_fname }}">
 											</div>
 										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-										<input type="text" class="form-control" name="approved_lname"placeholder="Last Name">
+										<input type="text" class="form-control" name="approved_lname"placeholder="Last Name" value="{{ $quality->approved_by_lname }}">
 										</div>
 										</div>
 									</div>
@@ -5433,7 +5479,7 @@
 									<div class="form-group">
 										<div class="col-sm-12" style="padding:0;">
 												<div class="input-group date dat form-group" id="date3" data-date-container="#date3"  data-date="02-2012" data-date-format="mm-yyyy"><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
-												<input class="form-control" name="approved_date" type="text" readonly="readonly" name="date" >	  
+												<input value="{{ $quality->date_approved }}" class="form-control" name="approved_date" type="text" readonly="readonly" name="date" >	  
 																 	  
 															</div>
 										</div>
