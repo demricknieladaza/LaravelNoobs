@@ -2090,6 +2090,7 @@
 		    						</div>	
 		    						
 		    					</div>
+		    					
 		    					<div id="section11" class="tab-pane tender-container">
 		    						<h3 class="bid-form-title">Scope</h3>
 		    						<div class="zui-wrapper2" id="myscrol">
@@ -3436,77 +3437,77 @@
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" @if (strpos($scopesm[0]['inspection_choice'],'Arrange')!==false) checked @else @endif name="inspection_choice[]" value="Arrange"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopesm[0]['site_inspection_choice'],'Arrange')!==false) checked @else @endif name="inspection_choice[]" value="Arrange"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" @if (strpos($scopesm[0]['inspection_choice'],'Attend')!==false) checked @else @endif name="inspection_choice[]" value="Attend"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopesm[0]['site_inspection_choice'],'Attend')!==false) checked @else @endif name="inspection_choice[]" value="Attend"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" @if (strpos($scopesm[0]['inspection_choice'],'Minute')!==false) checked @else @endif name="inspection_choice[]" value="Minute"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopesm[0]['site_inspection_choice'],'Minute')!==false) checked @else @endif name="inspection_choice[]" value="Minute"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" @if (strpos($scopesm[0]['inspection_num'],'0')!==false) checked @else @endif name="inspection_num[]" value="0"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopesm[0]['site_inspection_num'],'0')!==false) checked @else @endif name="inspection_num[]" value="0"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" @if (strpos($scopesm[0]['inspection_num'],'1')!==false) checked @else @endif name="inspection_num[]" value="1"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopesm[0]['site_inspection_num'],'1')!==false) checked @else @endif name="inspection_num[]" value="1"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" @if (strpos($scopesm[0]['inspection_num'],'2')!==false) checked @else @endif name="inspection_num[]" value="2"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopesm[0]['site_inspection_num'],'2')!==false) checked @else @endif name="inspection_num[]" value="2"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" @if (strpos($scopesm[0]['inspection_num'],'3')!==false) checked @else @endif name="inspection_num[]" value="3"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopesm[0]['site_inspection_num'],'3')!==false) checked @else @endif name="inspection_num[]" value="3"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" @if (strpos($scopesm[0]['inspection_num'],'4')!==false) checked @else @endif name="inspection_num[]" value="4"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopesm[0]['site_inspection_num'],'4')!==false) checked @else @endif name="inspection_num[]" value="4"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" @if (strpos($scopesm[0]['inspection_num'],'5')!==false) checked @else @endif name="inspection_num[]" value="5"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopesm[0]['site_inspection_num'],'5')!==false) checked @else @endif name="inspection_num[]" value="5"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" @if (strpos($scopesm[0]['inspection_num'],'6')!==false) checked @else @endif name="inspection_num[]" value="6"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopesm[0]['site_inspection_num'],'6')!==false) checked @else @endif name="inspection_num[]" value="6"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
 		    						                    <td class="td">
 		    						                    	<div class="form-check">
 		    						                    		<label>
-		    						                    			<input type="checkbox" @if (strpos($scopesm[0]['inspection_num'],'7')!==false) checked @else @endif name="inspection_num[]" value="7"><span class="label-text"></span>
+		    						                    			<input type="checkbox" @if (strpos($scopesm[0]['site_inspection_num'],'7')!==false) checked @else @endif name="inspection_num[]" value="7"><span class="label-text"></span>
 		    						                    		</label>
 		    						                    	</div>
 		    						                    </td>
@@ -4925,6 +4926,12 @@
 		    					</div>
 		    					<div id="section21" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Appointment</h3>
+		    						
+		    						@php
+		    							$appmnt = explode(",",$appointment[0]['insurance_name']);
+		    							$levl = explode(",",$appointment[0]['insurance_level']);
+		    							$bnd = explode(",",$appointment[0]['bonds']);
+		    						@endphp
 		    						<form id="appointmentForm">
 										<input type="hidden" id="tendserve" name="services">
 										<input type="hidden" name="tender_id" id="tendid" value="{{ $tender->tender_id }}">
@@ -4941,11 +4948,11 @@
 															{{-- <input class="form-control" type="text" value="Test Values" disabled/> --}}
 														</div>
 														<div class="form-group">
-															<div class="col-sm-6" style="padding:0;">
-																<select name="insurance_name[]" id="insurdrpdwn" class="form-control" >
+															@for ($i = 0; $i < sizeof($appmnt) ; $i++)
+																<div class="col-sm-6" style="padding:0;">
+																	<select name="insurance_name[]" id="insurdrpdwn" class="form-control" >
 																		<option value="" disabled selected>Select insurance</option>
 																		<?php 
-
 																		$insurance = array(
 																						"Professional",
 																						"Indemnity",
@@ -4956,19 +4963,23 @@
 																		sort($insurance,SORT_NATURAL | SORT_FLAG_CASE);
 
 																		foreach ($insurance as $key) {
-																		  echo "<option value='".$key."'>".$key."</option>";
+																			if($key == $appmnt[$i]){
+																				echo "<option value='".$key."' selected>".$key."</option>";
+																			}
+																			else{
+																				echo "<option value='".$key."'>".$key."</option>";
+																			}
 																		}
-
-																		 ?>
-																	
+																		?>
 																		<option value="other" >Other</option>
 																	</select>
-															</div>
-															<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-															<input type="number" placeholder="Insurance Level" name="insurance_level[]" id="ins_level" class="form-control">
-															</div>
-															</div>
+																</div>
+																<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+																<input type="number" placeholder="Insurance Level" name="insurance_level[]" id="ins_level" class="form-control" value="{{$levl[$i]}}">
+																</div>
+															@endfor
 														</div>
+													</div>
 													</div>
 													<div id="addedinsur"></div>
 		    									<div class="row" style="padding-bottom:10px;">
@@ -4996,14 +5007,40 @@
 		    											<div class="form-group">
 		    												<ul id="bondslist" class="bondslist">
 		    												<?php
-		    												$Service = array("Select Bonds ","Performance Bond","Parent Company Guarantee","Tender/Bid Bond","On Demand Bond","Conditional/On Default Bond");
+		    												$Service = array("Select Bonds","Performance Bond","Parent Company Guarantee","Tender/Bid Bond","On Demand Bond","Conditional/On Default Bond");
 		    												sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
 		    												foreach ($Service as $key ) {
-		    												    echo "<li><div class='form-check'>
+		    													if(in_array($key,$bnd)){
+		    														echo "<li><div class='form-check'>
+		    															<label>
+		    																<input type='checkbox' checked id='".$key."' name='bonds[]' value='".$key."'><span class='label-text'>".$key."</span>
+		    															</label>
+		    														</div></li>";
+		    													}
+		    													else{
+		    														echo "<li><div class='form-check'>
 		    															<label>
 		    																<input type='checkbox' id='".$key."' name='bonds[]' value='".$key."'><span class='label-text'>".$key."</span>
 		    															</label>
 		    														</div></li>";
+		    													}
+		    												}
+		    												foreach ($bnd as $key) {
+		    													if(in_array($key,$Service)){
+
+		    													}
+		    													else{
+		    														if($key==""){
+
+		    														}
+		    														else{
+		    															echo "<li><div class='form-check'>
+		    																<label>
+		    																	<input type='checkbox' checked id='".$key."' name='bonds[]' value='".$key."'><span class='label-text'>".$key."</span>
+		    																</label>
+		    															</div></li>";
+		    														}
+		    													}
 		    												}
 
 		    												?>
@@ -5035,12 +5072,17 @@
 																);
 																sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
 																foreach ($Service as $key ) {
-																    echo "<option id='".$key."' value='".$key."'>".$key."</option>";
+																	if($key==$appointment[0]['collateral_warranties']){
+																		echo "<option selected id='".$key."' value='".$key."'>".$key."</option>";
+																	}
+																	else {
+																		echo "<option id='".$key."' value='".$key."'>".$key."</option>";
+																	}
 																}
 
 																?>
 															</select>
-															</div>
+														</div>
 															<!-- <div class="form-group">
 																<div class="cnt_bond">
 															    <button class="btn btn-primary" id="cnt_bond" >Add Another Bond</button>
@@ -5060,7 +5102,7 @@
 													</div>
 		    										<div class="col-sm-8">
 		    											<div class="form-group">
-															<input type="number" placeholder="Insert Limit of Liability " name="limit_of_liability" class="form-control">
+															<input type="number" value="{{$appointment[0]['limit_of_liability']}}" placeholder="Insert Limit of Liability " name="limit_of_liability" class="form-control">
 															</div>
 		    										</div>
 		    									</div>
@@ -5075,8 +5117,8 @@
 		    											<div class="form-group">
 															<select name="execution" class="form-control">
 																<option value="" disabled selected>Select</option>
-																<option value="Deed">Deed</option>
-																<option value="Under Hand">Under hand</option>
+																<option value="Deed" @if($appointment[0]['execution']=="Deed") selected @endif>Deed</option>
+																<option value="Under Hand" @if($appointment[0]['execution']=="Under Hand") selected @endif>Under hand</option>
 															</select>
 														</div>
 		    										</div>
@@ -5092,8 +5134,8 @@
 		    											<div class="form-group">
 															<select name="net_contrib" class="form-control">
 																<option value="" disabled selected>Select</option>
-																<option value="Yes">Yes</option>
-																<option value="No">No</option>
+																<option value="Yes" @if($appointment[0]['net_contrib']=="Yes") selected @endif >Yes</option>
+																<option value="No" @if($appointment[0]['net_contrib']=="No") selected @endif >No</option>
 															</select>
 														</div>
 		    										</div>
@@ -5118,9 +5160,9 @@
 		    											</div>
 		    										</div>
 		    										<div class="col-sm-8">
-		    											<div class="form-group">
+		    											{{-- <div class="form-group">
 															<input type="text" placeholder="Enter Document Title" class="form-control" name="document[]">
-														</div>
+														</div> --}}
 														<div class="form-group">
 															<input type="file" class="form-control" id="signature-files" name="signature_files[]" multiple/>
 														</div>
@@ -5133,12 +5175,12 @@
 		    											<div id="addedsig">
 		    												
 		    											</div>
-														<div class="form-group">
+														{{-- <div class="form-group">
 															<button type="button" id="addsig" class="btn btn-primary">Add another document </button>
-														</div>
+														</div> --}}
 
 		    										</div>
-		    										<div class="form-group butcent">
+		    										<div class="form-group">
 														<input id="sec2" type="button" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
 														<input id="app_save" type="buttton" name="Save" value="Save" class="btn btn-primary butsize">
 													</div>
@@ -5166,15 +5208,15 @@
 				    									<div class="evalwquali hovertable" style="border: 1px solid #fe7235;">
 				    										<div class="spanliner" style="margin-bottom: 650px;">
 					    										<span>Qualitative</span>
-					    										<input id="quali" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+					    										<input id="quali" placeholder="%" @if($eval->qualitative > 0){ value="{{$eval->qualitative}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Quantitative</span>
-				    											<input id="quanti" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="quanti" placeholder="%" @if($eval->quantitative > 0){ value="{{$eval->quantitative}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner" style="margin-bottom: 172px;margin-top: 1px;">
 					    										<span>Risk</span>
-					    										<input id="risk" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+					    										<input id="risk" placeholder="%" @if($eval->risk > 0){ value="{{$eval->risk}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Total</span>
@@ -5186,11 +5228,11 @@
 				    									<div class="evalorga hovertable" style="border: 1px solid #fe7235;">
 				    										<div class="spanliner" style="margin-bottom: 172px;">
 				    											<span>Organisation</span>
-				    											<input id="a1" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="a1" placeholder="%" @if($eval->organisation > 0){ value="{{$eval->organisation}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner" style="margin-bottom: 408px;">
 				    											<span>Individual</span>
-				    											<input id="a2" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="a2" placeholder="%" @if($eval->individual > 0){ value="{{$eval->individual}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Total</span>
@@ -5200,23 +5242,23 @@
 				    									<div class="evalinsu hovertable" style="border: 1px solid #fe7235;margin-top: 35px;">
 				    										<div class="spanliner">
 				    											<span>Insurances</span>
-				    											<input id="b1" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="b1" placeholder="%" @if($eval->insurances > 0){ value="{{$eval->insurances}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Bonds</span>
-				    											<input id="b2" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="b2" placeholder="%" @if($eval->bonds > 0){ value="{{$eval->bonds}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>3rd Parties</span>
-				    											<input id="b3" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="b3" placeholder="%" @if($eval->third_parties > 0){ value="{{$eval->third_parties}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Limit of liability</span>
-				    											<input id="b4" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="b4" placeholder="%" @if($eval->limit_of_liability > 0){ value="{{$eval->limit_of_liability}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Net contribution clause</span>
-				    											<input id="b5" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="b5" placeholder="%" @if($eval->net_contribution_clause > 0){ value="{{$eval->net_contribution_clause}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Total</span>
@@ -5228,23 +5270,23 @@
 				    									<div class="evalorgaproj hovertable" style="border: 1px solid #fe7235;">
 				    										<div class="spanliner">
 				    											<span>Project Experience</span>
-				    											<input id="c1" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="c1" placeholder="%" @if($eval->organisation_project_exp > 0){ value="{{$eval->organisation_project_exp}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Variety of Services</span>
-				    											<input id="c2" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="c2" placeholder="%" @if($eval->organisation_variety_of_services > 0){ value="{{$eval->organisation_variety_of_services}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Awards</span>
-				    											<input id="c3" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="c3" placeholder="%" @if($eval->organisation_awards > 0){ value="{{$eval->organisation_awards}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Accreditations</span>
-				    											<input id="c4" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="c4" placeholder="%" @if($eval->organisation_accreditations > 0){ value="{{$eval->organisation_accreditations}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Relationship to Employer</span>
-				    											<input id="c5" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="c5" placeholder="%" @if($eval->orgranisation_relationship > 0){ value="{{$eval->orgranisation_relationship}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Total</span>
@@ -5254,51 +5296,51 @@
 				    									<div class="evalindiproj hovertable" style="border: 1px solid #fe7235;">
 				    										<div class="spanliner">
 				    											<span>Project Experience</span>
-				    											<input id="d1" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d1" placeholder="%" @if($eval->individual_project_exp > 0){ value="{{$eval->individual_project_exp}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Years of relevant Experience</span>
-				    											<input id="d2" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d2" placeholder="%" @if($eval->individual_years_exp > 0){ value="{{$eval->individual_years_exp}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Industry Experience</span>
-				    											<input id="d3" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d3" placeholder="%" @if($eval->individual_industry_exp > 0){ value="{{$eval->individual_industry_exp}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Awards</span>
-				    											<input id="d4" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d4" placeholder="%" @if($eval->individual_awards > 0){ value="{{$eval->individual_awards}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Accreditaions</span>
-				    											<input id="d5" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d5" placeholder="%" @if($eval->individual_accrediations > 0){ value="{{$eval->individual_accrediations}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Relationship to Employer</span>
-				    											<input id="d6" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d6" placeholder="%" @if($eval->individual_relationship > 0){ value="{{$eval->individual_relationship}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Communication Skills</span>
-				    											<input id="d7" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d7" placeholder="%" @if($eval->individual_communication_skills > 0){ value="{{$eval->individual_communication_skills}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>People Management</span>
-				    											<input id="d8" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d8" placeholder="%" @if($eval->individual_people_management > 0){ value="{{$eval->individual_people_management}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Time Management</span>
-				    											<input id="d9" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d9" placeholder="%" @if($eval->individual_time_management > 0){ value="{{$eval->individual_time_management}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Pro-Active</span>
-				    											<input id="d10" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d10" placeholder="%" @if($eval->individual_pro_active > 0){ value="{{$eval->individual_pro_active}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Social Behaviour</span>
-				    											<input id="d11" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d11" placeholder="%" @if($eval->individual_social_behavior > 0){ value="{{$eval->individual_social_behavior}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Technical 'Hard' Skills</span>
-				    											<input id="d12" placeholder="%" value="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+				    											<input id="d12" placeholder="%" @if($eval->individual_hard_skills > 0){ value="{{$eval->individual_hard_skills}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
 				    										</div>
 				    										<div class="spanliner">
 				    											<span>Total</span>

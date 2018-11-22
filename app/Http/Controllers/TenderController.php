@@ -1135,7 +1135,7 @@ class TenderController extends Controller
         $tender = Tender::where('tender_id', $tenid)->first();
         $bonds = TenderBonds::where('tender_id', $tenid)->get();
         $appointment = TenderAppointment::where('tender_id', $tenid)->get();
-        $eval = TenderEvaluation::where('tender_id', $tenid)->get();
+        $eval = TenderEvaluation::where('tender_id', $tenid)->first();
         $delivs = AddedDeliverables::where('tender_id', $tenid)->get();
         $meetings = AddedMeetings::where('tender_id', $tenid)->get();
         $design = AddedDesign::where('tender_id', $tenid)->get();
@@ -1193,6 +1193,7 @@ class TenderController extends Controller
             'scopesa' => $scopesa,
             'company' => $company,
         ]);
+        // dd($scopesm);
     
 
     }
