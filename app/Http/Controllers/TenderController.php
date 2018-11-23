@@ -1221,6 +1221,7 @@ class TenderController extends Controller
         // if(in_array('test',array_column($company, 'comp_name')))   
         //     echo 'tang ina';
         // echo $scopesm[0]['pre_app_assumed_duration'];
+        
         return view('create_tender')->with([
             'tender' => $tender,
             'bonds' => $bonds,
@@ -1239,7 +1240,7 @@ class TenderController extends Controller
             'company' => $company,
             'quality' => $quality
         ]);
-        // dd($scopesm);
+        // dd($quality);
     
 
     }

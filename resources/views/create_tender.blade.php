@@ -604,6 +604,7 @@
 				},
 				success: function(result){
 					console.log(result);
+					window.location.replace("{{url('winwork')}}");
 				}
 			});
 
@@ -1623,7 +1624,7 @@
 			}
 			else{
 				alert('Company is not in our system	');
-				$('#questionnaire_save').click();
+				// $('#questionnaire_save').click();
 			}
 			
 		}
@@ -2056,7 +2057,7 @@
 		          	</ul>
 		          </div>
 		          <div class="">
-		          <input type="text" name="country_name" id="country_name" value="" class="form-control" placeholder="Enter Company Name" /><span><button onclick="addcompany()" class="btn" style="display: none;float: right;position: relative;top: -34px;" id="addcompbuton">Add</button></span>
+		          <input type="text" name="country_name" id="country_name" value="" class="form-control" placeholder="Enter Company Name" /><span><button onclick="addcompany()" type="button" class="btn" style="display: none;float: right;position: relative;top: -34px;" id="addcompbuton">Add</button></span>
 		          </div>
 		          <div id="countryList">
 		          </div>
@@ -2076,7 +2077,7 @@
 			<div class="tender-container tendnew">
 				<ul class="nav navs bid-form-nav">
 					<li class=""><a class="abut" href="{{ url('project_info/'. $tender['project_record_id'] . '/edit') }}" >Project</a></li>
-					<li class="123"><a class="abut">Scope</a></li>
+					<li class="123"><a class="abut" href="{{ url('scopedrm/'.$tender['project_record_id']).''}}">Scope</a></li>
 					<li class=""><a class="abut"  href="{{ url('tenders/'.$tender['project_record_id'].'/edit') }}">Tenders</a></li>
 					<li class="active" id="cret" ><a class="abut" ><span >Create New Tender</span></a></li>
 				</ul><br>
@@ -4971,9 +4972,15 @@
 		    						<h3 class="bid-form-title">Appointment</h3>
 		    						
 		    						@php
+		    						// $appointment[0]['collateral_warranties'] = '';
+		    						$appmnt = [];
+		    						$levl = [];
+		    						$bnd = [];
+		    						if(count($appointment) != 0){
 		    							$appmnt = explode(",",$appointment[0]['insurance_name']);
 		    							$levl = explode(",",$appointment[0]['insurance_level']);
 		    							$bnd = explode(",",$appointment[0]['bonds']);
+		    						}
 		    						@endphp
 		    						<form id="appointmentForm">
 										<input type="hidden" id="tendserve" name="services">
@@ -5032,7 +5039,7 @@
 																<div class="col-sm-6" style="padding:0;">
 																	<div class="form-group">
 																		<div class="cnt_insurance">
-																		    <button class="btn btn-primary" id="addinsur" >Add Another Insurance</button>
+																		    <button class="btn btn-primary" id="addinsur" >Add Insurance</button>
 																		</div>
 																	</div>
 																</div>
@@ -5115,11 +5122,13 @@
 																);
 																sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
 																foreach ($Service as $key ) {
-																	if($key==$appointment[0]['collateral_warranties']){
-																		echo "<option selected id='".$key."' value='".$key."'>".$key."</option>";
-																	}
-																	else {
-																		echo "<option id='".$key."' value='".$key."'>".$key."</option>";
+																	if(count($appointment) != 0){
+																		if($key==$appointment[0]['collateral_warranties']){
+																			echo "<option selected id='".$key."' value='".$key."'>".$key."</option>";
+																		}
+																		else {
+																			echo "<option id='".$key."' value='".$key."'>".$key."</option>";
+																		}
 																	}
 																}
 
@@ -5145,7 +5154,7 @@
 													</div>
 		    										<div class="col-sm-8">
 		    											<div class="form-group">
-															<input type="number" value="{{$appointment[0]['limit_of_liability']}}" placeholder="Insert Limit of Liability " name="limit_of_liability" class="form-control">
+															<input type="number" value="@if(count($appointment) != 0) {{$appointment[0]['limit_of_liability']}}@endif" placeholder="Insert Limit of Liability " name="limit_of_liability" class="form-control">
 															</div>
 		    										</div>
 		    									</div>
@@ -5160,8 +5169,8 @@
 		    											<div class="form-group">
 															<select name="execution" class="form-control">
 																<option value="" disabled selected>Select</option>
-																<option value="Deed" @if($appointment[0]['execution']=="Deed") selected @endif>Deed</option>
-																<option value="Under Hand" @if($appointment[0]['execution']=="Under Hand") selected @endif>Under hand</option>
+																<option value="Deed"@if(count($appointment) != 0) @if($appointment[0]['execution']=="Deed") selected @endif @endif>Deed</option>
+																<option value="Under Hand"@if(count($appointment) != 0) @if($appointment[0]['execution']=="Under Hand") selected @endif @endif>Under hand</option>
 															</select>
 														</div>
 		    										</div>
@@ -5177,8 +5186,8 @@
 		    											<div class="form-group">
 															<select name="net_contrib" class="form-control">
 																<option value="" disabled selected>Select</option>
-																<option value="Yes" @if($appointment[0]['net_contrib']=="Yes") selected @endif >Yes</option>
-																<option value="No" @if($appointment[0]['net_contrib']=="No") selected @endif >No</option>
+																<option value="Yes" @if(count($appointment) != 0) @if($appointment[0]['net_contrib']=="Yes") selected @endif @endif>Yes</option>
+																<option value="No"  @if(count($appointment) != 0) @if($appointment[0]['net_contrib']=="No") selected @endif @endif >No</option>
 															</select>
 														</div>
 		    										</div>
@@ -5247,285 +5256,286 @@
 			    							</thead>
 			    							<tbody class="tdpad">
 			    								<tr>
-				    								<td colspan="2" >
-				    									<div class="evalwquali hovertable" style="border: 1px solid #fe7235;">
-				    										<div class="spanliner" style="margin-bottom: 650px;">
-					    										<span>Qualitative</span>
-					    										<input id="quali" placeholder="%" @if($eval->qualitative > 0){ value="{{$eval->qualitative}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>Quantitative</span>
-				    											<input id="quanti" placeholder="%" @if($eval->quantitative > 0){ value="{{$eval->quantitative}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner" style="margin-bottom: 172px;margin-top: 1px;">
-					    										<span>Risk</span>
-					    										<input id="risk" placeholder="%" @if($eval->risk > 0){ value="{{$eval->risk}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>Total</span>
-				    											<input id="total1" readonly placeholder="%" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="text" maxlength="3" class="form-control">
-				    										</div>
-				    									</div>
-				    								</td>
-				    								<td colspan="2">
-				    									<div class="evalorga hovertable" style="border: 1px solid #fe7235;">
-				    										<div class="spanliner" style="margin-bottom: 172px;">
-				    											<span>Organisation</span>
-				    											<input id="organisation" placeholder="%" @if($eval->organisation > 0){ value="{{$eval->organisation}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner" style="margin-bottom: 408px;">
-				    											<span>Individual</span>
-				    											<input id="individual" placeholder="%" @if($eval->individual > 0){ value="{{$eval->individual}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>Total</span>
-				    											<input id="atotal" readonly placeholder="%" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="text" maxlength="3" class="form-control">
-				    										</div>
-				    									</div>
-				    									<div class="evalinsu hovertable" style="border: 1px solid #fe7235;margin-top: 35px;">
-				    										<div class="spanliner">
-				    											<span>Insurances</span>
-				    											<input id="insurance" placeholder="%" @if($eval->insurances > 0){ value="{{$eval->insurances}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>Bonds</span>
-				    											<input id="bonds" placeholder="%" @if($eval->bonds > 0){ value="{{$eval->bonds}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>3rd Parties</span>
-				    											<input id="third_party" placeholder="%" @if($eval->third_parties > 0){ value="{{$eval->third_parties}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>Limit of liability</span>
-				    											<input id="limit" placeholder="%" @if($eval->limit_of_liability > 0){ value="{{$eval->limit_of_liability}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>Net contribution clause</span>
-				    											<input id="net" placeholder="%" @if($eval->net_contribution_clause > 0){ value="{{$eval->net_contribution_clause}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>Total</span>
-				    											<input id="btotal" readonly placeholder="%" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="text" maxlength="3" class="form-control">
-				    										</div>
-				    									</div>
-				    								</td>
-				    								<td colspan="2">
-				    									<div class="evalorgaproj hovertable" style="border: 1px solid #fe7235;">
-				    										<div class="spanliner">
-				    											<span>Project Experience</span>
-				    											<input id="org_exp" placeholder="%" @if($eval->organisation_project_exp > 0){ value="{{$eval->organisation_project_exp}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>Variety of Services</span>
-				    											<input id="org_serv" placeholder="%" @if($eval->organisation_variety_of_services > 0){ value="{{$eval->organisation_variety_of_services}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>Awards</span>
-				    											<input id="org_awa" placeholder="%" @if($eval->organisation_awards > 0){ value="{{$eval->organisation_awards}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>Accreditations</span>
-				    											<input id="org_accre" placeholder="%" @if($eval->organisation_accreditations > 0){ value="{{$eval->organisation_accreditations}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>Relationship to Employer</span>
-				    											<input id="org_relation" placeholder="%" @if($eval->orgranisation_relationship > 0){ value="{{$eval->orgranisation_relationship}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>Total</span>
-				    											<input id="ctotal" readonly placeholder="%" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="text" maxlength="3" class="form-control">
-				    										</div>
-				    									</div>
-				    									<div class="evalindiproj hovertable" style="border: 1px solid #fe7235;">
-				    										<div class="spanliner">
-				    											<span>Project Experience</span>
-				    											<input id="ind_exp" placeholder="%" @if($eval->individual_project_exp > 0){ value="{{$eval->individual_project_exp}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>Years of relevant Experience</span>
-				    											<input id="ind_years" placeholder="%" @if($eval->individual_years_exp > 0){ value="{{$eval->individual_years_exp}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>Industry Experience</span>
-				    											<input id="ind_industry" placeholder="%" @if($eval->individual_industry_exp > 0){ value="{{$eval->individual_industry_exp}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>Awards</span>
-				    											<input id="ind_awa" placeholder="%" @if($eval->individual_awards > 0){ value="{{$eval->individual_awards}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>Accreditaions</span>
-				    											<input id="ind_accre" placeholder="%" @if($eval->individual_accrediations > 0){ value="{{$eval->individual_accrediations}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>Relationship to Employer</span>
-				    											<input id="ind_relation" placeholder="%" @if($eval->individual_relationship > 0){ value="{{$eval->individual_relationship}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>Communication Skills</span>
-				    											<input id="ind_comm" placeholder="%" @if($eval->individual_communication_skills > 0){ value="{{$eval->individual_communication_skills}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>People Management</span>
-				    											<input id="ind_people" placeholder="%" @if($eval->individual_people_management > 0){ value="{{$eval->individual_people_management}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>Time Management</span>
-				    											<input id="ind_time" placeholder="%" @if($eval->individual_time_management > 0){ value="{{$eval->individual_time_management}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>Pro-Active</span>
-				    											<input id="ind_pro" placeholder="%" @if($eval->individual_pro_active > 0){ value="{{$eval->individual_pro_active}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>Social Behaviour</span>
-				    											<input id="ind_social" placeholder="%" @if($eval->individual_social_behavior > 0){ value="{{$eval->individual_social_behavior}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>Technical 'Hard' Skills</span>
-				    											<input id="ind_hard" placeholder="%" @if($eval->individual_hard_skills > 0){ value="{{$eval->individual_hard_skills}}" }@else{value="0" }@endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
-				    										</div>
-				    										<div class="spanliner">
-				    											<span>Total</span>
-				    											<input id="dtotal" readonly placeholder="%" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="text" maxlength="3" class="form-control">
-				    										</div>
-				    									</div>
-				    								</td>
+			    									<td colspan="2" >
+			    										<div class="evalwquali hovertable" style="border: 1px solid #fe7235;">
+			    											<div class="spanliner" style="margin-bottom: 650px;">
+			    												<span>Qualitative</span>
+			    												<input id="quali" placeholder="%" @if(count($eval) != 0 ) @if($eval->qualitative > 0){ value="{{$eval->qualitative}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>Quantitative</span>
+			    												<input id="quanti" placeholder="%" @if(count($eval) != 0 ) @if($eval->quantitative > 0){ value="{{$eval->quantitative}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner" style="margin-bottom: 172px;margin-top: 1px;">
+			    												<span>Risk</span>
+			    												<input id="risk" placeholder="%" @if(count($eval) != 0 ) @if($eval->risk > 0){ value="{{$eval->risk}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>Total</span>
+			    												<input id="total1" readonly placeholder="%" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="text" maxlength="3" class="form-control">
+			    											</div>
+			    										</div>
+			    									</td>
+			    									<td colspan="2">
+			    										<div class="evalorga hovertable" style="border: 1px solid #fe7235;">
+			    											<div class="spanliner" style="margin-bottom: 172px;">
+			    												<span>Organisation</span>
+			    												<input id="organisation" placeholder="%" @if(count($eval) != 0 ) @if($eval->organisation > 0){ value="{{$eval->organisation}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner" style="margin-bottom: 408px;">
+			    												<span>Individual</span>
+			    												<input id="individual" placeholder="%" @if(count($eval) != 0 ) @if($eval->individual > 0){ value="{{$eval->individual}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>Total</span>
+			    												<input id="atotal" readonly placeholder="%" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="text" maxlength="3" class="form-control">
+			    											</div>
+			    										</div>
+			    										<div class="evalinsu hovertable" style="border: 1px solid #fe7235;margin-top: 35px;">
+			    											<div class="spanliner">
+			    												<span>Insurances</span>
+			    												<input id="insurance" placeholder="%" @if(count($eval) != 0 ) @if($eval->insurances > 0){ value="{{$eval->insurances}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>Bonds</span>
+			    												<input id="bonds" placeholder="%" @if(count($eval) != 0 ) @if($eval->bonds > 0){ value="{{$eval->bonds}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>3rd Parties</span>
+			    												<input id="third_party" placeholder="%" @if(count($eval) != 0 ) @if($eval->third_parties > 0){ value="{{$eval->third_parties}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>Limit of liability</span>
+			    												<input id="limit" placeholder="%" @if(count($eval) != 0 ) @if($eval->limit_of_liability > 0){ value="{{$eval->limit_of_liability}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>Net contribution clause</span>
+			    												<input id="net" placeholder="%" @if(count($eval) != 0 ) @if($eval->net_contribution_clause > 0){ value="{{$eval->net_contribution_clause}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>Total</span>
+			    												<input id="btotal" readonly placeholder="%" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="text" maxlength="3" class="form-control">
+			    											</div>
+			    										</div>
+			    									</td>
+			    									<td colspan="2">
+			    										<div class="evalorgaproj hovertable" style="border: 1px solid #fe7235;">
+			    											<div class="spanliner">
+			    												<span>Project Experience</span>
+			    												<input id="org_exp" placeholder="%" @if(count($eval) != 0 ) @if($eval->organisation_project_exp > 0){ value="{{$eval->organisation_project_exp}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>Variety of Services</span>
+			    												<input id="org_serv" placeholder="%" @if(count($eval) != 0 ) @if($eval->organisation_variety_of_services > 0){ value="{{$eval->organisation_variety_of_services}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>Awards</span>
+			    												<input id="org_awa" placeholder="%" @if(count($eval) != 0 ) @if($eval->organisation_awards > 0){ value="{{$eval->organisation_awards}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>Accreditations</span>
+			    												<input id="org_accre" placeholder="%" @if(count($eval) != 0 ) @if($eval->organisation_accreditations > 0){ value="{{$eval->organisation_accreditations}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>Relationship to Employer</span>
+			    												<input id="org_relation" placeholder="%" @if(count($eval) != 0 ) @if($eval->orgranisation_relationship > 0){ value="{{$eval->orgranisation_relationship}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>Total</span>
+			    												<input id="ctotal" readonly placeholder="%" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="text" maxlength="3" class="form-control">
+			    											</div>
+			    										</div>
+			    										<div class="evalindiproj hovertable" style="border: 1px solid #fe7235;">
+			    											<div class="spanliner">
+			    												<span>Project Experience</span>
+			    												<input id="ind_exp" placeholder="%" @if(count($eval) != 0 ) @if($eval->individual_project_exp > 0){ value="{{$eval->individual_project_exp}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>Years of relevant Experience</span>
+			    												<input id="ind_years" placeholder="%" @if(count($eval) != 0 ) @if($eval->individual_years_exp > 0){ value="{{$eval->individual_years_exp}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>Industry Experience</span>
+			    												<input id="ind_industry" placeholder="%" @if(count($eval) != 0 ) @if($eval->individual_industry_exp > 0){ value="{{$eval->individual_industry_exp}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>Awards</span>
+			    												<input id="ind_awa" placeholder="%" @if(count($eval) != 0 ) @if($eval->individual_awards > 0){ value="{{$eval->individual_awards}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>Accreditaions</span>
+			    												<input id="ind_accre" placeholder="%" @if(count($eval) != 0 ) @if($eval->individual_accrediations > 0){ value="{{$eval->individual_accrediations}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>Relationship to Employer</span>
+			    												<input id="ind_relation" placeholder="%" @if(count($eval) != 0 ) @if($eval->individual_relationship > 0){ value="{{$eval->individual_relationship}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>Communication Skills</span>
+			    												<input id="ind_comm" placeholder="%" @if(count($eval) != 0 ) @if($eval->individual_communication_skills > 0){ value="{{$eval->individual_communication_skills}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>People Management</span>
+			    												<input id="ind_people" placeholder="%" @if(count($eval) != 0 ) @if($eval->individual_people_management > 0){ value="{{$eval->individual_people_management}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>Time Management</span>
+			    												<input id="ind_time" placeholder="%" @if(count($eval) != 0 ) @if($eval->individual_time_management > 0){ value="{{$eval->individual_time_management}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>Pro-Active</span>
+			    												<input id="ind_pro" placeholder="%" @if(count($eval) != 0 ) @if($eval->individual_pro_active > 0){ value="{{$eval->individual_pro_active}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>Social Behaviour</span>
+			    												<input id="ind_social" placeholder="%" @if(count($eval) != 0 ) @if($eval->individual_social_behavior > 0){ value="{{$eval->individual_social_behavior}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>Technical 'Hard' Skills</span>
+			    												<input id="ind_hard" placeholder="%" @if(count($eval) != 0 ) @if($eval->individual_hard_skills > 0){ value="{{$eval->individual_hard_skills}}" }@else{value="0" }@endif @endif oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control">
+			    											</div>
+			    											<div class="spanliner">
+			    												<span>Total</span>
+			    												<input id="dtotal" readonly placeholder="%" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="text" maxlength="3" class="form-control">
+			    											</div>
+			    										</div>
+			    									</td>
 			    								</tr>
 			    							</tbody>
 		    							</table>
 		    							
 		    							<div class="form-group butcent">
 											<input id="sec2" type="submit" data-toggle="tab"name="Next" value="Next" class="btn btn-primary butsize">
+											<button id="tenderEvaluation" type="button" class="btn butsize btn-primary">Save</button>	
 										</div>
 										<div class="form-group butcent">
-											<button id="tenderEvaluation" type="button" class="btn btn-primary">Save</button>	 
+											 
 										</div>
 		    						</div><br> 
 		    					<div id="section41" class="tab-pane fade tender-container">
 		    						<h3 class="bid-form-title">Quality Assurance</h3>
 		    						<form method="post">
-		    					<div class="row" style="padding-bottom:10px;">
-								 	<div class="col-sm-4">	Created by</div>
-										<div class="col-sm-8">
-											<div class="form-group">
-												<div class="col-sm-6" style="padding:0;">
-													<input type="text" class="form-control" name="created_fname" placeholder="First Name" value="{{ $quality->created_by_fname }}">
-											</div>
-										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-										<input type="text" class="form-control" name="created_lname"placeholder="Last Name" value="{{ $quality->created_by_lname }}">
-										</div>
-										</div>
-									</div>
-								</div>
-								<div class="row" style="padding-bottom:10px;">
-	<div class="col-sm-4">	</div>
-								<div class="col-sm-8">
-										<div class="col-sm-12" style="padding:0;">
-											<div class="form-group" >
-												<div class="input-group date dat" id="date1" data-date-container="#date1" data-date="02-2012" 
-												         data-date-format="mm-yyyy"><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
-													 <input value="{{ $quality->date_created }}" class="form-control" name="created_date" type="text" placeholder="Select year" readonly="readonly" name="date">
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="row" style="padding-bottom:10px;">
-								 	<div class="col-sm-4">	Checked by</div>
-										<div class="col-sm-8">
-											<div class="form-group">
-												<div class="col-sm-6" style="padding:0;">
-													<input type="text" class="form-control" name="checked_fname" placeholder="First Name" value="{{ $quality->checked_by_fname }}">
-											</div>
-										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-										<input type="text" class="form-control" name="checked_lname"placeholder="Last Name" value="{{ $quality->checked_by_lname }}">
-										</div>
-										</div>
-									</div>
-								</div>
-								<div class="row" style="padding-bottom:10px;">
-									<div class="col-sm-4">	</div>
-								<div class="col-sm-8">
-									<div class="form-group">
-										<div class="col-sm-12" style="padding:0;">
-												<div class="input-group date dat form-group" id="date2" data-date-container="#date2" data-date="02-2012" data-date-format="mm-yyyy"><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
-												 <input value="{{ $quality->date_checked }}" class="form-control" name="checked_date" type="text" readonly="readonly" name="date" >	  
-																 	  
-										</div>
-										</div>
-									
-										</div>
-									</div>
-								</div>
-
-		    							
+		    							<div class="row" style="padding-bottom:10px;">
+		    								<div class="col-sm-4">	Created by</div>
+		    								<div class="col-sm-8">
+		    									<div class="form-group">
+		    										<div class="col-sm-6" style="padding:0;">
+		    											<input type="text" class="form-control" name="created_fname" placeholder="First Name" value="@if($quality != null) {{ $quality->created_by_fname }} @endif">
+		    										</div>
+		    										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+		    											<input type="text" class="form-control" name="created_lname"placeholder="Last Name" value="@if($quality != null) {{ $quality->created_by_lname }} @endif">
+		    										</div>
+		    									</div>
+		    								</div>
+		    							</div>
+		    							<div class="row" style="padding-bottom:10px;">
+		    								<div class="col-sm-4">	</div>
+		    								<div class="col-sm-8">
+		    									<div class="col-sm-12" style="padding:0;">
+		    										<div class="form-group" >
+		    											<div class="input-group date dat" id="date1" data-date-container="#date1" data-date="02-2012" 
+		    											data-date-format="mm-yyyy"><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
+		    											<input value="@if($quality != null) {{ $quality->date_created }} @endif" class="form-control" name="created_date" type="text" placeholder="Select year" readonly="readonly" name="date">
+		    										</div>
+		    									</div>
+		    								</div>
+		    							</div>
+		    						</div>
 		    						<div class="row" style="padding-bottom:10px;">
-								 	<div class="col-sm-4">	Approved by</div>
-										<div class="col-sm-8">
-											<div class="form-group">
-												<div class="col-sm-6" style="padding:0;">
-													<input type="text" class="form-control" name="approved_fname" placeholder="First Name" value="{{ $quality->approved_by_fname }}">
-											</div>
-										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-										<input type="text" class="form-control" name="approved_lname"placeholder="Last Name" value="{{ $quality->approved_by_lname }}">
-										</div>
-										</div>
-									</div>
-								</div>
-								<div class="row" style="padding-bottom:10px;">
-									<div class="col-sm-4">	</div>
-								<div class="col-sm-8">
-									<div class="form-group">
-										<div class="col-sm-12" style="padding:0;">
-												<div class="input-group date dat form-group" id="date3" data-date-container="#date3"  data-date="02-2012" data-date-format="mm-yyyy"><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
-												<input value="{{ $quality->date_approved }}" class="form-control" name="approved_date" type="text" readonly="readonly" name="date" >	  
-																 	  
-															</div>
-										</div>
-									
-										</div>
-									</div>
-								</div>
+		    							<div class="col-sm-4">	Checked by</div>
+		    							<div class="col-sm-8">
+		    								<div class="form-group">
+		    									<div class="col-sm-6" style="padding:0;">
+		    										<input type="text" class="form-control" name="checked_fname" placeholder="First Name" value="@if($quality != null) {{ $quality->checked_by_fname }} @endif">
+		    									</div>
+		    									<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+		    										<input type="text" class="form-control" name="checked_lname"placeholder="Last Name" value="@if($quality != null) {{ $quality->checked_by_lname }} @endif">
+		    									</div>
+		    								</div>
+		    							</div>
+		    						</div>
+		    						<div class="row" style="padding-bottom:10px;">
+		    							<div class="col-sm-4">	</div>
+		    							<div class="col-sm-8">
+		    								<div class="form-group">
+		    									<div class="col-sm-12" style="padding:0;">
+		    										<div class="input-group date dat form-group" id="date2" data-date-container="#date2" data-date="02-2012" data-date-format="mm-yyyy"><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
+		    											<input value="@if($quality != null) {{ $quality->date_checked }} @endif" class="form-control" name="checked_date" type="text" readonly="readonly" name="date" >	  
 
-		    							<div class="row">
-    										<div class="col-sm-4">
-    											<div class="form-group">
-    												Statements 
-    											</div>
-    										</div>
-    										<div class="col-sm-8">
-    											<div class="form-group">
-													<select name="statements[]"  class="form-control" >
-														<option value="" disabled selected>Select</option>
-														<?php
-														$Service = array(
-															"I agree to XXX"
-														);
-														sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
-														foreach ($Service as $key ) {
-														    echo "<option value='".$key."'>".$key."</option>";
-														}
+		    										</div>
+		    									</div>
 
-														?>
-													</select>
-													</div>
-													<div class="form-group">
-														<div class="cnt_statement">
-													   {{--  <button class="btn btn-primary" id="cnt_statement" >Add another statement</button> --}}
-													    
-														</div>
-													</div>
-    										</div>
-    										<div class="form-group butcent">
+		    								</div>
+		    							</div>
+		    						</div>
 
-    											<button type="button" class="btn btn-primary butsize" s data-toggle="modal"data-target="#myModal2">Start Tender Process</button>
 
-											
-											<button type="button" id="quality_save" class="btn btn-primary butsize">Save</button>
-										</div>
-    										
-    									</div>
+		    						<div class="row" style="padding-bottom:10px;">
+		    							<div class="col-sm-4">	Approved by</div>
+		    							<div class="col-sm-8">
+		    								<div class="form-group">
+		    									<div class="col-sm-6" style="padding:0;">
+		    										<input type="text" class="form-control" name="approved_fname" placeholder="First Name" value="@if($quality != null) {{ $quality->approved_by_fname }} @endif">
+		    									</div>
+		    									<div class="col-sm-6" style="padding:0;padding-left: 15px;">
+		    										<input type="text" class="form-control" name="approved_lname"placeholder="Last Name" value="@if($quality != null) {{ $quality->approved_by_lname }} @endif">
+		    									</div>
+		    								</div>
+		    							</div>
+		    						</div>
+		    						<div class="row" style="padding-bottom:10px;">
+		    							<div class="col-sm-4">	</div>
+		    							<div class="col-sm-8">
+		    								<div class="form-group">
+		    									<div class="col-sm-12" style="padding:0;">
+		    										<div class="input-group date dat form-group" id="date3" data-date-container="#date3"  data-date="02-2012" data-date-format="mm-yyyy"><span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
+		    											<input value="@if($quality != null) {{ $quality->date_approved }} @endif" class="form-control" name="approved_date" type="text" readonly="readonly" name="date" >	  
+
+		    										</div>
+		    									</div>
+
+		    								</div>
+		    							</div>
+		    						</div>
+
+		    						<div class="row">
+		    							<div class="col-sm-4">
+		    								<div class="form-group">
+		    									Statements 
+		    								</div>
+		    							</div>
+		    							<div class="col-sm-8">
+		    								<div class="form-group">
+		    									<select name="statements[]"  class="form-control" >
+		    										<option value="" disabled selected>Select</option>
+		    										<?php
+		    										$Service = array(
+		    											"I agree to XXX"
+		    										);
+		    										sort($Service, SORT_NATURAL | SORT_FLAG_CASE);
+		    										foreach ($Service as $key ) {
+		    											echo "<option value='".$key."'>".$key."</option>";
+		    										}
+
+		    										?>
+		    									</select>
+		    								</div>
+		    								<div class="form-group">
+		    									<div class="cnt_statement">
+		    										{{--  <button class="btn btn-primary" id="cnt_statement" >Add another statement</button> --}}
+
+		    									</div>
+		    								</div>
+		    							</div>
+		    							<div class="form-group butcent">
+
+		    								<button type="button" class="btn btn-primary butsize" s data-toggle="modal"data-target="#myModal2">Start Tender Process</button>
+
+
+		    								<button type="button" id="quality_save" class="btn btn-primary butsize">Save</button>
+		    							</div>
+
+		    						</div>
 		    						</form>
 		    					</div>
 		    				</div>

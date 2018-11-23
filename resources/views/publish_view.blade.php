@@ -1174,7 +1174,7 @@
 			<div class="tender-container tendnew">
 				<ul class="nav navs bid-form-nav">
 					<li class="active"><a class="abut" href="#section1">Project</a></li> 
-					<li class="123"><a class="abut" data-toggle="tab" href="#section2">Scope</a></li>
+					<li class="123"><a class="abut" href="{{ url('scopedrm/'.$project->project_record_id).''}}">Scope</a></li>
 					<li class="123"><a class="abut" href="{{ url('tenders/'.$project->project_record_id.'/edit') }}" >Tenders</a></li>
 					<li class="123" id="cret" ><a class="abut" data-toggle="modal" data-target="#selectServe"><span>Create New Tender</span></a></li>
 				</ul><br>

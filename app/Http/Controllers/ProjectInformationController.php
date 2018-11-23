@@ -18,6 +18,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\DB;
 
 
 class ProjectInformationController extends Controller
@@ -41,7 +42,10 @@ class ProjectInformationController extends Controller
     {
 
     }
-
+    public function scopetab($id){
+        $closed = DB::table('tender_tbl')->where('project_record_id',$id)->where('status','Closed')->get()->toArray();
+        return view('scope')->with(['id'=>$id,'closed' => $closed]);
+    }
     /**
      * Store a newly created resource in storage.
      *

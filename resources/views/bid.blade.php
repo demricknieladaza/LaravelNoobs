@@ -1163,7 +1163,7 @@
 									$counter = 1;
 									foreach($q as $qu){
 										echo '<div class="form-group">
-													<input type="checkbox" name="" value="'.$qu.'" class="tata filled-in" id="check'.$counter.'"> <label for="check'.$counter.'">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</label>
+													<input type="checkbox" name="" value="'.$qu.'" class="tata filled-in" id="check'.$counter.'"> <label for="check'.$counter.'">'.$qu.'</label>
 											</div>';
 										$counter++;
 									}	

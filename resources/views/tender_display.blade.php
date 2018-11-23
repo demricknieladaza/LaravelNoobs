@@ -432,6 +432,7 @@
 <script>
 	$(document).ready(function(){
 		var divClone = $("#tenderer").clone();
+		var divClones = $("#tendererrr").clone();
 		$(".date").datepicker( {
 			    format: "mm-yyyy",
 			    viewMode: "months", 
@@ -483,6 +484,44 @@
 				}
 			});
 		});
+
+		$('#copmlttndr').click(function(){
+			
+			$("#tendererrr").replaceWith(divClones.clone());
+			jQuery.ajax({
+				url: "{{ url('gettenderbid') }}",
+				method: 'get',
+				data: { id: $(this).attr('data-tender-id') },
+				success: function(result){
+					// console.log(result[0]['comp_name']);
+					$.each(result,function(v,k){
+						console.log(k);
+						$('#tendererrr').append('<tr><td>'+(v+1)+'</td><td><a class="succ" data-tid="'+k['tid']+'" data-uid="'+k['uid']+'" data-service="'+k['tendservice']+'" data-projname="'+k['projname']+'" data-compname="'+k['comp_name']+'" >'+k['comp_name']+'</a></td></tr>');
+					});
+					$('#cmplttenderprocess').modal('toggle');
+				}
+			});
+		});
+
+		$(document).on('click','.succ',function(){
+			$('#tid').val($(this).attr('data-tid'));
+			$('#uid').val($(this).attr('data-uid'));
+			$('#greet').html('Do you really want to award '+$(this).attr('data-compname')+' as the '+$(this).attr('data-service')+' on the '+$(this).attr('data-projname')+' project?');
+			$('#areusure').modal('toggle');
+		});
+
+		$('#successtender').click(function(){
+				jQuery.ajax({
+				url: "{{ url('awardtender') }}",
+				method: 'post',
+				data: { tid: $('#tid').val(), uid: $('#uid').val() },
+				success: function(result){
+					console.log(result);
+					location.reload();
+				}
+			});
+		});
+
 	});
 		
 </script>
@@ -529,6 +568,61 @@
 	    });
 	});
 </script>
+<div id="cmplttenderprocess" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+      	<div class="alert alert-info">
+      	  <strong>Info!</strong> Please select the successful tenderer by clicking on the company name
+      	</div>
+        <table class="table">
+        	<thead>
+        		<tr>
+        			<th width="20%">#</th>
+        			<th width="80%">Company</th>
+        		</tr>
+        	</thead>
+        	<tbody id="tendererrr">
+        		
+        	</tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="areusure" class="modal fade">
+	<div class="modal-dialog modal-confirm">
+		<div class="modal-content" style="margin-right: auto;margin-left: auto;width: 40%;">
+			<div class="modal-head">
+				<div class="icon-box">
+					<i class="material-icons">done</i>
+				</div>				
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			</div>
+			<div class="modal-body">
+				<p id="greet"></p>
+				<input type="hidden" id="tid">
+				<input type="hidden" id="uid">
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="successtender" class="btn btn-success">Yes</button>
+				<button type="button"  class="btn btn-info" data-dismiss="modal">Go Back</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 <div class="modal fade" id="viewBid" role="dialog" tabindex="-1">
   <div class="modal-dialog">
     <!-- Modal content-->
@@ -670,7 +764,7 @@
 			<div class="tender-container tendnew">
 				<ul class="nav navs bid-form-nav">
 					<li class=""><a class="abut" href="{{ url('project_info/'. $proj . '/edit') }}" >Project</a></li>
-					<li class="123"><a class="abut" >Scope</a></li>
+					<li class="123"><a class="abut" href="{{ url('scopedrm/'.$proj).''}}" >Scope</a></li>
 					<li class="active"><a class="abut" >Tenders</a></li>
 					<li class="123" id="cret" ><a class="abut" data-toggle="modal" data-target="#selectServe"><span>Create New Tender</span></a></li>
 				</ul><br>
@@ -729,7 +823,7 @@
 									<td class="td">{{ $ten->time_remaining }}</td>
 									<td class="td"><strong style="font-size: 25px;">{{ $ten->bids_received }}</strong><a data-tender-id="{{ $ten->tender_id }}" class="viewbid"><p>View Bids</p></a></td>
 									<td class="td">{{ $ten->queries_received }}</td>
-									<td class="td"><button style="width: 135px;" class="btn btn-success">Complete Tender  <br>Process</button></td>
+									<td class="td"><button style="width: 135px;" id="copmlttndr" data-tender-id="{{ $ten->tender_id }}" class="btn btn-success">Complete Tender  <br>Process</button></td>
 									{{-- </button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td> --}}
 								@else
 									<td style="text-align: left;font-weight:bolder; " class="td">{{ $ten->services }} <a class="edit_tender" data-tender-id="{{ $ten->tender_id }}" href="{{ url('tenderget/'.$ten->tender_id.'') }}"><p>Edit Tender<br></p></a></td>

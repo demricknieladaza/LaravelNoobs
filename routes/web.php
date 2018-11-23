@@ -40,6 +40,8 @@ Route::get('login', 'UserLogin@checklogin');
 
 Route::get('logout', 'UserLogin@logout');
 
+Route::get('scopedrm/{id}', 'ProjectInformationController@scopetab');
+
 Route::resource('register','UserAccountsController');
 
 Route::resource('addCountrys','Useradd@addCountry');
@@ -141,6 +143,8 @@ Route::post('tender_evaluation', 'TenderController@tenderEvalStore');
 Route::post('tender_deliverables_save', 'TenderController@tenderScopeStore');
 Route::post('tender_quality_assurance', 'TenderController@tenderQualityStore');
 Route::post('start_tender_process', 'TenderController@updateTenderProcess');
+
+Route::post('awardtender', 'ReportsController@awardtender');
 
 Route::get('generatereport/{pid}/{tid}/{uid}','ReportsController@generate');
 

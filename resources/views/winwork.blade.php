@@ -277,20 +277,20 @@
 																$strr = explode(",",$proj->use_name);
 																$strr1 = explode(",",$proj->use_area);
 																// echo count($strr);
-																$counter = 0;
+																
+																for($x=0;$x < count($strr);$x++)
+																{
+																	echo ' '.$strr[$x].' '.$strr1[$x].' m2';
+																}
+
+															?>
+																{{-- $counter = 0;
 																if(count($strr) <= 3){
 																	$counter = 2;
 																}
 																else{
 																	$counter = count($strr);
-																}
-																for($x=0;$x < $counter;$x++)
-																{
-																	echo ' '.$strr[$x].' '.$strr1[$x].' m2';
-																}
-															
-															?>
-																
+																} --}}
 																
 														</div>
 														<div class="col-sm-3 bid_section text-center">

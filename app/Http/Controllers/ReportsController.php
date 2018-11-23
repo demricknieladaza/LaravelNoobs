@@ -191,7 +191,9 @@ class ReportsController extends Controller
     }
 
     public function gettenderbid(Request $request){
-    	$tenderrec = DB::table('bid_records_tbl')->where('tender_id',$request->get('id'))->get();
+        $tenderrec = DB::table('bid_records_tbl')->where('tender_id',$request->get('id'))->get();
+    	$tendername = DB::table('tender_tbl')->where('tender_id',$request->get('id'))->pluck('services')->first();
+
 
     	foreach ($tenderrec as $key) {
     		// echo $key->user_id;
@@ -199,8 +201,12 @@ class ReportsController extends Controller
     		$org = DB::table('organisation_tbl')->where('user_id',$key->user_id)->pluck('org_id')->first();
     	 	$tendinfo[] = array(
     	 		'comp_name' => $comp_name,
+                'tid' => $request->get('id'),
+                'uid' => $key->user_id,
     	 		'qualitative' => $this->getorgprojectexp($org,$key->project_record_id,$key->tender_id),
-    	 		'quantitative' => $this->getquanti($key->user_id,$key->tender_id)
+    	 		'quantitative' => $this->getquanti($key->user_id,$key->tender_id),
+                'projname' => DB::table('project_information_tbl')->where('project_record_id',$key->project_record_id)->pluck('project_title')->first(),
+                'tendservice' => $tendername
     	 	);
     	}
 
@@ -464,5 +470,21 @@ class ReportsController extends Controller
     	$score = round(((($totalorg*$evaluation->organisation)/100)*$evaluation->qualitative)/100,1);
 
     	return $score;
+    }
+
+    public function awardtender(Request $request){
+        // echo $request->get('tid');
+        // echo $request->get('uid');
+
+        DB::table('successful_tender')->insert(['tender_id'=> $request->get('tid'),'user_id' => $request->get('uid')]);
+        DB::table('submitted_tenders_tbl')->where('tender_id',$request->get('tid'))->delete();
+
+        DB::table('tender_tbl')->where('tender_id',$request->get('tid'))->update(
+            [
+                'status' => 'Closed'
+            ]
+        );
+
+        return 'success';
     }
 }

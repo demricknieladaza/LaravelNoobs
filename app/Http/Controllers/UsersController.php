@@ -122,32 +122,39 @@ class UsersController extends Controller
                     ->where('saved_tenders_tbl.user_id', $user)
                     ->join('tender_tbl as te', 'saved_tenders_tbl.tender_id', '=', 'te.tender_id' )
                     ->join('project_information_tbl as pj', 'saved_tenders_tbl.project_record_id', '=', 'pj.project_record_id')
-                    ->get();
+                    ->paginate(10);
     
         $active = DB::table('submitted_tenders_tbl')
                     ->where('submitted_tenders_tbl.user_id', $user)
                     ->join('tender_tbl as te', 'submitted_tenders_tbl.tender_id', '=', 'te.tender_id' )
                     ->join('project_information_tbl as pj', 'submitted_tenders_tbl.project_record_id', '=', 'pj.project_record_id')
-                    ->get();
+                    ->paginate(10);
 
         $drafted = DB::table('drafted_tenders_tbl')
                     ->where('drafted_tenders_tbl.user_id', $user)
                     ->join('tender_tbl as te', 'drafted_tenders_tbl.tender_id', '=', 'te.tender_id' )
                     ->join('project_information_tbl as pj', 'drafted_tenders_tbl.project_record_id', '=', 'pj.project_record_id')
-                    ->get();
+                    ->paginate(10);
 
         $proposal = DB::table('request_for_proposal_tbl')
                     ->where('request_for_proposal_tbl.user_id', $user)
                     ->join('tender_tbl as te', 'request_for_proposal_tbl.tender_id', '=', 'te.tender_id' )
                     ->join('project_information_tbl as pj', 'request_for_proposal_tbl.project_record_id', '=', 'pj.project_record_id')
-                    ->get();                   
+                    ->paginate(10);
+
+        $success = DB::table('successful_tender')
+                    ->where('successful_tender.user_id', $user)
+                    ->join('tender_tbl as te', 'successful_tender.tender_id', '=', 'te.tender_id' )
+                    ->join('project_information_tbl as pj', 'te.project_record_id', '=', 'pj.project_record_id')
+                    ->paginate(10);               
 
         return view('tend_dashboard')->with([
             'oppur' => $oppur,
             'saved' => $saved,
             'active' => $active,
             'drafted' => $drafted,
-            'request' => $proposal
+            'request' => $proposal,
+            'success' => $success
 
         ]);
         // return $saved;
