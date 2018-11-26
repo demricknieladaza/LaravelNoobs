@@ -135,6 +135,7 @@ ul.typeofdev {
 	var typeofuse = [];
 	var provservices = [];
 	var projmem = [];
+	var departments = [];
 	var counter = 0;
 	var awardcounter = 0;
 	var typecounter = 0;
@@ -144,6 +145,7 @@ ul.typeofdev {
 	$(document).ready(function(){
 		var serv = <?php echo $services; ?>;
 		var awar = <?php echo $awards; ?>;
+		var dept = <?php echo $departments; ?>;
 		<?php if(count($projects) > 0 ){ ?>
 			var proj = <?php echo $projects; ?>; 
 		<?php }
@@ -178,6 +180,18 @@ ul.typeofdev {
 				};
 				awards.push(newservices);
 				// alert(services.length);
+			});
+		}
+
+		if(dept.length > 0){
+			$.each( dept, function( k,v){
+				$('ul#addeddept').append('<li data-myid="'+v['dept_id']+'" data-id="'+k+'" onclick="editdept('+k+')">'+v['dept_name']+'</li>');
+				var newservices = {
+					department: v['dept_name'],
+					editable: 'true',
+					myid: v['dept_id']
+				};
+				departments.push(newservices);
 			});
 		}
        
@@ -225,11 +239,16 @@ ul.typeofdev {
 			// console.log(orgData);
 		});
 		$('#orgupdate').click(function(){
+			if($('input[name="company_name"]').val()==""){
+				alert('missing company name');
+			}
+			else{
 			var serv = JSON.stringify(services);
 			var awa = JSON.stringify(awards);
 			var type = JSON.stringify(typeofuse);
 			var provserv = JSON.stringify(provservices);
 			var projm = JSON.stringify(projmem);
+			var dept = JSON.stringify(departments);
 			var devchecked = [];
 			jQuery("input[name='development[]']").each(function()
 				{	
@@ -247,6 +266,7 @@ ul.typeofdev {
 			orgData.append('provservices', provserv);
 			orgData.append('projmem', projm);
 			orgData.append('development', dev);
+			orgData.append('departments', dept);
 			$.ajax({
 				url: '{{ url("organisationupdate") }}',
 				type: 'POST',
@@ -261,6 +281,7 @@ ul.typeofdev {
 
 			});
 			// console.log(orgData);
+		}
 		});
 
 		$('#saveproj').click(function(){
@@ -550,7 +571,7 @@ ul.typeofdev {
 		//=========Edit Proj member=============
 		$('#edtprojmem').click(function(){
 			if($('select[name="member"]').val() == null || $('input[name="compname"]').val() == "" ){
-				alert('Lacking fields')
+				alert('Lacking fields');
 			}
 			else{
 				var id = $(this).attr('data-id');
@@ -586,6 +607,37 @@ ul.typeofdev {
 				}
 
 			});
+		});
+
+		$('#adddept').click(function(){
+			if($('input[name="comp_dept"]').val()==""){
+				alert('Lacking fields');
+			}
+			else{
+				$('ul#addeddept').append('<li data-id="'+departments.length+'" onclick="editdept('+departments.length+')">'+$('input[name="comp_dept"]').val()+'</li>');
+
+				var newservices = {
+					department: $('input[name="comp_dept"]').val(),
+					editable: 'false'
+				};
+				departments.push(newservices);
+				$('input[name="comp_dept"]').val('');
+			}
+		});
+
+		$('#edtdept').click(function(){
+			if($('input[name="comp_dept"]').val()==""){
+				alert('Lacking fields');
+			}
+			else{
+				var id = $(this).attr('data-id');
+				$('ul#addeddept li[data-id="'+id+'"]').text($('input[name="comp_dept"]').val());
+				departments[id]['department'] = $('input[name="comp_dept"]').val();
+
+				$('input[name="comp_dept"]').val('');
+				$('#edtdept').css('display','none');
+				$('#adddept').css('display','block');
+			}
 		});
 
 	});
@@ -658,6 +710,14 @@ ul.typeofdev {
 			$('#image_preview').append("<div style='padding: 5px' class='col-sm-3'><img width='100px' height='100px' src='"+sors+"'></div>");
 			// alert();
 		});
+	}
+
+	function editdept(id){
+		// console.log(services[id]);
+		$('input[name="comp_dept"]').val(departments[id]['department']);
+		$('#edtdept').css('display','block');
+		$('#edtdept').attr('data-id',id);
+		$('#adddept').css('display','none');
 	}
 
 	// ================EDIT SERVICES============
@@ -785,6 +845,19 @@ ul.typeofdev {
 													<tr>
 														<td width="35%">Company Name</td>
 														<td><input type="text" @if (count($org)==1) value="{{ $org[0]->company_name }}" @endif name="company_name" class="form-control" placeholder="British Land"></td>
+													</tr>
+													<tr>
+														<td width="35%">Departments
+															<div class="col-sm-12" style="padding: 0;">
+																<ul id="addeddept" style="list-style: none;">
+																	
+																</ul>
+															</div>
+														</td>
+														<td><input type="text" value="" name="comp_dept" class="form-control" placeholder="">
+															<button type="button" id="adddept" class="btn btn-warning sakto" style="margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Add department</span></button>
+															<button type="button" id="edtdept" class="btn btn-warning sakto" style="display:none; margin-top: 10px;"><span class="sakto2"><i class="fa fa-plus"></i> Save</span></button>
+														</td>
 													</tr>
 													<tr>
 														<td>Registered Office Address</td>

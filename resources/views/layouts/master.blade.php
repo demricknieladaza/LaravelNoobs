@@ -380,9 +380,9 @@
                                   <a href="{{ url('/dashboard/emp_dashboard') }}">Employer Dashboard</a>
                                   <a href="{{ url('/dashboard/tend_dashboard') }}">Tenderer Dashboard</a>
                                   <a href="{{ url('/dashboard/benchmark_dashboard') }}">Benchmarking</a>
-                                  <a href="#">Organisation</a>
-                                  <a href="#">Individuals</a>
-                                  <a href="{{ url('/dashboard/users') }}">Users</a>
+                                  <a href="{{ url('/dashboard/organisation') }}/{{ Session::get("id") }}">Organisation</a>
+                                  <a href="{{ url('/dashboard/individuals') }}/{{ Session::get("id") }}">Individuals</a>
+                                  {{-- <a href="{{ url('/dashboard/users') }}">Users</a> --}}
                                   <a href="{{ url('/dashboard/membership') }}">Membership</a>
                                   <a href="{{ url('/dashboard/policies') }}">Policies</a>
                                   <a href="{{ url('logout') }}"><i class="fa fa-sign-out" aria-hidden="true" style="line-height: 0;"></i>Logout</a>

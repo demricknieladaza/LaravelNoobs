@@ -116,6 +116,7 @@ class BidController extends Controller
             $counter++;
         }
 
+        $pr = DB::table('bid_records_tbl')->where('user_id',$request->session()->get('id'))->where('tender_id',$id)->first();
 
         return view('bid')->with([
             'tender' => $tender,
@@ -131,7 +132,8 @@ class BidController extends Controller
             'scopes' => $scopes,
             'scopesm' => $scopesm,
             'scopesd' => $scopesd,
-            'scopesa' => $scopesa
+            'scopesa' => $scopesa,
+            'tr' => $pr
         ]);
 
         // return $appointment;
@@ -194,14 +196,14 @@ class BidController extends Controller
         $preapp = implode(",", $request->get('preapp'));
         $sitev = implode(",", $request->get('sitev'));
         $ribast = implode(",", $request->get('ribast'));
-        // $inspect = implode(",", $request->get('inspect'));
+        $inspect = implode(",", $request->get('inspect'));
         $meeting = new BidMeetings;
         $meeting->tender_id = $request->get('tender_id');
         $meeting->user_id = $request->session()->get('id');
         $meeting->pre_application_meetings = $preapp;
         $meeting->site_visits = $sitev;
         $meeting->riba_stage = $ribast;
-        // $meeting->site_inspection = $inspect;
+        $meeting->site_inspection = $inspect;
         $meeting->save();
 
         //Bid Advise

@@ -8,6 +8,7 @@ class BidMeetings extends Model
 {
     protected $table = 'bid_meetings_tbl';
     public $primaryKey = 'bid_meet_tbl';
+    public $timestamps = false;
     protected $fillable = [
         'tender_id',
         'user_id',

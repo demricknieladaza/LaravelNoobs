@@ -7,6 +7,16 @@
 		border-bottom: none !important;
 	}
 </style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#noorg').click(function(){
+			alert('you have no organisation yet');
+		});
+		$('#noindi').click(function(){
+			alert('need to have atleast 1 individual to submit a bid');
+		});
+	});
+</script>
 	<div id="actTinder" class="container-fluid below-header project-img-collection text-center">
 		<h1>{{ $project->project_title }}</h1>
 		<div class="project-image popup-gallery">
@@ -25,6 +35,19 @@
 
 <div class="container tender-details">
 	<div class="row">
+		<div class="col-sm-12">
+			@if (count($myorg)==0)
+				<div class="alert alert-danger" role="alert">
+				  Need to fill your organisation info first...<a href="{{ url('/dashboard/organisation') }}/{{ Session::get("id") }}">click here to go to organisation page</a>
+				</div>
+			@else
+				@if (count($myindi)==0)
+					<div class="alert alert-danger" role="alert">
+					  Need to have atleast 1 individual...<a href="{{ url('/dashboard/individuals') }}/{{ Session::get("id") }}">click here to add individual</a>
+					</div>
+				@endif
+			@endif
+		</div>
 		<div class="col-sm-8">
 			<div class="tender-container">
 				<div class="row">
@@ -33,7 +56,7 @@
 					</div>
 					@foreach($tenders as $ten)
 							<div class="col-sm-3">
-								<a href="{{ url('/winwork/bid/'.$ten->tender_id.'/edit') }}">
+								<a @if (count($myorg)==0) id="noorg" @else @if (count($myindi)==0) id="noindi" @else href="{{ url('/winwork/bid/'.$ten->tender_id.'/edit') }}" @endif @endif  >
 									<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 										<div class="flipper">
 											<div class="front">

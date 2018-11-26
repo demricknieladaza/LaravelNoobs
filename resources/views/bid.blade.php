@@ -658,7 +658,11 @@
 		});
 		$('#submit_query').click(function(){
 			// var idd = $('#serveprojtitle').attr('data-id');
-			jQuery.ajax({
+			if(jQuery("textarea[name='query']").val()==""){
+
+			}
+			else{
+				jQuery.ajax({
 				url:"{{ url('tender_queries') }}",
 				method: 'post',
 				data: {
@@ -670,6 +674,7 @@
 					console.log(result);
 				}
 			});
+			}
 		});
 		$('#add_field_coms').click(function(){
 			$('#commnts').append('<textarea id="text-input4" name="comments_constraints[]" cols="25" rows="3" placeholder="Enter here.."></textarea><div class="word-counter"><label id="count-label4">3000</label>/3000 words</div>');
@@ -1135,10 +1140,15 @@
 
 	<div class="container">
 		<div class="row">
-			<div id="d" class="col-sm-4" style="position: fixed; width:355px;">
+				@if (count($tr)!=0)
+					<div class="alert alert-warning" id="danger-alerts" >
+					    <strong>Sorry!</strong> you already submitted a bid to this tender.
+					</div>
+				@endif
+			<div id="d" class="col-sm-4" style="position: fixed; width:355px;" >
 				<div class="tender-container" style="border-radius: 6px;">
 					<ul class="nav bid-form-nav">
-						<li class="active totop"><a data-toggle="tab" href="#section1">Pre-Qualification Questionnaire<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
+						<li @if (count($tr)!=0)class="disd totop" @else class="active totop" @endif ><a data-toggle="tab" href="#section1">Pre-Qualification Questionnaire<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
 						{{-- <li class="disda totop" ><a data-toggle="tab" href="#section2">Organisation<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li> --}}
 						<li class="disd totop"><a data-toggle="tab" href="#section3">Individuals<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
 						<li class="disd totop"><a data-toggle="tab" href="#section4">Approach<i class="fa fa-check checkerg hidecheck" style="line-height: -1px !important;"></i></a></li>
@@ -1152,7 +1162,7 @@
 					
 				</div>
 			</div>
-			<div class="col-sm-8 questionnaire-section" style="margin-left: 338px; width: 845px;">
+			<div @if (count($tr)!=0)class="col-sm-8 questionnaire-section disd" @else class="col-sm-8 questionnaire-section" @endif  style="margin-left: 338px; width: 845px;">
 				<div class="tab-content">
 					<div id="section1" class="tab-pane fade in active tender-container" style="border-radius: 6px;min-height: 600px;">
 						<h3 class="bid-form-title">Pre-Qualification Questionnaire</h3>
@@ -3263,7 +3273,7 @@
 						                    <td class="td">
 						                    	<div class="form-check">
 						                    		<label>
-						                    			@if (strpos($scopesm[0]['inspection_choice'],'Arrange')!==false) 
+						                    			@if (strpos($scopesm[0]['site_inspection_choice'],'Arrange')!==false) 
 						                    				<input type="checkbox" disabled name="inspection_choice_ans[]" value="Arrange"><span class="label-text"></span>
 						                    			@else 
 						                    			@endif
@@ -3273,7 +3283,7 @@
 						                    <td class="td">
 						                    	<div class="form-check">
 						                    		<label>
-						                    			@if (strpos($scopesm[0]['inspection_choice'],'Attend')!==false) 
+						                    			@if (strpos($scopesm[0]['site_inspection_choice'],'Attend')!==false) 
 						                    				<input type="checkbox" disabled name="inspection_choice_ans[]" value="Attend"><span class="label-text"></span>
 						                    			@else 
 						                    			@endif
@@ -3283,7 +3293,7 @@
 						                    <td class="td">
 						                    	<div class="form-check">
 						                    		<label>
-						                    			@if (strpos($scopesm[0]['inspection_choice'],'Minute')!==false) 
+						                    			@if (strpos($scopesm[0]['site_inspection_choice'],'Minute')!==false) 
 						                    				<input type="checkbox" disabled name="inspection_choice_ans[]" value="Minute"><span class="label-text"></span>
 						                    			@else 
 						                    			@endif
@@ -3293,7 +3303,7 @@
 						                    <td class="td">
 						                    	<div class="form-check">
 						                    		<label>
-						                    			@if (strpos($scopesm[0]['inspection_num'],'0')!==false)
+						                    			@if (strpos($scopesm[0]['site_inspection_num'],'0')!==false)
 						                    				<input type="number" name="inspection_num_ans[]" class="inputwidth">
 						                    			@else 
 						                    				<input type="checkbox" disabled name="inspection_num[]" value="0"><span class="label-text"></span>
@@ -3304,7 +3314,7 @@
 						                    <td class="td">
 						                    	<div class="form-check">
 						                    		<label>
-						                    			@if (strpos($scopesm[0]['inspection_num'],'1')!==false)
+						                    			@if (strpos($scopesm[0]['site_inspection_num'],'1')!==false)
 						                    				<input type="number" name="inspection_num_ans[]" class="inputwidth">
 						                    			@else 
 						                    				<input type="checkbox" disabled name="inspection_num[]" value="0"><span class="label-text"></span>
@@ -3315,7 +3325,7 @@
 						                    <td class="td">
 						                    	<div class="form-check">
 						                    		<label>
-						                    			@if (strpos($scopesm[0]['inspection_num'],'2')!==false)
+						                    			@if (strpos($scopesm[0]['site_inspection_num'],'2')!==false)
 						                    				<input type="number" name="inspection_num_ans[]" class="inputwidth">
 						                    			@else 
 						                    				<input type="checkbox" disabled name="inspection_num[]" value="0"><span class="label-text"></span>
@@ -3326,7 +3336,7 @@
 						                    <td class="td">
 						                    	<div class="form-check">
 						                    		<label>
-						                    			@if (strpos($scopesm[0]['inspection_num'],'3')!==false)
+						                    			@if (strpos($scopesm[0]['site_inspection_num'],'3')!==false)
 						                    				<input type="number" name="inspection_num_ans[]" class="inputwidth">
 						                    			@else 
 						                    				<input type="checkbox" disabled name="inspection_num[]" value="0"><span class="label-text"></span>
@@ -3337,7 +3347,7 @@
 						                    <td class="td">
 						                    	<div class="form-check">
 						                    		<label>
-						                    			@if (strpos($scopesm[0]['inspection_num'],'4')!==false)
+						                    			@if (strpos($scopesm[0]['site_inspection_num'],'4')!==false)
 						                    				<input type="number" name="inspection_num_ans[]" class="inputwidth">
 						                    			@else 
 						                    				<input type="checkbox" disabled name="inspection_num[]" value="0"><span class="label-text"></span>
@@ -3348,7 +3358,7 @@
 						                    <td class="td">
 						                    	<div class="form-check">
 						                    		<label>
-						                    			@if (strpos($scopesm[0]['inspection_num'],'5')!==false)
+						                    			@if (strpos($scopesm[0]['site_inspection_num'],'5')!==false)
 						                    				<input type="number" name="inspection_num_ans[]" class="inputwidth">
 						                    			@else 
 						                    				<input type="checkbox" disabled name="inspection_num[]" value="0"><span class="label-text"></span>
@@ -3359,7 +3369,7 @@
 						                    <td class="td">
 						                    	<div class="form-check">
 						                    		<label>
-						                    			@if (strpos($scopesm[0]['inspection_num'],'6')!==false)
+						                    			@if (strpos($scopesm[0]['site_inspection_num'],'6')!==false)
 						                    				<input type="number" name="inspection_num_ans[]" class="inputwidth">
 						                    			@else 
 						                    				<input type="checkbox" disabled name="inspection_num[]" value="0"><span class="label-text"></span>
@@ -3370,7 +3380,7 @@
 						                    <td class="td">
 						                    	<div class="form-check">
 						                    		<label>
-						                    			@if (strpos($scopesm[0]['inspection_num'],'7')!==false)
+						                    			@if (strpos($scopesm[0]['site_inspection_num'],'7')!==false)
 						                    				<input type="number" name="inspection_num_ans[]" class="inputwidth">
 						                    			@else 
 						                    				<input type="checkbox" disabled name="inspection_num[]" value="0"><span class="label-text"></span>

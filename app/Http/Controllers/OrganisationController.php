@@ -283,6 +283,25 @@ class OrganisationController extends Controller
         }
 
         // 
+        $org_department = json_decode($request->departments);
+        for($counter = 0; $counter < count($org_department); $counter++){
+            if($org_department[$counter]->editable == "true"){
+                DB::table('organisation_department_tbl')->where('dept_id', $org_department[$counter]->myid )
+                ->update(
+                    [
+                        'dept_name' => $org_department[$counter]->department
+                    ]
+                );
+            }
+            else{
+                DB::table('organisation_department_tbl')->insert(
+                    [
+                        'org_id' => $organisation->org_id,
+                        'dept_name' => $org_department[$counter]->department
+                    ]);
+            }
+        }
+
 
         $org_services = $request->services;
         $org_services = json_decode($org_services);
@@ -490,6 +509,7 @@ class OrganisationController extends Controller
         $services = "";
         $awards = "";
         $projects = [];
+        $departments = "";
         if(count($myorg)==1){
             $services = DB::table('organisation_services_tbl')
                 ->where('org_id',$myorg[0]['org_id'])
@@ -498,6 +518,9 @@ class OrganisationController extends Controller
                 ->where('org_id',$myorg[0]['org_id'])
                 ->get();
             $projects = DB::table('organisation_project_tbl')
+                ->where('org_id',$myorg[0]['org_id'])
+                ->get();
+            $departments = DB::table('organisation_department_tbl')
                 ->where('org_id',$myorg[0]['org_id'])
                 ->get();
         }
@@ -509,6 +532,7 @@ class OrganisationController extends Controller
             'services' => $services,
             'awards' => $awards,
             'projects' => $projects,
+            'departments' => $departments
         ]);
     }
 

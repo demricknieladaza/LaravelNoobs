@@ -576,7 +576,7 @@ class WinWorkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request,$id)
     {
         $tenders = Tender::where('project_record_id', $id)
                          ->where('status', 'Active')
@@ -645,6 +645,10 @@ class WinWorkController extends Controller
             );
         }
 
+        $myorg = DB::table('organisation_tbl')->where('user_id',$request->session()->get('id'))->first();
+        $myindi = DB::table('individuals_tbl')->where('user_id',$request->session()->get('id'))->first();
+        // echo count($myorg);
+        // echo count($myindi);
         return view('pds')->with([
             'tenders'=> $tenders,
             'project' => $project,
@@ -655,7 +659,9 @@ class WinWorkController extends Controller
             'milestones' => $milestonesni,
             'meetings' => $meetings,
             'team' => $team,
-            'question' => $questions
+            'question' => $questions,
+            'myorg' => $myorg,
+            'myindi' => $myindi
             ]);
     }
 

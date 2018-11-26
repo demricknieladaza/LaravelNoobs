@@ -142,8 +142,12 @@ ul.typeofdev {
 	var projteam = [];
 	$(document).ready(function(){
 		var divClone = $("#projectlist").clone();
+
 		$("#danger-alert").hide();
 
+		if({{count($id)}}==0){
+			$('#indiform').css('display','none');
+		}
 		// =====================================================Add Individual=============================================
 		$('#add_another').click(function(e){
 			if($('input[name="first_name"]').val()=="" || $('input[name="last_name"]').val()==""){
@@ -358,7 +362,7 @@ ul.typeofdev {
 				type: 'GET',
 				data: { id: ids },
 				success:function(result){
-					// console.log(result['id'][0]);
+					console.log(result['id'][0]);
 					// location.reload();
 					$('#add_another').css('display','none');
 					$('#update_another').css('display','block');
@@ -371,6 +375,8 @@ ul.typeofdev {
 					$("#projectlist").replaceWith(divClone.clone());
 					$('input[name="first_name"]').val(result['id'][0]['first_name']);
 					$('input[name="last_name"]').val(result['id'][0]['last_name']);
+					$('select[name="department"]').val(result['id'][0]['department']);
+					$('input[name="email"]').val(result['id'][0]['email']);
 					$('input[name="seniority_level"]').val(result['id'][0]['seniority']);
 					$('input[name="myiid"]').val(result['id'][0]['ind_id']);
 					$.each(result['accredation'],function(k,v){
@@ -876,11 +882,14 @@ ul.typeofdev {
 			<div class="row">
 				<div class="col-sm-12 lounge-header">
 					<span>Individuals</span>
-					<button class="btn btn-warning pull-right">Print Company Information</button>
+					{{-- <button class="btn btn-warning pull-right">Print Company Information</button> --}}
 				</div>
 			</div>
 			<!-- Modal -->
-			<div class="row">					
+			<div id="noindiform" style="display: none;">
+				
+			</div>
+			<div id="indiform" class="row">					
 				<div class="col-sm-12">
 					<div class="shadow-wrapper">
 						<div class="alert alert-danger" id="danger-alert" hidden>
@@ -926,6 +935,26 @@ ul.typeofdev {
 															<div class="col-sm-6" style="padding: 0;">
 																<input type="text" required name="last_name" class="form-control" placeholder="Last Name">
 															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Email</td>
+														<td>
+															<input type="email" name="email" class="form-control" placeholder="Enter email">
+														</td>
+													</tr>
+													<tr>
+														<td>Department</td>
+														<td>
+															<select name="department" class="form-control">
+																<option value="" disabled selected>Select department</option>
+																@foreach($dept as $v)
+																	<option value="{{$v->dept_name}}">{{$v->dept_name}}</option>
+																@endforeach
+																@if (count($dept)==0)
+																	<option value="" disabled>Go to your organisation page and add a department</option>
+																@endif
+															</select>
 														</td>
 													</tr>
 													<tr>

@@ -33,9 +33,18 @@ class IndividualsController extends Controller
 
     public function getmyindividual(Request $request){
         $indi = Individuals::where('user_id', $request->session()->get('id'))->get();
-
+        $id = DB::table('organisation_tbl')->where('user_id', $request->session()->get('id'))->first();
+        if(count($id)==0){
+            $dept = [];
+        }else{
+            $dept = DB::table('organisation_department_tbl')->where('org_id',$id->org_id)->get();
+        }
+        
+        // echo($dept);
         return view('individuals')->with([
-            'indi' => $indi
+            'indi' => $indi,
+            'dept' => $dept,
+            'id' => $id
         ]);
     }
 
@@ -61,6 +70,8 @@ class IndividualsController extends Controller
         //Name
         $new->first_name = $request->input('first_name');
         $new->sur_name = $request->input('sur_name');
+        $new->department = $request->input('department');
+        $new->email = $request->input('email');
         
         //Images
         $name_of_files = "";
@@ -524,6 +535,8 @@ class IndividualsController extends Controller
         $individual->first_name = $request->first_name;
         $individual->last_name = $request->last_name;
         $individual->seniority = $request->seniority_level;
+        $new->department = $request->input('department');
+        $new->email = $request->input('email');
 
         $service = $request->offeredservices;
         $new_service = "";
@@ -698,7 +711,9 @@ class IndividualsController extends Controller
                     'first_name' => $request->first_name,
                     'last_name' => $request->last_name,
                     'seniority' => $request->seniority_level,
-                    'services' => $new_service
+                    'services' => $new_service,
+                    'email' => $request->email,
+                    'department' => $request->department
                 ]);
 // ========================================accreditations================================================================
         $accre = $request->accredatations;

@@ -20,7 +20,7 @@
 			<ul>
 				<li><a href="{{ url('/dashboard/organisation') }}/{{ Session::get("id") }}"><i class="fa fa-circle-o"></i> Organisation</a></li>
 				<li><a href="{{ url('/dashboard/individuals') }}/{{ Session::get("id") }}"><i class="fa fa-circle-o"></i> Individuals</a></li>
-				<li><a href="{{ url('/dashboard/users') }}"><i class="fa fa-circle-o"></i> Users</a></li>
+				{{-- <li><a href="{{ url('/dashboard/users') }}"><i class="fa fa-circle-o"></i> Users</a></li> --}}
 				<li><a href="{{ url('/dashboard/membership') }}"><i class="fa fa-circle-o"></i> Membership</a></li>
 			</ul>
 		</li>
