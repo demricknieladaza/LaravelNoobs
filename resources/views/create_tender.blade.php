@@ -468,6 +468,7 @@
 				},
 				success: function(result){
 					console.log(result);
+					location.reload();
 				}
 			});
 			
@@ -557,6 +558,7 @@
 				},
 				success: function(result){
 					console.log(result);
+					location.reload();
 				}
 			});
 		});
@@ -574,40 +576,47 @@
 				contentType: false,
 				success: function(result){
 					console.log(result);
+					location.reload();
 				}
 			});
 		});
 		$('#start_tender').click(function(){
-			alert('START!!!');
-			var idd = $('#serveprojtitle').attr('data-id');
-			// var idd = jQuery("input[name='tender_id']");
-			var comp = [];
-			var status = "Active"
-			jQuery("input[name='companyemail[]']").each(function()
-				{	
-					if($(this).prop('checked')){
-						comp.push($(this).val());
+			if({{count($quests)}} > 0 && {{count($scopes[0])}} > 0 && {{count($scopesm[0])}} > 0 && {{count($scopesd[0])}} > 0 && {{count($scopesa[0])}} > 0 && {{count($appointment)}} > 0 && {{count($eval)}} > 0){
+				var idd = $('#serveprojtitle').attr('data-id');
+				// var idd = jQuery("input[name='tender_id']");
+				var comp = [];
+				var status = "Active"
+				jQuery("input[name='companyemail[]']").each(function()
+					{	
+						if($(this).prop('checked')){
+							comp.push($(this).val());
+						}
+						
 					}
-					
-				}
-			);
-			jQuery.ajax({
-				url: "{{ url('start_tender_process') }}",
-				method: 'post',
-				data: {
-					idd: idd,
-					status: status,
-					// time_remaining: jQuery("select[name='days']").val(),
-					end: jQuery("input[name='deadline_date']").val(),
-					feedback: jQuery("input[name='feedback_date']").val(),
-					companies: comp
-				},
-				success: function(result){
-					console.log(result);
-					window.location.replace("{{url('winwork')}}");
-				}
-			});
+				);
+				jQuery.ajax({
+					url: "{{ url('start_tender_process') }}",
+					method: 'post',
+					data: {
+						idd: idd,
+						status: status,
+						// time_remaining: jQuery("select[name='days']").val(),
+						end: jQuery("input[name='deadline_date']").val(),
+						feedback: jQuery("input[name='feedback_date']").val(),
+						companies: comp
+					},
+					success: function(result){
+						console.log(result);
+						window.location.replace("{{url('winwork')}}");
+					}
+				});
+			}
+			else{
+				alert('Something went wrong! please fill up all tabs and save it');
 
+			}
+			// alert('START!!!');
+			
 		});
 		// $('#quality_save').click(function(){
 		// 	jQuery.ajax({
@@ -5420,10 +5429,10 @@
 		    								<div class="col-sm-8">
 		    									<div class="form-group">
 		    										<div class="col-sm-6" style="padding:0;">
-		    											<input type="text" class="form-control" name="created_fname" placeholder="First Name" value="@if($quality != null) {{ $quality->created_by_fname }} @endif">
+		    											<input type="text" class="form-control" name="created_fname" placeholder="First Name" @if($quality != null) value="{{ $quality->created_by_fname }}" @endif>
 		    										</div>
 		    										<div class="col-sm-6" style="padding:0;padding-left: 15px;">
-		    											<input type="text" class="form-control" name="created_lname"placeholder="Last Name" value="@if($quality != null) {{ $quality->created_by_lname }} @endif">
+		    											<input type="text" class="form-control" name="created_lname"placeholder="Last Name" @if($quality != null) value="{{ $quality->created_by_lname }}" @endif">
 		    										</div>
 		    									</div>
 		    								</div>
@@ -5661,6 +5670,8 @@
     </div>
   </div>
 </div>
+
+
 
 <a href="#" id="scroll" style="display: none; z-index: 999;"><span></span></a>
 
