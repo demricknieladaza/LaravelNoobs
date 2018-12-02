@@ -9,7 +9,7 @@ class TenderQuery extends Model
 {
     protected $table = 'tender_queries_tbl';
     public $primaryKey = 'tender_query_id';
-    public $timestamps = false;
+    public $timestamps = true;
     protected $fillable = [
         'project_record_id',
         'tender_id',

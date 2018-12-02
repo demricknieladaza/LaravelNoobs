@@ -353,8 +353,9 @@ ul.typeofdev {
 				processData: false,
 				contentType: false,
 				success:function(result){
+					// alert('addproject');
 					// console.log(result);
-					// location.reload();
+					location.reload();
 					// console.log('Updated');
 				}
 

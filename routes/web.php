@@ -148,6 +148,8 @@ Route::post('awardtender', 'ReportsController@awardtender');
 
 Route::get('generatereport/{pid}/{tid}/{uid}','ReportsController@generate');
 
+Route::get('evaluation','EvaluationController@evaluation');
+
 
 
 

@@ -535,8 +535,8 @@ class IndividualsController extends Controller
         $individual->first_name = $request->first_name;
         $individual->last_name = $request->last_name;
         $individual->seniority = $request->seniority_level;
-        $new->department = $request->input('department');
-        $new->email = $request->input('email');
+        $individual->department = $request->input('department');
+        $individual->email = $request->input('email');
 
         $service = $request->offeredservices;
         $new_service = "";
