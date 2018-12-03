@@ -106,47 +106,128 @@
                 </div>
             </div>
         </div>
-        <div id="bubbletable">
-            <table>
-                <thead style="color: #FCE4D6;">
+        <div id="page4" style="position: absolute;top: 0;">
+            <table width="1000" height="400">
+                <thead style="width: 800;">
                     <tr>
                         <td rowspan="2">RIBA Stage</td>
                         <th colspan="2" scope="colgroup">Constants</th>
+                        @foreach($data as $key)
+                            <th colspan="2" scope="colgroup">{{$key['name']}}</th>
+                        @endforeach
                         <th colspan="2" scope="colgroup">Average</th>
                       </tr>
                       <tr>
                         <th scope="col">Max</th>
                         <th scope="col">Weighting</th>
+                        @foreach($data as $key)
+                            <th scope="col">Score</th>
+                            <th scope="col">Wei</th>
+                        @endforeach
                         <th scope="col">Score</th>
                         <th scope="col">Wei</th>
                       </tr>
                 </thead>
                 <tbody>
-                    @foreach($activity as $k)
-                        <tr>
-                            <td></td>
-                            <td>{{$k['date']}}</td>
-                            <td>{{$k['time']}}</td>
-                            <td>{{$k['activity']}}</td>
-                            <td>{{$k['activity']}}</td>
-                        </tr>
-                    @endforeach
+                    <tr>
+                        <td>{{$qualitative['name']}}</td>
+                        <td>{{$qualitative['max']}}</td>
+                        <td>{{$qualitative['weighting']}}%</td>
+                        @php
+                            $qualitot = 0;
+                            $qualitotave = 0;
+                        @endphp
+                        @foreach($quali as $k)
+                            <td>{{$k}}</td>
+                            <td>{{($k*$qualitative['weighting'])/100}}</td>
+                            @php
+                                $qualitot += $k;
+                                $qualitotave += ($k*$qualitative['weighting'])/100;
+                            @endphp
+                        @endforeach
+                        <td>@php echo ($qualitot/count($quali)); @endphp</td>
+                        <td>@php echo ($qualitotave/count($quali)); @endphp</td>
+                    </tr>
+                    <tr>
+                        <td>{{$quantitative['name']}}</td>
+                        <td>{{$quantitative['max']}}</td>
+                        <td>{{$quantitative['weighting']}}%</td>
+                        @php
+                            $quantitot = 0;
+                            $quantitotave = 0;
+                        @endphp
+                        @foreach($quanti as $k)
+                            <td>{{$k}}</td>
+                            <td>{{($k*$quantitative['weighting'])/100}}</td>
+                            @php
+                                $quantitot += $k;
+                                $quantitotave += ($k*$quantitative['weighting'])/100;
+                            @endphp
+                        @endforeach 
+                        <td>@php echo ($quantitot/count($quali)); @endphp</td>
+                        <td>@php echo ($quantitotave/count($quali)); @endphp</td>
+                    </tr>
+                    <tr>
+                        <td>Risk</td>
+                        <td>5</td>
+                        <td>{{$risk['weighting']}}%</td>
+                        @foreach($quanti as $k)
+                            <td>0</td>
+                            <td>0</td>
+                        @endforeach 
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>15</td>
+                        <td>{{$risk['weighting']+$quantitative['weighting']+$qualitative['weighting']}}%</td>
+                        @foreach ($data as $element)
+                            <td>{{$element['dataPoints'][0]['x'] + $element['dataPoints'][0]['y'] + $element['dataPoints'][0]['z'] }}</td>
+                            <td>{{
+                                ($element['dataPoints'][0]['x'] * $qualitative['weighting']/100) + ($element['dataPoints'][0]['y']*$quantitative['weighting']/100) + ($element['dataPoints'][0]['z']*$risk['weighting']/100)
+
+                            }}</td>
+                            @php
+                                $totrank[] = $element['dataPoints'][0]['x'] + $element['dataPoints'][0]['y'] + $element['dataPoints'][0]['z'];
+                            @endphp
+                        @endforeach
+                        <td></td>
+                        <td></td>
+                        @php
+                           sort($totrank);
+                        @endphp
+                    </tr>
+                    <tr>
+                        <td>Rank</td>
+                        <td colspan="2"></td>
+                        @foreach ($data as $element)
+                            @php
+                                $keys = array_search($element['dataPoints'][0]['x'] + $element['dataPoints'][0]['y'] + $element['dataPoints'][0]['z'], $totrank);
+                            @endphp
+                            <td colspan="2">{{$keys+1}}</td>
+                        @endforeach
+                        <td colspan="2"></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
-        <script
-  src="https://code.jquery.com/jquery-1.12.4.js"
-  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
-  crossorigin="anonymous"></script>
-        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <div id="previewImage">
+        </div>
+       
     </div>
-
+      <script
+src="https://code.jquery.com/jquery-1.12.4.js"
+integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+crossorigin="anonymous"></script>
+      <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js" ></script>
     <script src="{{asset('dist/jspdf.min.js')}}"></script>
     <script>
         var project =[];
         var tender =[];
         var todays = "";
-        var canvas1,dataURL1 ;
+        var canvas1,dataURL1,canvas2,dataURL2 ;
 
         window.onload = function () {
             project = <?php echo json_encode($proj_info); ?>;
@@ -178,8 +259,22 @@
             
             canvas1 = $("#chart1 .canvasjs-chart-canvas").get(0);
             dataURL1 = canvas1.toDataURL();
-            // pdf();
+            takeScreenShot();
+
+            
+            pdf();
+
         };
+
+        window.takeScreenShot = function() {
+           html2canvas($('#page4'), {
+            onrendered: function (canvas) {
+                $("#previewImage").append(canvas);
+                   canvas2 = canvas;
+                }
+            });
+           // dataURL2 = canvas2.toDataURL("image/png");
+        }
 
         function pdf(){
             var pdf = new jsPDF('landscape', 'pt', 'a4');
@@ -190,13 +285,13 @@
                             return true
                         }
                     };
-                source = $('#page2')[0];
-                margins = {
-                        top: 80,
-                        bottom: 60,
-                        left: 40,
-                        width: 522
-                    };
+            source = $('#page2')[0];
+            margins = {
+                    top: 80,
+                    bottom: 60,
+                    left: 40,
+                    width: 1007
+                };
             pdf.addHTML($('#page1')[0], function () {
                 pdf.setFontType("bold");
                 pdf.setFontSize(45);
@@ -239,7 +334,25 @@
                     pdf.text(40, 350, 'Executive Summary');
                     pdf.addPage();
                     pdf.addImage(dataURL1, 'JPEG', 20, 15);
+
+                    pdf.addPage();
+                    pdf.setFontSize(32);
+                    pdf.text(20, 40, 'Bubble Chart');
+                    pdf.addImage(canvas2.toDataURL(), 'JPEG', 20, 80);
+                    
+                    pdf.addPage();
+                    pdf.setFontType("bold");
+                    pdf.setFontSize(64);
+                    pdf.setFillColor(254, 114, 53);
+                    pdf.rect(0, 0, 1007, 300, "F");
+                    pdf.text(40, 200, '2');
+                    pdf.setFillColor(252, 228, 214);
+                    pdf.rect(0, 300, 1007, 300, "F");
+                    pdf.setFontSize(50);
+                    pdf.text(40, 350, 'Qualitative Analysis');
+
                     pdf.save('Test.pdf');
+
                 },1007,800);
             });
         }
