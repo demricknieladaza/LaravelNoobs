@@ -123,15 +123,412 @@ class EvaluationController extends Controller
         foreach ($qualmatrix as $key) {
             $orgmatrixwei[] = array('label'=>$key[0]['name'],'y' => 0);
         }
-
+        
         // QUANTITATIVE
         foreach ($tenders as $key) {
             $org_id = DB::table('organisation_tbl')->where('user_id',$key->user_id)->first();
             $quantsum[] = array('y'=>$this->getquanti($key->user_id,$key->tender_id),'label'=>$org_id->company_name); 
+
         }
         // var_dump($quantsum);
 
+        // fee proposal 
 
+        
+
+        // var_dump($strat);
+        $_0 = 0;
+        $_1 = 0;
+        $_2 = 0;
+        $_3 = 0;
+        $_4 = 0;
+        $_5 = 0;
+        $_6 = 0;
+        $_7 = 0;
+        $fees = DB::table('tender_scope_deliverables_tbl')->where('tender_id',$tid)->first();
+        
+        $strategic_num = explode(",",$fees->strategic_num);
+        $pprogramme_num = explode(",",$fees->pprogramme_num);
+        $feasibility_num = explode(",",$fees->feasibility_num);
+        $design_num = explode(",",$fees->design_num);
+        $site_num = explode(",",$fees->site_num);
+        $information_num = explode(",",$fees->information_num);
+        $project_num = explode(",",$fees->project_num);
+        $risk_num = explode(",",$fees->risk_num);
+        $handover_num = explode(",",$fees->handover_num);
+        $execution_num = explode(",",$fees->execution_num);
+        $proposal_num = explode(",",$fees->proposal_num);
+
+        foreach ($tenders as $key) {
+            $org_id = DB::table('organisation_tbl')->where('user_id',$key->user_id)->first();
+            $tenddeliv = DB::table('bid_deliverables_tbl')->where('tender_id',$key->tender_id)->where('user_id',$key->user_id)->first();
+
+            $bidstrat = explode(",", $tenddeliv->strategic);
+            $bidprog = explode(",", $tenddeliv->programme);
+            $bidstud = explode(",", $tenddeliv->study);
+            $biddrm = explode(",", $tenddeliv->drm);
+            $bidinf = explode(",", $tenddeliv->info_report);
+            $bidinfe = explode(",", $tenddeliv->info_exchange);
+            $bidproj = explode(",", $tenddeliv->proj_brief);
+            $bidrisk = explode(",", $tenddeliv->risk);
+            $bidhand = explode(",", $tenddeliv->handover);
+            $bidproj = explode(",", $tenddeliv->proj_exec);
+            $biddes = explode(",", $tenddeliv->design_proposal);
+
+            for($c=0;count($proposal_num) > $c; $c++){
+                if($proposal_num[$c] == 0){
+                    $_0 += (int)$biddes[$c];
+                }
+                elseif ($proposal_num[$c] == 1){
+                    $_1 += (int)$biddes[$c];
+                }
+                elseif ($proposal_num[$c] == 2){
+                    $_2 += (int)$biddes[$c];
+                }
+                elseif ($proposal_num[$c] == 3){
+                    $_3 += (int)$biddes[$c];
+                }
+                elseif ($proposal_num[$c] == 4){
+                    $_4 += (int)$biddes[$c];
+                }
+                elseif ($proposal_num[$c] == 5){
+                    $_5 += (int)$biddes[$c];
+                }
+                elseif ($proposal_num[$c] == 6){
+                    $_6 += (int)$biddes[$c];
+                }
+                elseif ($proposal_num[$c] == 7){
+                    $_7 += (int)$biddes[$c];
+                }
+            }
+            for($c=0;count($execution_num) > $c; $c++){
+                if($execution_num[$c] == 0){
+                    $_0 += (int)$bidproj[$c];
+                }
+                elseif ($execution_num[$c] == 1){
+                    $_1 += (int)$bidproj[$c];
+                }
+                elseif ($execution_num[$c] == 2){
+                    $_2 += (int)$bidproj[$c];
+                }
+                elseif ($execution_num[$c] == 3){
+                    $_3 += (int)$bidproj[$c];
+                }
+                elseif ($execution_num[$c] == 4){
+                    $_4 += (int)$bidproj[$c];
+                }
+                elseif ($execution_num[$c] == 5){
+                    $_5 += (int)$bidproj[$c];
+                }
+                elseif ($execution_num[$c] == 6){
+                    $_6 += (int)$bidproj[$c];
+                }
+                elseif ($execution_num[$c] == 7){
+                    $_7 += (int)$bidproj[$c];
+                }
+            }
+            for($c=0;count($handover_num) > $c; $c++){
+                if($handover_num[$c] == 0){
+                    $_0 += (int)$bidhand[$c];
+                }
+                elseif ($handover_num[$c] == 1){
+                    $_1 += (int)$bidhand[$c];
+                }
+                elseif ($handover_num[$c] == 2){
+                    $_2 += (int)$bidhand[$c];
+                }
+                elseif ($handover_num[$c] == 3){
+                    $_3 += (int)$bidhand[$c];
+                }
+                elseif ($handover_num[$c] == 4){
+                    $_4 += (int)$bidhand[$c];
+                }
+                elseif ($handover_num[$c] == 5){
+                    $_5 += (int)$bidhand[$c];
+                }
+                elseif ($handover_num[$c] == 6){
+                    $_6 += (int)$bidhand[$c];
+                }
+                elseif ($handover_num[$c] == 7){
+                    $_7 += (int)$bidhand[$c];
+                }
+            }
+            for($c=0;count($risk_num) > $c; $c++){
+                if($risk_num[$c] == 0){
+                    $_0 += (int)$bidrisk[$c];
+                }
+                elseif ($risk_num[$c] == 1){
+                    $_1 += (int)$bidrisk[$c];
+                }
+                elseif ($risk_num[$c] == 2){
+                    $_2 += (int)$bidrisk[$c];
+                }
+                elseif ($risk_num[$c] == 3){
+                    $_3 += (int)$bidrisk[$c];
+                }
+                elseif ($risk_num[$c] == 4){
+                    $_4 += (int)$bidrisk[$c];
+                }
+                elseif ($risk_num[$c] == 5){
+                    $_5 += (int)$bidrisk[$c];
+                }
+                elseif ($risk_num[$c] == 6){
+                    $_6 += (int)$bidrisk[$c];
+                }
+                elseif ($risk_num[$c] == 7){
+                    $_7 += (int)$bidrisk[$c];
+                }
+            }
+            for($c=0;count($project_num) > $c; $c++){
+                if($project_num[$c] == 0){
+                    $_0 += (int)$bidproj[$c];
+                }
+                elseif ($project_num[$c] == 1){
+                    $_1 += (int)$bidproj[$c];
+                }
+                elseif ($project_num[$c] == 2){
+                    $_2 += (int)$bidproj[$c];
+                }
+                elseif ($project_num[$c] == 3){
+                    $_3 += (int)$bidproj[$c];
+                }
+                elseif ($project_num[$c] == 4){
+                    $_4 += (int)$bidproj[$c];
+                }
+                elseif ($project_num[$c] == 5){
+                    $_5 += (int)$bidproj[$c];
+                }
+                elseif ($project_num[$c] == 6){
+                    $_6 += (int)$bidproj[$c];
+                }
+                elseif ($project_num[$c] == 7){
+                    $_7 += (int)$bidproj[$c];
+                }
+            }
+            for($c=0;count($information_num) > $c; $c++){
+                if($information_num[$c] == 0){
+                    $_0 += (int)$bidinfe[$c];
+                }
+                elseif ($information_num[$c] == 1){
+                    $_1 += (int)$bidinfe[$c];
+                }
+                elseif ($information_num[$c] == 2){
+                    $_2 += (int)$bidinfe[$c];
+                }
+                elseif ($information_num[$c] == 3){
+                    $_3 += (int)$bidinfe[$c];
+                }
+                elseif ($information_num[$c] == 4){
+                    $_4 += (int)$bidinfe[$c];
+                }
+                elseif ($information_num[$c] == 5){
+                    $_5 += (int)$bidinfe[$c];
+                }
+                elseif ($information_num[$c] == 6){
+                    $_6 += (int)$bidinfe[$c];
+                }
+                elseif ($information_num[$c] == 7){
+                    $_7 += (int)$bidinfe[$c];
+                }
+            }
+            for($c=0;count($site_num) > $c; $c++){
+                if($site_num[$c] == 0){
+                    $_0 += (int)$bidinf[$c];
+                }
+                elseif ($site_num[$c] == 1){
+                    $_1 += (int)$bidinf[$c];
+                }
+                elseif ($site_num[$c] == 2){
+                    $_2 += (int)$bidinf[$c];
+                }
+                elseif ($site_num[$c] == 3){
+                    $_3 += (int)$bidinf[$c];
+                }
+                elseif ($site_num[$c] == 4){
+                    $_4 += (int)$bidinf[$c];
+                }
+                elseif ($site_num[$c] == 5){
+                    $_5 += (int)$bidinf[$c];
+                }
+                elseif ($site_num[$c] == 6){
+                    $_6 += (int)$bidinf[$c];
+                }
+                elseif ($site_num[$c] == 7){
+                    $_7 += (int)$bidinf[$c];
+                }
+            }
+            for($c=0;count($design_num) > $c; $c++){
+                if($design_num[$c] == 0){
+                    $_0 += (int)$biddrm[$c];
+                }
+                elseif ($design_num[$c] == 1){
+                    $_1 += (int)$biddrm[$c];
+                }
+                elseif ($design_num[$c] == 2){
+                    $_2 += (int)$biddrm[$c];
+                }
+                elseif ($design_num[$c] == 3){
+                    $_3 += (int)$biddrm[$c];
+                }
+                elseif ($design_num[$c] == 4){
+                    $_4 += (int)$biddrm[$c];
+                }
+                elseif ($design_num[$c] == 5){
+                    $_5 += (int)$biddrm[$c];
+                }
+                elseif ($design_num[$c] == 6){
+                    $_6 += (int)$biddrm[$c];
+                }
+                elseif ($design_num[$c] == 7){
+                    $_7 += (int)$biddrm[$c];
+                }
+            }
+            for($c=0;count($feasibility_num) > $c; $c++){
+                if($feasibility_num[$c] == 0){
+                    $_0 += (int)$bidstud[$c];
+                }
+                elseif ($feasibility_num[$c] == 1){
+                    $_1 += (int)$bidstud[$c];
+                }
+                elseif ($feasibility_num[$c] == 2){
+                    $_2 += (int)$bidstud[$c];
+                }
+                elseif ($feasibility_num[$c] == 3){
+                    $_3 += (int)$bidstud[$c];
+                }
+                elseif ($feasibility_num[$c] == 4){
+                    $_4 += (int)$bidstud[$c];
+                }
+                elseif ($feasibility_num[$c] == 5){
+                    $_5 += (int)$bidstud[$c];
+                }
+                elseif ($feasibility_num[$c] == 6){
+                    $_6 += (int)$bidstud[$c];
+                }
+                elseif ($feasibility_num[$c] == 7){
+                    $_7 += (int)$bidstud[$c];
+                }
+            }
+            for($c=0;count($pprogramme_num) > $c; $c++){
+                if($pprogramme_num[$c] == 0){
+                    $_0 += (int)$bidprog[$c];
+                }
+                elseif ($pprogramme_num[$c] == 1){
+                    $_1 += (int)$bidprog[$c];
+                }
+                elseif ($pprogramme_num[$c] == 2){
+                    $_2 += (int)$bidprog[$c];
+                }
+                elseif ($pprogramme_num[$c] == 3){
+                    $_3 += (int)$bidprog[$c];
+                }
+                elseif ($pprogramme_num[$c] == 4){
+                    $_4 += (int)$bidprog[$c];
+                }
+                elseif ($pprogramme_num[$c] == 5){
+                    $_5 += (int)$bidprog[$c];
+                }
+                elseif ($pprogramme_num[$c] == 6){
+                    $_6 += (int)$bidprog[$c];
+                }
+                elseif ($pprogramme_num[$c] == 7){
+                    $_7 += (int)$bidprog[$c];
+                }
+            }
+            for($c=0;count($strategic_num) > $c; $c++){
+                if($strategic_num[$c] == 0){
+                    $_0 += (int)$bidstrat[$c];
+                }
+                elseif ($strategic_num[$c] == 1){
+                    $_1 += (int)$bidstrat[$c];
+                }
+                elseif ($strategic_num[$c] == 2){
+                    $_2 += (int)$bidstrat[$c];
+                }
+                elseif ($strategic_num[$c] == 3){
+                    $_3 += (int)$bidstrat[$c];
+                }
+                elseif ($strategic_num[$c] == 4){
+                    $_4 += (int)$bidstrat[$c];
+                }
+                elseif ($strategic_num[$c] == 5){
+                    $_5 += (int)$bidstrat[$c];
+                }
+                elseif ($strategic_num[$c] == 6){
+                    $_6 += (int)$bidstrat[$c];
+                }
+                elseif ($strategic_num[$c] == 7){
+                    $_7 += (int)$bidstrat[$c];
+                }
+            }
+            $tenderfeeamt[] = array($_0,$_1,$_2,$_3,$_4,$_5,$_6,$_7);
+            $_0_arr[] = array('label'=>$org_id->company_name,'y'=>$_0);
+            $_1_arr[] = array('label'=>$org_id->company_name,'y'=>$_1);
+            $_2_arr[] = array('label'=>$org_id->company_name,'y'=>$_2);
+            $_3_arr[] = array('label'=>$org_id->company_name,'y'=>$_3);
+            $_4_arr[] = array('label'=>$org_id->company_name,'y'=>$_4);
+            $_5_arr[] = array('label'=>$org_id->company_name,'y'=>$_5);
+            $_6_arr[] = array('label'=>$org_id->company_name,'y'=>$_6);
+            $_7_arr[] = array('label'=>$org_id->company_name,'y'=>$_7);
+            $_0 = 0;
+            $_1 = 0;
+            $_2 = 0;
+            $_3 = 0;
+            $_4 = 0;
+            $_5 = 0;
+            $_6 = 0;
+            $_7 = 0;
+            $Insurances[] = array('label'=>$org_id->company_name,'y'=>0);
+            $Bonds[] = array('label'=>$org_id->company_name,'y'=>0);
+            $Parties[] = array('label'=>$org_id->company_name,'y'=>0);
+            $Liability[] = array('label'=>$org_id->company_name,'y'=>0);
+            $Net[] = array('label'=>$org_id->company_name,'y'=>0);
+        }
+        $cumave = 0;
+        $tenderfeeamts = [];
+        for($c=0;count($tenderfeeamt[0]) > $c; $c++){
+            array_push($tenderfeeamts,$c);
+            $avetot = 0;
+            foreach($tenderfeeamt as $k){
+                $totalfees = $k[0];
+                array_push($tenderfeeamts,$k[$c]);
+                $avetot += $k[$c];
+                for($cx=1;$c >= $cx; $cx++){
+                    $totalfees += $k[$cx];
+                }
+                array_push($tenderfeeamts,$totalfees);
+            }
+            $cumave += $avetot/count($tenderfeeamt);
+            if($c==0){
+                $_0_arr[] = array('label'=>'Average','y'=>$avetot/count($tenderfeeamt));
+            }
+            elseif($c==1){
+                $_1_arr[] = array('label'=>'Average','y'=>$avetot/count($tenderfeeamt));
+            }
+            elseif($c==2){
+                $_2_arr[] = array('label'=>'Average','y'=>$avetot/count($tenderfeeamt));
+            }
+            elseif($c==3){
+                $_3_arr[] = array('label'=>'Average','y'=>$avetot/count($tenderfeeamt));
+            }
+            elseif($c==4){
+                $_4_arr[] = array('label'=>'Average','y'=>$avetot/count($tenderfeeamt));
+            }
+            elseif($c==5){
+                $_5_arr[] = array('label'=>'Average','y'=>$avetot/count($tenderfeeamt));
+            }
+            elseif($c==6){
+                $_6_arr[] = array('label'=>'Average','y'=>$avetot/count($tenderfeeamt));
+            }
+            elseif($c==7){
+                $_7_arr[] = array('label'=>'Average','y'=>$avetot/count($tenderfeeamt));
+            }
+            array_push($tenderfeeamts,$avetot/count($tenderfeeamt));
+            array_push($tenderfeeamts,$cumave);
+            $tenderfeeamtss[] = $tenderfeeamts;
+            $tenderfeeamts = [];
+        }
+        // dd($tenderfeeamtss);
     	return view('test')->with([
     		'proj_info'=>$project_info,
     		'tend_info'=>$tend_info,
@@ -150,8 +547,23 @@ class EvaluationController extends Controller
             'nomscore'=>$nomscore,
             'weiscores'=>$weiscores,
             'indnomscore'=>$indnomscore,
-            'quantsum'=>$quantsum
+            'quantsum'=>$quantsum,
+            'tenderfeeamtss'=>$tenderfeeamtss,
+            '_0_arr' => $_0_arr,
+            '_1_arr' => $_1_arr,
+            '_2_arr' => $_2_arr,
+            '_3_arr' => $_3_arr,
+            '_4_arr' => $_4_arr,
+            '_5_arr' => $_5_arr,
+            '_6_arr' => $_6_arr,
+            '_7_arr' => $_7_arr,
+            'Insurances'=>$Insurances,
+            'Bonds'=>$Bonds,
+            'Parties'=>$Parties,
+            'Liability'=>$Liability,
+            'Net'=>$Net
     	]);
+        // echo count($tenderfeeamt[0]);
     }
 
     public function getuse($id,$use){

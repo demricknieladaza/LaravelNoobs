@@ -135,6 +135,208 @@
                     
                 </div>
             </div>
+            <div style="border: 1px solid red; margin-top: 100px; ">
+                <div id="chart9" style="height: 350px;width: 800px">
+                    
+                </div>
+            </div>
+            <div style="border: 1px solid red; margin-top: 100px; ">
+                <div id="chart10" style="height: 350px;width: 800px">
+                    
+                </div>
+            </div>
+        </div>
+        <div id="page8" style="position: absolute;top: 0;">
+            <table width="1000" style="font-weight: bold; ">
+                <thead style="width: 800;">
+                    <tr>
+                        <td rowspan="2">RIBA Stage</td>
+                        <th colspan="2" scope="colgroup">Constants</th>
+                        @foreach($data as $key)
+                            <th colspan="2" scope="colgroup">{{$key['name']}}</th>
+                        @endforeach
+                        <th colspan="2" scope="colgroup">Average</th>
+                      </tr>
+                      <tr>
+                        <th scope="col">Max</th>
+                        <th scope="col">Weighting</th>
+                        @foreach($data as $key)
+                            <th scope="col">Nom.</th>
+                            <th scope="col">Wei.</th>
+                        @endforeach
+                        <th scope="col">Nom.</th>
+                        <th scope="col">Wei</th>
+                      </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Insurances</td>
+                        <td>5</td>
+                        <td>{{$evalwei->insurances}}%</td>
+                        @foreach($quali as $k)
+                            <td></td>
+                            <td></td>
+                        @endforeach
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Bonds</td>
+                        <td>5</td>
+                        <td>{{$evalwei->bonds}}%</td>
+                        @foreach($quali as $k)
+                            <td></td>
+                            <td></td>
+                        @endforeach
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3rd Parties</td>
+                        <td>5</td>
+                        <td>{{$evalwei->third_parties}}%</td>
+                        @foreach($quali as $k)
+                            <td></td>
+                            <td></td>
+                        @endforeach
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Limit of Liability</td>
+                        <td>5</td>
+                        <td>{{$evalwei->limit_of_liability}}%</td>
+                        @foreach($quali as $k)
+                            <td></td>
+                            <td></td>
+                        @endforeach
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Net Contribution Clause</td>
+                        <td>5</td>
+                        <td>{{$evalwei->net_contribution_clause}}%</td>
+                        @foreach($quali as $k)
+                            <td></td>
+                            <td></td>
+                        @endforeach
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>25</td>
+                        <td>{{$evalwei->insurances+$evalwei->bonds+$evalwei->third_parties+$evalwei->limit_of_liability+$evalwei->net_contribution_clause}}%</td>
+                        @foreach($quali as $k)
+                            <td></td>
+                            <td></td>
+                        @endforeach
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="page7" style="position: absolute;top: 0;">
+            <table width="1000" style="font-weight: bold; ">
+                <thead>
+                    <tr>
+                        <td rowspan="2">RIBA Stage</td>
+                        @foreach($data as $key)
+                            <th colspan="2" scope="colgroup">{{$key['name']}}</th>
+                        @endforeach
+                        <th colspan="2" scope="colgroup">Average</th>
+                        <th colspan="2" scope="colgroup">Budget</th>
+                    </tr>
+                    <tr>
+                        @foreach($data as $key)
+                            <th>£</th>
+                            <th>Share</th>
+                        @endforeach
+                        <th>£</th>
+                        <th>Share</th>
+                        <th>£</th>
+                        <th>Share</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @php
+                    $counterni = 0;
+                    @endphp
+                    @foreach($tenderfeeamtss as $k)
+                        <tr>
+                            <td>{{$counterni}}</td>
+                            @for($xs=1;count($k) > $xs;$xs++)
+                                <td></td>
+                            @endfor
+                            <td></td>
+                            <td></td>
+                            @php
+                                $counterni++;
+                            @endphp 
+                            {{-- <td>{{var_dump($k)}}</td> --}}
+                        </tr>
+                    @endforeach
+                    <tr>
+                        <td>Total</td>
+                        @for($hah = 0;count($data)+1 > $hah; $hah++)
+                        <td></td>
+                        <td></td>
+                        @endfor
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="page6" style="position: absolute;top: 0;">
+            <table width="1000" style="font-weight: bold; ">
+                <thead>
+                    <tr>
+                        <td rowspan="2">RIBA Stage</td>
+                        @foreach($data as $key)
+                            <th colspan="2" scope="colgroup">{{$key['name']}}</th>
+                        @endforeach
+                        <th colspan="2" scope="colgroup">Average</th>
+                        <th colspan="2" scope="colgroup">Budget</th>
+                    </tr>
+                    <tr>
+                        @foreach($data as $key)
+                            <th>£</th>
+                            <th>Cum.</th>
+                        @endforeach
+                        <th>£</th>
+                        <th>Cum.</th>
+                        <th>£</th>
+                        <th>Cum.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($tenderfeeamtss as $k)
+                        <tr>
+                            @foreach($k as $v)
+                                <td>{{$v}}</td>
+                            @endforeach
+                            <td></td>
+                            <td></td>
+                            @php
+                                $totalfeeave = $k[0][7][6];
+                            @endphp 
+                            {{-- <td>{{var_dump($k)}}</td> --}}
+                        </tr>
+                    @endforeach
+                    <tr>
+                        <td>Total</td>
+                        @for($hah = 0;count($data)+1 > $hah; $hah++)
+                        <td>{{$tenderfeeamtss[7][2*($hah + 1)]}}</td>
+                        <td></td>
+                        @endfor
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <div id="page5" style="position: absolute;top: 0;">
             <table width="1000" style="font-weight: bold; " >
@@ -458,18 +660,15 @@
         </div>
        
     </div>
-      <script
-src="https://code.jquery.com/jquery-1.12.4.js"
-integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
-crossorigin="anonymous"></script>
-      <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js" ></script>
+      <script src="{{asset('js/reportjq.js')}}" ></script>
+      <script src="{{asset('js/canvasjs.js')}}"></script>
+      <script src="{{asset('js/html2canvas.js')}}" ></script>
     <script src="{{asset('dist/jspdf.min.js')}}"></script>
     <script>
         var project =[];
         var tender =[];
         var todays = "";
-        var canvas1,dataURL1,canvasnom,dataURLnom,canvaswei,dataURLwei,canvas2,canvas3,canvas4,canvas5,dataURL4,dataURL5,canvas8,dataURL8 ;
+        var canvas1,dataURL1,canvasnom,dataURLnom,canvaswei,dataURLwei,canvas2,canvas3,canvas4,canvas5,dataURL4,dataURL5,canvas8,dataURL8,canvaspage6,canvaspage7,canvaspage8,canvas9,dataURL9,canvas10,dataURL10;
 
         window.onload = function () {
             project = <?php echo json_encode($proj_info); ?>;
@@ -745,6 +944,102 @@ crossorigin="anonymous"></script>
                     dataPoints: [{}]
                 }]
             });
+            var chart9 = new CanvasJS.Chart("chart9", {
+                    title: {
+                        text: "FEE PERCENTAGE"
+                    },
+                    data: [
+                    {
+                        type: "stackedColumn",
+                        name: "0",
+                        showInLegend: true,
+                        yValueFormatString: "#,##0.0",
+                        dataPoints: <?php echo json_encode($_0_arr, JSON_NUMERIC_CHECK); ?>
+                    },{
+                        type: "stackedColumn",
+                        name: "1",
+                        showInLegend: true,
+                        yValueFormatString: "#,##0.0",
+                        dataPoints: <?php echo json_encode($_1_arr, JSON_NUMERIC_CHECK); ?>
+                    },{
+                        type: "stackedColumn",
+                        name: "2",
+                        showInLegend: true,
+                        yValueFormatString: "#,##0.0",
+                        dataPoints: <?php echo json_encode($_2_arr, JSON_NUMERIC_CHECK); ?>
+                    },{
+                        type: "stackedColumn",
+                        name: "3",
+                        showInLegend: true,
+                        yValueFormatString: "#,##0.0",
+                        dataPoints: <?php echo json_encode($_3_arr, JSON_NUMERIC_CHECK); ?>
+                    },{
+                        type: "stackedColumn",
+                        name: "4",
+                        showInLegend: true,
+                        yValueFormatString: "#,##0.0",
+                        dataPoints: <?php echo json_encode($_4_arr, JSON_NUMERIC_CHECK); ?>
+                    },{
+                        type: "stackedColumn",
+                        name: "5",
+                        showInLegend: true,
+                        yValueFormatString: "#,##0.0",
+                        dataPoints: <?php echo json_encode($_5_arr, JSON_NUMERIC_CHECK); ?>
+                    },{
+                        type: "stackedColumn",
+                        name: "6",
+                        showInLegend: true,
+                        yValueFormatString: "#,##0.0",
+                        dataPoints: <?php echo json_encode($_6_arr, JSON_NUMERIC_CHECK); ?>
+                    },{
+                        type: "stackedColumn",
+                        name: "7",
+                        showInLegend: true,
+                        yValueFormatString: "#,##0.0",
+                        dataPoints: <?php echo json_encode($_7_arr, JSON_NUMERIC_CHECK); ?>
+                    }
+                    ]
+                });
+            var chart10 = new CanvasJS.Chart("chart10", {
+                    title: {
+                        text: "RISK - NOMINAL SCORES"
+                    },
+                    data: [
+                    {
+                        type: "stackedColumn",
+                        name: "Insurances",
+                        showInLegend: true,
+                        yValueFormatString: "#,##0.0",
+                        dataPoints: <?php echo json_encode($Insurances, JSON_NUMERIC_CHECK); ?>
+                    },{
+                        type: "stackedColumn",
+                        name: "Bonds",
+                        showInLegend: true,
+                        yValueFormatString: "#,##0.0",
+                        dataPoints: <?php echo json_encode($Bonds, JSON_NUMERIC_CHECK); ?>
+                    },{
+                        type: "stackedColumn",
+                        name: "Parties",
+                        showInLegend: true,
+                        yValueFormatString: "#,##0.0",
+                        dataPoints: <?php echo json_encode($Parties, JSON_NUMERIC_CHECK); ?>
+                    },{
+                        type: "stackedColumn",
+                        name: "Liability",
+                        showInLegend: true,
+                        yValueFormatString: "#,##0.0",
+                        dataPoints: <?php echo json_encode($Liability, JSON_NUMERIC_CHECK); ?>
+                    },{
+                        type: "stackedColumn",
+                        name: "Net",
+                        showInLegend: true,
+                        yValueFormatString: "#,##0.0",
+                        dataPoints: <?php echo json_encode($Net, JSON_NUMERIC_CHECK); ?>
+                    }
+                    ]
+                });
+            chart10.render();
+            chart9.render();
             chart8.render();
 
             chart2.render();
@@ -772,8 +1067,17 @@ crossorigin="anonymous"></script>
 
             canvas8 = $("#chart8 .canvasjs-chart-canvas").get(0);
             dataURL8 = canvas8.toDataURL();
+
+            canvas9 = $("#chart9 .canvasjs-chart-canvas").get(0);
+            dataURL9 = canvas9.toDataURL();
+
+            canvas10 = $("#chart10 .canvasjs-chart-canvas").get(0);
+            dataURL10 = canvas10.toDataURL();
             takeScreenShot();
             takeScreenShot1();
+            takeScreenShot2();
+            takeScreenShot3();
+            takeScreenShot4();
 
             
             pdf();
@@ -821,6 +1125,75 @@ crossorigin="anonymous"></script>
             onrendered: function (canvas) {
                 $("#previewImage").append(canvas);
                    canvas3 = canvas;
+                }
+            });
+           // dataURL2 = canvas2.toDataURL("image/png");
+        }
+
+        window.takeScreenShot2 = function() {
+            var w = 1000;
+            var h = 1000;
+            var div = document.querySelector('#page6');
+            var canvas = document.createElement('canvas');
+            canvas.width = w*2;
+            canvas.height = h*2;
+            canvas.style.width = w + 'px';
+            canvas.style.height = h + 'px';
+            var context = canvas.getContext('2d');
+            context.scale(2,2);
+           html2canvas(div, {
+            useCORS: true,
+            allowTaint: true,
+            letterRendering: true,
+            onrendered: function (canvas) {
+                $("#previewImage").append(canvas);
+                   canvaspage6 = canvas;
+                }
+            });
+           // dataURL2 = canvas2.toDataURL("image/png");
+        }
+
+        window.takeScreenShot3 = function() {
+            var w = 1000;
+            var h = 1000;
+            var div = document.querySelector('#page7');
+            var canvas = document.createElement('canvas');
+            canvas.width = w*2;
+            canvas.height = h*2;
+            canvas.style.width = w + 'px';
+            canvas.style.height = h + 'px';
+            var context = canvas.getContext('2d');
+            context.scale(2,2);
+           html2canvas(div, {
+            useCORS: true,
+            allowTaint: true,
+            letterRendering: true,
+            onrendered: function (canvas) {
+                $("#previewImage").append(canvas);
+                   canvaspage7 = canvas;
+                }
+            });
+           // dataURL2 = canvas2.toDataURL("image/png");
+        }
+
+        window.takeScreenShot4 = function() {
+            var w = 1000;
+            var h = 1000;
+            var div = document.querySelector('#page8');
+            var canvas = document.createElement('canvas');
+            canvas.width = w*2;
+            canvas.height = h*2;
+            canvas.style.width = w + 'px';
+            canvas.style.height = h + 'px';
+            var context = canvas.getContext('2d');
+            context.scale(2,2);
+           html2canvas(div, {
+            useCORS: true,
+            allowTaint: true,
+            letterRendering: true,
+            onrendered: function (canvas) {
+                $("#previewImage").append(canvas);
+                   canvaspage8 = canvas;
                 }
             });
            // dataURL2 = canvas2.toDataURL("image/png");
@@ -932,6 +1305,51 @@ crossorigin="anonymous"></script>
 
                     pdf.addPage();
                     pdf.addImage(canvas8.toDataURL(), 'JPEG', 20, 50);
+
+                    pdf.addPage();
+                    pdf.setFontSize(32);
+                    pdf.text(20, 40, 'FEE PROPOSAL ANALYSIS');
+                    pdf.setFontSize(20);
+                    pdf.text(20, 70, 'FEE AMOUNT');
+                    pdf.addImage(canvaspage6.toDataURL(), 'JPEG', 20, 80);
+
+                    pdf.addPage();
+                    pdf.addImage(dataURL9, 'JPEG', 20, 15);
+                    pdf.setFontSize(20);
+                    pdf.text(20, 320, 'SHARE OF CONSTRUCTION VALUE');
+                    pdf.addImage(canvaspage7.toDataURL(), 'JPEG', 20, 330);
+
+                    pdf.addPage();
+                    pdf.setFontType("bold");
+                    pdf.setFontSize(64);
+                    pdf.setFillColor(254, 114, 53);
+                    pdf.rect(0, 0, 1007, 300, "F");
+                    pdf.text(40, 200, '4');
+                    pdf.setFillColor(252, 228, 214);
+                    pdf.rect(0, 300, 1007, 300, "F");
+                    pdf.setFontSize(50);
+                    pdf.text(40, 350, 'Risk Analysis');
+
+                    pdf.addPage();
+                    pdf.setFontSize(32);
+                    pdf.text(20, 60, 'Summary')
+                    pdf.addImage(dataURL10, 'JPEG', 20, 70);
+
+                    pdf.addPage();
+                    pdf.setFontSize(32);
+                    pdf.text(20, 60, 'UNDERLYING DATA');
+                    pdf.setFontSize(20);
+                    pdf.text(20, 90, 'RISK FACTOR MATRIX');
+                    pdf.addImage(canvaspage8.toDataURL(), 'JPEG', 20, 100);
+
+                    pdf.addPage();
+                    pdf.setFontType("bold");
+                    pdf.setFontSize(64);
+                    pdf.setFillColor(254, 114, 53);
+                    pdf.rect(0, 0, 1007, 800, "F");
+                    pdf.setFontSize(100);
+                    pdf.text(300, 300, 'END');
+
 
                     pdf.save('Test.pdf');
 
