@@ -176,6 +176,21 @@ class ReportsController extends Controller
     	// var_dump($projectuse);
     }
 
+    public function gettenderqueries(Request $request){
+        $bidreq = DB::table('tender_queries_tbl')->where('tender_id',$request->get('id'))->get();
+
+        return $bidreq;
+    }
+
+    public function publishresponse(Request $request){
+        DB::table('tender_queries_tbl')->where('tender_query_id',$request->get('id'))
+        ->update(
+            ['response'=>$request->get('response')]
+        );
+
+        return 'Success';
+    }
+
     public function getuse($id,$use){
     	$usetype = [];
     	foreach ($use as $k) {

@@ -1,7 +1,22 @@
 @extends('layouts.master')
 
 @section('content')
-
+<script type="text/javascript">
+	var myWindow;
+	$(document).ready(function(){
+		$('#testprnt').click(function(){
+			jQuery.ajax({
+				url: "{{ url('evaluation') }}",
+				method: 'get',
+				data: { id: 1
+				},
+				success: function(result){
+					myWindow = window.open("http://www.google.com", "myWindow", "width=200,height=100"); window.close();
+				}
+			});
+		});
+	});
+</script>
 	<div class="container-fluid below-header">
 	</div>
 
@@ -13,7 +28,8 @@
 				<div class="row">
 					<div class="col-sm-12 lounge-header">
 						<span>Tenderer Dashboard</span>
-						<button class="btn btn-warning pull-right">Print this report</button>
+						<button class="btn btn-warning pull-right" id="testprnt">Print this report</button>
+						<a target="_blank" href="{{url('evaluation')}}">Print this report</a>
 					</div>
 				</div>
 				<div class="row">
@@ -49,7 +65,7 @@
 							</div>
 							<div class="col-sm-6 tab1">
 								<div class="tender-tiles new-project-tile" style="background: #FE7235; color: #fff; text-align: center; font-size: 20px;     padding-top: 20px; padding-bottom: 14px;">
-									<h3><a href="{{ url('/winwork/pds') }}">Request for Proposal   <span  class="project1 pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">{{ count($request) }}</span></a></h3>
+									<h3>Request for Proposal   <span  class="project1 pull-right" style="color: #fe7235; background: #fff; border-radius: 50%;">{{ count($request) }}</span></h3>
 								</div>
 								<table >
 									<tr class="col-sm-3">

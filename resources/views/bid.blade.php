@@ -672,6 +672,7 @@
 				},
 				success: function(result){
 					console.log(result);
+					location.reload();
 				}
 			});
 			}

@@ -6,6 +6,20 @@
 	  vertical-align: middle;
 	}
 
+	.modal-loader {
+	    display:    block;
+	    position:   fixed;
+	    z-index:    1000;
+	    top:        0;
+	    left:       0;
+	    height:     100%;
+	    width:      100%;
+	    background: rgba( 255, 255, 255, .8 )
+	    			url('{{asset('css/ajax-loader.gif')}}')
+	                50% 50% 
+	                no-repeat;
+	}
+
 	.datepicker {
 		background: white;
 	}
@@ -433,6 +447,7 @@
 	$(document).ready(function(){
 		var divClone = $("#tenderer").clone();
 		var divClones = $("#tendererrr").clone();
+		var divClonesq = $("#tendererquery").clone();
 		$(".date").datepicker( {
 			    format: "mm-yyyy",
 			    viewMode: "months", 
@@ -475,13 +490,45 @@
 				url: "{{ url('gettenderbid') }}",
 				method: 'get',
 				data: { id: $(this).attr('data-tender-id') },
+				beforeSend: function(){
+				    // Show image container
+				    $("#loader").show();
+				   },
 				success: function(result){
 					// console.log(result[0]['comp_name']);
 					$.each(result,function(v,k){
-						$('#tenderer').append('<tr><td>'+k['comp_name']+'</td><td>'+k['qualitative']+'</td><td>'+k['quantitative']+'</td><td></td><td></td></tr>');
+						$('#tenderer').append('<tr><td>'+k['comp_name']+'</td><td>'+k['qualitative']+'</td><td>'+k['quantitative']+'</td><td></td><td><a href="#">View bid</a></td></tr>');
 					});
 					$('#viewBid').modal('toggle');
-				}
+				},
+				complete:function(data){
+				    // Hide image container
+				    $("#loader").hide();
+				   }
+			});
+		});
+
+		$('.viewquery').click(function(){
+			$("#tendererquery").replaceWith(divClonesq.clone());
+			jQuery.ajax({
+				url: "{{ url('gettenderqueries') }}",
+				method: 'get',
+				data: { id: $(this).attr('data-tender-id') },
+				beforeSend: function(){
+				    // Show image container
+				    $("#loader").show();
+				   },
+				success: function(result){
+					// console.log(result[0]['comp_name']);
+					$.each(result,function(v,k){
+						$('#tendererquery').append('<tr><td>'+k['question']+'</td><td>'+k['created_at']+'</td><td></td></tr><tr><td colspan="3"><textarea id="'+k['tender_query_id']+'">'+k['response']+'</textarea></td></tr><tr><td colspan="3"><button type="button" class="btn btn-success pull-right submitresponse" data-id="'+k['tender_query_id']+'" >Publish Response</button><td></tr>');
+					});
+					$('#viewQuery').modal('toggle');
+				},
+				complete:function(data){
+				    // Hide image container
+				    $("#loader").hide();
+				   }
 			});
 		});
 
@@ -492,6 +539,10 @@
 				url: "{{ url('gettenderbid') }}",
 				method: 'get',
 				data: { id: $(this).attr('data-tender-id') },
+				beforeSend: function(){
+				    // Show image container
+				    $("#loader").show();
+				   },
 				success: function(result){
 					// console.log(result[0]['comp_name']);
 					$.each(result,function(v,k){
@@ -499,7 +550,11 @@
 						$('#tendererrr').append('<tr><td>'+(v+1)+'</td><td><a class="succ" data-tid="'+k['tid']+'" data-uid="'+k['uid']+'" data-service="'+k['tendservice']+'" data-projname="'+k['projname']+'" data-compname="'+k['comp_name']+'" >'+k['comp_name']+'</a></td></tr>');
 					});
 					$('#cmplttenderprocess').modal('toggle');
-				}
+				},
+				complete:function(data){
+				    // Hide image container
+				    $("#loader").hide();
+				   }
 			});
 		});
 
@@ -508,6 +563,29 @@
 			$('#uid').val($(this).attr('data-uid'));
 			$('#greet').html('Do you really want to award '+$(this).attr('data-compname')+' as the '+$(this).attr('data-service')+' on the '+$(this).attr('data-projname')+' project?');
 			$('#areusure').modal('toggle');
+		});
+
+		$(document).on('click','.submitresponse',function(){
+			var resp = $("textarea#"+$(this).attr('data-id')).val();
+			if(resp != ""){
+				jQuery.ajax({
+					url: "{{ url('publishresponse') }}",
+					method: 'post',
+					data: { id: $(this).attr('data-id'),response: resp },
+					beforeSend: function(){
+					    // Show image container
+					    $("#loader").show();
+					   },
+					success: function(result){
+						
+						$("#loader").hide();
+					},
+					complete:function(data){
+					    // Hide image container
+					    
+					}
+				});
+			}
 		});
 
 		$('#successtender').click(function(){
@@ -643,27 +721,36 @@
         		</tr>
         	</thead>
         	<tbody id="tenderer">
-					{{-- <tr>
-						<td id="compname"></td>
-						<td id="Qualitative">5</td>
-						<td id="Quantitative">13</td>
-						<td id="Risk">2</td>
-						<td><a>View Bid</a></td>
-					</tr> --}}
-        		{{-- <tr>
-        			<td>Company 2</td>
-        			<td>2</td>
-        			<td>4</td>
-        			<td>5</td>
-        			<td><a>View Bid</a></td>
-        		</tr>
+					
+        	</tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="viewQuery" role="dialog" tabindex="-1">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #fe7235;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">View Queries</h4>
+      </div>
+      <div class="modal-body" style="height: 500px;overflow: overlay;">
+        <table class="table table-bordered">
+        	<thead class="thead">
         		<tr>
-        			<td>Company 3</td>
-        			<td>7</td>
-        			<td>8</td>
-        			<td>7</td>
-        			<td><a>View Bid</a></td>
-        		</tr> --}}
+        			<th width="40%">Query</th>
+        			<th width="30%">Received</th>
+        			<th width="30%">Time left to respond</th>
+        		</tr>
+        	</thead>
+        	<tbody id="tendererquery">
+					
         	</tbody>
         </table>
       </div>
@@ -759,11 +846,15 @@
 		  </div>
 		</div>
 <div class="container" style="width: 95%;">
+	<div id='loader' style="display: none;">
+		<div class="modal-loader">
+		</div>
+	</div>
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="tender-container tendnew">
 				<ul class="nav navs bid-form-nav">
-					<li class=""><a class="abut" href="{{ url('project_info/'. $proj . '/edit') }}" >Project</a></li>
+					<li class=""><a class="abut" href="{{ url('project_info/'. $proj . '/edit') }}" >Projects</a></li>
 					<li class="123"><a class="abut" href="{{ url('scopedrm/'.$proj).''}}" >Scope</a></li>
 					<li class="active"><a class="abut" >Tenders</a></li>
 					<li class="123" id="cret" ><a class="abut" data-toggle="modal" data-target="#selectServe"><span>Create New Tender</span></a></li>
@@ -822,7 +913,7 @@
 									<td class="td">{{ $ten->end }}</td>
 									<td class="td">{{ $ten->time_remaining }}</td>
 									<td class="td"><strong style="font-size: 25px;">{{ $ten->bids_received }}</strong><a data-tender-id="{{ $ten->tender_id }}" class="viewbid"><p>View Bids</p></a></td>
-									<td class="td">{{ $ten->queries_received }}</td>
+									<td class="td"><strong style="font-size: 25px;">{{ $ten->queries_received }}</strong><a data-tender-id="{{ $ten->tender_id }}" class="viewquery"><p>Answer/View Queries</p></a></td>
 									<td class="td"><button style="width: 135px;" id="copmlttndr" data-tender-id="{{ $ten->tender_id }}" class="btn btn-success">Complete Tender  <br>Process</button></td>
 									{{-- </button><button class="btn btn-warning" style="width: 135px;">Negotiate Scope <br>and Appointment</button></td> --}}
 								@else

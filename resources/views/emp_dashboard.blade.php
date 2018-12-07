@@ -57,7 +57,7 @@
 								<div class="panel">
 									<div class="panel-heading">
 										<h4 class="panel-title">
-											<h4>Actions Required  <span class="project1">2</span></h4>
+											<h4>Actions Required  <span class="project1">{{count($reqinfossort)}}</span></h4>
 										</h4>
 									</div>
 									<div id="collapse5" class="panel-collapse collapse in">
@@ -73,60 +73,21 @@
 													</tr>
 												</thead>
 												<tbody class="bodyscroll">
-													<tr>
-														<td class="centerAlign">Canada Water Masterplan</td>
-														<td class="centerAlign">Request for information</td>
-														<td class="centerAlign">01 January 2018</td>
-														<td class="centerAlign">07 January 2018</td>
-														<td class="centerAlign"><a style="white-space: normal;" href="{{ url('/publish/project_dashboard') }}" class="btn btn-warning">
-															Deal with it now
-														</a></td>
-													</tr>
-													<tr>
-														<td class="centerAlign">Hounslow Place</td>
-														<td class="centerAlign">Tenderer Feedback</td>
-														<td class="centerAlign">01 January 2018</td>
-														<td class="centerAlign">03 January 2018</td>
-														<td class="centerAlign"><a style="white-space: normal;" href="#" class="btn btn-warning">
-															Deal with it now
-														</a></td>
-													</tr>
-													<tr>
-														<td class="centerAlign">Canada Water Masterplan</td>
-														<td class="centerAlign">Request for information</td>
-														<td class="centerAlign">01 January 2018</td>
-														<td class="centerAlign">07 January 2018</td>
-														<td class="centerAlign"><a style="white-space: normal;" href="{{ url('/publish/project_dashboard') }}" class="btn btn-warning">
-															Deal with it now
-														</a></td>
-													</tr>
-													<tr>
-														<td class="centerAlign">Hounslow Place</td>
-														<td class="centerAlign">Tenderer Feedback</td>
-														<td class="centerAlign">01 January 2018</td>
-														<td class="centerAlign">03 January 2018</td>
-														<td class="centerAlign"><a style="white-space: normal;" href="#" class="btn btn-warning">
-															Deal with it now
-														</a></td>
-													</tr>
-													<tr>
-														<td class="centerAlign">Canada Water Masterplan</td>
-														<td class="centerAlign">Request for information</td>
-														<td class="centerAlign">01 January 2018</td>
-														<td class="centerAlign">07 January 2018</td>
-														<td class="centerAlign"><a style="white-space: normal;" href="{{ url('/publish/project_dashboard') }}" class="btn btn-warning">
-															Deal with it now
-														</a></td>
-													</tr>
-													<tr>
-														<td class="centerAlign">Hounslow Place</td>
-														<td class="centerAlign">Tenderer Feedback</td>
-														<td class="centerAlign">01 January 2018</td>
-														<td class="centerAlign">03 January 2018</td>
-														<td class="centerAlign"><a style="white-space: normal;" href="#" class="btn btn-warning">
-															Deal with it now
-														</a></td>
-													</tr>
+													@foreach($reqinfossort as $k)
+														<tr>
+															<td class="centerAlign">{{$k['project']}}</td>
+															<td class="centerAlign">{{$k['issue']}}</td>
+															<td class="centerAlign">{{date("d F Y",strtotime($k['raised']))}}</td>
+															@if($k['issue'] == 'Request for information')
+															<td class="centerAlign">{{date("d F Y",strtotime($k['raised'] . " +2 days"))}}</td>
+															@else
+															<td class="centerAlign">{{date("d F Y",strtotime($k['raised'] . " +7 days"))}}</td>
+															@endif
+															<td class="centerAlign"><a style="white-space: normal;" href="#" class="btn btn-warning">
+																Deal with it now
+															</a></td>
+														</tr>
+													@endforeach
 												</tbody>
 											</table>
 										</div>
@@ -205,157 +166,52 @@
 						<div class="col-sm-12">
 							<div class="shadow-wrapper lounge-demo" style="padding-top: 30px;">
 								<div class="form-group">
-									<h4>Active Projects  <span class="project1">2</span></h4>
+									<h4>Active Projects  <span class="project1">{{count($activeproj)}}</span></h4>
 									<div class="row">
 										<div class="hover-container-holder">
-											<div class="tender-tile-single dropdownmod">
-												<div class="tender-tiles thin dropbtnmod">
-													<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>		
+											@foreach($activeproj as $p)
+												<div class="tender-tile-single dropdownmod">
+													<div class="tender-tiles thin dropbtnmod">
+														<h2><a href="#">{{$p['proj']}}</a></h2>		
+													</div>
+													<div class="dropdownmod-content">
+												    <div class="row table-tender-details">
+												    	<div class="col-sm-6 table-left">
+												    		<table class="table table-hover table-striped">
+												    			<thead>
+												    				<tr>
+												    					<th>Active Projects</th>
+												    				</tr>
+												    			</thead>
+												    			<tbody>
+												    				@foreach($p['active'] as $ac)
+												    				<tr>
+												    					<td data-id='{{$ac['id']}}'>{{$ac['service']}}</td>
+												    				</tr>
+												    				@endforeach
+												    			</tbody>
+												    		</table>
+												    	</div>
+												    	<div class="col-sm-6 table-right">
+												    		<table class="table table-hover table-striped">
+												    			<thead>
+												    				<tr>
+												    					<th>Drafted Projects</th>
+												    				</tr>
+												    			</thead>
+												    			<tbody>
+												    				@foreach($p['drafted'] as $df)
+												    				<tr>
+												    					<td data-id='{{$df['id']}}'>{{$df['service']}}</td>
+												    				</tr>
+												    				@endforeach			
+												    			</tbody>
+												    		</table>
+												    	</div>
+												    </div>
+												  </div>
 												</div>
-												<div class="dropdownmod-content">
-											    <div class="row table-tender-details">
-											    	<div class="col-sm-6 table-left">
-											    		<table class="table table-hover table-striped">
-											    			<thead>
-											    				<tr>
-											    					<th>Active Projects</th>
-											    				</tr>
-											    			</thead>
-											    			<tbody>
-											    				<tr>
-											    					<td>Fire Engineer</td>
-											    				</tr>
-											    				<tr>
-											    					<td>Structural Engineer</td>
-											    				</tr>
-											    				<tr>
-											    					<td>Service Engineer</td>
-											    				</tr>
-											    				<tr>
-											    					<td>Architect</td>
-											    				</tr>
-											    				<tr>
-											    					<td>Facede Engineer</td>
-											    				</tr>
-											    			</tbody>
-											    		</table>
-											    	</div>
-											    	<div class="col-sm-6 table-right">
-											    		<table class="table table-hover table-striped">
-											    			<thead>
-											    				<tr>
-											    					<th>Drafted Projects</th>
-											    				</tr>
-											    			</thead>
-											    			<tbody>
-											    				<tr>
-											    					<td>Acoustic Engineer</td>
-											    				</tr>			
-											    			</tbody>
-											    		</table>
-											    	</div>
-											    </div>
-											  </div>
-											</div>
-											<div class="tender-tile-single dropdownmod">
-												<div class="tender-tiles thin dropbtnmod">
-													<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>
-												</div>
-												<div class="dropdownmod-content">
-											    <div class="row table-tender-details">
-											    	<div class="col-sm-6 table-left">
-											    		<table class="table table-hover table-striped">
-											    			<thead>
-											    				<tr>
-											    					<th>Active Projects</th>
-											    				</tr>
-											    			</thead>
-											    			<tbody>
-											    				<tr>
-											    					<td>Fire Engineer</td>
-											    				</tr>
-											    				<tr>
-											    					<td>Structural Engineer</td>
-											    				</tr>
-											    				<tr>
-											    					<td>Service Engineer</td>
-											    				</tr>
-											    				<tr>
-											    					<td>Architect</td>
-											    				</tr>
-											    				<tr>
-											    					<td>Facede Engineer</td>
-											    				</tr>
-											    			</tbody>
-											    		</table>
-											    	</div>
-											    	<div class="col-sm-6 table-right">
-											    		<table class="table table-hover table-striped">
-											    			<thead>
-											    				<tr>
-											    					<th>Drafted Projects</th>
-											    				</tr>
-											    			</thead>
-											    			<tbody>
-											    				<tr>
-											    					<td>Acoustic Engineer</td>
-											    				</tr>			
-											    			</tbody>
-											    		</table>
-											    	</div>
-											    </div>
-											  </div>
-											</div>
-											<div class="tender-tile-single dropdownmod">
-												<div class="tender-tiles thin dropbtnmod">
-													<h2><a href="{{ url('/publish/project_dashboard') }}">Canada Water Masterplan</a></h2>
-												</div>
-												<div class="dropdownmod-content">
-											    <div class="row table-tender-details">
-											    	<div class="col-sm-6 table-left">
-											    		<table class="table table-hover table-striped">
-											    			<thead>
-											    				<tr>
-											    					<th>Active Projects</th>
-											    				</tr>
-											    			</thead>
-											    			<tbody>
-											    				<tr>
-											    					<td>Fire Engineer</td>
-											    				</tr>
-											    				<tr>
-											    					<td>Structural Engineer</td>
-											    				</tr>
-											    				<tr>
-											    					<td>Service Engineer</td>
-											    				</tr>
-											    				<tr>
-											    					<td>Architect</td>
-											    				</tr>
-											    				<tr>
-											    					<td>Facede Engineer</td>
-											    				</tr>
-											    			</tbody>
-											    		</table>
-											    	</div>
-											    	<div class="col-sm-6 table-right">
-											    		<table class="table table-hover table-striped">
-											    			<thead>
-											    				<tr>
-											    					<th>Drafted Projects</th>
-											    				</tr>
-											    			</thead>
-											    			<tbody>
-											    				<tr>
-											    					<td>Acoustic Engineer</td>
-											    				</tr>			
-											    			</tbody>
-											    		</table>
-											    	</div>
-											    </div>
-											  </div>
-											</div>
-											
+											@endforeach
 										</div>
 									</div>
 								</div>

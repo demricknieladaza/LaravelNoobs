@@ -340,6 +340,8 @@ class BidController extends Controller
         $query->question = $request->get('question');
         $query->save();
 
+        DB::table('tender_tbl')->where('tender_id',$request->get('tender_id'))
+                            ->increment('queries_received');
         return 'SAVED!!!';
 
     }

@@ -11,7 +11,7 @@
 		<div class="col-sm-12">
 			<div class="tender-container tendnew">
 				<ul class="nav navs bid-form-nav">
-					<li class="123"><a class="abut" href="#section1">Project</a></li> 
+					<li class="123"><a class="abut" href="{{ url('project_info/'. $id . '/edit') }}">Project</a></li> 
 					<li class="active"><a class="abut">Scope</a></li>
 					<li class="123"><a class="abut" href="{{ url('tenders/'.$id.'/edit') }}" >Tenders</a></li>
 					<li class="123" id="cret" ><a class="abut" data-toggle="modal" data-target="#selectServe"><span>Create New Tender</span></a></li>

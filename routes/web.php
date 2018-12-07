@@ -24,7 +24,8 @@ Route::get('/winwork/pds/bid', 'UsersController@bid_controller');
 
 Route::get('/dashboard', 'UsersController@dashboard_controller');
 
-Route::get('/dashboard/emp_dashboard', 'UsersController@emp_dashboard_controller')->name('Employer Dashboard');
+Route::get('/dashboard/emp_dashboard',
+'EmployerController@employer')->name('Employer Dashboard');
 
 Route::get('/dashboard/tend_dashboard', 'UsersController@tend_dashboard_controller')->name('Tenderer Dashboard');
 
@@ -79,6 +80,10 @@ Route::get('tenderget/{id}','TenderController@gettend');
 Route::get('getproj/{id}','OrganisationController@getproj');
 
 Route::get('gettenderbid','ReportsController@gettenderbid');
+
+Route::get('gettenderqueries','ReportsController@gettenderqueries');
+
+Route::post('publishresponse','ReportsController@publishresponse');
 
 Route::post('tender_appointment', 'TenderController@appointmentStore');
 Route::post('organisationStore', 'OrganisationController@organisationStore');

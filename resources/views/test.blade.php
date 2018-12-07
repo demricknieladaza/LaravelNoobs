@@ -54,12 +54,29 @@
     table, th, td {
         border: 1px solid black;
     }
+    .modal-loader {
+        display:    block;
+        position:   fixed;
+        z-index:    1000;
+        top:        0;
+        left:       0;
+        height:     100%;
+        width:      100%;
+        background: rgba( 255, 255, 255, 1.0 )
+                    url('{{asset('css/ajax-loader.gif')}}')
+                    50% 50% 
+                    no-repeat;
+    }
 </style>
 
 </head>
 <body>
     <button onclick="cssss()">Generate PDF</button>
-    <div id="html-2-pdfwrapper" style='position: absolute; left: 20px; top: 50px; bottom: 0; overflow: auto; width: 1024px'>
+    <div id='loader'>
+        <div class="modal-loader">
+        </div>
+    </div>
+    <div id="html-2-pdfwrapper" style='position: absolute; left: 20px; top: 50px; bottom: 0; overflow: auto; width: 1024px;'>
         <!-- <img src="octocat.jpg" width="200" height="200"> -->
         <div id="page1">
             <div class="square3"></div>
@@ -1082,8 +1099,12 @@
             
             pdf();
 
-        };
+            setTimeout(winclose, 5000);
 
+        };
+        window.winclose = function(){
+            window.close();
+        }
         window.takeScreenShot = function() {
             var w = 1000;
             var h = 1000;
